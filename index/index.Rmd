@@ -1,0 +1,61 @@
+---
+author: 'Thomas Battram'
+date: 'September 2020' # Month and year of submission
+title: "I made this template based on thesisdown to comply with the University of Bristol regulations"
+university: "University of Bristol"
+faculty: "Health Sciences"
+school: "Bristol Medical School"
+group: "MRC Integrative Epidemiologu Unit"
+degree: "Population Health Sciences"
+logo: figure/index/UoBcrest.pdf # logo will only show on PDF
+bibliography: bib/thesis.bib # location of your bibliography 
+csl: csl/apa.csl # location of your referencing style 
+knit: "bookdown::render_book" # doesnt need changing 
+site: bookdown::bookdown_site # doesnt need changing 
+toc-depth: 3 # change for the depth of the table of contents - 1 gives two levels, 2 gives 3 levels etc...
+lot: true 
+lof: true
+space_between_paragraphs: true
+fig_caption: true
+header-includes:
+    \usepackage{tikz}
+    \usepackage{booktabs}
+    \usepackage{longtable}
+    \usepackage{siunitx}
+    \pagestyle{plain}
+output: 
+  thesisdown::thesis_pdf: default
+#  thesisdown::thesis_gitbook: default
+#  thesisdown::thesis_word: default
+#  thesisdown::thesis_epub: default
+abstract: |
+  `r if(knitr:::is_latex_output()) paste(readLines("00-abstract.Rmd"), collapse = '\n  ')`
+acknowledgements: |
+  `r if(knitr:::is_latex_output()) paste(readLines("00-acknowledgements.Rmd"), collapse = '\n  ')`
+declaration: |
+  `r if(knitr:::is_latex_output()) paste(readLines("00-declaration.Rmd"), collapse = '\n  ')`
+abbreviations: |
+  `r if(knitr:::is_latex_output()) paste(readLines("00-abbreviations.Rmd"), collapse = '\n  ')`
+---
+
+```{r thesis-setup, include = FALSE}
+# you need these packages
+if(!require(devtools))
+  install.packages("devtools", repos = "http://cran.rstudio.com")
+if(!require(thesisdown))
+  devtools::install_github("ismayc/thesisdown")
+library(thesisdown)
+if(!require(kableExtra))
+  devtools::install_github("haozhu233/kableExtra")
+library(kableExtra)
+if(!require(tinytex))
+  devtools::install_github('yihui/tinytex')
+library(tinytex)
+options(tinytex.verbose = TRUE)
+if(!require(flextable))
+  devtools::install_github("davidgohel/flextable")
+library(flextable)
+
+# this will allow us to make word documents with relatively ok tables
+doc.type <- knitr::opts_knit$get('rmarkdown.pandoc.to')
+```
