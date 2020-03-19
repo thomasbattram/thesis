@@ -87,8 +87,8 @@
 
 %%% YAML header functions
 \title{I made this template based on thesisdown to comply with the University of Bristol regulations}
-\author{Matthew Lee}
-\date{July 2021}
+\author{Thomas Battram}
+\date{September 2020}
 \university{University of Bristol}
 \faculty{Health Sciences}
 \school{Bristol Medical School}
@@ -141,7 +141,7 @@ Signed
 \bigskip
 \bigskip
 
-Dated\\
+Dated
 }
 
 \Abstract{
@@ -158,19 +158,27 @@ It will have multiple paragraphs too!
 
 	\usepackage{tikz} \usepackage{booktabs} \usepackage{longtable} \usepackage{siunitx} \pagestyle{plain}
 	\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{array}
-\usepackage{multirow}
-\usepackage{wrapfig}
-\usepackage{float}
-\usepackage{colortbl}
-\usepackage{pdflscape}
-\usepackage{tabu}
-\usepackage{threeparttable}
-\usepackage{threeparttablex}
-\usepackage[normalem]{ulem}
-\usepackage{makecell}
-\usepackage{xcolor}
+ \usepackage{longtable}
+ \usepackage{array}
+ \usepackage{multirow}
+ \usepackage{wrapfig}
+ \usepackage{float}
+ \usepackage{colortbl}
+ \usepackage{pdflscape}
+ \usepackage{tabu}
+ \usepackage{threeparttable}
+ \usepackage{threeparttablex}
+ \usepackage[normalem]{ulem}
+ \usepackage{makecell}
+ \usepackage{xcolor}
+
+
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {\setlength{\parindent}{0pt}%
+  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
+  {\par}
 
 
 %%% Main document
@@ -182,7 +190,7 @@ It will have multiple paragraphs too!
 \pagestyle{empty} % this removes page numbers from the frontmatter
   \begin{abstract}
     My abstract will go here and it will be a solid abstract. Full of the things that go in abstracts. Such as numbers, acronyms, other words, and lots of punctuation.
-    
+
     It will have multiple paragraphs too!
   \end{abstract}
   \begin{acknowledgements}
@@ -190,22 +198,22 @@ It will have multiple paragraphs too!
   \end{acknowledgements}
   \begin{declaration}
     I declare that the work in this dissertation was carried out in accordance with the requirements of the University's Regulations and Code of Practice for Research Degree Programmes and that it has not been submitted for any other academic award. Except where indicated by specific reference in the text, the work is the candidate's own work. Work done in collaboration with, or with the assistance of, others, is indicated as such. Any views expressed in the dissertation are those of the author.
-    
+
     \bigskip
     \bigskip
     \bigskip
     \bigskip
     \bigskip
-    
+
     Signed
-    
+
     \bigskip
     \bigskip
     \bigskip
     \bigskip
     \bigskip
-    
-    Dated\\
+
+    Dated
   \end{declaration}
   \hypersetup{linkcolor=black}
   \setcounter{tocdepth}{3}
@@ -352,7 +360,7 @@ Included in this template is a file called \texttt{flights.csv}. This file inclu
 We can load in this data set using the following command:
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{flights <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"data/flights.csv"}\NormalTok{)}
+\NormalTok{flights \textless{}{-}}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"data/flights.csv"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 The data is now stored in the data frame called \texttt{flights} in \textbf{R}. To get a better feel for the variables included in this dataset we can use a variety of functions. Here we can see the dimensions (rows by columns) and also the names of the columns.
@@ -386,16 +394,16 @@ While not required, it is highly recommended you use the \texttt{dplyr} package 
 We begin by checking to ensure that needed packages are installed and then we load them into our current working environment:
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# List of packages required for this analysis}
-\NormalTok{pkg <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{, }\StringTok{"ggplot2"}\NormalTok{, }\StringTok{"knitr"}\NormalTok{, }\StringTok{"bookdown"}\NormalTok{, }\StringTok{"devtools"}\NormalTok{)}
-\CommentTok{# Check if packages are not installed and assign the}
-\CommentTok{# names of the packages not installed to the variable new.pkg}
-\NormalTok{new.pkg <-}\StringTok{ }\NormalTok{pkg[}\OperatorTok{!}\NormalTok{(pkg }\OperatorTok{%in%}\StringTok{ }\KeywordTok{installed.packages}\NormalTok{())]}
-\CommentTok{# If there are any packages in the list that aren't installed,}
-\CommentTok{# install them}
+\CommentTok{\# List of packages required for this analysis}
+\NormalTok{pkg \textless{}{-}}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{, }\StringTok{"ggplot2"}\NormalTok{, }\StringTok{"knitr"}\NormalTok{, }\StringTok{"bookdown"}\NormalTok{, }\StringTok{"devtools"}\NormalTok{)}
+\CommentTok{\# Check if packages are not installed and assign the}
+\CommentTok{\# names of the packages not installed to the variable new.pkg}
+\NormalTok{new.pkg \textless{}{-}}\StringTok{ }\NormalTok{pkg[}\OperatorTok{!}\NormalTok{(pkg }\OperatorTok{\%in\%}\StringTok{ }\KeywordTok{installed.packages}\NormalTok{())]}
+\CommentTok{\# If there are any packages in the list that aren\textquotesingle{}t installed,}
+\CommentTok{\# install them}
 \ControlFlowTok{if}\NormalTok{ (}\KeywordTok{length}\NormalTok{(new.pkg))}
   \KeywordTok{install.packages}\NormalTok{(new.pkg, }\DataTypeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
-\CommentTok{# Load packages (thesisdown will load all of the packages as well)}
+\CommentTok{\# Load packages (thesisdown will load all of the packages as well)}
 \KeywordTok{library}\NormalTok{(thesisdown)}
 \end{Highlighting}
 \end{Shaded}
@@ -410,17 +418,17 @@ The example we show here does the following:
 \end{itemize}
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{flights2 <-}\StringTok{ }\NormalTok{flights }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{select}\NormalTok{(carrier_name, arr_delay)}
-\NormalTok{max_delays <-}\StringTok{ }\NormalTok{flights2 }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{group_by}\NormalTok{(carrier_name) }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{max_arr_delay =} \KeywordTok{max}\NormalTok{(arr_delay, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{))}
+\NormalTok{flights2 \textless{}{-}}\StringTok{ }\NormalTok{flights }\OperatorTok{\%\textgreater{}\%}\StringTok{ }
+\StringTok{  }\KeywordTok{select}\NormalTok{(carrier\_name, arr\_delay)}
+\NormalTok{max\_delays \textless{}{-}}\StringTok{ }\NormalTok{flights2 }\OperatorTok{\%\textgreater{}\%}\StringTok{ }
+\StringTok{  }\KeywordTok{group\_by}\NormalTok{(carrier\_name) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{max\_arr\_delay =} \KeywordTok{max}\NormalTok{(arr\_delay, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 A useful function in the \texttt{knitr} package for making nice tables in \emph{R Markdown} is called \texttt{kable}. It is much easier to use than manually entering values into a table by copying and pasting values into Excel or LaTeX. This again goes to show how nice reproducible documents can be! (Note the use of \texttt{results="asis"}, which will produce the table instead of the code to create the table.) The \texttt{caption.short} argument is used to include a shorter title to appear in the List of Tables.
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{kable}\NormalTok{(max_delays, }
+\KeywordTok{kable}\NormalTok{(max\_delays, }
       \DataTypeTok{col.names =} \KeywordTok{c}\NormalTok{(}\StringTok{"Airline"}\NormalTok{, }\StringTok{"Max Arrival Delay"}\NormalTok{),}
       \DataTypeTok{caption =} \StringTok{"Maximum Delays by Airline"}\NormalTok{,}
       \DataTypeTok{caption.short =} \StringTok{"Max Delays by Airline"}\NormalTok{,}
@@ -453,10 +461,10 @@ The last two options make the table a little easier-to-read.
 We can further look into the properties of the largest value here for American Airlines Inc.~To do so, we can isolate the row corresponding to the arrival delay of 1539 minutes for American in our original \texttt{flights} dataset.
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{flights }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(arr_delay }\OperatorTok{==}\StringTok{ }\DecValTok{1539}\NormalTok{, }
-\NormalTok{                  carrier_name }\OperatorTok{==}\StringTok{ "American Airlines Inc."}\NormalTok{) }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{select}\NormalTok{(}\OperatorTok{-}\KeywordTok{c}\NormalTok{(month, day, carrier, dest_name, hour, }
-\NormalTok{            minute, carrier_name, arr_delay))}
+\NormalTok{flights }\OperatorTok{\%\textgreater{}\%}\StringTok{ }\KeywordTok{filter}\NormalTok{(arr\_delay }\OperatorTok{==}\StringTok{ }\DecValTok{1539}\NormalTok{, }
+\NormalTok{                  carrier\_name }\OperatorTok{==}\StringTok{ "American Airlines Inc."}\NormalTok{) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(}\OperatorTok{{-}}\KeywordTok{c}\NormalTok{(month, day, carrier, dest\_name, hour, }
+\NormalTok{            minute, carrier\_name, arr\_delay))}
 \end{Highlighting}
 \end{Shaded}
 \begin{verbatim}
@@ -466,8 +474,8 @@ We can further look into the properties of the largest value here for American A
 We see that the flight occurred on March 3rd and departed a little after 2 PM on its way to Dallas/Fort Worth. Lastly, we show how we can visualize the arrival delay of all departing flights from Portland on March 3rd against time of departure.
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{flights }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(month }\OperatorTok{==}\StringTok{ }\DecValTok{3}\NormalTok{, day }\OperatorTok{==}\StringTok{ }\DecValTok{3}\NormalTok{) }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ dep_time, }\DataTypeTok{y =}\NormalTok{ arr_delay)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_point}\NormalTok{()}
+\NormalTok{flights }\OperatorTok{\%\textgreater{}\%}\StringTok{ }\KeywordTok{filter}\NormalTok{(month }\OperatorTok{==}\StringTok{ }\DecValTok{3}\NormalTok{, day }\OperatorTok{==}\StringTok{ }\DecValTok{3}\NormalTok{) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ dep\_time, }\DataTypeTok{y =}\NormalTok{ arr\_delay)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom\_point}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 \includegraphics{thesis_files/figure-latex/march3plot-1.pdf}
@@ -622,7 +630,7 @@ If your thesis has a lot of figures, \emph{R Markdown} might behave better for y
 In the \textbf{R} chunk below, we will load in a picture stored as \texttt{reed.jpg} in our main directory. We then give it the caption of ``Reed logo'', the label of ``reedlogo'', and specify that this is a figure. Make note of the different \textbf{R} chunk options that are given in the R Markdown file (not shown in the knitted document).
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{include_graphics}\NormalTok{(}\DataTypeTok{path =} \StringTok{"figure/reed.jpg"}\NormalTok{)}
+\KeywordTok{include\_graphics}\NormalTok{(}\DataTypeTok{path =} \StringTok{"figure/reed.jpg"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 \begin{figure}
@@ -637,10 +645,10 @@ Here is a reference to the Reed logo: Figure \ref{fig:reedlogo}. Note the use of
 Below we will investigate how to save the output of an \textbf{R} plot and label it in a way similar to that done above. Recall the \texttt{flights} dataset from Chapter \ref{rmd-basics}. (Note that we've shown a different way to reference a section or chapter here.) We will next explore a bar graph with the mean flight departure delays by airline from Portland for 2014. Note also the use of the \texttt{scale} parameter which is discussed on the next page.
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{flights }\OperatorTok{%>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(carrier) }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{mean_dep_delay =} \KeywordTok{mean}\NormalTok{(dep_delay)) }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ carrier, }\DataTypeTok{y =}\NormalTok{ mean_dep_delay)) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{position =} \StringTok{"identity"}\NormalTok{, }\DataTypeTok{stat =} \StringTok{"identity"}\NormalTok{, }\DataTypeTok{fill =} \StringTok{"red"}\NormalTok{)}
+\NormalTok{flights }\OperatorTok{\%\textgreater{}\%}\StringTok{ }\KeywordTok{group\_by}\NormalTok{(carrier) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{mean\_dep\_delay =} \KeywordTok{mean}\NormalTok{(dep\_delay)) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ carrier, }\DataTypeTok{y =}\NormalTok{ mean\_dep\_delay)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom\_bar}\NormalTok{(}\DataTypeTok{position =} \StringTok{"identity"}\NormalTok{, }\DataTypeTok{stat =} \StringTok{"identity"}\NormalTok{, }\DataTypeTok{fill =} \StringTok{"red"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 \begin{figure}
@@ -692,7 +700,7 @@ If you look at the YAML header at the top of the main .Rmd file you can see that
 \item
   The cite key (a citation's label) needs to be unique from the other entries.
 \item
-  When you have more than one author or editor, you need to separate each author's name by the word ``and'' e.g. \texttt{Author\ =\ \{Noble,\ Sam\ and\ Youngberg,\ Jessica\},}.
+  When you have more than one author or editor, you need to separate each author's name by the word ``and'' e.g.~\texttt{Author\ =\ \{Noble,\ Sam\ and\ Youngberg,\ Jessica\},}.
 \item
   Bibliographies made using BibTeX (whether manually or using a manager) accept LaTeX markup, so you can italicize and add symbols as necessary.
 \item
@@ -727,10 +735,10 @@ This first appendix includes all of the R chunks of code that were hidden throug
 \textbf{In Chapter \ref{ref-labels}:}
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# This chunk ensures that the thesisdown package is}
-\CommentTok{# installed and loaded. This thesisdown package includes}
-\CommentTok{# the template files for the thesis and also two functions}
-\CommentTok{# used for labeling and referencing}
+\CommentTok{\# This chunk ensures that the thesisdown package is}
+\CommentTok{\# installed and loaded. This thesisdown package includes}
+\CommentTok{\# the template files for the thesis and also two functions}
+\CommentTok{\# used for labeling and referencing}
 \ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(devtools))}
   \KeywordTok{install.packages}\NormalTok{(}\StringTok{"devtools"}\NormalTok{, }\DataTypeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
 \ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(dplyr))}
@@ -741,10 +749,10 @@ This first appendix includes all of the R chunks of code that were hidden throug
     \KeywordTok{install.packages}\NormalTok{(}\StringTok{"bookdown"}\NormalTok{, }\DataTypeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
 \ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(thesisdown))\{}
   \KeywordTok{library}\NormalTok{(devtools)}
-\NormalTok{  devtools}\OperatorTok{::}\KeywordTok{install_github}\NormalTok{(}\StringTok{"ismayc/thesisdown"}\NormalTok{)}
+\NormalTok{  devtools}\OperatorTok{::}\KeywordTok{install\_github}\NormalTok{(}\StringTok{"ismayc/thesisdown"}\NormalTok{)}
 \NormalTok{  \}}
 \KeywordTok{library}\NormalTok{(thesisdown)}
-\NormalTok{flights <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"data/flights.csv"}\NormalTok{)}
+\NormalTok{flights \textless{}{-}}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"data/flights.csv"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 \hypertarget{the-second-appendix-for-fun}{%
@@ -765,6 +773,7 @@ This first appendix includes all of the R chunks of code that were hidden throug
 \setlength{\parskip}{8pt}
 
 \hypertarget{refs}{}
+\begin{cslreferences}
 \leavevmode\hypertarget{ref-angel2000}{}%
 Angel, E. (2000). \emph{Interactive computer graphics : A top-down approach with opengl}. Boston, MA: Addison Wesley Longman.
 
@@ -782,11 +791,11 @@ Noble, S. G. (2002). \emph{Turning images into simple line-art} (Undergraduate t
 
 \leavevmode\hypertarget{ref-reedweb2007}{}%
 Reed~College. (2007). LaTeX your document. Retrieved from \url{http://web.reed.edu/cis/help/LaTeX/index.html}
+\end{cslreferences}
   \begin{abbreviations}
     \textbf{ACR} - acronym
-    
+
     \textbf{aACR} - another acronym
   \end{abbreviations}
 \end{document}
-
 
