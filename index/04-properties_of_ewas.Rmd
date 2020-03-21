@@ -1,0 +1,3 @@
+# Properties of EWAS
+
+Here is a reference to Caroline's paper: [@Relton2010]
