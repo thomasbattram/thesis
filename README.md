@@ -4,7 +4,7 @@ Thesis written using [thesisdown](https://github.com/ismayc/thesisdown). This wa
 
 ## log of errors when building
 
-__Error__: Package inputenc Error: Unicode character (U+2003) (inputenc) not set up for use with LaTeX.
+### __Error__: Package inputenc Error: Unicode character (U+2003) (inputenc) not set up for use with LaTeX.
 
 __Extra details__: This occured when copying text over from a paper into a chapter. Unicode character (U+2003) is just whitespace.
 
