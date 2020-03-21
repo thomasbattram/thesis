@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.19)  21 MAR 2020 12:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.19)  21 MAR 2020 12:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1079,18 +1079,18 @@ Chapter 2.
 
 ]
 Chapter 3.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 22
-0.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 21
+8.
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [7] [8] [9] [10]
-Underfull \hbox (badness 1983) in paragraph at lines 257--258
+Underfull \hbox (badness 1983) in paragraph at lines 255--256
 \T1/ptm/m/n/10.95 ge-ograbi R pack-age ([]$\T1/pcr/m/n/10.95 h t t p s : / / g 
 i t h u b . c o m / y o u s e f i 1 3 8 / g e o g r a bi$[]\T1/ptm/m/n/10.95 )
  []
 
 [11] [12]
-Underfull \hbox (badness 1424) in paragraph at lines 280--281
+Underfull \hbox (badness 1424) in paragraph at lines 278--279
 \T1/ptm/m/n/10.95 at []$\T1/pcr/m/n/10.95 h t t p s : / / g i t h u b . c o m /
  j r s 9 5 / e w a s c a t a l og$[]\T1/ptm/m/n/10.95 . Once in-stalled, the
  []
@@ -1118,7 +1118,7 @@ Chapter 7.
 ]
 Appendix A.
 
-LaTeX Warning: Reference `ref-labels' on page 25 undefined on input line 320.
+LaTeX Warning: Reference `ref-labels' on page 25 undefined on input line 318.
 
 [25] [26
 
@@ -1132,7 +1132,7 @@ Appendix B.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [30]
-Underfull \hbox (badness 1297) in paragraph at lines 374--376
+Underfull \hbox (badness 1297) in paragraph at lines 372--374
  \T1/ptm/m/it/10.95 Ge-net-ics\T1/ptm/m/n/10.95 , \T1/ptm/m/it/10.95 12\T1/ptm/
 m/n/10.95 (8), 529--541. []$\T1/pcr/m/n/10.95 h t tp : / / d o i . o r g / 1 0 
 . 1 0 3 8 / n r g 3 0 0
@@ -1141,17 +1141,17 @@ m/n/10.95 (8), 529--541. []$\T1/pcr/m/n/10.95 h t tp : / / d o i . o r g / 1 0
 [31] [32
 
 ] [33]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 391.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 391.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 389.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 389.
 (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 391.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 391.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 389.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 389.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 7E57B85A0E764195ADD0F602682D337F;1454.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 391.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 389.
  )
 (\end occurred inside a group at level 2)
 
@@ -1171,7 +1171,7 @@ Here is how much of TeX's memory you used:
 8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.
 pfb></Users/tb13101/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
 ></Users/tb13101/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (47 pages, 234190 bytes).
+Output written on thesis.pdf (47 pages, 234202 bytes).
 PDF statistics:
  455 PDF objects out of 1000 (max. 8388607)
  396 compressed objects within 4 object streams
