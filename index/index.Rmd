@@ -56,6 +56,10 @@ if(!require(flextable))
   devtools::install_github("davidgohel/flextable")
 library(flextable)
 
+# extra packages I use in a lot of chunks
+pkgs <- c("tidyverse", "RColorBrewer", "gridExtra", "pander")
+lapply(pkgs, require, character.only = TRUE)
+
 # this will allow us to make word documents with relatively ok tables
 doc.type <- knitr::opts_knit$get('rmarkdown.pandoc.to')
 ```

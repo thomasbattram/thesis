@@ -1,5 +1,21 @@
 # The EWAS Catalog: a database of epigenome-wide association studies
 
+```{r setoptions, eval = TRUE, echo = FALSE}
+opts_chunk$set(echo = FALSE, 
+            warning = FALSE, 
+            message = TRUE, 
+            cache = FALSE, 
+            dpi = 300
+            )
+```
+
+```{r call_source}
+read_chunk("~/Desktop/projects/Main_project/thesis/index/chunks/03-ewas_catalog.R")
+```
+
+``` {r load_data, results = "hide", message = FALSE, warning = FALSE}
+```
+
 ## Abstract
 Epigenome-wide association studies (EWAS) seek to understand the link between patterns of DNA methylation, the addition of a methyl group to a DNA molectule that may change how the molecule interacts with other cellular factors, at thousands or millions of sites across the genome to various traits and exposures. In recent years, the increase in availability of DNA methylation measures in population-based cohorts and case-control studies has resulted in a dramatic increase in the number of EWAS being performed and published. To make this rich source of molecular data more accessible, a manually curated database has been made containing CpG-trait associations (at P < 1x10^-4^) from published EWAS, each assaying over 100,000 CpGs in at least 100 individuals. The database currently contains these associations from over 150 published EWAS as well as full summary statistics for over 180 million association tests of 418 EWAS in the Avon Longitudinal Study of Parents and Children (ALSPAC) and the Gene Expression Omnibus (GEO). It is accompanied by a web-based tool and R package that allow these associations to be easily queried. This database will give researchers the opportunity to quickly and easily query EWAS associations to gain insight into the molecular underpinnings of disaese as well as the impact of traits and exposures on the DNA methylome. The EWAS Catalog is available at: http://www.ewascatalog.org.
 
@@ -59,12 +75,11 @@ Statistical analyses were conducted in R (Version 3.3.3). The smartsva package [
 
 ## Results
 
-Currently the database contains ...
-
 ### Database interface and use
 There are two ways to access this large, curated database: through the main website www.ewascatalog.org or by using the R package “ewascatalog”. The website provides a simple user interface, which resembles that of the GWAS catalog [@Buniello2019], whereby there is a single search bar to explore the database and links to tabs that contain documentation on the contents and how to cite its use (Figure 1). Users may enter a CpG, gene, genome position or trait into the search bar and it will rapidly return detail for relevant EWAS associations, including CpG, trait, sample size, publication and association (effect and P value) (Figure 1). This information along with additional information such as ancestry, outcome, exposure units, and tissue analysed are available for download as a tab-separated value (tsv) text file. Unlike other EWAS databases, we provide the option of downloading summary results for both the user’s search and for the entire database. 
 
-Figure 1. Using the EWAS catalog. At the top of the figures is the home page URL, ewascatalog.org. Below that are examples of three types of searches possible: 1. CpG sites, 2. genes and 3. traits. Finally, the results are displayed after searching the catalog for “Depression”. Circled in red is the download button, this button enables the user to download the results of their search as a tab-separated value file. This file will contain the information shown on the website as well as additional analysis information. 
+```{r catalog-use, fig.cap = catalog_cap, fig.align = "center", out.width = "100%", results = "asis"}
+```
 
 The R package, along with installation instructions and examples are available at https://github.com/jrs95/ewascatalog. Once installed, the database can be queried directly in R using the “ewascatalog()” function similar to the website: simply supply the function with  a CpG site, gene, genome position or trait and the function returns the same output as is downloadable from the website.
 
