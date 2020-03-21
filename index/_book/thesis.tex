@@ -215,7 +215,7 @@ Please visit \href{https://bookdown.org/yihui/bookdown/}{the free online bookdow
 \hypertarget{abstract}{%
 \section{Abstract}\label{abstract}}
 
-Epigenome-wide association studies (EWAS) seek to understand the link between patterns of DNA methylation, the addition of a methyl group to a DNA molectule that may change how the molecule interacts with other cellular factors, at thousands or millions of sites across the genome to various traits and exposures. In recent years, the increase in availability of NDA methylation measures in population-based cohorts and case-control studies has resulted in a dramatic increase in the number of EWAS being performed and published. To make this rich source of molecular data more accessible, a manually curated database has been made containing CpG-trait associations (at p \textless{} 1x10\^{}-4) from published EWAS, each assaying over 100,000 CpGs in at least 100 individuals. The database currently contains these associations from over 150 published EWAS as well as full summary statistics for over 180 million association tests of 418 EWAS in the Avon Longitudinal Study of Parents and Children (ALSPAC) and the Gene Expression Omnibus (GEO). It is accompanied by a web-based tool and R package that allow these associations to be easily queried. This database will give researchers the opportunity to quickly and easily query EWAS associations to gain insight into the molecular underpinnings of disaese as well as the impact of traits and exposures on the DNA methylome. The EWAS Catalog is available at: \url{http://www.ewascatalog.org}.
+Epigenome-wide association studies (EWAS) seek to understand the link between patterns of DNA methylation, the addition of a methyl group to a DNA molectule that may change how the molecule interacts with other cellular factors, at thousands or millions of sites across the genome to various traits and exposures. In recent years, the increase in availability of DNA methylation measures in population-based cohorts and case-control studies has resulted in a dramatic increase in the number of EWAS being performed and published. To make this rich source of molecular data more accessible, a manually curated database has been made containing CpG-trait associations (at P \textless{} 1x10\textsuperscript{-4}) from published EWAS, each assaying over 100,000 CpGs in at least 100 individuals. The database currently contains these associations from over 150 published EWAS as well as full summary statistics for over 180 million association tests of 418 EWAS in the Avon Longitudinal Study of Parents and Children (ALSPAC) and the Gene Expression Omnibus (GEO). It is accompanied by a web-based tool and R package that allow these associations to be easily queried. This database will give researchers the opportunity to quickly and easily query EWAS associations to gain insight into the molecular underpinnings of disaese as well as the impact of traits and exposures on the DNA methylome. The EWAS Catalog is available at: \url{http://www.ewascatalog.org}.
 
 \hypertarget{introduction-1}{%
 \section{Introduction}\label{introduction-1}}
@@ -241,15 +241,22 @@ The EWAS Catalog web app was built using the Django Python package (\url{https:/
 \hypertarget{overview-of-publication-data-extraction}{%
 \subsection{Overview of publication data extraction}\label{overview-of-publication-data-extraction}}
 
-To identify publications, we perform periodic literature searches in PubMed using the search terms: ``epigenome-wide'' OR ``epigenome wide'' OR ``EWAS'' OR ``genome-wide AND methylation'' OR ``genome wide AND methylation''.
+To identify publications, periodic literature searches are performed in PubMed using the search terms: ``epigenome-wide'' OR ``epigenome wide'' OR ``EWAS'' OR ``genome-wide AND methylation'' OR ``genome wide AND methylation''.
 
 Our criteria for inclusion of a study into the EWAS catalog are as follows:
-1. The EWAS performed must contain over 100 humans
-2. The analysis must contain over 100,000 CpG sites
-3. The DNA methylation data must be genome-wide
-4. The study must include previously unpublished EWAS summary statistics
-
-We extracted CpG-phenotype associations from studies at P \textless{} 1x10-4. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Briefly, the variables extracted included: the trait, exposure, outcome, covariates, tissue, sample size, age, sex, ancestry, CpGs, betas, standard errors, P values. Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The EWAS performed must contain over 100 humans
+\item
+  The analysis must contain over 100,000 CpG sites
+\item
+  The DNA methylation data must be genome-wide
+\item
+  The study must include previously unpublished EWAS summary statistics
+\end{enumerate}
+CpG-phenotype associations were extracted from studies at P \textless{} 1x10-4. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Briefly, the variables extracted included: the trait, exposure, outcome, covariates, tissue, sample size, age, sex, ancestry, CpGs, betas, standard errors, P values. Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
 Based on these criteria, from 3rd July 2019, the EWAS catalog contained 540,699 associations from 159 studies.
 
