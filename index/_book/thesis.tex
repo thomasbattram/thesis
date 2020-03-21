@@ -243,7 +243,7 @@ The EWAS Catalog web app was built using the Django Python package (\url{https:/
 
 To identify publications, periodic literature searches are performed in PubMed using the search terms: ``epigenome-wide'' OR ``epigenome wide'' OR ``EWAS'' OR ``genome-wide AND methylation'' OR ``genome wide AND methylation''.
 
-Our criteria for inclusion of a study into the EWAS catalog are as follows:
+Our criteria for inclusion of a study into The EWAS Catalog are as follows:
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
@@ -256,28 +256,45 @@ Our criteria for inclusion of a study into the EWAS catalog are as follows:
 \item
   The study must include previously unpublished EWAS summary statistics
 \end{enumerate}
-CpG-phenotype associations were extracted from studies at P \textless{} 1x10-4. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Briefly, the variables extracted included: the trait, exposure, outcome, covariates, tissue, sample size, age, sex, ancestry, CpGs, betas, standard errors, P values. Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
+CpG-phenotype associations are extracted from studies at P \textless{} 1x10\textsuperscript{-4}. Variables extracted can be found in \textbf{TABLE} (NO ORIGINAL). All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 3rd July 2019, the EWAS catalog contained 540,699 associations from 159 studies.
+Based on these criteria, from 3rd July 2019, The EWAS Catalog contained 540,699 associations from 159 studies.
 
 \hypertarget{overview-of-geo-data-extraction}{%
 \subsection{Overview of GEO data extraction}\label{overview-of-geo-data-extraction}}
 
-To recruit additional datasets suitable for new EWAS analysis, we used the geograbi R package (\url{https://github.com/yousefi138/geograbi}) to both query GEO for experiments matching the EWAS Catalog inclusion criteria (described above) and extract relevant DNA methylation and phenotype information. The query was performed on 20 March 2019 and identified 148 such experiments with 32,845 samples where DNA methylation and phenotype information could be successfully extracted. From these, we aimed to repeat the analyses performed in the publications linked by PubMed IDs to each GEO record. Thus, we looked up the corresponding full texts for each dataset and identified the main variables of interest. Of our 148 putative GEO studies, only 34 (23\%) contained sufficient information to replicate the original analysis.
+To recruit additional datasets suitable for new EWAS analysis, the geograbi R package (\url{https://github.com/yousefi138/geograbi}) was used to both query GEO for experiments matching The EWAS Catalog inclusion criteria (described above) and extract relevant DNA methylation and phenotype information. The query was performed on 20 March 2019 and identified 148 such experiments with 32,845 samples where DNA methylation and phenotype information could be successfully extracted. From these, the aim was to repeat the analyses performed in the publications linked by PubMed IDs to each GEO record. Thus, I looked up the corresponding full texts for each dataset and identified the main variables of interest. Of the 148 putative GEO studies, only 34 (23\%) contained sufficient information to replicate the original analysis.
 
 \hypertarget{ewas-methods}{%
 \subsection{EWAS methods}\label{ewas-methods}}
 
-Avon Longitudinal Study of Parents and Children (ALSPAC)
-EWAS were conducted for 378 continuous and binary traits in peripheral blood DNA methylation of ALSPAC mothers in middle age (N = 940), generated as part of the Accessible Resource for Integrated Epigenomics Studies (ARIES) project (Relton et al., 2015). The traits were extracted from the same time that blood was drawn for DNA methylation assays. Quality control steps for the phenotypes along with information on the cohort can be found in the Supplementary Material.
-For all traits, linear regression models were fitted with DNA methylation, coded as numbers between 0 and 1, as the outcome and the phenotype as the exposure. Covariates included age, the top 10 ancestry principal components, and 20 surrogate variables.
+\hypertarget{avon-longitudinal-study-of-parents-and-children-alspac}{%
+\subsubsection{Avon Longitudinal Study of Parents and Children (ALSPAC)}\label{avon-longitudinal-study-of-parents-and-children-alspac}}
+
+EWAS were conducted for \textbf{NUMBER} (originally 378) continuous and binary traits in peripheral blood DNA methylation of ALSPAC mothers in middle age (N = \textbf{NUMBER} (originally 940) ), generated as part of the Accessible Resource for Integrated Epigenomics Studies (ARIES) project (Relton et al., 2015). The traits were extracted from the same time that blood was drawn for DNA methylation assays.
+
+\textbf{ADD IN QC STEPS AND COHORT INFO HERE} (originally in Supplementary Material)
+
+For all traits, linear regression models were fitted with DNA methylation at each site as the outcome and the phenotype as the exposure. DNA methylation was coded as beta values between 0 and 1. For a particular site, a beta value of 0 represents no methylation being detected in all cells measured and a value of 1 represents all cells being methylated at that site. Covariates included age, the top 10 ancestry principal components, and 20 surrogate variables.
+
+\textbf{ADD IN HOW PCS}
 
 \hypertarget{geo-datasets}{%
-\subsection{GEO datasets}\label{geo-datasets}}
+\subsubsection{GEO datasets}\label{geo-datasets}}
 
-EWAS were performed using 30 datasets, containing 36 traits were extracted from GEO using the geograbi R package (\url{https://github.com/yousefi138/geograbi}). Information about the quality control of the data can be found in the Supplementary Material and a list of all the traits with corresponding citations is provided in Supplementary Table 1.
-For all traits, linear regression models were fitted with DNA methylation as the outcome and the phenotype as the exposure. Twenty surrogate variables were included as covariates. Other covariates were considered, but surrogate variables only were used for two reasons: 1) to help automate the process and 2) because covariates used in the original EWAS were not included with many of the GEO datasets.
+EWAS were performed using 30 datasets, containing 36 traits were extracted from GEO using the geograbi R package (\url{https://github.com/yousefi138/geograbi}).
+
+\textbf{ADD IN QC STEPS HERE} (originally in Supplementary Material)
+
+A list of all the traits with corresponding citations is provided in \textbf{TABLE} (originally Supplementary Table 1).
+For all traits, linear regression models were fitted with DNA methylation as the outcome and the phenotype as the exposure as for the ARIES data. Twenty surrogate variables were included as covariates. Other covariates were considered, but surrogate variables only were used for two reasons: 1) to help automate the process and 2) because covariates used in the original EWAS were not included with many of the GEO datasets.
+
 Statistical analyses were conducted in R (Version 3.3.3). The smartsva package (Chen et al., 2017) was used to create surrogate variables and the ewaff R package (\url{https://github.com/perishky/ewaff}) was used to conduct the EWAS, all p-values are two-sided.
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+Currently the database contains \ldots{}
 
 \hypertarget{database-interface-and-use}{%
 \subsection{Database interface and use}\label{database-interface-and-use}}
