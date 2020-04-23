@@ -1,6 +1,9 @@
-# Tom's thesisdown thesis attempt
+# A thesis attempt
 
 Thesis written using [thesisdown](https://github.com/ismayc/thesisdown). This was altered to comply with the University of Bristol's regulations by Matt Lee: [bristolthesis](https://github.com/mattlee821/bristolthesis).
+
+## Meetings
+Meeting notes and items can be found in [meetings/](meetings)
 
 ## log of errors when building
 
