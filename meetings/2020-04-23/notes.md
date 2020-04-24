@@ -40,3 +40,9 @@ __NOTES__
 * GoDMC have CpG variability data available 
 * Look at variance vs. effect size as well as methylation level vs. effect size
 * Speak to Charlie about CpGs under selection, could be incorporated here
+
+## Actions
+* Make meeting notes and things available on github to make it easier to keep track of things
+* Update the analysis plan with ideas from today's meeting
+* Discuss with Matt how he is planning on doing a clustering analysis on all EWAS in the catalog
+* 
