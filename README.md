@@ -2,8 +2,10 @@
 
 Thesis written using [thesisdown](https://github.com/ismayc/thesisdown). This was altered to comply with the University of Bristol's regulations by Matt Lee: [bristolthesis](https://github.com/mattlee821/bristolthesis).
 
+Current version of the thesis can be found [here](index/_book)
+
 ## Meetings
-Meeting notes and items can be found in [meetings/](meetings)
+Meeting notes and items can be found in [meetings](meetings)
 
 ## log of errors when building
 
