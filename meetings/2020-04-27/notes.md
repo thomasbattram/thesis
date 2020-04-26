@@ -6,6 +6,7 @@ Agenda:
 * github to track meetings
 * when to start the properties of ewas project
 * ewas-gwas comparison simulations
+* predicting the evolutionary trajectories of human traits
 
 ## github to track meetings
 How to use issues to help?
@@ -23,3 +24,7 @@ __NOTES:__
 See `sim_report.pdf`
 
 __NOTES:__
+
+## predicting the evolutionary trajectories of human traits
+Do you know what's happening in terms of jobs funded by fellowship funds?
+Also, what would your thoughts be on starting dates etc.?
