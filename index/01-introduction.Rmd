@@ -4,7 +4,39 @@ This thesis focuses on epigenome-wide association studies (EWAS), which assess t
 
 
 
+## DNA methylation as part of the regulome
+The research questions of this thesis pertain to a specific study type, EWAS, of a specific epigenetic mark, DNA methylation. DNA methylation is one of many epigenetic marks that are involved in gene regulation (the regulome), so here I briefly outline some of these regulatory marks and discuss DNA methylation in the context of this complex biological process.
 
+### The regulome
+Gene expression is a tightly controlled process and only in the right circumstances will RNA polymerase II be able to bind the correct site, initiate and finally complete the transcription process (REFS). The importance of this level of control is no more apparent than in the developmental stages of human life. Humans start as a single cell and after roughly nine months are transformed into a multicellular organism with trillions of cells, including 100s of unique cell types (REF). As these cells arise from a single progenitor they must contain identical genetic sequences (bar a few somatic mutations). Therefore, the process by which the body is able to create such diversely functioning cells and tissues must come from regulation of how the genetic sequence is read and its products (REFs). Indeed it was in developmental biology that we first began to understand the processes that may regulate gene expression (REFs). There are a plethora of methods cells use to regulate gene and protein expression post-transcriptionally (REFs), but these are beyond the scope of this thesis. So I'll continue to describe the regulome just in the context of epigenetic marks.
+
+### Defining epigenetics
+The definition of epigenetics is much debated amongst those who study cellular and molecular processes (REFs). Waddington first coined the term and he originally defined it as __X__ (REF). To avoid confusion, throughout the rest of the thesis, here is what I mean when using the term __epigenetics__: the study of mitotically heritable changes in gene expression that occur without changes in DNA sequence. When referring to __epigenetic marks__ I simply mean chemical changes to the genome and genome-bound proteins that are mitotically heritable and may influence gene expression without changing the DNA sequence. 
+
+### Histone modifications 
+Histones are genome-bound proteins composed of four subgroups that are present twice each in a single histone octamer. Modifications can occur to any of the histone monomers and these have been associated with both positive and negative changes in gene expression (REFs). Histone modifications are numerous and complex in nature. To briefly describe the complexity, there are at least __X__ types of histone modifications, each of the histone monomers can be modified across many different sites, and for any one site mutiple of the same modification can occur and it is the combination of all of this that plays a role in gene expression regulation (REFs). Furthermore, histone modifications are subject to rapid change upon environmental stimulus to help induce or repress gene expression (REFs). This has meant, that for only a few histone marks are we certain of the role (REFs) and that taking a snapshot of the histone modifications present in cells may give a poor summary of how gene regulation is occuring. Very few population-based studies have assessed histone modifications because of these, plus some other technical difficulties (REFs). They may become far more prominent in the future as our understanding and ability to measure the modifications in a meaningful way increases. 
+
+### DNA methylation
+DNA methylation is the addition of a methyl group to the DNA. This primarily occurs at the 5' cytosine at a CpG site. 
+
+
+#### Using DNA methylation to infer other epigenetic marks
+
+* Introduce the regulome  
+* Introduce epigenetic marks
+* Describe DNA methylation in much more detail and explain expected effects of DNA methylation 
+
+## Use of DNA methylation in a population setting 
+
+* Describe DNA methylation as similar to other phenotypes 
+* Describe how DNA methylation can be used in the context of prediction and diagnosis 
+* Describe how DNA methylation can (or maybe can't) be targeted for treatments 
+
+## EWAS
+
+* Describe what an EWAS is and explain how it is conducted 
+* Describe the current successes that have come from EWAS 
+* Describe the current problems with EWAS  
 
 ## Overview of thesis aims
 

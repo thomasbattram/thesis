@@ -206,6 +206,64 @@ Please visit \href{https://bookdown.org/yihui/bookdown/}{the free online bookdow
 
 This thesis focuses on epigenome-wide association studies (EWAS), which assess the association between DNA methylation changes throughout the genome and traits of interest. BLAH BLAH BLAH
 
+\hypertarget{dna-methylation-as-part-of-the-regulome}{%
+\section{DNA methylation as part of the regulome}\label{dna-methylation-as-part-of-the-regulome}}
+
+The research questions of this thesis pertain to a specific study type, EWAS, of a specific epigenetic mark, DNA methylation. DNA methylation is one of many epigenetic marks that are involved in gene regulation (the regulome), so here I briefly outline some of these regulatory marks and discuss DNA methylation in the context of this complex biological process.
+
+\hypertarget{the-regulome}{%
+\subsection{The regulome}\label{the-regulome}}
+
+Gene expression is a tightly controlled process and only in the right circumstances will RNA polymerase II be able to bind the correct site, initiate and finally complete the transcription process (REFS). The importance of this level of control is no more apparent than in the developmental stages of human life. Humans start as a single cell and after roughly nine months are transformed into a multicellular organism with trillions of cells, including 100s of unique cell types (REF). As these cells arise from a single progenitor they must contain identical genetic sequences (bar a few somatic mutations). Therefore, the process by which the body is able to create such diversely functioning cells and tissues must come from regulation of how the genetic sequence is read and its products (REFs). Indeed it was in developmental biology that we first began to understand the processes that may regulate gene expression (REFs). There are a plethora of methods cells use to regulate gene and protein expression post-transcriptionally (REFs), but these are beyond the scope of this thesis. So I'll continue to describe the regulome just in the context of epigenetic marks.
+
+\hypertarget{defining-epigenetics}{%
+\subsection{Defining epigenetics}\label{defining-epigenetics}}
+
+The definition of epigenetics is much debated amongst those who study cellular and molecular processes (REFs). Waddington first coined the term and he originally defined it as \textbf{X} (REF). To avoid confusion, throughout the rest of the thesis, here is what I mean when using the term \textbf{epigenetics}: the study of mitotically heritable changes in gene expression that occur without changes in DNA sequence. When referring to \textbf{epigenetic marks} I simply mean chemical changes to the genome and genome-bound proteins that are mitotically heritable and may influence gene expression without changing the DNA sequence.
+
+\hypertarget{histone-modifications}{%
+\subsection{Histone modifications}\label{histone-modifications}}
+
+Histones are genome-bound proteins composed of four subgroups that are present twice each in a single histone octamer. Modifications can occur to any of the histone monomers and these have been associated with both positive and negative changes in gene expression (REFs). Histone modifications are numerous and complex in nature. To briefly describe the complexity, there are at least \textbf{X} types of histone modifications, each of the histone monomers can be modified across many different sites, and for any one site mutiple of the same modification can occur and it is the combination of all of this that plays a role in gene expression regulation (REFs). Furthermore, histone modifications are subject to rapid change upon environmental stimulus to help induce or repress gene expression (REFs). This has meant, that for only a few histone marks are we certain of the role (REFs) and that taking a snapshot of the histone modifications present in cells may give a poor summary of how gene regulation is occuring. Very few population-based studies have assessed histone modifications because of these, plus some other technical difficulties (REFs). They may become far more prominent in the future as our understanding and ability to measure the modifications in a meaningful way increases.
+
+\hypertarget{dna-methylation}{%
+\subsection{DNA methylation}\label{dna-methylation}}
+
+DNA methylation is the addition of a methyl group to the DNA. This primarily occurs at the 5' cytosine at a CpG site.
+
+\hypertarget{using-dna-methylation-to-infer-other-epigenetic-marks}{%
+\subsubsection{Using DNA methylation to infer other epigenetic marks}\label{using-dna-methylation-to-infer-other-epigenetic-marks}}
+\begin{itemize}
+\tightlist
+\item
+  Introduce the regulome~~
+\item
+  Introduce epigenetic marks
+\item
+  Describe DNA methylation in much more detail and explain expected effects of DNA methylation~
+\end{itemize}
+\hypertarget{use-of-dna-methylation-in-a-population-setting}{%
+\section{Use of DNA methylation in a population setting~}\label{use-of-dna-methylation-in-a-population-setting}}
+\begin{itemize}
+\tightlist
+\item
+  Describe DNA methylation as similar to other phenotypes~
+\item
+  Describe how DNA methylation can be used in the context of prediction and diagnosis~
+\item
+  Describe how DNA methylation can (or maybe can't) be targeted for treatments~
+\end{itemize}
+\hypertarget{ewas}{%
+\section{EWAS}\label{ewas}}
+\begin{itemize}
+\tightlist
+\item
+  Describe what an EWAS is and explain how it is conducted~
+\item
+  Describe the current successes that have come from EWAS~
+\item
+  Describe the current problems with EWAS~~
+\end{itemize}
 \hypertarget{overview-of-thesis-aims}{%
 \section{Overview of thesis aims}\label{overview-of-thesis-aims}}
 
@@ -237,9 +295,7 @@ Epigenome-wide association studies (EWAS) seek to understand the link between pa
 
 Epigenome-wide association studies (EWAS) aim to assess the associations between phenotypes of interest and DNA methylation across the genome (Mill \& Heijmans, 2013; Rakyan, Down, Balding, \& Beck, 2011; Relton \& Davey Smith, 2010). These associations may then be used for disease diagnosis or prediction (Mill \& Heijmans, 2013; Rakyan et al., 2011; Relton \& Davey Smith, 2010). Also, unlike genetic variants, changes in DNA methylation are responsive to the environment and so may be targeted for treatment. EWAS of smoking (Joehanes et al., 2016), body mass index (BMI) (Wahl et al., 2017) and aging (Horvath, 2013) have shown that various exposures are related to large perturbations in DNA methylation across the genome. Furthermore, a paper recently estimated that over 60\% of the total proportion of BMI variation was captured by DNA methylation at about 150 CpG sites (Banos et al., 2018). In recent years, there has been a dramatic increase in the number of EWAS being performed and published due to technological advancements making it possible to measure DNA methylation at hundreds of thousands of CpG sites cheaply and effectively. Giving researchers easy access to EWAS outputs will help them gain insight into the molecular underpinnings of disease as well as the impact of traits and exposures on the DNA methylome. Furthermore, current collections of summary statistics have already proven useful to various fields, for example the GWAS Catalog (Buniello et al., 2019) has been cited over 2000 times in papers contributing to new methods and exploring the genetic architecture of a plethora of traits.
 
-At the time of making the database, to our knowledge, there were no databases that had collected well-curated EWAS on all traits (no just diseases) in an online database accessible to researchers. During production one database fulfilled those metrics: EWAS Atlas (Li et al., 2019). Other databases are available but are limited to certain diseases (e.g.~MethHC (Huang et al., 2015)). The EWAS Atlas provides a simple-to-use website with annotated CpG sites and information on traits. Ideally a database of EWAS results will provide summary statistics, including betas, standard errors and p-values where provided from publications, in an easily accessible manner, this enables researchers to explore various aspects of the published data without having to retrieve the published article. For example, researchers might compare effect estimates between studies in the database or check to see if their results are replicated in another published study. At the time of writing the EWAS atlas platform did not enable users to download effect estimates and standard errors.
-
-Another caveat is that there is currently only published data on the platform, not full summary statistics from EWAS.
+At the time of making the database, to our knowledge, there were no databases that had collected well-curated EWAS on all traits (no just diseases) in an online database accessible to researchers. During production one database fulfilled those metrics: EWAS Atlas (Li et al., 2019). Other databases are available but are limited to certain diseases (e.g.~MethHC (Huang et al., 2015)). The EWAS Atlas provides a simple-to-use website with annotated CpG sites and information on traits. Ideally a database of EWAS results will provide summary statistics, including betas, standard errors and p-values where provided from publications, in an easily accessible manner, this enables researchers to explore various aspects of the published data without having to retrieve the published article. For example, researchers might compare effect estimates between studies in the database or check to see if their results are replicated in another published study. At the time of writing the EWAS atlas platform did not enable users to download effect estimates and standard errors. Another caveat is that there is currently only published data on the platform, not full summary statistics from EWAS.
 
 The EWAS Catalog aims to improve upon current databases to 1) allow easy and programmatic access to summary statistics for downstream analyses by researchers and 2) provide full summary statistics from a range of EWAS conducted in multiple cohorts. To this end we have produced The EWAS Catalog, a manually curated database of currently published EWAS, \textbf{NUMBER} (originally 378) EWAS performed in the Avon Longitudinal Study of Parents and Children (ALSPAC) (Boyd et al., 2013; Fraser et al., 2013) and \textbf{NUMBER} (originally 40) EWAS performed from data from the Gene Expression Omnibus (GEO) database. The process and data inclusion are summarised in \textbf{FIGURE} (originally Supplementary Figure 1).
 
