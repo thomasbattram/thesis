@@ -14,9 +14,6 @@ Attendees: Tom B, Gib
 	+ Told Doug he doesn't really need to comment on this version. 
 	+ Also I ended up not condensing the intro too much. The current length of the manuscript is still pretty long, I think a lot of the info there is needed. Can cut down when submitting if needs be.
 
-__NOTES:__
-
-
 * We decided on a pretty simple upload button for the EWAS catalog. Meeting about it tomorrow, but essentially as long as there is some place people can upload data for when it's submitted then that'll be great. I'm going to say to Paul and Matt that I want 1. to only spend max 1 more week on automating user upload and 2. to have everything else ready 
 
 __NOTES:__
