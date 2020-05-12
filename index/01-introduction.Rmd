@@ -1,7 +1,17 @@
 # Introduction
 
-This thesis focuses on epigenome-wide association studies (EWAS), which assess the association between DNA methylation changes throughout the genome and traits of interest. BLAH BLAH BLAH
+This thesis focuses on epigenome-wide association studies (EWAS), which assess the association between DNA methylation changes throughout the genome and traits of interest. Advances in technology and an increasing number of samples has lead to hundreds of EWAS having been performed to date (REFERENCE EWAS CATALOG CHAPTER). Goals of these EWAS included using DNA methtlation marks as predictors, diagnostic factors, and modifiable mediators of traits. 
 
+To help inform design of future studies, there is a need to understand what has been discovered thus far in EWAS and what future EWAS are likely to add in the context of current EWAS and other study designs. Further, to improve biological inference of sites identified in EWAS, causality (or lack of) should be established. IS THIS TOO VAGUE?
+
+NON-VAGUE THING TO SAY -- read over both and decide what to add:
+- Key things which are not currently understood:
+- Why certain DNA methylation sites/regions of the genome are more prevalent in EWAS to date
+- How much trait variation DNA methylation tends to associate with 
+- Whether EWAS can add to current biological understanding in addition to other study designs
+- Whether DNA methylation-trait associations in EWAS are causal
+
+In this chapter I describe DNA methylation in context of the regulatory processes in human cells, discuss it's potential for use in population level research and describe the current state of EWAS research. Then I discuss how epigenetic-epidemiologists can draw on the methods developed by their genetics counter-parts to 1. understand what information has been gained from EWAS, 2. understand what information is left to gain from EWAS and 3. understand the causal nature of DNA methylation-trait associations identified in EWAS.
 
 
 ## DNA methylation as part of the regulome
@@ -17,14 +27,20 @@ The definition of epigenetics is much debated amongst those who study cellular a
 Histones are genome-bound proteins composed of four subgroups that are present twice each in a single histone octamer. Modifications can occur to any of the histone monomers and these have been associated with both positive and negative changes in gene expression (REFs). Histone modifications are numerous and complex in nature. To briefly describe the complexity, there are at least __X__ types of histone modifications, each of the histone monomers can be modified across many different sites, and for any one site mutiple of the same modification can occur and it is the combination of all of this that plays a role in gene expression regulation (REFs). Furthermore, histone modifications are subject to rapid change upon environmental stimulus to help induce or repress gene expression (REFs). This has meant, that for only a few histone marks are we certain of the role (REFs) and that taking a snapshot of the histone modifications present in cells may give a poor summary of how gene regulation is occuring. Very few population-based studies have assessed histone modifications because of these, plus some other technical difficulties (REFs). They may become far more prominent in the future as our understanding and ability to measure the modifications in a meaningful way increases. 
 
 ### DNA methylation
-DNA methylation is the addition of a methyl group to the DNA. This primarily occurs at the 5' cytosine at a CpG site. 
+DNA methylation is the addition of a methyl group to the DNA, which primarily occurs at the 5' cytosine of a CpG site. Little is known about the role of non-CpG site DNA methylation and current EWAS only measure CpG methylation, so that will be my focus here. The function of this epigenetic mark was proposed back in 1975 (REFs), where two papers suggested it represses gene expression and ever since then many papers have shown the correlation between DNA methylations around genes and a reduction in expression of those genes. Unfortunately, it's not that simple and even now the role of DNA methylation is being debated, with a paper recently suggesting that any DNA methylation changes associated with changes in gene expression were just a by-product of other regulatory processes such as transcription factor binding (REF). Regardless, DNA methylation is closely linked with genomic function and correlates with various aspects in different ways (__FIGURE__). 
 
+CpG sites are not randomly distributed throughout the genome, but are often found in clusters and so if DNA methylation does have an effect on things like gene expression it's thought that methylation and de-methylation of CpG sites in groups is what drives their regulatory function. To support this, there are clear biological processes that regulate DNA methylation at nearby sites together, for example, CpG sites at transcription factor binding sites will be de-methylated as a group when the transcription factor binds (REF), and further nearby sites are often statistically correlated. However, there is no evidence to suggest that neighbouring sites do indeed act in tandem or whether it is likely one site from the group driving regulatory function. This is something I explore a little more in (REFERENCE h2ewas CHAPTER!).  
 
-#### Using DNA methylation to infer other epigenetic marks
+One major difference between DNA methylation and other epigenetic marks, that was alluded to earlier, is that DNA methylation is far more stable. Enzymes do exist that can actively demethylate the DNA, for example the ten-eleven translocation (TET) enzymes, but ultimately cell division is required for full demethylation of a DNA molecule. Biologically, this suggests DNA methylation might be involved in long-term repression of gene expression, which can be seen for X-inactivation, and practically it makes studying the epigenetic mark easier as it prevents large temporal variations in DNA methylation (though they may occur!), so fewer samples are needed.
 
-* Introduce the regulome  
-* Introduce epigenetic marks
-* Describe DNA methylation in much more detail and explain expected effects of DNA methylation 
+Figure here: 
+
+Figure should contain these diagrams:
+1. DNA methylation at TSS and no DNA methylation in gene body (repressed transcription)
+2. No DNA methylation at TSS and DNA methylation in gene body (active transcription)
+3. DNA methylation in centromeres
+4. DNA methylation at transposable elements
+
 
 ## Use of DNA methylation in a population setting 
 
@@ -36,7 +52,18 @@ DNA methylation is the addition of a methyl group to the DNA. This primarily occ
 
 * Describe what an EWAS is and explain how it is conducted 
 * Describe the current successes that have come from EWAS 
-* Describe the current problems with EWAS  
+* Describe the current problems with EWAS
+
+## Using methods from genetics to help inform future EWAS
+
+__Might be an idea to add detail of some of these methods into appendices (e.g. mathematical basis of snp-heritability)__
+
+* Give a little intro on what problems this chapter focuses on
+* Describe the GWAS catalog and what it has done for genetic epi and how this can be adapted for EWAS
+* Describe and explain heritability (and how it can be applied to EWAS)
+* Describe pathway analysis??
+* Describe MR
+
 
 ## Overview of thesis aims
 
