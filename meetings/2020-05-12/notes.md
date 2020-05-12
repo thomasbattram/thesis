@@ -34,5 +34,5 @@ NEW INTERPRETATION: As proportion of overlap between causal and consequential ge
 
 ## AOB
 
-Gib is going to plan the future work required for his fellowship when he has the chance! 
+Gib is going to plan the future work required for his fellowship when he has the chance! Could also think about writing a grant to do some quant gen work using the GWAS data in IEU GWAS database...
 
