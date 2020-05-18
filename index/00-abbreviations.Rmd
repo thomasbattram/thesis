@@ -1,9 +1,9 @@
 
 \textbf{EWAS} - epigenome-wide assoctation study <br>
 \textbf{GWAS} - genome-wide assoctation study <br>
-\textbf{h^2} - narrow-sense heritability <br>
-\textbf{h^2_{SNP}} - SNP-heritability <br>
-\textbf{H^2} - broad-sense heritability <br>
+\textbf{h<sup>2</sup>} - narrow-sense heritability <br>
+\textbf{h<sup>2</sup><sub>SNP</sub>} - SNP-heritability <br>
+\textbf{H<sup>2</sup>} - broad-sense heritability <br>
 \textbf{MR} - Mendelian randomization <br>
 \textbf{mQTL} - methylation quantitative trait loci <br>
 \textbf{SNP} - single nucleotide polymorphism <br>

@@ -112,6 +112,13 @@ It will have multiple paragraphs too!
 
 \Abbreviations{
 \textbf{EWAS} - epigenome-wide assoctation study
+\textbf{GWAS} - genome-wide assoctation study
+\textbf{h<sup>2</sup>} - narrow-sense heritability
+\textbf{h<sup>2</sup><sub>SNP</sub>} - SNP-heritability
+\textbf{H<sup>2</sup>} - broad-sense heritability
+\textbf{MR} - Mendelian randomization
+\textbf{mQTL} - methylation quantitative trait loci
+\textbf{SNP} - single nucleotide polymorphism
 }
 
 	\usepackage{tikz} \usepackage{booktabs} \usepackage{longtable} \usepackage{siunitx} \pagestyle{plain}
@@ -204,7 +211,18 @@ Please visit \href{https://bookdown.org/yihui/bookdown/}{the free online bookdow
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
 
-This thesis focuses on epigenome-wide association studies (EWAS), which assess the association between DNA methylation changes throughout the genome and traits of interest. BLAH BLAH BLAH
+This thesis focuses on epigenome-wide association studies (EWAS), which assess the association between DNA methylation changes throughout the genome and traits of interest. Advances in technology and an increasing number of samples has lead to hundreds of EWAS having been performed to date (REFERENCE EWAS CATALOG CHAPTER). Goals of these EWAS included using DNA methtlation marks as predictors, diagnostic factors, and modifiable mediators of traits.
+
+To help inform design of future studies, there is a need to understand what has been discovered thus far in EWAS and what future EWAS are likely to add in the context of current EWAS and other study designs. Further, to improve biological inference of sites identified in EWAS, causality (or lack of) should be established. IS THIS TOO VAGUE?
+
+NON-VAGUE THING TO SAY -- read over both and decide what to add:
+- Key things which are not currently understood:
+- Why certain DNA methylation sites/regions of the genome are more prevalent in EWAS to date
+- How much trait variation DNA methylation tends to associate with
+- Whether EWAS can add to current biological understanding in addition to other study designs
+- Whether DNA methylation-trait associations in EWAS are causal
+
+In this chapter I describe DNA methylation in context of the regulatory processes in human cells, discuss it's potential for use in population level research and describe the current state of EWAS research. Then I discuss how epigenetic-epidemiologists can draw on the methods developed by their genetics counter-parts to 1. understand what information has been gained from EWAS, 2. understand what information is left to gain from EWAS and 3. understand the causal nature of DNA methylation-trait associations identified in EWAS.
 
 \hypertarget{dna-methylation-as-part-of-the-regulome}{%
 \section{DNA methylation as part of the regulome}\label{dna-methylation-as-part-of-the-regulome}}
@@ -229,32 +247,34 @@ Histones are genome-bound proteins composed of four subgroups that are present t
 \hypertarget{dna-methylation}{%
 \subsection{DNA methylation}\label{dna-methylation}}
 
-DNA methylation is the addition of a methyl group to the DNA. This primarily occurs at the 5' cytosine at a CpG site.
+Good review: Peter Jones 2012
+DNA methylation is the addition of a methyl group to the DNA, which primarily occurs at the 5' cytosine of a CpG site. Little is known about the role of non-CpG site DNA methylation and current EWAS only measure CpG methylation, so that will be my focus here. The function of this epigenetic mark was proposed back in 1975 (REFs), where two papers suggested it represses gene expression and ever since then many papers have shown the correlation between DNA methylations around genes and a reduction in expression of those genes. Unfortunately, it's not that simple and even now the role of DNA methylation is being debated, with a paper recently suggesting that any DNA methylation changes associated with changes in gene expression were just a by-product of other regulatory processes such as transcription factor binding (REF). Regardless, DNA methylation is closely linked with genomic function and correlates with various aspects in different ways (\textbf{FIGURE}).
 
-\hypertarget{using-dna-methylation-to-infer-other-epigenetic-marks}{%
-\subsubsection{Using DNA methylation to infer other epigenetic marks}\label{using-dna-methylation-to-infer-other-epigenetic-marks}}
-\begin{itemize}
-\tightlist
-\item
-  Introduce the regulome~~
-\item
-  Introduce epigenetic marks
-\item
-  Describe DNA methylation in much more detail and explain expected effects of DNA methylation~
-\end{itemize}
-\hypertarget{use-of-dna-methylation-in-a-population-setting}{%
-\section{Use of DNA methylation in a population setting~}\label{use-of-dna-methylation-in-a-population-setting}}
-\begin{itemize}
-\tightlist
-\item
-  Describe DNA methylation as similar to other phenotypes~
-\item
-  Describe how DNA methylation can be used in the context of prediction and diagnosis~
-\item
-  Describe how DNA methylation can (or maybe can't) be targeted for treatments~
-\end{itemize}
+CpG sites are not randomly distributed throughout the genome, but are often found in clusters and so if DNA methylation does have an effect on things like gene expression it's thought that methylation and de-methylation of CpG sites in groups is what drives their regulatory function. To support this, there are clear biological processes that regulate DNA methylation at nearby sites together, for example, CpG sites at transcription factor binding sites will be de-methylated as a group when the transcription factor binds (REF), and further nearby sites are often statistically correlated. However, there is no evidence to suggest that neighbouring sites do indeed act in tandem or whether it is likely one site from the group driving regulatory function. This is something I explore a little more in (REFERENCE h2ewas CHAPTER!).
+
+One major difference between DNA methylation and other epigenetic marks, that was alluded to earlier, is that DNA methylation is far more stable. Enzymes do exist that can actively demethylate the DNA, for example the ten-eleven translocation (TET) enzymes, but ultimately cell division is required for full demethylation of a DNA molecule. Biologically, this suggests DNA methylation might be involved in long-term repression of gene expression, which can be seen for X-inactivation, and practically it makes studying the epigenetic mark easier as it prevents large temporal variations in DNA methylation (though they may occur!), so fewer samples are needed.
+
+Figure here:
+
+Figure should contain these diagrams:
+1. DNA methylation at TSS and no DNA methylation in gene body (repressed transcription)
+2. No DNA methylation at TSS and DNA methylation in gene body (active transcription)
+3. DNA methylation in centromeres
+4. DNA methylation at transposable elements
+
+\hypertarget{dnam-phs}{%
+\section{Use of DNA methylation in a population setting~}\label{dnam-phs}}
+
+The relationship between a large number of traits and DNA methylation have now been studied, from childhood adversities (REFs) to smoking (REFs), and one of the appealing factors of doing this research is that DNA methylation is modifiable. Thus, in theory, negative effects of something like childhood adversity may be captured in DNA methylation and could potentially be, in part, reversed by altering the methylome in some way. This view that clinicians may soon have the power to do anything like this has likely lead to a lot of poor and inconsequential EWAS being published. Unfortunately, there are massive complications to this research. Firstly, it should be recognised that DNA methylation has the same undesirable properties of every other complex phenotype, it correlates with a lot of things, making any associations suceptible to confounding and reverse causation, so determining causality is tricky (this will be discussed in \ref{genetics-in-ewas}). Secondly, current methods used to modify DNA methylation mostly rely on broad remodelling of the DNA methylome (e.g.~5-AZA), which is unviable in the clinical setting for treatment of most things. Granted, there are methods that can be used to increase specificity of targetting DNA methylation changes in the genome (REFs), these have not yet been adapted for use in the clinic and given the brevity of their existence, it's unlikely this will occur soon. Finally, DNA methylation varies between tissue and cell types. Not only does this pose the issue of confounding when pooling cell types from a tissue, it also leads to large complexities in the interpretation of DNA methylation studies. Most studies are conducted in readily available tissues, such as blood and saliva, for obvious reasons, but there is no way of knowing which tissue is best suited for studying DNA methylation for many complex traits. DNA methylation does correlate between tissues (REFs), which may mean a readily available tissue can act as a surrogate, but this also means targeting DNA methylation in the tissue measured for the EWAS, may have no impact on your phenotype. All together these problems mean that establishing causality is difficult, then targeting specific DNA methylation sites of interest to effect change is also challenging (and untested in humans), and finally the tissue that needs to be targetted may be impossible to target anyway. Establishing causality in EWAS is a focus of \textbf{\ref{dnam-lung-cancer-mr}}.
+
+These difficulties do not exclude DNA methylation as a trait that is important to study in a population setting; it is not necessary to establish causality to use DNA methylation as a diagnostic biomarker or predictor of future disease. Further, important biological information can be gained from studying DNA methylation with relation to many traits of interest, but one must be careful how they approach and interpret their studies.
+
 \hypertarget{ewas}{%
-\section{EWAS}\label{ewas}}
+\section{Epigenome-wide association studies}\label{ewas}}
+
+Epigenome-wide associaiton studies are the flagship study design for estimating the association of DNA methylation with a trait of interest in a population setting. The premise is simple, DNA methylation is measured across parts of the whole genome, often using an array such as the Illimnum HumanMethylation 450 Beadchip (HM450), then simple regressions are conducted to estimate the association of DNA methylation at each site with a trait of interest.
+
+ALSO ADD IN THAT DMR ANALYSIS IS COMMON IN EWAS --\textgreater{} WANT TO REFERENCE H2EWAS PAPER AGAIN!
 \begin{itemize}
 \tightlist
 \item
@@ -262,7 +282,62 @@ DNA methylation is the addition of a methyl group to the DNA. This primarily occ
 \item
   Describe the current successes that have come from EWAS~
 \item
-  Describe the current problems with EWAS~~
+  Describe the current problems with EWAS
+\end{itemize}
+\hypertarget{genetics-in-ewas}{%
+\section{Using methods from genetics to help inform future EWAS}\label{genetics-in-ewas}}
+
+There is a clear correlary of the EWAS in genetics, the genome-wide association study (GWAS), which also measures markers across the whole genome and assesses whether each of these markers associates with the phenotype of interest. GWAS have been around for far longer than EWAS and a huge amount of effort has been put into understanding what information is provided by these studies, what information can be discovered by these studies and how to use these results to inform other research.
+
+\hypertarget{gwas-catalog}{%
+\subsection{The GWAS Catalog}\label{gwas-catalog}}
+
+The GWAS Catalog is a manually curated database of publically available GWAS data, developed by the EBI and made openly available to the public (REFs). It has a broad range of applications for researchers, from replication of GWAS, to identifying overlapping GWAS signals between traits, to pooling the data to try and understand the genetic architecture of complex traits as a whole. Resources like this are invaluable to the genetic epidemiologist community and so developing a corralary database for EWAS may provide equal opportunity for epigenetic epidemiologists. Catalogs such as EWASdb (REF) and the EWAS Atlas (REF) are currently available, but fall short of some researcher requirements including ease of use and access to full summary statistics. The development of a new database is the focus of \textbf{Chapter \ref{ewas-catalog}}.
+
+\hypertarget{heritability}{%
+\subsection{Total variance captured by all sites measured genome-wide}\label{heritability}}
+
+If at all possible, it's important to have an understanding of whether your exposure of interest covaries with the outcome of interest. Of course, if they are independent then studying the relationship between the two would be pointless. It is possible to estimate the proportion of phenotypic variance that is attributable to genetic factors by estimating heriability (\(H^2\)). The vast proportion of \(H^2\) for any given complex trait is made up of the the additive effects \(h^2\), or narrow-sense heritability. Without measuring any genotypes it is possible to estimate \(h^2\) for a trait given the relatedness of individuals in a sample and an ability to minimise environmental influences, twin studies are an example of this. Simply, if monozygotic twins, who share 100\% of their DNA sequence, tend to be more similar for the trait of interest than dizygotic twins, who share 50\%, then the trait would be estimated to have some additive genetic component (\(h^2\) \textgreater{} 0). The degree of difference between the estimates would provide an estimate of \(h^2\) and so the contribution of all additive genetic effects to the variance of the trait. Heritability analyses have been conducted for a huge amount of traits, which provide adequate evidence that when searching for genetic effects on those traits, there is something to find!
+
+After the largely unsuccessful attempt of geneticists using candidate gene studies to identify genetic sequence variation that influences traits (REF), a new study design was proposed using arrays to measure hundreds of thousands of genetic variants across the genome in a hypothesis-free approach to identify sites, GWAS. Initially, these studies were conducted in hundreds or thousands of individuals and were identifying very few variants that could be said to reliably have an effect on the trait and these sites explained an extremely small proportion of the heriability estimates (\textless1\%) (REF). Speculations were made about the reasons why this could be, for example the arrays were only capturing common genetic variation and it was rare genetic variation having the majority of the influence on phenotypes (REF). This provided a need to derive individual aspects of \(h^2\) to inform future study design. If indeed common genetic variation contributed little to \(h^2\) for the majority of traits, the GWAS approach would need to be re-thought and technologies would need to be made to capture genetic variants not reliably captured by existing arrays (e.g.~rare variants). To this end, Yang et al.~developed a method to estimate the contribution of all the single nucleotide polymorphisms (SNPs) to phenotypic variance (SNP-heriability or \(h^2_{SNP}\)) (REF). SNP-heriability was subsequently shown not to be inconsequential for complex traits and so warranted continuing use of GWAS and acquisition of larger samples to conduct these GWAS.
+
+Lack of associations and lack of phenotypic variance captured by DNA methylation sites has largely been the case in EWAS, yet currently there is no corralary test to enable increased understanding of why this may be. Of course, there could be a variety of reasons for lack of signal in EWAS, which include what was discussed earlier, e.g.~measuring the wrong tissue, but lots of small associations across the entire genome is also a possibility. In \textbf{Chapter \ref{m2}}, I apply methods developed to assess SNP-heritability to estimate the proportion of phenotypic variance correlated with DNA methylation across a range of phenotypes, which can help inform future EWAS designs, like SNP-heritability studies helped influence the trajectories of genetic epidemiology.
+
+\hypertarget{inferring-biology-from-signals}{%
+\subsection{Inferring biology from signals}\label{inferring-biology-from-signals}}
+
+A common goal of GWAS and EWAS is to understand the underlying biology of complex traits. Several techniques are often applied post-GWAS (REF) to attempt to accomplish this for genetic variants identified. A very common method is to map sites identified to genes and assess whether these genes are enriched for any particular biological pathway defined by various ontologies (geneset enrichment analysis), for example the Gene Ontology (GO) (REF) or KEGG (REF). This method has also been adapted to EWAS and applied several times (REFs).
+
+In geneset enrichment analysis, the signal of interest is mapped to a gene or genes and these are mapped to pathways. Then using some statistical test, such as the hypergeometric test or Fisher's exact test, evidence that the gene(s) are present in the pathways more than expected by chance is estimated. The null distribution from which the observed numbers are tested against, is usually estimated from the total number of genes tagged by the array of choice or by performing permutation tests.
+
+As discussed previously in \ref{dnam-phs} and in \ref{mr}, establishing causality from DNA methylation signal is difficult. Thus, when applying pathway enrichment analyses to EWAS signals, the pathways identified may actually be related to a particular confounder rather than the trait of interest. However, it is still of interest to perform the analysis because 1. it may give evidence that an EWAS signal is true (for example if an EWAS of diabetes picked up insulin pathways) and 2. it can provide some evidence for pathways involved in a trait if corroborated by other forms of evidence.
+
+Further, as DNA methylation changes may be as a result of the trait (unlike genetic variation), pathway analysis for EWAS studies could capture biological consequences of the trait. In \textbf{Chapter @ref()} I compare overlap of GWAS and EWAS signals in this context and discuss whether both study designs are likely to be useful in discovering the entire underlying biology of complex traits.
+
+\hypertarget{establishing-causality}{%
+\subsection{Establishing causality}\label{establishing-causality}}
+
+As discussed, population-based studies of DNA methylation suffer from the same limitations as any observational epidemiology study, namely confounding and reverse causation. One method that aims to mitigate these limitations is Mendelian randomization (MR) (REFs). MR uses genetic variants as proxies for the exposure and outcome of interest in an instrumental variable framework (illustrated in \textbf{Figure \ref{fig:}}). Using genetic variants as proxies ensures there is no reverse causation, as the variants are inherited, and reduces chances of confounding as individual genetic variants tend not to be associated with a broad range of phenotypes (REF). Furthermore, genetic variants are randomly segregated at conception, so in the abscence of assortative mating and dynastic effects, should be associated randomly with respect to any confounders. BLAH -- Need to read some MR papers again to get the wording right!
+
+TWO SAMPLE MR NEEDS EXPLAINING HERE
+
+PLEIOTROPY NEEDS EXPLAINING HERE
+
+MR can be applied to studies of DNA methylation by using methylation quantitative trait loci (mQTL), genetic variants associated with changes in DNA methylation levels, as proxies. By utilizing large trait GWAS and publically available mQTL databases (REFs) in a two-sample MR framework, good statistical power can be attained to estimate the effect of DNA methylation changes on various traits. Unfortunately, for each DNA methylation site few independent mQTLs have been identified, and of these trans-mQTLs (mQTLs over 1Mb from the DNA methylation site), are thought to have a higher probablity of being pleiotropic. This means that ruling out any associations that have arisen because of pleiotropy is difficult. However, applying MR in this context can still add evidence to the observational analyses that have been conducted. In \textbf{Chapter \ref{dnam-mr}} I use this principle to investigate the effect of DNA methylation on lung cancer.
+
+\textbf{Might be an idea to add detail of some of these methods into appendices (e.g.~mathematical basis of snp-heritability)}
+\begin{itemize}
+\tightlist
+\item
+  Give a little intro on what problems this chapter focuses on
+\item
+  Describe the GWAS catalog and what it has done for genetic epi and how this can be adapted for EWAS
+\item
+  Describe and explain heritability (and how it can be applied to EWAS)
+\item
+  Describe pathway analysis??
+\item
+  Describe MR
 \end{itemize}
 \hypertarget{overview-of-thesis-aims}{%
 \section{Overview of thesis aims}\label{overview-of-thesis-aims}}
@@ -282,8 +357,8 @@ Finally as an initial means of assessing whether DNA methylation might be causal
 \hypertarget{methods}{%
 \chapter{Methods}\label{methods}}
 
-\hypertarget{the-ewas-catalog-a-database-of-epigenome-wide-association-studies}{%
-\chapter{The EWAS Catalog: a database of epigenome-wide association studies}\label{the-ewas-catalog-a-database-of-epigenome-wide-association-studies}}
+\hypertarget{ewas-catalog}{%
+\chapter{The EWAS Catalog: a database of epigenome-wide association studies}\label{ewas-catalog}}
 
 \hypertarget{abstract}{%
 \section{Abstract}\label{abstract}}
@@ -408,6 +483,108 @@ Here is a reference to Caroline's paper: (Relton \& Davey Smith, 2010)
 \hypertarget{dnam-lung-cancer-mr}{%
 \chapter{DNAm-lung cancer MR}\label{dnam-lung-cancer-mr}}
 
+\hypertarget{abstract-1}{%
+\section{Abstract}\label{abstract-1}}
+
+\hypertarget{background}{%
+\subsection{Background}\label{background}}
+
+DNA methylation changes in peripheral blood have recently been identified in relation to lung cancer risk. Some of these changes have been suggested to mediate part of the effect of smoking on lung cancer. However, limitations with conventional mediation analyses mean that the causal nature of these methylation changes has yet to be fully elucidated.
+
+\hypertarget{methods-2}{%
+\subsection{Methods}\label{methods-2}}
+
+We first performed a meta-analysis of four epigenome-wide association studies (EWAS) of lung cancer (918 cases, 918 controls). Next, we conducted a two-sample Mendelian randomization analysis, using genetic instruments for methylation at CpG sites identified in the EWAS meta-analysis, and 29,863 cases and 55,586 controls from the TRICL-ILCCO lung cancer consortium, to appraise the possible causal role of methylation at these sites on lung cancer.
+
+\hypertarget{results-1}{%
+\subsection{Results}\label{results-1}}
+
+16 CpG sites were identified from the EWAS meta-analysis (FDR \textless{} 0.05), 14 of which we could identify genetic instruments for. Mendelian randomization provided little evidence that DNA methylation in peripheral blood at the 14 CpG sites play a causal role in lung cancer development (FDR\textgreater0.05), including for cg05575921-AHRR where methylation is strongly associated with both smoke exposure and lung cancer risk.
+
+\hypertarget{conclusions}{%
+\subsection{Conclusions}\label{conclusions}}
+
+The results contrast with previous observational and mediation analysis, which have made strong claims regarding the causal role of DNA methylation. Thus, previous suggestions of a mediating role of methylation at sites identified in peripheral blood, such as cg05575921-AHRR, could be unfounded. However, this study does not preclude the possibility that differential DNA methylation at other sites is causally involved in lung cancer development, especially within lung tissue.
+
+\hypertarget{introduction-2}{%
+\section{Introduction}\label{introduction-2}}
+
+Lung cancer is the most common cause of cancer-related death worldwide (1). Several DNA methylation changes have been recently identified in relation to lung cancer risk (2-4). Given the plasticity of epigenetic markers, any DNA methylation changes that are causally linked to lung cancer are potentially appealing targets for intervention (5, 6). However, these epigenetic markers are sensitive to reverse causation, being affected by cancer processes (6), and are also prone to confounding, for example by socio-economic and lifestyle factors (7, 8).
+
+One CpG site, cg05575921 within the aryl hydrocarbon receptor repressor (AHRR) gene, has been consistently replicated in relation to both smoking (9) and lung cancer (2, 3, 10) and functional evidence suggests that this region could be causally involved in lung cancer (11). However, the observed association between methylation and lung cancer might simply reflect separate effects of smoking on lung cancer and DNA methylation, i.e.~the association may be a result of confounding (12), including residual confounding after adjustment for self-reported smoking behaviour (13, 14). Furthermore, recent epigenome-wide association studies (EWAS) for lung cancer have revealed additional CpG sites which may be causally implicated in development of the disease (2, 3).
+
+Mendelian randomization (MR) uses genetic variants associated with modifiable factors as instruments to infer causality between the modifiable factor and outcome, overcoming most unmeasured or residual confounding and reverse causation (15, 16). In order to infer causality, three core assumptions of MR should be met: 1) The instrument is associated with the exposure, 2) The instrument is not associated with any confounders, 3) The instrument is associated with the outcome only through the exposure. MR may be adapted to the setting of DNA methylation (17-19) with the use of single nucleotide polymorphisms (SNPs) that correlate with methylation of CpG sites, known as methylation quantitative trait loci (mQTLs) (20).
+
+In this study, we performed a meta-analysis of four lung cancer EWAS (918 case-control pairs) from prospective cohort studies to identify CpG sites associated with lung cancer risk and applied MR to investigate whether the observed DNA methylation changes at these sites are causally linked to lung cancer.
+
+\hypertarget{methods-3}{%
+\section{Methods}\label{methods-3}}
+
+\hypertarget{ewas-meta-analysis}{%
+\subsection{EWAS Meta-analysis}\label{ewas-meta-analysis}}
+
+We conducted a meta-analysis of four lung cancer case-control EWAS that assessed DNA methylation using the Illumina Infinium® HumanMethylation450 BeadChip. All EWAS are nested within prospective cohorts that measured DNA methylation in peripheral blood samples before diagnosis: EPIC-Italy (185 case-control pairs), Melbourne Collaborative Cohort Study (MCCS) (367 case-control pairs), Norwegian Women and Cancer (NOWAC) (132 case-control pairs) and the Northern Sweden Health and Disease Study (NSHDS) (234 case-control pairs). Study populations, laboratory methods, data pre-processing and quality control methods have been described in detail elsewhere (3) and outlined in the Supplementary Methods.
+
+To quantify the association between the methylation level at each CpG and the risk of lung cancer we fitted conditional logistic regression models for beta values of methylation (which ranges from 0 (no cytosines methylated) to 1 (all cytosines methylated)) on lung cancer status for the four studies. The cases and controls in each study were matched, details of this are in the Supplementary Methods. Surrogate variables were computed in the four studies using the SVA R package (21) and the proportion of CD8+ and CD4+ T cells, B cells, monocytes, natural killer cells and granulocytes within whole blood were derived from DNA methylation (22). The following EWAS models were included in the meta-analysis: Model 1 -- unadjusted; Model 2 -- adjusted for 10 surrogate variables (SVs); Model 3 -- adjusted for 10 SVs and derived cell proportions. EWAS stratified by smoking status was also conducted (never (N=304), former (N=648) and current smoking (N=857)). For Model 1 and Model 2, the case-control studies not matched on smoking status (EPIC-Italy and NOWAC) were adjusted for smoking.
+
+We performed an inverse-variance weighted fixed effects meta-analysis of the EWAS (918 case-control pairs) using the \href{http://csg.sph.umich.edu/abecasis/metal/}{METAL software}. Direction of effect, effect estimates and the I2 statistic were used to assess heterogeneity across the studies in addition to effect estimates across smoking strata (never, former and current). All sites identified at a false discovery rate (FDR)\textless0.05 in Model 2 and 3 were also present in the sites identified in Model 1. The effect size differences between models for all sites identified in Model 1 were assessed by a Kruskal-Wallis test and a post-hoc Dunn's test. There was little evidence for a difference (P \textgreater{} 0.1), so to maximize inclusion into the MR analyses we took forward the sites identified in the unadjusted model (Model 1).
+
+\hypertarget{mendelian-randomization}{%
+\subsection{Mendelian randomization}\label{mendelian-randomization}}
+
+Two-sample MR was used to establish potential causal effect of differential methylation on lung cancer risk (23, 24). In the first sample, we identified mQTL-methylation effect estimates (\(\beta_{GP}\)) for each CpG site of interest in an mQTL database from the Accessible Resource for Integrated Epigenomic Studies (ARIES) (\url{http://www.mqtldb.org}). Details on the methylation pre-processing, genotyping and quality control (QC) pipelines are outlined in the Supplementary Methods. In the second sample, we used summary data from a GWAS meta-analysis of lung cancer risk conducted by the Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium (TRICL-ILCCO) (29,863 cases, 55,586 controls) to obtain mQTL-lung cancer estimates (\(\beta_{GD}\)) (25).
+
+For each independent mQTL (r2\textless0.01, we calculated the log odds ratio (OR) per SD unit increase in methylation by the formula \(\frac{\beta_{GD}} {\beta_{GP}}\) (Wald ratio). Standard errors were approximated by the delta method (26). Where multiple independent mQTLs were available for one CpG site, these were combined in a fixed effects meta-analysis after weighting each ratio estimate by the inverse variance of their associations with the outcome. Heterogeneity in Wald ratios across mQTLs was estimated using Cochran's Q test, which can be used to indicate horizontal pleiotropy (27). Differences between the observational and MR estimates were assessed using a Z-test for difference.
+
+If there was evidence for an mQTL-CpG site association in ARIES in at least one time-point, we assessed whether the mQTL replicated across time points in ARIES (FDR \textless{} 0.05, same direction of effect). Further, we re-analysed this association using linear regression of methylation on each genotyped SNP available in an independent cohort (NSHDS), using rvtests (28) (Supplementary Methods). Replicated mQTLs were included where possible to reduce the effect of winner's curse using effect estimates from ARIES. We assessed the instrument strength of the mQTLs by investigating the variance explained in methylation by each mQTL (r2) as well as the F-statistic in ARIES (Supplementary Table 1). The power to detect the observational effect estimates in the two-sample MR analysis was assessed a priori, based on an alpha of 0.05, sample size of 29,863 cases and 55,586 controls (from TRICL-ILCCO) and calculated variance explained (r2).
+
+MR analyses were also performed to investigate the impact of methylation on lung cancer subtypes in TRICL-ILCCO: adenocarcinoma (11,245 cases, 54,619 controls), small cell carcinoma (2791 cases, 20,580 controls), and squamous cell carcinoma (7704 cases, 54,763 controls). We also assessed the association in never smokers (2303 cases, 6995 controls) and ever smokers (23,848 cases, 16,605 controls) (25). Differences between the smoking subgroups were assessed using a Z-test for difference.
+
+We next investigated the extent to which the mQTLs at cancer-related CpGs were associated with four smoking behaviour traits which could confound the methylation-lung cancer association: number of cigarettes per day, smoking cessation rate, smoking initiation and age of smoking initiation using GWAS data from the Tobacco and Genetics (TAG) consortium (N=74,053) (29).
+
+\hypertarget{supplementary-analyses}{%
+\subsection{Supplementary analyses}\label{supplementary-analyses}}
+
+\hypertarget{assessing-the-potential-causal-effect-of-ahrr-methylation-one-sample-mr}{%
+\subsubsection{Assessing the potential causal effect of AHRR methylation: one sample MR}\label{assessing-the-potential-causal-effect-of-ahrr-methylation-one-sample-mr}}
+
+Given previous findings implicating methylation at AHRR in relation to lung cancer (2, 3), we performed a one-sample MR analysis (30) of AHRR methylation on lung cancer incidence using individual-level data from the Copenhagen City Heart Study (CCHS) (357 incident cases, 8401 remaining free of lung cancer). Details of the phenotypic, methylation and genetic data, as well as the linked lung cancer data, are outlined in the Supplementary Methods.
+
+An allele score of mQTLs located with 1Mb of cg05575921-AHRR was created and its association with AHRR methylation tested (Supplementary Methods). We investigated associations between the allele score and several potential confounding factors (sex, alcohol consumption, smoking status, occupational exposure to dust and/or welding fumes, passive smoking). We next performed MR analyses using two-stage Cox regression, with adjustment for age and sex, and further stratified by smoking status.
+
+\hypertarget{tumour-and-adjacent-normal-methylation-patterns}{%
+\subsubsection{Tumour and adjacent normal methylation patterns}\label{tumour-and-adjacent-normal-methylation-patterns}}
+
+DNA methylation data from lung cancer tissue and matched normal adjacent tissue (N=40 squamous cell carcinoma and N=29 adenocarcinoma), profiled as part of The Cancer Genome Atlas (TCGA), were used to assess tissue-specific DNA methylation changes across sites identified in the meta-analysis of EWAS, as outlined previously (31).
+
+\hypertarget{mqtl-association-with-gene-expression}{%
+\subsubsection{mQTL association with gene expression}\label{mqtl-association-with-gene-expression}}
+
+For the genes annotated to CpG sites identified in the lung cancer EWAS, we examined gene expression in whole blood and lung tissue using data from the gene-tissue expression (GTEx) consortium (32).
+
+Analyses were conducted in Stata (version 14) and R (version 3.2.2). For the two-sample MR analysis we used the MR-Base R package TwoSampleMR (33). An adjusted P value that limited the FDR was calculated using the Benjamini-Hochberg method (34). All statistical tests were two-sided.
+
+\hypertarget{results-2}{%
+\section{Results}\label{results-2}}
+
+A flowchart representing our study design along with a summary of our results at each step is displayed in Figure 1.
+
+(Figure 1 here)
+
+\hypertarget{ewas-meta-analysis-1}{%
+\subsection{EWAS meta-analysis}\label{ewas-meta-analysis-1}}
+
+The basic meta-analysis adjusted for study-specific covariates identified 16 CpG sites which were hypomethylated in relation to lung cancer (FDR\textless0.05, Model 1, Figure 2). Adjusting for 10 surrogate variables (Model 2) and derived cell counts (Model 3) gave similar results (Table 1). The direction of effect at the 16 sites did not vary between studies (median I2=38.6) (Supplementary Table 2), but there was evidence for heterogeneity of effect estimates at some sites when stratifying individuals by smoking status (Table 1).
+
+(Figure 2 here)
+
+(Table 1 here)
+
+\hypertarget{mendelian-randomization-1}{%
+\subsection{Mendelian randomization}\label{mendelian-randomization-1}}
+
+We identified 15 independent mQTLs (r2\textless0.01) associated with methylation at 14 of 16 CpGs. Ten mQTLs replicated at FDR\textless0.05 in NSHDS (Supplementary Table 3). MR power analyses indicated \textgreater99\% power to detect ORs for lung cancer of the same magnitude as those in the meta-analysis of EWAS.
+
 \hypertarget{conclusion}{%
 \chapter*{Conclusion}\label{conclusion}}
 \addcontentsline{toc}{chapter}{Conclusion}
@@ -495,6 +672,13 @@ Wahl, S., Drong, A., Lehne, B., Loh, M., Scott, W. R., Kunze, S., \ldots{} Chamb
 \end{cslreferences}
   \begin{abbreviations}
     \textbf{EWAS} - epigenome-wide assoctation study
+    \textbf{GWAS} - genome-wide assoctation study
+    \textbf{h<sup>2</sup>} - narrow-sense heritability
+    \textbf{h<sup>2</sup><sub>SNP</sub>} - SNP-heritability
+    \textbf{H<sup>2</sup>} - broad-sense heritability
+    \textbf{MR} - Mendelian randomization
+    \textbf{mQTL} - methylation quantitative trait loci
+    \textbf{SNP} - single nucleotide polymorphism
   \end{abbreviations}
 \end{document}
 

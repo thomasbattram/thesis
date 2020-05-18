@@ -1,1 +1,75 @@
 # DNAm-lung cancer MR {#dnam-lung-cancer-mr}
+
+## Abstract
+
+### Background
+DNA methylation changes in peripheral blood have recently been identified in relation to lung cancer risk. Some of these changes have been suggested to mediate part of the effect of smoking on lung cancer. However, limitations with conventional mediation analyses mean that the causal nature of these methylation changes has yet to be fully elucidated.
+
+### Methods
+We first performed a meta-analysis of four epigenome-wide association studies (EWAS) of lung cancer (918 cases, 918 controls). Next, we conducted a two-sample Mendelian randomization analysis, using genetic instruments for methylation at CpG sites identified in the EWAS meta-analysis, and 29,863 cases and 55,586 controls from the TRICL-ILCCO lung cancer consortium, to appraise the possible causal role of methylation at these sites on lung cancer.
+
+### Results
+16 CpG sites were identified from the EWAS meta-analysis (FDR < 0.05), 14 of which we could identify genetic instruments for. Mendelian randomization provided little evidence that DNA methylation in peripheral blood at the 14 CpG sites play a causal role in lung cancer development (FDR>0.05), including for cg05575921-AHRR where methylation is strongly associated with both smoke exposure and lung cancer risk.
+
+### Conclusions
+The results contrast with previous observational and mediation analysis, which have made strong claims regarding the causal role of DNA methylation. Thus, previous suggestions of a mediating role of methylation at sites identified in peripheral blood, such as cg05575921-AHRR, could be unfounded. However, this study does not preclude the possibility that differential DNA methylation at other sites is causally involved in lung cancer development, especially within lung tissue.
+
+## Introduction
+Lung cancer is the most common cause of cancer-related death worldwide (1). Several DNA methylation changes have been recently identified in relation to lung cancer risk (2-4). Given the plasticity of epigenetic markers, any DNA methylation changes that are causally linked to lung cancer are potentially appealing targets for intervention (5, 6). However, these epigenetic markers are sensitive to reverse causation, being affected by cancer processes (6), and are also prone to confounding, for example by socio-economic and lifestyle factors (7, 8).
+
+One CpG site, cg05575921 within the aryl hydrocarbon receptor repressor (AHRR) gene, has been consistently replicated in relation to both smoking (9) and lung cancer (2, 3, 10) and functional evidence suggests that this region could be causally involved in lung cancer (11). However, the observed association between methylation and lung cancer might simply reflect separate effects of smoking on lung cancer and DNA methylation, i.e. the association may be a result of confounding (12), including residual confounding after adjustment for self-reported smoking behaviour (13, 14).  Furthermore, recent epigenome-wide association studies (EWAS) for lung cancer have revealed additional CpG sites which may be causally implicated in development of the disease (2, 3). 
+
+Mendelian randomization (MR) uses genetic variants associated with modifiable factors as instruments to infer causality between the modifiable factor and outcome, overcoming most unmeasured or residual confounding and reverse causation (15, 16). In order to infer causality, three core assumptions of MR should be met: 1) The instrument is associated with the exposure, 2) The instrument is not associated with any confounders, 3) The instrument is associated with the outcome only through the exposure. MR may be adapted to the setting of DNA methylation (17-19) with the use of single nucleotide polymorphisms (SNPs) that correlate with methylation of CpG sites, known as methylation quantitative trait loci (mQTLs) (20).
+
+In this study, we performed a meta-analysis of four lung cancer EWAS (918 case-control pairs) from prospective cohort studies to identify CpG sites associated with lung cancer risk and applied MR to investigate whether the observed DNA methylation changes at these sites are causally linked to lung cancer.
+
+## Methods
+
+### EWAS Meta-analysis
+We conducted a meta-analysis of four lung cancer case-control EWAS that assessed DNA methylation using the Illumina Infinium® HumanMethylation450 BeadChip. All EWAS are nested within prospective cohorts that measured DNA methylation in peripheral blood samples before diagnosis: EPIC-Italy (185 case-control pairs), Melbourne Collaborative Cohort Study (MCCS) (367 case-control pairs), Norwegian Women and Cancer (NOWAC) (132 case-control pairs) and the Northern Sweden Health and Disease Study (NSHDS) (234 case-control pairs). Study populations, laboratory methods, data pre-processing and quality control methods have been described in detail elsewhere (3) and outlined in the Supplementary Methods.
+
+To quantify the association between the methylation level at each CpG and the risk of lung cancer we fitted conditional logistic regression models for beta values of methylation (which ranges from 0 (no cytosines methylated) to 1 (all cytosines methylated)) on lung cancer status for the four studies. The cases and controls in each study were matched, details of this are in the Supplementary Methods. Surrogate variables were computed in the four studies using the SVA R package (21) and the proportion of CD8+ and CD4+ T cells, B cells, monocytes, natural killer cells and granulocytes within whole blood were derived from DNA methylation (22). The following EWAS models were included in the meta-analysis: Model 1 – unadjusted; Model 2 – adjusted for 10 surrogate variables (SVs); Model 3 – adjusted for 10 SVs and derived cell proportions. EWAS stratified by smoking status was also conducted (never (N=304), former (N=648) and current smoking (N=857)). For Model 1 and Model 2, the case-control studies not matched on smoking status (EPIC-Italy and NOWAC) were adjusted for smoking.
+
+We performed an inverse-variance weighted fixed effects meta-analysis of the EWAS (918 case-control pairs) using the [METAL software](http://csg.sph.umich.edu/abecasis/metal/). Direction of effect, effect estimates and the I2 statistic were used to assess heterogeneity across the studies in addition to effect estimates across smoking strata (never, former and current). All sites identified at a false discovery rate (FDR)<0.05 in Model 2 and 3 were also present in the sites identified in Model 1. The effect size differences between models for all sites identified in Model 1 were assessed by a Kruskal-Wallis test and a post-hoc Dunn’s test. There was little evidence for a difference (P > 0.1), so to maximize inclusion into the MR analyses we took forward the sites identified in the unadjusted model (Model 1).
+
+### Mendelian randomization
+
+Two-sample MR was used to establish potential causal effect of differential methylation on lung cancer risk (23, 24). In the first sample, we identified mQTL-methylation effect estimates ($\beta_{GP}$) for each CpG site of interest in an mQTL database from the Accessible Resource for Integrated Epigenomic Studies (ARIES) (http://www.mqtldb.org). Details on the methylation pre-processing, genotyping and quality control (QC) pipelines are outlined in the Supplementary Methods.  In the second sample, we used summary data from a GWAS meta-analysis of lung cancer risk conducted by the Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium (TRICL-ILCCO) (29,863 cases, 55,586 controls) to obtain mQTL-lung cancer estimates ($\beta_{GD}$) (25).
+
+For each independent mQTL (r2<0.01, we calculated the log odds ratio (OR) per SD unit increase in methylation by the formula $\frac{\beta_{GD}} {\beta_{GP}}$ (Wald ratio). Standard errors were approximated by the delta method (26). Where multiple independent mQTLs were available for one CpG site, these were combined in a fixed effects meta-analysis after weighting each ratio estimate by the inverse variance of their associations with the outcome. Heterogeneity in Wald ratios across mQTLs was estimated using Cochran’s Q test, which can be used to indicate horizontal pleiotropy (27). Differences between the observational and MR estimates were assessed using a Z-test for difference.
+
+If there was evidence for an mQTL-CpG site association in ARIES in at least one time-point, we assessed whether the mQTL replicated across time points in ARIES (FDR < 0.05, same direction of effect).  Further, we re-analysed this association using linear regression of methylation on each genotyped SNP available in an independent cohort (NSHDS), using rvtests (28) (Supplementary Methods). Replicated mQTLs were included where possible to reduce the effect of winner’s curse using effect estimates from ARIES. We assessed the instrument strength of the mQTLs by investigating the variance explained in methylation by each mQTL (r2) as well as the F-statistic in ARIES (Supplementary Table 1). The power to detect the observational effect estimates in the two-sample MR analysis was assessed a priori, based on an alpha of 0.05, sample size of 29,863 cases and 55,586 controls (from TRICL-ILCCO) and calculated variance explained (r2).
+
+MR analyses were also performed to investigate the impact of methylation on lung cancer subtypes in TRICL-ILCCO: adenocarcinoma (11,245 cases, 54,619 controls), small cell carcinoma (2791 cases, 20,580 controls), and squamous cell carcinoma (7704 cases, 54,763 controls). We also assessed the association in never smokers (2303 cases, 6995 controls) and ever smokers (23,848 cases, 16,605 controls) (25). Differences between the smoking subgroups were assessed using a Z-test for difference.
+
+We next investigated the extent to which the mQTLs at cancer-related CpGs were associated with four smoking behaviour traits which could confound the methylation-lung cancer association: number of cigarettes per day, smoking cessation rate, smoking initiation and age of smoking initiation using GWAS data from the Tobacco and Genetics (TAG) consortium (N=74,053) (29).
+
+### Supplementary analyses
+
+#### Assessing the potential causal effect of AHRR methylation: one sample MR
+Given previous findings implicating methylation at AHRR in relation to lung cancer (2, 3), we performed a one-sample MR analysis (30) of AHRR methylation on lung cancer incidence using individual-level data from the Copenhagen City Heart Study (CCHS) (357 incident cases, 8401 remaining free of lung cancer). Details of the phenotypic, methylation and genetic data, as well as the linked lung cancer data, are outlined in the Supplementary Methods.
+
+An allele score of mQTLs located with 1Mb of cg05575921-AHRR was created and its association with AHRR methylation tested (Supplementary Methods). We investigated associations between the allele score and several potential confounding factors (sex, alcohol consumption, smoking status, occupational exposure to dust and/or welding fumes, passive smoking). We next performed MR analyses using two-stage Cox regression, with adjustment for age and sex, and further stratified by smoking status.
+
+#### Tumour and adjacent normal methylation patterns
+DNA methylation data from lung cancer tissue and matched normal adjacent tissue (N=40 squamous cell carcinoma and N=29 adenocarcinoma), profiled as part of The Cancer Genome Atlas (TCGA), were used to assess tissue-specific DNA methylation changes across sites identified in the meta-analysis of EWAS, as outlined previously (31).
+
+#### mQTL association with gene expression
+For the genes annotated to CpG sites identified in the lung cancer EWAS, we examined gene expression in whole blood and lung tissue using data from the gene-tissue expression (GTEx) consortium (32).
+
+Analyses were conducted in Stata (version 14) and R (version 3.2.2). For the two-sample MR analysis we used the MR-Base R package TwoSampleMR (33). An adjusted P value that limited the FDR was calculated using the Benjamini-Hochberg method (34). All statistical tests were two-sided.
+
+## Results
+A flowchart representing our study design along with a summary of our results at each step is displayed in Figure 1.
+
+(Figure 1 here)
+
+### EWAS meta-analysis
+The basic meta-analysis adjusted for study-specific covariates identified 16 CpG sites which were hypomethylated in relation to lung cancer (FDR<0.05, Model 1, Figure 2). Adjusting for 10 surrogate variables (Model 2) and derived cell counts (Model 3) gave similar results (Table 1). The direction of effect at the 16 sites did not vary between studies (median I2=38.6) (Supplementary Table 2), but there was evidence for heterogeneity of effect estimates at some sites when stratifying individuals by smoking status (Table 1).
+
+(Figure 2 here)
+
+(Table 1 here)
+
+### Mendelian randomization
+We identified 15 independent mQTLs (r2<0.01) associated with methylation at 14 of 16 CpGs. Ten mQTLs replicated at FDR<0.05 in NSHDS (Supplementary Table 3).  MR power analyses indicated >99% power to detect ORs for lung cancer of the same magnitude as those in the meta-analysis of EWAS.
