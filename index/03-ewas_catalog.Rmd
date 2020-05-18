@@ -1,4 +1,4 @@
-# The EWAS Catalog: a database of epigenome-wide association studies
+# The EWAS Catalog: a database of epigenome-wide association studies {#ewas-catalog}
 
 ```{r setoptions, eval = TRUE, echo = FALSE}
 opts_chunk$set(echo = FALSE, 
