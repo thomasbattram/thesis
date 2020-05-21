@@ -211,18 +211,23 @@ Please visit \href{https://bookdown.org/yihui/bookdown/}{the free online bookdow
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
 
-This thesis focuses on epigenome-wide association studies (EWAS), which assess the association between DNA methylation changes throughout the genome and traits of interest. Advances in technology and an increasing number of samples has lead to hundreds of EWAS having been performed to date (REFERENCE EWAS CATALOG CHAPTER). Goals of these EWAS included using DNA methtlation marks as predictors, diagnostic factors, and modifiable mediators of traits.
+This thesis focuses on epigenome-wide association studies (EWAS), which assess the association between DNA methylation changes throughout the genome and traits of interest. Advances in technology and an increasing number of samples has lead to hundreds of EWAS having been performed to date (more details in \textbf{Chapter \ref{ewas-catalog}}). Goals of these EWAS included using DNA methtlation marks as predictors, diagnostic factors, and modifiable mediators of traits.
 
-To help inform design of future studies, there is a need to understand what has been discovered thus far in EWAS and what future EWAS are likely to add in the context of current EWAS and other study designs. Further, to improve biological inference of sites identified in EWAS, causality (or lack of) should be established. IS THIS TOO VAGUE?
+To help inform design of future studies, there is a need to understand what has been discovered thus far in EWAS and what future EWAS are likely to add in the context of current EWAS and other study designs. Further, to improve biological inference of sites identified in EWAS, causality (or lack of) should be established.
 
-NON-VAGUE THING TO SAY -- read over both and decide what to add:
-- Key things which are not currently understood:
-- Why certain DNA methylation sites/regions of the genome are more prevalent in EWAS to date
-- How much trait variation DNA methylation tends to associate with
-- Whether EWAS can add to current biological understanding in addition to other study designs
-- Whether DNA methylation-trait associations in EWAS are causal
-
-In this chapter I describe DNA methylation in context of the regulatory processes in human cells, discuss it's potential for use in population level research and describe the current state of EWAS research. Then I discuss how epigenetic-epidemiologists can draw on the methods developed by their genetics counter-parts to 1. understand what information has been gained from EWAS, 2. understand what information is left to gain from EWAS and 3. understand the causal nature of DNA methylation-trait associations identified in EWAS.
+Some key elements which are not currently understood:
+\begin{itemize}
+\tightlist
+\item
+  Why certain DNA methylation sites/regions of the genome are more prevalent in EWAS to date. Could this be because of genuine biological importance of these sites or because of some technical artifact?
+\item
+  How much trait variation DNA methylation tends to associate with and thus how much more information there is to gain from EWAS of greater sample sizes
+\item
+  Whether EWAS can add to current biological understanding in addition to other study designs
+\item
+  Whether DNA methylation-trait associations in EWAS are likely to be causal
+\end{itemize}
+In this chapter I describe DNA methylation in context of the regulatory processes in human cells, discuss it's potential for use in population level research and describe the current state of EWAS research. Then I discuss how epigenetic-epidemiologists can draw on the methods developed by their genetics colleagues to 1. understand what information has been gained from EWAS, 2. understand what information is left to gain from EWAS and 3. understand the causal nature of DNA methylation-trait associations identified in EWAS.
 
 \hypertarget{dna-methylation-as-part-of-the-regulome}{%
 \section{DNA methylation as part of the regulome}\label{dna-methylation-as-part-of-the-regulome}}
@@ -317,28 +322,34 @@ Further, as DNA methylation changes may be as a result of the trait (unlike gene
 \hypertarget{establishing-causality}{%
 \subsection{Establishing causality}\label{establishing-causality}}
 
-As discussed, population-based studies of DNA methylation suffer from the same limitations as any observational epidemiology study, namely confounding and reverse causation. One method that aims to mitigate these limitations is Mendelian randomization (MR) (REFs). MR uses genetic variants as proxies for the exposure and outcome of interest in an instrumental variable framework (illustrated in \textbf{Figure \ref{fig:}}). Using genetic variants as proxies ensures there is no reverse causation, as the variants are inherited, and reduces chances of confounding as individual genetic variants tend not to be associated with a broad range of phenotypes (REF). Furthermore, genetic variants are randomly segregated at conception, so in the abscence of assortative mating and dynastic effects, should be associated randomly with respect to any confounders. BLAH -- Need to read some MR papers again to get the wording right!
+\hypertarget{introducing-mendelian-randomization}{%
+\subsubsection{Introducing Mendelian randomization}\label{introducing-mendelian-randomization}}
 
-TWO SAMPLE MR NEEDS EXPLAINING HERE
+As discussed, population-based studies of DNA methylation suffer from the same limitations as any observational epidemiology study, namely confounding and reverse causation. One method that aims to mitigate these limitations is Mendelian randomization (MR) (REFs), which uses genetic variants as proxies for the exposure of interest in an instrumental variable framework (illustrated in \textbf{Figure \ref{fig:}}). Using genetic variants as instruments has the advantage that the direction of effect will always be from instrument to exposure and not \emph{vice versa}, making interpretation of the studies simpler. Furthermore, unlike environmental phenotypes, that tend to be highly correlated and clustered into groups, genetic variants associated with a trait tend to be unconfounded (REF). In the abscence of assortative mating, genetic variants are should be distributed randomly across the population, so in effect those grouped by genotype should exhibit differences in exposure, but confounding factors should not differ between genotype groups (REF). Assortative mating has been reliably shown to occur with few traits (REF) and as those traits are social behaviours, such as alcohol consumption, or clear visible traits, such as height, one would assume there is little if any assortative mating with regards to DNA methylation levels so I will ignore assortative mating from this point onwards.
 
-PLEIOTROPY NEEDS EXPLAINING HERE
+\hypertarget{availablity-of-data-for-mr}{%
+\subsubsection{Availablity of data for MR}\label{availablity-of-data-for-mr}}
 
-MR can be applied to studies of DNA methylation by using methylation quantitative trait loci (mQTL), genetic variants associated with changes in DNA methylation levels, as proxies. By utilizing large trait GWAS and publically available mQTL databases (REFs) in a two-sample MR framework, good statistical power can be attained to estimate the effect of DNA methylation changes on various traits. Unfortunately, for each DNA methylation site few independent mQTLs have been identified, and of these trans-mQTLs (mQTLs over 1Mb from the DNA methylation site), are thought to have a higher probablity of being pleiotropic. This means that ruling out any associations that have arisen because of pleiotropy is difficult. However, applying MR in this context can still add evidence to the observational analyses that have been conducted. In \textbf{Chapter \ref{dnam-mr}} I use this principle to investigate the effect of DNA methylation on lung cancer.
+Another advantage of MR is the data it uses. Thousands of GWAS have been conducted giving researchers ample instruments for a wide variety of traits and many of these instruments are easily accessible through databases such as the GWAS Catalog (REF) and IEU GWAS database (REF). Furthermore, it isn't necessary to use individual-level data to conduct MR studies; summary statistics from GWAS are all that is needed to provide data in a two-sample MR framework (REF). This is especially valuable to conducting MR studies using DNA methylation data because until very recently, with GoDMC (REF), there were no cohorts or consortia that had measured genotype, DNA methylation and various phenotypes in a large enough sample to provide adequate power to test DNA methylation-phenotype associations in an MR context.
+
+\hypertarget{assumptions-of-mr}{%
+\subsubsection{Assumptions of MR}\label{assumptions-of-mr}}
+
+There are three main assumptions in MR, these are illustrated in \textbf{Figure \ref{fig:X}}. Testing assumption one, the instruments associate with the exposure of interest, is simple to test, but the other two assumptions can't technically be proven to be true. Horizontal pleiotropy, where genetic variants associate with more variables than just the exposure of interest, can lead to violations in assumptions two and three. Ideally, MR would be performed in the context where the genetic effect on the exposure had been characterised such that the mechanism of action was understood clearly. This would help give evidence against assumptions two and three being broken. Unfortunately, this is rarely the case. However, a plethora of methods have now been developed to test for pleiotropic effects, given the exposure of interest has multiple independent genetic variants reliably associated with it.
+
+\textbf{INSERT FIGURE HERE}
+
+\hypertarget{applying-mr-in-a-dna-methylation-context}{%
+\subsubsection{Applying MR in a DNA methylation context}\label{applying-mr-in-a-dna-methylation-context}}
+
+MR can be applied to studies of DNA methylation by using methylation quantitative trait loci (mQTL), genetic variants associated with changes in DNA methylation levels, as proxies (REF). As mentioned previously using a two-sample MR framework is especially useful to help increase power for these studies (REF). Unfortunately, for each DNA methylation site few independent mQTLs have been identified. This prevents the use of various tests to examine whether the instruments are likely to be pleiotropic. Both cis-mQTLs (mQTLs within 1Mb of the DNA methylation site) and trans-mQTLs (mQTLs over 1Mb away from the DNA methylation site) have been identified in GWAS of DNA methylation variation. As genetic architecture of DNA methylation changes is also not well understood, the mechanism of action for each mQTL can only be speculated at present. Cis-mQTLs are thought to be less likely to be pleiotropic than trans-mQTLs as the mechanism of action seems more likely to be related to the binding of regulatory machinary that may influence DNA methylation levels, for example a genetic variant may decrease the affinity of a transcription factor for that region and so the transcription factor will bind less frequently and/or for a shorter period, this would lead to increased methylation at that site. On the contrary, the mechanism of trans-mQTL action, especially those on separate chromosomes to the DNA methylation site of interest, is more likely to be pleiotropic, for example a trans-mQTL could influence gene expression of a transcription factor that binds many sites and alters their DNA methylation, this would make the trans-mQTL associate with multiple DNA methylation sites. Therefore, if one limits mQTLs to those in cis, this gives greater confidence that horizontal pleiotropy isn't influencing results.
+
+As mentioned, DNA methylation varies both temporally and across cell types. Temporal variation isn't anticipated to have a large influence in the context of MR as the association between a genetic variant and DNA methylation levels can be viewed as a lifelong alteration to DNA methylation, but cell type-specific effects are likely to occur for some mQTLs. One could easily imagine a scenario in which blood cells require a specific gene (gene A) to be expressed that is completely useless in adipose cells, which could mean all adipose cells have 100\% DNA methylation at the promoter region gene A. Thus, any genetic variants that associate with DNA methylation variation in blood would not also associate with variation in adipose cells. --\textgreater{} Worth moving to discussion?
+
+With all this in mind, it's important to maintain the idea that making concrete conclusions from DNA methylation is difficult, but triangulating evidence from multiple sources could be key to understanding the role of DNA methylation in underlying trait biology.
 
 \textbf{Might be an idea to add detail of some of these methods into appendices (e.g.~mathematical basis of snp-heritability)}
-\begin{itemize}
-\tightlist
-\item
-  Give a little intro on what problems this chapter focuses on
-\item
-  Describe the GWAS catalog and what it has done for genetic epi and how this can be adapted for EWAS
-\item
-  Describe and explain heritability (and how it can be applied to EWAS)
-\item
-  Describe pathway analysis??
-\item
-  Describe MR
-\end{itemize}
+
 \hypertarget{overview-of-thesis-aims}{%
 \section{Overview of thesis aims}\label{overview-of-thesis-aims}}
 
