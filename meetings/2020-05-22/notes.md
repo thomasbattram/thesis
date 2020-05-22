@@ -4,8 +4,13 @@ Attendees: Tom B, Gib
 
 ## Agenda
 
+* Funded extension
 * ewas-gwas comparison simulations and paper
 * AOB
+
+## Funded extension
+
+Think I should just apply for the full 6 months extension. Wellcome has already put the money in the account...
 
 ## ewas-gwas comparison simulations and paper
 Goal of simulations: Help understand the scenarios for which there is no more overlap of EWAS and GWAS genes/pathways than expected by chance.
@@ -34,6 +39,9 @@ All trait genes = Causal genes + consequential genes
 Test: Fisher's exact to determine if there is more overlap between EWAS genes/pathways and GWAS genes/pathways than expected (expected determined from the number of genes from 'all trait genes')
 
 
+### Thinking about simulation 4
+
+__IGNORE THIS GIB__ my ramblings here won't really make sense without me to explain them
 
 known parameters:
 All genes (AG)
