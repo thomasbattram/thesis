@@ -211,7 +211,7 @@ Please visit \href{https://bookdown.org/yihui/bookdown/}{the free online bookdow
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
 
-This thesis focuses on epigenome-wide association studies (EWAS), which assess the association between DNA methylation changes throughout the genome and traits of interest. Advances in technology and an increasing number of samples has lead to hundreds of EWAS having been performed to date (more details in \textbf{Chapter \ref{ewas-catalog}}). Goals of these EWAS included using DNA methtlation marks as predictors, diagnostic factors, and modifiable mediators of traits.
+This thesis focuses on epigenome-wide association studies (EWAS), which assess the association between DNA methylation changes throughout the genome and traits of interest. Advances in technology and an increasing number of samples has lead to hundreds of EWAS having been performed to date (more details in \textbf{Chapter \ref{ewas-catalog}}). Goals of these EWAS have included using DNA methtlation marks to use as predictors, diagnostic factors, and modifiable mediators of traits.
 
 To help inform design of future studies, there is a need to understand what has been discovered thus far in EWAS and what future EWAS are likely to add in the context of current EWAS and other study designs. Further, to improve biological inference of sites identified in EWAS, causality (or lack of) should be established.
 
@@ -223,7 +223,7 @@ Some key elements which are not currently understood:
 \item
   How much trait variation DNA methylation tends to associate with and thus how much more information there is to gain from EWAS of greater sample sizes
 \item
-  Whether EWAS can add to current biological understanding in addition to other study designs
+  Whether EWAS can add to current biological understanding above what can be learnt from other study designs
 \item
   Whether DNA methylation-trait associations in EWAS are likely to be causal
 \end{itemize}
@@ -270,25 +270,50 @@ Figure should contain these diagrams:
 \hypertarget{dnam-phs}{%
 \section{Use of DNA methylation in a population setting~}\label{dnam-phs}}
 
-The relationship between a large number of traits and DNA methylation have now been studied, from childhood adversities (REFs) to smoking (REFs), and one of the appealing factors of doing this research is that DNA methylation is modifiable. Thus, in theory, negative effects of something like childhood adversity may be captured in DNA methylation and could potentially be, in part, reversed by altering the methylome in some way. This view that clinicians may soon have the power to do anything like this has likely lead to a lot of poor and inconsequential EWAS being published. Unfortunately, there are massive complications to this research. Firstly, it should be recognised that DNA methylation has the same undesirable properties of every other complex phenotype, it correlates with a lot of things, making any associations suceptible to confounding and reverse causation, so determining causality is tricky (this will be discussed in \ref{genetics-in-ewas}). Secondly, current methods used to modify DNA methylation mostly rely on broad remodelling of the DNA methylome (e.g.~5-AZA), which is unviable in the clinical setting for treatment of most things. Granted, there are methods that can be used to increase specificity of targetting DNA methylation changes in the genome (REFs), these have not yet been adapted for use in the clinic and given the brevity of their existence, it's unlikely this will occur soon. Finally, DNA methylation varies between tissue and cell types. Not only does this pose the issue of confounding when pooling cell types from a tissue, it also leads to large complexities in the interpretation of DNA methylation studies. Most studies are conducted in readily available tissues, such as blood and saliva, for obvious reasons, but there is no way of knowing which tissue is best suited for studying DNA methylation for many complex traits. DNA methylation does correlate between tissues (REFs), which may mean a readily available tissue can act as a surrogate, but this also means targeting DNA methylation in the tissue measured for the EWAS, may have no impact on your phenotype. All together these problems mean that establishing causality is difficult, then targeting specific DNA methylation sites of interest to effect change is also challenging (and untested in humans), and finally the tissue that needs to be targetted may be impossible to target anyway. Establishing causality in EWAS is a focus of \textbf{\ref{dnam-lung-cancer-mr}}.
+The importance of DNA methylation to disease has already been established in rare developmental disorders caused by aberrant imprinting patterns (REF), but the focus of this thesis is on studying DNA methylation in relation to complex phenotypes. In this section I discuss the appeal of studying DNA methylation in this context, introduce the most common study design for doing so, EWAS, and discuss current successes and complications of the work.
 
-These difficulties do not exclude DNA methylation as a trait that is important to study in a population setting; it is not necessary to establish causality to use DNA methylation as a diagnostic biomarker or predictor of future disease. Further, important biological information can be gained from studying DNA methylation with relation to many traits of interest, but one must be careful how they approach and interpret their studies.
+\hypertarget{appeal-of-dnam}{%
+\subsection{The appeal of DNA methylation to epidemiologists}\label{appeal-of-dnam}}
+
+All epigenetic modifications are of potential interest to those studying any phenotype. Arguably, epigentics could underly all phenotypic changes and be the difference between individuals who develop disease and those who don't (REF). Further, epigenetic marks are modifiable, which means theoretically it would be possible to prevent or treat any disease by altering the epigenetic patterns of individuals (REF). As will be discussed, there are large practical problems to this. Even if targeting epigenetic marks is not easy, as long as it is possible to observe them they could be used as diagnostic biomarkers and predictors (REF). Thus, the ability to measure and the research in to understanding epigenetic mechanisms could have broad consequences for public health (REF). As mentioned, DNA methylation is more stable than other epigenetic marks making it easier to measure on a large scale, making it the epigenetic mark of choice to study in larger samples. Also, as alluded to, the regulatory processes that all govern whether genes are transcribed are linked, making DNA methylation highly correlated with other epigenetic marks, known examples included positive correlation with the histone modification H3K9me3 (REFs) and negative correaltion with histone accetylation (REFs). This means measuring DNA methylation may capture more than just the one epigenetic mark and recently it's been shown that epigenetic marks can be used to predict each other with high accuracy (REF).
 
 \hypertarget{ewas}{%
-\section{Epigenome-wide association studies}\label{ewas}}
+\subsection{Epigenome-wide association studies}\label{ewas}}
 
-Epigenome-wide associaiton studies are the flagship study design for estimating the association of DNA methylation with a trait of interest in a population setting. The premise is simple, DNA methylation is measured across parts of the whole genome, often using an array such as the Illimnum HumanMethylation 450 Beadchip (HM450), then simple regressions are conducted to estimate the association of DNA methylation at each site with a trait of interest.
+EWAS are the most common study design for assessing the association between DNA methylation and a complex trait (REF). They typically involve measuring hundreds of thousands of DNA methylation sites across the genome in a case-control or cohort setting and using linear models to assess the association between DNA methylation and the trait of interest. It's a study design that has been widely adopted over the past ten years and the relationship between a plethora of traits, from smoking to anthropometric measures to childhood adversities, and DNA methylation has now been studied (REFs). There are also large consortia that are pooling samples to gain power for these studies, for example the Pregnancy and Epigenetics Consoritium (PACE) (REF). One clear success in EWAS is with the study of smoking. DNA methylation across thousands of sites have been shown to be associated with smoking (REF) and for many of these sites this has been replicated (REF). DNA methylation has been shown to be able to predict smoking status, potentially better than self-report (REF). It has been shown the direction of effect at some sights is likely from smoking to DNA methylation and in fact over time the DNA methylation changes caused by smoking may be (mostly) reversible by giving up smoking (REF). Another complex trait shown to relate to large variation in DNA methylation across the genome is age (REFs), so much so that DNA methylation makes a brilliant predictor for age (REFs). All these studies have shown that large pertubations in the DNA methylome can be related to complex traits, and so studying DNA methylation in this fashion has huge potential.
 
-ALSO ADD IN THAT DMR ANALYSIS IS COMMON IN EWAS --\textgreater{} WANT TO REFERENCE H2EWAS PAPER AGAIN!
-\begin{itemize}
-\tightlist
-\item
-  Describe what an EWAS is and explain how it is conducted~
-\item
-  Describe the current successes that have come from EWAS~
-\item
-  Describe the current problems with EWAS
-\end{itemize}
+\hypertarget{problems-for-ewas}{%
+\subsection{Problems for EWAS}\label{problems-for-ewas}}
+
+\hypertarget{confounding}{%
+\subsubsection{Confounding}\label{confounding}}
+
+Confoundning, where the traits of interest share a common cause, can lead to associations between traits despite a lack of causality. Complex traits are strongly correlated with eachother, often in clusters, which often leads to large amounts of measured and unmeasured confounding being present in observational epidemiology. As an observational design, EWAS also suffers from this problem. Of course, in order to produce therapies to prevent or treat disease by altering DNA methylation or other parts of the epigenome, causality must be established. Therefore, problems of confounding must be overcome in EWAS to use these results to start developing new drugs, this is discussed more in section \ref{establishing-causality}.
+
+\hypertarget{cell-type-heterogeneity}{%
+\subsubsection{Cell type heterogeneity}\label{cell-type-heterogeneity}}
+
+As discussed, epigenetic factors guide differentiation of a single pluoripotent cell to hundreds of cell types in human development. As these cell types can have large differences in morphorlogy and function, it is clear that epigenetic marks, including DNA methylation, will vary widely between cell types (REF). This poses two distinct problems for EWAS. Firstly, when collecting samples to measure DNA methylation, unless cells are purified, then a pool of cell types will be present in the samples, each with their own distinct DNA methylation patterns. This can lead to issues of confounding by cell type. For example, in a case control study, cases may be more likely to have increased numbers of CD4+ Th2 immune cells and these cells may on average have a higher level of DNA methylation at site X. In this scenario if you were to take blood cells, measure DNA methylation, and assess the association between DNA methylation and the trait of interest, you'd find an association between DNA methylation at site X and the trait, but in reality this is just a function of the increased number of CD4+ Th2 cells present in cases and site X has no causal relationship with the trait itself. There have been efforts to try and account for cell type heterogeneity in EWAS (REFs), but to completely prevent it's confounding effects, cells should be purified. The second problem arising from cell-type specific patterns of DNA methylation is the uncertainty that the cell type being studied is in fact one in which DNA methylation covaries with the trait of interest. Invasive cells to collect, such as blood, skin, and saliva, are common amongst epidemiological studies, but it is unclear whether EWAS in these studies are relevant to a large proportion of complex traits. This is studied, with regards to blood, in \textbf{Chapter \ref{M2-CHAPTER}}. Studies have actually shown high levels of correlation between DNA methylation of different cell types (REFs), but it is unknown whether the correlated sites are important to trait variation. Further, this correlation may complicate things with regards to epigenetic therapies. Some organs, such as the brain, are difficult to target with therapies (REF) so even if a promising epigenetic target is identified, it may be almost impossible to translate this into something clinically useful.
+
+\hypertarget{measuring-dna-methylation}{%
+\subsubsection{Measuring DNA methylation}\label{measuring-dna-methylation}}
+
+Ideally, in every sample, DNA methylation would be measured across all sites in the genome. Unfortunately, this is not currently possible and sequencing technologies that offer something similar are often very expensive (REFs). There are three alternatives available to DNA methylation studies. Firstly, one could sequence a small portion of the genome if this section is of particular interest, however this candidate gene approach is unlikely to be profitable unless the genes targeted already have good evidence for epigenetic variation with the trait of interest (REFs). Secondly, measuring DNA methylation on long repeat sequences of the genome, such as long interspersed nuclear elements (LINEs) and short interspersed nuclear elements (SINEs), can provide estimates for global DNA methylation changes (REFs). This is useful to examine if a trait is related to large pertubations of DNA methylation across the genome, but gives little mechanistic insight into what effects these changes may be having as methylation at functional genes is not measured. Thirdly, an array approach covering DNA methylation genome-wide at selected sites (REFs). This last approach is the most common for EWAS as it enables measurement of DNA methylation at hundreds of thousands of sites at a relatively cheap price per sample (REFs). The most commonly used array currently is the Illumina Infinium HumanMethylation450 (HM450) Beadchip, which measures DNA methylation at over 450,000 sites across the whole genome. Technology is always getting better and recently the Illumina Infinium HumanMethylationEPIC Beadchip, measuring over 800,000 sites is also now being used by many. The arrays are designed to cover a large number of genes and have many probes in promoter regions of genes (REF). With current biological knowledge of DNA methylation (see section \ref{dna-methylation}) this is unsurprising, but these arrays only measure roughly 1.5-4\% of all CpG sites in the genome. Further, there is no empirical evidence to show these sites covary with complex traits. This will be examined in \textbf{Chapter \ref{M2-CHAPTER}}.
+
+Batch effects and technical artifacts can also play a large role in EWAS. There has been considerable effort made to try and mitigate these effects from studies proposing SOMETHING METHODS (NAME OF PCA AND SVA METHODS) to help correct for batch effects (REFs) to studies identifying potentially unreliable probes (REFs). These are readily employed in many EWAS, but it is unclear as to whether potentially faulty probes have given rise to an excess of EWAS signal. This information could provide more evidence of the technical issues facing EWAS and prompt extra care when conducting these studies. This is examined briefly in \textbf{Chapter \ref{properties-of-ewas}}.
+
+\hypertarget{complexity-of-mechanisms}{%
+\subsubsection{Complexity of mechanisms}\label{complexity-of-mechanisms}}
+
+Thinking of talking about inferring function and epigenetic architecture (sites working in tandem) ---\textgreater{} But is this already covered in the \textbf{DNA methylation} section?
+
+\hypertarget{treatments}{%
+\subsubsection{Treatments}\label{treatments}}
+
+This is not a focus of my thesis, but for completion it is important to briefly note the complications of epigenetic-based therapies. Currently there are therapies used in the clinic that target enzymes responsible for epigenetic alterations, for example DNA methyltransferase inhibitors and histone deacetylase inhibitors (REFs). They are primarily used to treat cancers (REF), but as with many cancer treatments are very toxic. They have wide-spread consequences for the epigenome and are not at all targetted to any sites in the genome, which makes them highly undesirable for most diseases and as of yet there are no targeted epigenetic therapies (REF).
+
+In summary, there is great potential for EWAS to identify sites in the genome that could be targeted for treatment, but there are several challenges still to overcome. A great importance should be placed on using the data available to inform future designs of EWAS to maximise the potential of these studies.
+
 \hypertarget{genetics-in-ewas}{%
 \section{Using methods from genetics to help inform future EWAS}\label{genetics-in-ewas}}
 
@@ -322,8 +347,8 @@ Further, as DNA methylation changes may be as a result of the trait (unlike gene
 \hypertarget{establishing-causality}{%
 \subsection{Establishing causality}\label{establishing-causality}}
 
-\hypertarget{introducing-mendelian-randomization}{%
-\subsubsection{Introducing Mendelian randomization}\label{introducing-mendelian-randomization}}
+\hypertarget{mendelian-randomization}{%
+\subsubsection{Mendelian randomization}\label{mendelian-randomization}}
 
 As discussed, population-based studies of DNA methylation suffer from the same limitations as any observational epidemiology study, namely confounding and reverse causation. One method that aims to mitigate these limitations is Mendelian randomization (MR) (REFs), which uses genetic variants as proxies for the exposure of interest in an instrumental variable framework (illustrated in \textbf{Figure \ref{fig:}}). Using genetic variants as instruments has the advantage that the direction of effect will always be from instrument to exposure and not \emph{vice versa}, making interpretation of the studies simpler. Furthermore, unlike environmental phenotypes, that tend to be highly correlated and clustered into groups, genetic variants associated with a trait tend to be unconfounded (REF). In the abscence of assortative mating, genetic variants are should be distributed randomly across the population, so in effect those grouped by genotype should exhibit differences in exposure, but confounding factors should not differ between genotype groups (REF). Assortative mating has been reliably shown to occur with few traits (REF) and as those traits are social behaviours, such as alcohol consumption, or clear visible traits, such as height, one would assume there is little if any assortative mating with regards to DNA methylation levels so I will ignore assortative mating from this point onwards.
 
@@ -353,17 +378,15 @@ With all this in mind, it's important to maintain the idea that making concrete 
 \hypertarget{overview-of-thesis-aims}{%
 \section{Overview of thesis aims}\label{overview-of-thesis-aims}}
 
-\textbf{BELOW IS TERRIBLE BUT HELPFUL AS IT GIVES STRUCTURE}
+DNA methylation has great potential for use in an epidemiological sense and as samples with DNA methylation data continue to grow it is important to understand the limitations of EWAS and how to maximise it's potential. My thesis aims to address this by exploring what information has been gained from EWAS (\textbf{Chapters \ref{ewas-catalog} and \ref{properties-of-ewas}}), what information is still to gain from EWAS (\textbf{Chapter \ref{M2-CHAPTER}}), whether EWAS might add to our biological understanding of complex traits above GWAS (\textbf{Chapter \ref{GWAS-EWAS-COMP-CHAPTER}}) and by virtue of a particular case, the potential for confounding in EWAS (\textbf{Chapter \ref{dnam-lung-cancer-mr}}).
 
-EWAS might be an effective study technique to help provide biomarkers for better diagnosis, prognosis and prediction of disease and traits and further it could provide insight into trait aetiology as well as the downstream effects of a trait. However, with the field in it's infancy, there has yet to be a comprehensive look at what information has been gained from EWAS, what information is still to gain from EWAS in it's current state and whether or not the sites identified in EWAS are likely to be causally related to traits.
+In \textbf{Chapter \ref{ewas-catalog}} a database of published EWAS is curated and made publically available. The aim of \textbf{Chapter \ref{properties-of-ewas}} analyse the vast database jointly to allow the discovery of commonalities across methylome-trait associations and provide a platform to explore what is driving these commonalities. Further, the chapter explores the extent to which published results are reliable by assessing replication rate and whether sites measured by unreliable probes are prominent.
 
-In Chapter 3 the aim is to produce a database that brings together all the information currently published (as of X-date) together along with new EWAS with full summary statistics. This vast database will then be explored in Chapter 4, giving a detailed picture of what sites throughout the genome have been discovered in EWAS and exploring why they might have been discovered. NEED TO ADD IN HOW!
+After exploring the information already gained from EWAS, \textbf{Chapter \ref{M2-CHAPTER}} investigates the information still to gain from EWAS. The aim of the chapter is to apply methods developed to assess SNP-heritability to estimate the proportion of complex trait variation that is associated with sites commonly measured in EWAS.
 
-After exploring the information already gained from EWAS, Chapter 5 explores the amount of information still to gain from EWAS. NEED TO ADD IN HOW!
+\textbf{Chapter \ref{GWAS-EWAS-COMP-CHAPTER}} will then aim to assess whether the discoveries of EWAS may provide extra biological insight for traits of interest on top of those from GWAS. The EWAS Catalog, as developed in \textbf{Chapter \ref{ewas-catalog}} will be used to extract large (N\textgreater4500) EWAS datasets and the IEU GWAS Database will be used to extract the equivalent GWAS summary statistics for those traits. Tests will be applied to assess whether there is more overlap between the sites, genes or pathways identified by the EWAS and GWAS than expected by chance.
 
-The database from Chapter 3 will again be used to extract large EWAS datasets for Chapter 6, where potential biological information from these EWAS will be compared to that of GWAS from the same traits. NEED TO ADD IN HOW!
-
-Finally as an initial means of assessing whether DNA methylation might be causally associated with traits of interest, Chapter 7 will aim to use MR to help infer if DNA methylation identified in EWAS of lung cancer are likely to be causing lung cancer.
+Finally, \textbf{Chapter \ref{dnam-lung-cancer-mr}} will apply MR to explore the causal nature of associations between DNA methylation and lung cancer. This application case-study will compare and contrast findings to conventional EWAS estimates to give an example of the potential residual confounding that can be present in EWAS.
 
 \hypertarget{methods}{%
 \chapter{Methods}\label{methods}}
@@ -567,8 +590,8 @@ To quantify the association between the methylation level at each CpG and the ri
 
 An inverse-variance weighted fixed effects meta-analysis was performed of the EWAS (918 case-control pairs) using the \href{http://csg.sph.umich.edu/abecasis/metal/}{METAL software}. Direction of effect, effect estimates and the I\textsuperscript{2} statistic were used to assess heterogeneity across the studies in addition to effect estimates across smoking strata (never, former and current). All sites identified at a false discovery rate (FDR) \textless{} 0.05 in Model 2 and 3 were also present in the sites identified in Model 1. The effect size differences between models for all sites identified in Model 1 were assessed by a Kruskal-Wallis test and a post-hoc Dunn's test. There was little evidence for a difference (P \textgreater{} 0.1), so to maximize inclusion into the MR analyses we took forward the sites identified in the unadjusted model (Model 1).
 
-\hypertarget{mendelian-randomization}{%
-\subsection{Mendelian randomization}\label{mendelian-randomization}}
+\hypertarget{mendelian-randomization-1}{%
+\subsection{Mendelian randomization}\label{mendelian-randomization-1}}
 
 Two-sample MR was used to establish potential causal effect of differential methylation on lung cancer risk (Inoue \& Solon, 2010; Pierce \& Burgess, 2013).
 
@@ -642,8 +665,8 @@ The basic meta-analysis adjusted for study-specific covariates identified 16 CpG
 
 (Table 1 here)
 
-\hypertarget{mendelian-randomization-1}{%
-\subsection{Mendelian randomization}\label{mendelian-randomization-1}}
+\hypertarget{mendelian-randomization-2}{%
+\subsection{Mendelian randomization}\label{mendelian-randomization-2}}
 
 We identified 15 independent mQTLs (r2\textless0.01) associated with methylation at 14 of 16 CpGs. Ten mQTLs replicated at FDR\textless0.05 in NSHDS (Supplementary Table 3). MR power analyses indicated \textgreater99\% power to detect ORs for lung cancer of the same magnitude as those in the meta-analysis of EWAS.
 
