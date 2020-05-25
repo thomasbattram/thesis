@@ -1,1 +1,1 @@
-# EWAS-GWAS comparison
+# EWAS-GWAS comparison {#ewas-gwas-comp-chapter}
