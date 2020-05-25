@@ -64,6 +64,15 @@ lapply(pkgs, require, character.only = TRUE)
 doc.type <- knitr::opts_knit$get('rmarkdown.pandoc.to')
 ```
 
+```{r setoptions, eval = TRUE, echo = FALSE}
+opts_chunk$set(echo = FALSE, 
+            warning = FALSE, 
+            message = TRUE, 
+            cache = FALSE, 
+            dpi = 300
+            )
+```
+
 # Preface {.unnumbered}
 This template is based on (and in many places copied directly from) the Reed College LaTeX template, but hopefully it will provide a nicer interface for those that have never used TeX or LaTeX before.  Using _R Markdown_ will also allow you to easily keep track of your analyses in **R** chunks of code, with the resulting plots and output included as well.  The hope is this _R Markdown_ template gets you in the habit of doing reproducible research, which benefits you long-term as a researcher, but also will greatly help anyone that is trying to reproduce or build onto your results down the road.
 

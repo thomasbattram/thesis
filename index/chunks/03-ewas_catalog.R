@@ -1,4 +1,4 @@
-## ---- load_data --------------------------------
+## ---- load-data-03 --------------------------------
 
 fig_dir <- "/Users/tb13101/Desktop/projects/Main_project/thesis/index/figure/03-ewas_catalog/"
 

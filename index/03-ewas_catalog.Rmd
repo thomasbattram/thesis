@@ -1,19 +1,10 @@
 # The EWAS Catalog: a database of epigenome-wide association studies {#ewas-catalog}
 
-```{r setoptions, eval = TRUE, echo = FALSE}
-opts_chunk$set(echo = FALSE, 
-            warning = FALSE, 
-            message = TRUE, 
-            cache = FALSE, 
-            dpi = 300
-            )
-```
-
-```{r call_source}
+```{r call-source-03}
 read_chunk("~/Desktop/projects/Main_project/thesis/index/chunks/03-ewas_catalog.R")
 ```
 
-``` {r load_data, results = "hide", message = FALSE, warning = FALSE}
+``` {r load-data-03, results = "hide", message = FALSE, warning = FALSE}
 ```
 
 ## Abstract
