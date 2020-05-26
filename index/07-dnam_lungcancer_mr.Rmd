@@ -1,4 +1,4 @@
-# DNAm-lung cancer MR {#dnam-lung-cancer-mr}
+# Appraising the causal relevance of DNA methylation for risk of lung cancer {#dnam-lung-cancer-mr}
 
 ```{r call-source-07}
 read_chunk("chunks/07-dnam_lungcancer_mr.R")

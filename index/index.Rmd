@@ -62,6 +62,11 @@ lapply(pkgs, require, character.only = TRUE)
 
 # this will allow us to make word documents with relatively ok tables
 doc.type <- knitr::opts_knit$get('rmarkdown.pandoc.to')
+
+# set figure and table paths
+fig_path <- "figure"
+tab_path <- "data"
+stopifnot(file.exists(fig_path) | file.exists(tab_path))
 ```
 
 ```{r setoptions, eval = TRUE, echo = FALSE}

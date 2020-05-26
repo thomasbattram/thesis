@@ -253,20 +253,18 @@ Histones are genome-bound proteins composed of four subgroups that are present t
 \subsection{DNA methylation}\label{dna-methylation}}
 
 Good review: Peter Jones 2012
-DNA methylation is the addition of a methyl group to the DNA, which primarily occurs at the 5' cytosine of a CpG site. Little is known about the role of non-CpG site DNA methylation and current EWAS tend to only measure CpG methylation, so that will be my focus here. The function of this epigenetic mark was proposed back in 1975 (REFs), where two papers suggested it represses gene expression and ever since then many papers have shown the correlation between DNA methylation at gene promoters and a reduction in expression of those genes (REFs). Unfortunately, it's not that simple and even now the role of DNA methylation is being debated, with a paper recently suggesting that any DNA methylation changes associated with alterations in gene expression were just a by-product of other regulatory processes such as transcription factor binding (REF). Regardless, DNA methylation is closely linked with genomic function and correlates with various aspects in different ways, as depicted in \textbf{Figure \ref{fig:dnam-fig}}.
+DNA methylation is the addition of a methyl group to the DNA, which primarily occurs at the 5' cytosine of a CpG site. Little is known about the role of non-CpG site DNA methylation and current EWAS tend to only measure CpG methylation, so that will be my focus here. The function of this epigenetic mark was proposed back in 1975 (REFs), where two papers suggested it represses gene expression and ever since then many papers have shown the correlation between DNA methylation at gene promoters and a reduction in expression of those genes (REFs). Unfortunately, it's not that simple and even now the role of DNA methylation is being debated, with a paper recently suggesting that any DNA methylation changes associated with alterations in gene expression were just a by-product of other regulatory processes such as transcription factor binding (REF). Regardless, DNA methylation is closely linked with genomic function and correlates with various aspects in different ways, as depicted in \textbf{Figure \ref{fig:dnam-functions}}.
 
 CpG sites are not randomly distributed throughout the genome (REF), but are often found in clusters and so if DNA methylation does have an effect on processes like gene expression regulation it's thought that methylation and de-methylation of CpG sites in groups is what drives their regulatory function. To support this, there are clear biological processes that regulate DNA methylation at nearby sites together, for example, CpG sites at transcription factor binding sites will be de-methylated as a group when the transcription factor binds (REF). Further nearby sites are often statistically correlated, suggesting regulation as a group. However, there is no evidence to suggest that neighbouring sites do indeed act in tandem or whether it is likely one site from the group is driving regulatory function. This is something I explore in (\textbf{Chapter \ref{h2ewas-chapter}}).
 
 One major difference between DNA methylation and other epigenetic marks, that was alluded to earlier, is that DNA methylation is far more stable. Enzymes do exist that can actively de-methylate the DNA, for example the ten-eleven translocation (TET) enzymes, but ultimately cell division is required for full de-methylation of a DNA molecule. Biologically, this suggests DNA methylation might be involved in long-term repression of gene expression, which can be seen for X-inactivation, and practically it makes studying the epigenetic mark easier as it prevents large temporal variations in DNA methylation (though they may occur!), so fewer samples are needed.
 
-Figure here:
 
-Figure should contain these diagrams:
-1. DNA methylation at TSS and no DNA methylation in gene body (repressed transcription)
-2. No DNA methylation at TSS and DNA methylation in gene body (active transcription)
-3. DNA methylation in centromeres
-4. DNA methylation at transposable elements
-
+\begin{figure}
+\centering
+\includegraphics{figure/01-introduction/dnam-gene-expression.pdf}
+\caption{\label{fig:dnam-functions}Simplified diagrams of the associations between DNA methylation and genomic regulation. In \emph{a}, CpG sites are methylated at the promoter region, but not in the gene body, which is associated with lack of gene expression. In \emph{b}, the opposite is occurring. In \emph{c}, the transposon is fully methylated and blocked from being transcribed.}
+\end{figure}
 \hypertarget{dnam-phs}{%
 \section{Use of DNA methylation in a population setting~}\label{dnam-phs}}
 
@@ -373,10 +371,14 @@ Another advantage of MR is the data it uses. Thousands of GWAS have been conduct
 \hypertarget{assumptions-of-mr}{%
 \subsubsection{Assumptions of MR}\label{assumptions-of-mr}}
 
-There are three main assumptions in MR, these are illustrated in \textbf{Figure \ref{fig:X}}. Testing assumption one, the instruments associate with the exposure of interest, is simple, but the other two assumptions can't technically be proven to be true. Horizontal pleiotropy, where genetic variants associate with more variables than just the exposure of interest, can lead to violations in assumptions two and three. Ideally, MR would be performed in the context where the genetic effect on the exposure had been characterised such that the mechanism of action was understood clearly. This would help give evidence against assumptions two and three being broken. Unfortunately, this is rarely possible. However, a plethora of methods have now been developed to test for pleiotropic effects, given the exposure of interest has multiple independent genetic variants reliably associated with it.
+There are three main assumptions in MR, these are illustrated in \textbf{Figure \ref{fig:mr-diagram}}. Testing assumption one, the instruments associate with the exposure of interest, is simple, but the other two assumptions can't technically be proven to be true. Horizontal pleiotropy, where genetic variants associate with more variables than just the exposure of interest, can lead to violations in assumptions two and three. Ideally, MR would be performed in the context where the genetic effect on the exposure had been characterised such that the mechanism of action was understood clearly. This would help give evidence against assumptions two and three being broken. Unfortunately, this is rarely possible. However, a plethora of methods have now been developed to test for pleiotropic effects, given the exposure of interest has multiple independent genetic variants reliably associated with it.
 
-\textbf{INSERT FIGURE HERE}
 
+\begin{figure}
+\centering
+\includegraphics{figure/01-introduction/mr-diagram.pdf}
+\caption{\label{fig:mr-diagram}Mendelian randomization. Mendelian randomization can be used to test the causal nature of exposure-outcome relationships provided the assumptions are met. Assumption 1. There is an association between the instrument and the exposure. Assumption 2. There are no associations between the instrument and outcome, except through the exposure. Assumption 3. The instrument is not associated with any factors that confound the exposure-outcome relationship.}
+\end{figure}
 \hypertarget{applying-mr-in-a-dna-methylation-context}{%
 \subsubsection{Applying MR in a DNA methylation context}\label{applying-mr-in-a-dna-methylation-context}}
 
@@ -391,7 +393,7 @@ With all this in mind, it's important to maintain the idea that making concrete 
 \hypertarget{overview-of-thesis-aims}{%
 \section{Overview of thesis aims}\label{overview-of-thesis-aims}}
 
-DNA methylation has great potential for use in an epidemiological sense and as samples with DNA methylation data continue to grow it is important to understand the limitations of EWAS and how to maximise it's potential. My thesis aims to address this by exploring what information has been gained from EWAS (\textbf{Chapters \ref{ewas-catalog} and \ref{properties-of-ewas}}), what information is still to gain from EWAS (\textbf{Chapter \ref{h2ewas-chapter}}), whether EWAS might add to our biological understanding of complex traits above GWAS (\textbf{Chapter \ref{ewas-gwas-comp-chapter}}) and by applying MR in a particular case, the potential for confounding in EWAS (\textbf{Chapter \ref{dnam-lung-cancer-mr}}).
+DNA methylation has great potential for use in an epidemiological sense and as samples with DNA methylation data continue to grow it is important to understand the limitations of EWAS and how to maximise it's potential. My thesis aims to address this by exploring what information has been gained from EWAS (\textbf{Chapters \ref{ewas-catalog} and \ref{properties-of-ewas}}), what information is still to gain from EWAS (\textbf{Chapter \ref{h2ewas-chapter}}), whether EWAS might add to our biological understanding of complex traits above GWAS (\textbf{Chapter \ref{ewas-gwas-comp-chapter}}) and by applying MR in a particular case, the potential for confounding in EWAS (\textbf{Chapter \ref{dnam-lung-cancer-mr}}). See the flowchart in \textbf{Figure \ref{fig:thesis-flowchart}} for a graphical depiction.
 
 In \textbf{Chapter \ref{ewas-catalog}} a database of published EWAS is curated and made publicly available, which will be used in later chapters. The aim of \textbf{Chapter \ref{properties-of-ewas}} is to analyse the vast database jointly to allow the discovery of commonalities across methylome-trait associations and provide a platform to explore what is driving these commonalities. Further, the chapter explores the extent to which published results are reliable by assessing replication rate and whether sites measured by unreliable probes are prominent.
 
@@ -401,6 +403,12 @@ After exploring the information already gained from EWAS, \textbf{Chapter \ref{h
 
 Finally, \textbf{Chapter \ref{dnam-lung-cancer-mr}} will apply MR to explore the causal nature of associations between DNA methylation and lung cancer. This application case-study will compare and contrast findings to conventional EWAS estimates to give an example of the potential residual confounding that can be present in EWAS.
 
+
+\begin{figure}
+\centering
+\includegraphics{figure/01-introduction/thesis-flowchart.pdf}
+\caption{\label{fig:thesis-flowchart}Flowchart showing questions being asked in the thesis and the corresponding chapters attempting to help answer them.}
+\end{figure}
 \hypertarget{methods}{%
 \chapter{Methods}\label{methods}}
 
@@ -528,7 +536,7 @@ Here is a reference to Caroline's paper: (Relton \& Davey Smith, 2010)
 \chapter{EWAS-GWAS comparison}\label{ewas-gwas-comp-chapter}}
 
 \hypertarget{dnam-lung-cancer-mr}{%
-\chapter{DNAm-lung cancer MR}\label{dnam-lung-cancer-mr}}
+\chapter{Appraising the causal relevance of DNA methylation for risk of lung cancer}\label{dnam-lung-cancer-mr}}
 
 \hypertarget{abstract-1}{%
 \section{Abstract}\label{abstract-1}}
