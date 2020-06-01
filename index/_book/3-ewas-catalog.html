@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 The EWAS Catalog: a database of epigenome-wide association studies | thesis.utf8</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 The EWAS Catalog: a database of epigenome-wide association studies | thesis.utf8" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 The EWAS Catalog: a database of epigenome-wide association studies | thesis.utf8" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="2-methods.html"/>
+<link rel="next" href="4-properties-of-ewas.html"/>
+<script src="libs/header-attrs-2.1.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"></a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="1-introduction.html"><a href="1-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="1-introduction.html"><a href="1-introduction.html#dna-methylation-as-part-of-the-regulatory-machinery"><i class="fa fa-check"></i><b>1.1</b> DNA methylation as part of the regulatory machinery</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="1-introduction.html"><a href="1-introduction.html#gene-expression-regulation"><i class="fa fa-check"></i><b>1.1.1</b> Gene expression regulation</a></li>
+<li class="chapter" data-level="1.1.2" data-path="1-introduction.html"><a href="1-introduction.html#defining-epigenetics"><i class="fa fa-check"></i><b>1.1.2</b> Defining epigenetics</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-introduction.html"><a href="1-introduction.html#histone-modifications"><i class="fa fa-check"></i><b>1.1.3</b> Histone modifications</a></li>
+<li class="chapter" data-level="1.1.4" data-path="1-introduction.html"><a href="1-introduction.html#dna-methylation"><i class="fa fa-check"></i><b>1.1.4</b> DNA methylation</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="1-introduction.html"><a href="1-introduction.html#dnam-phs"><i class="fa fa-check"></i><b>1.2</b> Use of DNA methylation in a population setting </a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="1-introduction.html"><a href="1-introduction.html#appeal-of-dnam"><i class="fa fa-check"></i><b>1.2.1</b> The appeal of DNA methylation to epidemiologists</a></li>
+<li class="chapter" data-level="1.2.2" data-path="1-introduction.html"><a href="1-introduction.html#ewas"><i class="fa fa-check"></i><b>1.2.2</b> Epigenome-wide association studies</a></li>
+<li class="chapter" data-level="1.2.3" data-path="1-introduction.html"><a href="1-introduction.html#problems-for-ewas"><i class="fa fa-check"></i><b>1.2.3</b> Problems for EWAS</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="1-introduction.html"><a href="1-introduction.html#genetics-in-ewas"><i class="fa fa-check"></i><b>1.3</b> Using methods from genetics to help inform future EWAS</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="1-introduction.html"><a href="1-introduction.html#gwas-catalog"><i class="fa fa-check"></i><b>1.3.1</b> The GWAS Catalog</a></li>
+<li class="chapter" data-level="1.3.2" data-path="1-introduction.html"><a href="1-introduction.html#heritability"><i class="fa fa-check"></i><b>1.3.2</b> Total variance captured by all sites measured genome-wide</a></li>
+<li class="chapter" data-level="1.3.3" data-path="1-introduction.html"><a href="1-introduction.html#inferring-biology-from-signals"><i class="fa fa-check"></i><b>1.3.3</b> Inferring biology from signals</a></li>
+<li class="chapter" data-level="1.3.4" data-path="1-introduction.html"><a href="1-introduction.html#establishing-causality"><i class="fa fa-check"></i><b>1.3.4</b> Establishing causality</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="1-introduction.html"><a href="1-introduction.html#overview-of-thesis-aims"><i class="fa fa-check"></i><b>1.4</b> Overview of thesis aims</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-methods.html"><a href="2-methods.html"><i class="fa fa-check"></i><b>2</b> Methods</a></li>
+<li class="chapter" data-level="3" data-path="3-ewas-catalog.html"><a href="3-ewas-catalog.html"><i class="fa fa-check"></i><b>3</b> The EWAS Catalog: a database of epigenome-wide association studies</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3-ewas-catalog.html"><a href="3-ewas-catalog.html#abstract"><i class="fa fa-check"></i><b>3.1</b> Abstract</a></li>
+<li class="chapter" data-level="3.2" data-path="3-ewas-catalog.html"><a href="3-ewas-catalog.html#introduction-1"><i class="fa fa-check"></i><b>3.2</b> Introduction</a></li>
+<li class="chapter" data-level="3.3" data-path="3-ewas-catalog.html"><a href="3-ewas-catalog.html#methods-1"><i class="fa fa-check"></i><b>3.3</b> Methods</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="3-ewas-catalog.html"><a href="3-ewas-catalog.html#implementation"><i class="fa fa-check"></i><b>3.3.1</b> Implementation</a></li>
+<li class="chapter" data-level="3.3.2" data-path="3-ewas-catalog.html"><a href="3-ewas-catalog.html#overview-of-publication-data-extraction"><i class="fa fa-check"></i><b>3.3.2</b> Overview of publication data extraction</a></li>
+<li class="chapter" data-level="3.3.3" data-path="3-ewas-catalog.html"><a href="3-ewas-catalog.html#overview-of-geo-data-extraction"><i class="fa fa-check"></i><b>3.3.3</b> Overview of GEO data extraction</a></li>
+<li class="chapter" data-level="3.3.4" data-path="3-ewas-catalog.html"><a href="3-ewas-catalog.html#ewas-methods"><i class="fa fa-check"></i><b>3.3.4</b> EWAS methods</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="3-ewas-catalog.html"><a href="3-ewas-catalog.html#results"><i class="fa fa-check"></i><b>3.4</b> Results</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="3-ewas-catalog.html"><a href="3-ewas-catalog.html#database-interface-and-use"><i class="fa fa-check"></i><b>3.4.1</b> Database interface and use</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="3-ewas-catalog.html"><a href="3-ewas-catalog.html#discussion"><i class="fa fa-check"></i><b>3.5</b> Discussion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-properties-of-ewas.html"><a href="4-properties-of-ewas.html"><i class="fa fa-check"></i><b>4</b> Properties of EWAS</a></li>
+<li class="chapter" data-level="5" data-path="5-h2ewas-chapter.html"><a href="5-h2ewas-chapter.html"><i class="fa fa-check"></i><b>5</b> h2ewas</a></li>
+<li class="chapter" data-level="6" data-path="6-ewas-gwas-comp-chapter.html"><a href="6-ewas-gwas-comp-chapter.html"><i class="fa fa-check"></i><b>6</b> EWAS-GWAS comparison</a></li>
+<li class="chapter" data-level="7" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html"><i class="fa fa-check"></i><b>7</b> Appraising the causal relevance of DNA methylation for risk of lung cancer</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#abstract-1"><i class="fa fa-check"></i><b>7.1</b> Abstract</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#background"><i class="fa fa-check"></i><b>7.1.1</b> Background</a></li>
+<li class="chapter" data-level="7.1.2" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#methods-2"><i class="fa fa-check"></i><b>7.1.2</b> Methods</a></li>
+<li class="chapter" data-level="7.1.3" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#results-1"><i class="fa fa-check"></i><b>7.1.3</b> Results</a></li>
+<li class="chapter" data-level="7.1.4" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#conclusions"><i class="fa fa-check"></i><b>7.1.4</b> Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#introduction-2"><i class="fa fa-check"></i><b>7.2</b> Introduction</a></li>
+<li class="chapter" data-level="7.3" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#methods-3"><i class="fa fa-check"></i><b>7.3</b> Methods</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#ewas-study-details"><i class="fa fa-check"></i><b>7.3.1</b> EWAS study details</a></li>
+<li class="chapter" data-level="7.3.2" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#ewas-meta-analysis"><i class="fa fa-check"></i><b>7.3.2</b> EWAS Meta-analysis</a></li>
+<li class="chapter" data-level="7.3.3" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#mendelian-randomization-1"><i class="fa fa-check"></i><b>7.3.3</b> Mendelian randomization</a></li>
+<li class="chapter" data-level="7.3.4" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#sample-2-transdisciplinary-research-in-cancer-of-the-lung-and-the-international-lung-cancer-consortium"><i class="fa fa-check"></i><b>7.3.4</b> Sample 2: Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium</a></li>
+<li class="chapter" data-level="7.3.5" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#supplementary-analyses"><i class="fa fa-check"></i><b>7.3.5</b> Supplementary analyses</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#results-2"><i class="fa fa-check"></i><b>7.4</b> Results</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#ewas-meta-analysis-1"><i class="fa fa-check"></i><b>7.4.1</b> EWAS meta-analysis</a></li>
+<li class="chapter" data-level="7.4.2" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#mendelian-randomization-2"><i class="fa fa-check"></i><b>7.4.2</b> Mendelian randomization</a></li>
+<li class="chapter" data-level="7.4.3" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#tumour-and-adjacent-normal-lung-tissue-methylation-patterns"><i class="fa fa-check"></i><b>7.4.3</b> Tumour and adjacent normal lung tissue methylation patterns</a></li>
+<li class="chapter" data-level="7.4.4" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#gene-expression-associated-with-mqtls-in-blood-and-lung-tissue"><i class="fa fa-check"></i><b>7.4.4</b> Gene expression associated with mQTLs in blood and lung tissue</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="7-dnam-lung-cancer-mr.html"><a href="7-dnam-lung-cancer-mr.html#discussion-1"><i class="fa fa-check"></i><b>7.5</b> Discussion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i>Conclusion</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="A-the-first-appendix.html"><a href="A-the-first-appendix.html"><i class="fa fa-check"></i><b>A</b> The First Appendix</a></li>
+<li class="chapter" data-level="B" data-path="B-the-second-appendix-for-fun.html"><a href="B-the-second-appendix-for-fun.html"><i class="fa fa-check"></i><b>B</b> The Second Appendix, for Fun</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ewas-catalog" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> The EWAS Catalog: a database of epigenome-wide association studies</h1>
+<div id="abstract" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Abstract</h2>
+<p>Epigenome-wide association studies (EWAS) seek to understand the link between patterns of DNA methylation, the addition of a methyl group to a DNA molectule that may change how the molecule interacts with other cellular factors, at thousands or millions of sites across the genome to various traits and exposures. In recent years, the increase in availability of DNA methylation measures in population-based cohorts and case-control studies has resulted in a dramatic increase in the number of EWAS being performed and published. To make this rich source of molecular data more accessible, a manually curated database has been made containing CpG-trait associations (at P &lt; 1x10<sup>-4</sup>) from published EWAS, each assaying over 100,000 CpGs in at least 100 individuals. The database currently contains these associations from over 150 published EWAS as well as full summary statistics for over 180 million association tests of 418 EWAS in the Avon Longitudinal Study of Parents and Children (ALSPAC) and the Gene Expression Omnibus (GEO). It is accompanied by a web-based tool and R package that allow these associations to be easily queried. This database will give researchers the opportunity to quickly and easily query EWAS associations to gain insight into the molecular underpinnings of disaese as well as the impact of traits and exposures on the DNA methylome. The EWAS Catalog is available at: <a href="http://www.ewascatalog.org" class="uri">http://www.ewascatalog.org</a>.</p>
+</div>
+<div id="introduction-1" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Introduction</h2>
+<p>Epigenome-wide association studies (EWAS) aim to assess the associations between phenotypes of interest and DNA methylation across the genome <span class="citation">(<span class="citeproc-not-found" data-reference-id="Relton2010"><strong>???</strong></span>; <span class="citeproc-not-found" data-reference-id="Mill2013"><strong>???</strong></span>; <span class="citeproc-not-found" data-reference-id="Rakyan2011"><strong>???</strong></span>)</span>. These associations may then be used for disease diagnosis or prediction <span class="citation">(<span class="citeproc-not-found" data-reference-id="Relton2010"><strong>???</strong></span>; <span class="citeproc-not-found" data-reference-id="Mill2013"><strong>???</strong></span>; <span class="citeproc-not-found" data-reference-id="Rakyan2011"><strong>???</strong></span>)</span>. Also, unlike genetic variants, changes in DNA methylation are responsive to the environment and so may be targeted for treatment. EWAS of smoking <span class="citation">(<span class="citeproc-not-found" data-reference-id="Joehanes2016"><strong>???</strong></span>)</span>, body mass index (BMI) <span class="citation">(<span class="citeproc-not-found" data-reference-id="Wahl2017"><strong>???</strong></span>)</span> and aging <span class="citation">(<span class="citeproc-not-found" data-reference-id="Horvath2013"><strong>???</strong></span>)</span> have shown that various exposures are related to large perturbations in DNA methylation across the genome. Furthermore, a paper recently estimated that over 60% of the total proportion of BMI variation was captured by DNA methylation at about 150 CpG sites <span class="citation">(<span class="citeproc-not-found" data-reference-id="Banos2018"><strong>???</strong></span>)</span>. In recent years, there has been a dramatic increase in the number of EWAS being performed and published due to technological advancements making it possible to measure DNA methylation at hundreds of thousands of CpG sites cheaply and effectively. Giving researchers easy access to EWAS outputs will help them gain insight into the molecular underpinnings of disease as well as the impact of traits and exposures on the DNA methylome. Furthermore, current collections of summary statistics have already proven useful to various fields, for example the GWAS Catalog <span class="citation">(<span class="citeproc-not-found" data-reference-id="Buniello2019"><strong>???</strong></span>)</span> has been cited over 2000 times in papers contributing to new methods and exploring the genetic architecture of a plethora of traits.</p>
+<p>At the time of making the database, to our knowledge, there were no databases that had collected well-curated EWAS on all traits (no just diseases) in an online database accessible to researchers. During production one database fulfilled those metrics: EWAS Atlas <span class="citation">(<span class="citeproc-not-found" data-reference-id="Li2019"><strong>???</strong></span>)</span>. Other databases are available but are limited to certain diseases (e.g. MethHC <span class="citation">(<span class="citeproc-not-found" data-reference-id="Huang2015"><strong>???</strong></span>)</span>). The EWAS Atlas provides a simple-to-use website with annotated CpG sites and information on traits. Ideally a database of EWAS results will provide summary statistics, including betas, standard errors and p-values where provided from publications, in an easily accessible manner, this enables researchers to explore various aspects of the published data without having to retrieve the published article. For example, researchers might compare effect estimates between studies in the database or check to see if their results are replicated in another published study. At the time of writing the EWAS atlas platform did not enable users to download effect estimates and standard errors. Another caveat is that there is currently only published data on the platform, not full summary statistics from EWAS.</p>
+<p>The EWAS Catalog aims to improve upon current databases to 1) allow easy and programmatic access to summary statistics for downstream analyses by researchers and 2) provide full summary statistics from a range of EWAS conducted in multiple cohorts. To this end we have produced The EWAS Catalog, a manually curated database of currently published EWAS, <strong>NUMBER</strong> (originally 378) EWAS performed in the Avon Longitudinal Study of Parents and Children (ALSPAC) <span class="citation">(<span class="citeproc-not-found" data-reference-id="Fraser2013"><strong>???</strong></span>; <span class="citeproc-not-found" data-reference-id="Boyd2013"><strong>???</strong></span>)</span> and <strong>NUMBER</strong> (originally 40) EWAS performed from data from the Gene Expression Omnibus (GEO) database. The process and data inclusion are summarised in <strong>FIGURE</strong> (originally Supplementary Figure 1).</p>
+<p>In this chapter, Dr James Staley built the original website, Dr Matthew Suderman has been key in development and maintenance of the website and there was a team to help gather and input the data. I helped develop and maintain the website, gather and input the data, run the EWAS within the ALSPAC cohort and on data from the GEO database. The team, led by myself, is continuing to develop and maintain the database. Full acknowledgements to the team can be found on the website: <a href="http://www.ewascatalog.org/about/" class="uri">http://www.ewascatalog.org/about/</a>.</p>
+</div>
+<div id="methods-1" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Methods</h2>
+<div id="implementation" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Implementation</h3>
+<p>The EWAS Catalog web app was built using the Django Python package (<a href="https://djangoproject.com" class="uri">https://djangoproject.com</a>). The data is stored in a combination of MySQL databases and fast random access files <span class="citation">(<span class="citeproc-not-found" data-reference-id="Li2011"><strong>???</strong></span>)</span> and can be queried via the web app or the R package (www.github.com/ewascatalog/ewascatalog-r/).</p>
+</div>
+<div id="overview-of-publication-data-extraction" class="section level3" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Overview of publication data extraction</h3>
+<p>To identify publications, periodic literature searches are performed in PubMed using the search terms: “epigenome-wide” OR “epigenome wide” OR “EWAS” OR “genome-wide AND methylation” OR “genome wide AND methylation”.</p>
+<p>Our criteria for inclusion of a study into The EWAS Catalog are as follows:</p>
+<ol style="list-style-type: decimal">
+<li>The EWAS performed must contain over 100 humans</li>
+<li>The analysis must contain over 100,000 CpG sites</li>
+<li>The DNA methylation data must be genome-wide</li>
+<li>The study must include previously unpublished EWAS summary statistics</li>
+</ol>
+<p>CpG-phenotype associations are extracted from studies at P &lt; 1x10<sup>-4</sup>. Variables extracted can be found in <strong>TABLE</strong> (NO ORIGINAL). All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).</p>
+<p>Based on these criteria, from 3rd July 2019, The EWAS Catalog contained 540,699 associations from 159 studies.</p>
+</div>
+<div id="overview-of-geo-data-extraction" class="section level3" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Overview of GEO data extraction</h3>
+<p>To recruit additional datasets suitable for new EWAS analysis, the geograbi R package (<a href="https://github.com/yousefi138/geograbi" class="uri">https://github.com/yousefi138/geograbi</a>) was used to both query GEO for experiments matching The EWAS Catalog inclusion criteria (described above) and extract relevant DNA methylation and phenotype information. The query was performed on 20 March 2019 and identified 148 such experiments with 32,845 samples where DNA methylation and phenotype information could be successfully extracted. From these, the aim was to repeat the analyses performed in the publications linked by PubMed IDs to each GEO record. Thus, I looked up the corresponding full texts for each dataset and identified the main variables of interest. Of the 148 putative GEO studies, only 34 (23%) contained sufficient information to replicate the original analysis.</p>
+</div>
+<div id="ewas-methods" class="section level3" number="3.3.4">
+<h3><span class="header-section-number">3.3.4</span> EWAS methods</h3>
+<div id="avon-longitudinal-study-of-parents-and-children-alspac" class="section level4" number="3.3.4.1">
+<h4><span class="header-section-number">3.3.4.1</span> Avon Longitudinal Study of Parents and Children (ALSPAC)</h4>
+<p>EWAS were conducted for <strong>NUMBER</strong> (originally 378) continuous and binary traits in peripheral blood DNA methylation of ALSPAC mothers in middle age (N = <strong>NUMBER</strong> (originally 940) ), generated as part of the Accessible Resource for Integrated Epigenomics Studies (ARIES) project <span class="citation">(<span class="citeproc-not-found" data-reference-id="Relton2015"><strong>???</strong></span>)</span>. The traits were extracted from the same time that blood was drawn for DNA methylation assays.</p>
+<p><strong>ADD IN QC STEPS AND COHORT INFO HERE</strong> (originally in Supplementary Material)</p>
+<p>For all traits, linear regression models were fitted with DNA methylation at each site as the outcome and the phenotype as the exposure. DNA methylation was coded as beta values between 0 and 1. For a particular site, a beta value of 0 represents no methylation being detected in all cells measured and a value of 1 represents all cells being methylated at that site. Covariates included age, the top 10 ancestry principal components, and 20 surrogate variables.</p>
+<p><strong>ADD IN HOW PCS</strong></p>
+</div>
+<div id="geo-datasets" class="section level4" number="3.3.4.2">
+<h4><span class="header-section-number">3.3.4.2</span> GEO datasets</h4>
+<p>EWAS were performed using 30 datasets, containing 36 traits were extracted from GEO using the geograbi R package (<a href="https://github.com/yousefi138/geograbi" class="uri">https://github.com/yousefi138/geograbi</a>).</p>
+<p><strong>ADD IN QC STEPS HERE</strong> (originally in Supplementary Material)</p>
+<p>A list of all the traits with corresponding citations is provided in <strong>TABLE</strong> (originally Supplementary Table 1).
+For all traits, linear regression models were fitted with DNA methylation as the outcome and the phenotype as the exposure as for the ARIES data. Twenty surrogate variables were included as covariates. Other covariates were considered, but surrogate variables only were used for two reasons: 1) to help automate the process and 2) because covariates used in the original EWAS were not included with many of the GEO datasets.</p>
+<p>Statistical analyses were conducted in R (Version 3.3.3). The smartsva package <span class="citation">(<span class="citeproc-not-found" data-reference-id="Chen2017"><strong>???</strong></span>)</span> was used to create surrogate variables and the ewaff R package (<a href="https://github.com/perishky/ewaff" class="uri">https://github.com/perishky/ewaff</a>) was used to conduct the EWAS, all p-values are two-sided.</p>
+</div>
+</div>
+</div>
+<div id="results" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Results</h2>
+<div id="database-interface-and-use" class="section level3" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Database interface and use</h3>
+<p>There are two ways to access this large, curated database: through the main website www.ewascatalog.org or by using the R package “ewascatalog”. The website provides a simple user interface, which resembles that of the GWAS catalog <span class="citation">(<span class="citeproc-not-found" data-reference-id="Buniello2019"><strong>???</strong></span>)</span>, whereby there is a single search bar to explore the database and links to tabs that contain documentation on the contents and how to cite its use (Figure 1). Users may enter a CpG, gene, genome position or trait into the search bar and it will rapidly return detail for relevant EWAS associations, including CpG, trait, sample size, publication and association (effect and P value) (Figure 1). This information along with additional information such as ancestry, outcome, exposure units, and tissue analysed are available for download as a tab-separated value (tsv) text file. Unlike other EWAS databases, we provide the option of downloading summary results for both the user’s search and for the entire database.</p>
+<div class="figure" style="text-align: center"><span id="fig:catalog-use"></span>
+<img src="figure/03-ewas_catalog/using_the_catalog.pdf" alt="Using the EWAS catalog. 
+At the top of the figures is the home page URL, ewascatalog.org. 
+Below that are examples of three types of searches possible: 
+1. CpG sites, 2. genes and 3. traits. 
+Finally, the results are displayed after searching the catalog for “Depression”. 
+Circled in red is the download button, this button enables the user to download the results of their search as a tab-separated value file. 
+This file will contain the information shown on the website as well as additional analysis information." width="100%" />
+<p class="caption">
+Figure 3.1: Using the EWAS catalog.
+At the top of the figures is the home page URL, ewascatalog.org.
+Below that are examples of three types of searches possible:
+1. CpG sites, 2. genes and 3. traits.
+Finally, the results are displayed after searching the catalog for “Depression”.
+Circled in red is the download button, this button enables the user to download the results of their search as a tab-separated value file.
+This file will contain the information shown on the website as well as additional analysis information.
+</p>
+</div>
+<p>The R package, along with installation instructions and examples are available at <a href="https://github.com/ewascatalog/ewascatalog-r/" class="uri">https://github.com/ewascatalog/ewascatalog-r/</a>. Once installed, the database can be queried directly in R using the “ewascatalog()” function similar to the website: simply supply the function with a CpG site, gene, genome position or trait and the function returns the same output as is downloadable from the website.</p>
+</div>
+</div>
+<div id="discussion" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Discussion</h2>
+<p>In this chapter, a database of previously published EWAS and the full summary statistics of 418 newly performed EWAS within ALSPAC and GEO has been established. This is freely available for all researchers to use and provides a platform to explore what information has been gained from EWAS as well as a platform that can be used to pool all existing data to gain new insights into both the EWAS study itself and how DNA methylation associates with traits. Despite the fact The EWAS Atlas has similar aims to The EWAS Catalog, latter provides full summary statistics, extra information and a user-friendly platform to enable more downstream analyses.</p>
+<p>The EWAS catalog team will continue to collate and upload newly published EWAS and further increase the number of full summary statistics on the website by performing additional EWAS on available datasets and by inviting EWAS authors to provide full summary statistics. Currently work is ongoing to include additional functionality to allow users to easily and systematically compare their EWAS findings to EWAS in the database. With this full summary data, it is possible to make greater strides into discovering the epigenetic architecture of traits.</p>
+<p>Therefore, despite the fact no extra information about EWAS was presented in this chapter, a platform has been made that easily enables us to explore 1) what information has been gained from EWAS and 2) the relationship between DNA methylation and all traits. This will be explored in the next chapters.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="2-methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="4-properties-of-ewas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": [["thesis.pdf", "PDF"], ["thesis.epub", "EPUB"], ["thesis.docx", "Word"]],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
