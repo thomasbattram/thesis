@@ -70,5 +70,11 @@ All trait genes = Causal genes + consequential genes
 Test: Fisher's exact to determine if there is more overlap between EWAS genes/pathways and GWAS genes/pathways than expected (expected determined from the number of genes from 'all trait genes')
 
 
+### To-do
+
+* Re-do simulations 
+* Try and make methods across sections of project the same
+* Check data more carefully for pathway enrichment correlation stuff
+
 
 
