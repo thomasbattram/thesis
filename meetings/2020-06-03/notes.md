@@ -27,6 +27,21 @@ Brief methods: Extract data for EWAS (N>4500) and corresponding GWAS. Match site
 * Scenarios in which we'd expect this to occur are... (simulations)
 * Generally EWAS pathway enrichment correlates poorly with all GWAS pathway enrichments, with some exceptions (e.g. insulin EWAS and body fatness GWAS).
 
+__NOTES__
+
+- Should check to see why the methods aren't consistent between pathway overlap stuff
+
+- For intial overlap analysis could do this:
+	1. Keep overlap stuff same for looking at gene overlap
+	2. For pathways, do enrichment analysis then check for overlap of "enriched" pathways 
+
+- Problem with correlation of just enrichments
+	- May have highly variable enrichment scores! --> should check this out...
+
+- Could look at genetic correlations when assessing whether enrichment scores should be highly correlated for traits
+
+- If GWAS don't match that should then, it suggests that pathway enrichment doesn't necessarily give much overlap.
+
 ## ewas-gwas comparison simulations
 Goal of simulations: Help understand the scenarios for which there is no more overlap of EWAS and GWAS genes/pathways than expected by chance.
 
