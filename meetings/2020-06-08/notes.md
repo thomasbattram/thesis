@@ -40,7 +40,9 @@ Notes on method:
 
 ### simulations for looking at methods
 
-See [simple_simulation3_go_overlap_OR.pdf] and [simple_simulation3_kegg_overlap_OR.pdf]. 
+See code for testing whether there is much power to detect whether there is more of an overlap than expected by chance: [comparing_overlap_methods_sims.R]
 
-They show that there really isn't much power to detect overlap when it is really there (i.e. both ewas and gwas are causal) and when it isn't really there (i.e. when neither are causal). I can do some more simulations similar to this to compare the methods, what do you think? 
+Old simulations kind of give results for the current method: see [simple_simulation3_go_overlap_OR.pdf] and [simple_simulation3_kegg_overlap_OR.pdf]. 
+
+They show that there really isn't much power to detect overlap when it is really there (i.e. both ewas and gwas are causal) and when it isn't really there (i.e. when neither are causal). 
 
