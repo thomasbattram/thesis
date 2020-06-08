@@ -46,3 +46,12 @@ Old simulations kind of give results for the current method: see [simple_simulat
 
 They show that there really isn't much power to detect overlap when it is really there (i.e. both ewas and gwas are causal) and when it isn't really there (i.e. when neither are causal). 
 
+Change simulations so that ewas is 100% causal or 0% causal. Then use ROC curves to see which method can predict whether EWAS is causal or not. 
+
+To-do:
+- re-run simulations to test methods
+- re-do empirical data analysis with the correct method
+- re-run the simulations to check which scenario our empirical results fall into! 
+
+
+
