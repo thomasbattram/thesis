@@ -9,7 +9,7 @@ group: "MRC Integrative Epidemiology Unit"
 degree: "Population Health Sciences"
 logo: figure/index/UoBcrest.pdf # logo will only show on PDF
 bibliography: bib/thesis.bib # location of your bibliography 
-csl: csl/apa.csl # location of your referencing style 
+csl: csl/american-journal-of-epidemiology.csl # location of your referencing style 
 knit: "bookdown::render_book" # doesnt need changing 
 site: bookdown::bookdown_site # doesnt need changing 
 toc-depth: 3 # change for the depth of the table of contents - 1 gives two levels, 2 gives 3 levels etc...
