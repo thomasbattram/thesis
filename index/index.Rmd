@@ -25,8 +25,8 @@ header-includes:
     \pagestyle{plain}
 output: 
   thesisdown::thesis_pdf: default
-  thesisdown::thesis_gitbook: default
-#  thesisdown::thesis_word: default
+#  thesisdown::thesis_gitbook: default
+  thesisdown::thesis_word: default
 #  thesisdown::thesis_epub: default
 abstract: |
   `r if(knitr:::is_latex_output()) paste(readLines("00-abstract.Rmd"), collapse = '\n  ')`
