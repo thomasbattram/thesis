@@ -14,3 +14,7 @@ Meeting notes and items can be found in [meetings](meetings)
 __Extra details__: This occured when copying text over from a paper into a chapter. Unicode character (U+2003) is just whitespace.
 
 __Solution__: Just re-entered the text part by part and re-built the thesis each time to check it worked.
+
+### Unable to get references for word
+
+__Solution__: Only knit to word + remove abstract, abbreviations, acknowledgements etc. from yaml header. __NOTE__: to knit to pdf, it requires these in the yaml header to be present! 
