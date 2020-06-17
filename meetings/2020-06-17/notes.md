@@ -29,4 +29,12 @@ Want to be finished with this part of the project asap. I'm happy with the simul
 
 Sound good? 
 
-Also need to add in a new phenotype: blood pressure
+Also need to add in a new phenotype: blood pressure.
+
+To-do:
+1. Check the rho-p results
+2. If not predictive then stick with gene overlap
+3. Extract GWAS of same trait and assess gene/pathway overlap at varying p thresholds to determine p threshold going forward
+4. Then assess overlap of all EWAS and all GWAS
+5. Write up and send paper round
+6. Think about journals to publish this in - potentials include Genome Biology, Genome Research, Nat Comms, elife
