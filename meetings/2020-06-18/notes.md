@@ -12,7 +12,7 @@ Attendees: Tom B, Gib, Nic, Tom G
 * Finished technical updates to EWAS Catalog, just need to update the data in there now 
 * Should have an ewas-gwas pathway comparison project manuscript by the end of this month
 * h<sup>2</sup><sub>EWAS</sub> manuscript comments should be addressed by the end of this week
-* Sent intro out, enjoy! 
+* Sending intro - Please can you get it back to me in 3 weeks. This way I'll have a week to go over comments before our next monthly meeting.
 
 ## h<sup>2</sup><sub>EWAS</sub> manuscript
 
