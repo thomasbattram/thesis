@@ -22,3 +22,19 @@ Comments to go over:
 1. Nic's on intro
 2. Tom's fig 4 (related to Nic's at start of discussion) --> Is it all just lack of power?
 3. Nic's in 2nd paragraph of discussion
+
+__NOTES__
+Added some comments to the manuscript
+
+## ewas-gwas comparison project
+
+don't use causal and consequential. Just use GWAS-specific and EWAS-specific pathways
+
+for pathway analysis, worth using stringdb instead of other pathway databases
+
+Interesting question: could you recapitulate GWAS genes from EWAS genes. Of course this depends on the trait...
+
+Also important to think about how genetic architecture and epigenetic architecture of traits would relate to their "overlap".
+
+Strikingly there is so little overlap between EWAS and GWAS. This suggests they are measuring separate things... And gives weight to the idea that DNA methylation is more similar to other observational phenotypes than genotype
+
