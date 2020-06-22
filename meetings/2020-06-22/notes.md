@@ -8,7 +8,14 @@ Attendees: Tom B, Gib
 
 ## h<sup>2</sup><sub>EWAS</sub> manuscript
 
-Finished going over comments. Just wanted to quickly discuss the biobank results: [biobank-plot.pdf](biobank-plot.pdf).
+Problems with h<sup>2</sup><sub>SNP</sub> - GWAS hits prediction work:
+
+1. If define hits above expected as threshold x one million then get too many 'sig' hits above number expected and if you take into account n-traits then you get too few... (formula is GWAS hits above expected ~ h<sup>2</sup><sub>SNP</sub>)
+2. The extract_instruments() function appears to be a bit temperamental...
+
+pre-lim results: [h2_snp-count_roc.pdf](h2_snp-count_roc.pdf), [h2_snp-count_roc_strict.pdf](h2_snp-count_roc_strict.pdf)
+
+Finished going over comments.
 
 Also wanted to ask if I need to generate a new B number for this project or whether I can use an existing one... 
 
