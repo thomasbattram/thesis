@@ -29,7 +29,7 @@ As a lot of EWAS don't measure DNA methylation at the same time as their phenoty
 
 Tried using stringdb as Tom G suggested. Essentially for each potential protein-protein interaction it has different ways of assessing whether they might interact including textmining, annotated pathways, experimental evidence. Then it scores these from 0-1 with 1 being we've detected an interaction here and we're confident that it's true (DOESN'T SAY ANYTHING ABOUT THE STRENGTH OF SPECIFICITY). They also have a combined score, _S_, which takes into account different avenues of evidence,
 
-_S = 1 - &prod;<sub>i</sub>(1 - S<sub>i</sub>)_
+_S_ = 1 - &prod;<sub>i</sub>(1 - _S_<sub>i</sub>)
 
 where _S<sub>i</sub>_ is one of the roughly 5 different scores.
 
