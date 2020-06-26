@@ -72,6 +72,8 @@ When I was thinking about the paper I realised I didn't really think about the f
 As a lot of EWAS don't measure DNA methylation at the same time as their phenotype of interest, I don't think this is a big problem, but I think I should add a sentence in the discussion along the lines of: 
 "Not only does DNA methylation vary with time, but the covariation of DNA methylation and phenotypes may change over time. This means an h<sup>2</sup><sub>EWAS</sub> estimate may vary with time. This likely also the case for h<sup>2</sup><sub>SNP</sub> estimates (ref), but the magnitude of change over time may be different." 
 
+Ideally, should try and predict DMPs with h2ewas in a different sample!!! 
+
 ### Submitting
 
 Sent off alspac checklist. Happy to submit when I get that back?
@@ -90,7 +92,13 @@ So to incorporate stringdb data into the analysis I essentially said for any one
 Plenty of protein-protein interactions with combined score >0.9. 
 
 
-
+## To-do
+1. Send Gib reproducible code for what went wrong with ieugwasr::ld_clump()
+2. Put snp-count ~ h2snp into results
+3. Put EWAS from h2ewas paper into the ewas catalog
+4. Add in extra bits into the discussion of h2ewas paper
+5. Send paper to Matt and tell Caroline about it
+6. Setup for genetics journal club to be continued in September
 
 
 
