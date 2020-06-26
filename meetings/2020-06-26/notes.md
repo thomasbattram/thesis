@@ -59,6 +59,11 @@ In file(file, "rt") :
 
 So for a gwas dataset there were 3 hits at P<5e-8, but plink hasn't said they were removed from the dataset (i.e. not in reference panel), yet it says 'No significant --clump results'. To me this warning indicates there were no results with P< p1 (p1 = 0.99...). 
 
+Excluding that result: 
+
+h<sup>2</sup><sub>SNP</sub> associated with the presence of a GWAS hit, beta = 21.9 [95%CI 19.6, 24.1] and the association between number of SNPs identified (when the number is above 0) and h<sup>2</sup><sub>SNP</sub> (mean increase of 1.5, [95%CI 0.93, 2.5] SNPs when h2SNP increases by 0.1).
+
+So the association is larger than n-DMPs ~ h<sup>2</sup><sub>EWAS</sub> association.
 
 ### Other
 
