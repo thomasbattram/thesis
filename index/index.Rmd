@@ -28,6 +28,7 @@ output:
 #  thesisdown::thesis_gitbook: default
 #  thesisdown::thesis_word: default
 #  thesisdown::thesis_epub: default
+geometry: "left=1cm, right=1cm, top=1cm, bottom=1cm" # This doesn't work
 abstract: |
   `r if(knitr:::is_latex_output()) paste(readLines("00-abstract.Rmd"), collapse = '\n  ')`
 acknowledgements: |
@@ -57,7 +58,7 @@ if(!require(flextable))
 library(flextable)
 
 # extra packages I use in a lot of chunks
-pkgs <- c("tidyverse", "RColorBrewer", "gridExtra", "pander")
+pkgs <- c("tidyverse", "RColorBrewer", "gridExtra", "pander", "readxl")
 lapply(pkgs, require, character.only = TRUE)
 
 # this will allow us to make word documents with relatively ok tables
@@ -67,6 +68,15 @@ doc.type <- knitr::opts_knit$get('rmarkdown.pandoc.to')
 fig_path <- "figure"
 tab_path <- "data"
 stopifnot(file.exists(fig_path) | file.exists(tab_path))
+
+# some useful functions
+comma <- function(x) format(x, digits = 2, big.mark = ",")
+tidy_cols <- function(df) 
+{
+    df[] <- lapply(df, comma)
+    return(df)
+}
+
 ```
 
 ```{r setoptions, eval = TRUE, echo = FALSE}

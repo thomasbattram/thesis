@@ -28,6 +28,7 @@ output:
 #  thesisdown::thesis_gitbook: default
 #  thesisdown::thesis_word: default
 #  thesisdown::thesis_epub: default
+geometry: "left=1cm, right=1cm, top=1cm, bottom=1cm"
 abstract: |
   <style>
   body {
@@ -381,6 +382,7 @@ Here is a reference to Caroline's paper: [@Relton2010]
 
 
 
+
 ## Abstract
 
 ### Background
@@ -454,7 +456,36 @@ In the second sample, summary data was extracted from a GWAS meta-analysis of lu
 
 For each independent mQTL (r^2^ < 0.01), we calculated the log odds ratio (OR) per SD unit increase in methylation by the formula $\frac{\beta_{GD}} {\beta_{GP}}$ (Wald ratio). Standard errors were approximated by the delta method [@Thomas2007]. Where multiple independent mQTLs were available for one CpG site, these were combined in a fixed effects meta-analysis after weighting each ratio estimate by the inverse variance of their associations with the outcome. Heterogeneity in Wald ratios across mQTLs was estimated using Cochran’s Q test, which can be used to indicate horizontal pleiotropy [@Bowden2015]. Differences between the observational and MR estimates were assessed using a Z-test for difference.
 
-If there was evidence for an mQTL-CpG site association in ARIES in at least one time-point, it was assessed whether the mQTL replicated across time points in ARIES (FDR < 0.05, same direction of effect). Further, this association was re-analysed using linear regression of methylation on each genotyped SNP available in an independent cohort (NSHDS), using rvtests [@Zhan2016]. The same NSHDS samples on which DNA methylation was measured were genotyped using the Illumina Infinium OncoArray-500k BeadChip (Illumina Inc. San Diego, CA) and quality control parameters were applied under the recently published TRICL-ILCCO GWAS study on lung cancer [@McKay2017]. Genetic imputation was performed on these samples using the Haplotype Reference Consortium (HRC) Panel (release 1) [@McCarthy2016] through the Michigan Imputation Server [@Das2016]. Replicated mQTLs were included where possible to reduce the effect of winner’s curse using effect estimates from ARIES. We assessed the instrument strength of the mQTLs by investigating the variance explained in methylation by each mQTL (r^2^) as well as the F-statistic in ARIES __Supplementary Table 1__. The power to detect the observational effect estimates in the two-sample MR analysis was assessed a priori, based on an alpha of 0.05, sample size of 29,863 cases and 55,586 controls (from TRICL-ILCCO) and calculated variance explained (r^2^).
+If there was evidence for an mQTL-CpG site association in ARIES in at least one time-point, it was assessed whether the mQTL replicated across time points in ARIES (FDR < 0.05, same direction of effect). Further, this association was re-analysed using linear regression of methylation on each genotyped SNP available in an independent cohort (NSHDS), using rvtests [@Zhan2016]. The same NSHDS samples on which DNA methylation was measured were genotyped using the Illumina Infinium OncoArray-500k BeadChip (Illumina Inc. San Diego, CA) and quality control parameters were applied under the recently published TRICL-ILCCO GWAS study on lung cancer [@McKay2017]. Genetic imputation was performed on these samples using the Haplotype Reference Consortium (HRC) Panel (release 1) [@McCarthy2016] through the Michigan Imputation Server [@Das2016]. Replicated mQTLs were included where possible to reduce the effect of winner’s curse using effect estimates from ARIES. We assessed the instrument strength of the mQTLs by investigating the variance explained in methylation by each mQTL (r^2^) as well as the F-statistic in ARIES __Table \@ref(tab:instrument-strength)__. The power to detect the observational effect estimates in the two-sample MR analysis was assessed a priori, based on an alpha of 0.05, sample size of 29,863 cases and 55,586 controls (from TRICL-ILCCO) and calculated variance explained (r^2^).
+
+
+\begin{longtable}[t]{llllllll}
+\caption{(\#tab:instrument-strength)Instrument strength in ARIES}\\
+\toprule
+SNP & CpG & Beta & SE & P & N & F & R2\\
+\midrule
+rs1048691 & cg23387569 & 0.35 & 0.053 & 3.9e-11 & 834 & 45 & 0.05\\
+rs1939110 & cg11660018 & -0.40 & 0.048 & 2.6e-16 & 834 & 70 & 0.08\\
+rs13087163 & cg01901332 & -0.19 & 0.035 & 5.8e-08 & 834 & 30 & 0.03\\
+rs7927381 & cg01901332 & 0.38 & 0.069 & 3.9e-08 & 834 & 31 & 0.04\\
+rs878481 & cg05951221 & -0.32 & 0.042 & 5.9e-14 & 834 & 58 & 0.07\\
+\addlinespace
+rs1048691 & cg16823042 & 0.32 & 0.053 & 2.8e-09 & 834 & 36 & 0.04\\
+rs734568 & cg03636183 & 0.28 & 0.043 & 6.7e-11 & 834 & 44 & 0.05\\
+rs72967500 & cg23771366 & -0.63 & 0.062 & 1.3e-22 & 834 & 102 & 0.11\\
+rs3748971 & cg21566642 & -0.50 & 0.080 & 5.3e-10 & 834 & 39 & 0.05\\
+rs9643220 & cg25305703 & 0.34 & 0.049 & 7.1e-12 & 834 & 48 & 0.05\\
+\addlinespace
+rs77433148 & cg08709672 & -0.80 & 0.137 & 6.3e-09 & 834 & 34 & 0.04\\
+rs17518433 & cg09935388 & -0.33 & 0.046 & 1.8e-12 & 834 & 51 & 0.06\\
+rs463924 & cg26963277 & -0.39 & 0.045 & 6.8e-18 & 834 & 78 & 0.09\\
+rs56080708 & cg27241845 & 0.72 & 0.070 & 2.4e-23 & 834 & 105 & 0.11\\
+rs11744553 & cg05575921 & 0.22 & 0.040 & 7.2e-08 & 834 & 30 & 0.03\\
+\addlinespace
+rs11746538 & cg05575921 & -0.37 & 0.058 & 3.0e-10 & 834 & 41 & 0.05\\
+\bottomrule
+\multicolumn{8}{l}{SE = standard error, P = P value, N = sample size, F = F statistic}\\
+\end{longtable}
 
 MR analyses were also performed to investigate the impact of methylation on lung cancer subtypes in TRICL-ILCCO: adenocarcinoma (11,245 cases, 54,619 controls), small cell carcinoma (2791 cases, 20,580 controls), and squamous cell carcinoma (7704 cases, 54,763 controls). We also assessed the association in never smokers (2303 cases, 6995 controls) and ever smokers (23,848 cases, 16,605 controls) [@McKay2017] 25. Differences between the smoking subgroups were assessed using a Z-test for difference.
 
