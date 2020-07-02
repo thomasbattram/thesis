@@ -22,6 +22,37 @@ Also many of the same question over different time periods. If I excluded all th
 
 [gene-up simulations](methods_test_gene_up_auc_plot_NEW.pdf) make sense, but the [pathway down simulations](methods_test_pathway_down_auc_plot_NEW.pdf) are all over the place...
 
+So the number of genes picked up when doing the pathway down approach and using stringdb just isn't very high at all... This means little overlap and wacky results. [Gene overlap plot](methods_test_gene_overlap_only_res_NEW.pdf) and [pathway overlap plot](methods_test_pathway_overlap_only_res_NEW.pdf).
+
+This doesn't happen with "gene-up" approach because the number of genes are set... and the minimum number of EWAS genes is 25 and the minimum number of GWAS genes is 50 (n-genes x power).
+
+[Genes per pathway](genes_per_pathway_distributions.pdf) and summary tables: 
+```
+  pathway_id           n_genes
+ Length:337         Min.   :   1.0
+ Class :character   1st Qu.:  43.0
+ Mode  :character   Median :  87.0
+                    Mean   : 115.9
+                    3rd Qu.: 153.0
+                    Max.   :1627.0
+  pathway_id           n_genes
+ Length:18467       Min.   :    1.00
+ Class :character   1st Qu.:    1.00
+ Mode  :character   Median :    3.00
+                    Mean   :   20.62
+                    3rd Qu.:   10.00
+                    Max.   :11935.00
+  pathway_id           n_genes
+ Length:12329       Min.   :   1.00
+ Class :character   1st Qu.:   4.00
+ Mode  :character   Median :  16.00
+                    Mean   :  52.46
+                    3rd Qu.:  65.00
+                    Max.   :1352.00
+```
+
+Guess it'd be best to just alter the parameters to make sure enough genes are captured by the "pathway down" approach and then repeat the analysis with the data from epigraph db???
+
 ## AOB
 
 Job offer
