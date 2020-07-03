@@ -18,6 +18,8 @@ I also found that there were some duplicated phenotypes at different time points
 
 Also many of the same question over different time periods. If I excluded all the duplicates then I'd end up excluding ~90 traits. Ideally I'd combine them all into one phenotype and this is possible for those duplicates in the ~400 traits I've used BUT it seems a little bad to derive these variables post looking at correlation between phenotypes...
 
+Could add to discussion --> Traits may be duplicated, but they are not correlated and the analysis and this shouldn't effect things.
+
 ## ewas-gwas comparison simulations
 
 [gene-up simulations](methods_test_gene_up_auc_plot_NEW.pdf) make sense, but the [pathway down simulations](methods_test_pathway_down_auc_plot_NEW.pdf) are all over the place...
@@ -53,6 +55,25 @@ This doesn't happen with "gene-up" approach because the number of genes are set.
 
 Guess it'd be best to just alter the parameters to make sure enough genes are captured by the "pathway down" approach and then repeat the analysis with the data from epigraph db???
 
+Need to try and combine simulations in manuscript:
+1. Set of arbitrary scenarios show in which situations we have power to detect overlap
+2. Using empirical data to estimate which scenario the traits fit into? 
+
 ## AOB
 
 Job offer
+
+
+## To-do
+
+For h<sup>2</sup><sub>EWAS</sub> project
+
+1. just label phenotypes "as is" then add to limitations of the paper.
+2. Try and find something to describe some of the phenotypes that aren't clear from their alspac label
+
+For ewas-gwas comparison project
+
+3. Extract data from epigraphdb
+4. Set up simulations with that data (both with and without using empirical data!)
+5. Write out some narative with the simulations
+
