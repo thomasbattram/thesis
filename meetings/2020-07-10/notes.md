@@ -45,6 +45,16 @@ Results narrative with extra simulations:
 4. From the empirical data, it is likely the overlap between causal and consequential genes is this ([simple_simulation4_gene.pdf](simple_simulation4_gene.pdf), [simple_simulation4_go.pdf](simple_simulation4_go.pdf), [simple_simulation4_kegg.pdf](simple_simulation4_kegg.pdf)), but that depends on other parameters too...
 5. There is more overlap between EWAS and GWAS of different traits in some cases
 
+__NOTES__:
+
+- Other set of simulations do show something -- or could be useful at least. They are concerned with the underlying architectures! 
+- For each trait characterise using a radar plot
+- Change sim4 to see if you get different distributions when you add in a trait that has loads of gwas and ewas gene overlap! 
+- If there is some change then need to make the 'n-genes' parameter more dynamic as it looks as though the number of genes is just drowning out any signal
+- Also need to check how much overlap is due to non-coding regions --> Can just use hgnc mappings to check this
+- Might be interesting to check if there is some kind of common theme in terms of the genes that do overlap
+
+
 ## AOB 
 
 Turned down job offer
