@@ -10,7 +10,7 @@ Attendees: Tom B, Gib
 
 ## h<sup>2</sup><sub>EWAS</sub> paper phenotypes
 
-Phenotypes are cleaned up. Had to chuck a few out because they're completely meaningless. Such as phenotypes that reflect the accuracy of some coding tool. Still have 401 phenotypes though
+Phenotypes are cleaned up. Had to chuck a few out because they're completely meaningless. Such as phenotypes that reflect the accuracy of some coding tool. Still have 400 phenotypes though
 
 Need a way to make data available. Was thinking zenodo, already have an account, but main issue is uploading the data takes FOREVER as my upload speed isn't very fast. Could use bc4 and their zenodo's API to make upload speed faster? 
 
@@ -30,8 +30,20 @@ Have also added in supplementary table with these phenotypes and number of hits 
 
 ### Results narrative
 
-See [simulations_report.pdf]
+Not sure adding simulations containing actual empirical data adds much. If we can't make it clear exactly what these simulations mean or how they fit in by the end of the meeting I want to drop them.
 
+Results narrative without it:
+1. Little physical overlap
+2. These scenarios would mean we would likely detect overlap
+3. We didn't detect overlap (thus either no meaningful overlap or too little to detect)
+4. There is more overlap between EWAS and GWAS of different traits in some cases
+
+Results narrative with extra simulations:
+1. Little physical overlap
+2. These scenarios would mean we would likely detect overlap
+3. We didn't detect overlap
+4. From the empirical data, it is likely the overlap between causal and consequential genes is this ([simple_simulation4_gene.pdf](simple_simulation4_gene.pdf), [simple_simulation4_go.pdf](simple_simulation4_go.pdf), [simple_simulation4_kegg.pdf](simple_simulation4_kegg.pdf)), but that depends on other parameters too...
+5. There is more overlap between EWAS and GWAS of different traits in some cases
 
 ## AOB 
 
