@@ -23,4 +23,6 @@ Here are distance to gene stats with ensembl gene id and hgnc symbols:
 
 __NOTES:__
 
-Some meeting notes
+Check how much overlap is lost --> If much overlap is lost, to the point where we can't do the downstream analyses then we should keep with ensembl gene ids mapping
+
+If changing mapping to proteins then can have the other results in the supplementary 
