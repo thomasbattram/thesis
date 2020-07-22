@@ -9,6 +9,8 @@ Attendees: Tom B, Gib, Tom G, Nic
 
 ## Thesis intro comments
 
+### Overarching comments
+
 * Many comments were specific and easy to change which is nice. I completely agree about restructuring the section discussing variance captured by all DNA methylation sites measured genome-wide -- need to explain what the problem is in DNA methylation before jumping to heritability measurements. 
 
 * The other overarching comment was: "Got to here (end of inferring biology from signals section) and there has been a lot of discussion about a broad set of issues pertinent to EWAS and methylation – I have kid of forgotten what the job of the thesis is though – how does this all knit together?" -- This is something I really struggled with when writing the intro, knitting things together... 
@@ -16,6 +18,9 @@ Attendees: Tom B, Gib, Tom G, Nic
 	+ Some things link in fairly clearly, for example in the problems for EWAS section I mention confounding and say this is discussed in more detail later link this with MR chapter. I also discuss problems with tissue type + fact arrays measure a small percentage of DNAm and mention we should probably try and see if these problems mean DNAm captures much trait variance. 
 	+ BUT, things that don't really flow from "here are the EWAS problems" to "ways in which we can approach some of these problems" are EWAS Catalog + properties of EWAS results AND comparison of genes + pathways identified by GWAS and EWAS. To try and help flow a little I decided to use "Ideas from genetics" to guide it as that makes linking EWAS Catalog chapters in fairly easy, but still seems a bit off to have the ewas-gwas comparison stuff there...
 
+### Specific comments
+
+* See intro doc --> Highlighted uncertain bits 
 
 __NOTES:__
 
