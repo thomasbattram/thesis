@@ -14,9 +14,19 @@ Attendees: Tom B, Gib, Tom G, Nic
 * Many comments were specific and easy to change which is nice. I completely agree about restructuring the section discussing variance captured by all DNA methylation sites measured genome-wide -- need to explain what the problem is in DNA methylation before jumping to heritability measurements. 
 
 * The other overarching comment was: "Got to here (end of inferring biology from signals section) and there has been a lot of discussion about a broad set of issues pertinent to EWAS and methylation – I have kid of forgotten what the job of the thesis is though – how does this all knit together?" -- This is something I really struggled with when writing the intro, knitting things together... 
-	+ Here are the main questions for each results chapter [thesis-flowchart.pdf](thesis-flowchart.pdf). In the intro I have four main sections to introduce this work: 1. DNA methylation as part of the regulatory machinary, 2. Population-based studies of DNA methylation associations (includes potential value DNA methylation has as a phenotype, introduces EWAS, and discusses problems with EWAS), 3. Using methods from genetics to help inform future EWAS, 4. Overview of thesis aims -- I like this structure and think it helps knit things together
-	+ The section that I really tried to tie in with results chapters is "Using methods from genetics to help inform future EWAS". Each subsection in there maps directly to a results chapter.
-	+ If this general structure is ok (???) then, I guess I could solve the issue of knitting things together by just referencing back to what has been said more? I.e. point out more often the whole point of thesis is to use various methods to explore properties of EWAS and DNAm-trait relationship to help inform future study design AND qualify in each of the subsections of "Using methods from genetics to help inform future EWAS" why it's relevant?
+	+ To remedy this just write something at the start of the "Using methods from genetics to help inform future EWAS section" that states something along the lines of 'In order to remedy some of the problems EWAS face and to help understand whether the "experiment" of measuring DNA methylation across many cohorts and studies has been successful, we can borrow ideas and methods developed in genetics and genetic epidemiology.' 
+	+ Also need to add: 'There is no reason to believe that genotype and DNA methylation measurements share the same properties. They are distinct entities and it might be helpful to liken DNA methylation to more common phenotypic measurements rather than genotypic measurements. That being said, there are specific methods and ideas from genetics that can be adapted to explore epigenetics.'
+	+ Then give examples as per TG's comment.
+
+
+
+Would be worth talking more philosophically about the work. Why were the probes for 450k used? Was the "experiment" of measuring DNA methylation for the 450k in blood worth while or has everyone wasted their money? DNAm thought to be important enough to create multiple 'chips', but why? Are epigenetic signals surprising? There are an abundance of signal for certain phenotypes with low sample size, but of course you'd expect that if you liken DNAm to a phenotype rather than to a genotype
+
+Things are written as if DNAm comes before changes in trait. State explicitly, early on in the intro, that DNAm changes can come after or before trait changes
+
+Also worth discussing in more detail that there is experimental evidence that DNAm does not come before gene silencing in many cases.
+
+Change wording from DNAm 'capturing' trait variance to DNAm and traits covarying! 
 
 ### Specific comments
 
@@ -59,4 +69,4 @@ Some meeting notes
 
 ## AOB
 
-* AOB item1
+* Send analysis plan to PY and MS for "properties of EWAS paper"
