@@ -5,7 +5,7 @@ Attendees: Tom B, Gib
 ## Agenda
 
 * Thesis intro 
-* Item2
+* EWAS-GWAS comparison paper
 * AOB
 
 ## Thesis intro
@@ -18,13 +18,13 @@ __NOTES:__
 
 Some meeting notes
 
-## Item2
+## EWAS-GWAS comparison paper
 
-Some pre-meeting notes
+Struggling to succinctly say why it's important to know if EWAS and GWAS are sampling from the same distribution of genes/pathways.
 
-__NOTES:__
+Can kind of think about it like this:
 
-Some meeting notes
+Little overlap expected because of confounding and reverse causation with DNAm-trait associations BUT would be expected that DNAm is picking up some upstream events (even if not causing changes in trait directly). If large overlap then suggests EWAS haven't added much, but as identifying more sites then there is reason to believe increase in EWAS sample size would yield more biological information than increase in GWAS sample size of same amount. If no overlap then it's unclear if EWAS is identifying any upstream genes and pathways that aren't caused by confounding effects (of course could also be identifying downstream genes + pathways).
 
 ## AOB
 
