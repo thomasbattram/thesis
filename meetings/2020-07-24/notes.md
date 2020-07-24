@@ -14,9 +14,12 @@ Do you want to take a look at the next draft? Or just comment on the additions. 
 
 Putting a more philosophical spin on things... 
 
+
 __NOTES:__
 
-Some meeting notes
+Begin with big picture stuff! Maybe opening paragraph should be something more big picture about gene regulation or disease variation. OR could signpost where you're going. Kind of helps tell the reader is what is coming next! 
+
+Gib is sending by end of the day.
 
 ## EWAS-GWAS comparison paper
 
@@ -28,9 +31,17 @@ Can kind of think about it like this:
 
 Little overlap expected because of confounding and reverse causation with DNAm-trait associations BUT would be expected that DNAm is picking up some upstream events (even if not causing changes in trait directly). If large overlap then suggests EWAS haven't added much, but as identifying more sites then there is reason to believe increase in EWAS sample size would yield more biological information than increase in GWAS sample size of same amount. If no overlap then it's unclear if EWAS is identifying any upstream genes and pathways that aren't caused by confounding effects (of course could also be identifying downstream genes + pathways).
 
+Why appraise comparison? --> Both trying to accomplish same things.
+
+Important to make point that r2 is limited in GWAS --> All upstream so heritability limited and spread across potentially lots of predictors so low power.
+
+Triangulation could be mentioned.
+
+Important point: Constraints on GWAS mean we can make certain inferences about the relationship between SNPs and traits. EWAS don't share these constraints. So inference is harder and large overlap suggests they are picking up upstream stuff and so being successful in that regard! 
+
 ### results section
 
-Do you have a paper you've written or would recommend to help with writing the results with the simulations I've done?
+Do you have a paper you've written or would recommend to help with writing the results with the simulations I've done? -- Gib sending
 
 Should results section for empirical overlap go like this:
 - Used Fisher's exact test (either correlation of enrichment scores or not)
@@ -45,6 +56,11 @@ OR should it start with simulations like:
 - Results of simulations
 - Empirical results --- issue with this is it's probably less interesting to have talked about the simulations etc. and then just report a bunch of null results...
 
+SECOND ONE!
+
+Could have two rows of 0.05 and two rows of 1
+
+Could change into lines to avoid weird x-axis stuff with the sim plot.
+
 ## AOB
 
-* AOB item1
