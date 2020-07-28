@@ -5,7 +5,7 @@ Attendees: Tom B, Gib
 ## Agenda
 
 * ewas-gwas comp discussion 
-* Item2
+* Thesis results chapters
 * AOB
 
 ## ewas-gwas comp discussion
