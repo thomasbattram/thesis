@@ -6,6 +6,7 @@ Attendees: Tom B, Gib
 
 * ewas-gwas comp discussion 
 * Thesis results chapters
+* Intro comments
 * AOB
 
 ## ewas-gwas comp discussion
@@ -32,6 +33,12 @@ Should I send them all over?? One is published work and I'm just updating it so 
 __NOTES:__
 
 Some meeting notes
+
+## Intro comments
+
+Thesis quality...
+
+See highlighted sections for discussion
 
 ## AOB
 
