@@ -24,8 +24,8 @@ Should I send them all over?? One is published work and I'm just updating it so 
 
 __NOTES:__
 
-Some meeting notes
+Send over results chapters and just say to check intro of them! --- need to know if they link together nicely...
 
 ## AOB
 
-* AOB item1
+* Matt sent back a few thoughts on the h<sup>2</sup><sub>EWAS</sub> paper. Not really things that can be added, but thoughts for future work.
