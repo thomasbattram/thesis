@@ -1,3 +1,3 @@
-# Properties of EWAS
+# Properties of EWAS {#properties-of-ewas}
 
 Here is a reference to Caroline's paper: [@Relton2010]
