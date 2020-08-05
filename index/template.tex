@@ -7,7 +7,9 @@
 %
 %
 
-\documentclass[11pt,twoside]{bristolthesis}
+% \documentclass[11pt,twoside]{bristolthesis}
+\documentclass[11pt,oneside]{bristolthesis}
+
 
 %% Packages - these are those which i used for my thesis so might not be specific to yours
 \usepackage{graphicx,latexsym}
@@ -153,16 +155,16 @@ $endif$
 $if(lof)$
   \listoffigures
 $endif$
-
-\spacing{1.5}
-\mainmatter % here the regular arabic numbering starts
-\pagestyle{plain}
-$body$
 $if(abbreviations)$
   \begin{abbreviations}
     $abbreviations$
   \end{abbreviations}
 $endif$
+
+\spacing{1.5}
+\mainmatter % here the regular arabic numbering starts
+\pagestyle{plain}
+$body$
 
 \end{document}
 
