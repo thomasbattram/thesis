@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.7.24)  5 AUG 2020 21:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.7.24)  6 AUG 2020 11:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1154,7 +1154,7 @@ Chapter 1.
 [3
 
 ] [4]
-<figure/01-introduction/central-dogma.pdf, id=510, 406.3983pt x 132.495pt>
+<figure/01-introduction/central-dogma.pdf, id=512, 406.3983pt x 132.495pt>
 File: figure/01-introduction/central-dogma.pdf Graphic file (type pdf)
 <use figure/01-introduction/central-dogma.pdf>
 Package pdftex.def Info: figure/01-introduction/central-dogma.pdf  used on inpu
@@ -1171,7 +1171,7 @@ pdfTeX warning: pdflatex (file ./figure/01-introduction/central-dogma.pdf): PDF
  inclusion: invalid other resource which is no dict (key 'ProcSets', type <arra
 y>); ignored.
 >]
-<figure/01-introduction/epigenetic-marks.jpg, id=534, 953.5625pt x 523.9575pt>
+<figure/01-introduction/epigenetic-marks.jpg, id=536, 953.5625pt x 523.9575pt>
 File: figure/01-introduction/epigenetic-marks.jpg Graphic file (type jpg)
 <use figure/01-introduction/epigenetic-marks.jpg>
 Package pdftex.def Info: figure/01-introduction/epigenetic-marks.jpg  used on i
@@ -1183,7 +1183,7 @@ Overfull \hbox (0.675pt too wide) in paragraph at lines 254--254
  []
 
 [6] [7 <./figure/01-introduction/epigenetic-marks.jpg>] [8] [9]
-<figure/01-introduction/dnam-gene-expression.pdf, id=558, 263.06279pt x 102.382
+<figure/01-introduction/dnam-gene-expression.pdf, id=560, 263.06279pt x 102.382
 5pt>
 File: figure/01-introduction/dnam-gene-expression.pdf Graphic file (type pdf)
 <use figure/01-introduction/dnam-gene-expression.pdf>
@@ -1206,7 +1206,7 @@ Underfull \hbox (badness 5077) in paragraph at lines 365--365
  []
 
 [22] [23] [24] [25] [26]
-<figure/01-introduction/mr-diagram.pdf, id=675, 291.00719pt x 159.71669pt>
+<figure/01-introduction/mr-diagram.pdf, id=677, 291.00719pt x 159.71669pt>
 File: figure/01-introduction/mr-diagram.pdf Graphic file (type pdf)
 <use figure/01-introduction/mr-diagram.pdf>
 Package pdftex.def Info: figure/01-introduction/mr-diagram.pdf  used on input l
@@ -1223,7 +1223,7 @@ pdfTeX warning: pdflatex (file ./figure/01-introduction/mr-diagram.pdf): PDF in
 clusion: invalid other resource which is no dict (key 'ProcSets', type <array>)
 ; ignored.
 >] [29] [30]
-<figure/01-introduction/thesis-flowchart.pdf, id=720, 551.1792pt x 232.9503pt>
+<figure/01-introduction/thesis-flowchart.pdf, id=722, 551.1792pt x 232.9503pt>
 File: figure/01-introduction/thesis-flowchart.pdf Graphic file (type pdf)
 <use figure/01-introduction/thesis-flowchart.pdf>
 Package pdftex.def Info: figure/01-introduction/thesis-flowchart.pdf  used on i
@@ -1259,7 +1259,7 @@ ented on the web-site
 
 [38] [39]
 </Users/tb13101/Desktop/projects/Main_project/thesis/index/figure/03-ewas_catal
-og/using_the_catalog.pdf, id=794, 542.025pt x 782.925pt>
+og/using_the_catalog.pdf, id=796, 542.025pt x 782.925pt>
 File: /Users/tb13101/Desktop/projects/Main_project/thesis/index/figure/03-ewas_
 catalog/using_the_catalog.pdf Graphic file (type pdf)
 <use /Users/tb13101/Desktop/projects/Main_project/thesis/index/figure/03-ewas_c
@@ -1354,7 +1354,7 @@ a t a s h e e t s / d a t a s h e e t % 7 B
  []
 
 [80] [81] [82] [83] [84] [85]
-Underfull \hbox (badness 10000) in paragraph at lines 1212--1214
+Underfull \hbox (badness 10000) in paragraph at lines 1215--1217
  \T1/ptm/m/n/10.95 (+20) 594. ([]$\T1/pcr/m/n/10.95 h t tp : / / w w w . n a t 
 u r e . c o m / d o i f i n d e r / 1 0 . 1 0 3 8 / n r g 3 4
  []
@@ -1427,13 +1427,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1329.
 ### semi simple group (level 1) entered at line 153 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 25879 strings out of 482829
- 501526 string characters out of 5954766
- 774877 words of memory out of 5000000
+ 25882 strings out of 482829
+ 501553 string characters out of 5954766
+ 774988 words of memory out of 5000000
  39970 multiletter control sequences out of 15000+600000
- 615344 words of font info for 252 fonts, out of 8000000 for 9000
+ 615569 words of font info for 254 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,10n,60p,2559b,2514s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,10n,60p,2619b,2514s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/tb13101/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base
 /8r.enc}{/Users/tb13101/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit
 .enc}{/Users/tb13101/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</
@@ -1447,10 +1447,10 @@ y/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/tb13101/Library
 nyTeX/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></Users/tb13101/Library/Tiny
 TeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/tb13101/Library/TinyTeX
 /texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (101 pages, 1149924 bytes).
+Output written on thesis.pdf (101 pages, 1150307 bytes).
 PDF statistics:
- 1446 PDF objects out of 1728 (max. 8388607)
- 1287 compressed objects within 13 object streams
+ 1452 PDF objects out of 1728 (max. 8388607)
+ 1293 compressed objects within 13 object streams
  433 named destinations out of 1000 (max. 500000)
  12944 words of extra memory for PDF output out of 14400 (max. 10000000)
 
