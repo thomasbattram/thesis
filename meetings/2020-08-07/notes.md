@@ -20,7 +20,9 @@ Really want the paper for this project to be sent off by the end of this week OR
 
 __NOTES:__
 
-Some meeting notes
+Change overlap correlation plots x-axis to genes and not snps because those snps ain't clumped...
+
+Send paper without second set of sims is fine
 
 ## Item2
 
@@ -33,3 +35,4 @@ Some meeting notes
 ## AOB
 
 * Will email Doug about job
+* 
