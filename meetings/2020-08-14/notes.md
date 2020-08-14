@@ -14,34 +14,57 @@ Will be applying
 
 __NOTES:__
 
-Some meeting notes
+Use interview as an opportunity to interview them! 
+Be clear about you what you want from job! 
+
+First post-doc is quite important... With Doug, learning LMM, could end up with 
 
 ## Properties of EWAS
 
-Rationale: Analysing the data jointly allows the discovery of commonalities across methylome-trait associations and provides a platform to explore what is driving these commonalities. Further, pooling the data gives an opportunity to assess the robustness of published results by checking replication rate and whether sites measured by unreliable probes are prominent.
+### Issue 1: bias due to ARIES contributing wealth of data
 
-I'm thinking that for each set of analysis, it should be done 3 times. One in all data, one in just ARIES data and one without ARIES data. Inclusion of ARIES data could bias things as it would make up the majority of data in there and it's just from one cohort with lots of similar phenotypes measured (i.e. metabs). However, ARIES results may be more reliable and don't have to deal with issues like multiple models and different tissues etc. 
+- Not an issue because the number of CpGs identified is actually fairly low. Only really an issue when looking at traits, but can just mention that...
 
-Ideally we'd be able to look at variance explained and various things, but we just don't have that data (could get it for ARIES). So we may have to settle for looking at the relationship between effect size and various things. Effect sizes are specific to units of exposure and outcome so need to think about how this could influence results... An example of an analysis proposed was `effect size ~ variability`. Options: 
+### Issue 2: Haven't collected variance explained data
 
-1. Just chuck all traits together and run the analysis
-2. Transform effect sizes (e.g. rank normal) -- rank will still be dependent on exposure and outcome units...
-3. Run analysis individually for traits and look for a trend across trends -- Would have to set some limit on number of CpGs identified...
-4. Scrap looking at effect size and just have "being a DMP" as a binary trait and do `DMP ~ variability` -- issue that most sites have been identified as a DMP... 
-	+ Could also do this at varying P-value thresholds 
-	+ OR could do `number of associated traits ~ variability`
+- Can estimate rsq!!!
+	+ rsq = (t^2) / (t^2 + n - 1) -- t is pretty much just z for large sample sizes
 
-Another issue is that so many CpGs have been identified as a DMP, like 350k... Also, so far, 11 EWAS identified over 10,000 CpGs
+- Can also use this to estimate the effect estimates per SD increase
+	+  rsq = vx / vy 
+	+ vx = b^2 * var(x)
+	+ b = sqrt(rsq / var(x)) 
 
-Does GoDMC have data on DNAm variability at each CpG site I could use? Also Tom mentioned looking at average meth level and effect size. Use ARIES or GoDMC? 
+### Issue 3: So many CpGs identified as DMPs -- roughly 350k
 
-On that note, I guess what I want for that analysis are CpGs that don't have very different average methylation levels across cohorts? So could do a meta-analysis of mean/median methylation levels and remove CpGs that are highly heterogenous? 
+- define an EWAS as a study aiming to look at changes in DNA methylation between the same samples that differ only by the trait of interest (e.g. height or a disease). This would exclude things like age and cross-tissue analyses and so should remove some of the analyses that gave loads of hits!
+- Could also do some sensitivity analyses where we remove actual EWAS with crazy high numbers of CpGs... -- e.g. the rheumatoid arthritis one
 
-can't access DNAm heritability results here: [http://www.epigenomicslab.com/online-data-resources](http://www.epigenomicslab.com/online-data-resources/)
+### Issue 4: Getting variability and avg DNAm data
 
-__NOTES:__
+- GoDMC has data on both variance and average methylation levels. Should also have data for each cohort. Gib will send this over.
 
-Some meeting notes
+- Need to test for heterogeneity between cohorts and remove any mean methylation levels or variances that aren't consistent across cohorts.
+
+### Issue 5: Getting DNAm heritability data
+
+- can't access DNAm heritability results here: [http://www.epigenomicslab.com/online-data-resources](http://www.epigenomicslab.com/online-data-resources/)
+
+- can use estimates from van dongen study or another study - Gib sending over estimates
+
+### ANOTHER IDEA - CELL SPECIFICITY
+
+- Cell type specificity is obvs a big issue 
+- Also could be missing a lot of stuff by not using single cell stuff
+- There is correlation between DNA methylation sites across tissues, suggesting stability in DNAm, but would we expect to find associations at these positions across tissues? 
+	+ If this stability in DNAm just reflects reliable probes measuring those sites well then the associations track across tissues, but we may be missing plenty more that are poorly measured
+	+ However, the stability in DNAm across tissues could reflect the redundancy of DNAm at those sites. The sites that correlate across tissues may be reflected by either constant or little gene expression at nearby genes. For example, correlation at housekeeping genes is expected.
+- Could group CpGs by conserved across tissues vs. not conserved and look at gene expression of nearby genes and/or specifically house keeping genes.
+- Josine may have some data on correlation between tissue types, but look around the literature first
+
+
+For enrichment analyses - can have a separate repo for Charlie, so can be completely up front about what her contributions were to the project! 
+
 
 ## AOB
 
