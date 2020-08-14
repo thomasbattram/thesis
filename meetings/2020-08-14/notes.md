@@ -31,7 +31,7 @@ Ideally we'd be able to look at variance explained and various things, but we ju
 	+ Could also do this at varying P-value thresholds 
 	+ OR could do `number of associated traits ~ variability`
 
-Another issue is that so many CpGs have been identified as a DMP, like 350k... 
+Another issue is that so many CpGs have been identified as a DMP, like 350k... Also, so far, 11 EWAS identified over 10,000 CpGs
 
 Does GoDMC have data on DNAm variability at each CpG site I could use? Also Tom mentioned looking at average meth level and effect size. Use ARIES or GoDMC? 
 
