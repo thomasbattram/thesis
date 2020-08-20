@@ -12,7 +12,6 @@ Attendees: Tom B, Gib, Nic
 ## Career advice
 
 
-
 __NOTES:__
 
 Some meeting notes
@@ -33,7 +32,7 @@ Some meeting notes
 
 ## Cellular heterogeneity section
 
-Not sure if it should be part of this project or whether it's a whole new project...
+Not sure if it should be part of this project or whether it's a whole new project... [current paper](paper.pdf)
 
 ## AOB
 
