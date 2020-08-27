@@ -41,7 +41,7 @@ Not sure if it should be part of this project or whether it's a whole new projec
 
 use the tissue data!! Can use r2! Higher r2 means more cellular specificity. 
 
-Could have this talked about in the discussion and say that in ideal circumstances then 
+Could have this talked about in the discussion
 
 ## AOB
 
