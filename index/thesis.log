@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.9)  27 AUG 2020 23:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.9)  28 AUG 2020 12:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1264,7 +1264,7 @@ Overfull \hbox (0.675pt too wide) in paragraph at lines 472--472
  []
 
 [36] [37 <./figure/03-ewas_catalog/project_flowchart.pdf>] [38] [39] [40] [41]
-<figure/03-ewas_catalog/using_the_catalog.pdf, id=843, 542.025pt x 782.925pt>
+<figure/03-ewas_catalog/using_the_catalog.pdf, id=844, 542.025pt x 782.925pt>
 File: figure/03-ewas_catalog/using_the_catalog.pdf Graphic file (type pdf)
 <use figure/03-ewas_catalog/using_the_catalog.pdf>
 Package pdftex.def Info: figure/03-ewas_catalog/using_the_catalog.pdf  used on 
@@ -1430,8 +1430,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1355.
 ### bottom level 
 Here is how much of TeX's memory you used:
  25900 strings out of 482816
- 501652 string characters out of 5954566
- 775804 words of memory out of 5000000
+ 501657 string characters out of 5954566
+ 776334 words of memory out of 5000000
  39990 multiletter control sequences out of 15000+600000
  615569 words of font info for 254 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1449,10 +1449,10 @@ y/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/tb13101/Library
 nyTeX/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></Users/tb13101/Library/Tiny
 TeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/tb13101/Library/TinyTeX
 /texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (106 pages, 1193748 bytes).
+Output written on thesis.pdf (106 pages, 1193754 bytes).
 PDF statistics:
- 1512 PDF objects out of 1728 (max. 8388607)
- 1341 compressed objects within 14 object streams
+ 1513 PDF objects out of 1728 (max. 8388607)
+ 1342 compressed objects within 14 object streams
  443 named destinations out of 1000 (max. 500000)
  12957 words of extra memory for PDF output out of 14400 (max. 10000000)
 
