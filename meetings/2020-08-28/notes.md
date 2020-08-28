@@ -16,6 +16,8 @@ Got data on heterogeneity of CpG mean/sd methylation?
 
 [current results](paper.pdf)
 
+Check this paper for ideas: https://www.nature.com/articles/s42003-018-0261-x
+
 ### Weird RA results
 
 Found out I actually ran some analyses using GEO data. I only adjusted for SVs and they adjusted for Age, sex, smoking, cell comp. I found 27 DMPs and they found almost 50,000... 
@@ -24,7 +26,7 @@ They show changes when adjusting for batch for only 10 DMPs, but it has pretty l
 
 __NOTES:__
 
-Some meeting notes
+Worth defining set of EWAS that are suspect and removing them OR putting them to one side and repeating analyses using both those studies and others.
 
 ## Viva examiners
 
@@ -43,7 +45,7 @@ Could also have one geneticist who has done a bit of epigenetics (or at least QT
 
 __NOTES:__
 
-Some meeting notes
+GH is going to contact Janine and Ele.
 
 ## AOB
 
