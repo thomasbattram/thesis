@@ -95,10 +95,11 @@ percent_faulty_probes <- f_probes %>%
     pull(percent)
 
 f_probes_plot <- ggplot(f_probes, aes(x = cpg_or_ewas, y = percent, fill = highlight)) +
-    geom_bar(stat="identity") + 
+    geom_bar(colour = "black", stat="identity") + 
+    scale_fill_manual(values=c("white", "#E69F00", "#56B4E9")) + 
     labs(fill = "") + 
-    theme_bw() + 
-    theme(axis.title.x = element_blank())
+    theme_bw(base_size = 15) + 
+    theme(axis.title.x = element_blank(), legend.position="bottom")
 
 ## ---- faulty-probes-plot --------------------------------
 print(f_probes_plot)

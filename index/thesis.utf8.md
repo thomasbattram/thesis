@@ -129,7 +129,12 @@ To gauge how molecular mechanisms result in more observable phenotypes, it is im
 (ref:central-dogma-cap) The central dogma of molecular biology. The dogma stipulates that sequence changes (that is the addition, removal or mutation of elements) can only occur in the direction of the arrows. 1. DNA replication 2. Transcription 3. Translation 4. Reverse transcription 5. RNA replication 6. Direct DNA-protein translation. 
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{figure/01-introduction/central-dogma} \caption{(ref:central-dogma-cap)}(\#fig:central-dogma)
+
+{\centering \includegraphics[width=1\linewidth]{figure/01-introduction/central-dogma} 
+
+}
+
+\caption{(ref:central-dogma-cap)}(\#fig:central-dogma)
 \end{figure}
 
 The importance of these molecular alterations to phenotypic change is exemplified in the developmental stages of human life. Humans start as a single cell and after roughly nine months are transformed into a multicellular organism with trillions of cells, including hundreds of unique cell types. As these cells arise from a single progenitor, they must contain identical genetic sequences (bar somatic mutations which occur at a low rate – recently estimated to be roughly one mutation per cell division [@Milholland2017]). The process by which the body is able to create such diversely functioning cells and tissues, must come from regulation of how the genetic sequence is read and from the regulation of its products.
@@ -142,7 +147,12 @@ DNA methylation is correlated with gene expression levels and has been hypothesi
 (ref:epigenetic-marks-cap) Graphic of epigenetic marks taken from @epigenetic-marks-figure.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{figure/01-introduction/epigenetic-marks} \caption{(ref:epigenetic-marks-cap)}(\#fig:epigenetic-marks)
+
+{\centering \includegraphics[width=1\linewidth]{figure/01-introduction/epigenetic-marks} 
+
+}
+
+\caption{(ref:epigenetic-marks-cap)}(\#fig:epigenetic-marks)
 \end{figure}
 
 ### Defining epigenetics
@@ -161,7 +171,12 @@ These strong associations between DNA methylation and gene expression do not nec
 (ref:dnam-functions-cap) Simplified diagrams of the associations between DNA methylation and gene regulation. In _a_, CpG sites are methylated at the promoter region, but not in the gene body, which is associated with lack of gene expression. In _b_, the opposite is occurring.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{figure/01-introduction/dnam-gene-expression} \caption{(ref:dnam-functions-cap)}(\#fig:dnam-functions)
+
+{\centering \includegraphics[width=1\linewidth]{figure/01-introduction/dnam-gene-expression} 
+
+}
+
+\caption{(ref:dnam-functions-cap)}(\#fig:dnam-functions)
 \end{figure}
 
 ## Population-based studies of DNA methylation associations {#dnam-phs}
@@ -268,7 +283,12 @@ In order for MR analyses to be valid, they must satisfy three instrumental varia
 (ref:mr-diagram-cap) Mendelian randomization. Mendelian randomization can be used to test the causal nature of exposure-outcome relationships provided the assumptions are met. Assumption 1. There is an association between the instrument and the exposure. Assumption 2. There are no associations between the instrument and outcome, except through the exposure. Assumption 3. The instrument is not associated with any factors that confound the exposure-outcome relationship.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{figure/01-introduction/mr-diagram} \caption{(ref:mr-diagram-cap)}(\#fig:mr-diagram)
+
+{\centering \includegraphics[width=1\linewidth]{figure/01-introduction/mr-diagram} 
+
+}
+
+\caption{(ref:mr-diagram-cap)}(\#fig:mr-diagram)
 \end{figure}
 
 #### Applying MR in a DNA methylation context
@@ -298,7 +318,12 @@ Finally, __Chapter \@ref(dnam-lung-cancer-mr)__ will apply MR to explore the cau
 (ref:thesis-flowchart-cap) Flowchart showing questions being asked in the thesis and the corresponding chapters attempting to help answer them.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{figure/01-introduction/thesis-flowchart} \caption{(ref:thesis-flowchart-cap)}(\#fig:thesis-flowchart)
+
+{\centering \includegraphics[width=1\linewidth]{figure/01-introduction/thesis-flowchart} 
+
+}
+
+\caption{(ref:thesis-flowchart-cap)}(\#fig:thesis-flowchart)
 \end{figure}
 
 
@@ -548,27 +573,55 @@ Most common tissues (\%) & whole blood (84.14), cord blood (4.34), cd4+ t-cells 
 
 The number of traits each CpG associated with was fairly even across chromosomes (__Figure \@ref(fig:traits-manhattan)__). There were five CpGs that associated with more than ten traits, cg01940273 _-_, cg05575921 _AHRR_, cg00574958 _CPT1A_, cg17901584 _DHCR24_, cg06500161 _ABCG1_. cg06500161 _ABCG1_ associated with more traits than any other site - 71 traits. These correspond mostly to metabolites, weight-related traits, and type two diabetes. 
 
-(ref:traits-manhattan-cap) __Number of unique traits associated with each CpG__ 
+(ref:traits-manhattan-cap) __Number of unique traits associated with each DNA methylation at each CpG.__ Sites associated with more than 10 unique traits are shown in orange and labelled.
 
-![(\#fig:traits-manhattan)(ref:traits-manhattan-cap)](figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png) 
+\begin{figure}
 
-The total trait variance correlated with DNA methylation (r^2^) at each site varied from 0.0011 to 0.78 (__Figure \@ref(fig:rsq-distribution)__). The sum of r^2^ values ranged greatly from 0.0055 to 18,751 (__Figure \@ref(fig:rsq-sum-distribution)__), with a median of 1.2. There was evidence that 8 studies had a total sum of r^2^ values greater than the mean (FDR < 0.05) and results from these studies made up the majority of r^2^ values greater than 0.1 (__Figure \@ref(fig:rsq-distribution)__).
+{\centering \includegraphics[width=1\linewidth]{figure/04-properties_of_ewas/traits_per_dmp_at_1e-07} 
 
-(ref:rsq-distribution-cap) __Distribution of r-squared values across all CpG sites in The EWAS Catalog__ 
+}
 
-![(\#fig:rsq-distribution)(ref:rsq-distribution-cap)](thesis_files/figure-latex/rsq-distribution-1.pdf) 
+\caption{(ref:traits-manhattan-cap)}(\#fig:traits-manhattan)
+\end{figure}
 
-(ref:rsq-sum-distribution-cap) __Distribution of the sum of r-squared values across each study in The EWAS Catalog__ 
+The total trait variance correlated with DNA methylation (r^2^) at each site varied from 0.0011 to 0.78 (__Figure \@ref(fig:rsq-distribution)__). The sum of r^2^ values ranged greatly from 0.0055 to 18,751 (__Figure \@ref(fig:rsq-sum-distribution)__), with a median of 1.2. There was evidence that eight studies had a total sum of r^2^ values greater than the mean (FDR < 0.05) and results from these studies made up the majority of r^2^ values greater than 0.1 (__Figure \@ref(fig:rsq-distribution)__).
 
-![(\#fig:rsq-sum-distribution)(ref:rsq-sum-distribution-cap)](thesis_files/figure-latex/rsq-sum-distribution-1.pdf) 
+(ref:rsq-distribution-cap) __Distribution of r-squared values across all CpG sites in The EWAS Catalog__. Each EWAS can identify multiple differentially methylated positions, each of which will capture some variance of the trait of interest for that EWAS (r^2^). $\sum {r^2}$ is the sum of r^2^ values, the distribution of which is shown in __Figure \@ref(fig:rsq-sum-distribution)__. Eight studies were identified for which there was strong evidence that the sum of r^2^ values were greater than the mean across all studies. All of the differentially methylated positions identified by those studies are highlighted in blue on the plot.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{thesis_files/figure-latex/rsq-distribution-1} 
+
+}
+
+\caption{(ref:rsq-distribution-cap)}(\#fig:rsq-distribution)
+\end{figure}
+
+(ref:rsq-sum-distribution-cap) __Distribution of the sum of r-squared values across each study in The EWAS Catalog.__ 
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{thesis_files/figure-latex/rsq-sum-distribution-1} 
+
+}
+
+\caption{(ref:rsq-sum-distribution-cap)}(\#fig:rsq-sum-distribution)
+\end{figure}
 
 ### Robustness of results {#robustness-of-results}
 
 579 studies adjusted for batch effects in at least one model. Of all DMPs identifed, 9.3% were measured by potentially faulty probes (REF) and an extra 0.64% were present on sex chromosomes (__Figure \@ref(fig:faulty-probes-plot)__).
 
-(ref:faulty-probes-cap) __Potentially unreliable differentially methylated positions identified__
+(ref:faulty-probes-cap) __The percentage of differentially methylated positions that may have been identified by faulty probes and the percentage of EWAS that reported identifying at least one of these probes.__ Some CpGs are both on a sex chromosome and were identified as faulty by Zhou et al. They were labelled as 'potentially faulty'.
 
-![(\#fig:faulty-probes-plot)(ref:faulty-probes-cap)](thesis_files/figure-latex/faulty-probes-plot-1.pdf) 
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{thesis_files/figure-latex/faulty-probes-plot-1} 
+
+}
+
+\caption{(ref:faulty-probes-cap)}(\#fig:faulty-probes-plot)
+\end{figure}
 
 There were 30 studies that performed a meta-analysis of discovery and replication samples. A further 48 studies performed a separate replication analysis. Together, this provides 1666 associations within the EWAS Catalog that have been replicated at P < 1x10^-4^. 
 
@@ -713,9 +766,16 @@ Using the EWAS results thought to be more robust, we investigated whether the ch
 
 Linear regression models gave some evidence that effect size associated with DNA methylation variance, the average DNA methylation level and heritability (P < 0.01, __Figure \@ref(fig:cpg-chars-plot)__). However, each of these CpG characteristics explained little of the variance across effect sizes (r^2^ < 0.001, __Figure \@ref(fig:cpg-chars-plot)__). 
 
-(ref:cpg-chars-plot-cap) __Relationship between effect size of DNA methylation-trait associations and A. DNA methylation variability, B. mean methylation level, C. heritability.__
+(ref:cpg-chars-plot-cap) __Relationship between effect estimates of DNA methylation-trait associations and A. DNA methylation variability, B. mean methylation level, C. heritability.__ Effect estimates were scaled to represent the change in DNA methylation after an increase by one standard deviation of the trait of interest. Before assessing the association between effect estimates and DNA methylation characteristics, the standardised effect estimates were rank transformed to ensure normality. The table shows the strength of associations and the variance explained in effect estimates by each of the DNA methylation characteristics.
 
-![(\#fig:cpg-chars-plot)(ref:cpg-chars-plot-cap)](figure/04-properties_of_ewas/combined_characteristics_plots.png) 
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figure/04-properties_of_ewas/combined_characteristics_plots} 
+
+}
+
+\caption{(ref:cpg-chars-plot-cap)}(\#fig:cpg-chars-plot)
+\end{figure}
 
 * Enrichment of DMPs in various genomic regions etc.
 

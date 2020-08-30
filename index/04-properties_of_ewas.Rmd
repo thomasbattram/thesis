@@ -108,19 +108,19 @@ Before assessing what might be underlying various EWAS results, we present a bri
 
 The number of traits each CpG associated with was fairly even across chromosomes (__Figure \@ref(fig:traits-manhattan)__). There were `r num_to_text(nrow(h_genes))` CpGs that associated with more than ten traits, `r h_cpg_genes`. `r h_cpgs[length(h_cpgs)]` _`r names(h_cpgs)[length(h_cpgs)]`_ associated with more traits than any other site - `r max(h_genes$n_traits)` traits. These correspond mostly to metabolites, weight-related traits, and type two diabetes. 
 
-(ref:traits-manhattan-cap) __Number of unique traits associated with each CpG__ 
+(ref:traits-manhattan-cap) __Number of unique traits associated with each DNA methylation at each CpG.__ Sites associated with more than 10 unique traits are shown in orange and labelled.
 
 ```{r traits-manhattan, message=FALSE, results="asis", fig.cap='(ref:traits-manhattan-cap)'}
 ```
 
-The total trait variance correlated with DNA methylation (r^2^) at each site varied from `r comma(min_r2)` to `r comma(max_r2)` (__Figure \@ref(fig:rsq-distribution)__). The sum of r^2^ values ranged greatly from `r comma(min(rsq_sum_dat$total_rsq))` to `r comma(max(rsq_sum_dat$total_rsq))` (__Figure \@ref(fig:rsq-sum-distribution)__), with a median of `r comma(median(rsq_sum_dat$total_rsq))`. There was evidence that `r nrow(suspect_studies)` studies had a total sum of r^2^ values greater than the mean (FDR < 0.05) and results from these studies made up the majority of r^2^ values greater than 0.1 (__Figure \@ref(fig:rsq-distribution)__).
+The total trait variance correlated with DNA methylation (r^2^) at each site varied from `r comma(min_r2)` to `r comma(max_r2)` (__Figure \@ref(fig:rsq-distribution)__). The sum of r^2^ values ranged greatly from `r comma(min(rsq_sum_dat$total_rsq))` to `r comma(max(rsq_sum_dat$total_rsq))` (__Figure \@ref(fig:rsq-sum-distribution)__), with a median of `r comma(median(rsq_sum_dat$total_rsq))`. There was evidence that `r num_to_text(nrow(suspect_studies))` studies had a total sum of r^2^ values greater than the mean (FDR < 0.05) and results from these studies made up the majority of r^2^ values greater than 0.1 (__Figure \@ref(fig:rsq-distribution)__).
 
-(ref:rsq-distribution-cap) __Distribution of r-squared values across all CpG sites in The EWAS Catalog__ 
+(ref:rsq-distribution-cap) __Distribution of r-squared values across all CpG sites in The EWAS Catalog__. Each EWAS can identify multiple differentially methylated positions, each of which will capture some variance of the trait of interest for that EWAS (r^2^). $\sum {r^2}$ is the sum of r^2^ values, the distribution of which is shown in __Figure \@ref(fig:rsq-sum-distribution)__. `r num_to_text(nrow(suspect_studies), start_of_sentence = TRUE)` studies were identified for which there was strong evidence that the sum of r^2^ values were greater than the mean across all studies. All of the differentially methylated positions identified by those studies are highlighted in blue on the plot.
 
 ```{r rsq-distribution, message=FALSE, results="asis", fig.cap='(ref:rsq-distribution-cap)'}
 ```
 
-(ref:rsq-sum-distribution-cap) __Distribution of the sum of r-squared values across each study in The EWAS Catalog__ 
+(ref:rsq-sum-distribution-cap) __Distribution of the sum of r-squared values across each study in The EWAS Catalog.__ 
 
 ```{r rsq-sum-distribution, message=FALSE, results="asis", fig.cap='(ref:rsq-sum-distribution-cap)'}
 ```
@@ -129,7 +129,7 @@ The total trait variance correlated with DNA methylation (r^2^) at each site var
 
 `r sum(batch_tab$batch_included)` studies adjusted for batch effects in at least one model. Of all DMPs identifed, `r comma(percent_faulty_probes)`% were measured by potentially faulty probes (REF) and an extra `r comma(percent_sex_probes)`% were present on sex chromosomes (__Figure \@ref(fig:faulty-probes-plot)__).
 
-(ref:faulty-probes-cap) __Potentially unreliable differentially methylated positions identified__
+(ref:faulty-probes-cap) __The percentage of differentially methylated positions that may have been identified by faulty probes and the percentage of EWAS that reported identifying at least one of these probes.__ Some CpGs are both on a sex chromosome and were identified as faulty by Zhou et al. They were labelled as 'potentially faulty'.
 
 ```{r faulty-probes-plot, message=FALSE, results="asis", fig.cap='(ref:faulty-probes-cap)'}
 ```
@@ -167,7 +167,7 @@ Using the EWAS results thought to be more robust, we investigated whether the ch
 
 Linear regression models gave some evidence that effect size associated with DNA methylation variance, the average DNA methylation level and heritability (P < 0.01, __Figure \@ref(fig:cpg-chars-plot)__). However, each of these CpG characteristics explained little of the variance across effect sizes (r^2^ < 0.001, __Figure \@ref(fig:cpg-chars-plot)__). 
 
-(ref:cpg-chars-plot-cap) __Relationship between effect size of DNA methylation-trait associations and A. DNA methylation variability, B. mean methylation level, C. heritability.__
+(ref:cpg-chars-plot-cap) __Relationship between effect estimates of DNA methylation-trait associations and A. DNA methylation variability, B. mean methylation level, C. heritability.__ Effect estimates were scaled to represent the change in DNA methylation after an increase by one standard deviation of the trait of interest. Before assessing the association between effect estimates and DNA methylation characteristics, the standardised effect estimates were rank transformed to ensure normality. The table shows the strength of associations and the variance explained in effect estimates by each of the DNA methylation characteristics.
 
 ```{r cpg-chars-plot, message=FALSE, results="asis", fig.cap='(ref:cpg-chars-plot-cap)'}
 ```
