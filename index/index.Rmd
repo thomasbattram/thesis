@@ -39,7 +39,7 @@ abbreviations: |
   `r if(knitr:::is_latex_output()) paste(readLines("00-abbreviations.Rmd"), collapse = '\n  ')`
 ---
 
-```{r thesis-setup, include = FALSE}
+```{r thesis-setup, include=FALSE}
 # you need these packages
 if(!require(devtools))
   install.packages("devtools", repos = "http://cran.rstudio.com")
@@ -58,8 +58,12 @@ if(!require(flextable))
 library(flextable)
 
 # extra packages I use in a lot of chunks
-pkgs <- c("tidyverse", "RColorBrewer", "gridExtra", "pander", "readxl")
-lapply(pkgs, require, character.only = TRUE)
+library(tidyverse) # simple tidying of data
+library(RColorBrewer) # customising plot colours
+library(gridExtra) # plotting multiple graphs on the same page
+library(pander) # tables
+library(readxl) # reading in excel spreadsheets
+library(xfun) # misc functions including numbers_to_words()
 
 # this will allow us to make word documents with relatively ok tables
 doc.type <- knitr::opts_knit$get('rmarkdown.pandoc.to')
@@ -70,12 +74,7 @@ tab_path <- "data"
 stopifnot(file.exists(fig_path) | file.exists(tab_path))
 
 # some useful functions
-comma <- function(x) format(x, digits = 2, big.mark = ",")
-tidy_cols <- function(df) 
-{
-    df[] <- lapply(df, comma)
-    return(df)
-}
+source("useful_functions.R", local = knitr::knit_global())
 
 ```
 
