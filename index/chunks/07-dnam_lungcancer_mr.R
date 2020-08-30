@@ -23,7 +23,7 @@ sort_df <- function(df, col_prefix, col_suffix)
 			names_pattern = c("(.*)_.*"),
 			values_to = col_suffix
 		) %>%
-		tidy_cols()
+		tidy_nums()
 }
 
 tables_to_sort <- map_lgl(supp_tables, function(st) {
@@ -39,7 +39,7 @@ clean_supp_tables <- lapply(supp_tables, function(st) {
 		suffixes <- unique(gsub(".*_", "", cols_to_sort))
 		out <- sort_df(df = st, col_prefix = prefixes, col_suffix = suffixes)
 	} else {
-		out <- tidy_cols(st)
+		out <- tidy_nums(st)
 	}
 	return(out)
 })

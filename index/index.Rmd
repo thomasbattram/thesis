@@ -74,7 +74,7 @@ tab_path <- "data"
 stopifnot(file.exists(fig_path) | file.exists(tab_path))
 
 # some useful functions
-source("useful_functions.R", local = knitr::knit_global())
+source("chunks/useful_functions.R", local = knitr::knit_global())
 
 ```
 
