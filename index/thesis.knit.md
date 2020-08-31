@@ -381,7 +381,7 @@ Our criteria for inclusion of a study into The EWAS Catalog are as follows:
 
 CpG-phenotype associations are extracted from studies at P < 1x10^-4^. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-08-30, The EWAS Catalog contained 450213 associations from 605 studies. 
+Based on these criteria, from 2020-08-31, The EWAS Catalog contained 450213 associations from 605 studies. 
 
 ### Overview of GEO data extraction
 To recruit additional datasets suitable for new EWAS analysis, the geograbi R package (https://github.com/yousefi138/geograbi) was used to both query GEO for experiments matching The EWAS Catalog inclusion criteria (described above) and extract relevant DNA methylation and phenotype information. The query was performed by Dr Paul Yousefi on 20 March 2019 and identified 148 such experiments with 32,845 samples where DNA methylation and phenotype information could be successfully extracted. From these, the aim was to repeat the analyses performed in the publications linked by PubMed IDs to each GEO record. Thus, I looked up the corresponding full texts for each dataset and identified the main variables of interest. Of the 148 putative GEO studies, only 34 (23%) contained sufficient information to replicate the original analysis. 
@@ -466,14 +466,14 @@ Therefore, despite the fact no extra information about EWAS was presented in thi
 
 
 
-\newpage
+## Abstract {#abstract-04}
 
 ## Introduction {#introduction-04}
-Learning from the successes and mistakes we make is what drives forward development. Hundreds of epigenome-wide association studies (EWAS) have been conducted in the last 10-15 years (REF), yet few (OR NONE - CHECK THIS OUT), cross-EWAS studies, comparing results across a large group of EWAS results has been performed. By exploring the patterns of association across a large group of EWAS, one can discover potential explanations for the results found, that may shed light on failings in the literature as well as shared epigenetic architectures across traits.
+Learning from the successes and mistakes we make is what drives forward development. Hundreds of epigenome-wide association studies (EWAS) have been conducted in the last 10-15 years, no cross-EWAS studies, comparing results across a large group of EWAS results has been performed. By exploring the patterns of association across a large group of EWAS, one can discover potential explanations for the results found, that may shed light on failings in the literature as well as shared epigenetic architectures across traits.
 
-Since the inception of EWAS, it has become clear that batch effects and cellular heterogeneity can generate false positives and bias effect sizes (REFs). However, there are examples of replication amongst EWAS results, (REFs) and further, use of triangulation can be used to bolster evidence that changes in DNA methylation estimated are unlikely due to bias. By way of an example, changes in DNA methylation at _AHRR_ have been replicated across multiple smoking EWAS (REFs) and as functional studies have implicated this gene in handling toxic substances found in tobacco smoke (REFs), it seems unlikely these findings are chance occurances. 
+Since the inception of EWAS, it has become clear that batch effects and cellular heterogeneity can generate false positives and bias effect sizes [@Price2018; @Forest2018; @Jaffe2014]. However, there are examples of replication amongst EWAS results, [@Nano2017; @Kaushal2017; @Morris2017; @Hedman2017; @Braun2017; @Teschendorff2015; @Zeilinger2013] and further, use of triangulation can be used to bolster evidence that changes in DNA methylation estimated are unlikely due to bias. By way of an example, changes in DNA methylation at _AHRR_ have been replicated across multiple smoking EWAS [@Zeilinger2013; @Elliott2014; @Joehanes2016; @Bojesen2017] and as functional reaseach has implicated this gene in handling toxic substances found in tobacco smoke [@Zudaire2008], it seems unlikely these findings are chance occurances. 
 
-The characteristics of the DNA methylome may also explain some EWAS findings. Heritability varies across DNA methylation sites (REFs), and so if genetic effects are driving associations, either through confounding or with DNA methylation as a mediator, one would expect heritable sites to be commonly identified in EWAS. Variance is also heterogenous across sites. Some studies opt to remove sites with particularly low variance (REFs), but it is unclear whether this may actually remove sites that are more likely to show strong associations. Experimental studies have shown DNA methylation changes at different locations of the genome correlate with different regulatory functions. For example, an increase in DNA methylation at transcriptional start sites is correlated with a decrease in gene expression, but an increase in DNA methylation within a gene body shows the opposite association (REFs). Thus, genomic location of DNA methylation sites is likely to influence their likelihood of association with a trait.
+The characteristics of the DNA methylome may also explain some EWAS findings. Heritability varies across DNA methylation sites [VanDongen2016; @McRae2014; @Hannon2018], and so if genetic effects are driving associations, either through confounding or with DNA methylation as a mediator, one would expect heritable sites to be commonly identified in EWAS. Variance is also heterogenous across sites [@Garg2018]. Some studies have suggested removing sites with particularly low variability to increase power [@Meng2010; @Logue2017], but it is unclear whether this may actually remove important sites. Experimental studies have shown DNA methylation changes at different locations of the genome correlate with different regulatory functions. For example, an increase in DNA methylation at transcriptional start sites is correlated with a decrease in gene expression [@Jones2012; @Ando2019; @Deaton2011], but an increase in DNA methylation within a gene body shows the opposite association [@Wolf1984; @Hellman2007]. Thus, genomic location of DNA methylation sites is likely to influence their likelihood of association with a trait.
 
 Understanding underlying reasons that drive EWAS results is essential for future study design. This may come in the form of proper consideration of potential biasing factors, or by selecting certain DNA methylation sites based on their specific characteristics. Further, understanding the characteristics of DNA methylation-trait associations can inform the design of future technologies aimed at measuring DNAm for EWAS. 
 
@@ -820,9 +820,238 @@ Overall, this manuscript demonstrates the potential for using large-scale EWAS d
 
 <!--chapter:end:04-properties_of_ewas.Rmd-->
 
-# h2ewas {#h2ewas-chapter}
+# Exploring the variance in complex traits captured by DNA methylation assays {#h2ewas-chapter}
 
-<!--chapter:end:05-m2.Rmd-->
+
+
+
+
+
+## Abstract {#abstract-05}
+Following several years of epigenome-wide association studies (EWAS), traits analysed to date tend to yield few associations. Reinforcing this observation, we conducted EWAS on 400 traits and only 16 of the traits yielded at least association at a conservative significance threshold. To begin investigating why EWAS yield is low, we formally estimated the proportion of phenotypic variation captured by 421,693 blood derived DNA methylation markers (h^2^~EWAS~) across all 400 traits. We found that the mean h^2^~EWAS~ was zero, with evidence for regular cigarette smoking exhibiting the largest association with all markers (h^2^~EWAS~ = 0.42) and the only one surpassing a false discovery rate < 0.1. Though underpowered to determine the h^2^~EWAS~ value for any one trait, we found that h^2^~EWAS~ was predictive of the number of EWAS hits across the traits analysed (AUC=0.7). Modelling the contributions of the methylome on a per-site versus a per-region basis gave varied h^2^~EWAS~ estimates (r=0.47) but neither approach obtained substantially higher model fits across all traits. Our analysis indicates that most complex traits do not heavily associate with the markers commonly measured in EWAS within blood. However, it is likely DNA methylation does capture variation in some traits and h^2^~EWAS~ may be a reasonable way to prioritise these traits that are likely to yield associations in EWAS.
+
+## Introduction {#introduction-05}
+Epigenome-wide association studies (EWAS) aim to assess the association between phenotypes of interest and DNA methylation across hundreds of thousands of CpG sites throughout the genome [@Birney2016; @Rakyan2011]. Many recent EWAS yielded few sites across the genome with strong evidence for association and the proportion of total trait variance associated with these sites is small [@Birney2016]. There is a need to have a global view of the contribution of DNA methylation to complex traits in order to interpret these results.
+
+There are multiple possible reasons for there being few EWAS signals. Firstly, DNA methylation varies between cells and tissues, thus any changes related to a trait may occur in any number of tissues. Currently, because of ease of access and cost, the most common tissue used for EWAS is blood, which may not capture changes in DNA methylation related to the trait of interest [@Birney2016; @Rakyan2011]. Secondly, the commonly used technologies probe a small percentage of the total number of potentially methylated sites. In the absence of full knowledge of the correlation structure across methylation site variation, it is therefore difficult to fully understand coverage in current measures. Two more possibilities are that DNA methylation variation is actually not associated with the traits studied or that the associations are many but individually too small to detect with current sample sizes (Box 1).
+
+Interpretation of the paucity of EWAS hits is difficult because there is no knowledge of the total contribution of methylation variation to the trait. However, analogous to the calculation of genetic heritability estimates, which have now been expanded to make inference across non-familial population-level data (SNP heritability), the total contribution of methylation markers to complex traits can potentially be estimated. This could give insight into the underlying patterns of association between DNA methylation markers and complex traits (See Box 2 for a simple explanation of SNP heritability (or h2SNP) and its application to DNA methylation).
+
+SNP heritability estimates are sensitive to assumptions of the underlying genetic architecture and there are different ways in which to model the contribution of each SNP to the overall genetic component. The original model of calculating h2SNP introduced by Yang et al. assumes that each variant has an effect that is independent of the regional linkage disequilibrium (LD) structure as each variant is unweighted (the blanket model), and this effectively assumes regions of high LD contribute more to phenotypic variance [@Yang2010]. Speed et al. proposed a new model, which considered the LD between SNPs so that each region of high LD can effectively be counted as a singular effect (the grouping model) [@Speed2012]. Finding which models fit the data better helps ensure a more accurate estimation of the proportion of DNA methylation association with a trait, further contrasting these models could also be biologically informative.
+
+Gene regions are methylated in a coordinated fashion, which is associated with changes in gene expression [@Jones2009; @Jones2012], with a tendency for promotor regions to be unmethylated and gene body regions to be methylated when gene expression is activated [@Jones2012]. This, amongst other complex patterns of gene regulation, induces a correlation structure within EWAS data, and it is not clear whether a single site is driving an association and neighbouring sites are consequentially correlated, or if the cumulative contributions of all neighbouring sites associate with the regulatory process. In EWAS, a common strategy is to collapse DNA methylation sites into groups based on proximity and if they share the same direction of association and potentially magnitude of association, this is often called differentially methylated region (DMR) analysis [@Chen2016]. This, however, does not explain whether the sites within groups are acting independently and cumulatively or as a set of distinct influences. __Figure \@ref(fig:h2ewas-model-comp)__ shows a representation of how the differences in models apply to DNA methylation data at a single small region using in one specific example. Of course, there are far more scenarios possible and furthermore, the models aren’t restricted to a single small region in the genome. They apply to all sites, as do the DMR methods used in EWAS. Thus, by applying both methods to DNA methylation data across multiple phenotypes and comparing their utility we can gain insight into how DNA methylation operates across gene regions. Furthermore, it is important to find the model that best fits the data to help prevent biased estimates.
+
+This study aims to estimate h^2^~EWAS~ values across a plethora of traits and assesses whether this estimate may be useful in identifying traits for which EWAS will likely yield successful identification of associated DNA methylation sites. To do this we perform hundreds of EWAS studies and evaluate if h^2^~EWAS~ estimates are predictive of the number of sites identified by the EWAS at various P value thresholds. We also compare the performance of different models underlying h^2^~EWAS~ estimates to infer likely methylation architecture of complex traits.
+
+***
+**Box 1**
+
+The need for larger sample sizes in GWAS has been empirically demonstrated across a broad range of traits. For height and body mass index (BMI), the number of associations dramatically increased from 12 to 3290 and from one to 941, respectively after increasing sample sizes by ~670,000 [@Lettre2008; @Frayling2007; @Yengo2018]. This trend can be seen for many traits. Similar to early GWAS, many EWAS are discovering few sites strongly associated with complex traits. However, an example that suggests promise for increasing sample sizes for EWAS is seen with BMI, where an EWAS of 459 individuals identified just five sites, but increasing the sample size to over 5,000 led to identification of 278 sites [@Dick2014; @Wahl2017]. While we can continue to improve sample sizes in EWAS, there is a need to determine the upper limit of the information we can obtain from EWAS of complex traits like BMI. Furthermore, the BMI EWAS example may be unrepresentative of other traits, so having a corollary test for estimating h2SNP for DNA methylation would help us understand if we’re capturing relevant information from the current arrays we are using in EWAS. Such information could inform future study designs in terms of growing sample sizes with the current assays available versus designing new assays.
+
+***
+
+***
+**Box 2**
+
+Methods used to estimate h2SNP use restricted maximum likelihood (REML) tests to estimate the proportion of variance attributable to these genetic variants. Essentially this assesses whether individuals that are genetically similar are more likely to be phenotypically similar. If those individuals that have a high genetic overlap tend to correlate strongly phenotypically compared to those that don’t have high genetic overlap, then the phenotype of interest will have a high h2SNP. Unlike genetic variants, DNA methylation is responsive to the environment [@Birney2016] and determining causal directionality between DNA methylation markers associated with traits is not trivial [@Relton2010; @Tahara2015; @Kandimalla2013]. Therefore, estimating the proportion of trait variation captured by DNA methylation variation (which will henceforth be denoted as h^2^~EWAS~) using the same techniques will ascertain effects going in both directions as well as associations due to confounding. The combination of these mechanisms may increase power to detect trait-DNA methylation association, and could be the reason that so many DNA methylation markers are found in small EWAS compared to similarly sized GWAS [@Wahl2017].
+
+***
+
+(ref:h2ewas-model-comp-cap) Comparison of the grouping and blanket models in the context of the relationship between DNA methylation and gene expression. Both regions are exactly the same, the only difference is how each model assumes the methylation sites should be treated. The grouping model down-weights the contribution of correlated CpGs, effectively grouping them, and the blanket model assumes each CpG independently associates with a trait. As seen here, the grouping of correlated CpG sites may not be the correct thing to do as some of the sites may be acting independently of their correlated partners).
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figure/05-h2ewas/m2_model_comparison} 
+
+}
+
+\caption{(ref:h2ewas-model-comp-cap)}(\#fig:h2ewas-model-comp)
+\end{figure}
+
+## Method {#method-05}
+
+### Study samples {#study-samples-05}
+
+#### Avon Longitudinal Study of Parents and Children (ALSPAC) {#methods-alspac-05}
+
+All data for the study came from the Avon Longitudinal Study of Parents and Children (ALSPAC) cohort. Pregnant women resident in Avon, UK with expected dates of delivery 1st April 1991 to 31st December 1992 were invited to take part in the study. The initial number of pregnancies enrolled is 14,541 (for these at least one questionnaire has been returned or a “Children in Focus” clinic had been attended by 19/07/1999). Of these initial pregnancies, there was a total of 14,676 foetuses, resulting in 14,062 live births and 13,988 children who were alive at 1 year of age. Full details of the cohort has been published previously [@Fraser2013; @Boyd2013]. This study uses phenotypic and DNA methylation data from the mothers (N = 940).
+
+Continuous and binary phenotypes measured in mothers were extracted from the cohort. A summary of the phenotypes is present in the Supplementary Material. Please note that the study website contains details of all the data that is available through a fully searchable data dictionary and variable search tool http://www.bristol.ac.uk/alspac/researchers/our-data/
+
+Phenotype data were extracted using the ‘alspac’ R package (github.com/explodecomputer/alspac) and went through various quality control steps, which are detailed in the Supplementary Material and summarized in Supplementary Figure 1.
+
+All continuous traits were rank-normalised for further analyses. A Shapiro-Wilk test of normality was performed on these rank-normalised traits and for those with some evidence of non-normality (P < 0.05), we re-examined the distribution of those traits by eye to ensure it was approximately normal. It was found that any non-normality of phenotype distributions corresponded to an inflation of zero values. These traits were removed and overall there were 2408 traits left for analyses. These traits do not necessarily represent independent phenotypes and as such we wanted to prevent correlated traits skewing results. The absolute Pearson’s correlation coefficient between each trait was subtracted from one (1 –[r]). Then traits were greedily selected where 1 –[r] < 0.4 with any other trait. This left 400 traits, which consisted of ~30% clinically measured variables (including roughly 50 metabolites and some anthropometric traits), ~25% health related questions (for example “have you ever had asthma?”), ~40% behavioural and social traits (for example educational attainment variables, use of pesticide, and having pets), and ~5% of traits were related to the partner or child of the participant (for example the employment status of the partner). Phenotypes are presented in Supplementary table 1. Plots showing the correlation between all the phenotypes as well as with just the selected traits can be seen in Supplementary figure 2-3.
+
+Ethical approval for ALSPAC was obtained from the ALSPAC Ethics and Law Committee and from the UK National Health Service Local Research Ethics Committees. Written informed consent was obtained from both the parent/guardian and, after the age of 16, children provided written assent. Consent for biological samples has been collected in accordance with the Human Tissue Act (2004). Informed consent for the use of data collected via questionnaires and clinics was obtained from participants following the recommendations of the ALSPAC Ethics and Law Committee at the time.
+
+### DNA methylation data {#dna-methylation-data-05}
+DNA methylation was measured using the Illumina Infinium HumanMethylation450 (HM450) BeadChip. Before use, the data went through quality control and were normalised separately to the phenotype data. Full details can be found in the Supplementary Material.
+
+DNA methylation data generated from blood collected at a single clinic visit was used for each of the participants.
+
+Probes were excluded if they were present on either of the sex chromosomes, a SNP/control probe, had a detection p value < 0.05 across over 10% of samples or were identified as problematic by Zhou et al. [@Zhou2017]. This left 421,693 CpG sites for analyses.
+
+Before analysis a linear regression model was fitted with beta values for methylation (which ranges from 0 (no cytosines methylated) to 1 (all cytosines methylated)) as the outcome against batch variables (plate ID in ALSPAC) modelled as a random effect to help remove the effects of batch in the subsequent analyses.
+
+Cell proportions (CD8+ and CD4+ T cells, B cells, monocytes, natural killer cells, and granulocytes) were estimated using an algorithm proposed by Houseman et al. [@Houseman2012].
+
+### REML analysis {#reml-analysis}
+Using LDAK [@Speed2017] the relationship between the methylomes (as measured by the HM450 BeadChip) of 940 individuals was estimated by producing a DNA methylation relationship matrix (MRM). This matrix was used as input for the REML analysis to estimate the proportion of a trait’s variation that was explained by DNA methylation (h^2^~EWAS~). Age, the top 10 ancestry principal components, and derived cell proportions were added as covariates to the model.
+
+When producing the MRM, probes were scaled by their observed variance and the weighting of each probe was based on the variance of DNA methylation at that site using the formula below:
+
+\begin{equation}
+	f_{j}(1-f_{j})^(\alpha/2)
+	(\#eq:mrm-weights)
+\end{equation}
+
+where $f_j(1-f_j)$ is the variance of methylation at CpG $j$. The higher the alpha value the more weight is given to probes with greater variance; an alpha value of -1 gives equal weight to probes with low and high variance. The alpha value of -0.25 was chosen because previous analysis by Speed et al. [@Speed2017] suggested that this value was optimal for measuring h2SNP. Furthermore, it was hypothesised that probes with a greater variance would contribute more to trait variance. As the method was applied to DNA methylation data in this study, sensitivity analyses were conducted. MRMs were created specifying the alpha value at increasing increments of 0.25 from -2 to 0. The association between h^2^~EWAS~ and number of EWAS hits as well as the difference in h^2^~EWAS~ estimates for 10 randomly selected phenotypes was assessed for the varying alpha values.
+
+The mean of the MRM diagonal should be 1 and the variance close to 0, as the diagonal values essentially represent the correlation between an individual’s methylome with itself. Although values are expected to vary slightly from 1. For the MRMs it was identified that some diagonal elements were very high (> 2), which caused the diagonal to have a high variance (0.13). To assess whether these values could skew results, we conducted sensitivity analyses removing individuals, with varying diagonal value cutoffs.
+
+Like h2SNP estimates, h^2^~EWAS~ estimates should range from zero to one. If a trait has a true h^2^~EWAS~ value of zero, there is no association between the methylome and that trait, and if h^2^~EWAS~ equals one then DNA methylation has the capacity to completely predict that trait. However, estimation of h^2^~EWAS~ can be fairly imprecise and without constraining the software it’s possible to get estimates of h^2^~EWAS~ that are outside 0-1 due to large standard errors. These point estimates have to be erroneous by definition.
+
+Even though the grouping model effectively groups sites together, it is actually likely to increase the number of parameters because without the weightings imposed by this model, the blanket model essentially ignores sites that are not neighbouring others. Therefore, larger standard errors are expected with the grouping model. The grouping model applies a sliding window approach, with windows of 100kb, to capture the correlation between neighbouring sites and weight sites according to the correlation structure of the region. When applying the grouping model, the number of sites that were weighted were 45,863 (out of 421,693) and the number of sites neighbouring any single CpG site ranged from 29 to 28,217.
+
+### Generating genetic principal components {#generating-genetic-principal-components}
+
+Ancestry principal components were generated within ALSPAC mothers using PLINK (v1.9). Before analysis, genetic data went through quality control and were imputed, full details can be found in the Supplementary Material. After quality control and imputation, independent SNPs (r2 < 0.01) were used to calculate the top 10 ancestry principal components.
+
+### Epigenome-wide association studies {#methods-ewas-05}
+
+EWAS were conducted for 400 selected traits (see Study Samples section for selection process) within the ALSPAC cohort. For all traits, linear regression models were fitted with beta values of DNA methylation as the outcome and the phenotype as the exposure. Covariates included age, the top 10 ancestry principal components and cell proportions.
+
+### Association between h^2^~EWAS~ and epigenome-wide association studies results {#methods-h2ewas-dmp}
+
+DMPs were extracted from the EWAS at P value thresholds ranging from 10-3 to 10-7. It was assessed whether h^2^~EWAS~ could predict that the number of identified DMPs in an EWAS was greater than number of DMPs expected to be identified at a given P threshold defined as the number of sites tested multiplied by the threshold. The traits were also “pruned” in the same way as described above, to prevent including overly correlated traits and biasing results. The sensitivity and specificity of this prediction was calculated and a receiver operating characteristic (ROC) curve was plotted. At p-value thresholds of 10-6.5 and 10-7 there were too few EWAS hits, so these were removed from the analysis.
+
+The association between the number of DMPs identified at P < 1x10-5 and h^2^~EWAS~ values was assessed using a negative binomial hurdle model with the number of DMPs identified fitted as the outcome and h^2^~EWAS~ as the exposure. The negative binomial hurdle Poisson regression model results are twofold. The first of which assesses whether there is an association between the binary trait of whether a DMP was identified by EWAS and h^2^~EWAS~. The second is a zero-truncated model, i.e. the zero values are removed from the model and the association between number of DMPs and h^2^~EWAS~ is assessed.
+
+The same method was applied to estimate the association between the number of SNPs identified in GWAS at P < 5x10-8 and h2SNP. SNPs associated with 485 traits in UK Biobank (see Supplementary Methods for sample information and phenotype selection) were extracted using the IEU Open GWAS Database [@Hemani2018]. The h2SNP estimates were extracted from http://www.nealelab.is/uk-biobank/.
+
+All analyses were conducted in R (version 3.3.3) or using the command line software LDAK [@Speed2017], GCTA [@Yang2011], and PLINK [@Chang2015]. For the EWAS analyses, the meffil R package was used [@Min2018]. A one-sided P value was used to assess if the h^2^~EWAS~ for a trait was > 0, and two-sided P values were used for everything else.
+
+### Data availability {#data-availability-05}
+Code used to perform analyses can be found here: github.com/thomasbattram/ereml
+
+The full EWAS summary statistics of each of the 400 EWAS are available via Zenodo here
+
+## Results {#results-05}
+A flowchart showing our study design and giving a summary of the results is shown in __Figure \@ref(fig:h2ewas-study-design)__.
+
+(ref:h2ewas-study-design-cap) Study design with a summary of the results. ALSPAC = Avon Longitudinal Study of Parents and Children, QC = quality control, EWAS = epigenome-wide association study, MRM = methylation relationship matrix, AUC = area under curve.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figure/05-h2ewas/m2_workflow} 
+
+}
+
+\caption{(ref:h2ewas-study-design-cap)}(\#fig:h2ewas-study-design)
+\end{figure}
+
+### Estimating the proportion of phenotypic variance associated with DNA methylation {#estimating-h2ewas}
+
+We used two models to estimate the total contribution of all DNA methylation sites to the variation (h^2^~EWAS~) for each of 400 traits within 940 individuals. The mean for both models was zero with ranges of -0.4 to 0.4 and -0.5 to 0.4 for the blanket and grouping models respectively __Figure \@ref(fig:h2ewas-estimates)__. The estimates were imprecise with the mean standard error was 0.03 and 0.05 for the blanket and grouping models respectively. The trait with the greatest evidence for h^2^~EWAS~ estimates being above zero was having smoked cigarettes regularly (FDR-corrected P = 0.06 and 0.10 for the blanket and grouping models respectively). The correlation between the h^2^~EWAS~ estimates of the two models was 0.47 and there was evidence that on average the estimates of the grouping model were higher (Paired t-test P = 1.8x10-5, __Figure \@ref(fig:h2ewas-estimates)__), but the mean difference between estimates was only 0.018.
+
+There was little evidence that either of the models fit the data better (had higher likelihoods) across the 400 traits tested (difference in median likelihoods = 0.19, Wilcoxon’s paired ranked sum test P = 0.73). Further, the majority of h^2^~EWAS~ estimate differences between the traits were small.
+
+(ref:h2ewas-estimates-cap) A comparison of h^2^~EWAS~ estimates given by applying REML using the blanket and grouping models across 400 traits. The blue dashed line is at x=y. Values with h^2^~EWAS~ lower than 0 are due to imprecision in h^2^~EWAS~ estimates as the true estimate cannot be negative. Smoked_cigs_reg = smoked cigarettes regularly. The h^2^~EWAS~ of this phenotype has the greatest evidence for being above 0 for both the blanket and grouping model (Uncorrected P = 1.44x10-4 and P = 2.61x10-4, respectively).
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figure/05-h2ewas/model_m2_comparison} 
+
+}
+
+\caption{(ref:h2ewas-estimates-cap)}(\#fig:h2ewas-estimates)
+\end{figure}
+
+### Sensitivity analyses when estimating the proportion of phenotypic variance associated with DNA methylation {#results-sensitivity-analyses-05}
+
+After examination of the MRMs required to produce the h^2^~EWAS~ estimates, we found that for both the blanket and grouping model we observed some unexpected values: 96 diagonal elements had values over 1.5 when using the blanket model, with the maximum value being 3.562. When assessing the impact of these potential outliers in the MRM to results we found that the median and range of h^2^~EWAS~ estimates varied little (Supplementary figure 4). The likelihood of the models tended to be greater as more outliers were removed (lower threshold for classing a diagonal element as an outlier), but it still didn’t vary much (Supplementary figure 5).
+
+The weight of predictors used to produce the MRMs was also examined. As more weight was given to sites where methylation variation was greater (increasing alpha value) the h^2^~EWAS~ estimates were slightly higher (Supplementary figure 6). However, the likelihood tended to remain the same, the median likelihood had a range of 2 across the alpha values (Supplementary figure 7).
+
+Results of sensitivity analyses are summarised in Supplementary table 2 and 3.
+
+### EWAS analyses {#results-ewas-analyses-05}
+
+In order to assess the association between h^2^~EWAS~ and EWAS results, we performed EWAS of 400 traits. No associations were found at the strict P value cutoff of P < 2.5x10-10 (conventional EWAS P-value threshold, 1x10-7, divided by the number of traits, 400). A total of 29 associations between traits and CpGs were identified at the conventional EWAS P value cutoff – P < 1x10-7. Of the traits tested, 16 had at least one EWAS hit, with the maximum number of CpGs associated with a trait being 13 (smoked cigarettes regularly). As there were so few traits with any identified hits, we took forward results from the lenient P value threshold of P < 1x10-5, at which 340 traits had at least one EWAS hit. Supplementary table 4 shows each trait and the number of differentially methylated positions identified at varying p-value thresholds.
+
+As the distributions of hit count data was heavily right skewed with an inflation at 0 and 1 (Supplementary figure 8), to test the association between h^2^~EWAS~ and number of DMPs we opted to test goodness of fit for variations of Poisson models. Of the 6 models tested, the negative binomial hurdle Poisson regression model fit the data best, full results can be found in Supplementary table 5. We found there was some evidence for an association between number of EWAS hits and h^2^~EWAS~ (__Figure \@ref(fig:dmps-and-h2ewas)__). There was some evidence of association between the presence of DMPs and h^2^~EWAS~ (beta = 6.2, [95%CI 2.5, 10]) as well as some evidence of an association between number of DMPs (when the number is above 0) and h^2^~EWAS~ (mean increase of 0.63, [95%CI 0.41, 0.84] DMPs when h^2^~EWAS~ increases by 0.1). Applying the same method to GWAS data we found evidence that the presence of identified SNPs associated with h2SNP (beta = 21.9 [95%CI 19.6, 24.1])and the association between number of SNPs identified (when the number is above 0) and h2SNP (mean increase of 1.5, [95%CI 0.93, 2.5] SNPs when h2SNP increases by 0.1).
+
+(ref:dmps-and-h2ewas-cap) Association between h^2^~EWAS~ and number of DMPs identified in EWAS. The correlation between DNA methylation and the variance of traits (h^2^~EWAS~) was calculated using REML analysis using the blanket and grouping models. EWAS were conducted on all the same traits and the distribution of the number of DMPs identified at P < 1x10-5 and h^2^~EWAS~ are plotted above. Any traits where the h^2^~EWAS~ estimate is below 0 are coloured grey. The true h^2^~EWAS~ value of a trait cannot be negative, but sample sizes in this analysis are small so the estimates are imprecise.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figure/05-h2ewas/m2_hit_count_scatter_p5_test} 
+
+}
+
+\caption{(ref:dmps-and-h2ewas-cap)}(\#fig:dmps-and-h2ewas)
+\end{figure}
+
+The ability of h^2^~EWAS~ estimated by both models to predict whether the number of DMPs identified was greater than expected was assessed at varying P value thresholds. ROC curves were produced and the area under the curve (AUC) ranged from 0.65 and 0.67 at P < 1e-6 to 0.79 and 0.71 at P < 1e-3 for the blanket and grouping models respectively and the predictive ability remained fairly stable as the threshold increased (__Figure \@ref(fig:h2ewas-dmp-roc-curve)__).
+
+(ref:h2ewas-dmp-roc-curve-cap) The ability of h^2^~EWAS~ values to predict whether the number of differentially methylated positions identified in an EWAS is higher than expected by chance. ROC curves for h^2^~EWAS~ values predicting number of DMPs at differing P value thresholds. AUC = area under the curve.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figure/05-h2ewas/roc_plot} 
+
+}
+
+\caption{(ref:dmps-and-h2ewas-cap)}(\#fig:h2ewas-dmp-roc-curve)
+\end{figure}
+
+## Discussion {#discussion-05}
+
+The global contribution of DNA methylation to complex trait variance can inform researchers of how to design future studies that seek to discover new DNA methylation sites associated with their trait of interest. In this manuscript we apply methods designed to estimate the predictive capacity of variants across a SNP-chip (h2SNP), to DNA methylation data measured in blood with the HM450 BeadChip across 400 independent traits, giving a distribution of the contribution of all sites typically measured in EWAS to complex trait variance. Although sample size was too small to reliably estimate h^2^~EWAS~ for any one trait, the distribution of estimates suggest little complex trait variation is captured by DNA methylation at the sites measured and h^2^~EWAS~ may be a good measure to identify traits for which EWAS will yield associations. 
+
+### Estimation of h^2^~EWAS~ {#estimation-of-h2ewas}
+
+The true h^2^~EWAS~ of a trait gives the total predictive capacity of DNA methylation for that trait, which is equivalent to the proportion of that trait’s total variance that is associated with changes in DNA methylation. Knowing this information can help design future EWAS studies. A low value of h^2^~EWAS~ doesn’t necessarily mean there is little correlation between DNA methylation and a trait, it could transpire that unmeasured sites contribute more to the association. It is important to remember that roughly 1.5% of CpG sites are targeted by the HM450 BeadChip and DNA can be methylated elsewhere (not at cytosine bases). Therefore, whole genome bisulphite sequencing, or a similar technique, may show that the variance of complex traits captured by DNA methylation is far higher. Furthermore, even if h^2^~EWAS~ is low and the sites discovered already do not explain all of the h^2^~EWAS~ estimate, there may still be value in increasing sample size to identify more DMPs as well as increase the precision of h^2^~EWAS~ estimates. DMPs discovered may not be highly correlated with a trait, but this doesn’t mean the potential biological information gained isn’t valuable. For example, if a change in a the levels of protein X has a large effect on a trait and change in DNA methylation has a small effect on the levels of protein X, then the effect of that DNA methylation change on the trait will be small, but identifying that DMP could lead to discovering the importance of the protein. Another thing to consider is that DNA methylation is tissue and cell specific. This means, that h^2^~EWAS~ may vary a lot depending on what tissue the methylation is measured in.
+
+The true underlying genetic architecture of complex traits is still unknown, and therefore it is difficult to know the appropriate model to choose when estimating the contribution of all measured SNPs to phenotypic variance amongst unrelated individuals and arguments for each model depending on this underlying genetic architecture are still being put forward [@Speed2017], [@Gazal2017; @Speed2018; @Speed2020], thus the attempts made in this study to re-purpose genomic REML are likely to suffer the same flaws that are trying to be overcome in genetic data. With this in mind, in addition to the imprecise estimates of h^2^~EWAS~ presented here (due to the small sample sizes of available data), we believe that individual trait h^2^~EWAS~ values should be treated with caution. This doesn’t exclude the possibility that estimating h^2^~EWAS~ may be useful and other methods are already being developed to measure the association between DNA methylation at all sites and complex traits [@TrejoBanos2020].
+
+### Future EWAS {#future-ewas-05}
+
+Heritability estimates from family-based studies gave an a priori justification for the pursuit of gene mapping endeavours that eventually gave rise to GWAS, as they demonstrated variation in complex traits had a substantial genetic component. However, the evidence DNA methylation contributed to trait variation was not ascertained before EWAS were first conducted. To justify collecting more samples and continuing with EWAS research in the current vein, methods such as the one presented in this study should be used to show DNA methylation does substantially contribute to trait variance.
+
+It has become clear from the GWAS era of genetics, that for complex traits, such as coronary artery disease, many common genetic variants with small effects make up the genetic component of the trait [@VanderHarst2018; @Visscher2017]. This suggests a large number of molecular pathways contribute to these traits. DNA methylation at CpGs is heritable [@VanDongen2016; @Gaunt2016], thus it would be expected that the DNA methylation architecture of a trait will somewhat reflect the genetic architecture of the trait, although this has not been empirically tested.
+
+Despite uncertainty of h^2^~EWAS~ estimates for individual traits, we show h^2^~EWAS~ has a modest ability to predict whether the number of EWAS hits will be greater than expected by chance at a given P value threshold. This predictive ability remained stable as the P value threshold for detection increased from P < 1x10-6 to P < 1x10-3. These results suggest that increasing sample sizes for traits which truly associate with DNA methylation should result in the discovery of more DMPs. Furthermore, these results support a model for which small changes in methylation at many CpGs across the genome are related to complex traits.
+
+### Contributions of individual CpG sites {#contribution-of-individual-cpg-sites}
+
+The original model for measuring h2SNP assumed all genetic variants contributed the same effect on a trait [@Yang2010], Speed et al. offered an alternative model assuming a different underlying genetic architecture, whereby genetic variants in regions of high LD contributed less to the variance of a trait than more independent variants. Both groups have shown that the performance of the models depend on the alignment of the trait’s architecture with the models’ underlying assumptions. Previous literature has suggested that it is the methylation across groups of CpGs that may affect how other molecules interact with DNA and influence cellular functions such as gene expression [@Jones2012]. Furthermore, CpGs are not randomly distributed throughout the genome – many exist in close proximity within “islands” or other regions, suggesting that grouping of the CpGs may have functionality. However, the most common method used in EWAS is to treat CpG sites as independent. Here, the models proposed by Speed et al. (the grouping model) and Yang et al. (the blanket model), when estimating h^2^~EWAS~ were tested across 400 traits. The model fit the data better (had a higher likelihood) 207 times for the blanket model and 193 times for the grouping model. Thus for almost half the traits treating DNA methylation sites as independent seems to be preferable and even though there is correlation between CpG sites, which allows them to be grouped, it might be that in some groups of correlated sites, individual sites within the group contribute separately to trait variance.
+
+It’s important to note that the grouping method takes into account correlation between CpGs within 100Kb of each other. Differential methylation at CpG sites may be correlated for a variety of biological reasons, for example, CpGs lying within a transcription factor binding site will be regulated together, but also, they will be correlated with CpGs that lie in other binding sites for that same transcription factor and these may be many megabases away. This is relevant to the relationship between DNA methylation and complex traits because transcription factor regulation might be the link between complex traits and DNA methylation. Even though grouping CpG sites might yet be the best way to model the relationship between DNA methylation and complex traits, the optimum way to group sites is unknown and will likely change depending on the trait of interest.
+
+### Limitations {#limitations-05}
+
+The main limitation of the study is the small sample size (N = 940) to estimate the h^2^~EWAS~. This meant the precision of our h^2^~EWAS~ estimates were very low and so our power to assess their ability to predict number of DMPs and find individual trait h^2^~EWAS~ values was low. To circumvent this problem, we assess trends across multiple traits and do not make strong conclusions for any one trait.
+
+As mentioned previously the HM450 BeadChip captures a small percentage of the total DNA methylome and h^2^~EWAS~ estimates will likely vary upon assaying more DNA methylation sites. Furthermore, when measuring more sites, it might be that one of the models fits the data better. Nevertheless, the results of this study can still give evidence towards the hypothesis that differential methylation at many sites across the genome each contribute minimally to the overall association between the methylome and a complex trait.
+
+Unlike germline genetic variants, there is intra-individual (between tissue and over time) DNA methylation variation [@Birney2016; @Rakyan2011]. Thus, it is to be expected that the variation of h^2^~EWAS~ estimates across traits is partly a product of the tissue and timepoint of choice. However, within the tissue biologically pertinent to the complex trait of interest, the number of pathways that associate with variation in that trait is likely to remain high, for example there are many processes affecting, or affected by, cancer development [@Hanahan2011]. Thus, it would still be expected that differential methylation at many CpG sites each associate with a trait, but the effect sizes are small. The same can be said when estimating h^2^~EWAS~ at various timepoints.
+
+Estimates of h^2^~EWAS~ will be a product of their environment and genetic makeup of the participants it’s measured in. Therefore, the results here may vary by population and by sex. However, participants used in this study are considered to be representative of the larger ALSPAC cohort [@Relton2015], which is itself considered to be representative of a large majority of women from the UK and potentially other high-income countries [@Fraser2013]. This suggests the results will be generalisable to a large group of samples for which EWAS are conducted, but replication in these samples as well as in different populations would provide greater confidence in the generalisability of the results.
+
+A wide range of complex traits was used in the analysis, but there are some notable absences. Rarer diseases and diseases that predominantly impact the elderly are not present in this study. The results presented here cannot be generalised to those traits.
+
+The factors important for the correlation structure of DNA methylation data are less known than those for linkage disequilibrium structure of genetic variants. Therefore, when applying models, such as the grouping model here, that aim to account for correlation of neighbouring DNA methylation sites, we may be missing some of the important structure captured for example by trans-correlations (over 1Mb). A model that estimates h^2^~EWAS~ by incorporating all of the underlying correlation of DNA methylation data may therefore outperform both models tested here.
+
+## Conclusion {#conclusion-05}
+
+Overall, the number of traits with good evidence for h^2^~EWAS~ > 0 was low (only smoking behaviour met the threshold of FDR < 0.1) and mean h^2^~EWAS~ value across both models was roughly 0, suggesting that for many traits DNA methylation variation as measured on the HM450 BeadChip in blood is of little relevance. However, these estimates varied greatly and therefore DNA methylation measured in this way will likely have relevance for some traits, for example smoking cigarettes regularly. Further, these estimates were correlated with the number of DMPs identified, suggesting that for traits whose variance associates with DNA methylation then increasing sample size will yield an increase in the number of CpGs identified in EWAS. We also provide evidence that there is value in assessing individual CpG-trait associations as opposed to groups of correlated CpG sites within 100Kb. However, this does not preclude the possibility that a more complex model of CpG site correlation may provide a better fit.
+
+
+
+
+
+<!--chapter:end:05-h2ewas.Rmd-->
 
 # EWAS-GWAS comparison {#ewas-gwas-comp-chapter}
 
