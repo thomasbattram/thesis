@@ -8,23 +8,21 @@ Attendees: Tom B, Gib
 * Viva
 * AOB
 
-## properties of ewas project
-
-Here is where I'm at:
-
-__NOTES:__
-
-Some meeting notes
-
 ## Viva
 
-Examiners suggested sound good to me.
+Examiners suggested sound good to me. Will get draft abstract prepped
 
 Start date for post-doc is Jan 4th so viva in December would be perfect if possible.
 
 __NOTES:__
 
-Some meeting notes
+
+
+## properties of ewas project
+
+Little bit unsure about how to present the relationship between DNA methylation-trait associations and various cpg characteristics... 
+
+__NOTES:__
 
 ## AOB
 
