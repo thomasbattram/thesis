@@ -381,7 +381,7 @@ Our criteria for inclusion of a study into The EWAS Catalog are as follows:
 
 CpG-phenotype associations are extracted from studies at P < 1x10^-4^. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-08-31, The EWAS Catalog contained 450213 associations from 605 studies. 
+Based on these criteria, from 2020-09-04, The EWAS Catalog contained 450213 associations from 605 studies. 
 
 ### Overview of GEO data extraction
 To recruit additional datasets suitable for new EWAS analysis, the geograbi R package (https://github.com/yousefi138/geograbi) was used to both query GEO for experiments matching The EWAS Catalog inclusion criteria (described above) and extract relevant DNA methylation and phenotype information. The query was performed by Dr Paul Yousefi on 20 March 2019 and identified 148 such experiments with 32,845 samples where DNA methylation and phenotype information could be successfully extracted. From these, the aim was to repeat the analyses performed in the publications linked by PubMed IDs to each GEO record. Thus, I looked up the corresponding full texts for each dataset and identified the main variables of interest. Of the 148 putative GEO studies, only 34 (23%) contained sufficient information to replicate the original analysis. 
@@ -517,14 +517,18 @@ The Catalog also contains results from studies that have uploaded their data to 
 We decided to only use studies and results thought to be more "robust" when assessing how characteristics of DNA methylation might impact EWAS results. To this end, we removed all potentially faulty probes and probes that mapped to sex chromomsomes, excluded studies with likely inflated r^2^ values, and removed studies for which re-analysis of the data replicated less than 10% of the findings.
 
 ### DNA methylation characteristics
-The association between heritability, variability and average level of DNA methylation at each CpG site and EWAS effect size was assessed. To allow this across traits, we standardised beta coefficients, $\beta$ like so, 
+The association between heritability, variability and average level of DNA methylation at each CpG site and EWAS effect size was assessed. To allow this across traits, we standardised beta coefficients, $\beta_{standard}$, like so, 
 
-\begin{equation}
-    \beta_{standard} = ...
+\begin{align}
+    \sigma(x,y) &= \frac{r^2 \sigma^2(y)} {\beta} \notag \\ 
+    \sigma^2(x) &= \sigma(x,y) / \beta \notag \\ 
+    \beta_{standard} &= \beta \sqrt{\sigma^2(x)}
     (\#eq:standardised-beta-coeffs)
-\end{equation}
+\end{align}
 
-Data on the variance and mean levels of DNA methylation across sites was provided by the Genetics of DNA methylation Consortium (GoDMC) (REF). Heritability of DNA methylation at each site has been previously estimated by X and Y, these values were kindly made publically available by the authors of those studies and were used in this study. 
+where $\sigma(x,y)$ = the covariance between $x$ and $y$, $\beta$ = the effect estimates, $\sigma^2(x)$ = variance of $x$. 
+
+The variance in y ($\sigma^2(y)$) was the variance in DNA methylation, which was provided by the Genetics of DNA methylation Consortium (GoDMC) (REF). GoDMC also provided the mean levels of DNA methylation at each site. Heritability of DNA methylation at each site has been previously estimated by X and Y, these values were kindly made publically available by the authors of those studies and were used in this study. 
 
 Associations between each characteristic and effect size was assessed using linear regression, fitting the standardised effect size as the dependent variable and the characteristic as the independent variable. The standardised effect sizes were rank normalised to ensure normality.
 
@@ -584,7 +588,7 @@ The number of traits each CpG associated with was fairly even across chromosomes
 \caption{(ref:traits-manhattan-cap)}(\#fig:traits-manhattan)
 \end{figure}
 
-The total trait variance correlated with DNA methylation (r^2^) at each site varied from 0.0011 to 0.78 (__Figure \@ref(fig:rsq-distribution)__). The sum of r^2^ values ranged greatly from 0.0055 to 18,751 (__Figure \@ref(fig:rsq-sum-distribution)__), with a median of 1.2. There was evidence that eight studies had a total sum of r^2^ values greater than the mean (FDR < 0.05) and results from these studies made up the majority of r^2^ values greater than 0.1 (__Figure \@ref(fig:rsq-distribution)__).
+The total trait variance correlated with DNA methylation (r^2^) at each site varied from 0.0011 to 0.97 (__Figure \@ref(fig:rsq-distribution)__). The sum of r^2^ values ranged greatly from 0.0055 to 23,879 (__Figure \@ref(fig:rsq-sum-distribution)__), with a median of 1.2. There was evidence that eight studies had a total sum of r^2^ values greater than the mean (FDR < 0.05) and results from these studies made up the majority of r^2^ values greater than 0.1 (__Figure \@ref(fig:rsq-distribution)__).
 
 (ref:rsq-distribution-cap) __Distribution of r-squared values across all CpG sites in The EWAS Catalog__. Each EWAS can identify multiple differentially methylated positions, each of which will capture some variance of the trait of interest for that EWAS (r^2^). $\sum {r^2}$ is the sum of r^2^ values, the distribution of which is shown in __Figure \@ref(fig:rsq-sum-distribution)__. Eight studies were identified for which there was strong evidence that the sum of r^2^ values were greater than the mean across all studies. All of the differentially methylated positions identified by those studies are highlighted in blue on the plot.
 

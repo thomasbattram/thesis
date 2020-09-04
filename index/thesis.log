@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.9)  31 AUG 2020 21:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.9)  4 SEP 2020 11:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1289,7 +1289,7 @@ Chapter 4.
 [47
 
 ] [48] [49] [50] [51] [52] [53]
-Overfull \hbox (0.675pt too wide) in paragraph at lines 709--709
+Overfull \hbox (0.675pt too wide) in paragraph at lines 713--713
 [] [] 
  []
 
@@ -1299,10 +1299,10 @@ File: figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png Graphic file (ty
 pe png)
 <use figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png>
 Package pdftex.def Info: figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.p
-ng  used on input line 738.
+ng  used on input line 742.
 (pdftex.def)             Requested size: 360.0pt x 210.00218pt.
 
-Overfull \hbox (0.675pt too wide) in paragraph at lines 742--742
+Overfull \hbox (0.675pt too wide) in paragraph at lines 746--746
 [] [] 
  []
 
@@ -1312,10 +1312,10 @@ pt>
 File: thesis_files/figure-latex/rsq-distribution-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/rsq-distribution-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/rsq-distribution-1.pdf  used
- on input line 749.
+ on input line 753.
 (pdftex.def)             Requested size: 360.0pt x 249.23032pt.
 
-Overfull \hbox (0.675pt too wide) in paragraph at lines 753--753
+Overfull \hbox (0.675pt too wide) in paragraph at lines 757--757
 [] [] 
  []
 
@@ -1326,10 +1326,10 @@ File: thesis_files/figure-latex/rsq-sum-distribution-1.pdf Graphic file (type p
 df)
 <use thesis_files/figure-latex/rsq-sum-distribution-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/rsq-sum-distribution-1.pdf  
-used on input line 758.
+used on input line 762.
 (pdftex.def)             Requested size: 360.0pt x 249.23032pt.
 
-Overfull \hbox (0.675pt too wide) in paragraph at lines 762--762
+Overfull \hbox (0.675pt too wide) in paragraph at lines 766--766
 [] [] 
  []
 
@@ -1340,23 +1340,23 @@ File: thesis_files/figure-latex/faulty-probes-plot-1.pdf Graphic file (type pdf
 )
 <use thesis_files/figure-latex/faulty-probes-plot-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/faulty-probes-plot-1.pdf  us
-ed on input line 772.
+ed on input line 776.
 (pdftex.def)             Requested size: 360.0pt x 249.23032pt.
 
-Overfull \hbox (0.675pt too wide) in paragraph at lines 776--776
+Overfull \hbox (0.675pt too wide) in paragraph at lines 780--780
 [] [] 
  []
 
 [57 <./thesis_files/figure-latex/rsq-sum-distribution-1.pdf>]
-Overfull \hbox (0.675pt too wide) in paragraph at lines 783--783
+Overfull \hbox (0.675pt too wide) in paragraph at lines 787--787
 [] [] 
  []
 
 
-LaTeX Warning: Float too large for page by 295.24553pt on input line 866.
+LaTeX Warning: Float too large for page by 295.24553pt on input line 870.
 
 
-Overfull \hbox (0.675pt too wide) in paragraph at lines 870--870
+Overfull \hbox (0.675pt too wide) in paragraph at lines 874--874
 [] [] 
  []
 
@@ -1368,21 +1368,21 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <figure/04-properties_of_ewas/combined_characteristics_plots.png, id=1334, 505.
-6491pt x 505.6491pt>
+89pt x 505.89pt>
 File: figure/04-properties_of_ewas/combined_characteristics_plots.png Graphic f
 ile (type png)
 <use figure/04-properties_of_ewas/combined_characteristics_plots.png>
 Package pdftex.def Info: figure/04-properties_of_ewas/combined_characteristics_
-plots.png  used on input line 908.
-(pdftex.def)             Requested size: 360.0pt x 360.00867pt.
+plots.png  used on input line 912.
+(pdftex.def)             Requested size: 360.0pt x 360.00264pt.
 
-Overfull \hbox (0.675pt too wide) in paragraph at lines 912--912
+Overfull \hbox (0.675pt too wide) in paragraph at lines 916--916
 [] [] 
  []
 
 [59]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 9
-17.
+21.
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [60 <./figure/04-properties_of_ewas/combined_characteristics_plots.png>] [61]
@@ -1395,10 +1395,10 @@ Chapter 5.
 File: figure/05-h2ewas/m2_model_comparison.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/m2_model_comparison.pdf>
 Package pdftex.def Info: figure/05-h2ewas/m2_model_comparison.pdf  used on inpu
-t line 1023.
+t line 1027.
 (pdftex.def)             Requested size: 360.0pt x 243.31377pt.
 
-Overfull \hbox (0.675pt too wide) in paragraph at lines 1027--1027
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1031--1031
 [] [] 
  []
 
@@ -1408,13 +1408,13 @@ pdfTeX warning: pdflatex (file ./figure/05-h2ewas/m2_model_comparison.pdf): PDF
  inclusion: invalid other resource which is no dict (key 'ProcSets', type <arra
 y>); ignored.
 >]
-Overfull \hbox (56.25168pt too wide) in paragraph at lines 1042--1043
+Overfull \hbox (56.25168pt too wide) in paragraph at lines 1046--1047
 []\T1/ptm/m/n/10.95 (-20) Phenotype data were ex-tracted us-ing the `alspac' R 
 pack-age (github.com/explodecomputer/alspac)
  []
 
 [73] [74] [75] [76] [77]
-Overfull \hbox (25.14845pt too wide) in paragraph at lines 1103--1104
+Overfull \hbox (25.14845pt too wide) in paragraph at lines 1107--1108
 \T1/ptm/m/n/10.95 (-20) Code used to per-form anal-y-ses can be found here: git
 hub.com/thomasbattram/ereml 
  []
@@ -1424,10 +1424,10 @@ hub.com/thomasbattram/ereml
 File: figure/05-h2ewas/m2_workflow.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/m2_workflow.pdf>
 Package pdftex.def Info: figure/05-h2ewas/m2_workflow.pdf  used on input line 1
-115.
+119.
 (pdftex.def)             Requested size: 360.0pt x 235.41559pt.
 
-Overfull \hbox (0.675pt too wide) in paragraph at lines 1119--1119
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1123--1123
 [] [] 
  []
 
@@ -1441,10 +1441,10 @@ ored.
 File: figure/05-h2ewas/model_m2_comparison.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/model_m2_comparison.pdf>
 Package pdftex.def Info: figure/05-h2ewas/model_m2_comparison.pdf  used on inpu
-t line 1131.
+t line 1135.
 (pdftex.def)             Requested size: 360.0pt x 360.00264pt.
 
-Overfull \hbox (0.675pt too wide) in paragraph at lines 1135--1135
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1139--1139
 [] [] 
  []
 
@@ -1455,10 +1455,10 @@ File: figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf Graphic file (type pdf)
 
 <use figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf>
 Package pdftex.def Info: figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf  use
-d on input line 1156.
+d on input line 1160.
 (pdftex.def)             Requested size: 360.0pt x 360.00264pt.
 
-Overfull \hbox (0.675pt too wide) in paragraph at lines 1160--1160
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1164--1164
 [] [] 
  []
 
@@ -1466,11 +1466,11 @@ Overfull \hbox (0.675pt too wide) in paragraph at lines 1160--1160
 <figure/05-h2ewas/roc_plot.pdf, id=1557, 504.88625pt x 504.88625pt>
 File: figure/05-h2ewas/roc_plot.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/roc_plot.pdf>
-Package pdftex.def Info: figure/05-h2ewas/roc_plot.pdf  used on input line 1167
+Package pdftex.def Info: figure/05-h2ewas/roc_plot.pdf  used on input line 1171
 .
 (pdftex.def)             Requested size: 360.0pt x 360.0048pt.
 
-Overfull \hbox (0.675pt too wide) in paragraph at lines 1171--1171
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1175--1175
 [] [] 
  []
 
@@ -1483,18 +1483,18 @@ Chapter 7.
 [95
 
 ] [96] [97] [98] [99] [100] [101] [102]
-Underfull \hbox (badness 6526) in paragraph at lines 1306--1306
+Underfull \hbox (badness 6526) in paragraph at lines 1310--1310
 [][]\T1/ptm/b/n/10.95 Sample 1: Ac-ces-si-ble Re-source for In-te-grated Epige-
 nomic Stud-ies
  []
 
 [103] [104] [105]
-Overfull \hbox (0.675pt too wide) in paragraph at lines 1332--1332
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1336--1336
 [] [] 
  []
 
 [106] [107] [108] [109] [110] [111] [112]
-Underfull \hbox (badness 1048) in paragraph at lines 1436--1436
+Underfull \hbox (badness 1048) in paragraph at lines 1440--1440
 []\T1/ptm/b/n/12 Tumour and ad-ja-cent nor-mal lung tis-sue methy-la-tion pat-
  []
 
@@ -1503,7 +1503,7 @@ Underfull \hbox (badness 1048) in paragraph at lines 1436--1436
 ]
 Appendix A.
 
-LaTeX Warning: Reference `ref-labels' on page 120 undefined on input line 1483.
+LaTeX Warning: Reference `ref-labels' on page 120 undefined on input line 1487.
 
 
 [120
@@ -1516,156 +1516,156 @@ Appendix B.
 
 
 ]
-Underfull \hbox (badness 1097) in paragraph at lines 1529--1531
+Underfull \hbox (badness 1097) in paragraph at lines 1533--1535
  [][]\T1/ptm/m/n/10.95 (+20) 9. Fil-ipow-icz W, Bhat-tacharyya SN, So-nen-berg 
 N. Mech-a-nisms of post-
  []
 
 
-Underfull \hbox (badness 2671) in paragraph at lines 1529--1531
+Underfull \hbox (badness 2671) in paragraph at lines 1533--1535
  \T1/ptm/m/n/10.95 (+20) transcriptional reg-u-la-tion by mi-croR-NAs: Are the 
 an-swers in sight?
  []
 
 [123] [124] [125] [126] [127]
-Underfull \hbox (badness 10000) in paragraph at lines 1688--1690
+Underfull \hbox (badness 10000) in paragraph at lines 1692--1694
  \T1/ptm/m/n/10.95 (+20) ([]$\T1/pcr/m/n/10.95 h t t p s : / / e m e a . i l l 
 u m i n a . c o m / c o n t e n t / d a m / i l l u m i na -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1688--1690
+Underfull \hbox (badness 10000) in paragraph at lines 1692--1694
  \T1/pcr/m/n/10.95 m a r k e t i n g / d o c u m e n t s / p r o d u c t s / d 
 a t a s h e e t s / d a t a s h e e t % 7 B
  []
 
 [128] [129] [130] [131] [132] [133]
-Underfull \hbox (badness 10000) in paragraph at lines 1868--1870
+Underfull \hbox (badness 10000) in paragraph at lines 1872--1874
  \T1/ptm/m/n/10.95 (+20) 594. ([]$\T1/pcr/m/n/10.95 h t tp : / / w w w . n a t 
 u r e . c o m / d o i f i n d e r / 1 0 . 1 0 3 8 / n r g 3 4
  []
 
 [134] [135]
-Underfull \hbox (badness 10000) in paragraph at lines 1910--1912
+Underfull \hbox (badness 10000) in paragraph at lines 1914--1916
  \T1/ptm/m/n/10.95 (+20) ([]$\T1/pcr/m/n/10.95 h t tp : / / o n c o l o g y . j
  a m a n e t w o r k . c o m / a r t i c l e . a s p x? a r t i c l e
  []
 
 [136]
-Underfull \hbox (badness 10000) in paragraph at lines 1934--1936
+Underfull \hbox (badness 10000) in paragraph at lines 1938--1940
  \T1/pcr/m/n/10.95 w w w . p u b m e d c e n t r a l . n i h . g o v / a r t i 
 c l e r e n d e r . f c gi? a r t id =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1934--1936
+Underfull \hbox (badness 10000) in paragraph at lines 1938--1940
  \T1/pcr/m/n/10.95 2 8 4 8 1 2 4 % 7 B /& % 7 D t o ol = p m c e n t r e z % 7 
 B /& % 7 D r e n d e r t y pe = a b s t
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1934--1936
+Underfull \hbox (badness 10000) in paragraph at lines 1938--1940
  \T1/pcr/m/n/10.95 r a c t % 7 B / % % 7 D 5 C n h t t p : / / w w w . n c b i 
 . n l m . n i h . g o v / e n t r e z / q u
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1934--1936
+Underfull \hbox (badness 10000) in paragraph at lines 1938--1940
  \T1/pcr/m/n/10.95 e r y . f c gi? c md = R e t r i e v e % 7 B / & % 7 D db = 
 P u b M e d % 7 B / & % 7 D d o pt =
  []
 
 [137]
-Underfull \hbox (badness 1275) in paragraph at lines 1952--1954
+Underfull \hbox (badness 1275) in paragraph at lines 1956--1958
  [][]\T1/ptm/m/n/10.95 (+20) 150. Tahara T, Ari-sawa T. DNA methy-la-tion as a 
 molec-u-lar biomarker
  []
 
 
-Underfull \hbox (badness 2894) in paragraph at lines 1952--1954
+Underfull \hbox (badness 2894) in paragraph at lines 1956--1958
  \T1/ptm/m/n/10.95 (+20) in gas-tric can-cer. \T1/ptm/m/it/10.95 (+20) Epige-no
 mics \T1/ptm/m/n/10.95 (+20) [elec-tronic ar-ti-cle]. 2015;7(3):475--
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1952--1954
+Underfull \hbox (badness 10000) in paragraph at lines 1956--1958
  \T1/ptm/m/n/10.95 (+20) 486. ([]$\T1/pcr/m/n/10.95 h t tp : / / w w w . s c o 
 p u s . c o m / i n w a r d / r e c o r d . u rl? e id =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1952--1954
+Underfull \hbox (badness 10000) in paragraph at lines 1956--1958
  \T1/pcr/m/n/10.95 2 -[] s 2 .0 -[] 8 4 9 3 1 3 6 0 0 2 2 % 7 B /& % 7 D p a r 
 t n e r I D = 4 0 % 7 B / & % 7 D m d 5 =
  []
 
 [138]
-Underfull \hbox (badness 10000) in paragraph at lines 1979--1981
+Underfull \hbox (badness 10000) in paragraph at lines 1983--1985
  \T1/ptm/m/n/10.95 (+20) ([]$\T1/pcr/m/n/10.95 h t tp : / / w w w . n c b i . n
  l m . n i h . g o v / p u b m e d / 2 9 2 1 2 7 7 8 % 2 0 h t t p :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1979--1981
+Underfull \hbox (badness 10000) in paragraph at lines 1983--1985
  \T1/pcr/m/n/10.95 / / w w w . p u b m e d c e n t r a l . n i h . g o v / a r 
 t i c l e r e n d e r . f c gi? a r t
  []
 
 [139]
-Underfull \hbox (badness 10000) in paragraph at lines 2003--2005
+Underfull \hbox (badness 10000) in paragraph at lines 2007--2009
  \T1/ptm/m/n/10.95 (+20) ([]$\T1/pcr/m/n/10.95 h t tp : / / w w w . n c b i . n
  l m . n i h . g o v / p u b m e d / 1 6 1 3 6 6 5 2 % 7 B / % % 7 D
  []
 
 [140] [141]
-Underfull \hbox (badness 4108) in paragraph at lines 2030--2032
+Underfull \hbox (badness 4108) in paragraph at lines 2034--2036
  \T1/ptm/m/n/10.95 (+20) y-sis iden-ti-fies new lung can-cer sus-cep-ti-bil-ity
  loci and het-ero-gene-ity
  []
 
 
-Underfull \hbox (badness 3138) in paragraph at lines 2030--2032
+Underfull \hbox (badness 3138) in paragraph at lines 2034--2036
  \T1/ptm/m/n/10.95 (+20) in ge-netic sus-cep-ti-bil-ity across his-to-log-i-cal
  sub-types. \T1/ptm/m/it/10.95 (+20) Na-ture ge-net-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 2030--2032
+Underfull \hbox (badness 1264) in paragraph at lines 2034--2036
  \T1/ptm/m/it/10.95 (+20) ics \T1/ptm/m/n/10.95 (+20) [elec-tronic ar-ti-cle]. 
 2017;49(7):1126--1132. ([]$\T1/pcr/m/n/10.95 h t tp : / / w w w . n a t u
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2030--2032
+Underfull \hbox (badness 10000) in paragraph at lines 2034--2036
  \T1/pcr/m/n/10.95 r e . c o m / d o i f i n d e r / 1 0 . 1 0 3 8 / n g . 3 8 
 9 2 % 7 B / % % 7 D 5 C n h t t p :
  []
 
 [142]
-Underfull \hbox (badness 10000) in paragraph at lines 2057--2059
+Underfull \hbox (badness 10000) in paragraph at lines 2061--2063
  \T1/pcr/m/n/10.95 n c b i . n l m . n i h . g o v / p u b m e d / 2 3 7 1 5 3 
 2 3 % 7 B / % % 7 D 5 C n h t t p : / /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2057--2059
+Underfull \hbox (badness 10000) in paragraph at lines 2061--2063
  \T1/pcr/m/n/10.95 w w w . p u b m e d c e n t r a l . n i h . g o v / a r t i 
 c l e r e n d e r . f c gi? a r t id =
  []
 
 [143] [144]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2078.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2078.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2082.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2082.
 (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2078.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2078.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2082.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2082.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: CC0DA229A572C13D318AD2FBDA6103FC;9592.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2078.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2082.
  )
 (\end occurred inside a group at level 2)
 
@@ -1675,7 +1675,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2078.
 Here is how much of TeX's memory you used:
  26321 strings out of 482816
  511819 string characters out of 5954566
- 826051 words of memory out of 5000000
+ 826392 words of memory out of 5000000
  40208 multiletter control sequences out of 15000+600000
  618822 words of font info for 260 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1697,7 +1697,7 @@ mf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/tb13101/Library/TinyTeX/texmf-
 dist/fonts/type1/urw/times/utmbi8a.pfb></Users/tb13101/Library/TinyTeX/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/
 fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (157 pages, 1964427 bytes).
+Output written on thesis.pdf (157 pages, 1975448 bytes).
 PDF statistics:
  2318 PDF objects out of 2487 (max. 8388607)
  2053 compressed objects within 21 object streams
