@@ -202,7 +202,7 @@ It has previously been suggested that sites at which DNA methylation variability
 
 _Results_
 
-There was strong evidence of an inverse association between variance at a CpG site and effect size (P = XXX, __Table X__),
+There was strong evidence of an inverse association between variance at a CpG site and effect size (P = XXX, __Table \@ref(tab:cpg-chars-tab)__),
 
 _Interpretation_
 
@@ -214,7 +214,7 @@ DNA methylation is a binary measurement, a CpG site can either be methylated or 
 
 _Results_
 
-There was strong evidence of an association between mean DNA methylation levels and negative effect sizes (P = XXX, __Table X__) and an inverse association between mean methylation levels and positive effect sizes (P = XXX, __Table X__).
+There was strong evidence of an association between mean DNA methylation levels and negative effect sizes (P = XXX, __Table X__) and an inverse association between mean methylation levels and positive effect sizes (P = XXX, __Table \@ref(tab:cpg-chars-tab)__).
 
 _Interpretation_
 
@@ -230,13 +230,9 @@ There was evidence that effect sizes tended to be greater in more heritable site
 
 _Variance explained results_
 
-The variance in effect size estimates explained by DNA methylation variability, mean methylation level, and heritability, was XXX (__Table X__).  
+The variance in effect size estimates explained by DNA methylation variability, mean methylation level, and heritability, was XXX (__Table \@ref(tab:cpg-chars-tab)__).  
 
-Linear regression models gave some evidence that effect size associated with DNA methylation variance, the average DNA methylation level and heritability (P < 0.01, __Figure \@ref(fig:cpg-chars-plot)__). However, each of these CpG characteristics explained little of the variance across effect sizes (r^2^ < 0.001, __Figure \@ref(fig:cpg-chars-plot)__). 
-
-(ref:cpg-chars-plot-cap) __Relationship between effect estimates of DNA methylation-trait associations and A. DNA methylation variability, B. mean methylation level, C. heritability.__ Effect estimates were scaled to represent the change in DNA methylation after an increase by one standard deviation of the trait of interest. Before assessing the association between effect estimates and DNA methylation characteristics, the standardised effect estimates were rank transformed to ensure normality. The table shows the strength of associations and the variance explained in effect estimates by each of the DNA methylation characteristics.
-
-```{r cpg-chars-plot, message=FALSE, results="asis", fig.cap='(ref:cpg-chars-plot-cap)'}
+```{r cpg-chars-tab, message=FALSE, results="asis"}
 ```
 
 _Rationale_

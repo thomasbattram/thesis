@@ -24,6 +24,9 @@ batch_and_f_probes <- new_load(file.path(tp_04, "batch_and_faulty_probes.RData")
 # replication data
 replication_dat <- new_load(file.path(tp_04, "replication_data.RData"))
 
+# cpg-chars data
+cpg_chars_res <- read_tsv(file.path(tp_04, "characteristics_assoc_tab.tsv"))
+
 ## ---- study-data-setup --------------------------------
 
 study_caption <- "Description of data present in the EWAS Catalog"
@@ -143,6 +146,20 @@ kable(geo_rean_tab, format = "latex", caption = geo_rean_caption, booktabs = TRU
 # h2_twin_dmp_file <- paste0(fp_04, "figures/dmp_h2_twin_scatter.png")
 cpg_chars_file <- file.path(fp_04, "combined_characteristics_plots.png")
 
+cpg_chars_tab <- cpg_chars_res %>%
+    tidy_nums() %>%
+    tidy_colnames()
+
+# char_val$CHAR$ASSOC
+
+vals <- lapply()
+
+cpg_chars_cap <- "Association between CpG chars and associations in EWAS"
+
 ## ---- cpg-chars-plot --------------------------------
 include_graphics(cpg_chars_file)
+
+## ---- cpg-chars-tab --------------------------------
+kable(cpg_chars_tab, format = "latex", caption = cpg_chars_cap, booktabs = TRUE) %>%
+    kable_styling(latex_options = c("striped", "hold_position", "scale_down")) 
 
