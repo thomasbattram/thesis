@@ -202,7 +202,7 @@ It has previously been suggested that sites at which DNA methylation variability
 
 _Results_
 
-There was an inverse association between variance at a CpG site and effect size (__Table X__), 
+There was strong evidence of an inverse association between variance at a CpG site and effect size (P = XXX, __Table X__),
 
 _Interpretation_
 
@@ -210,20 +210,27 @@ suggesting that removal of these sites might lead to loss of important biologica
 
 _Rationale_
 
-Mean methylation...
+DNA methylation is a binary measurement, a CpG site can either be methylated or not. However, when measuring methylation across multiple DNA molecules, the proportion of those molecules methylated at a given site will be between 0 and 1. If DNA methylation at a given site is important for specific regulatory functions within a group of cells, one might expect that site to be methylated (or unmethylated) in the majority of the cells. Thus, changes in methylation away from an extreme, might have more of impact on cellular function.
 
 _Results_
 
+There was strong evidence of an association between mean DNA methylation levels and negative effect sizes (P = XXX, __Table X__) and an inverse association between mean methylation levels and positive effect sizes (P = XXX, __Table X__).
+
 _Interpretation_
+
+This suggests that changes away from the extreme ends of the distribution are likely to have larger effects.
 
 _Rationale_
 
-Heritability
+DNA methylation changes are heritable (REF), and DNA methylation could mediate the effects of genotype on complex traits or genotype might confound the association between DNA methylation on complex traits.  
 
 _Results_
 
-_Interpretation_
+There was evidence that effect sizes tended to be greater in more heritable sites (P = XXX, __Table X__). 
 
+_Variance explained results_
+
+The variance in effect size estimates explained by DNA methylation variability, mean methylation level, and heritability, was XXX (__Table X__).  
 
 Linear regression models gave some evidence that effect size associated with DNA methylation variance, the average DNA methylation level and heritability (P < 0.01, __Figure \@ref(fig:cpg-chars-plot)__). However, each of these CpG characteristics explained little of the variance across effect sizes (r^2^ < 0.001, __Figure \@ref(fig:cpg-chars-plot)__). 
 
@@ -234,13 +241,11 @@ Linear regression models gave some evidence that effect size associated with DNA
 
 _Rationale_
 
-Enrichment shit
+The position of DNA methylation relative to genes is pertinent to its association with gene expression (REF, __Section X__). Further, the presence of other epigenetic marks may modify the association DNA methylation has with gene expression (REF).
 
 _Results_
 
 _Interpretation_
-
-* Enrichment of DMPs in various genomic regions etc.
 
 \newpage
 
