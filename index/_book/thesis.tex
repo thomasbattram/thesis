@@ -526,18 +526,18 @@ Our criteria for inclusion of a study into The EWAS Catalog are as follows:
 \end{enumerate}
 CpG-phenotype associations are extracted from studies at P \textless{} 1x10\textsuperscript{-4}. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-09-04, The EWAS Catalog contained 450213 associations from 605 studies.
+Based on these criteria, from 2020-09-06, The EWAS Catalog contained 450213 associations from 605 studies.
 
 \hypertarget{overview-of-geo-data-extraction}{%
 \subsection{Overview of GEO data extraction}\label{overview-of-geo-data-extraction}}
 
 To recruit additional datasets suitable for new EWAS analysis, the geograbi R package (\url{https://github.com/yousefi138/geograbi}) was used to both query GEO for experiments matching The EWAS Catalog inclusion criteria (described above) and extract relevant DNA methylation and phenotype information. The query was performed by Dr Paul Yousefi on 20 March 2019 and identified 148 such experiments with 32,845 samples where DNA methylation and phenotype information could be successfully extracted. From these, the aim was to repeat the analyses performed in the publications linked by PubMed IDs to each GEO record. Thus, I looked up the corresponding full texts for each dataset and identified the main variables of interest. Of the 148 putative GEO studies, only 34 (23\%) contained sufficient information to replicate the original analysis.
 
-\hypertarget{ewas-methods}{%
-\subsection{EWAS methods}\label{ewas-methods}}
+\hypertarget{ewas-methods-03}{%
+\subsection{EWAS methods}\label{ewas-methods-03}}
 
-\hypertarget{avon-longitudinal-study-of-parents-and-children-alspac}{%
-\subsubsection{Avon Longitudinal Study of Parents and Children (ALSPAC)}\label{avon-longitudinal-study-of-parents-and-children-alspac}}
+\hypertarget{alspac-03}{%
+\subsubsection{Avon Longitudinal Study of Parents and Children (ALSPAC)}\label{alspac-03}}
 
 EWAS were conducted for 387 continuous and binary traits in peripheral blood DNA methylation of ALSPAC mothers in middle age (N = 940), generated as part of the Accessible Resource for Integrated Epigenomics Studies (ARIES) project (127).
 
@@ -608,16 +608,18 @@ Therefore, despite the fact no extra information about EWAS was presented in thi
 \hypertarget{abstract-04}{%
 \section{Abstract}\label{abstract-04}}
 
+Understanding the nature of EWAS associations is imperative for biological inference from these studies. This understanding may also impact future study design. Of the data in the EWAS Catalog, 9.9\% of reported associations are from CpGs measured by unreliable probes and XXX\% of studies did not account for both batch effects and cellular composition. However, characteristics of DNA methylation also likely influences EWAS associations - heritability and variability of DNA methylation explained X\% of the effect estimate. ADD BIT ABOUT ABCG1
+
 \hypertarget{introduction-04}{%
 \section{Introduction}\label{introduction-04}}
 
-Learning from the successes and mistakes we make is what drives forward development. Hundreds of epigenome-wide association studies (EWAS) have been conducted in the last 10-15 years, no cross-EWAS studies, comparing results across a large group of EWAS results has been performed. By exploring the patterns of association across a large group of EWAS, one can discover potential explanations for the results found, that may shed light on failings in the literature as well as shared epigenetic architectures across traits.
+Learning from successes and mistakes helps drive forward development. Hundreds of epigenome-wide association studies (EWAS) have been conducted in the last 10-15 years, yet no cross-EWAS studies, comparing results across a large group of EWAS results has been performed. By exploring the patterns of association across a large group of EWAS, one can discover potential explanations for the results found, that may shed light on failings in the literature as well as shared epigenetic architectures across traits.
 
 Since the inception of EWAS, it has become clear that batch effects and cellular heterogeneity can generate false positives and bias effect sizes (2,76,79). However, there are examples of replication amongst EWAS results, (100,131--136) and further, use of triangulation can be used to bolster evidence that changes in DNA methylation estimated are unlikely due to bias. By way of an example, changes in DNA methylation at \emph{AHRR} have been replicated across multiple smoking EWAS (65,100,101,137) and as functional reaseach has implicated this gene in handling toxic substances found in tobacco smoke (138), it seems unlikely these findings are chance occurances.
 
-The characteristics of the DNA methylome may also explain some EWAS findings. Heritability varies across DNA methylation sites (139,140), and so if genetic effects are driving associations, either through confounding or with DNA methylation as a mediator, one would expect heritable sites to be commonly identified in EWAS. Variance is also heterogenous across sites (141). Some studies have suggested removing sites with particularly low variability to increase power (142,143), but it is unclear whether this may actually remove important sites. Experimental studies have shown DNA methylation changes at different locations of the genome correlate with different regulatory functions. For example, an increase in DNA methylation at transcriptional start sites is correlated with a decrease in gene expression (18,34,35), but an increase in DNA methylation within a gene body shows the opposite association (36,37). Thus, genomic location of DNA methylation sites is likely to influence their likelihood of association with a trait.
+The characteristics of the DNA methylome may also explain some EWAS findings. Heritability varies across DNA methylation sites (139,140), and so if genetic effects are driving associations, either through confounding or with DNA methylation as a mediator, one would expect heritable sites to be commonly identified in EWAS. Variance is also heterogenous across sites (141). Technical effects are more likely to influence DNA methylation variation at sites for which measured variation is low. Thus, some studies have advocated removing these sites to prevent reporting generating false positives and to reduce the multiple testing burden (142,143). However, it is unclear how variance in DNA methylation relates to the magnitude of effect estimates. Experimental studies have shown DNA methylation changes at different locations of the genome correlate with different regulatory functions. For example, an increase in DNA methylation at transcriptional start sites is correlated with a decrease in gene expression (18,34,35), but an increase in DNA methylation within a gene body shows the opposite association (36,37). Thus, genomic location of DNA methylation sites is likely to influence their likelihood of association with a trait.
 
-Understanding underlying reasons that drive EWAS results is essential for future study design. This may come in the form of proper consideration of potential biasing factors, or by selecting certain DNA methylation sites based on their specific characteristics. Further, understanding the characteristics of DNA methylation-trait associations can inform the design of future technologies aimed at measuring DNAm for EWAS.
+Understanding underlying reasons that drive EWAS results is essential for future study design. This may come in the form of proper consideration of potential biasing factors, or by selecting certain DNA methylation sites based on their specific characteristics. Further, understanding the characteristics of DNA methylation-trait associations can inform the design of future technologies aimed at measuring DNA methylation for EWAS.
 
 Also, by examining the commonalities of EWAS results, one has the potential to uncover links between traits that have not previously been made or to identify new potential mediating factors between traits.
 
@@ -631,27 +633,20 @@ In this study we first describe the data present in the EWAS Catalog before expl
 \hypertarget{epigenome-wide-association-studies-data}{%
 \subsection{Epigenome-wide association studies data}\label{epigenome-wide-association-studies-data}}
 
-X EWAS summary statistics were extracted from the EWAS Catalog {[}REF{]}. This includes X published EWAS, X EWAS performed in the Accessible Resource for Integrated Epigenomics Studies (ARIES) subsection of the Avon Longitudinal Study of Parents and Children (ALSPAC), which is described below and X EWAS performed using data from the gene expression omnibus (GEO) resource.
-
-All EWAS have a sample size of greater than 100 and measured more than 100,000 DNA methylation sites genome-wide.
-
-If there are multiple EWAS of the same trait, the EWAS with the largest N was selected for analyses when wishing to assess EWAS results of unique traits.
-
-\hypertarget{aries}{%
-\subsection{ARIES}\label{aries}}
-
-Data used to derive estimates for DNA methylation variability and average methylation levels was taken from the ARIES subsection of the ALSPAC cohort. Pregnant women resident in Avon, UK with expected dates of delivery 1st April 1991 to 31st December 1992 were invited to take part in the study. The initial number of pregnancies enrolled is 14,541 (for these at least one questionnaire has been returned or a ``Children in Focus'' clinic had been attended by 19/07/1999). Of these initial pregnancies, there was a total of 14,676 foetuses, resulting in 14,062 live births and 13,988 children who were alive at 1 year of age. Full details of the cohort has been published previously (REFS).
+All the data for the analysis were extracted from The EWAS Catalog (\textbf{Chapter \ref{ewas-catalog}}). This includes 178 published studies, 387 EWAS from the ARIES subsection of ALSPAC (\textbf{Section \ref{alspac-03}}) (125--127) and 40 EWAS performed using data from the gene expression omnibus (GEO) resource. See \textbf{Chapter \ref{ewas-catalog}} for more details.
 
 \hypertarget{description-of-data}{%
 \subsection*{Description of catalog data}\label{description-of-data}}
 \addcontentsline{toc}{subsection}{Description of catalog data}
 
-Associations between DNA methylation and traits, unless otherwise stated, were extracted at P \textless{} 1x10\textsuperscript{-7}. Each of the CpGs in the Catalog are annotated to genes, using data from the meffil R package (REF). Variance explained (\(r^2\)) was calculated from P values (\(p\)) and sample size (\(n\)) as follows
+Associations between DNA methylation and traits, unless otherwise stated, were extracted at P \textless{} 1x10\textsuperscript{-7}. Each of the CpGs in the Catalog are annotated to genes, using data from the meffil R package (REF).
+
+T-statistics (\(t\)) were calculated using P-values, sample sizes (\(n\)) and the qt() function in R. \(r^2\) values were calculated from t-statistics as follows
 \begin{equation}
-    r^2 = XXX
+    r^2 = \frac{t^2} {t^2 + n - 1}
     \label{eq:r-squared}
 \end{equation}
-We identified traits for which r\textsuperscript{2} values might be inflated. For each EWAS the estimated r\textsuperscript{2} values were summed and these values were transformed to try and approximate a normal distribution. Then a z-test was performed to assess which sum of r\textsuperscript{2} values were greater than the mean sum of r\textsuperscript{2} values.
+We identified traits for which r\textsuperscript{2} values might be inflated. For each EWAS the estimated r\textsuperscript{2} values were summed and these values were transformed to approximate a normal distribution. Then a z-test was performed to assess which sum of r\textsuperscript{2} values were greater than the mean sum of r\textsuperscript{2} values. From the z-test, those with a FDR-corrected P-value of less than 0.05 were labelled as having inflated r\textsuperscript{2} values.
 
 \hypertarget{identifying-faulty-probes}{%
 \subsection{Identifying faulty probes}\label{identifying-faulty-probes}}
@@ -661,9 +656,9 @@ By far the most common method to measure DNA methylation across the studies in T
 \hypertarget{replication}{%
 \subsection{Replication}\label{replication}}
 
-An association was deemed to be replicated at P \textless{} 1x10\textsuperscript{-4}. We assessed replicability of EWAS within the database in two separate ways. Firstly, replication within studies is recorded in the EWAS Catalog, thus simply performed a lookup for any studies that performed a replication or meta-analysed discovery and replication datasets. Secondly, we performed a lookup of results for any traits for which separarte multiple EWAS had been conducted.
+An association was deemed to be replicated at P \textless{} 1x10\textsuperscript{-4}. We assessed replicability of EWAS within the database in two separate ways. Firstly, replication within studies is recorded in the EWAS Catalog, thus we simply performed a lookup for any studies that performed a replication or meta-analysed discovery and replication datasets. Secondly, we performed a lookup of results for any traits for which multiple EWAS had been conducted.
 
-The Catalog also contains results from studies that have uploaded their data to GEO as well as results from the re-analysis of that data performed by us. These re-analyses adjusted for 20 surrogate variables only as many studies did not provide a complete set of covariates to GEO. We performed a lookup of results found in the original EWAS in the re-analysed data provided by GEO.
+The Catalog also contains results from studies that have uploaded their data to GEO as well as results from the re-analysis of that data performed by The EWAS Catalog team. These re-analyses adjusted for 20 surrogate variables only as many studies did not provide a complete set of covariates to GEO. We performed a lookup of results found in the original EWAS in the re-analysed data.
 
 \hypertarget{selecting-data-to-assess-dna-methylation-characteristics}{%
 \subsection{Selecting data to assess DNA methylation characteristics}\label{selecting-data-to-assess-dna-methylation-characteristics}}
@@ -674,17 +669,18 @@ We decided to only use studies and results thought to be more ``robust'' when as
 \subsection{DNA methylation characteristics}\label{dna-methylation-characteristics}}
 
 The association between heritability, variability and average level of DNA methylation at each CpG site and EWAS effect size was assessed. To allow this across traits, we standardised beta coefficients, \(\beta_{standard}\), like so,
-\begin{align}
-    \sigma(x,y) &= \frac{r^2 \sigma^2(y)} {\beta} \notag \\ 
-    \sigma^2(x) &= \sigma(x,y) / \beta \notag \\ 
-    \beta_{standard} &= \beta \sqrt{\sigma^2(x)}
+\begin{equation}
+    \beta_{standard} = \beta \frac{\sqrt{\sigma^2(x)}} {\sqrt{\sigma^2(y)}}
     \label{eq:standardised-beta-coeffs}
-\end{align}
-where \(\sigma(x,y)\) = the covariance between \(x\) and \(y\), \(\beta\) = the effect estimates, \(\sigma^2(x)\) = variance of \(x\).
+\end{equation}
+As individual data were not available to us, the variance in DNA methylation sites was approximated by the variance in DNA methylation at sites from the GoDMC consortium and the trait variance was estimated by rearranging the equation \eqref{eq:r-squared-from-beta} depending on whether DNA methylation was the independent (\(x\)) or dependent (\(y\)) variable in the model.
+\begin{equation}
+    r^2 = \beta^2 \frac{\sigma^2(x)} {\sigma^2(y)}
+    \label{eq:r-squared-from-beta}
+\end{equation}
+GoDMC also provided the mean levels of DNA methylation at each site. Heritability of DNA methylation at each site has been previously estimated by McRae et al.~2014 (139) and Van Dongen et al.~2016 (144), these values were kindly made publically available by the authors of those studies and were used in this study.
 
-The variance in y (\(\sigma^2(y)\)) was the variance in DNA methylation, which was provided by the Genetics of DNA methylation Consortium (GoDMC) (REF). GoDMC also provided the mean levels of DNA methylation at each site. Heritability of DNA methylation at each site has been previously estimated by X and Y, these values were kindly made publically available by the authors of those studies and were used in this study.
-
-Associations between each characteristic and effect size was assessed using linear regression, fitting the standardised effect size as the dependent variable and the characteristic as the independent variable. The standardised effect sizes were rank normalised to ensure normality.
+Associations between each characteristic and effect size were assessed using linear regression, fitting the standardised effect size as the dependent variable and the characteristic as the independent variable. The standardised effect sizes were rank normalised to ensure normality and remove the impact of outliers.
 
 \hypertarget{enrichment-tests}{%
 \subsection{Enrichment tests}\label{enrichment-tests}}
@@ -696,7 +692,7 @@ It was assessed whether the sites identified by EWAS that were present in the ca
 
 Code used to run the analyses is available here: \url{https://github.com/thomasbattram/something}
 
-All analyses were completed using R (version \textbf{X}).
+All analyses were completed using R (version 3.6.2).
 
 \newpage
 
@@ -734,6 +730,8 @@ Most common tissues (\%) & whole blood (84.14), cord blood (4.34), cd4+ t-cells 
 \bottomrule
 \end{tabular}}
 \end{table}
+It may be that certain regulatory mechanisms are more important to phenotypic differences between individuals. By analysing datasets such as the EWAS Catalog, it might be possible to identify which regions may be more important and further, it could be used to identify novel mediating factors between traits.
+
 The number of traits each CpG associated with was fairly even across chromosomes (\textbf{Figure \ref{fig:traits-manhattan}}). There were five CpGs that associated with more than ten traits, cg01940273 \emph{-}, cg05575921 \emph{AHRR}, cg00574958 \emph{CPT1A}, cg17901584 \emph{DHCR24}, cg06500161 \emph{ABCG1}. cg06500161 \emph{ABCG1} associated with more traits than any other site - 71 traits. These correspond mostly to metabolites, weight-related traits, and type two diabetes.
 
 
@@ -743,9 +741,11 @@ The number of traits each CpG associated with was fairly even across chromosomes
 
 }
 
-\caption{\textbf{Number of unique traits associated with each DNA methylation at each CpG.} Sites associated with more than 10 unique traits are shown in orange and labelled.}\label{fig:traits-manhattan}
+\caption{\textbf{Number of unique traits associated with each DNA methylation at each CpG.} Sites associated with more than 10 unique traits are highlighted in orange and labelled.}\label{fig:traits-manhattan}
 \end{figure}
-The total trait variance correlated with DNA methylation (r\textsuperscript{2}) at each site varied from 0.0011 to 0.97 (\textbf{Figure \ref{fig:rsq-distribution}}). The sum of r\textsuperscript{2} values ranged greatly from 0.0055 to 23,879 (\textbf{Figure \ref{fig:rsq-sum-distribution}}), with a median of 1.2. There was evidence that eight studies had a total sum of r\textsuperscript{2} values greater than the mean (FDR \textless{} 0.05) and results from these studies made up the majority of r\textsuperscript{2} values greater than 0.1 (\textbf{Figure \ref{fig:rsq-distribution}}).
+Next we estimated the variance (see equation \eqref{eq:r-squared}) captured by each association to gauge the level of covariation between complex traits and DNA methylation.
+
+The total trait variance correlated with DNA methylation (r\textsuperscript{2}) at each site varied from 0.0011 to 0.97 with a median of 0.093 (\textbf{Figure \ref{fig:rsq-distribution}}). The sum of r\textsuperscript{2} values ranged greatly from 0.0055 to 23,879 (\textbf{Figure \ref{fig:rsq-sum-distribution}}), with a median of 1.2. There was evidence that eight studies had a total sum of r\textsuperscript{2} values greater than the mean (FDR \textless{} 0.05) and r\textsuperscript{2} values from individual associations from these studies made up the majority of r\textsuperscript{2} values greater than 0.1 (\textbf{Figure \ref{fig:rsq-distribution}}). When excluding those studies from the results, the median r\textsuperscript{2} value at individual sites was XXX.
 
 
 \begin{figure}
@@ -763,12 +763,16 @@ The total trait variance correlated with DNA methylation (r\textsuperscript{2}) 
 
 }
 
-\caption{\textbf{Distribution of the sum of r-squared values across each study in The EWAS Catalog.}}\label{fig:rsq-sum-distribution}
+\caption{\textbf{Distribution of the sum of r\textsuperscript{2} values across each study in The EWAS Catalog.}}\label{fig:rsq-sum-distribution}
 \end{figure}
+These results suggest that some associations within the database are likely to be inflated, yet for most traits, variation at individual DNA methylation sites captures little trait variance. Summing the r\textsuperscript{2} values indicates a substantial proportion of trait variance can be captured by multiple DNA methylation sites for some traits, but this can only be estimated by jointly modelling the contribution of all sites to trait variance. This is explored in \textbf{Chapter \ref{h2ewas-chapter}}. Here, the sum of r\textsuperscript{2} values is used to indicate whether the results of a study are likely inflated and thus unlikely to be robust.
+
 \hypertarget{robustness-of-results}{%
 \subsection{Robustness of results}\label{robustness-of-results}}
 
-579 studies adjusted for batch effects in at least one model. Of all DMPs identifed, 9.3\% were measured by potentially faulty probes (REF) and an extra 0.64\% were present on sex chromosomes (\textbf{Figure \ref{fig:faulty-probes-plot}}).
+Here we continue to explore the robustness of results to 1. identify potential improvements that could be made for future studies and 2. identify potentially erroneous associations to exclude from downstream analyses.
+
+579 studies adjusted for batch effects in at least one model and XXX studies adjusted for cell composition in at least one model. Of all DMPs identifed, 9.3\% were measured by potentially faulty probes (REF) and an extra 0.64\% were present on sex chromosomes (\textbf{Figure \ref{fig:faulty-probes-plot}}).
 
 
 \begin{figure}
@@ -781,7 +785,36 @@ The total trait variance correlated with DNA methylation (r\textsuperscript{2}) 
 \end{figure}
 There were 30 studies that performed a meta-analysis of discovery and replication samples. A further 48 studies performed a separate replication analysis. Together, this provides 1666 associations within the EWAS Catalog that have been replicated at P \textless{} 1x10\textsuperscript{-4}.
 
-From the studies that put their data on GEO, we re-analysed the association between DNA methylation and the phenotype of interest from the original study, including 20 surrogate variables as covariates. Both the original study results and the results from the re-analysis of the phenotype of interest are in The EWAS Catalog database for 14 studies. Across the studies, between 0\% and 93.75\% of DMPs were replicated at P \textless{} 1x10\textsuperscript{-4} (\textbf{Table \ref{tab:replication-tab}}).
+From the studies that put their data on GEO, we re-analysed the association between DNA methylation and the phenotype of interest from the original study, including 20 surrogate variables as covariates. Both the original study results and the results from the re-analysis of the phenotype of interest are in The EWAS Catalog database for 14 studies. Across the studies, between 0\% and 93.75\% of DMPs were replicated at P \textless{} 1x10\textsuperscript{-4} (\textbf{Table \ref{tab:geo-reanalysis-tab}}).
+\begin{table}[!h]
+
+\caption{\label{tab:geo-reanalysis-tab}GEO re-analysis replication}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{llll}
+\toprule
+Trait & N-DMPs & N-replicated & Percent-replicated\\
+\midrule
+\rowcolor{gray!6}  Rheumatoid arthritis & 47,875 & 116 & 0.24\\
+Age at menarche & 1 & 0 & 0.00\\
+\rowcolor{gray!6}  Smoking & 30 & 12 & 40.00\\
+Smoking & 32 & 22 & 68.75\\
+\rowcolor{gray!6}  Smoking & 32 & 30 & 93.75\\
+\addlinespace
+Smoking & 32 & 19 & 59.38\\
+\rowcolor{gray!6}  Psoriasis & 16 & 0 & 0.00\\
+Arsenic exposure & 11 & 0 & 0.00\\
+\rowcolor{gray!6}  Arsenic exposure & 1 & 0 & 0.00\\
+Fetal alcohol spectrum disorder & 19 & 1 & 5.26\\
+\addlinespace
+\rowcolor{gray!6}  Inflammatory bowel disease & 14 & 1 & 7.14\\
+Inflammatory bowel disease & 14 & 13 & 92.86\\
+\rowcolor{gray!6}  Inflammatory bowel disease & 14 & 11 & 78.57\\
+Nevus count & 1 & 0 & 0.00\\
+\bottomrule
+\end{tabular}}
+\end{table}
+Using the Catalog data we further performed replication analyses. There were 62 studies that shared a common phenotype of interest. Replication rate, judged as the percentage of CpGs also present in another study of the same trait with P value \textless{} 1x10\textsuperscript{-4}, varied from 0 to 100 between studies (\textbf{Table \ref{tab:replication-tab}}).
 \begin{table}[!h]
 
 \caption{\label{tab:replication-tab}Replication rate}
@@ -868,123 +901,88 @@ Body mass index & 71 & 8 & 8 & 0.11268\\
 \bottomrule
 \end{tabular}}
 \end{table}
-Using the Catalog data we further performed replication analyses. There were studies that shared a common phenotype of interest. Replication rate, judged as any reported CpG with P value \textless{} 1x10\textsuperscript{-4} in another study of the same trait, varied from 0 to 1 between studies (\textbf{Table \ref{tab:geo-reanalysis-tab}}).
-\begin{table}[!h]
-
-\caption{\label{tab:geo-reanalysis-tab}GEO re-analysis replication}
-\centering
-\resizebox{\linewidth}{!}{
-\begin{tabular}[t]{llll}
-\toprule
-Trait & N-DMPs & N-replicated & Percent-replicated\\
-\midrule
-\rowcolor{gray!6}  Rheumatoid arthritis & 47,875 & 116 & 0.24\\
-Age at menarche & 1 & 0 & 0.00\\
-\rowcolor{gray!6}  Smoking & 30 & 12 & 40.00\\
-Smoking & 32 & 22 & 68.75\\
-\rowcolor{gray!6}  Smoking & 32 & 30 & 93.75\\
-\addlinespace
-Smoking & 32 & 19 & 59.38\\
-\rowcolor{gray!6}  Psoriasis & 16 & 0 & 0.00\\
-Arsenic exposure & 11 & 0 & 0.00\\
-\rowcolor{gray!6}  Arsenic exposure & 1 & 0 & 0.00\\
-Fetal alcohol spectrum disorder & 19 & 1 & 5.26\\
-\addlinespace
-\rowcolor{gray!6}  Inflammatory bowel disease & 14 & 1 & 7.14\\
-Inflammatory bowel disease & 14 & 13 & 92.86\\
-\rowcolor{gray!6}  Inflammatory bowel disease & 14 & 11 & 78.57\\
-Nevus count & 1 & 0 & 0.00\\
-\bottomrule
-\end{tabular}}
-\end{table}
-Before continuing to assess what CpG characteristics might, in part, explain some associations found in EWAS, we removed sites that were identified by a potentially faulty probe and were on either of the sex chromosomes. Further, we removed studies that had an inflated summed r\textsuperscript{2} value and studies for which less than 10\% of sites identified in the original analyses were identified in a re-analysis using the data provided via GEO. Overall, this left 789 EWAS and 77127 associations (at P \textless{} 1x10\textsuperscript{-4}).
+Before continuing to assess what CpG characteristics might, in part, explain some associations found in EWAS, we removed sites that were identified by a potentially faulty probes and were on either of the sex chromosomes. Further, we removed the eight studies that had an inflated sum of r\textsuperscript{2} values and studies for which fewer than 10\% of sites identified in the original analyses were identified in a re-analysis using the data provided via GEO. Overall, this left 789 EWAS and 77127 associations (at P \textless{} 1x10\textsuperscript{-4}).
 
 \hypertarget{cpg-characteristics}{%
 \subsection{CpG characteristics}\label{cpg-characteristics}}
 
-Using the EWAS results thought to be more robust, we investigated whether the characteristics of DNA methylation at CpG sites explained associations found in EWAS.
+Using the selected EWAS results, we investigated whether the characteristics of DNA methylation at CpG sites explained associations found in EWAS.
 
-Linear regression models gave some evidence that effect size associated with DNA methylation variance, the average DNA methylation level and heritability (P \textless{} 0.01, \textbf{Figure \ref{fig:cpg-chars-plot}}). However, each of these CpG characteristics explained little of the variance across effect sizes (r\textsuperscript{2} \textless{} 0.001, \textbf{Figure \ref{fig:cpg-chars-plot}}).
+It has previously been suggested that sites at which DNA methylation variability is low should be removed (REF). The rationale being if total variation is low then the ratio of variation due to technical effects to variation due to biological effects will be greater and thus any association with a complex trait is more likely to be due to technical artefacts. However, selection would dictate that phenotypes (including DNA methylation) that have a large effect would be selected for (if they had a positive impact on fitness) or against (if they had a negative impact on fitness). Therefore, it would be expected that DNA methylation at sites that have large impacts on cellular function would end up stabilising over time, and so the largest effects may be missed by removing CpG sites with low variances.
 
+There was strong evidence of an inverse association between variance at a CpG site and effect size (P = 0, \textbf{Table \ref{tab:cpg-chars-tab}}), suggesting that removal of sites with little variation may reduce the chances of discovering changes in DNA methylation that have larger effects.
 
-\begin{figure}
+DNA methylation is a binary measurement, a CpG site can either be methylated or not. However, when measuring methylation across multiple DNA molecules, the proportion of those molecules methylated at a given site will be between 0 and 1. If DNA methylation at a given site is important for specific regulatory functions within a group of cells, one might expect that site to be methylated (or unmethylated) in the majority of the cells. Thus, changes in methylation away from an extreme, might have more of impact on cellular function.
 
-{\centering \includegraphics[width=1\linewidth]{figure/04-properties_of_ewas/combined_characteristics_plots} 
+There was strong evidence of an association between mean DNA methylation levels and negative effect sizes (P = 5.1e-86, \textbf{Table \ref{tab:cpg-chars-tab}}) and an inverse association between mean methylation levels and positive effect sizes (P = 0, \textbf{Table \ref{tab:cpg-chars-tab}}).
 
-}
+DNA methylation changes are heritable (REF), and DNA methylation could mediate the effects of genotype on complex traits or genotype might confound the association between DNA methylation and complex traits.
 
-\caption{\textbf{Relationship between effect estimates of DNA methylation-trait associations and A. DNA methylation variability, B. mean methylation level, C. heritability.} Effect estimates were scaled to represent the change in DNA methylation after an increase by one standard deviation of the trait of interest. Before assessing the association between effect estimates and DNA methylation characteristics, the standardised effect estimates were rank transformed to ensure normality. The table shows the strength of associations and the variance explained in effect estimates by each of the DNA methylation characteristics.}\label{fig:cpg-chars-plot}
-\end{figure}
+There was evidence that effect sizes tended to be greater in more heritable sites (P = 5.9e-05, \textbf{Table \ref{tab:cpg-chars-tab}}).
+
+The combined variance in effect size estimates explained by DNA methylation variability and heritability was 0.084 (\textbf{Table \ref{tab:cpg-chars-tab}}).
+\begin{table}[!h]
+
+\caption{\label{tab:cpg-chars-tab}Association between CpG chars and associations in EWAS}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{lllll}
+\toprule
+characteristic & beta & r2 & p & auc\\
+\midrule
+\rowcolor{gray!6}  avg-meth (beta>0) & -6.7e-01 & 0.08377 & 0.0e+00 & NA\\
+avg-meth (beta<0) & 4.3e-01 & 0.09138 & 5.1e-86 & NA\\
+\rowcolor{gray!6}  variance & -1.2e+03 & 0.01806 & 0.0e+00 & 0.62\\
+h2 & 8.1e-02 & 0.00037 & 5.9e-05 & 0.78\\
+\rowcolor{gray!6}  variance + h2 & NA & 0.08395 & NA & 0.78\\
+\bottomrule
+\end{tabular}}
+\end{table}
+The position of DNA methylation relative to genes is pertinent to its association with gene expression (REF) (\textbf{Section X}). Further, the presence of other epigenetic marks may modify the association DNA methylation has with gene expression (REF).
 \begin{itemize}
 \tightlist
 \item
-  Enrichment of DMPs in various genomic regions etc.
+  results for enrichment analyses here
 \end{itemize}
 \newpage
 
 \hypertarget{discussion-04}{%
 \section{Discussion}\label{discussion-04}}
 
-Understanding the nature of EWAS associations is imperative for biological inference. Using data from the EWAS Catalog we show that many CpGs associate with multiple different unique traits and effect sizes of these CpGs are inversely correlated with the variance of DNA methlyation. Roughly 10\% of the differentially methylated positions identified were measured by potentially faulty probes (REF) and only X\% of associations could be replicated.
+Understanding the nature of EWAS associations is imperative for biological inference. Using data from the EWAS Catalog we show that many CpGs associate with multiple different unique traits and the magnitude of these associations are partly explained by the characteristics of DNA methylation levels. False positives may also explain a proportion of EWAS associations. Roughly 10\% of the differentially methylated positions identified were measured by potentially faulty probes and only X\% of associations could be replicated.
 
 \hypertarget{identifying-mediators}{%
 \subsection{Identifying mediators}\label{identifying-mediators}}
-\begin{itemize}
-\tightlist
-\item
-  X CpGs associated with multiple traits. One associated with X more than any other - X.
-\item
-  Traits it was associated with were weight-related, metabolites, T2D
-\item
-  The association was replicated across some metabs + weight-related traits
-\item
-  The gene it maps to is known to play a role in X
-\item
-  CHECK MOST RECENT EWAS TO SEE IF THEY TEST ANY MEDIATING STUFF
-\item
-  Highlights potential to use these databases for discovering important pathways between traits
-\end{itemize}
-\hypertarget{false-positives}{%
-\subsection{False positives}\label{false-positives}}
-\begin{itemize}
-\tightlist
-\item
-  Databases can also highlight likely flaws.
-\item
-  So many traits with r2 \textgreater{} 1. Suggests, inflated effect estimates, redundance or both.
-\item
-  There were X studies that attempted to replicate results
-\item
-  Replication rates varied a fair bit and many sites did not replicate
-\item
-  Further, the replication rate using data from the same study was not high
-\item
-  As with all study types, replication is a great way to reduce false positives
-\end{itemize}
+
+Identifying modifiable molecular traits that mediate the effect of complex traits on disease is something that motivates a substantial portion of molecular epidemiology research (REFs). Having a database of associations between DNA methylation and various traits and diseases may enable easy identification of potential mediators that warrant follow-up. Overall, DNA methylation at XXX CpGs are associated with multiple traits. The CpG that was identified in the most EWAS, cg06500161 \emph{ABCG1}, had evidence from multiple studies that methylation at that site associated with weight-related traits such as body mass index and waist-hip ratio, XXX metabolites and type 2 diabetes. CHECK MOST RECENT EWAS TO SEE IF THEY TEST ANY MEDIATING STUFF. Either ``this warrants follow-up'' OR ``this highlights the potential to use these databases for discovering important pathways between traits.''
+
+\hypertarget{biased-results}{%
+\subsection{Biased results}\label{biased-results}}
+
+The potential biases in EWAS have been well documented (REFs) and were discussed at length in \textbf{Section \ref{problems-for-ewas}}. It is encouraging that the majority of studies include batch effects and cell composition in at least one of their models (X\%) and further, the majority of studies that did not tended to be older (X\% before 2018). However, there are still some studies including probes that have been characterised as faulty.
+
+Differences in cell composition, sample ethnicity, covariates used and other differential biases between studies might explain the low replication rate. However, studies only tend to report associations below the conventional EWAS P-value threshold, 1e-7, so differences in study power could also be a major factor.
+
 \hypertarget{understanding-cpg-characteristics}{%
 \subsection{Understanding CpG charactersitcs}\label{understanding-cpg-characteristics}}
+
+Characteristics of DNA methylation discovered in experimental studies, such as its association with gene expression, were used to select sites to measure DNA methylation (REF). Further, studies have suggested selecting from those sites commonly measured, CpGs that have certain characteristics such as high variance (REFs).
+
+Our results suggest removing CpG sites with low variances may make it more likely to remove sites with greater effects. Variance had a modest ability to predict whether or not a CpG site was likely to be identified in an EWAS, and it did not add to the predictive ability of heritability, despite explaining a higher proportion of variance in effect estimates. This may be explained by two things. Firstly, having a lower variance in the independent or dependent variable increases the standard error of the beta coefficient in a linear regression. Secondly, heritability will in part determine variance of DNA methylation.
 \begin{itemize}
 \tightlist
 \item
-  Inverse correlation between effect size and variance likely reflect biological importance of stability for some sites. Same way that variation of certain phenotypes is limited by the essential body functions, like height.
-\item
-  Effect sizes were fairly consistent across mean methylation levels at CpG sites. Might expect intermediate meth levels to show smaller effect sizes.
-\item
-  h2 also fairly consitent across effect sizes, suggests that genetic effects aren't driving associations?
+  Enrichment stuff here
 \end{itemize}
 \hypertarget{limitations}{%
 \subsection{Limitations}\label{limitations}}
-\begin{itemize}
-\tightlist
-\item
-  Selection of studies
-\item
-  Full summary stats not available for most studies
-\end{itemize}
+
+Individual level data were not available and thus to calculate standardised betas, the variance of the trait had to be estimated from external measures of DNA methylation. If the GoDMC sample is not representative of the sample used for the study EWAS then these estimates may be substantially biased. Further, many studies do not report the effect estimates from their statistical analyses. If there is a marked difference in the studies that do not report effect sizes and those that do, then any associations between standardised effect estimates and DNA methylation site characteristics are likely to be biased.
+
 \hypertarget{conclusion-04}{%
 \section{Conclusion}\label{conclusion-04}}
 
-Overall, this manuscript demonstrates the potential for using large-scale EWAS databases to understand DNA methylation-trait associations. Unsurprisngly, we found that study design flaws can help explain some associations. However, it is noteworthy that the vast majority of studies have taken head of potential biasing factors, for example X\% of studies adjusted for batch effects. Further, we found an invese association between DNA methylation variability and effect size, suggesting that studies that remove variable sites prior to analysis could be excluding important regions from the analysis. Finally, we identified ABCG1 as associated with X linked traits, which we think warrants follow-up analyses. This highlights the potential to use the EWAS Catalog to identify CpG sites of particular importance to various traits.
+This chapter demonstrates the potential for using large-scale EWAS databases to understand DNA methylation-trait associations. It was found that study design flaws can help explain some associations. However, it is noteworthy that the vast majority of studies have accounted for some potential biasing factors, for example X\% of studies adjusted for batch effects. Further, there was an invese association between DNA methylation variability and effect size, suggesting that studies that remove variable sites prior to analysis could be excluding important regions from the analysis. Finally, I identified cg06500161 \emph{ABCG1} as associated with 71 linked traits, which warrants follow-up analyses. This highlights the potential to use the EWAS Catalog to identify CpG sites of particular importance to various traits.
 
 \hypertarget{h2ewas-chapter}{%
 \chapter{Exploring the variance in complex traits captured by DNA methylation assays}\label{h2ewas-chapter}}
@@ -1005,20 +1003,20 @@ Interpretation of the paucity of EWAS hits is difficult because there is no know
 
 SNP heritability estimates are sensitive to assumptions of the underlying genetic architecture and there are different ways in which to model the contribution of each SNP to the overall genetic component. The original model of calculating h2SNP introduced by Yang et al.~assumes that each variant has an effect that is independent of the regional linkage disequilibrium (LD) structure as each variant is unweighted (the blanket model), and this effectively assumes regions of high LD contribute more to phenotypic variance (95). Speed et al.~proposed a new model, which considered the LD between SNPs so that each region of high LD can effectively be counted as a singular effect (the grouping model) (96). Finding which models fit the data better helps ensure a more accurate estimation of the proportion of DNA methylation association with a trait, further contrasting these models could also be biologically informative.
 
-Gene regions are methylated in a coordinated fashion, which is associated with changes in gene expression (18,144), with a tendency for promotor regions to be unmethylated and gene body regions to be methylated when gene expression is activated (18). This, amongst other complex patterns of gene regulation, induces a correlation structure within EWAS data, and it is not clear whether a single site is driving an association and neighbouring sites are consequentially correlated, or if the cumulative contributions of all neighbouring sites associate with the regulatory process. In EWAS, a common strategy is to collapse DNA methylation sites into groups based on proximity and if they share the same direction of association and potentially magnitude of association, this is often called differentially methylated region (DMR) analysis (145). This, however, does not explain whether the sites within groups are acting independently and cumulatively or as a set of distinct influences. \textbf{Figure \ref{fig:h2ewas-model-comp}} shows a representation of how the differences in models apply to DNA methylation data at a single small region using in one specific example. Of course, there are far more scenarios possible and furthermore, the models aren't restricted to a single small region in the genome. They apply to all sites, as do the DMR methods used in EWAS. Thus, by applying both methods to DNA methylation data across multiple phenotypes and comparing their utility we can gain insight into how DNA methylation operates across gene regions. Furthermore, it is important to find the model that best fits the data to help prevent biased estimates.
+Gene regions are methylated in a coordinated fashion, which is associated with changes in gene expression (18,145), with a tendency for promotor regions to be unmethylated and gene body regions to be methylated when gene expression is activated (18). This, amongst other complex patterns of gene regulation, induces a correlation structure within EWAS data, and it is not clear whether a single site is driving an association and neighbouring sites are consequentially correlated, or if the cumulative contributions of all neighbouring sites associate with the regulatory process. In EWAS, a common strategy is to collapse DNA methylation sites into groups based on proximity and if they share the same direction of association and potentially magnitude of association, this is often called differentially methylated region (DMR) analysis (146). This, however, does not explain whether the sites within groups are acting independently and cumulatively or as a set of distinct influences. \textbf{Figure \ref{fig:h2ewas-model-comp}} shows a representation of how the differences in models apply to DNA methylation data at a single small region using in one specific example. Of course, there are far more scenarios possible and furthermore, the models aren't restricted to a single small region in the genome. They apply to all sites, as do the DMR methods used in EWAS. Thus, by applying both methods to DNA methylation data across multiple phenotypes and comparing their utility we can gain insight into how DNA methylation operates across gene regions. Furthermore, it is important to find the model that best fits the data to help prevent biased estimates.
 
 This study aims to estimate h\textsuperscript{2}\textsubscript{EWAS} values across a plethora of traits and assesses whether this estimate may be useful in identifying traits for which EWAS will likely yield successful identification of associated DNA methylation sites. To do this we perform hundreds of EWAS studies and evaluate if h\textsuperscript{2}\textsubscript{EWAS} estimates are predictive of the number of sites identified by the EWAS at various P value thresholds. We also compare the performance of different models underlying h\textsuperscript{2}\textsubscript{EWAS} estimates to infer likely methylation architecture of complex traits.
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \textbf{Box 1}
 
-The need for larger sample sizes in GWAS has been empirically demonstrated across a broad range of traits. For height and body mass index (BMI), the number of associations dramatically increased from 12 to 3290 and from one to 941, respectively after increasing sample sizes by \textasciitilde670,000 (146--148). This trend can be seen for many traits. Similar to early GWAS, many EWAS are discovering few sites strongly associated with complex traits. However, an example that suggests promise for increasing sample sizes for EWAS is seen with BMI, where an EWAS of 459 individuals identified just five sites, but increasing the sample size to over 5,000 led to identification of 278 sites (67,149). While we can continue to improve sample sizes in EWAS, there is a need to determine the upper limit of the information we can obtain from EWAS of complex traits like BMI. Furthermore, the BMI EWAS example may be unrepresentative of other traits, so having a corollary test for estimating h2SNP for DNA methylation would help us understand if we're capturing relevant information from the current arrays we are using in EWAS. Such information could inform future study designs in terms of growing sample sizes with the current assays available versus designing new assays.
+The need for larger sample sizes in GWAS has been empirically demonstrated across a broad range of traits. For height and body mass index (BMI), the number of associations dramatically increased from 12 to 3290 and from one to 941, respectively after increasing sample sizes by \textasciitilde670,000 (147--149). This trend can be seen for many traits. Similar to early GWAS, many EWAS are discovering few sites strongly associated with complex traits. However, an example that suggests promise for increasing sample sizes for EWAS is seen with BMI, where an EWAS of 459 individuals identified just five sites, but increasing the sample size to over 5,000 led to identification of 278 sites (67,150). While we can continue to improve sample sizes in EWAS, there is a need to determine the upper limit of the information we can obtain from EWAS of complex traits like BMI. Furthermore, the BMI EWAS example may be unrepresentative of other traits, so having a corollary test for estimating h2SNP for DNA methylation would help us understand if we're capturing relevant information from the current arrays we are using in EWAS. Such information could inform future study designs in terms of growing sample sizes with the current assays available versus designing new assays.
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \textbf{Box 2}
 
-Methods used to estimate h2SNP use restricted maximum likelihood (REML) tests to estimate the proportion of variance attributable to these genetic variants. Essentially this assesses whether individuals that are genetically similar are more likely to be phenotypically similar. If those individuals that have a high genetic overlap tend to correlate strongly phenotypically compared to those that don't have high genetic overlap, then the phenotype of interest will have a high h2SNP. Unlike genetic variants, DNA methylation is responsive to the environment (1) and determining causal directionality between DNA methylation markers associated with traits is not trivial (50,150,151). Therefore, estimating the proportion of trait variation captured by DNA methylation variation (which will henceforth be denoted as h\textsuperscript{2}\textsubscript{EWAS}) using the same techniques will ascertain effects going in both directions as well as associations due to confounding. The combination of these mechanisms may increase power to detect trait-DNA methylation association, and could be the reason that so many DNA methylation markers are found in small EWAS compared to similarly sized GWAS (67).
+Methods used to estimate h2SNP use restricted maximum likelihood (REML) tests to estimate the proportion of variance attributable to these genetic variants. Essentially this assesses whether individuals that are genetically similar are more likely to be phenotypically similar. If those individuals that have a high genetic overlap tend to correlate strongly phenotypically compared to those that don't have high genetic overlap, then the phenotype of interest will have a high h2SNP. Unlike genetic variants, DNA methylation is responsive to the environment (1) and determining causal directionality between DNA methylation markers associated with traits is not trivial (50,151,152). Therefore, estimating the proportion of trait variation captured by DNA methylation variation (which will henceforth be denoted as h\textsuperscript{2}\textsubscript{EWAS}) using the same techniques will ascertain effects going in both directions as well as associations due to confounding. The combination of these mechanisms may increase power to detect trait-DNA methylation association, and could be the reason that so many DNA methylation markers are found in small EWAS compared to similarly sized GWAS (67).
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 
@@ -1065,14 +1063,14 @@ Cell proportions (CD8+ and CD4+ T cells, B cells, monocytes, natural killer cell
 \hypertarget{reml-analysis}{%
 \subsection{REML analysis}\label{reml-analysis}}
 
-Using LDAK (152) the relationship between the methylomes (as measured by the HM450 BeadChip) of 940 individuals was estimated by producing a DNA methylation relationship matrix (MRM). This matrix was used as input for the REML analysis to estimate the proportion of a trait's variation that was explained by DNA methylation (h\textsuperscript{2}\textsubscript{EWAS}). Age, the top 10 ancestry principal components, and derived cell proportions were added as covariates to the model.
+Using LDAK (153) the relationship between the methylomes (as measured by the HM450 BeadChip) of 940 individuals was estimated by producing a DNA methylation relationship matrix (MRM). This matrix was used as input for the REML analysis to estimate the proportion of a trait's variation that was explained by DNA methylation (h\textsuperscript{2}\textsubscript{EWAS}). Age, the top 10 ancestry principal components, and derived cell proportions were added as covariates to the model.
 
 When producing the MRM, probes were scaled by their observed variance and the weighting of each probe was based on the variance of DNA methylation at that site using the formula below:
 \begin{equation}
     f_{j}(1-f_{j})^(\alpha/2)
     \label{eq:mrm-weights}
 \end{equation}
-where \(f_j(1-f_j)\) is the variance of methylation at CpG \(j\). The higher the alpha value the more weight is given to probes with greater variance; an alpha value of -1 gives equal weight to probes with low and high variance. The alpha value of -0.25 was chosen because previous analysis by Speed et al.~(152) suggested that this value was optimal for measuring h2SNP. Furthermore, it was hypothesised that probes with a greater variance would contribute more to trait variance. As the method was applied to DNA methylation data in this study, sensitivity analyses were conducted. MRMs were created specifying the alpha value at increasing increments of 0.25 from -2 to 0. The association between h\textsuperscript{2}\textsubscript{EWAS} and number of EWAS hits as well as the difference in h\textsuperscript{2}\textsubscript{EWAS} estimates for 10 randomly selected phenotypes was assessed for the varying alpha values.
+where \(f_j(1-f_j)\) is the variance of methylation at CpG \(j\). The higher the alpha value the more weight is given to probes with greater variance; an alpha value of -1 gives equal weight to probes with low and high variance. The alpha value of -0.25 was chosen because previous analysis by Speed et al.~(153) suggested that this value was optimal for measuring h2SNP. Furthermore, it was hypothesised that probes with a greater variance would contribute more to trait variance. As the method was applied to DNA methylation data in this study, sensitivity analyses were conducted. MRMs were created specifying the alpha value at increasing increments of 0.25 from -2 to 0. The association between h\textsuperscript{2}\textsubscript{EWAS} and number of EWAS hits as well as the difference in h\textsuperscript{2}\textsubscript{EWAS} estimates for 10 randomly selected phenotypes was assessed for the varying alpha values.
 
 The mean of the MRM diagonal should be 1 and the variance close to 0, as the diagonal values essentially represent the correlation between an individual's methylome with itself. Although values are expected to vary slightly from 1. For the MRMs it was identified that some diagonal elements were very high (\textgreater{} 2), which caused the diagonal to have a high variance (0.13). To assess whether these values could skew results, we conducted sensitivity analyses removing individuals, with varying diagonal value cutoffs.
 
@@ -1099,7 +1097,7 @@ The association between the number of DMPs identified at P \textless{} 1x10-5 an
 
 The same method was applied to estimate the association between the number of SNPs identified in GWAS at P \textless{} 5x10-8 and h2SNP. SNPs associated with 485 traits in UK Biobank (see Supplementary Methods for sample information and phenotype selection) were extracted using the IEU Open GWAS Database (92). The h2SNP estimates were extracted from \url{http://www.nealelab.is/uk-biobank/}.
 
-All analyses were conducted in R (version 3.3.3) or using the command line software LDAK (152), GCTA (153), and PLINK (154). For the EWAS analyses, the meffil R package was used (155). A one-sided P value was used to assess if the h\textsuperscript{2}\textsubscript{EWAS} for a trait was \textgreater{} 0, and two-sided P values were used for everything else.
+All analyses were conducted in R (version 3.3.3) or using the command line software LDAK (153), GCTA (154), and PLINK (155). For the EWAS analyses, the meffil R package was used (156). A one-sided P value was used to assess if the h\textsuperscript{2}\textsubscript{EWAS} for a trait was \textgreater{} 0, and two-sided P values were used for everything else.
 
 \hypertarget{data-availability-05}{%
 \subsection{Data availability}\label{data-availability-05}}
@@ -1184,14 +1182,14 @@ The global contribution of DNA methylation to complex trait variance can inform 
 
 The true h\textsuperscript{2}\textsubscript{EWAS} of a trait gives the total predictive capacity of DNA methylation for that trait, which is equivalent to the proportion of that trait's total variance that is associated with changes in DNA methylation. Knowing this information can help design future EWAS studies. A low value of h\textsuperscript{2}\textsubscript{EWAS} doesn't necessarily mean there is little correlation between DNA methylation and a trait, it could transpire that unmeasured sites contribute more to the association. It is important to remember that roughly 1.5\% of CpG sites are targeted by the HM450 BeadChip and DNA can be methylated elsewhere (not at cytosine bases). Therefore, whole genome bisulphite sequencing, or a similar technique, may show that the variance of complex traits captured by DNA methylation is far higher. Furthermore, even if h\textsuperscript{2}\textsubscript{EWAS} is low and the sites discovered already do not explain all of the h\textsuperscript{2}\textsubscript{EWAS} estimate, there may still be value in increasing sample size to identify more DMPs as well as increase the precision of h\textsuperscript{2}\textsubscript{EWAS} estimates. DMPs discovered may not be highly correlated with a trait, but this doesn't mean the potential biological information gained isn't valuable. For example, if a change in a the levels of protein X has a large effect on a trait and change in DNA methylation has a small effect on the levels of protein X, then the effect of that DNA methylation change on the trait will be small, but identifying that DMP could lead to discovering the importance of the protein. Another thing to consider is that DNA methylation is tissue and cell specific. This means, that h\textsuperscript{2}\textsubscript{EWAS} may vary a lot depending on what tissue the methylation is measured in.
 
-The true underlying genetic architecture of complex traits is still unknown, and therefore it is difficult to know the appropriate model to choose when estimating the contribution of all measured SNPs to phenotypic variance amongst unrelated individuals and arguments for each model depending on this underlying genetic architecture are still being put forward (152), (156--158), thus the attempts made in this study to re-purpose genomic REML are likely to suffer the same flaws that are trying to be overcome in genetic data. With this in mind, in addition to the imprecise estimates of h\textsuperscript{2}\textsubscript{EWAS} presented here (due to the small sample sizes of available data), we believe that individual trait h\textsuperscript{2}\textsubscript{EWAS} values should be treated with caution. This doesn't exclude the possibility that estimating h\textsuperscript{2}\textsubscript{EWAS} may be useful and other methods are already being developed to measure the association between DNA methylation at all sites and complex traits (123).
+The true underlying genetic architecture of complex traits is still unknown, and therefore it is difficult to know the appropriate model to choose when estimating the contribution of all measured SNPs to phenotypic variance amongst unrelated individuals and arguments for each model depending on this underlying genetic architecture are still being put forward (153), (157--159), thus the attempts made in this study to re-purpose genomic REML are likely to suffer the same flaws that are trying to be overcome in genetic data. With this in mind, in addition to the imprecise estimates of h\textsuperscript{2}\textsubscript{EWAS} presented here (due to the small sample sizes of available data), we believe that individual trait h\textsuperscript{2}\textsubscript{EWAS} values should be treated with caution. This doesn't exclude the possibility that estimating h\textsuperscript{2}\textsubscript{EWAS} may be useful and other methods are already being developed to measure the association between DNA methylation at all sites and complex traits (123).
 
 \hypertarget{future-ewas-05}{%
 \subsection{Future EWAS}\label{future-ewas-05}}
 
 Heritability estimates from family-based studies gave an a priori justification for the pursuit of gene mapping endeavours that eventually gave rise to GWAS, as they demonstrated variation in complex traits had a substantial genetic component. However, the evidence DNA methylation contributed to trait variation was not ascertained before EWAS were first conducted. To justify collecting more samples and continuing with EWAS research in the current vein, methods such as the one presented in this study should be used to show DNA methylation does substantially contribute to trait variance.
 
-It has become clear from the GWAS era of genetics, that for complex traits, such as coronary artery disease, many common genetic variants with small effects make up the genetic component of the trait (159,160). This suggests a large number of molecular pathways contribute to these traits. DNA methylation at CpGs is heritable (3,161), thus it would be expected that the DNA methylation architecture of a trait will somewhat reflect the genetic architecture of the trait, although this has not been empirically tested.
+It has become clear from the GWAS era of genetics, that for complex traits, such as coronary artery disease, many common genetic variants with small effects make up the genetic component of the trait (160,161). This suggests a large number of molecular pathways contribute to these traits. DNA methylation at CpGs is heritable (3,144), thus it would be expected that the DNA methylation architecture of a trait will somewhat reflect the genetic architecture of the trait, although this has not been empirically tested.
 
 Despite uncertainty of h\textsuperscript{2}\textsubscript{EWAS} estimates for individual traits, we show h\textsuperscript{2}\textsubscript{EWAS} has a modest ability to predict whether the number of EWAS hits will be greater than expected by chance at a given P value threshold. This predictive ability remained stable as the P value threshold for detection increased from P \textless{} 1x10-6 to P \textless{} 1x10-3. These results suggest that increasing sample sizes for traits which truly associate with DNA methylation should result in the discovery of more DMPs. Furthermore, these results support a model for which small changes in methylation at many CpGs across the genome are related to complex traits.
 
@@ -1211,7 +1209,7 @@ As mentioned previously the HM450 BeadChip captures a small percentage of the to
 
 Unlike germline genetic variants, there is intra-individual (between tissue and over time) DNA methylation variation (1,63). Thus, it is to be expected that the variation of h\textsuperscript{2}\textsubscript{EWAS} estimates across traits is partly a product of the tissue and timepoint of choice. However, within the tissue biologically pertinent to the complex trait of interest, the number of pathways that associate with variation in that trait is likely to remain high, for example there are many processes affecting, or affected by, cancer development (162). Thus, it would still be expected that differential methylation at many CpG sites each associate with a trait, but the effect sizes are small. The same can be said when estimating h\textsuperscript{2}\textsubscript{EWAS} at various timepoints.
 
-Estimates of h\textsuperscript{2}\textsubscript{EWAS} will be a product of their environment and genetic makeup of the participants it's measured in. Therefore, the results here may vary by population and by sex. However, participants used in this study are considered to be representative of the larger ALSPAC cohort (127), which is itself considered to be representative of a large majority of women from the UK and potentially other high-income countries (125). This suggests the results will be generalisable to a large group of samples for which EWAS are conducted, but replication in these samples as well as in different populations would provide greater confidence in the generalisability of the results.
+Estimates of h\textsuperscript{2}\textsubscript{EWAS} will be a product of their environment and genetic makeup of the participants it's measured in. Therefore, the results here may vary by population and by sex. However, participants used in this study are considered to be representative of the larger ALSPAC cohort (163), which is itself considered to be representative of a large majority of women from the UK and potentially other high-income countries (125). This suggests the results will be generalisable to a large group of samples for which EWAS are conducted, but replication in these samples as well as in different populations would provide greater confidence in the generalisability of the results.
 
 A wide range of complex traits was used in the analysis, but there are some notable absences. Rarer diseases and diseases that predominantly impact the elderly are not present in this study. The results presented here cannot be generalised to those traits.
 
@@ -1254,11 +1252,11 @@ The results contrast with previous observational and mediation analysis, which h
 \hypertarget{introduction-07}{%
 \section{Introduction}\label{introduction-07}}
 
-Lung cancer is the most common cause of cancer-related death worldwide (163). Several DNA methylation changes have been recently identified in relation to lung cancer risk (121,164,165). Given the plasticity of epigenetic markers, any DNA methylation changes that are causally linked to lung cancer are potentially appealing targets for intervention (166,167). However, these epigenetic markers are sensitive to reverse causation, being affected by cancer processes (167), and are also prone to confounding, for example by socio-economic and lifestyle factors {[}(168); Elliott2014{]}.
+Lung cancer is the most common cause of cancer-related death worldwide (164). Several DNA methylation changes have been recently identified in relation to lung cancer risk (121,165,166). Given the plasticity of epigenetic markers, any DNA methylation changes that are causally linked to lung cancer are potentially appealing targets for intervention (167,168). However, these epigenetic markers are sensitive to reverse causation, being affected by cancer processes (168), and are also prone to confounding, for example by socio-economic and lifestyle factors {[}(169); Elliott2014{]}.
 
-One CpG site, cg05575921 within the aryl hydrocarbon receptor repressor (\emph{AHRR}) gene, has been consistently replicated in relation to both smoking (65) and lung cancer (101,121,164) and functional evidence suggests that this region could be causally involved in lung cancer (138). However, the observed association between methylation and lung cancer might simply reflect separate effects of smoking on lung cancer and DNA methylation, i.e.~the association may be a result of confounding (104), including residual confounding after adjustment for self-reported smoking behaviour (169,170). Furthermore, recent epigenome-wide association studies (EWAS) for lung cancer have revealed additional CpG sites which may be causally implicated in development of the disease (121,164).
+One CpG site, cg05575921 within the aryl hydrocarbon receptor repressor (\emph{AHRR}) gene, has been consistently replicated in relation to both smoking (65) and lung cancer (101,121,165) and functional evidence suggests that this region could be causally involved in lung cancer (138). However, the observed association between methylation and lung cancer might simply reflect separate effects of smoking on lung cancer and DNA methylation, i.e.~the association may be a result of confounding (104), including residual confounding after adjustment for self-reported smoking behaviour (170,171). Furthermore, recent epigenome-wide association studies (EWAS) for lung cancer have revealed additional CpG sites which may be causally implicated in development of the disease (121,165).
 
-Mendelian randomization (MR) uses genetic variants associated with modifiable factors as instruments to infer causality between the modifiable factor and outcome, overcoming most unmeasured or residual confounding and reverse causation (89,90). In order to infer causality, three core assumptions of MR should be met: 1) The instrument is associated with the exposure, 2) The instrument is not associated with any confounders, 3) The instrument is associated with the outcome only through the exposure. MR may be adapted to the setting of DNA methylation (112,127,171) with the use of single nucleotide polymorphisms (SNPs) that correlate with methylation of CpG sites, known as methylation quantitative trait loci (mQTLs) (3).
+Mendelian randomization (MR) uses genetic variants associated with modifiable factors as instruments to infer causality between the modifiable factor and outcome, overcoming most unmeasured or residual confounding and reverse causation (89,90). In order to infer causality, three core assumptions of MR should be met: 1) The instrument is associated with the exposure, 2) The instrument is not associated with any confounders, 3) The instrument is associated with the outcome only through the exposure. MR may be adapted to the setting of DNA methylation (112,163,172) with the use of single nucleotide polymorphisms (SNPs) that correlate with methylation of CpG sites, known as methylation quantitative trait loci (mQTLs) (3).
 
 In this study, we performed a meta-analysis of four lung cancer EWAS (918 case-control pairs) from prospective cohort studies to identify CpG sites associated with lung cancer risk and applied MR to investigate whether the observed DNA methylation changes at these sites are causally linked to lung cancer.
 
@@ -1297,7 +1295,7 @@ NSHDS is an ongoing prospective cohort and intervention study intended for healt
 \hypertarget{methods-ewas-meta-analysis}{%
 \subsection{EWAS Meta-analysis}\label{methods-ewas-meta-analysis}}
 
-To quantify the association between the methylation level at each CpG and the risk of lung cancer conditional logistic regression models were fitted for beta values of methylation (which ranges from 0 (no cytosines methylated) to 1 (all cytosines methylated)) on lung cancer status for the four studies. The cases and controls in each study were matched, details can be found above. Surrogate variables were computed in the four studies using the SVA R package (172) and the proportion of CD8+ and CD4+ T cells, B cells, monocytes, natural killer cells and granulocytes within whole blood were derived from DNA methylation (75). The following EWAS models were included in the meta-analysis: Model 1 -- unadjusted; Model 2 -- adjusted for 10 surrogate variables (SVs); Model 3 -- adjusted for 10 SVs and derived cell proportions. EWAS stratified by smoking status was also conducted (never (N=304), former (N=648) and current smoking (N=857)). For Model 1 and Model 2, the case-control studies not matched on smoking status (EPIC-Italy and NOWAC) were adjusted for smoking.
+To quantify the association between the methylation level at each CpG and the risk of lung cancer conditional logistic regression models were fitted for beta values of methylation (which ranges from 0 (no cytosines methylated) to 1 (all cytosines methylated)) on lung cancer status for the four studies. The cases and controls in each study were matched, details can be found above. Surrogate variables were computed in the four studies using the SVA R package (173) and the proportion of CD8+ and CD4+ T cells, B cells, monocytes, natural killer cells and granulocytes within whole blood were derived from DNA methylation (75). The following EWAS models were included in the meta-analysis: Model 1 -- unadjusted; Model 2 -- adjusted for 10 surrogate variables (SVs); Model 3 -- adjusted for 10 SVs and derived cell proportions. EWAS stratified by smoking status was also conducted (never (N=304), former (N=648) and current smoking (N=857)). For Model 1 and Model 2, the case-control studies not matched on smoking status (EPIC-Italy and NOWAC) were adjusted for smoking.
 
 An inverse-variance weighted fixed effects meta-analysis was performed of the EWAS (918 case-control pairs) using the \href{http://csg.sph.umich.edu/abecasis/metal/}{METAL software}. Direction of effect, effect estimates and the I\textsuperscript{2} statistic were used to assess heterogeneity across the studies in addition to effect estimates across smoking strata (never, former and current). All sites identified at a false discovery rate (FDR) \textless{} 0.05 in Model 2 and 3 were also present in the sites identified in Model 1. The effect size differences between models for all sites identified in Model 1 were assessed by a Kruskal-Wallis test and a post-hoc Dunn's test. There was little evidence for a difference (P \textgreater{} 0.1), so to maximize inclusion into the MR analyses we took forward the sites identified in the unadjusted model (Model 1).
 
@@ -1312,12 +1310,12 @@ Two-sample MR was used to establish potential causal effect of differential meth
 In the first sample, mQTL-methylation effect estimates (\(\beta_{GP}\)) for each CpG site of interest were identified in an mQTL database from the Accessible Resource for Integrated Epigenomic Studies (ARIES) (\url{http://www.mqtldb.org}). Details on the methylation pre-processing, genotyping and quality control (QC) pipelines are outlined below.
 
 \textbf{DNA methylation data}
-Samples were drawn from the Avon Longitudinal Study of Parents and Children {[}(126); Fraser2013{]}. Blood from 1,018 mother--child pairs were selected for analysis as part of the Accessible Resource for Integrative Epigenomic Studies (ARIES, \url{http://www.ariesepigenomics.org.uk/}) (127). There are three timepoints in children and two in their mothers, the timepoints with mean ages (in brackets) in ARIES are as follows for children: birth, childhood (7.5), adolescence (17.1) and for mothers: during pregnancy (28.7), and at middle age (46.9). Following DNA extraction, samples were bisulphite converted using the Zymo EZ DNA Methylation\textsuperscript{TM} kit (Zymo, Irvine, CA, USA). Following conversion, genome-wide methylation was measured using the Illumina Infinium HumanMethylation450 (HM450) BeadChip. Methylation data were normalised in R with the watermelon package (173) using the Touleimat and Tost (174) algorithm to reduce the non-biological differences between probes. Methylation data in ARIES were rank-normalised to remove outliers, and then Matrix eQTL software (3) was used to perform preliminary association analysis of SNPs with all CpG sites in the Illumina Infinium HM450 array with the exception of those failing QC, and those reported to map to more than one location (n=19,834) or to contain a genetic variant at the CpG site (n=74,182) (81).
+Samples were drawn from the Avon Longitudinal Study of Parents and Children {[}(126); Fraser2013{]}. Blood from 1,018 mother--child pairs were selected for analysis as part of the Accessible Resource for Integrative Epigenomic Studies (ARIES, \url{http://www.ariesepigenomics.org.uk/}) (163). There are three timepoints in children and two in their mothers, the timepoints with mean ages (in brackets) in ARIES are as follows for children: birth, childhood (7.5), adolescence (17.1) and for mothers: during pregnancy (28.7), and at middle age (46.9). Following DNA extraction, samples were bisulphite converted using the Zymo EZ DNA Methylation\textsuperscript{TM} kit (Zymo, Irvine, CA, USA). Following conversion, genome-wide methylation was measured using the Illumina Infinium HumanMethylation450 (HM450) BeadChip. Methylation data were normalised in R with the watermelon package (174) using the Touleimat and Tost (175) algorithm to reduce the non-biological differences between probes. Methylation data in ARIES were rank-normalised to remove outliers, and then Matrix eQTL software (3) was used to perform preliminary association analysis of SNPs with all CpG sites in the Illumina Infinium HM450 array with the exception of those failing QC, and those reported to map to more than one location (n=19,834) or to contain a genetic variant at the CpG site (n=74,182) (81).
 
 \textbf{Genetic data}
 Children were genotyped using the Illumina HumanHap550 quad genome-wide SNP genotyping platform (Illumina Inc., San Diego, USA) by the Wellcome Trust Sanger Institute (WTSI, Cambridge, UK) and the Laboratory Corporation of America (LCA, Burlington, NC, USA). Individuals were excluded on the basis of incorrect gender assignment; abnormal heterozygosity (\textless0.320 or \textgreater0.345 for WTSI data; \textless0.310 or \textgreater0.330 for LCA data); high missingness (\textgreater3\%); cryptic relatedness (\textgreater10\% identity by descent) and non-European ancestry (detected by multidimensional scaling analysis). Following QC the final directly genotyped dataset contained 500,527 SNP loci.
 
-Mothers were genotyped using the Illumina Human660W-quad genome-wide SNP genotyping platform (Illumina Inc., San Diego, USA) at the Centre National de Génotypage (CNG, Paris, France). Individuals were excluded based on non-European ancestry, missingness, relatedness, gender mismatches and heterozygosity. PLINK (v1.07) (175) was used to carry out quality control measures on an initial set of 10,015 subjects and 557,124 directly genotyped SNPs. Following QC the final directly genotyped dataset contained 526,688 SNP loci.
+Mothers were genotyped using the Illumina Human660W-quad genome-wide SNP genotyping platform (Illumina Inc., San Diego, USA) at the Centre National de Génotypage (CNG, Paris, France). Individuals were excluded based on non-European ancestry, missingness, relatedness, gender mismatches and heterozygosity. PLINK (v1.07) (176) was used to carry out quality control measures on an initial set of 10,015 subjects and 557,124 directly genotyped SNPs. Following QC the final directly genotyped dataset contained 526,688 SNP loci.
 
 Imputation was performed to increase the SNP density for all genotyped mothers and children combined. Genotypes were phased together using ShapeIt, and then imputed against the 1000 genomes reference panel (phase 1 version 3, phased using ShapeIt version 2, December 2013, using all populations) using Impute (version 2.2.2). Genotypes were filtered to have Hardy-Weinberg equilibrium P \textgreater{} 5x10\textsuperscript{-7}, MAF \textgreater{} 1\% and imputation info score \textgreater{} 0.8. Best guess genotypes were used for subsequent analysis. The final imputed dataset used for the analyses presented here contained 8,074,398 loci.
 
@@ -1327,11 +1325,11 @@ Please note that the study website contains details of all the data that is avai
 \hypertarget{sample-2-transdisciplinary-research-in-cancer-of-the-lung-and-the-international-lung-cancer-consortium}{%
 \subsection{Sample 2: Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium}\label{sample-2-transdisciplinary-research-in-cancer-of-the-lung-and-the-international-lung-cancer-consortium}}
 
-In the second sample, summary data was extracted from a GWAS meta-analysis of lung cancer risk conducted by the Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium (TRICL-ILCCO) (29,863 cases, 55,586 controls) for individuals genotyped using the Illumina Infinium OncoArray-500K BeadChip (Illumina Inc.~San Diego, CA) and independent samples for which prior genotyping was performed (176). They were used to obtain mQTL-lung cancer estimates (\(\beta_{GD}\)).
+In the second sample, summary data was extracted from a GWAS meta-analysis of lung cancer risk conducted by the Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium (TRICL-ILCCO) (29,863 cases, 55,586 controls) for individuals genotyped using the Illumina Infinium OncoArray-500K BeadChip (Illumina Inc.~San Diego, CA) and independent samples for which prior genotyping was performed (177). They were used to obtain mQTL-lung cancer estimates (\(\beta_{GD}\)).
 
-For each independent mQTL (r\textsuperscript{2} \textless{} 0.01), we calculated the log odds ratio (OR) per SD unit increase in methylation by the formula \(\frac{\beta_{GD}} {\beta_{GP}}\) (Wald ratio). Standard errors were approximated by the delta method (177). Where multiple independent mQTLs were available for one CpG site, these were combined in a fixed effects meta-analysis after weighting each ratio estimate by the inverse variance of their associations with the outcome. Heterogeneity in Wald ratios across mQTLs was estimated using Cochran's Q test, which can be used to indicate horizontal pleiotropy (178). Differences between the observational and MR estimates were assessed using a Z-test for difference.
+For each independent mQTL (r\textsuperscript{2} \textless{} 0.01), we calculated the log odds ratio (OR) per SD unit increase in methylation by the formula \(\frac{\beta_{GD}} {\beta_{GP}}\) (Wald ratio). Standard errors were approximated by the delta method (178). Where multiple independent mQTLs were available for one CpG site, these were combined in a fixed effects meta-analysis after weighting each ratio estimate by the inverse variance of their associations with the outcome. Heterogeneity in Wald ratios across mQTLs was estimated using Cochran's Q test, which can be used to indicate horizontal pleiotropy (179). Differences between the observational and MR estimates were assessed using a Z-test for difference.
 
-If there was evidence for an mQTL-CpG site association in ARIES in at least one time-point, it was assessed whether the mQTL replicated across time points in ARIES (FDR \textless{} 0.05, same direction of effect). Further, this association was re-analysed using linear regression of methylation on each genotyped SNP available in an independent cohort (NSHDS), using rvtests (179). The same NSHDS samples on which DNA methylation was measured were genotyped using the Illumina Infinium OncoArray-500k BeadChip (Illumina Inc.~San Diego, CA) and quality control parameters were applied under the recently published TRICL-ILCCO GWAS study on lung cancer (176). Genetic imputation was performed on these samples using the Haplotype Reference Consortium (HRC) Panel (release 1) (165) through the Michigan Imputation Server (180). Replicated mQTLs were included where possible to reduce the effect of winner's curse using effect estimates from ARIES. We assessed the instrument strength of the mQTLs by investigating the variance explained in methylation by each mQTL (r\textsuperscript{2}) as well as the F-statistic in ARIES \textbf{Table \ref{tab:instrument-strength}}. The power to detect the observational effect estimates in the two-sample MR analysis was assessed a priori, based on an alpha of 0.05, sample size of 29,863 cases and 55,586 controls (from TRICL-ILCCO) and calculated variance explained (r\textsuperscript{2}).
+If there was evidence for an mQTL-CpG site association in ARIES in at least one time-point, it was assessed whether the mQTL replicated across time points in ARIES (FDR \textless{} 0.05, same direction of effect). Further, this association was re-analysed using linear regression of methylation on each genotyped SNP available in an independent cohort (NSHDS), using rvtests (180). The same NSHDS samples on which DNA methylation was measured were genotyped using the Illumina Infinium OncoArray-500k BeadChip (Illumina Inc.~San Diego, CA) and quality control parameters were applied under the recently published TRICL-ILCCO GWAS study on lung cancer (177). Genetic imputation was performed on these samples using the Haplotype Reference Consortium (HRC) Panel (release 1) (166) through the Michigan Imputation Server (181). Replicated mQTLs were included where possible to reduce the effect of winner's curse using effect estimates from ARIES. We assessed the instrument strength of the mQTLs by investigating the variance explained in methylation by each mQTL (r\textsuperscript{2}) as well as the F-statistic in ARIES \textbf{Table \ref{tab:instrument-strength}}. The power to detect the observational effect estimates in the two-sample MR analysis was assessed a priori, based on an alpha of 0.05, sample size of 29,863 cases and 55,586 controls (from TRICL-ILCCO) and calculated variance explained (r\textsuperscript{2}).
 \begin{longtable}[t]{llllllll}
 \caption{\label{tab:instrument-strength}Instrument strength in ARIES}\\
 \toprule
@@ -1359,9 +1357,9 @@ rs11746538 & cg05575921 & -0.37 & 0.058 & 3.0e-10 & 834 & 41 & 0.05\\
 \bottomrule
 \multicolumn{8}{l}{SE = standard error, P = P value, N = sample size, F = F statistic}\\
 \end{longtable}
-MR analyses were also performed to investigate the impact of methylation on lung cancer subtypes in TRICL-ILCCO: adenocarcinoma (11,245 cases, 54,619 controls), small cell carcinoma (2791 cases, 20,580 controls), and squamous cell carcinoma (7704 cases, 54,763 controls). We also assessed the association in never smokers (2303 cases, 6995 controls) and ever smokers (23,848 cases, 16,605 controls) (176) 25. Differences between the smoking subgroups were assessed using a Z-test for difference.
+MR analyses were also performed to investigate the impact of methylation on lung cancer subtypes in TRICL-ILCCO: adenocarcinoma (11,245 cases, 54,619 controls), small cell carcinoma (2791 cases, 20,580 controls), and squamous cell carcinoma (7704 cases, 54,763 controls). We also assessed the association in never smokers (2303 cases, 6995 controls) and ever smokers (23,848 cases, 16,605 controls) (177) 25. Differences between the smoking subgroups were assessed using a Z-test for difference.
 
-We next investigated the extent to which the mQTLs at cancer-related CpGs were associated with four smoking behaviour traits which could confound the methylation-lung cancer association: number of cigarettes per day, smoking cessation rate, smoking initiation and age of smoking initiation using GWAS data from the Tobacco and Genetics (TAG) consortium (N=74,053) (181) 29.
+We next investigated the extent to which the mQTLs at cancer-related CpGs were associated with four smoking behaviour traits which could confound the methylation-lung cancer association: number of cigarettes per day, smoking cessation rate, smoking initiation and age of smoking initiation using GWAS data from the Tobacco and Genetics (TAG) consortium (N=74,053) (182) 29.
 
 \hypertarget{methods-supplementary-analyses-07}{%
 \subsection{Supplementary analyses}\label{methods-supplementary-analyses-07}}
@@ -1369,7 +1367,7 @@ We next investigated the extent to which the mQTLs at cancer-related CpGs were a
 \hypertarget{assessing-the-potential-causal-effect-of-ahrr-methylation-one-sample-mr}{%
 \subsubsection{\texorpdfstring{Assessing the potential causal effect of \emph{AHRR} methylation: one sample MR}{Assessing the potential causal effect of AHRR methylation: one sample MR}}\label{assessing-the-potential-causal-effect-of-ahrr-methylation-one-sample-mr}}
 
-Given previous findings implicating methylation at \emph{AHRR} in relation to lung cancer (121,164) 2, 3, we performed a one-sample MR analysis (182) 30 of \emph{AHRR} methylation on lung cancer incidence using individual-level data from the Copenhagen City Heart Study (CCHS) (357 incident cases, 8401 remaining free of lung cancer). Copenhagen City Heart Study is a prospective study of the general population (183). Copenhagen residents were invited to complete a questionnaire and undergo a physical examination and are followed through a unique person identifier in the Danish health registries. All participants gave written informed consent, and a Danish ethics committee approved the study (KF100.2039/91).
+Given previous findings implicating methylation at \emph{AHRR} in relation to lung cancer (121,165) 2, 3, we performed a one-sample MR analysis (183) 30 of \emph{AHRR} methylation on lung cancer incidence using individual-level data from the Copenhagen City Heart Study (CCHS) (357 incident cases, 8401 remaining free of lung cancer). Copenhagen City Heart Study is a prospective study of the general population (184). Copenhagen residents were invited to complete a questionnaire and undergo a physical examination and are followed through a unique person identifier in the Danish health registries. All participants gave written informed consent, and a Danish ethics committee approved the study (KF100.2039/91).
 
 \textbf{Phenotypic data}
 Participants were asked whether they smoked at the day of attendance or previously. If they answered affirmative to either of these questions, they were asked about their current and former smoking behaviour, including age of smoking initiation, age of smoking cessation, and number of daily consumed cigarettes, cheroots, cigars, and weekly grams of pipe tobacco. Based on these answers, participants were categorized as never, former, and current smokers. In addition, participants reported on alcohol consumption, occupational exposure to dust and/or welding fumes, exposure to passive smoking, education, and familial cases of lung cancer. The answers were reviewed together with an examiner at the day of attendance. Body mass index was calculated as measured weight in kilograms divided by measured height (in meters) squared.
@@ -1378,7 +1376,7 @@ Participants were asked whether they smoked at the day of attendance or previous
 At the physical examination, blood samples were drawn for DNA from which \emph{AHRR} methylation extent was measured (101). The \emph{AHRR} cg05575921 methylation extent was measured in duplicate samples of bisulphite treated DNA from peripheral blood from 9,234 individuals. We used a Taqman assay developed in our own laboratory, and included standard curves, as well as internal controls in each 384-well plate. Coefficients of variation at the methylation level of 71\% varied from 5.0 to 6.7\%. Laboratory technicians were blinded to smoking and disease status of the individuals. Results were validated with pyrosequencing on a subset of samples.
 
 \textbf{Genetic data}
-Genotypes from the iCOGs array (184) and prospective data on lung cancer incidence were also available for these participants. Of the 9234 individuals, genotype data from iCOGS on 8778 were available. In short, DNA isolated from leukocytes was genotyped with a custom Illumina iSelect genotyping array, designed to test genetic variants related to breast, ovary and prostate cancer, comprising roughly 211,000 SNPs after rigorous quality control (184).
+Genotypes from the iCOGs array (185) and prospective data on lung cancer incidence were also available for these participants. Of the 9234 individuals, genotype data from iCOGS on 8778 were available. In short, DNA isolated from leukocytes was genotyped with a custom Illumina iSelect genotyping array, designed to test genetic variants related to breast, ovary and prostate cancer, comprising roughly 211,000 SNPs after rigorous quality control (185).
 
 \textbf{Lung cancer data}
 For lung cancer (ICD7, codes 1624 or 4624 until 1977, and ICD10, code C34 from 1978 and onwards), the date of first diagnosis was taken from the national Danish Cancer Registry from 1943 to December 2012.
@@ -1394,9 +1392,9 @@ DNA methylation data from lung cancer tissue and matched normal adjacent tissue 
 \hypertarget{mqtl-association-with-gene-expression}{%
 \subsubsection{mQTL association with gene expression}\label{mqtl-association-with-gene-expression}}
 
-For the genes annotated to CpG sites identified in the lung cancer EWAS, we examined gene expression in whole blood and lung tissue using data from the gene-tissue expression (GTEx) consortium (185) 32.
+For the genes annotated to CpG sites identified in the lung cancer EWAS, we examined gene expression in whole blood and lung tissue using data from the gene-tissue expression (GTEx) consortium (186) 32.
 
-Analyses were conducted in Stata (version 14) and R (version 3.2.2). For the two-sample MR analysis we used the MR-Base R package TwoSampleMR (186) 33. An adjusted P value that limited the FDR was calculated using the Benjamini-Hochberg method (187) 34. All statistical tests were two-sided.
+Analyses were conducted in Stata (version 14) and R (version 3.2.2). For the two-sample MR analysis we used the MR-Base R package TwoSampleMR (187) 33. An adjusted P value that limited the FDR was calculated using the Benjamini-Hochberg method (188) 34. All statistical tests were two-sided.
 
 \hypertarget{results-07}{%
 \section{Results}\label{results-07}}
@@ -1451,19 +1449,19 @@ Of the 10 genes annotated to the 14 CpG sites, eight genes were expressed suffic
 \hypertarget{discussion-07}{%
 \section{Discussion}\label{discussion-07}}
 
-In this study, we identified 16 CpG sites associated with lung cancer, of which 14 have been previously identified in relation to smoke exposure (65) 9 and six were highlighted in a previous study as being associated with lung cancer (121) 3. This previous study used the same data from the four cohorts investigated here, but in a discovery and replication, rather than meta-analysis framework. Overall, using MR we found limited evidence supporting a potential causal effect of methylation at the CpG sites identified in peripheral blood on lung cancer. These findings are in contrast to previous analyses suggesting that methylation at two CpG sites investigated (in \emph{AHRR} and \emph{F2RL3}) mediated \textgreater{} 30\% of the effect of smoking on lung cancer risk (164) 2. This previous study used methods which are sensitive to residual confounding and measurement error that may have biased results {[}(104); Hemani2017{]} 12, 35. These limitations are largely overcome using MR (104) 12. While there was some evidence for an effect of methylation at some of the other CpG sites on risk of subtypes of lung cancer, these effects were not robust to multiple testing correction and were not validated in the analysis of tumour and adjacent normal lung tissue methylation nor in gene expression analysis.
+In this study, we identified 16 CpG sites associated with lung cancer, of which 14 have been previously identified in relation to smoke exposure (65) 9 and six were highlighted in a previous study as being associated with lung cancer (121) 3. This previous study used the same data from the four cohorts investigated here, but in a discovery and replication, rather than meta-analysis framework. Overall, using MR we found limited evidence supporting a potential causal effect of methylation at the CpG sites identified in peripheral blood on lung cancer. These findings are in contrast to previous analyses suggesting that methylation at two CpG sites investigated (in \emph{AHRR} and \emph{F2RL3}) mediated \textgreater{} 30\% of the effect of smoking on lung cancer risk (165) 2. This previous study used methods which are sensitive to residual confounding and measurement error that may have biased results {[}(104); Hemani2017{]} 12, 35. These limitations are largely overcome using MR (104) 12. While there was some evidence for an effect of methylation at some of the other CpG sites on risk of subtypes of lung cancer, these effects were not robust to multiple testing correction and were not validated in the analysis of tumour and adjacent normal lung tissue methylation nor in gene expression analysis.
 
 A major strength of the study was the use of two-sample MR to integrate an extensive epigenetic resource and summary data from a large lung cancer GWAS to appraise causality of observational associations with \textgreater99\% power. Evidence against the observational findings were also acquired through tissue-specific DNA methylation and gene expression analyses.
 
-Limitations include potential ``winner's curse'' which may bias causal estimates in a two-sample MR analysis towards the null if the discovery sample for identifying genetic instruments is used as the first sample, as was done for our main MR analysis using data from ARIES (188) 36. However, findings were similar when using replicated mQTLs in NSHDS, indicating the potential impact of this bias was minimal (Supplementary Figure 1). Another limitation relates to the potential issue of consistency and validity of the instruments across the two samples. For a minority of the mQTL-CpG associations (4 out of 16), there was limited replication across time points and in particular, 6 mQTLs were not strongly associated with DNA methylation in adults. Further, our primary data used for the first sample in the two-sample MR was ARIES, which contains no male adults. If the mQTLs identified vary by sex and time, then this could bias our results. However, our replication cohort NSHDS contains adult males. Therefore, the 10 mQTLs that replicated in NSHDS are unlikely to be biased by the sex discordance. Also, we replicated the findings for cg05575921 \emph{AHRR} in CCHS, which contains both adult males and females, in a two-sample MR analysis, suggesting these results are also not influenced by sex discordance. Caution is therefore warranted when interpreting the null results for the two-sample MR estimates for the CpG sites for which mQTLs were not repliacted, which could be the result of weak-instrument bias.
+Limitations include potential ``winner's curse'' which may bias causal estimates in a two-sample MR analysis towards the null if the discovery sample for identifying genetic instruments is used as the first sample, as was done for our main MR analysis using data from ARIES (189) 36. However, findings were similar when using replicated mQTLs in NSHDS, indicating the potential impact of this bias was minimal (Supplementary Figure 1). Another limitation relates to the potential issue of consistency and validity of the instruments across the two samples. For a minority of the mQTL-CpG associations (4 out of 16), there was limited replication across time points and in particular, 6 mQTLs were not strongly associated with DNA methylation in adults. Further, our primary data used for the first sample in the two-sample MR was ARIES, which contains no male adults. If the mQTLs identified vary by sex and time, then this could bias our results. However, our replication cohort NSHDS contains adult males. Therefore, the 10 mQTLs that replicated in NSHDS are unlikely to be biased by the sex discordance. Also, we replicated the findings for cg05575921 \emph{AHRR} in CCHS, which contains both adult males and females, in a two-sample MR analysis, suggesting these results are also not influenced by sex discordance. Caution is therefore warranted when interpreting the null results for the two-sample MR estimates for the CpG sites for which mQTLs were not repliacted, which could be the result of weak-instrument bias.
 
 The lack of independent mQTLs for each CpG site did not allow us to properly appraise horizontal pleiotropy in our MR analyses. Where possible we only included cis-acting mQTLs to minimise pleiotropy and investigated heterogeneity where there were multiple independent mQTLs. Three mQTLs were nominally associated with smoking phenotypes, but not to the extent that this would bias our MR results substantially. Some of the mQTLs used influence multiple CpGs in the same region, suggesting genomic control of methylation at a regional rather than single CpG level. This was untested, but methods to detect differentially methylated regions (DMRs) and identify genetic variants which proxy for them may be fruitful in probing the effect of methylation across gene regions.
 
 A further limitation relates to the inconsistency in effect estimates between the one- and two-sample MR analysis to appraise the causal role of \emph{AHRR} methylation. While findings in CCHS were supportive of a causal effect of \emph{AHRR} methylation on lung cancer (HR=0.30 {[}95\% CI=0.10,1.00{]} per SD), in two-sample MR this site was not causally implicated (OR=1.00 {[}95\% CI=0.83,1.10{]} per SD increase). We verified that this was not due to differences in the genetic instruments used, nor due to issues of weak instrument bias. Given the CCHS one-sample MR had little power (19\% at alpha = 0.05) to detect a causal effect with a size equivalent to that of the observational analysis, we have more confidence in the results from the two-sample approach.
 
-Peripheral blood may not be the ideal tissue to assess the association between DNA methylation and lung cancer. While a high degree of concordance in mQTLs has been observed across lung tissue, skin and peripheral blood DNA (189) 37, we were unable to directly evaluate this here. A possible explanation for a lack of causal effect at \emph{AHRR} is due to the limitation of tissue specificity as we found that the mQTLs used to instrument cg05575921 were not strongly related to expression of \emph{AHRR} in lung tissue. However, findings from MR analysis were corroborated by the lack of evidence for differential methylation at \emph{AHRR} between lung adenocarcinoma tissue and adjacent healthy tissue, and weak evidence for hypermethylation (opposite to the expected direction) in squamous cell lung cancer tissue. This result may be interesting in itself as smoking is hypothesized to influence squamous cell carcinoma more than adenocarcinoma. However, the result conflicts with that found in the MR analysis. Furthermore, another study investigating tumorous lung tissue (N=511) found only weak evidence for an association between smoking and cg05575921 \emph{AHRR} methylation, that did not survive multiple testing correction (P=0.02) (190) 38. However, our results do not fully exclude \emph{AHRR} from involvement in the disease process. \emph{AHRR} and \emph{AHR} form a regulatory feedback loop, which means that the actual effect of differential methylation or differential expression of \emph{AHR}/\emph{AHRR} on pathway activity is complex (130) 39. In addition, some of the CpG sites identified in the EWAS were found to be differentially methylated in the tumour and adjacent normal lung tissue comparison. While this could represent a false negative result of the MR analysis, it is of interest that differential methylation in the tissue comparison analysis was typically in the opposite direction to that observed in the EWAS. Furthermore, while this method can be used to minimize confounding, it does not fully eliminate the possibility of bias due to reverse causation (whereby cancer induces changes in DNA methylation) or intra-individual confounding e.g.~by gene expression. Therefore, it doesn't give conclusive evidence that DNA methylation changes at these sites are not relevant to the development of lung cancer.
+Peripheral blood may not be the ideal tissue to assess the association between DNA methylation and lung cancer. While a high degree of concordance in mQTLs has been observed across lung tissue, skin and peripheral blood DNA (190) 37, we were unable to directly evaluate this here. A possible explanation for a lack of causal effect at \emph{AHRR} is due to the limitation of tissue specificity as we found that the mQTLs used to instrument cg05575921 were not strongly related to expression of \emph{AHRR} in lung tissue. However, findings from MR analysis were corroborated by the lack of evidence for differential methylation at \emph{AHRR} between lung adenocarcinoma tissue and adjacent healthy tissue, and weak evidence for hypermethylation (opposite to the expected direction) in squamous cell lung cancer tissue. This result may be interesting in itself as smoking is hypothesized to influence squamous cell carcinoma more than adenocarcinoma. However, the result conflicts with that found in the MR analysis. Furthermore, another study investigating tumorous lung tissue (N=511) found only weak evidence for an association between smoking and cg05575921 \emph{AHRR} methylation, that did not survive multiple testing correction (P=0.02) (191) 38. However, our results do not fully exclude \emph{AHRR} from involvement in the disease process. \emph{AHRR} and \emph{AHR} form a regulatory feedback loop, which means that the actual effect of differential methylation or differential expression of \emph{AHR}/\emph{AHRR} on pathway activity is complex (130) 39. In addition, some of the CpG sites identified in the EWAS were found to be differentially methylated in the tumour and adjacent normal lung tissue comparison. While this could represent a false negative result of the MR analysis, it is of interest that differential methylation in the tissue comparison analysis was typically in the opposite direction to that observed in the EWAS. Furthermore, while this method can be used to minimize confounding, it does not fully eliminate the possibility of bias due to reverse causation (whereby cancer induces changes in DNA methylation) or intra-individual confounding e.g.~by gene expression. Therefore, it doesn't give conclusive evidence that DNA methylation changes at these sites are not relevant to the development of lung cancer.
 
-While DNA methylation in peripheral blood may be predictive of lung cancer risk, according to the present analysis it is unlikely to play a causal role in lung carcinogenesis at the CpG sites investigated. Findings from this study issue caution over the use of traditional mediation analyses to implicate intermediate biomarkers (such as DNA methylation) in pathways linking an exposure with disease, given the potential for residual confounding in this context (104) 12. However, the findings of this study do not preclude the possibility that other DNA methylation changes are causally related to lung cancer (or other smoking-associated disease) (191) 40.
+While DNA methylation in peripheral blood may be predictive of lung cancer risk, according to the present analysis it is unlikely to play a causal role in lung carcinogenesis at the CpG sites investigated. Findings from this study issue caution over the use of traditional mediation analyses to implicate intermediate biomarkers (such as DNA methylation) in pathways linking an exposure with disease, given the potential for residual confounding in this context (104) 12. However, the findings of this study do not preclude the possibility that other DNA methylation changes are causally related to lung cancer (or other smoking-associated disease) (192) 40.
 
 \hypertarget{conclusion}{%
 \chapter*{Conclusion}\label{conclusion}}
@@ -1884,7 +1882,7 @@ This first appendix includes all of the R chunks of code that were hidden throug
 \leavevmode\hypertarget{ref-Boyd2013}{}%
 126. Boyd A, Golding J, Macleod J, et al. Cohort profile: The 'Children of the 90s'-The index offspring of the avon longitudinal study of parents and children. \emph{International Journal of Epidemiology}. 2013;42(1):111--127.
 
-\leavevmode\hypertarget{ref-Relton2015}{}%
+\leavevmode\hypertarget{ref-Relton2015-aries}{}%
 127. Relton CL, Gaunt T, McArdle W, et al. Data Resource Profile: Accessible Resource for Integrated Epigenomic Studies (ARIES). \emph{International Journal of Epidemiology} {[}electronic article{]}. 2015;44(4):1181--1190. (\url{http://dx.doi.org/10.1093/ije/dyv072})
 
 \leavevmode\hypertarget{ref-Harris2009}{}%
@@ -1935,149 +1933,152 @@ This first appendix includes all of the R chunks of code that were hidden throug
 \leavevmode\hypertarget{ref-Logue2017}{}%
 143. Logue MW, Smith AK, Wolf EJ, et al. The correlation of methylation levels measured using Illumina 450K and EPIC BeadChips in blood samples. \emph{Epigenomics}. 2017;
 
+\leavevmode\hypertarget{ref-VanDongen2016}{}%
+144. Dongen J van, Nivard MG, Willemsen G, et al. Genetic and environmental influences interact with age and sex in shaping the human methylome. \emph{Nature Communications} {[}electronic article{]}. 2016;7:11115. (\url{http://www.nature.com/doifinder/10.1038/ncomms11115})
+
 \leavevmode\hypertarget{ref-Jones2009}{}%
-144. Jones P a, Liang G. Rethinking how DNA methylation patterns are maintained. \emph{Nature reviews. Genetics} {[}electronic article{]}. 2009;10(11):805--11. (\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2848124\%7B/\&\%7Dtool=pmcentrez\%7B/\&\%7Drendertype=abstract\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve\%7B/\&\%7Ddb=PubMed\%7B/\&\%7Ddopt=Citation\%7B/\&\%7Dlist\%7B/_\%7Duids=19789556})
+145. Jones P a, Liang G. Rethinking how DNA methylation patterns are maintained. \emph{Nature reviews. Genetics} {[}electronic article{]}. 2009;10(11):805--11. (\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2848124\%7B/\&\%7Dtool=pmcentrez\%7B/\&\%7Drendertype=abstract\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve\%7B/\&\%7Ddb=PubMed\%7B/\&\%7Ddopt=Citation\%7B/\&\%7Dlist\%7B/_\%7Duids=19789556})
 
 \leavevmode\hypertarget{ref-Chen2016}{}%
-145. Chen DP, Lin YC, Fann CSJ. Methods for identifying differentially methylated regions for sequence- and array-based data. \emph{Briefings in Functional Genomics}. 2016;15(6):485--490.
+146. Chen DP, Lin YC, Fann CSJ. Methods for identifying differentially methylated regions for sequence- and array-based data. \emph{Briefings in Functional Genomics}. 2016;15(6):485--490.
 
 \leavevmode\hypertarget{ref-Lettre2008}{}%
-146. Lettre G, Jackson AU, Gieger C, et al. Identification of ten loci associated with height highlights new biological pathways in human growth. \emph{Nature Genetics}. 2008;
+147. Lettre G, Jackson AU, Gieger C, et al. Identification of ten loci associated with height highlights new biological pathways in human growth. \emph{Nature Genetics}. 2008;
 
 \leavevmode\hypertarget{ref-Frayling2007}{}%
-147. Frayling TM, Timpson NJ, Weedon MN, et al. A common variant in the FTO gene is associated with body mass index and predisposes to childhood and adult obesity. \emph{Science}. 2007;
+148. Frayling TM, Timpson NJ, Weedon MN, et al. A common variant in the FTO gene is associated with body mass index and predisposes to childhood and adult obesity. \emph{Science}. 2007;
 
 \leavevmode\hypertarget{ref-Yengo2018}{}%
-148. Yengo L, Sidorenko J, Kemper KE, et al. Meta-analysis of genome-wide association studies for height and body mass index in \textasciitilde700 000 individuals of European ancestry. \emph{Human Molecular Genetics}. 2018;
+149. Yengo L, Sidorenko J, Kemper KE, et al. Meta-analysis of genome-wide association studies for height and body mass index in \textasciitilde700 000 individuals of European ancestry. \emph{Human Molecular Genetics}. 2018;
 
 \leavevmode\hypertarget{ref-Dick2014}{}%
-149. Dick KJ, Nelson CP, Tsaprouni L, et al. DNA methylation and body-mass index: A genome-wide analysis. \emph{The Lancet}. 2014;
+150. Dick KJ, Nelson CP, Tsaprouni L, et al. DNA methylation and body-mass index: A genome-wide analysis. \emph{The Lancet}. 2014;
 
 \leavevmode\hypertarget{ref-Tahara2015}{}%
-150. Tahara T, Arisawa T. DNA methylation as a molecular biomarker in gastric cancer. \emph{Epigenomics} {[}electronic article{]}. 2015;7(3):475--486. (\url{http://www.scopus.com/inward/record.url?eid=2-s2.0-84931360022\%7B/\&\%7DpartnerID=40\%7B/\&\%7Dmd5=96d2e2dd124d468e02c3b2da40e66212})
+151. Tahara T, Arisawa T. DNA methylation as a molecular biomarker in gastric cancer. \emph{Epigenomics} {[}electronic article{]}. 2015;7(3):475--486. (\url{http://www.scopus.com/inward/record.url?eid=2-s2.0-84931360022\%7B/\&\%7DpartnerID=40\%7B/\&\%7Dmd5=96d2e2dd124d468e02c3b2da40e66212})
 
 \leavevmode\hypertarget{ref-Kandimalla2013}{}%
-151. Kandimalla R, Tilborg AA van, Zwarthoff EC. DNA methylation-based biomarkers in bladder cancer. \emph{Nature Reviews Urology} {[}electronic article{]}. 2013;10(6):327--335. (\url{http://www.nature.com/articles/nrurol.2013.89})
+152. Kandimalla R, Tilborg AA van, Zwarthoff EC. DNA methylation-based biomarkers in bladder cancer. \emph{Nature Reviews Urology} {[}electronic article{]}. 2013;10(6):327--335. (\url{http://www.nature.com/articles/nrurol.2013.89})
 
 \leavevmode\hypertarget{ref-Speed2017}{}%
-152. Speed D, Cai N, Johnson MR, et al. Reevaluation of SNP heritability in complex human traits. \emph{Nature Genetics} {[}electronic article{]}. 2017;49(7):986--992. (\url{http://www.nature.com/doifinder/10.1038/ng.3865})
+153. Speed D, Cai N, Johnson MR, et al. Reevaluation of SNP heritability in complex human traits. \emph{Nature Genetics} {[}electronic article{]}. 2017;49(7):986--992. (\url{http://www.nature.com/doifinder/10.1038/ng.3865})
 
 \leavevmode\hypertarget{ref-Yang2011}{}%
-153. Yang J, Lee SH, Goddard ME, et al. GCTA: A tool for genome-wide complex trait analysis. \emph{American Journal of Human Genetics} {[}electronic article{]}. 2011;88(1):76--82. (\url{http://arxiv.org/abs/NIHMS150003})
+154. Yang J, Lee SH, Goddard ME, et al. GCTA: A tool for genome-wide complex trait analysis. \emph{American Journal of Human Genetics} {[}electronic article{]}. 2011;88(1):76--82. (\url{http://arxiv.org/abs/NIHMS150003})
 
 \leavevmode\hypertarget{ref-Chang2015}{}%
-154. Chang CC, Chow CC, Tellier LC, et al. Second-generation PLINK: rising to the challenge of larger and richer datasets. \emph{GigaScience} {[}electronic article{]}. 2015;4(1):7. (\url{https://academic.oup.com/gigascience/article-lookup/doi/10.1186/s13742-015-0047-8})
+155. Chang CC, Chow CC, Tellier LC, et al. Second-generation PLINK: rising to the challenge of larger and richer datasets. \emph{GigaScience} {[}electronic article{]}. 2015;4(1):7. (\url{https://academic.oup.com/gigascience/article-lookup/doi/10.1186/s13742-015-0047-8})
 
 \leavevmode\hypertarget{ref-Min2018}{}%
-155. Min JL, Hemani G, Davey Smith G, et al. Meffil: efficient normalization and analysis of very large DNA methylation datasets. \emph{Bioinformatics (Oxford, England)}. 2018;
+156. Min JL, Hemani G, Davey Smith G, et al. Meffil: efficient normalization and analysis of very large DNA methylation datasets. \emph{Bioinformatics (Oxford, England)}. 2018;
 
 \leavevmode\hypertarget{ref-Gazal2017}{}%
-156. Gazal S, Finucane HK, Furlotte NA, et al. Linkage disequilibrium--dependent architecture of human complex traits shows action of negative selection. \emph{Nature Genetics} {[}electronic article{]}. 2017;49(10):1421--1427. (\url{http://www.nature.com/doifinder/10.1038/ng.3954})
+157. Gazal S, Finucane HK, Furlotte NA, et al. Linkage disequilibrium--dependent architecture of human complex traits shows action of negative selection. \emph{Nature Genetics} {[}electronic article{]}. 2017;49(10):1421--1427. (\url{http://www.nature.com/doifinder/10.1038/ng.3954})
 
 \leavevmode\hypertarget{ref-Speed2018}{}%
-157. Speed D, Balding D. Exposing flaws in S-LDSC; reply to Gazal et al. \emph{bioRxiv} {[}electronic article{]}. 2018;280784. (\url{https://www.biorxiv.org/content/early/2018/03/27/280784})
+158. Speed D, Balding D. Exposing flaws in S-LDSC; reply to Gazal et al. \emph{bioRxiv} {[}electronic article{]}. 2018;280784. (\url{https://www.biorxiv.org/content/early/2018/03/27/280784})
 
 \leavevmode\hypertarget{ref-Speed2020}{}%
-158. Speed D, Holmes J, Balding DJ. Evaluating and improving heritability models using summary statistics. \emph{Nature Genetics}. 2020;
+159. Speed D, Holmes J, Balding DJ. Evaluating and improving heritability models using summary statistics. \emph{Nature Genetics}. 2020;
 
 \leavevmode\hypertarget{ref-VanderHarst2018}{}%
-159. Harst P van der, Verweij N. Identification of 64 Novel Genetic Loci Provides an Expanded View on the Genetic Architecture of Coronary Artery Disease. \emph{Circulation research} {[}electronic article{]}. 2018;122(3):433--443. (\url{http://www.ncbi.nlm.nih.gov/pubmed/29212778\%20http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC5805277})
+160. Harst P van der, Verweij N. Identification of 64 Novel Genetic Loci Provides an Expanded View on the Genetic Architecture of Coronary Artery Disease. \emph{Circulation research} {[}electronic article{]}. 2018;122(3):433--443. (\url{http://www.ncbi.nlm.nih.gov/pubmed/29212778\%20http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC5805277})
 
 \leavevmode\hypertarget{ref-Visscher2017}{}%
-160. Visscher PM, Wray NR, Zhang Q, et al. 10 Years of GWAS Discovery: Biology, Function, and Translation. 2017;
-
-\leavevmode\hypertarget{ref-VanDongen2016}{}%
-161. Dongen J van, Nivard MG, Willemsen G, et al. Genetic and environmental influences interact with age and sex in shaping the human methylome. \emph{Nature Communications} {[}electronic article{]}. 2016;7:11115. (\url{http://www.nature.com/doifinder/10.1038/ncomms11115})
+161. Visscher PM, Wray NR, Zhang Q, et al. 10 Years of GWAS Discovery: Biology, Function, and Translation. 2017;
 
 \leavevmode\hypertarget{ref-Hanahan2011}{}%
 162. Hanahan D, Weinberg RA. Hallmarks of cancer: The next generation. 2011;144:646--674. (\url{http://arxiv.org/abs/0208024})
 
+\leavevmode\hypertarget{ref-Relton2015}{}%
+163. Relton CL, Davey Smith G. Mendelian randomization: Applications and limitations in epigenetic studies. 2015;
+
 \leavevmode\hypertarget{ref-Ferlay2013}{}%
-163. Ferlay J, Soerjomataram I, Ervik M, et al. GLOBOCAN 2012 v1.0, Cancer Incidence and Mortality Worldwide: IARC CancerBase. No. 11 {[}Internet{]}. 2013;11:http://globocan.iarc.f. (\url{http://arxiv.org/abs/arXiv:1011.1669v3})
+164. Ferlay J, Soerjomataram I, Ervik M, et al. GLOBOCAN 2012 v1.0, Cancer Incidence and Mortality Worldwide: IARC CancerBase. No. 11 {[}Internet{]}. 2013;11:http://globocan.iarc.f. (\url{http://arxiv.org/abs/arXiv:1011.1669v3})
 
 \leavevmode\hypertarget{ref-Fasanelli2015}{}%
-164. Fasanelli F, Baglietto L, Ponzi E, et al. Hypomethylation of smoking-related genes is associated with future lung cancer in four prospective cohorts. \emph{Nature Communications} {[}electronic article{]}. 2015;6:10192. (\url{http://www.nature.com/doifinder/10.1038/ncomms10192})
+165. Fasanelli F, Baglietto L, Ponzi E, et al. Hypomethylation of smoking-related genes is associated with future lung cancer in four prospective cohorts. \emph{Nature Communications} {[}electronic article{]}. 2015;6:10192. (\url{http://www.nature.com/doifinder/10.1038/ncomms10192})
 
 \leavevmode\hypertarget{ref-McCarthy2016}{}%
-165. McCarthy S, Das S, Kretzschmar W, et al. A reference panel of 64,976 haplotypes for genotype imputation. \emph{Nature Genetics}. 2016;
+166. McCarthy S, Das S, Kretzschmar W, et al. A reference panel of 64,976 haplotypes for genotype imputation. \emph{Nature Genetics}. 2016;
 
 \leavevmode\hypertarget{ref-Strathdee2002}{}%
-166. Strathdee G, Brown R. Aberrant DNA methylation in cancer: potential clinical interventions. \emph{Expert Reviews in Molecular Medicine}. 2002;
+167. Strathdee G, Brown R. Aberrant DNA methylation in cancer: potential clinical interventions. \emph{Expert Reviews in Molecular Medicine}. 2002;
 
 \leavevmode\hypertarget{ref-Jones2002}{}%
-167. Jones P a, Baylin SB. The fundamental role of epigenetic events in cancer. \emph{Nature reviews. Genetics} {[}electronic article{]}. 2002;3(6):415--28. (\url{http://www.ncbi.nlm.nih.gov/pubmed/16136652\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/pubmed/12042769})
+168. Jones P a, Baylin SB. The fundamental role of epigenetic events in cancer. \emph{Nature reviews. Genetics} {[}electronic article{]}. 2002;3(6):415--28. (\url{http://www.ncbi.nlm.nih.gov/pubmed/16136652\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/pubmed/12042769})
 
 \leavevmode\hypertarget{ref-Borghol2012}{}%
-168. Borghol N, Suderman M, Mcardle W, et al. Associations with early-life socio-economic position in adult DNA methylation. \emph{International Journal of Epidemiology}. 2012;
+169. Borghol N, Suderman M, Mcardle W, et al. Associations with early-life socio-economic position in adult DNA methylation. \emph{International Journal of Epidemiology}. 2012;
 
 \leavevmode\hypertarget{ref-Fewell2007}{}%
-169. Fewell Z, Davey Smith G, Sterne JAC. The impact of residual and unmeasured confounding in epidemiologic studies: A simulation study. \emph{American Journal of Epidemiology}. 2007;
+170. Fewell Z, Davey Smith G, Sterne JAC. The impact of residual and unmeasured confounding in epidemiologic studies: A simulation study. \emph{American Journal of Epidemiology}. 2007;
 
 \leavevmode\hypertarget{ref-Munafo2012}{}%
-170. Munafò MR, Timofeeva MN, Morris RW, et al. Association between genetic variants on chromosome 15q25 locus and objective measures of Tobacco exposure. 2012;
+171. Munafò MR, Timofeeva MN, Morris RW, et al. Association between genetic variants on chromosome 15q25 locus and objective measures of Tobacco exposure. 2012;
 
 \leavevmode\hypertarget{ref-Richardson2017}{}%
-171. Richardson TG, Zheng J, Davey Smith G, et al. Mendelian Randomization Analysis Identifies CpG Sites as Putative Mediators for Genetic Influences on Cardiovascular Disease Risk. \emph{American Journal of Human Genetics}. 2017;
+172. Richardson TG, Zheng J, Davey Smith G, et al. Mendelian Randomization Analysis Identifies CpG Sites as Putative Mediators for Genetic Influences on Cardiovascular Disease Risk. \emph{American Journal of Human Genetics}. 2017;
 
 \leavevmode\hypertarget{ref-Leek2016}{}%
-172. Leek JT, Johnson WE, Parker HS, et al. sva: Surrogate Variable Analysis. 2016;
+173. Leek JT, Johnson WE, Parker HS, et al. sva: Surrogate Variable Analysis. 2016;
 
 \leavevmode\hypertarget{ref-Pidsley2013}{}%
-173. Pidsley R, Y Wong CC, Volta M, et al. A data-driven approach to preprocessing Illumina 450K methylation array data. \emph{BMC Genomics}. 2013;
+174. Pidsley R, Y Wong CC, Volta M, et al. A data-driven approach to preprocessing Illumina 450K methylation array data. \emph{BMC Genomics}. 2013;
 
 \leavevmode\hypertarget{ref-Touleimat2012}{}%
-174. Touleimat N, Tost J. Complete pipeline for Infinium Human Methylation 450K BeadChip data processing using subset quantile normalization for accurate DNA methylation estimation. \emph{Epigenomics}. 2012;
+175. Touleimat N, Tost J. Complete pipeline for Infinium Human Methylation 450K BeadChip data processing using subset quantile normalization for accurate DNA methylation estimation. \emph{Epigenomics}. 2012;
 
 \leavevmode\hypertarget{ref-Purcell2007}{}%
-175. Purcell S, Neale B, Todd-Brown K, et al. PLINK: A tool set for whole-genome association and population-based linkage analyses. \emph{American Journal of Human Genetics}. 2007;
+176. Purcell S, Neale B, Todd-Brown K, et al. PLINK: A tool set for whole-genome association and population-based linkage analyses. \emph{American Journal of Human Genetics}. 2007;
 
 \leavevmode\hypertarget{ref-McKay2017}{}%
-176. McKay JD, Hung RJ, Han Y, et al. Large-scale association analysis identifies new lung cancer susceptibility loci and heterogeneity in genetic susceptibility across histological subtypes. \emph{Nature genetics} {[}electronic article{]}. 2017;49(7):1126--1132. (\url{http://www.nature.com/doifinder/10.1038/ng.3892\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/pubmed/28604730})
+177. McKay JD, Hung RJ, Han Y, et al. Large-scale association analysis identifies new lung cancer susceptibility loci and heterogeneity in genetic susceptibility across histological subtypes. \emph{Nature genetics} {[}electronic article{]}. 2017;49(7):1126--1132. (\url{http://www.nature.com/doifinder/10.1038/ng.3892\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/pubmed/28604730})
 
 \leavevmode\hypertarget{ref-Thomas2007}{}%
-177. Thomas DC, Lawlor DA, Thompson JR. Re: Estimation of Bias in Nongenetic Observational Studies Using "Mendelian Triangulation" by Bautista et~al. 2007;
+178. Thomas DC, Lawlor DA, Thompson JR. Re: Estimation of Bias in Nongenetic Observational Studies Using "Mendelian Triangulation" by Bautista et~al. 2007;
 
 \leavevmode\hypertarget{ref-Bowden2015}{}%
-178. Bowden J, Smith GD, Burgess S. Mendelian randomization with invalid instruments: Effect estimation and bias detection through Egger regression. \emph{International Journal of Epidemiology} {[}electronic article{]}. 2015;44(2):512--525. (\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4469799/})
+179. Bowden J, Smith GD, Burgess S. Mendelian randomization with invalid instruments: Effect estimation and bias detection through Egger regression. \emph{International Journal of Epidemiology} {[}electronic article{]}. 2015;44(2):512--525. (\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4469799/})
 
 \leavevmode\hypertarget{ref-Zhan2016}{}%
-179. Zhan X, Hu Y, Li B, et al. RVTESTS: An efficient and comprehensive tool for rare variant association analysis using sequence data. \emph{Bioinformatics}. 2016;32(9):1423--1426.
+180. Zhan X, Hu Y, Li B, et al. RVTESTS: An efficient and comprehensive tool for rare variant association analysis using sequence data. \emph{Bioinformatics}. 2016;32(9):1423--1426.
 
 \leavevmode\hypertarget{ref-Das2016}{}%
-180. Das S, Forer L, Schönherr S, et al. Next-generation genotype imputation service and methods. \emph{Nature Genetics}. 2016;
+181. Das S, Forer L, Schönherr S, et al. Next-generation genotype imputation service and methods. \emph{Nature Genetics}. 2016;
 
 \leavevmode\hypertarget{ref-Furberg2010}{}%
-181. Furberg H, Kim Y, Dackor J, et al. Genome-wide meta-analyses identify multiple loci associated with smoking behavior. \emph{Nature Genetics}. 2010;
+182. Furberg H, Kim Y, Dackor J, et al. Genome-wide meta-analyses identify multiple loci associated with smoking behavior. \emph{Nature Genetics}. 2010;
 
 \leavevmode\hypertarget{ref-Haycock2016}{}%
-182. Haycock PC, Burgess S, Wade KH, et al. Best (but oft-forgotten) practices: The design, analysis, and interpretation of Mendelian randomization studies. \emph{American Journal of Clinical Nutrition}. 2016;
+183. Haycock PC, Burgess S, Wade KH, et al. Best (but oft-forgotten) practices: The design, analysis, and interpretation of Mendelian randomization studies. \emph{American Journal of Clinical Nutrition}. 2016;
 
 \leavevmode\hypertarget{ref-Kaur-Knudsen2011}{}%
-183. Kaur-Knudsen D, Bojesen SE, Tybjærg-Hansen A, et al. Nicotinic acetylcholine receptor polymorphism, smoking behavior, and tobacco-related cancer and lung and cardiovascular diseases: A cohort study. \emph{Journal of Clinical Oncology}. 2011;
+184. Kaur-Knudsen D, Bojesen SE, Tybjærg-Hansen A, et al. Nicotinic acetylcholine receptor polymorphism, smoking behavior, and tobacco-related cancer and lung and cardiovascular diseases: A cohort study. \emph{Journal of Clinical Oncology}. 2011;
 
 \leavevmode\hypertarget{ref-Bojesen2013}{}%
-184. Bojesen SE, Pooley KA, Johnatty SE, et al. Multiple independent variants at the TERT locus are associated with telomere length and risks of breast and ovarian cancer. \emph{Nature Genetics}. 2013;
+185. Bojesen SE, Pooley KA, Johnatty SE, et al. Multiple independent variants at the TERT locus are associated with telomere length and risks of breast and ovarian cancer. \emph{Nature Genetics}. 2013;
 
 \leavevmode\hypertarget{ref-GTExConsortium2013}{}%
-185. GTEx Consortium TG. The Genotype-Tissue Expression (GTEx) project. \emph{Nature genetics} {[}electronic article{]}. 2013;45(6):580--5. (\url{http://www.ncbi.nlm.nih.gov/pubmed/23715323\%7B/\%\%7D5Cnhttp://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC4010069})
+186. GTEx Consortium TG. The Genotype-Tissue Expression (GTEx) project. \emph{Nature genetics} {[}electronic article{]}. 2013;45(6):580--5. (\url{http://www.ncbi.nlm.nih.gov/pubmed/23715323\%7B/\%\%7D5Cnhttp://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC4010069})
 
 \leavevmode\hypertarget{ref-Hemani2016}{}%
-186. Hemani G, Zheng J, Wade KH, et al. MR-Base: a platform for systematic causal inference across the phenome using billions of genetic associations. \emph{bioRxiv} {[}electronic article{]}. 2016;(\url{http://biorxiv.org/content/early/2016/12/16/078972.abstract})
+187. Hemani G, Zheng J, Wade KH, et al. MR-Base: a platform for systematic causal inference across the phenome using billions of genetic associations. \emph{bioRxiv} {[}electronic article{]}. 2016;(\url{http://biorxiv.org/content/early/2016/12/16/078972.abstract})
 
 \leavevmode\hypertarget{ref-Benjamini1995}{}%
-187. Benjamini Y, Hochberg Y. Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. \emph{Journal of the Royal Statistical Society: Series B (Methodological)}. 1995;
+188. Benjamini Y, Hochberg Y. Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. \emph{Journal of the Royal Statistical Society: Series B (Methodological)}. 1995;
 
 \leavevmode\hypertarget{ref-Burgess2011}{}%
-188. Burgess S, Thompson SG. Avoiding bias from weak instruments in mendelian randomization studies. \emph{International Journal of Epidemiology}. 2011;
+189. Burgess S, Thompson SG. Avoiding bias from weak instruments in mendelian randomization studies. \emph{International Journal of Epidemiology}. 2011;
 
 \leavevmode\hypertarget{ref-Shi2014}{}%
-189. Shi J, Marconett CN, Duan J, et al. Characterizing the genetic basis of methylome diversity in histologically normal human lung tissue. \emph{Nature communications}. 2014;
+190. Shi J, Marconett CN, Duan J, et al. Characterizing the genetic basis of methylome diversity in histologically normal human lung tissue. \emph{Nature communications}. 2014;
 
 \leavevmode\hypertarget{ref-Freeman2016}{}%
-190. Freeman JR, Chu S, Hsu T, et al. Epigenome-wide association study of smoking and DNA methylation in non-small cell lung neoplasms. \emph{Oncotarget}. 2016;7(43).
+191. Freeman JR, Chu S, Hsu T, et al. Epigenome-wide association study of smoking and DNA methylation in non-small cell lung neoplasms. \emph{Oncotarget}. 2016;7(43).
 
 \leavevmode\hypertarget{ref-Gao2016}{}%
-191. Gao X, Zhang Y, Breitling LP, et al. Tobacco smoking and methylation of genes related to lung cancer development. \emph{Oncotarget}. 2016;
+192. Gao X, Zhang Y, Breitling LP, et al. Tobacco smoking and methylation of genes related to lung cancer development. \emph{Oncotarget}. 2016;
 \end{cslreferences}
 \end{document}
 

@@ -150,9 +150,17 @@ cpg_chars_tab <- cpg_chars_res %>%
     tidy_nums() %>%
     tidy_colnames()
 
-# char_val$CHAR$ASSOC
+chars <- unique(cpg_chars_res$characteristic)
+assoc_val <- colnames(cpg_chars_res)[colnames(cpg_chars_res) != "characteristic"]
 
-vals <- lapply()
+x <- chars[1]
+char_vals <- lapply(chars, function(x) {
+    df <- dplyr::filter(cpg_chars_res, characteristic == x)
+    out <- lapply(assoc_val, function(i) df[[i]])
+    names(out) <- assoc_val
+    return(out)
+})
+names(char_vals) <- chars
 
 cpg_chars_cap <- "Association between CpG chars and associations in EWAS"
 
