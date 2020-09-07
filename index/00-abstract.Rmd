@@ -3,7 +3,17 @@ body {
 text-align: justify}
 </style>
 
-My abstract will go here and it will be a solid abstract. Full of the things that go in abstracts. Such as numbers, acronyms, other words, and lots of punctuation. <br>
+DNA methylation is part of the molecular machinery governing regulatory processes in human cells. These regulatory processes are ultimately what differentiates healthy and unhealthy individuals. Over the previous ten to fifteen years, technologies have evolved such that large scale measurement of DNA methylation has become a reality. With this technological advent, has come the uptake of studies assessing the association between DNA methylation and complex traits, aiming to identify biomarkers and understand their nature at a molecular level. These studies are known as epigenome-wide association studies (EWAS). A common theme across EWAS is the identification of very few sites in the genome for which changes in DNA methylation reliably associate with the trait of interest. This thesis explores potential explanations for this trend and further examines whether EWAS results are likely to add to our understanding about the underlying biology of complex traits. <br>
 
-It will have multiple paragraphs too!
+Data from published EWAS were collated and a platform, The EWAS Catalog, was developed as a starting point to assess what can be learnt from current EWAS findings. <br>
+
+Using this data, it was observed that some EWAS findings were likely due to unaccounted for biases, such as batch effects and cell composition. By removing suspect results, it was also demonstrated that characteristics of DNA methylation, such as the variance, mean methylation level and heritability explained some of the variation in EWAS effect estimates (over 10%). It was also observed that the proportion of trait variance correlated with changes in DNA methylation varied drastically at each site and across complex traits. <br>
+
+To properly quantify the total variation in complex traits captured by DNA methylation, as most commonly measured in EWAS, methods developed to estimate the total contribution of common genetic variants to phenotypic variation (SNP-heritability) were re-purposed. This was termed h^2^~EWAS~. Using 400 traits, evidence was provided that for many complex traits, h^2^~EWAS~ was small (close to zero), suggesting the sites measured currently in EWAS are unlikely to be pertinent to the variation of many complex traits. <br>
+
+Simulations and empirical data analyses were undertaken to assess whether the associations observed in EWAS provide new biological information on top of that provided by genome-wide association studies (GWAS). It was found the genes and pathways identified by EWAS were substantially different from those identified by GWAS of corresponding traits. This may be the result of EWAS identifying different facets of trait aetiology, but it might reflect the potential for confounding and reverse causation in EWAS. <br>
+
+Finally, to explore the extent confounding could explain some EWAS findings, Mendelian randomization (MR) was applied to estimate the association between DNA methylation and lung cancer. Marked differences between the previous observational EWAS results, where DNA methylation at two sites was estimated to mediate over 30% of the effect of smoking on lung cancer, and the MR results, where there was no strong evidence of an effect of DNA methylation on lung cancer, were found. This suggests, even with adjustment for hypothesised confounders, residual confounding is likely still pervasive in EWAS analyses. <br>
+
+Overall, this thesis demonstrates the need to change study designs when seeking to understand the underlying biology of complex traits using DNA methylation. 
 

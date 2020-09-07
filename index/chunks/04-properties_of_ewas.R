@@ -72,6 +72,13 @@ suspect_studies <- rsq_sum_dat %>%
 new_rsq_dat <- rsq_dat %>%
     mutate(high_total_rsq = ifelse(StudyID %in% suspect_studies$StudyID, TRUE, FALSE))
 
+# change in rsq
+new_med_rsq <- new_rsq_dat %>%
+    group_by(high_total_rsq) %>%
+    summarise(med_rsq = median(rsq,na.rm=T)) %>%
+    dplyr::filter(high_total_rsq == FALSE) %>%
+    pull(med_rsq)
+
 rsq_plot <- ggplot(new_rsq_dat, aes(x = rsq, fill = as.factor(high_total_rsq))) +
     geom_histogram(colour = "black", binwidth = 0.01) +
     theme_bw(base_size = 15) + 
@@ -126,13 +133,14 @@ geo_rean_tab <- geo_rean %>%
                   N_replicated = n_replicated, 
                   Percent_replicated = rep_percent) %>%
     tidy_nums() %>%
-    tidy_colnames()
+    tidy_colnames() %>%
+    arrange(Trait)
 
 geo_rean_caption <- "GEO re-analysis replication"
 
 ## ---- replication-tab --------------------------------
 kable(rep_tab, format = "latex", caption = rep_caption, booktabs = TRUE) %>%
-    kable_styling(latex_options = c("striped", "hold_position", "scale_down")) 
+    kable_styling(latex_options = c("striped", "scale_down")) 
 
 ## ---- geo-reanalysis-tab --------------------------------
 kable(geo_rean_tab, format = "latex", caption = geo_rean_caption, booktabs = TRUE) %>%
