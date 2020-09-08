@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.7)  7 SEP 2020 19:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.7)  8 SEP 2020 09:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1719,8 +1719,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2136.
 ### bottom level 
 Here is how much of TeX's memory you used:
  26376 strings out of 482803
- 512067 string characters out of 5954188
- 826727 words of memory out of 5000000
+ 512070 string characters out of 5954188
+ 827107 words of memory out of 5000000
  40225 multiletter control sequences out of 15000+600000
  620607 words of font info for 286 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1742,7 +1742,7 @@ mf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/tb13101/Library/TinyTeX/texmf-
 dist/fonts/type1/urw/times/utmbi8a.pfb></Users/tb13101/Library/TinyTeX/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/
 fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (160 pages, 1861226 bytes).
+Output written on thesis.pdf (160 pages, 1861538 bytes).
 PDF statistics:
  2341 PDF objects out of 2487 (max. 8388607)
  2075 compressed objects within 21 object streams
