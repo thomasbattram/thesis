@@ -1,0 +1,77 @@
+# Discussion {#discussion-thesis}
+
+## Overview of findings {#overview-08}
+
+* Phenotypic change cannot occur without molecular change
+
+Phenotypic change cannot occur without molecular change. Identifying these changes adds to the aetiological understanding of traits and thus has the potential to uncover novel therapeutic targets. Further, studying the association between molecular marks and complex traits may yield new, valid predictors that could augment current clinical predictors. 
+
+* EWAS represent a study type attempting to identify molecular changes in the context of DNA methylation.
+
+* Constraints on technology and funding have led to the majority of EWAS being conducted using easily accessible tissues, measuring a small percentage of potential DNA methylation sites in the genome. 
+
+* EWAS tend to identify few reliable sites in the genome
+
+* Understanding the aspects of EWAS that have led to this trend is imperative to progressing study designs. 
+
+* To this end, this thesis attempted to explore various avenues that could explain the results. 
+
+* Firstly, EWAS Catalog set up to give a platform to explore current published associations and identify potential problems
+
+* Found that: 1. some associations due to faulty probes + lack of adjustment for likely confounding factors, 2. certain DNA methylation characteristics, 3. variance captured varied largely
+
+* Variance captured by all sites across the 450k array was estimated to be small. Therefore low predictive capacity.
+
+* Aetiological capacity also appeared to be limited due to confounding or reverse causation
+
+* Confirmed confounding as potentially accounting for a substantial portion of EWAS hits
+
+## Extensions to this work {#extensions-to-work}
+
+### Beyond the HM450 in blood {#beyond-the-hm450}
+
+* Work focuses on blood + 450k array --> cannot be applied to other aspects of DNA methylation
+
+* As DNA methylation is so tightly linked to gene expression regulation, it seems likely that either DNA methylation or something coupled to it has a substantial impact on aetiology of many complex traits -- may have just missed it with the 450k in blood!
+
+* Something about latest developments in sequencing
+
+* Expanding tissue types also emerging - GTEx for expression in multiple tissues and TCGA data already available, but potential issues there. Mention number of tissue types in EWAS Catalog -- will only be expanded upon!
+
+### New methods and data {#new-methods-and-data}
+
+* Still substantial interest in the field of epigenetic epidemiology
+
+* Example of some new methods
+
+* Complexity requires MR, other causal inference methods and a cross-discipline approach likely to be key to elucidating the impact of DNA methylation to complex traits (maybe mention colocolization here too)
+
+* GoDMC provide huge dataset for estimating causal effects using MR
+
+* Mass MR in GoDMC also backs up conclusions from this thesis - limited aetiological capacity for DNAm measured by the 450k! Blood QTLs may be limiting though - tissue specific QTLs found and needed to expand causal inference efforts
+
+* Larger individual datasets, such as Generation Scotland could also be used to more precisely estimate the total predicitive capacity of DNAm for a particular trait and provide groups of traits for which DNAm may capture a substantial portion of variance
+
+### Beyond DNA methylation {#beyond-dnam}
+
+* Discussed why DNAm chosen to study (ref intro), but may not be ideal for many questions
+
+* If DNAm not causal for many diseases, then there is little value for modifying it to prevent/treat disease is. May be worth looking to other epigenetic marks, but much work needed there!!
+
+* Large efforts also started to quantify proteins. As the ultimate target for many pharmaceuticals, as understanding of function and quantification of proteins and their variants increases, protein-based epidemiological studies may supersede EWAS. They may also complement EWAS! 
+
+* Still lots of problems faced by other molecular studies - especially tissue specificity! Also have added problem with gene expression + protein expression studies that you can have post-transcriptional and post-translational modifications that can alter gene/protein function...
+
+## Final conclusions {#final-conclusions}
+
+* Things are complex!! 
+
+* EWAS have not yielded aetiological insights or the predictive capacity hoped in epidemiology. However, the constraints of technologies and samples have likely contributed a great deal to this. 
+
+* This thesis provides evidence that the study design of current of EWAS is unlikely to provide substantial improvements in the ability to predict or understand the aetiological underpinnings of complex traits. 
+
+* Key to understanding use of DNAm to complex trait aetiology will be diversification of tissue types, measurement of more sites, and experimental studies to confirm epidemiological inferences.
+
+* Second stage of EWAS should take the full complexity of cellular and molecular signals into account. 
+
+

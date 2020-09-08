@@ -10,7 +10,7 @@ rmd_files: ["index.Rmd",
             "05-h2ewas.Rmd",
             "06-ewas_gwas_comparison.Rmd",
             "07-dnam_lungcancer_mr.Rmd",
-            "08-conclusion.Rmd",
+            "08-discussion.Rmd",
             "09-appendix.Rmd",
             "99-references.Rmd"]
 
