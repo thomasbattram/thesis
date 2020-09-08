@@ -4,6 +4,22 @@ Thesis written using [thesisdown](https://github.com/ismayc/thesisdown). This wa
 
 Current version of the thesis can be found [here](index/_book)
 
+Plan for September/October:
+
+| Task          | Completion date | Comments needed | Comments needed from |
+| ------------- |:-------------:| -----:| -----:| 
+| Discussion V1 | right-aligned | $1600 | test |
+| Chapters integrated into thesis | centered | test |
+| test | test | test |
+
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+
 ## Meetings
 Meeting notes and items can be found in [meetings](meetings)
 
