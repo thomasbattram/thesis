@@ -1,0 +1,45 @@
+# PhD project meeting notes 2020-09-11
+
+Attendees: Tom B, Gib
+
+## Agenda
+
+* Discussion
+* Results from EWAS-GWAS comparison simulations
+* AOB
+
+## Discussion
+
+[Plan for discussion](08-discussion.Rmd)
+
+__NOTES:__
+
+Some meeting notes
+
+## Results from EWAS-GWAS comparison simulations
+
+_Premise of simulations_
+
+We have known EWAS genes and known GWAS genes and a simulated number of causal + consequential genes. We mix the EWAS genes in the simulated consequential genes and pick out a number equal to the number of known EWAS genes. We do the same with GWAS genes and simulated causal genes. We check the overlap between causal and consequential genes picked out, generate enrichment scores for GO terms for each geneset and then assess correlation of enrichment scores. 
+
+We vary the number of simulated causal + consequential genes as well as the proportion of overlap between causal + consequential genes.
+
+_Results_
+
+[plot1](architecture_sims_correlation_of_pathway_enrichment_scores.pdf)
+
+[plot2](architecture_sims_gene_overlap.pdf)
+
+For each trait it seems the only real scenarios we can rule out are: number of genes is close to what has been discovered and overlap is high... So we either haven't discovered all genes with EWAS + GWAS or the overlap between causal and consequential genes is likely not high. 
+
+How can I represent this??
+
+__NOTES:__
+
+Some meeting notes
+
+## AOB
+
+* Heard from potential examiners?
+* OK to have boxes in thesis chapters?
+* How to add v large tables in thesis that would just be spreadsheets in supplement for papers?
