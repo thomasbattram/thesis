@@ -4,7 +4,7 @@ delete_merged_file: true
 
 rmd_files: ["index.Rmd",
             "01-introduction.Rmd",
-            "02-methods.Rmd",
+            "02-data_sources.Rmd",
             "03-ewas_catalog.Rmd",
             "04-properties_of_ewas.Rmd",
             "05-h2ewas.Rmd",

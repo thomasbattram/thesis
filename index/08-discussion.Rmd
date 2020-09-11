@@ -2,29 +2,16 @@
 
 ## Overview of findings {#overview-08}
 
-* Phenotypic change cannot occur without molecular change
+Phenotypic change cannot occur without molecular change. Identifying these changes adds to the aetiological understanding of traits and thus has the potential to uncover novel therapeutic targets (REFs). Further, studying the association between molecular marks and complex traits may yield new, valid predictors that could augment current prediction capacity within the clinic (REFs). 
 
-Phenotypic change cannot occur without molecular change. Identifying these changes adds to the aetiological understanding of traits and thus has the potential to uncover novel therapeutic targets. Further, studying the association between molecular marks and complex traits may yield new, valid predictors that could augment current clinical predictors. 
+Given the strong links made by experimental researchers between DNA methylation and the regulatory processes in cells (REFs), there was precedent for putting time and effort into studying whether DNA methylation and complex traits covary. 
 
-* EWAS represent a study type attempting to identify molecular changes in the context of DNA methylation.
+Over the past 10-15 years, there have been some EWAS that have identified several reliable associations between DNA methylation and complex traits, for example with smoking (REFs) and body mass index (REFs). However, the trend has been for EWAS to identify few sites reliably associate with complex traits (REF). This was showcased in __Chapter \@ref(ewas-catalog)__. Understanding the aspects of EWAS that have led to this trend is imperative to progressing study designs and was the focus of this thesis.
 
-* Constraints on technology and funding have led to the majority of EWAS being conducted using easily accessible tissues, measuring a small percentage of potential DNA methylation sites in the genome. 
+In this body of work hundreds of published EWAS along with hundreds more EWAS I conducted were catalogued in an open access database. Using this data, I showed associations reported in EWAS to date are partly the result of unaccounted for technical effects, such as inclusion of poor quality probes, and characteristics of DNA methylation. Further, the variance captured by individual DNA methylation sites was highly varied and likely inflated amongst some studies. I further explored this covariation. It was found that the variance captured by all DNA methylation sites used in EWAS for 400 complex traits tended to be near zero, giving DNA methylation low total predicitive capacity across these traits. The capacity to understand aetiological aspects of traits from EWAS also appeared to be limited, although this was only tested for XXX traits. Upon comparison of associations between DNA methylation and lung cancer from observational EWAS and Mendelian randomization analyses, confounding was confirmed to be a problem, potentially accounting for a substantial proportion of observed EWAS associations. 
 
-* EWAS tend to identify few reliable sites in the genome
+These findings suggest that substantial changes are required in the design of EWAS to aid the identification of valid predictors and enhance aetiological insight. 
 
-* Understanding the aspects of EWAS that have led to this trend is imperative to progressing study designs. 
-
-* To this end, this thesis attempted to explore various avenues that could explain the results. 
-
-* Firstly, EWAS Catalog set up to give a platform to explore current published associations and identify potential problems
-
-* Found that: 1. some associations due to faulty probes + lack of adjustment for likely confounding factors, 2. certain DNA methylation characteristics, 3. variance captured varied largely
-
-* Variance captured by all sites across the 450k array was estimated to be small. Therefore low predictive capacity.
-
-* Aetiological capacity also appeared to be limited due to confounding or reverse causation
-
-* Confirmed confounding as potentially accounting for a substantial portion of EWAS hits
 
 * A brief look at smoking - features in all chapters of thesis, because of strong associations with DNAm. 
 
@@ -32,19 +19,21 @@ Phenotypic change cannot occur without molecular change. Identifying these chang
 
 ### Beyond the HM450 in blood {#beyond-the-hm450}
 
-* Work focuses on blood + 450k array --> cannot be applied to other aspects of DNA methylation
+This work focuses on the measures taken for contemporary EWAS, namely use of the HM450 to measure blood-based DNA methylation. Given the correlations structure across all DNA methylation sites in the genome is not known, this work can not be generalised to DNA methylation as a whole. Further, although certain aspects of observational EWAS, such as propensity for confounding, will always hinder interpretation of results, other aspects of this thesis may not apply to data from other tissues. 
 
-* As DNA methylation is so tightly linked to gene expression regulation, it seems likely that either DNA methylation or something coupled to it has a substantial impact on aetiology of many complex traits -- may have just missed it with the 450k in blood!
+As DNA methylation is so tightly linked to gene expression regulation, it seems likely that either DNA methylation or something coupled to it has a substantial impact on the aetiology of many complex traits. Thus, it seems likely the issues uncovered with EWAS in this thesis, such as the lack of covariation between DNA methylation and complex traits, is likely due to the fact too few sites are being measured in the wrong tissues. 
 
-* Something about latest developments in sequencing
+The impact of different methylation states of the genome, such as hydroxymethylation, is also relatively unknown (REFs). The current methods, which revolve around bisulphite conversion, capture all methylation states. If these states have differing effects then putting them under one umbrella will bias effect estimates. 
 
-* Expanding tissue types also emerging - GTEx for expression in multiple tissues and TCGA data already available, but potential issues there. Mention number of tissue types in EWAS Catalog -- will only be expanded upon!
+In a similar vein to other omics, sequencing technology will likely continue to improve and will become cheap enough to use across population samples. Also, despite the vast majority of EWAS being conducted using blood (__Table \@ref(tab:study-data-tab)__), there are XXX other tissue types recorded in the EWAS Catalog. The Cancer Genome Atlas (TCGA) has recorded DNA methylation data in a large number of tissues, and the trend to measure other tissues is likely to continue, especially as the number of reliable sites identified in EWAS tends to be low. In addition, manuscripts using techniques to measure gene expression and DNA methylation in single cells are becoming more common (REFs). Given the issues of cell specificity, these studies may prove pivotal in advancement of the epigenetic epidemiology field. 
+
+As discussed in __Chapter \@ref(properties-of-ewas)__, DNA methylation is a binary measure, yet by pooling groups of cells and measuring methylation at each site as a proportion of the DNA molecules that are methylated, a continuous measure is derived. If cells of the same type are identical then one would expect they would be methylated at the same sites as one another. However, a mosaicism of methylation across cells may exist. If it is possible, then pooling groups of cells for analysis, and taking account differences between high order cell types, will remain a valid approach for EWAS. However, if strong evidence is provided that this cellular mosaicism is improbable between cells of the same type then rapid movement towards single-cell techniques is likely.
 
 ### New methods and data {#new-methods-and-data}
 
-* Still substantial interest in the field of epigenetic epidemiology
+There is still substantial interest in assessing the association between DNA methylation and complex traits. In 2020 alone, there have been over XXX EWAS conducted that are suitable for adding to the EWAS Catalog. Further, new methods are being developed to measure the association between DNA methylation and complex traits. The group that developed GCTA, have also developed a command line tool to conduct EWAS using different models, OSCA (REF). There was recently a study that developed a Bayesian approach to conduct EWAS, using various confounders including genotype in their model (REF). These are just two examples of the many new methods that have been developed recently (REFs). 
 
-* Example of some new methods
+
 
 * Complexity requires MR, other causal inference methods and a cross-discipline approach likely to be key to elucidating the impact of DNA methylation to complex traits (maybe mention colocolization here too)
 
