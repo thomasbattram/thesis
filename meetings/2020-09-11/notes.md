@@ -6,6 +6,7 @@ Attendees: Tom B, Gib
 
 * Discussion
 * Results from EWAS-GWAS comparison simulations
+* Thesis structure
 * AOB
 
 ## Discussion
@@ -38,8 +39,19 @@ __NOTES:__
 
 Some meeting notes
 
+## Thesis structure
+
+OK to have boxes in thesis chapters?
+
+How to add v large tables in thesis that would just be spreadsheets in supplement for papers?
+
+I guess it's fine to reference figures in one chapter that are from a different chapter?
+
+__NOTES:__
+
+Some meeting notes
+
 ## AOB
 
 * Heard from potential examiners?
-* OK to have boxes in thesis chapters?
-* How to add v large tables in thesis that would just be spreadsheets in supplement for papers?
+* Guess I can use my PhD money to go to virtual conferences? 
