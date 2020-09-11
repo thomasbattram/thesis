@@ -26,6 +26,8 @@ Phenotypic change cannot occur without molecular change. Identifying these chang
 
 * Confirmed confounding as potentially accounting for a substantial portion of EWAS hits
 
+* A brief look at smoking - features in all chapters of thesis, because of strong associations with DNAm. 
+
 ## Extensions to this work {#extensions-to-work}
 
 ### Beyond the HM450 in blood {#beyond-the-hm450}

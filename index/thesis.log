@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.7)  8 SEP 2020 10:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.11)  11 SEP 2020 15:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **thesis.tex
 (./thesis.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-09-03> (./bristolthesis.cls
+L3 programming layer <2020-09-06> (./bristolthesis.cls
 Document Class: bristolthesis 
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
@@ -241,7 +241,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 Package: setspace 2011/12/19 v6.7a set line spacing
 ) (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/siunitx/siunitx.sty (/Us
 ers/tb13101/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2020-09-03 L3 programming layer (loader) 
+Package: expl3 2020-09-06 L3 programming layer (loader) 
 
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex
 .def
@@ -1073,7 +1073,7 @@ LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<figure/index/UoBcrest.pdf, id=485, 114.4275pt x 137.51375pt>
+<figure/index/UoBcrest.pdf, id=505, 114.4275pt x 137.51375pt>
 File: figure/index/UoBcrest.pdf Graphic file (type pdf)
 <use figure/index/UoBcrest.pdf>
 Package pdftex.def Info: figure/index/UoBcrest.pdf  used on input line 166.
@@ -1103,7 +1103,7 @@ Overfull \hbox (122.94604pt too wide) in paragraph at lines 185--186
 
 
 ] [6] [7]
-Underfull \hbox (badness 2635) in paragraph at lines 97--97
+Underfull \hbox (badness 2635) in paragraph at lines 96--96
  [][] []\T1/ptm/m/n/10.95 (+20) Eu-ro-pean Prospec-tive In-ves-ti-ga-tion into 
 Can-cer and 
  []
@@ -1120,11 +1120,11 @@ Can-cer and
 
 ] (./thesis.lof [10
 
-] [11])
+] [11] [12])
 \tf@lof=\write8
 \openout8 = `thesis.lof'.
 
-[12]
+[13]
 Overfull \hbox (63.55286pt too wide) in paragraph at lines 212--220
 \T1/ptm/m/n/12 (-20) tion study \T1/ptm/b/n/12 h<sup>2</sup> \T1/ptm/m/n/12 (-2
 0) - narrow-sense her-i-tabil-ity \T1/ptm/b/n/12 h<sup>2</sup><sub>SNP</sub>
@@ -1137,7 +1137,7 @@ n/12 (+20) - broad-sense her-i-tabil-ity \T1/ptm/b/n/12 MR \T1/ptm/m/n/12 (+20)
  -
  []
 
-[13
+[14
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
  been already used, duplicate ignored
@@ -1153,7 +1153,7 @@ Chapter 1.
 [3
 
 ] [4]
-<figure/01-introduction/central-dogma.pdf, id=833, 406.3983pt x 132.495pt>
+<figure/01-introduction/central-dogma.pdf, id=894, 406.3983pt x 132.495pt>
 File: figure/01-introduction/central-dogma.pdf Graphic file (type pdf)
 <use figure/01-introduction/central-dogma.pdf>
 Package pdftex.def Info: figure/01-introduction/central-dogma.pdf  used on inpu
@@ -1170,7 +1170,7 @@ pdfTeX warning: pdflatex (file ./figure/01-introduction/central-dogma.pdf): PDF
  inclusion: invalid other resource which is no dict (key 'ProcSets', type <arra
 y>); ignored.
 >]
-<figure/01-introduction/epigenetic-marks.jpg, id=858, 953.5625pt x 523.9575pt>
+<figure/01-introduction/epigenetic-marks.jpg, id=918, 953.5625pt x 523.9575pt>
 File: figure/01-introduction/epigenetic-marks.jpg Graphic file (type jpg)
 <use figure/01-introduction/epigenetic-marks.jpg>
 Package pdftex.def Info: figure/01-introduction/epigenetic-marks.jpg  used on i
@@ -1182,7 +1182,7 @@ Overfull \hbox (0.675pt too wide) in paragraph at lines 284--284
  []
 
 [6] [7 <./figure/01-introduction/epigenetic-marks.jpg>] [8] [9]
-<figure/01-introduction/dnam-gene-expression.pdf, id=881, 263.06279pt x 102.382
+<figure/01-introduction/dnam-gene-expression.pdf, id=942, 263.06279pt x 102.382
 5pt>
 File: figure/01-introduction/dnam-gene-expression.pdf Graphic file (type pdf)
 <use figure/01-introduction/dnam-gene-expression.pdf>
@@ -1205,7 +1205,7 @@ Underfull \hbox (badness 5077) in paragraph at lines 400--400
  []
 
 [22] [23] [24] [25] [26]
-<figure/01-introduction/mr-diagram.pdf, id=997, 291.00719pt x 159.71669pt>
+<figure/01-introduction/mr-diagram.pdf, id=1057, 291.00719pt x 159.71669pt>
 File: figure/01-introduction/mr-diagram.pdf Graphic file (type pdf)
 <use figure/01-introduction/mr-diagram.pdf>
 Package pdftex.def Info: figure/01-introduction/mr-diagram.pdf  used on input l
@@ -1222,7 +1222,7 @@ pdfTeX warning: pdflatex (file ./figure/01-introduction/mr-diagram.pdf): PDF in
 clusion: invalid other resource which is no dict (key 'ProcSets', type <array>)
 ; ignored.
 >] [29] [30]
-<figure/01-introduction/thesis-flowchart.pdf, id=1042, 551.1792pt x 232.9503pt>
+<figure/01-introduction/thesis-flowchart.pdf, id=1101, 551.1792pt x 232.9503pt>
 
 File: figure/01-introduction/thesis-flowchart.pdf Graphic file (type pdf)
 <use figure/01-introduction/thesis-flowchart.pdf>
@@ -1252,7 +1252,7 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [34
 
 ] [35]
-<figure/03-ewas_catalog/project_flowchart.pdf, id=1082, 963.6pt x 542.025pt>
+<figure/03-ewas_catalog/project_flowchart.pdf, id=1142, 963.6pt x 542.025pt>
 File: figure/03-ewas_catalog/project_flowchart.pdf Graphic file (type pdf)
 <use figure/03-ewas_catalog/project_flowchart.pdf>
 Package pdftex.def Info: figure/03-ewas_catalog/project_flowchart.pdf  used on 
@@ -1264,7 +1264,7 @@ Overfull \hbox (0.675pt too wide) in paragraph at lines 517--517
  []
 
 [36] [37 <./figure/03-ewas_catalog/project_flowchart.pdf>] [38] [39] [40] [41]
-<figure/03-ewas_catalog/using_the_catalog.pdf, id=1150, 542.025pt x 782.925pt>
+<figure/03-ewas_catalog/using_the_catalog.pdf, id=1209, 542.025pt x 782.925pt>
 File: figure/03-ewas_catalog/using_the_catalog.pdf Graphic file (type pdf)
 <use figure/03-ewas_catalog/using_the_catalog.pdf>
 Package pdftex.def Info: figure/03-ewas_catalog/using_the_catalog.pdf  used on 
@@ -1309,7 +1309,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 726--754
 
  []
 
-<figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png, id=1276, 867.24pt x 
+<figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png, id=1335, 867.24pt x 
 505.89pt>
 File: figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png Graphic file (ty
 pe png)
@@ -1323,7 +1323,7 @@ Overfull \hbox (0.675pt too wide) in paragraph at lines 766--766
  []
 
 [54]
-<thesis_files/figure-latex/rsq-distribution-1.pdf, id=1287, 469.755pt x 325.215
+<thesis_files/figure-latex/rsq-distribution-1.pdf, id=1346, 469.755pt x 325.215
 pt>
 File: thesis_files/figure-latex/rsq-distribution-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/rsq-distribution-1.pdf>
@@ -1336,7 +1336,7 @@ Overfull \hbox (0.675pt too wide) in paragraph at lines 779--779
  []
 
 [55 <./figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png (PNG copy)>]
-<thesis_files/figure-latex/rsq-sum-distribution-1.pdf, id=1294, 469.755pt x 325
+<thesis_files/figure-latex/rsq-sum-distribution-1.pdf, id=1353, 469.755pt x 325
 .215pt>
 File: thesis_files/figure-latex/rsq-sum-distribution-1.pdf Graphic file (type p
 df)
@@ -1351,7 +1351,7 @@ Overfull \hbox (0.675pt too wide) in paragraph at lines 788--788
 
 [56 <./thesis_files/figure-latex/rsq-distribution-1.pdf>] [57 <./thesis_files/f
 igure-latex/rsq-sum-distribution-1.pdf>]
-<thesis_files/figure-latex/faulty-probes-plot-1.pdf, id=1318, 469.755pt x 325.2
+<thesis_files/figure-latex/faulty-probes-plot-1.pdf, id=1378, 469.755pt x 325.2
 15pt>
 File: thesis_files/figure-latex/faulty-probes-plot-1.pdf Graphic file (type pdf
 )
@@ -1436,7 +1436,7 @@ Chapter 5.
 [67
 
 ] [68] [69] [70] [71]
-<figure/05-h2ewas/m2_model_comparison.pdf, id=1404, 601.28638pt x 406.3983pt>
+<figure/05-h2ewas/m2_model_comparison.pdf, id=1465, 601.28638pt x 406.3983pt>
 File: figure/05-h2ewas/m2_model_comparison.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/m2_model_comparison.pdf>
 Package pdftex.def Info: figure/05-h2ewas/m2_model_comparison.pdf  used on inpu
@@ -1453,264 +1453,336 @@ pdfTeX warning: pdflatex (file ./figure/05-h2ewas/m2_model_comparison.pdf): PDF
  inclusion: invalid other resource which is no dict (key 'ProcSets', type <arra
 y>); ignored.
 >]
-Overfull \hbox (56.25168pt too wide) in paragraph at lines 1067--1068
-[]\T1/ptm/m/n/10.95 (-20) Phenotype data were ex-tracted us-ing the `alspac' R 
-pack-age (github.com/explodecomputer/alspac)
+<figure/05-h2ewas/m2_data_cleaning.pdf, id=1498, 287.15279pt x 478.66827pt>
+File: figure/05-h2ewas/m2_data_cleaning.pdf Graphic file (type pdf)
+<use figure/05-h2ewas/m2_data_cleaning.pdf>
+Package pdftex.def Info: figure/05-h2ewas/m2_data_cleaning.pdf  used on input l
+ine 1067.
+(pdftex.def)             Requested size: 270.02441pt x 406.05922pt.
+
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1071--1071
+[] [] 
  []
 
-[74] [75] [76] [77] [78]
-Overfull \hbox (25.14845pt too wide) in paragraph at lines 1128--1129
+[74] [75 <./figure/05-h2ewas/m2_data_cleaning.pdf
+
+pdfTeX warning: pdflatex (file ./figure/05-h2ewas/m2_data_cleaning.pdf): PDF in
+clusion: invalid other resource which is no dict (key 'ProcSets', type <array>)
+; ignored.
+>]
+<figure/05-h2ewas/test_correlation_plot_all.png, id=1520, 505.89pt x 505.89pt>
+File: figure/05-h2ewas/test_correlation_plot_all.png Graphic file (type png)
+<use figure/05-h2ewas/test_correlation_plot_all.png>
+Package pdftex.def Info: figure/05-h2ewas/test_correlation_plot_all.png  used o
+n input line 1078.
+(pdftex.def)             Requested size: 360.0pt x 360.00264pt.
+
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1082--1082
+[] [] 
+ []
+
+[76]
+<figure/05-h2ewas/test_correlation_plot.png, id=1526, 505.89pt x 505.89pt>
+File: figure/05-h2ewas/test_correlation_plot.png Graphic file (type png)
+<use figure/05-h2ewas/test_correlation_plot.png>
+Package pdftex.def Info: figure/05-h2ewas/test_correlation_plot.png  used on in
+put line 1087.
+(pdftex.def)             Requested size: 360.0pt x 360.00264pt.
+
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1091--1091
+[] [] 
+ []
+
+[77 <./figure/05-h2ewas/test_correlation_plot_all.png (PNG copy)>] [78 <./figur
+e/05-h2ewas/test_correlation_plot.png (PNG copy)>] [79] [80] [81]
+Overfull \hbox (25.14845pt too wide) in paragraph at lines 1148--1149
 \T1/ptm/m/n/10.95 (-20) Code used to per-form anal-y-ses can be found here: git
 hub.com/thomasbattram/ereml 
  []
 
-[79]
-<figure/05-h2ewas/m2_workflow.pdf, id=1473, 522.03032pt x 341.35529pt>
+[82]
+<figure/05-h2ewas/m2_workflow.pdf, id=1562, 522.03032pt x 341.35529pt>
 File: figure/05-h2ewas/m2_workflow.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/m2_workflow.pdf>
 Package pdftex.def Info: figure/05-h2ewas/m2_workflow.pdf  used on input line 1
-140.
+160.
 (pdftex.def)             Requested size: 360.0pt x 235.41559pt.
 
-Overfull \hbox (0.675pt too wide) in paragraph at lines 1144--1144
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1164--1164
 [] [] 
  []
 
-[80 <./figure/05-h2ewas/m2_workflow.pdf
+[83 <./figure/05-h2ewas/m2_workflow.pdf
 
 pdfTeX warning: pdflatex (file ./figure/05-h2ewas/m2_workflow.pdf): PDF inclusi
 on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
 ored.
 >]
-<figure/05-h2ewas/model_m2_comparison.pdf, id=1521, 505.89pt x 505.89pt>
+<figure/05-h2ewas/model_m2_comparison.pdf, id=1611, 505.89pt x 505.89pt>
 File: figure/05-h2ewas/model_m2_comparison.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/model_m2_comparison.pdf>
 Package pdftex.def Info: figure/05-h2ewas/model_m2_comparison.pdf  used on inpu
-t line 1156.
+t line 1176.
 (pdftex.def)             Requested size: 360.0pt x 360.00264pt.
 
-Overfull \hbox (0.675pt too wide) in paragraph at lines 1160--1160
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1180--1180
 [] [] 
  []
 
-[81] [82 <./figure/05-h2ewas/model_m2_comparison.pdf>] [83]
-<figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf, id=1545, 505.89pt x 505.89p
-t>
-File: figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf Graphic file (type pdf)
-
-<use figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf>
-Package pdftex.def Info: figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf  use
-d on input line 1181.
+[84] [85 <./figure/05-h2ewas/model_m2_comparison.pdf>]
+<figure/05-h2ewas/sens_boxplots.pdf, id=1632, 505.89pt x 505.89pt>
+File: figure/05-h2ewas/sens_boxplots.pdf Graphic file (type pdf)
+<use figure/05-h2ewas/sens_boxplots.pdf>
+Package pdftex.def Info: figure/05-h2ewas/sens_boxplots.pdf  used on input line
+ 1192.
 (pdftex.def)             Requested size: 360.0pt x 360.00264pt.
-
-Overfull \hbox (0.675pt too wide) in paragraph at lines 1185--1185
-[] [] 
- []
-
-[84] [85 <./figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf>]
-<figure/05-h2ewas/roc_plot.pdf, id=1561, 504.88625pt x 504.88625pt>
-File: figure/05-h2ewas/roc_plot.pdf Graphic file (type pdf)
-<use figure/05-h2ewas/roc_plot.pdf>
-Package pdftex.def Info: figure/05-h2ewas/roc_plot.pdf  used on input line 1192
-.
-(pdftex.def)             Requested size: 360.0pt x 360.0048pt.
 
 Overfull \hbox (0.675pt too wide) in paragraph at lines 1196--1196
 [] [] 
  []
 
-[86] [87 <./figure/05-h2ewas/roc_plot.pdf>] [88] [89] [90] [91] [92] [93] [94]
+[86] [87 <./figure/05-h2ewas/sens_boxplots.pdf>]
+<figure/05-h2ewas/FOM_hit_count_distribution.pdf, id=1654, 504.88625pt x 504.88
+625pt>
+File: figure/05-h2ewas/FOM_hit_count_distribution.pdf Graphic file (type pdf)
+<use figure/05-h2ewas/FOM_hit_count_distribution.pdf>
+Package pdftex.def Info: figure/05-h2ewas/FOM_hit_count_distribution.pdf  used 
+on input line 1208.
+(pdftex.def)             Requested size: 360.0pt x 360.0048pt.
+
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1212--1212
+[] [] 
+ []
+
+[88]
+<figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf, id=1660, 505.89pt x 505.89p
+t>
+File: figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf Graphic file (type pdf)
+
+<use figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf>
+Package pdftex.def Info: figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf  use
+d on input line 1217.
+(pdftex.def)             Requested size: 360.0pt x 360.00264pt.
+
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1221--1221
+[] [] 
+ []
+
+
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1225--1225
+[] [] 
+ []
+
+[89 <./figure/05-h2ewas/FOM_hit_count_distribution.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[90 <./figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf>]
+<figure/05-h2ewas/roc_plot.pdf, id=1681, 504.88625pt x 504.88625pt>
+File: figure/05-h2ewas/roc_plot.pdf Graphic file (type pdf)
+<use figure/05-h2ewas/roc_plot.pdf>
+Package pdftex.def Info: figure/05-h2ewas/roc_plot.pdf  used on input line 1248
+.
+(pdftex.def)             Requested size: 360.0pt x 360.0048pt.
+
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1252--1252
+[] [] 
+ []
+
+[91] [92 <./figure/05-h2ewas/roc_plot.pdf>] [93] [94] [95] [96] [97] [98] [99]
 Chapter 6.
-[95
+[100
 
 ]
 Chapter 7.
-[96
+[101
 
-] [97] [98] [99] [100] [101] [102] [103]
-Underfull \hbox (badness 6526) in paragraph at lines 1331--1331
+] [102] [103] [104] [105] [106] [107] [108]
+Underfull \hbox (badness 6526) in paragraph at lines 1387--1387
 [][]\T1/ptm/b/n/10.95 Sample 1: Ac-ces-si-ble Re-source for In-te-grated Epige-
 nomic Stud-ies
  []
 
-[104] [105] [106]
-Overfull \hbox (0.675pt too wide) in paragraph at lines 1357--1357
+[109] [110] [111]
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1413--1413
 [] [] 
  []
 
-[107] [108] [109] [110] [111] [112] [113]
-Underfull \hbox (badness 1048) in paragraph at lines 1461--1461
+[112] [113] [114] [115] [116] [117] [118]
+Underfull \hbox (badness 1048) in paragraph at lines 1517--1517
 []\T1/ptm/b/n/12 Tumour and ad-ja-cent nor-mal lung tis-sue methy-la-tion pat-
  []
 
-[114] [115] [116] [117] [118] [119] [120
+[119] [120] [121] [122] [123] [124]
+Chapter 8.
+[125
 
-]
+] [126] [127] [128] [129]
 Appendix A.
 
-LaTeX Warning: Reference `ref-labels' on page 121 undefined on input line 1508.
+LaTeX Warning: Reference `ref-labels' on page 130 undefined on input line 1646.
 
 
-[121
+[130
 
 ]
 Appendix B.
-[122
+[131
 
-] [123
+] [132
 
 
 ]
-Underfull \hbox (badness 1097) in paragraph at lines 1554--1556
+Underfull \hbox (badness 1097) in paragraph at lines 1692--1694
  [][]\T1/ptm/m/n/10.95 (+20) 9. Fil-ipow-icz W, Bhat-tacharyya SN, So-nen-berg 
 N. Mech-a-nisms of post-
  []
 
 
-Underfull \hbox (badness 2671) in paragraph at lines 1554--1556
+Underfull \hbox (badness 2671) in paragraph at lines 1692--1694
  \T1/ptm/m/n/10.95 (+20) transcriptional reg-u-la-tion by mi-croR-NAs: Are the 
 an-swers in sight?
  []
 
-[124] [125] [126] [127] [128]
-Underfull \hbox (badness 10000) in paragraph at lines 1713--1715
+[133] [134] [135] [136] [137]
+Underfull \hbox (badness 10000) in paragraph at lines 1851--1853
  \T1/ptm/m/n/10.95 (+20) ([]$\T1/pcr/m/n/10.95 h t t p s : / / e m e a . i l l 
 u m i n a . c o m / c o n t e n t / d a m / i l l u m i na -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1713--1715
+Underfull \hbox (badness 10000) in paragraph at lines 1851--1853
  \T1/pcr/m/n/10.95 m a r k e t i n g / d o c u m e n t s / p r o d u c t s / d 
 a t a s h e e t s / d a t a s h e e t % 7 B
  []
 
-[129] [130] [131] [132] [133] [134]
-Underfull \hbox (badness 10000) in paragraph at lines 1893--1895
+[138] [139] [140] [141] [142] [143]
+Underfull \hbox (badness 10000) in paragraph at lines 2031--2033
  \T1/ptm/m/n/10.95 (+20) 594. ([]$\T1/pcr/m/n/10.95 h t tp : / / w w w . n a t 
 u r e . c o m / d o i f i n d e r / 1 0 . 1 0 3 8 / n r g 3 4
  []
 
-[135] [136]
-Underfull \hbox (badness 10000) in paragraph at lines 1935--1937
+[144] [145]
+Underfull \hbox (badness 10000) in paragraph at lines 2073--2075
  \T1/ptm/m/n/10.95 (+20) ([]$\T1/pcr/m/n/10.95 h t tp : / / o n c o l o g y . j
  a m a n e t w o r k . c o m / a r t i c l e . a s p x? a r t i c l e
  []
 
-[137] [138] [139]
-Underfull \hbox (badness 10000) in paragraph at lines 1992--1994
+[146] [147] [148]
+Underfull \hbox (badness 10000) in paragraph at lines 2130--2132
  \T1/pcr/m/n/10.95 w w w . p u b m e d c e n t r a l . n i h . g o v / a r t i 
 c l e r e n d e r . f c gi? a r t id =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1992--1994
+Underfull \hbox (badness 10000) in paragraph at lines 2130--2132
  \T1/pcr/m/n/10.95 2 8 4 8 1 2 4 % 7 B /& % 7 D t o ol = p m c e n t r e z % 7 
 B /& % 7 D r e n d e r t y pe = a b s t
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1992--1994
+Underfull \hbox (badness 10000) in paragraph at lines 2130--2132
  \T1/pcr/m/n/10.95 r a c t % 7 B / % % 7 D 5 C n h t t p : / / w w w . n c b i 
 . n l m . n i h . g o v / e n t r e z / q u
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1992--1994
+Underfull \hbox (badness 10000) in paragraph at lines 2130--2132
  \T1/pcr/m/n/10.95 e r y . f c gi? c md = R e t r i e v e % 7 B / & % 7 D db = 
 P u b M e d % 7 B / & % 7 D d o pt =
  []
 
-[140]
-Underfull \hbox (badness 1275) in paragraph at lines 2010--2012
+[149]
+Underfull \hbox (badness 1275) in paragraph at lines 2148--2150
  [][]\T1/ptm/m/n/10.95 (+20) 161. Tahara T, Ari-sawa T. DNA methy-la-tion as a 
 molec-u-lar biomarker
  []
 
 
-Underfull \hbox (badness 2894) in paragraph at lines 2010--2012
+Underfull \hbox (badness 2894) in paragraph at lines 2148--2150
  \T1/ptm/m/n/10.95 (+20) in gas-tric can-cer. \T1/ptm/m/it/10.95 (+20) Epige-no
 mics \T1/ptm/m/n/10.95 (+20) [elec-tronic ar-ti-cle]. 2015;7(3):475--
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2010--2012
+Underfull \hbox (badness 10000) in paragraph at lines 2148--2150
  \T1/ptm/m/n/10.95 (+20) 486. ([]$\T1/pcr/m/n/10.95 h t tp : / / w w w . s c o 
 p u s . c o m / i n w a r d / r e c o r d . u rl? e id =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2010--2012
+Underfull \hbox (badness 10000) in paragraph at lines 2148--2150
  \T1/pcr/m/n/10.95 2 -[] s 2 .0 -[] 8 4 9 3 1 3 6 0 0 2 2 % 7 B /& % 7 D p a r 
 t n e r I D = 4 0 % 7 B / & % 7 D m d 5 =
  []
 
-[141]
-Underfull \hbox (badness 10000) in paragraph at lines 2037--2039
+[150]
+Underfull \hbox (badness 10000) in paragraph at lines 2175--2177
  \T1/ptm/m/n/10.95 (+20) ([]$\T1/pcr/m/n/10.95 h t tp : / / w w w . n c b i . n
  l m . n i h . g o v / p u b m e d / 2 9 2 1 2 7 7 8 % 2 0 h t t p :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2037--2039
+Underfull \hbox (badness 10000) in paragraph at lines 2175--2177
  \T1/pcr/m/n/10.95 / / w w w . p u b m e d c e n t r a l . n i h . g o v / a r 
 t i c l e r e n d e r . f c gi? a r t
  []
 
-[142]
-Underfull \hbox (badness 10000) in paragraph at lines 2061--2063
+[151]
+Underfull \hbox (badness 10000) in paragraph at lines 2199--2201
  \T1/ptm/m/n/10.95 (+20) ([]$\T1/pcr/m/n/10.95 h t tp : / / w w w . n c b i . n
  l m . n i h . g o v / p u b m e d / 1 6 1 3 6 6 5 2 % 7 B / % % 7 D
  []
 
-[143]
-Underfull \hbox (badness 4108) in paragraph at lines 2088--2090
+[152]
+Underfull \hbox (badness 4108) in paragraph at lines 2226--2228
  \T1/ptm/m/n/10.95 (+20) y-sis iden-ti-fies new lung can-cer sus-cep-ti-bil-ity
  loci and het-ero-gene-ity
  []
 
 
-Underfull \hbox (badness 3138) in paragraph at lines 2088--2090
+Underfull \hbox (badness 3138) in paragraph at lines 2226--2228
  \T1/ptm/m/n/10.95 (+20) in ge-netic sus-cep-ti-bil-ity across his-to-log-i-cal
  sub-types. \T1/ptm/m/it/10.95 (+20) Na-ture ge-net-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 2088--2090
+Underfull \hbox (badness 1264) in paragraph at lines 2226--2228
  \T1/ptm/m/it/10.95 (+20) ics \T1/ptm/m/n/10.95 (+20) [elec-tronic ar-ti-cle]. 
 2017;49(7):1126--1132. ([]$\T1/pcr/m/n/10.95 h t tp : / / w w w . n a t u
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2088--2090
+Underfull \hbox (badness 10000) in paragraph at lines 2226--2228
  \T1/pcr/m/n/10.95 r e . c o m / d o i f i n d e r / 1 0 . 1 0 3 8 / n g . 3 8 
 9 2 % 7 B / % % 7 D 5 C n h t t p :
  []
 
-[144]
-Underfull \hbox (badness 10000) in paragraph at lines 2115--2117
+[153]
+Underfull \hbox (badness 10000) in paragraph at lines 2253--2255
  \T1/pcr/m/n/10.95 n c b i . n l m . n i h . g o v / p u b m e d / 2 3 7 1 5 3 
 2 3 % 7 B / % % 7 D 5 C n h t t p : / /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2115--2117
+Underfull \hbox (badness 10000) in paragraph at lines 2253--2255
  \T1/pcr/m/n/10.95 w w w . p u b m e d c e n t r a l . n i h . g o v / a r t i 
 c l e r e n d e r . f c gi? a r t id =
  []
 
-[145] [146]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2136.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2136.
+[154] [155]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2274.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2274.
 (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2136.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2136.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2274.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2274.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: D09C2C9A778BEC5C9F41E1FDAA7B02F1;9531.
+(rerunfilecheck)             Checksum: BFA85F87781A830526B69AAE5A80469B;9863.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2136.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2274.
  )
 (\end occurred inside a group at level 2)
 
@@ -1718,13 +1790,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2136.
 ### semi simple group (level 1) entered at line 163 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 26379 strings out of 482803
- 512091 string characters out of 5954188
- 827171 words of memory out of 5000000
- 40225 multiletter control sequences out of 15000+600000
+ 26458 strings out of 482799
+ 514325 string characters out of 5954080
+ 831828 words of memory out of 5000000
+ 40277 multiletter control sequences out of 15000+600000
  620737 words of font info for 288 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,12n,60p,2619b,2519s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,14n,60p,2619b,2519s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/tb13101/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base
 /8r.enc}{/Users/tb13101/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit
 .enc}{/Users/tb13101/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.en
@@ -1737,15 +1809,16 @@ brary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></Users/tb13101/Librar
 y/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/tb13101/Library/Ti
 nyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/tb13101/Library/TinyTeX
 /texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/tb13101/Library/TinyTeX/te
-xmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/tb13101/Library/TinyTeX/tex
-mf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/tb13101/Library/TinyTeX/texmf-
-dist/fonts/type1/urw/times/utmbi8a.pfb></Users/tb13101/Library/TinyTeX/texmf-di
-st/fonts/type1/urw/times/utmr8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/
-fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (160 pages, 1861572 bytes).
+xmf-dist/fonts/type1/public/lm/lmsy8.pfb></Users/tb13101/Library/TinyTeX/texmf-
+dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/tb13101/Library/TinyTeX/texmf-d
+ist/fonts/type1/urw/times/utmb8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist
+/fonts/type1/urw/times/utmbi8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/f
+onts/type1/urw/times/utmr8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/font
+s/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (170 pages, 7473053 bytes).
 PDF statistics:
- 2341 PDF objects out of 2487 (max. 8388607)
- 2075 compressed objects within 21 object streams
- 639 named destinations out of 1000 (max. 500000)
- 13338 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 2494 PDF objects out of 2984 (max. 8388607)
+ 2205 compressed objects within 23 object streams
+ 665 named destinations out of 1000 (max. 500000)
+ 13403 words of extra memory for PDF output out of 14400 (max. 10000000)
 
