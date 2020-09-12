@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.11)  12 SEP 2020 15:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.11)  12 SEP 2020 17:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1770,19 +1770,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 2234--2236
 c l e r e n d e r . f c gi? a r t id =
  []
 
-[157] [158]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2255.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2255.
+[157] [158] [159] [160]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2312.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2312.
 (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2255.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2255.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2312.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2312.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 3A00BEFAAC6A5803432A2E1A6083639E;9856.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2255.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2312.
  )
 (\end occurred inside a group at level 2)
 
@@ -1790,8 +1790,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2255.
 ### semi simple group (level 1) entered at line 163 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 26461 strings out of 482799
- 514359 string characters out of 5954080
+ 26482 strings out of 482799
+ 514649 string characters out of 5954080
  831821 words of memory out of 5000000
  40277 multiletter control sequences out of 15000+600000
  620737 words of font info for 288 fonts, out of 8000000 for 9000
@@ -1815,10 +1815,10 @@ ist/fonts/type1/urw/times/utmb8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist
 /fonts/type1/urw/times/utmbi8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/font
 s/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (173 pages, 7481932 bytes).
+Output written on thesis.pdf (175 pages, 7485990 bytes).
 PDF statistics:
- 2513 PDF objects out of 2984 (max. 8388607)
- 2221 compressed objects within 23 object streams
- 668 named destinations out of 1000 (max. 500000)
+ 2547 PDF objects out of 2984 (max. 8388607)
+ 2253 compressed objects within 23 object streams
+ 689 named destinations out of 1000 (max. 500000)
  13403 words of extra memory for PDF output out of 14400 (max. 10000000)
 
