@@ -6,15 +6,15 @@ Current version of the thesis can be found [here](index/_book)
 
 Plan for September/October:
 
-| Task                            | Completion date | Comments needed | Comments needed from |
-| ------------------------------- |:---------------:|:---------------:|:--------------------:| 
-| Discussion V1                   | 2020-09-18      | N 			  | 					 |
-| Chapters integrated into thesis | 2020-09-18      | N 			  |						 |
-| Properties of EWAS V2           | 2020-09-30      | Y 			  | GH + TG + NT         |
-| EWAS-GWAS comparisons V2        | 2020-09-30      | Y 			  | TG + NT              |
-| Intro V3                        | 2020-09-25      | Y 			  | TG + NT              |
-| Discussion V2                   | 2020-10-02		| N (not yet) 	  |                      |
-| Finished everything (mostly...) | 2020-10-09 		| N 			  |                      |
+| Task                            | Completion date | Comments needed | Comments needed from | Complete |
+| ------------------------------- |:---------------:|:---------------:|:--------------------:|:--------:|
+| Discussion V1                   | 2020-09-18      | N 			  | 					 | Y 		|
+| EWAS-GWAS comparisons V2        | 2020-09-22      | Y 			  | TG + NT              | N 		|
+| Chapters integrated into thesis | 2020-09-25      | N 			  |						 | N 		|
+| Properties of EWAS V2           | 2020-09-30      | Y 			  | GH + TG + NT         | N 		|
+| Intro V3                        | 2020-09-25      | Y 			  | TG + NT              | N 		|
+| Discussion V2                   | 2020-10-02		| Y 	  		  |                      | N 		|
+| Finished everything (mostly...) | 2020-10-09 		| N 			  |                      | N 		|
 
 
 ## Meetings
