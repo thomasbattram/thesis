@@ -1,21 +1,12 @@
-# PhD project meeting notes 2020-09-11
+# PhD project meeting notes 2020-09-16
 
 Attendees: Tom B, Gib
 
 ## Agenda
 
-* Discussion
 * Results from EWAS-GWAS comparison simulations
 * Thesis structure
 * AOB
-
-## Discussion
-
-[Plan for discussion](08-discussion.Rmd)
-
-__NOTES:__
-
-Some meeting notes
 
 ## Results from EWAS-GWAS comparison simulations
 
@@ -53,5 +44,6 @@ Some meeting notes
 
 ## AOB
 
-* Heard from potential examiners?
-* Guess I can use my PhD money to go to virtual conferences? 
+* OK to present at epi-epi on September 28th?
+* Getting comments back 
+* Guess I can use my PhD money to go to virtual conferences? -- was thinking of putting in an abstract for properties of EWAS stuff 
