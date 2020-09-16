@@ -20,7 +20,7 @@ _Results_
 
 [plot1](architecture_sims_correlation_of_pathway_enrichment_scores.pdf)
 
-[plot2](architecture_sims_gene_overlap.pdf)
+[plot2](architecture_sims_log10_gene_overlap.pdf)
 
 For each trait it seems the only real scenarios we can rule out are: number of genes is close to what has been discovered and overlap is high... So we either haven't discovered all genes with EWAS + GWAS or the overlap between causal and consequential genes is likely not high. 
 
