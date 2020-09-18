@@ -1,4 +1,4 @@
-# PhD project meeting notes DATE
+# PhD project meeting notes 2020-09-17
 
 Attendees: Tom B, Gib, Nic
 
