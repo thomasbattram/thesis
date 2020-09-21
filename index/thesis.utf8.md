@@ -81,15 +81,43 @@ declaration: |
   
   Dated     
 abbreviations: |
-  
-  \textbf{EWAS} - epigenome-wide assoctation study <br>
-  \textbf{GWAS} - genome-wide assoctation study <br>
-  \textbf{h<sup>2</sup>} - narrow-sense heritability <br>
-  \textbf{h<sup>2</sup><sub>SNP</sub>} - SNP-heritability <br>
-  \textbf{H<sup>2</sup>} - broad-sense heritability <br>
-  \textbf{MR} - Mendelian randomization <br>
-  \textbf{mQTL} - methylation quantitative trait loci <br>
-  \textbf{SNP} - single nucleotide polymorphism <br>
+  \textbf{ALSPAC} - Avon Longitudinal Study of Parents and Children \newline
+  \textbf{ARIES} - Accessible Resource for Integrated Epigenomics Studies \newline
+  \textbf{AUC} - area under the curve \newline
+  \textbf{BMI} - body mass index \newline
+  \textbf{CCHS} - Copenhagen City Heart Study \newline
+  \textbf{DMR} - differentially methylated region \newline
+  \textbf{EFO} - experimental factor ontology \newline
+  \textbf{EPIC} - European Prospective Investigation into Cancer and Nutrition \newline
+  \textbf{EWAS} - epigenome-wide assoctation study \newline
+  \textbf{FDR} - false discovery rate \newline
+  \textbf{GEO} - Gene Expression Omnibus \newline
+  \textbf{GTEx} - Gene-Tissue Expression (consortium) \newline
+  \textbf{GWAS} - genome-wide assoctation study \newline
+  \textbf{h\textsuperscript{2}} - narrow-sense heritability \newline
+  \textbf{H\textsuperscript{2}} - broad-sense heritability \newline
+  \textbf{h\textsuperscript{2}\textsubscript{EWAS}} - the proportion of trait variation captured by DNA methylation commonly measured in epigenome-wide association studies \newline
+  \textbf{h\textsuperscript{2}\textsubscript{SNP}} - SNP-heritability \newline
+  \textbf{HM450} - Illumina Infinium HumanMethylation450 BeadChip \newline
+  \textbf{HMEPIC} - Illumina Infinium HumanMethylationEPIC BeadChip \newline
+  \textbf{HR} - hazard ratio
+  \textbf{LD} - linkage disequilibrium \newline
+  \textbf{MCCS} - Melbourne Collaborative Cohort Study \newline
+  \textbf{MR} - Mendelian randomization \newline
+  \textbf{MRM} - methylation relationship matrix \newline
+  \textbf{mQTL} - methylation quantitative trait loci \newline
+  \textbf{NOWAC} - Norwegian Women and Cancer \newline
+  \textbf{NSHDS} - Northern Sweden Health and Disease Study \newline
+  \textbf{OR} - odds ratio \newline
+  \textbf{PACE} - Pregnancy and Childhood Epigenetics (consortium) \newline
+  \textbf{QC} - quality control \newline
+  \textbf{REML} - restricted maximum likelihood \newline
+  \textbf{ROC} - receiver operating characteristic \newline
+  \textbf{SNP} - single nucleotide polymorphism \newline
+  \textbf{SV} - surrogate variable \newline
+  \textbf{TAG} - Tobacco and Genetics (consortium) \newline
+  \textbf{TCGA} - The Cancer Genome Atlas \newline
+  \textbf{TRICL-ILCCO} - Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium \newline
 ---
 
 
@@ -218,7 +246,7 @@ When considering designing a study to assess whether one trait associates with a
 
 EWAS are the most common study design for assessing the association between DNA methylation and a complex trait. They typically involve measuring hundreds of thousands of DNA methylation sites across the genome in a case-control or cohort setting and using linear models to assess the association between DNA methylation and the trait of interest.
 
-Ideally, in every sample used in an EWAS, DNA methylation would be measured across all sites in the genome. Unfortunately, this is not currently possible and sequencing technologies that offer something similar are often very expensive. There are three alternatives available to DNA methylation studies. Firstly, one could sequence a small portion of the genome if this section is of particular interest, however this candidate gene approach is unlikely to be profitable unless the genes targeted already have good evidence for epigenetic variation with the trait of interest. As complex traits are polygenic [@Lynch1998] and we have incomplete knowledge of their underlying biology, a hypothesis-free approach, that samples from as much of the genome as possible, is preferable. Secondly, measuring DNA methylation on repeat sequences of the genome, such as long interspersed nuclear elements (LINEs) and short interspersed nuclear elements (SINEs), can provide estimates for global DNA methylation changes [@Yang2004]. These measurements indicate if a trait is related to large perturbations of DNA methylation across the genome, but give little mechanistic insight into what effects these changes may be having, as methylation at functional genes is not measured. Thirdly, one could employ an array approach that covers DNA methylation genome-wide at selected sites. This last approach is the most common for population-based studies as it enables measurement of DNA methylation at hundreds of thousands of sites at a relatively cheap price per sample [@Dedeurwaerder2011]. Without capabilities to measure methylation at every site in the genome, one must decide which sites are worth measuring. Current commonly used array technologies include the Illumina Infinium HumanMethylation450 (HM450) Beadchip and the Illumina Infinium HumanMethylationEPIC (HMEPIC) Beadchip, which measure DNA methylation at over 450,000 sites and over 800,000 sites respectively. They cover roughly 1.5-4% of CpG sites in the genome [@Lovkvist2016]. In order to capture what was thought to be the most relevant DNA methylation sites in relation to complex traits, the probes were chosen to map to 99% of RefSeq genes [@Illumina2012]. One reason for which this might have been done, is to help improve interpretation of EWAS findings. Identifying methylation changes at a specific gene suggests investigating the relationship of that gene and the complex trait further may yield interesting results, whereas interpreting complex trait associations with DNA methylation at a site in a relatively uncharacterized region of the genome would be more difficult for obvious reasons.
+Ideally, in every sample used in an EWAS, DNA methylation would be measured across all sites in the genome. Unfortunately, this is not currently possible and sequencing technologies that offer something similar are often very expensive. There are three alternatives available to DNA methylation studies. Firstly, one could sequence a small portion of the genome if this section is of particular interest, however this candidate gene approach is unlikely to be profitable unless the genes targeted already have good evidence for epigenetic variation with the trait of interest. As complex traits are polygenic [@Lynch1998] and we have incomplete knowledge of their underlying biology, a hypothesis-free approach, that samples from as much of the genome as possible, is preferable. Secondly, measuring DNA methylation on repeat sequences of the genome, such as long interspersed nuclear elements (LINEs) and short interspersed nuclear elements (SINEs), can provide estimates for global DNA methylation changes [@Yang2004]. These measurements indicate if a trait is related to large perturbations of DNA methylation across the genome, but give little mechanistic insight into what effects these changes may be having, as methylation at functional genes is not measured. Thirdly, one could employ an array approach that covers DNA methylation genome-wide at selected sites. This last approach is the most common for population-based studies as it enables measurement of DNA methylation at hundreds of thousands of sites at a relatively cheap price per sample [@Dedeurwaerder2011]. Without capabilities to measure methylation at every site in the genome, one must decide which sites are worth measuring. Current commonly used array technologies include the Illumina Infinium HumanMethylation450 (HM450) BeadChip and the Illumina Infinium HumanMethylationEPIC (HMEPIC) BeadChip, which measure DNA methylation at over 450,000 sites and over 800,000 sites respectively. They cover roughly 1.5-4% of CpG sites in the genome [@Lovkvist2016]. In order to capture what was thought to be the most relevant DNA methylation sites in relation to complex traits, the probes were chosen to map to 99% of RefSeq genes [@Illumina2012]. One reason for which this might have been done, is to help improve interpretation of EWAS findings. Identifying methylation changes at a specific gene suggests investigating the relationship of that gene and the complex trait further may yield interesting results, whereas interpreting complex trait associations with DNA methylation at a site in a relatively uncharacterized region of the genome would be more difficult for obvious reasons.
 
 To measure DNA methylation, these array technologies, as well as sequencing techniques, often begin with bisulphite conversion of the DNA [@Rakyan2011]. This converts any un-methylated cytosine base to uracil and leaves methylated cytosines unchanged [@Li2011]. The DNA samples can then be distributed amongst the array and the probes on the array will bind cytosines present at the regions their sequence corresponds to to [@Li2011]. If a probe binds its target cytosine, then it will fluoresce, and this can fluorescence can be quantified to give ‘beta values’. Beta values range between zero and one, with zero corresponding to no methylation across all DNA samples at the target cytosine and one corresponding to methylation across all DNA samples at the target cytosine. DNA methylation is by nature a binary measurement, but mixtures of DNA samples (i.e. multiple cells) mean that a continuous variable is generated unless single cell procedures are adopted.
 
@@ -391,7 +419,7 @@ Our criteria for inclusion of a study into The EWAS Catalog are as follows:
 
 CpG-phenotype associations are extracted from studies at P < 1x10^-4^. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-09-14, The EWAS Catalog contained 450213 associations from 605 studies. 
+Based on these criteria, from 2020-09-21, The EWAS Catalog contained 450213 associations from 605 studies. 
 
 ### Overview of GEO data extraction
 To recruit additional datasets suitable for new EWAS analysis, the geograbi R package (https://github.com/yousefi138/geograbi) was used to both query GEO for experiments matching The EWAS Catalog inclusion criteria (described above) and extract relevant DNA methylation and phenotype information. The query was performed by Dr Paul Yousefi on 20 March 2019 and identified 148 such experiments with 32,845 samples where DNA methylation and phenotype information could be successfully extracted. From these, the aim was to repeat the analyses performed in the publications linked by PubMed IDs to each GEO record. Thus, I looked up the corresponding full texts for each dataset and identified the main variables of interest. Of the 148 putative GEO studies, only 34 (23%) contained sufficient information to replicate the original analysis. 
@@ -414,7 +442,7 @@ Mothers were genotyped using the Illumina human660W-quad genome-wide single nucl
 
 Imputation of mother’s genotype data in ALSPAC was done with ALSPAC children’s data. So, genotypes in common between the sample of mothers and sample of children were combined. SNPs with genotype missingness above 1% due to poor quality were removed along with subjects due to potential ID mismatches. We estimated haplotypes using ShapeIT (v2.r644) which utilises relatedness during phasing. We obtained a phased version of the 1000 genomes reference panel (Phase 1, Version 3) from the Impute2 reference data repository (phased using ShapeIt v2.r644, haplotype release date Dec 2013). Imputation of the target data was performed using Impute V2.2.2 against the reference panel (all polymorphic SNPs excluding singletons), using all 2186 reference haplotypes (including non-Europeans).
 
-After quality control and imputation, independent SNPs (r2 < 0.01) were used to calculate the top 10 ancestry principal components.
+After quality control and imputation, independent SNPs (r^2^ < 0.01) were used to calculate the top 10 ancestry principal components.
 
 For all traits, linear regression models were fitted with DNA methylation at each site as the outcome and the phenotype as the exposure. DNA methylation was coded as beta values between 0 and 1. For a particular site, a beta value of 0 represents no methylation being detected in all cells measured and a value of 1 represents all cells being methylated at that site. Covariates included age, the top 10 ancestry principal components, and 20 surrogate variables. 
 
@@ -566,19 +594,19 @@ Before assessing what might be underlying various EWAS results, we present a bri
 \toprule
 study-trait & value\\
 \midrule
-\rowcolor{gray!6}  Number of EWAS & 614\\
+\cellcolor{gray!6}{Number of EWAS} & \cellcolor{gray!6}{614}\\
 Number of traits & 556\\
-\rowcolor{gray!6}  Number of samples & 389527\\
+\cellcolor{gray!6}{Number of samples} & \cellcolor{gray!6}{389527}\\
 Median sample size (range) & 536 (93 - 13474)\\
-\rowcolor{gray!6}  Number of associations & 155976\\
+\cellcolor{gray!6}{Number of associations} & \cellcolor{gray!6}{155976}\\
 \addlinespace
 Number of CpGs identified & 129670\\
-\rowcolor{gray!6}  Number of genes identified & 19305\\
+\cellcolor{gray!6}{Number of genes identified} & \cellcolor{gray!6}{19305}\\
 Sex (\%) & Both (38.6), Females (52.0), Males (2.1)\\
-\rowcolor{gray!6}  Ethnicities & EUR (75.3), Unclear (12.5), AFR (4.6), Other (3.6), ADM (1.6), EAS (1.4), SAS (1.0)\\
+\cellcolor{gray!6}{Ethnicities} & \cellcolor{gray!6}{EUR (75.3), Unclear (12.5), AFR (4.6), Other (3.6), ADM (1.6), EAS (1.4), SAS (1.0)}\\
 Age (\%) & Adults (72.5), Geriatrics (11.2), Children (4.9), Infants (4.4)\\
 \addlinespace
-\rowcolor{gray!6}  Number of tissue types & 42\\
+\cellcolor{gray!6}{Number of tissue types} & \cellcolor{gray!6}{42}\\
 Most common tissues (\%) & whole blood (84.14), cord blood (4.34), cd4+ t-cells (2.60), placenta (1.24), saliva (0.99)\\
 \bottomrule
 \end{tabular}}
@@ -659,16 +687,16 @@ From the studies that put their data on GEO, we re-analysed the association betw
 \toprule
 Trait & N-DMPs & N-replicated & Percent-replicated\\
 \midrule
-\rowcolor{gray!6}  Age at menarche & 1 & 0 & 0.00\\
+\cellcolor{gray!6}{Age at menarche} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.00}\\
 Arsenic exposure & 11 & 0 & 0.00\\
-\rowcolor{gray!6}  Arsenic exposure & 1 & 0 & 0.00\\
+\cellcolor{gray!6}{Arsenic exposure} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.00}\\
 Fetal alcohol spectrum disorder & 19 & 1 & 5.26\\
-\rowcolor{gray!6}  Inflammatory bowel disease & 14 & 13 & 92.86\\
+\cellcolor{gray!6}{Inflammatory bowel disease} & \cellcolor{gray!6}{14} & \cellcolor{gray!6}{13} & \cellcolor{gray!6}{92.86}\\
 \addlinespace
 Nevus count & 1 & 0 & 0.00\\
-\rowcolor{gray!6}  Psoriasis & 16 & 0 & 0.00\\
+\cellcolor{gray!6}{Psoriasis} & \cellcolor{gray!6}{16} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.00}\\
 Rheumatoid arthritis & 47,875 & 116 & 0.24\\
-\rowcolor{gray!6}  Smoking & 30 & 12 & 40.00\\
+\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{30} & \cellcolor{gray!6}{12} & \cellcolor{gray!6}{40.00}\\
 Smoking & 32 & 31 & 96.88\\
 \bottomrule
 \end{tabular}}
@@ -687,79 +715,79 @@ Using the Catalog data we further performed replication analyses. There were 62 
 \toprule
 trait & n-cpgs & rep-cpgs & n-rep-studies & prop-rep\\
 \midrule
-\rowcolor{gray!6}  Smoking & 23 & 6 & 19 & 0.26087\\
+\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{23} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.26087}\\
 Smoking & 15 & 1 & 19 & 0.06667\\
-\rowcolor{gray!6}  Smoking & 17 & 14 & 19 & 0.82353\\
+\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{17} & \cellcolor{gray!6}{14} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.82353}\\
 Rheumatoid arthritis & 51,476 & 8 & 1 & 0.00016\\
-\rowcolor{gray!6}  Smoking & 972 & 766 & 19 & 0.78807\\
+\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{972} & \cellcolor{gray!6}{766} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.78807}\\
 \addlinespace
 Smoking & 25 & 5 & 19 & 0.20000\\
-\rowcolor{gray!6}  Smoking & 29 & 25 & 19 & 0.86207\\
+\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{29} & \cellcolor{gray!6}{25} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.86207}\\
 Smoking & 30 & 9 & 19 & 0.30000\\
-\rowcolor{gray!6}  Birth weight & 15 & 0 & 4 & 0.00000\\
+\cellcolor{gray!6}{Birth weight} & \cellcolor{gray!6}{15} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{0.00000}\\
 Body mass index & 3 & 3 & 8 & 1.00000\\
 \addlinespace
-\rowcolor{gray!6}  Depression & 4 & 0 & 2 & 0.00000\\
+\cellcolor{gray!6}{Depression} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.00000}\\
 Smoking & 1 & 1 & 19 & 1.00000\\
-\rowcolor{gray!6}  Maternal smoking during pregnancy & 185 & 7 & 1 & 0.03784\\
+\cellcolor{gray!6}{Maternal smoking during pregnancy} & \cellcolor{gray!6}{185} & \cellcolor{gray!6}{7} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.03784}\\
 Schizophrenia & 1 & 0 & 2 & 0.00000\\
-\rowcolor{gray!6}  Alzheimers disease Braak stage & 2 & 2 & 1 & 1.00000\\
+\cellcolor{gray!6}{Alzheimers disease Braak stage} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1.00000}\\
 \addlinespace
 Alzheimers disease Braak stage & 100 & 2 & 1 & 0.02000\\
-\rowcolor{gray!6}  Smoking & 37 & 35 & 19 & 0.94595\\
+\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{37} & \cellcolor{gray!6}{35} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.94595}\\
 Maternal smoking in pregnancy & 25 & 10 & 2 & 0.40000\\
-\rowcolor{gray!6}  Smoking & 53 & 48 & 19 & 0.90566\\
-Birth weight & 1 & 0 & 4 & \vphantom{1} 0.00000\\
+\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{53} & \cellcolor{gray!6}{48} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.90566}\\
+Birth weight & 1 & 0 & 4 & \vphantom{1}0.00000\\
 \addlinespace
-\rowcolor{gray!6}  Maternal smoking in pregnancy & 22 & 19 & 2 & 0.86364\\
+\cellcolor{gray!6}{Maternal smoking in pregnancy} & \cellcolor{gray!6}{22} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.86364}\\
 Smoking & 461 & 415 & 19 & 0.90022\\
-\rowcolor{gray!6}  High-density lipoprotein cholesterol & 1 & 1 & 1 & 1.00000\\
+\cellcolor{gray!6}{High-density lipoprotein cholesterol} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1.00000}\\
 Smoking & 3 & 3 & 19 & 1.00000\\
-\rowcolor{gray!6}  Body mass index & 76 & 30 & 8 & 0.39474\\
+\cellcolor{gray!6}{Body mass index} & \cellcolor{gray!6}{76} & \cellcolor{gray!6}{30} & \cellcolor{gray!6}{8} & \cellcolor{gray!6}{0.39474}\\
 \addlinespace
 Type II diabetes & 7 & 1 & 2 & 0.14286\\
-\rowcolor{gray!6}  Body mass index & 1 & 1 & 8 & 1.00000\\
+\cellcolor{gray!6}{Body mass index} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{8} & \cellcolor{gray!6}{1.00000}\\
 Body mass index & 9 & 5 & 8 & 0.55556\\
-\rowcolor{gray!6}  Smoking & 19 & 14 & 19 & 0.73684\\
+\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{14} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.73684}\\
 Type II diabetes & 39 & 1 & 2 & 0.02564\\
 \addlinespace
-\rowcolor{gray!6}  Smoking & 6 & 6 & 19 & 1.00000\\
+\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{1.00000}\\
 Birth weight & 1 & 0 & 4 & 0.00000\\
-\rowcolor{gray!6}  Type II diabetes & 1 & 1 & 2 & 1.00000\\
+\cellcolor{gray!6}{Type II diabetes} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{1.00000}\\
 Smoking & 316 & 201 & 19 & 0.63608\\
-\rowcolor{gray!6}  Arsenic exposure & 200 & 1 & 1 & 0.00500\\
+\cellcolor{gray!6}{Arsenic exposure} & \cellcolor{gray!6}{200} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.00500}\\
 \addlinespace
 Smoking & 66 & 66 & 19 & 1.00000\\
-\rowcolor{gray!6}  Smoking & 748 & 544 & 19 & 0.72727\\
+\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{748} & \cellcolor{gray!6}{544} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.72727}\\
 Maternal smoking in pregnancy & 2,187 & 24 & 2 & 0.01097\\
-\rowcolor{gray!6}  Schizophrenia & 94 & 1 & 2 & 0.01064\\
+\cellcolor{gray!6}{Schizophrenia} & \cellcolor{gray!6}{94} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.01064}\\
 Smoking & 100 & 3 & 19 & 0.03000\\
 \addlinespace
-\rowcolor{gray!6}  Maternal smoking during pregnancy & 25 & 7 & 1 & 0.28000\\
+\cellcolor{gray!6}{Maternal smoking during pregnancy} & \cellcolor{gray!6}{25} & \cellcolor{gray!6}{7} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.28000}\\
 Body mass index & 3 & 1 & 8 & 0.33333\\
-\rowcolor{gray!6}  Schizophrenia & 1,223 & 1 & 2 & 0.00082\\
+\cellcolor{gray!6}{Schizophrenia} & \cellcolor{gray!6}{1,223} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.00082}\\
 Smoking & 9,159 & 1,458 & 19 & 0.15919\\
-\rowcolor{gray!6}  C-reactive protein & 31 & 14 & 1 & 0.45161\\
+\cellcolor{gray!6}{C-reactive protein} & \cellcolor{gray!6}{31} & \cellcolor{gray!6}{14} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.45161}\\
 \addlinespace
 Body mass index & 20 & 8 & 8 & 0.40000\\
-\rowcolor{gray!6}  C-reactive protein & 218 & 14 & 1 & 0.06422\\
+\cellcolor{gray!6}{C-reactive protein} & \cellcolor{gray!6}{218} & \cellcolor{gray!6}{14} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.06422}\\
 Body mass index & 278 & 39 & 8 & 0.14029\\
-\rowcolor{gray!6}  Birth weight & 6 & 0 & 4 & 0.00000\\
+\cellcolor{gray!6}{Birth weight} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{0.00000}\\
 Body mass index & 2 & 2 & 8 & 1.00000\\
 \addlinespace
-\rowcolor{gray!6}  Serum high-density lipoprotein cholesterol & 19 & 4 & 1 & 0.21053\\
+\cellcolor{gray!6}{Serum high-density lipoprotein cholesterol} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.21053}\\
 High-density lipoprotein cholesterol & 3 & 1 & 1 & 0.33333\\
-\rowcolor{gray!6}  Serum high-density lipoprotein cholesterol & 110 & 4 & 1 & 0.03636\\
+\cellcolor{gray!6}{Serum high-density lipoprotein cholesterol} & \cellcolor{gray!6}{110} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.03636}\\
 Birth weight & 8 & 0 & 4 & 0.00000\\
-\rowcolor{gray!6}  Rheumatoid arthritis & 64 & 8 & 1 & 0.12500\\
+\cellcolor{gray!6}{Rheumatoid arthritis} & \cellcolor{gray!6}{64} & \cellcolor{gray!6}{8} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.12500}\\
 \addlinespace
 Depression & 5 & 0 & 2 & 0.00000\\
-\rowcolor{gray!6}  Smoking & 525 & 424 & 19 & 0.80762\\
+\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{525} & \cellcolor{gray!6}{424} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.80762}\\
 Arsenic exposure & 371 & 1 & 1 & 0.00270\\
-\rowcolor{gray!6}  Depression & 39 & 0 & 2 & 0.00000\\
+\cellcolor{gray!6}{Depression} & \cellcolor{gray!6}{39} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.00000}\\
 Alzheimer's disease & 656 & 3 & 1 & 0.00457\\
 \addlinespace
-\rowcolor{gray!6}  Alzheimer's disease & 350 & 3 & 1 & 0.00857\\
+\cellcolor{gray!6}{Alzheimer's disease} & \cellcolor{gray!6}{350} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.00857}\\
 Body mass index & 71 & 8 & 8 & 0.11268\\
 \bottomrule
 \end{tabular}}
@@ -810,11 +838,11 @@ The combined variance in effect size estimates explained by DNA methylation vari
 \toprule
 characteristic & beta & r2 & p & auc\\
 \midrule
-\rowcolor{gray!6}  avg-meth (beta>0) & -6.7e-01 & 0.08377 & 1.0e-99 & NA\\
+\cellcolor{gray!6}{avg-meth (beta>0)} & \cellcolor{gray!6}{-6.7e-01} & \cellcolor{gray!6}{0.08377} & \cellcolor{gray!6}{1.0e-99} & \cellcolor{gray!6}{NA}\\
 avg-meth (beta<0) & 4.3e-01 & 0.09138 & 5.1e-86 & NA\\
-\rowcolor{gray!6}  variance & -1.2e+03 & 0.01806 & 1.0e-99 & 0.62\\
+\cellcolor{gray!6}{variance} & \cellcolor{gray!6}{-1.2e+03} & \cellcolor{gray!6}{0.01806} & \cellcolor{gray!6}{1.0e-99} & \cellcolor{gray!6}{0.62}\\
 h2 & 8.1e-02 & 0.00037 & 5.9e-05 & 0.78\\
-\rowcolor{gray!6}  variance + h2 & NA & 0.08395 & NA & 0.78\\
+\cellcolor{gray!6}{variance + h2} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{0.08395} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{0.78}\\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -1089,11 +1117,11 @@ As the distributions of hit count data was heavily right skewed with an inflatio
 \toprule
 Model & Log(likelihood) & DF\\
 \midrule
-\rowcolor{gray!6}  Poisson & -1561 & 2\\
+\cellcolor{gray!6}{Poisson} & \cellcolor{gray!6}{-1561} & \cellcolor{gray!6}{2}\\
 Negative binomial & -972 & 3\\
-\rowcolor{gray!6}  Hurdle-negative binomial & -954 & 5\\
+\cellcolor{gray!6}{Hurdle-negative binomial} & \cellcolor{gray!6}{-954} & \cellcolor{gray!6}{5}\\
 Hurdle & -1500 & 4\\
-\rowcolor{gray!6}  Zero-inflated negative binomial & -972 & 5\\
+\cellcolor{gray!6}{Zero-inflated negative binomial} & \cellcolor{gray!6}{-972} & \cellcolor{gray!6}{5}\\
 \addlinespace
 Zero-inflated Poisson & -1501 & 4\\
 \bottomrule
@@ -1275,7 +1303,7 @@ rs11744553 & cg05575921 & 0.22 & 0.040 & 7.2e-08 & 834 & 30 & 0.03\\
 \addlinespace
 rs11746538 & cg05575921 & -0.37 & 0.058 & 3.0e-10 & 834 & 41 & 0.05\\
 \bottomrule
-\multicolumn{8}{l}{SE = standard error, P = P value, N = sample size, F = F statistic}\\
+\multicolumn{8}{l}{\rule{0pt}{1em}SE = standard error, P = P value, N = sample size, F = F statistic}\\
 \end{longtable}
 
 MR analyses were also performed to investigate the impact of methylation on lung cancer subtypes in TRICL-ILCCO: adenocarcinoma (11,245 cases, 54,619 controls), small cell carcinoma (2791 cases, 20,580 controls), and squamous cell carcinoma (7704 cases, 54,763 controls). We also assessed the association in never smokers (2303 cases, 6995 controls) and ever smokers (23,848 cases, 16,605 controls) [@McKay2017] 25. Differences between the smoking subgroups were assessed using a Z-test for difference.
@@ -1306,7 +1334,7 @@ mQTLs located within 1Mb of cg05575921 _AHRR_ were identified in ARIES (FDR<0.05
 DNA methylation data from lung cancer tissue and matched normal adjacent tissue (N=40 squamous cell carcinoma and N=29 adenocarcinoma), profiled as part of The Cancer Genome Atlas (TCGA), were used to assess tissue-specific DNA methylation changes across sites identified in the meta-analysis of EWAS, as outlined previously [@Teschendorff2015] 31.
 
 #### mQTL association with gene expression
-For the genes annotated to CpG sites identified in the lung cancer EWAS, we examined gene expression in whole blood and lung tissue using data from the gene-tissue expression (GTEx) consortium [@GTExConsortium2013] 32.
+For the genes annotated to CpG sites identified in the lung cancer EWAS, we examined gene expression in whole blood and lung tissue using data from the Gene-Tissue Expression (GTEx) consortium [@GTExConsortium2013] 32.
 
 Analyses were conducted in Stata (version 14) and R (version 3.2.2). For the two-sample MR analysis we used the MR-Base R package TwoSampleMR [@Hemani2016] 33. An adjusted P value that limited the FDR was calculated using the Benjamini-Hochberg method [@Benjamini1995] 34. All statistical tests were two-sided.
 
@@ -1323,7 +1351,7 @@ The basic meta-analysis adjusted for study-specific covariates identified 16 CpG
 (Table 1 here)
 
 ### Mendelian randomization {#results-mendelian-randomization-07}
-We identified 15 independent mQTLs (r2<0.01) associated with methylation at 14 of 16 CpGs. Ten mQTLs replicated at FDR<0.05 in NSHDS (Supplementary Table 3).  MR power analyses indicated >99% power to detect ORs for lung cancer of the same magnitude as those in the meta-analysis of EWAS.
+We identified 15 independent mQTLs (r^2^<0.01) associated with methylation at 14 of 16 CpGs. Ten mQTLs replicated at FDR<0.05 in NSHDS (Supplementary Table 3).  MR power analyses indicated >99% power to detect ORs for lung cancer of the same magnitude as those in the meta-analysis of EWAS.
 
 There was little evidence for an effect of methylation at these 14 sites on lung cancer (FDR>0.05, Supplementary Table 4). For nine of 14 CpG sites the point estimates from the MR analysis were in the same direction as in the EWAS, but of a much smaller magnitude (Z-test for difference, P<0.001) (Figure 3).
 
@@ -1331,22 +1359,22 @@ For 9 of out the 16 mQTL-CpG associations, there was strong replication across t
 
 (Figure 3 here)
 
-There was little evidence of different effect estimates between ever and never smokers at individual CpG sites (Supplementary Figure 2, Z-test for difference, P>0.5). There was some evidence for a possible effect of methylation at cg21566642-ALPPL2 and cg23771366-PRSS23 on squamous cell lung cancer (OR=0.85 [95% confidence interval (CI)=0.75,0.97] and 0.91 [95% CI=0.84,1.00] per SD [14.4% and 5.8%] increase, respectively) as well as methylation at cg23387569-AGAP2, cg16823042-AGAP2, and cg01901332-ARRB1 on lung adenocarcinoma (OR=0.86 [95% CI=0.77,0.96], 0.84 [95% CI=0.74,0.95], and 0.89 [95% CI=0.80,1.00] per SD [9.47%, 8.35%, and 8.91%] increase, respectively). However, none of the results withstood multiple testing correction (FDR<0.05) (Supplementary Figure 3). For those CpGs where multiple mQTLs were used as instruments (cg05575921-_AHRR_ and cg01901332-_ARRB1_), there was limited evidence for heterogeneity in MR effect estimates (Q-test, P>0.05, Supplementary Table 6).
+There was little evidence of different effect estimates between ever and never smokers at individual CpG sites (Supplementary Figure 2, Z-test for difference, P>0.5). There was some evidence for a possible effect of methylation at cg21566642-ALPPL2 and cg23771366-PRSS23 on squamous cell lung cancer (OR=0.85 [95% confidence interval (CI)=0.75,0.97] and 0.91 [95% CI=0.84,1.00] per SD [14.4% and 5.8%] increase, respectively) as well as methylation at cg23387569-_AGAP2_, cg16823042-_AGAP2_, and cg01901332-_ARRB1_ on lung adenocarcinoma (OR=0.86 [95% CI=0.77,0.96], 0.84 [95% CI=0.74,0.95], and 0.89 [95% CI=0.80,1.00] per SD [9.47%, 8.35%, and 8.91%] increase, respectively). However, none of the results withstood multiple testing correction (FDR<0.05) (Supplementary Figure 3). For those CpGs where multiple mQTLs were used as instruments (cg05575921-_AHRR_ and cg01901332-_ARRB1_), there was limited evidence for heterogeneity in MR effect estimates (Q-test, P>0.05, Supplementary Table 6).
 
 Single mQTLs for cg05575921-_AHRR_, cg27241845-_ALPPL2_, and cg26963277-_KCNQ1_ showed some evidence of association with smoking cessation (former vs. current smokers), although these associations were not below the FDR<0.05 threshold (Supplementary Figure 4).
 
 #### Potential causal effect of _AHRR_ methylation on lung cancer risk: one sample MR
-In the CCHS, a per (average methylation-increasing) allele change in a four-mQTL allele score was associated with a 0.73% [95% CI=0.56,0.90] increase in methylation (P<1 x 10-10) and explained 0.8% of the variance in cg05575921-_AHRR_ methylation (F-statistic=74.2). Confounding factors were not strongly associated with the genotypes in this cohort (P>=0.11) (Supplementary Table 7).  Results provided some evidence for an effect of cg05575921 methylation on total lung cancer risk (HR=0.30 [95% CI=0.10,1.00] per SD (9.2%) increase) (Supplementary Table 8). The effect estimate did not change substantively when stratified by smoking status (Supplementary Table 8).
+In the CCHS, a per (average methylation-increasing) allele change in a four-mQTL allele score was associated with a 0.73% [95% CI=0.56,0.90] increase in methylation (P<1x10^-10^) and explained 0.8% of the variance in cg05575921-_AHRR_ methylation (F-statistic=74.2). Confounding factors were not strongly associated with the genotypes in this cohort (P>=0.11) (Supplementary Table 7).  Results provided some evidence for an effect of cg05575921 methylation on total lung cancer risk (HR=0.30 [95% CI=0.10,1.00] per SD (9.2%) increase) (Supplementary Table 8). The effect estimate did not change substantively when stratified by smoking status (Supplementary Table 8).
 
-Given contrasting findings with the main MR analysis, where cg05575921-_AHRR_ methylation was not causally implicated in lung cancer, and the lower power in the one-sample analysis to detect an effect of equivalent size to the observational results (power = 19% at alpha = 0.05), we performed further two-sample MR based on the four mQTLs using data from both CCHS (sample one) and the TRICL-ILCCO consortium (sample two). Results showed no strong evidence for a causal effect of DNA methylation on total lung cancer risk (OR=1.00 [95% CI=0.83,1.10] per SD increase) (Supplementary Figure 5). There was also limited evidence for an effect of cg05575921-_AHRR_ methylation when stratified by cancer subtype and smoking status (Supplementary Figure 5) and no strong evidence for heterogeneity of the mQTL effects (Supplementary Table 9). Conclusions were consistent when MR-Egger (27) was applied (Supplementary Figure 5) and when accounting for correlation structure between the mQTLs  (Supplementary Table 9).
+Given contrasting findings with the main MR analysis, where cg05575921-_AHRR_ methylation was not causally implicated in lung cancer, and the lower power in the one-sample analysis to detect an effect of equivalent size to the observational results (power = 19% at alpha = 0.05), we performed further two-sample MR based on the four mQTLs using data from both CCHS (sample one) and the TRICL-ILCCO consortium (sample two). Results showed no strong evidence for a causal effect of DNA methylation on total lung cancer risk (OR=1.00 [95% CI=0.83,1.10] per SD increase) (Supplementary Figure 5). There was also limited evidence for an effect of cg05575921-_AHRR_ methylation when stratified by cancer subtype and smoking status (Supplementary Figure 5) and no strong evidence for heterogeneity of the mQTL effects (Supplementary Table 9). Conclusions were consistent when MR-Egger (REF) was applied (Supplementary Figure 5) and when accounting for correlation structure between the mQTLs  (Supplementary Table 9).
 
 ### Tumour and adjacent normal lung tissue methylation patterns
-For cg05575921-_AHRR_, there was no strong evidence for differential methylation between adenocarcinoma tissue and adjacent healthy tissue (P=0.963), and weak evidence for hypermethylation in squamous cell carcinoma tissue (P=0.035) (Figure 4, Supplementary Table 10). For the other CpG sites there was evidence for a difference in DNA methylation between tumour and healthy adjacent tissue at several sites in both adenocarcinoma and squamous cell carcinoma, with consistent differences for CpG sites in ALPPL2 (cg2156642, cg05951221 and cg01940273), as well as cg23771366-PRSS23, cg26963277-KCNQ1, cg09935388-GFI1, cg0101332-ARRB1, cg08709672-AVPR1B and cg25305703-CASC21. However, hypermethylation in tumour tissue was found for the majority of these sites, which is opposite to what was observed in the EWAS analysis.
+For cg05575921-_AHRR_, there was no strong evidence for differential methylation between adenocarcinoma tissue and adjacent healthy tissue (P=0.963), and weak evidence for hypermethylation in squamous cell carcinoma tissue (P=0.035) (Figure 4, Supplementary Table 10). For the other CpG sites there was evidence for a difference in DNA methylation between tumour and healthy adjacent tissue at several sites in both adenocarcinoma and squamous cell carcinoma, with consistent differences for CpG sites in ALPPL2 (cg2156642, cg05951221 and cg01940273), as well as cg23771366-_PRSS23_, cg26963277-_KCNQ1_, cg09935388-_GFI1_, cg0101332-_ARRB1_, cg08709672-_AVPR1B_ and cg25305703-_CASC21_. However, hypermethylation in tumour tissue was found for the majority of these sites, which is opposite to what was observed in the EWAS analysis.
 
 (Figure 4 here)
 
 ### Gene expression associated with mQTLs in blood and lung tissue
-Of the 10 genes annotated to the 14 CpG sites, eight genes were expressed sufficiently to be detected in lung (AVPR1B and CASC21 were not) and seven in blood (AVPR1B, CASC21 and ALPPL2 were not). Of these, gene expression of ARRB1 could not be investigated as the mQTLs in that region were not present in the GTEx data. rs3748971 and rs878481, mQTLs for cg21566642 and cg05951221 respectively, were associated with increased expression of ALPPL2 (P=0.002 and P=0.0001). No other mQTLs were associated with expression of the annotated gene at a Bonferroni corrected P value threshold (P<0.05/19=0.0026) (Supplementary Table 11).
+Of the 10 genes annotated to the 14 CpG sites, eight genes were expressed sufficiently to be detected in lung (_AVPR1B_ and _CASC21_ were not) and seven in blood (_AVPR1B_, _CASC21_ and _ALPPL2_ were not). Of these, gene expression of ARRB1 could not be investigated as the mQTLs in that region were not present in the GTEx data. rs3748971 and rs878481, mQTLs for cg21566642 and cg05951221 respectively, were associated with increased expression of _ALPPL2_ (P=0.002 and P=0.0001). No other mQTLs were associated with expression of the annotated gene at a Bonferroni corrected P value threshold (P<0.05/19=0.0026) (Supplementary Table 11).
 
 ## Discussion {#discussion-07}
 In this study, we identified 16 CpG sites associated with lung cancer, of which 14 have been previously identified in relation to smoke exposure [@Joehanes2016] 9 and six were highlighted in a previous study as being associated with lung cancer [@Baglietto2017] 3. This previous study used the same data from the four cohorts investigated here, but in a discovery and replication, rather than meta-analysis framework. Overall, using MR we found limited evidence supporting a potential causal effect of methylation at the CpG sites identified in peripheral blood on lung cancer. These findings are in contrast to previous analyses suggesting that methylation at two CpG sites investigated (in _AHRR_ and _F2RL3_) mediated > 30% of the effect of smoking on lung cancer risk [@Fasanelli2015] 2. This previous study used methods which are sensitive to residual confounding and measurement error that may have biased results [@Richmond2016; Hemani2017] 12, 35. These limitations are largely overcome using MR [@Richmond2016] 12.  While there was some evidence for an effect of methylation at some of the other CpG sites on risk of subtypes of lung cancer, these effects were not robust to multiple testing correction and were not validated in the analysis of tumour and adjacent normal lung tissue methylation nor in gene expression analysis.

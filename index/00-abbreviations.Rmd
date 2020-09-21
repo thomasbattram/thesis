@@ -1,9 +1,37 @@
-
-\textbf{EWAS} - epigenome-wide assoctation study <br>
-\textbf{GWAS} - genome-wide assoctation study <br>
-\textbf{h<sup>2</sup>} - narrow-sense heritability <br>
-\textbf{h<sup>2</sup><sub>SNP</sub>} - SNP-heritability <br>
-\textbf{H<sup>2</sup>} - broad-sense heritability <br>
-\textbf{MR} - Mendelian randomization <br>
-\textbf{mQTL} - methylation quantitative trait loci <br>
-\textbf{SNP} - single nucleotide polymorphism <br>
+\textbf{ALSPAC} - Avon Longitudinal Study of Parents and Children \newline
+\textbf{ARIES} - Accessible Resource for Integrated Epigenomics Studies \newline
+\textbf{AUC} - area under the curve \newline
+\textbf{BMI} - body mass index \newline
+\textbf{CCHS} - Copenhagen City Heart Study \newline
+\textbf{DMR} - differentially methylated region \newline
+\textbf{EFO} - experimental factor ontology \newline
+\textbf{EPIC} - European Prospective Investigation into Cancer and Nutrition \newline
+\textbf{EWAS} - epigenome-wide assoctation study \newline
+\textbf{FDR} - false discovery rate \newline
+\textbf{GEO} - Gene Expression Omnibus \newline
+\textbf{GTEx} - Gene-Tissue Expression (consortium) \newline
+\textbf{GWAS} - genome-wide assoctation study \newline
+\textbf{h\textsuperscript{2}} - narrow-sense heritability \newline
+\textbf{H\textsuperscript{2}} - broad-sense heritability \newline
+\textbf{h\textsuperscript{2}\textsubscript{EWAS}} - the proportion of trait variation captured by DNA methylation commonly measured in epigenome-wide association studies \newline
+\textbf{h\textsuperscript{2}\textsubscript{SNP}} - SNP-heritability \newline
+\textbf{HM450} - Illumina Infinium HumanMethylation450 BeadChip \newline
+\textbf{HMEPIC} - Illumina Infinium HumanMethylationEPIC BeadChip \newline
+\textbf{HR} - hazard ratio
+\textbf{LD} - linkage disequilibrium \newline
+\textbf{MCCS} - Melbourne Collaborative Cohort Study \newline
+\textbf{MR} - Mendelian randomization \newline
+\textbf{MRM} - methylation relationship matrix \newline
+\textbf{mQTL} - methylation quantitative trait loci \newline
+\textbf{NOWAC} - Norwegian Women and Cancer \newline
+\textbf{NSHDS} - Northern Sweden Health and Disease Study \newline
+\textbf{OR} - odds ratio \newline
+\textbf{PACE} - Pregnancy and Childhood Epigenetics (consortium) \newline
+\textbf{QC} - quality control \newline
+\textbf{REML} - restricted maximum likelihood \newline
+\textbf{ROC} - receiver operating characteristic \newline
+\textbf{SNP} - single nucleotide polymorphism \newline
+\textbf{SV} - surrogate variable \newline
+\textbf{TAG} - Tobacco and Genetics (consortium) \newline
+\textbf{TCGA} - The Cancer Genome Atlas \newline
+\textbf{TRICL-ILCCO} - Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium \newline

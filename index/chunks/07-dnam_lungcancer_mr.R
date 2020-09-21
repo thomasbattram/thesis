@@ -16,22 +16,28 @@ supp_tables <- supp_tables_path %>%
 sort_df <- function(df, col_prefix, col_suffix) 
 {
 	### sort out columns so they aren't shite
-	df %>%
-		pivot_longer(
-			cols = grep(paste(col_prefix, collapse = "|"), colnames(.), value=T), 
-			names_to = c("model"), 
-			names_pattern = c("(.*)_.*"),
-			values_to = col_suffix
-		) %>%
-		tidy_nums()
+	out <- map_dfr(col_suffix, function(suff) {
+		df %>%
+			pivot_longer(
+				cols = grep(paste(col_prefix, collapse = "|"), colnames(.), value=T), 
+				names_to = c("model"), 
+				names_pattern = c("(.*)_.*"),
+				values_to = suff
+			) %>%
+			tidy_nums() 
+	})
+	return(out)
 }
 
 tables_to_sort <- map_lgl(supp_tables, function(st) {
 	any(grepl("_", colnames(st)))
 })
 
-clean_supp_tables <- lapply(supp_tables, function(st) {
-	print(st)
+
+### CHANGE THIS!!! --> DOESN'T WORK FOR OTHER SUPP TABLES!!
+clean_supp_tables <- lapply(1, function(x) {
+	print(x)
+	st <- supp_tables[[x]]
 	col_sort <- any(grepl("_", colnames(st)))
 	if (col_sort) {
 		cols_to_sort <- grep(".*_.*", colnames(st), value = T)
