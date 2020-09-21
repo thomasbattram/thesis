@@ -1396,7 +1396,7 @@ Mendelian randomization (MR) uses genetic variants associated with modifiable fa
 
 In this study, we performed a meta-analysis of four lung cancer EWAS (918 case-control pairs) from prospective cohort studies to identify CpG sites associated with lung cancer risk and applied MR to investigate whether the observed DNA methylation changes at these sites are causally linked to lung cancer.
 
-In this chapter, Dr Rebecca Richmond performed analysis in the CCHS cohort (see section \protect\hyperlink{potential-causal-effect-of-ahrr-methylation-on-lung-cancer-risk-one-sample-mr}{Potential causal effect of \emph{AHRR} methylation on lung cancer risk: one sample MR} of the results) and contributed to writing the introduction and discussion. I completed all the analysis and wrote each section except the methods and results sections for which I did not complete the analysis.
+In this chapter, Dr Rebecca Richmond performed analysis in the CCHS cohort (see \textbf{Sections \ref{ahrr-one-sample-mr-methods} and \ref{ahrr-one-sample-mr}}) and contributed to writing the introduction and discussion. I completed all the analysis and wrote each section except the methods and results sections for which I did not complete the analysis.
 
 \hypertarget{methods-07}{%
 \section{Methods}\label{methods-07}}
@@ -1500,8 +1500,8 @@ We next investigated the extent to which the mQTLs at cancer-related CpGs were a
 \hypertarget{methods-supplementary-analyses-07}{%
 \subsection{Supplementary analyses}\label{methods-supplementary-analyses-07}}
 
-\hypertarget{assessing-the-potential-causal-effect-of-ahrr-methylation-one-sample-mr}{%
-\subsubsection{\texorpdfstring{Assessing the potential causal effect of \emph{AHRR} methylation: one sample MR}{Assessing the potential causal effect of AHRR methylation: one sample MR}}\label{assessing-the-potential-causal-effect-of-ahrr-methylation-one-sample-mr}}
+\hypertarget{ahrr-one-sample-mr-methods}{%
+\subsubsection{\texorpdfstring{Assessing the potential causal effect of \emph{AHRR} methylation: one sample MR}{Assessing the potential causal effect of AHRR methylation: one sample MR}}\label{ahrr-one-sample-mr-methods}}
 
 Given previous findings implicating methylation at \emph{AHRR} in relation to lung cancer (121,175) 2, 3, we performed a one-sample MR analysis (193) 30 of \emph{AHRR} methylation on lung cancer incidence using individual-level data from the Copenhagen City Heart Study (CCHS) (357 incident cases, 8401 remaining free of lung cancer). Copenhagen City Heart Study is a prospective study of the general population (194). Copenhagen residents were invited to complete a questionnaire and undergo a physical examination and are followed through a unique person identifier in the Danish health registries. All participants gave written informed consent, and a Danish ethics committee approved the study (KF100.2039/91).
 
@@ -1537,15 +1537,24 @@ Analyses were conducted in Stata (version 14) and R (version 3.2.2). For the two
 
 A flowchart representing our study design along with a summary of our results at each step is displayed in Figure 1.
 
-(Figure 1 here)
 
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figure/07-dnam_lungcancer_mr/Figure_1} 
+
+}
+
+\caption{\textbf{Study design with results summary.} ARIES = Accessible Resource for Integrated Epigenomic Studies, TRICL-ILLCO = Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium, MR = Mendelian randomization, CCHS = Copenhagen City Heart Study, TCGA = The Cancer Genome Atlas. * = 2000 individuals with samples at multiple timepoints.}\label{fig:fig1-07}
+\end{figure}
 \hypertarget{results-ewas-meta-analysis}{%
 \subsection{EWAS meta-analysis}\label{results-ewas-meta-analysis}}
 
 The basic meta-analysis adjusted for study-specific covariates identified 16 CpG sites which were hypomethylated in relation to lung cancer (FDR\textless0.05, Model 1, Figure 2). Adjusting for 10 surrogate variables (Model 2) and derived cell counts (Model 3) gave similar results (Table 1). The direction of effect at the 16 sites did not vary between studies (median I2=38.6) (Supplementary Table 2), but there was evidence for heterogeneity of effect estimates at some sites when stratifying individuals by smoking status (Table 1).
 
-(Figure 2 here)
 
+\begin{figure}
+\includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_2a} \includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_2b} \caption{\textbf{Observational associations of DNA methylation and lung cancer: A fixed effects meta-analysis of lung cancer EWAS weighted on the inverse variance was performed to establish the observational association between differential DNA methylation and lung cancer.} Left-hand side: Manhattan plot, all points above the solid line are at P \textless{} 1x10-7 and all points above the dashed line (and triangular points) are at FDR \textless{} 0.05. In total 16 CpG sites are associated with lung cancer (FDR \textless{} 0.05). Right-hand side: Quantile-quantile plot of the EWAS results (same data as the Manhattan plot).}\label{fig:fig2-07}
+\end{figure}
 (Table 1 here)
 
 \hypertarget{results-mendelian-randomization-07}{%
@@ -1557,14 +1566,21 @@ There was little evidence for an effect of methylation at these 14 sites on lung
 
 For 9 of out the 16 mQTL-CpG associations, there was strong replication across time points (Supplementary Table 5) and 10 out of 16 mQTL-CpG associations replicated at FDR\textless0.05 in an independent adult cohort (NSHDS). Using mQTL effect estimates from NSHDS for the 10 CpG sites that replicated (FDR\textless0.05), findings were consistent with limited evidence for a causal effect of peripheral blood-derived DNA methylation on lung cancer (Supplementary Figure 1).
 
-(Figure 3 here)
 
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figure/07-dnam_lungcancer_mr/Figure_3} 
+
+}
+
+\caption{\textbf{Mendelian randomization (MR) vs.~observational analysis.} Two-sample MR was carried out with methylation at 14/16 CpG sites identified in the EWAS meta-analysis as the exposure and lung cancer as the outcome. cg01901332 and cg05575921 had 2 instruments so the estimate was calculated using the inverse variance weighted method, for the rest the MR estimate was calculated using a Wald ratio. Only 14 of 16 sites could be instrumented using mQTLs from mqtldb.org. * = instrumental variable not replicated in independent dataset (NSHDS). The sites for which instrumental variables have not been replicated are cg01901332, cg21566642, cg05575921 and cg08709672. OR = odds ratio per SD increase in DNA methylation.}\label{fig:fig3-07}
+\end{figure}
 There was little evidence of different effect estimates between ever and never smokers at individual CpG sites (Supplementary Figure 2, Z-test for difference, P\textgreater0.5). There was some evidence for a possible effect of methylation at cg21566642-ALPPL2 and cg23771366-PRSS23 on squamous cell lung cancer (OR=0.85 {[}95\% confidence interval (CI)=0.75,0.97{]} and 0.91 {[}95\% CI=0.84,1.00{]} per SD {[}14.4\% and 5.8\%{]} increase, respectively) as well as methylation at cg23387569-\emph{AGAP2}, cg16823042-\emph{AGAP2}, and cg01901332-\emph{ARRB1} on lung adenocarcinoma (OR=0.86 {[}95\% CI=0.77,0.96{]}, 0.84 {[}95\% CI=0.74,0.95{]}, and 0.89 {[}95\% CI=0.80,1.00{]} per SD {[}9.47\%, 8.35\%, and 8.91\%{]} increase, respectively). However, none of the results withstood multiple testing correction (FDR\textless0.05) (Supplementary Figure 3). For those CpGs where multiple mQTLs were used as instruments (cg05575921-\emph{AHRR} and cg01901332-\emph{ARRB1}), there was limited evidence for heterogeneity in MR effect estimates (Q-test, P\textgreater0.05, Supplementary Table 6).
 
 Single mQTLs for cg05575921-\emph{AHRR}, cg27241845-\emph{ALPPL2}, and cg26963277-\emph{KCNQ1} showed some evidence of association with smoking cessation (former vs.~current smokers), although these associations were not below the FDR\textless0.05 threshold (Supplementary Figure 4).
 
-\hypertarget{potential-causal-effect-of-ahrr-methylation-on-lung-cancer-risk-one-sample-mr}{%
-\subsubsection{\texorpdfstring{Potential causal effect of \emph{AHRR} methylation on lung cancer risk: one sample MR}{Potential causal effect of AHRR methylation on lung cancer risk: one sample MR}}\label{potential-causal-effect-of-ahrr-methylation-on-lung-cancer-risk-one-sample-mr}}
+\hypertarget{ahrr-one-sample-mr}{%
+\subsubsection{\texorpdfstring{Potential causal effect of \emph{AHRR} methylation on lung cancer risk: one sample MR}{Potential causal effect of AHRR methylation on lung cancer risk: one sample MR}}\label{ahrr-one-sample-mr}}
 
 In the CCHS, a per (average methylation-increasing) allele change in a four-mQTL allele score was associated with a 0.73\% {[}95\% CI=0.56,0.90{]} increase in methylation (P\textless1x10\textsuperscript{-10}) and explained 0.8\% of the variance in cg05575921-\emph{AHRR} methylation (F-statistic=74.2). Confounding factors were not strongly associated with the genotypes in this cohort (P\textgreater=0.11) (Supplementary Table 7). Results provided some evidence for an effect of cg05575921 methylation on total lung cancer risk (HR=0.30 {[}95\% CI=0.10,1.00{]} per SD (9.2\%) increase) (Supplementary Table 8). The effect estimate did not change substantively when stratified by smoking status (Supplementary Table 8).
 
@@ -1575,6 +1591,10 @@ Given contrasting findings with the main MR analysis, where cg05575921-\emph{AHR
 
 For cg05575921-\emph{AHRR}, there was no strong evidence for differential methylation between adenocarcinoma tissue and adjacent healthy tissue (P=0.963), and weak evidence for hypermethylation in squamous cell carcinoma tissue (P=0.035) (Figure 4, Supplementary Table 10). For the other CpG sites there was evidence for a difference in DNA methylation between tumour and healthy adjacent tissue at several sites in both adenocarcinoma and squamous cell carcinoma, with consistent differences for CpG sites in ALPPL2 (cg2156642, cg05951221 and cg01940273), as well as cg23771366-\emph{PRSS23}, cg26963277-\emph{KCNQ1}, cg09935388-\emph{GFI1}, cg0101332-\emph{ARRB1}, cg08709672-\emph{AVPR1B} and cg25305703-\emph{CASC21}. However, hypermethylation in tumour tissue was found for the majority of these sites, which is opposite to what was observed in the EWAS analysis.
 
+
+\begin{figure}
+\includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_4a} \includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_4b} \caption{Differential DNA methylation in lung cancer tissue: A comparison of methylation at each of the 16 CpG sites identified in our meta-analysis was made between lung cancer tissue and adjacent healthy lung tissue for patients with lung adenocarcinoma (left-hand side) and squamous cell lung cancer (right-hand side). Data from The Cancer Genome Atlas was used for this analysis.}\label{fig:fig4-07}
+\end{figure}
 (Figure 4 here)
 
 \hypertarget{gene-expression-associated-with-mqtls-in-blood-and-lung-tissue}{%

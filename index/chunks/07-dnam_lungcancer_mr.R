@@ -11,7 +11,33 @@ supp_tables <- supp_tables_path %>%
 	set_names() %>%
 	map(read_excel, path = supp_tables_path)
 
+## ---- figures-setup-07 --------------------------------
+
+fig1 <- file.path(figure_dir, "Figure_1.jpg")
+fig2a <- file.path(figure_dir, "Figure_2a.jpg")
+fig2b <- file.path(figure_dir, "Figure_2b.jpg")
+fig3 <- file.path(figure_dir, "Figure_3.jpg")
+fig4a <- file.path(figure_dir, "Figure_4a.jpg")
+fig4b <- file.path(figure_dir, "Figure_4b.jpg")
+
+# with figure 2 - try side-by-side first, then can split into two figs
+
+## ---- fig1-07 --------------------------------
+include_graphics(fig1)
+
+## ---- fig2-07 --------------------------------
+include_graphics(c(fig2a, fig2b))
+
+## ---- fig3-07 --------------------------------
+include_graphics(fig3)
+
+## ---- fig4-07 --------------------------------
+include_graphics(c(fig4a,fig4b))
+
 ## ---- tables-setup-07 --------------------------------
+
+# This is all bs - probs best just to change these tables manually
+# or semi-manually (one-by-one in R)
 
 sort_df <- function(df, col_prefix, col_suffix) 
 {
