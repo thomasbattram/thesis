@@ -61,7 +61,6 @@ library(flextable)
 library(tidyverse) # simple tidying of data
 library(RColorBrewer) # customising plot colours
 library(gridExtra) # plotting multiple graphs on the same page
-library(pander) # tables
 library(readxl) # reading in excel spreadsheets
 library(xfun) # misc functions including numbers_to_words()
 

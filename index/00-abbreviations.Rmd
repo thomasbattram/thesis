@@ -3,6 +3,7 @@
 \textbf{AUC} - area under the curve \newline
 \textbf{BMI} - body mass index \newline
 \textbf{CCHS} - Copenhagen City Heart Study \newline
+\textbf{CI} - confidence interval \newline
 \textbf{DMR} - differentially methylated region \newline
 \textbf{EFO} - experimental factor ontology \newline
 \textbf{EPIC} - European Prospective Investigation into Cancer and Nutrition \newline
