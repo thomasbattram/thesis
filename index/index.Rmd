@@ -1,7 +1,7 @@
 ---
 author: 'Thomas Battram'
-date: 'September 2020' # Month and year of submission
-title: "I made this template based on thesisdown to comply with the University of Bristol regulations"
+date: 'December 2020' # Month and year of submission
+title: "Complex trait architecture through the lens of epigenome-wide association studies"
 university: "University of Bristol"
 faculty: "Health Sciences"
 school: "Bristol Medical School"
@@ -33,6 +33,8 @@ abstract: |
   `r if(knitr:::is_latex_output()) paste(readLines("00-abstract.Rmd"), collapse = '\n  ')`
 acknowledgements: |
   `r if(knitr:::is_latex_output()) paste(readLines("00-acknowledgements.Rmd"), collapse = '\n  ')`
+publications: |
+  `r if(knitr:::is_latex_output()) paste(readLines("00-publications.Rmd"), collapse = '\n  ')`
 declaration: |
   `r if(knitr:::is_latex_output()) paste(readLines("00-declaration.Rmd"), collapse = '\n  ')`
 abbreviations: |

@@ -1,7 +1,7 @@
 ---
 author: 'Thomas Battram'
-date: 'September 2020' # Month and year of submission
-title: "I made this template based on thesisdown to comply with the University of Bristol regulations"
+date: 'December 2020' # Month and year of submission
+title: "Complex trait architecture through the lens of epigenome-wide association studies"
 university: "University of Bristol"
 faculty: "Health Sciences"
 school: "Bristol Medical School"
@@ -56,6 +56,9 @@ acknowledgements: |
   </style>
   
   THIS IS WHERE YOU THANK PEOPLE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+publications: |
+  Battram,T., Richmond,R.C., Baglietto,L., Haycock,P.C., Perduca,V., Bojesen,S.E., Gaunt,T.R., Hemani,G., Guida,F., Carreras-Torres,R., et al. (2019) Appraising the causal relevance of DNA methylation for risk of lung cancer. Int. J. Epidemiol., 10.1093/ije/dyz190.
+  
 declaration: |
   <style>
   body {
