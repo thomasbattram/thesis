@@ -11,6 +11,8 @@ supp_tables <- supp_tables_path %>%
 	set_names() %>%
 	map(read_excel, path = supp_tables_path)
 
+addq <- function(x) paste0("`", x, "`")
+
 ## ---- figures-setup-07 --------------------------------
 
 # main figs
@@ -141,11 +143,14 @@ kbl(clean_supp_tables[["S1"]], booktabs = TRUE, caption = captions[["S1"]]) %>%
 ## ---- sup-tab2-07 --------------------------------
 kbl(clean_supp_tables[["S2"]], booktabs = T, caption = captions[["S2"]]) %>%
 	add_footnote(c("Dir = Direction of effect", 
-				   "I2 = Heterogeneity I-squared", 
+				   "I2 = Heterogeneity I-squared value", 
 				   "P = P value", 
 				   "chr:pos = chromosome:position", 
 				   "sv-adjusted = surrogate variables included as covariates in analysis", 
-				   "sv-and-cell-count = surrogate variables and derived cell counts included as covariates in analysis"), 
+				   "sv-and-cell-count = surrogate variables and derived cell counts included as covariates in analysis", 
+				   "never-smokers = basic model in never smokers only", 
+				   "former-smokers = basic model in former smokers only", 
+				   "current-smokers = basic model in current smokers only"), 
 			 	notation = "none") %>%
 	add_header_above(add_header[["S2"]]) %>%
 	kable_styling(latex_options = ks_latex_options[["S2"]]) %>%
@@ -153,6 +158,14 @@ kbl(clean_supp_tables[["S2"]], booktabs = T, caption = captions[["S2"]]) %>%
 
 ## ---- sup-tab3-07 --------------------------------
 kbl(clean_supp_tables[["S3"]], booktabs = T, caption = captions[["S3"]]) %>%
+	# footnote(symbol = "SNP used as an instrumental variable was not replicated in the independent dataset (NSHDS)") %>%
+	add_footnote(c("* = SNP used as an instrumental variable was not replicated in the independent dataset (NSHDS)",
+				   "Trans = trans mQTL (Yes/No)", 
+				   "chr:position = chromosome:position", 
+				   "MAF = minor allele frequency", 
+				   "A1 = effect allele", 
+				   "P = P value"), 
+				 notation = "none") %>%
 	add_header_above(add_header[["S3"]]) %>%
 	kable_styling(latex_options = ks_latex_options[["S3"]]) %>%
 	landscape()
@@ -160,41 +173,77 @@ kbl(clean_supp_tables[["S3"]], booktabs = T, caption = captions[["S3"]]) %>%
 ## ---- sup-tab4-07 --------------------------------
 kbl(clean_supp_tables[["S4"]], booktabs = T, caption = captions[["S4"]]) %>%
 	add_header_above(add_header[["S4"]]) %>%
+	add_footnote(c("N SNP = number of SNPs used in the analysis as instrumental variables", 
+				   "* = Instrumental variables for that CpG site did not replicate in an independent dataset (NSHDS)", 
+				   "Where N SNP = 1, the Wald ratio estimate is used", 
+				   "Where N SNP > 1, the Wald ratio estimates were meta-analyzed and the estimates were weighted by the inverse variance of the association with the outcome"), 
+				 notation = "none") %>%
 	kable_styling(latex_options = ks_latex_options[["S4"]])
 
 ## ---- sup-tab5-07 --------------------------------
 kbl(clean_supp_tables[["S5"]], booktabs = T, caption = captions[["S5"]]) %>%
 	add_header_above(add_header[["S5"]]) %>%
+	add_footnote(c("Mean age at each timepoint is in brackets next to that timepoint header", 
+				   "SE = standard error, P = p value, N = sample size", 
+				   "Those estimates in bold are at FDR < 0.05, and so are said to have replicated in that timepoint"), 
+				 notation = "none") %>% 
 	kable_styling(latex_options = ks_latex_options[["S5"]]) %>%
 	landscape()
 
 ## ---- sup-tab6-07 --------------------------------
 kbl(clean_supp_tables[["S6"]], booktabs = T, caption = captions[["S6"]]) %>%
 	add_header_above(add_header[["S6"]]) %>%
+	add_footnote(c("N SNP = number of SNPs used in the analysis as instrumental variables", 
+				   "Q = Cochrane’s Q statistic", 
+				   "Where P < 0.05, there is good evidence of heterogeneity across individual SNPs"), 
+				 notation = "none") %>%
 	kable_styling(latex_options = c("striped", "hold_position"))
 
 ## ---- sup-tab7-07 --------------------------------
 kbl(clean_supp_tables[["S7"]], booktabs = T, caption = captions[["S7"]]) %>%
 	add_header_above(add_header[["S7"]]) %>%
+	add_footnote(c("For the allele score, genotypic effects were scaled to equate to the same magnitude of effect as a per 1% increase in methylation. Regressions were adjusted for the other factors in the tab"), 
+				 notation = "none") %>%
 	kable_styling(latex_options = ks_latex_options[["S7"]])
 
 ## ---- sup-tab8-07 --------------------------------
 kbl(clean_supp_tables[["S8"]], booktabs = T, caption = captions[["S8"]]) %>%
 	add_header_above(add_header[["S8"]]) %>%
+	add_footnote(c("HR = hazard ratio, P = P value"), 
+				 notation = "none") %>%
 	kable_styling(latex_options = ks_latex_options[["S8"]])
 
 ## ---- sup-tab9-07 --------------------------------
 kbl(clean_supp_tables[["S9"]], booktabs = T, caption = captions[["S9"]]) %>%
 	add_header_above(add_header[["S9"]]) %>%
+	add_footnote(c("N SNP = number of SNPs used in the analysis as instrumental variables", 
+				   "FE = fixed effects", 
+				   "Q = Cochrane’s Q statistic", 
+				   "DF = degrees of freedom", 
+				   "P = P value"), 
+				 notation = "none") %>%
 	kable_styling(latex_options = ks_latex_options[["S9"]])
 
 ## ---- sup-tab10-07 --------------------------------
 kbl(clean_supp_tables[["S10"]], booktabs = T, caption = captions[["S10"]]) %>%
 	add_header_above(add_header[["S10"]]) %>%
+	add_footnote(c("T/H = comparison of tumour and healthy tissue", 
+				   "Adeno = Lung adenocarcinoma", 
+				   "SCC = squamous cell carcinoma",
+				   "P = P value",  
+				   "pos = hypermethylated", 
+				   "neg = hypomethylated", 
+				   "For tumour/healthy tissue comparison, pos = hypermethylation of the CpG within the tumour tissue (neg is the opposite)"), 
+				 notation = "none") %>%
 	kable_styling(latex_options = ks_latex_options[["S10"]])
 
 ## ---- sup-tab11-07 --------------------------------
 kbl(clean_supp_tables[["S11"]], booktabs = T, caption = captions[["S11"]]) %>%
 	add_header_above(add_header[["S11"]]) %>%
+	add_footnote(c("Trans = trans mQTL (Yes/No)", 
+				   "chr:position = chromosome:position", 
+				   "MAF = minor allele frequency", 
+				   "A1 = effect allele", 
+				   "P = P value"),
+				 notation = "none") %>%
 	kable_styling(latex_options = ks_latex_options[["S11"]])
-

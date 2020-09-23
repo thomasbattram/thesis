@@ -605,7 +605,7 @@ Our criteria for inclusion of a study into The EWAS Catalog are as follows:
 \end{enumerate}
 CpG-phenotype associations are extracted from studies at P \textless{} 1x10\textsuperscript{-4}. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-09-22, The EWAS Catalog contained 450213 associations from 605 studies.
+Based on these criteria, from 2020-09-23, The EWAS Catalog contained 450213 associations from 605 studies.
 
 \hypertarget{overview-of-geo-data-extraction}{%
 \subsection{Overview of GEO data extraction}\label{overview-of-geo-data-extraction}}
@@ -1597,11 +1597,14 @@ cg25305703 & CASC21 & 8:128378218 & ---- & 53 & 0.096 & ---- & 0 & 0.461 & ---- 
 cg27241845 & ALPPL2 & 2:233250370 & ---- & 57 & 0.075 & ---- & 48 & 0.122 & ---- & 41 & 0.163 & ---+ & 0 & 0.643 & ---+ & 0 & 0.672 & ---- & 32 & 0.221\\
 \bottomrule
 \multicolumn{21}{l}{\textsuperscript{} Dir = Direction of effect}\\
-\multicolumn{21}{l}{\textsuperscript{} I2 = Heterogeneity I-squared}\\
+\multicolumn{21}{l}{\textsuperscript{} I2 = Heterogeneity I-squared value}\\
 \multicolumn{21}{l}{\textsuperscript{} P = P value}\\
 \multicolumn{21}{l}{\textsuperscript{} chr:pos = chromosome:position}\\
 \multicolumn{21}{l}{\textsuperscript{} sv-adjusted = surrogate variables included as covariates in analysis}\\
 \multicolumn{21}{l}{\textsuperscript{} sv-and-cell-count = surrogate variables and derived cell counts included as covariates in analysis}\\
+\multicolumn{21}{l}{\textsuperscript{} never-smokers = basic model in never smokers only}\\
+\multicolumn{21}{l}{\textsuperscript{} former-smokers = basic model in former smokers only}\\
+\multicolumn{21}{l}{\textsuperscript{} current-smokers = basic model in current smokers only}\\
 \end{tabular}}
 \end{table}
 \end{landscape}
@@ -1640,6 +1643,12 @@ cg26963277 & 11:2722407 & KCNQ1 & rs463924 & 11:2717680 & T & C & 0.304 & -0.394
 \addlinespace
 cg23771366 & 11:86510998 & PRSS23 & rs72967500 & 11:86505120 & T & C & 0.132 & -0.628 (-0.750, -0.506) & 1.3e-22 & -0.35 (-0.534, -0.166) & 1.9e-04 & N\\
 \bottomrule
+\multicolumn{13}{l}{\textsuperscript{} * = SNP used as an instrumental variable was not replicated in the independent dataset (NSHDS)}\\
+\multicolumn{13}{l}{\textsuperscript{} Trans = trans mQTL (Yes/No)}\\
+\multicolumn{13}{l}{\textsuperscript{} chr:position = chromosome:position}\\
+\multicolumn{13}{l}{\textsuperscript{} MAF = minor allele frequency}\\
+\multicolumn{13}{l}{\textsuperscript{} A1 = effect allele}\\
+\multicolumn{13}{l}{\textsuperscript{} P = P value}\\
 \end{tabular}}
 \end{table}
 \end{landscape}
@@ -1651,7 +1660,7 @@ There was little evidence for an effect of methylation at these 14 sites on lung
 \resizebox{\linewidth}{!}{
 \begin{tabular}[t]{llllll}
 \toprule
-Gene & CpG & IV number & Outcome & OR (95\% CI) & P\\
+Gene & CpG & N SNP & Outcome & OR (95\% CI) & P\\
 \midrule
 \cellcolor{gray!6}{AGAP2} & \cellcolor{gray!6}{cg16823042} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{Lung cancer} & \cellcolor{gray!6}{0.937 (0.858, 1.02)} & \cellcolor{gray!6}{0.149}\\
 AGAP2 & cg23387569 & 1 & Lung cancer & 0.943 (0.871, 1.02) & 0.149\\
@@ -1670,6 +1679,12 @@ KCNQ1 & cg26963277 & 1 & Lung cancer & 0.962 (0.903, 1.03) & 0.236\\
 \cellcolor{gray!6}{PRSS23} & \cellcolor{gray!6}{cg11660018} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{Lung cancer} & \cellcolor{gray!6}{0.972 (0.912, 1.04)} & \cellcolor{gray!6}{0.372}\\
 PRSS23 & cg23771366 & 1 & Lung cancer & 0.953 (0.901, 1.01) & 0.086\\
 \bottomrule
+\multicolumn{6}{l}{\textsuperscript{} N SNP = number of SNPs used in the analysis as instrumental variables}\\
+\multicolumn{6}{l}{\textsuperscript{} * = Instrumental variables for that CpG site did not replicate in an independent}\\
+\multicolumn{6}{l}{dataset (NSHDS)}\\
+\multicolumn{6}{l}{\textsuperscript{} Where N SNP = 1, the Wald ratio estimate is used}\\
+\multicolumn{6}{l}{\textsuperscript{} Where N SNP > 1, the Wald ratio estimates were meta-analyzed and the estimates}\\
+\multicolumn{6}{l}{were weighted by the inverse variance of the association with the outcome}\\
 \end{tabular}}
 \end{table}
 \pagebreak
@@ -1715,6 +1730,9 @@ cg25305703 & CASC21 & rs9643220 & 0.028 & 0.004 & 1.5e-10 & 0.023 & 0.004 & 1.6e
 \addlinespace
 cg27241845 & ALPPL2 & rs56080708 & 0.038 & 0.011 & 4.5e-04 & 0.052 & 0.012 & 2.5e-05 & 0.095 & 0.010 & 6.4e-22 & 0.102 & 0.010 & 8.4e-25 & 0.051 & 0.011 & 4.4e-06\\
 \bottomrule
+\multicolumn{18}{l}{\textsuperscript{} Mean age at each timepoint is in brackets next to that timepoint header}\\
+\multicolumn{18}{l}{\textsuperscript{} SE = standard error, P = p value, N = sample size}\\
+\multicolumn{18}{l}{\textsuperscript{} Those estimates in bold are at FDR < 0.05, and so are said to have replicated in that timepoint}\\
 \end{tabular}}
 \end{table}
 \end{landscape}
@@ -1770,6 +1788,11 @@ cg01901332 & Lung adenocarcinoma & 2 & 0.780 & 0.38\\
 \cellcolor{gray!6}{cg01901332} & \cellcolor{gray!6}{Lung cancer} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.965} & \cellcolor{gray!6}{0.33}\\
 cg01901332 & Squamous cell lung cancer & 2 & 1.266 & 0.26\\
 \bottomrule
+\multicolumn{5}{l}{\textsuperscript{} N SNP = number of SNPs used in the analysis as instrumental}\\
+\multicolumn{5}{l}{variables}\\
+\multicolumn{5}{l}{\textsuperscript{} Q = Cochrane’s Q statistic}\\
+\multicolumn{5}{l}{\textsuperscript{} Where P < 0.05, there is good evidence of heterogeneity across}\\
+\multicolumn{5}{l}{individual SNPs}\\
 \end{tabular}
 \end{table}
 Single mQTLs for cg05575921-\emph{AHRR}, cg27241845-\emph{ALPPL2}, and cg26963277-\emph{KCNQ1} showed some evidence of association with smoking cessation (former vs.~current smokers), although these associations were not below the FDR\textless0.05 threshold (\textbf{Figure \ref{fig:sup-fig4-07}}).
@@ -1808,6 +1831,8 @@ Exposure to passive smoking & -0.46 & -0.78; -0.15 & 4.0e-03 & -3e-02 & -0.08; 0
 \cellcolor{gray!6}{Current use of tobacco to per cigarette equivalent} & \cellcolor{gray!6}{-0.06} & \cellcolor{gray!6}{-0.08; -0.03} & \cellcolor{gray!6}{9.0e-05} & \cellcolor{gray!6}{-1e-03} & \cellcolor{gray!6}{-0.005; 0.004} & \cellcolor{gray!6}{0.72}\\
 Cumulative use of tobacco to per pack-year & -0.05 & -0.06; -0.04 & 4.0e-28 & -5e-04 & -0.002; 0.001 & 0.54\\
 \bottomrule
+\multicolumn{7}{l}{\textsuperscript{} For the allele score, genotypic effects were scaled to equate to the same magnitude of effect as a per 1\% increase in}\\
+\multicolumn{7}{l}{methylation. Regressions were adjusted for the other factors in the tab}\\
 \end{tabular}}
 \end{table}
 \begin{table}[!h]
@@ -1824,6 +1849,7 @@ Current & 4,262 & 305 & 0.90 (0.79; 1.03) & 0.12\\
 \cellcolor{gray!6}{Former} & \cellcolor{gray!6}{2,548} & \cellcolor{gray!6}{43} & \cellcolor{gray!6}{0.86 (0.61; 1.22)} & \cellcolor{gray!6}{0.41}\\
 Never & 1,948 & 9 & 0.83 (0.38; 1.85) & 0.66\\
 \bottomrule
+\multicolumn{5}{l}{\textsuperscript{} HR = hazard ratio, P = P value}\\
 \end{tabular}}
 \end{table}
 \linebreak
@@ -1854,10 +1880,15 @@ Lung cancer & N SNP & Beta & SE & Beta & SE & Het-Q & Het-DF & Het-P\\
 Squamous cell & 4 & 0.003 & 0.024 & 0.004 & 0.014 & 6.65 & 3 & 0.08\\
 \cellcolor{gray!6}{Adenocarcinoma} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{-0.022} & \cellcolor{gray!6}{0.011} & \cellcolor{gray!6}{-0.022} & \cellcolor{gray!6}{0.012} & \cellcolor{gray!6}{1.06} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{0.79}\\
 Small cell carcinoma & 4 & 0.002 & 0.021 & 0.001 & 0.022 & 0.14 & 3 & 0.99\\
-\cellcolor{gray!6}{Never smoker} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{-0.003} & \cellcolor{gray!6}{0.025} & \cellcolor{gray!6}{-0.003} & \cellcolor{gray!6}{0.026} & \cellcolor{gray!6}{1.37} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{0.71}\\
+\cellcolor{gray!6}{All in never smokers} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{-0.003} & \cellcolor{gray!6}{0.025} & \cellcolor{gray!6}{-0.003} & \cellcolor{gray!6}{0.026} & \cellcolor{gray!6}{1.37} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{0.71}\\
 \addlinespace
-Ever smoker & 4 & -0.017 & 0.010 & -0.016 & 0.011 & 1.63 & 3 & 0.65\\
+All in ever smokers & 4 & -0.017 & 0.010 & -0.016 & 0.011 & 1.63 & 3 & 0.65\\
 \bottomrule
+\multicolumn{9}{l}{\textsuperscript{} N SNP = number of SNPs used in the analysis as instrumental variables}\\
+\multicolumn{9}{l}{\textsuperscript{} FE = fixed effects}\\
+\multicolumn{9}{l}{\textsuperscript{} Q = Cochrane’s Q statistic}\\
+\multicolumn{9}{l}{\textsuperscript{} DF = degrees of freedom}\\
+\multicolumn{9}{l}{\textsuperscript{} P = P value}\\
 \end{tabular}}
 \end{table}
 \hypertarget{tumour-and-adjacent-normal-lung-tissue-methylation-patterns}{%
@@ -1876,7 +1907,7 @@ For cg05575921-\emph{AHRR}, there was no strong evidence for differential methyl
 \resizebox{\linewidth}{!}{
 \begin{tabular}[t]{llllllllll}
 \toprule
-\multicolumn{2}{c}{ } & \multicolumn{2}{c}{Adeno-MR} & \multicolumn{2}{c}{Adeno-T/H tissue comparison} & \multicolumn{2}{c}{SCC-MR} & \multicolumn{2}{c}{SCC-T/H tissue comparison} \\
+\multicolumn{2}{c}{ } & \multicolumn{2}{c}{Adeno-MR} & \multicolumn{2}{c}{Adeno-T/H} & \multicolumn{2}{c}{SCC-MR} & \multicolumn{2}{c}{SCC-T/H} \\
 \cmidrule(l{3pt}r{3pt}){3-4} \cmidrule(l{3pt}r{3pt}){5-6} \cmidrule(l{3pt}r{3pt}){7-8} \cmidrule(l{3pt}r{3pt}){9-10}
 CpG & Gene & Direction & P & Direction & P & Direction & P & Direction & P\\
 \midrule
@@ -1896,6 +1927,14 @@ cg09935388 & GFI1 & neg & 0.831 & pos & 2.0e-04 & pos & 0.567 & pos & 2.0e-20\\
 cg23771366 & PRSS23 & pos & 0.819 & neg & 4.0e-09 & neg & 0.047 & neg & 3.3e-02\\
 \cellcolor{gray!6}{cg11660018} & \cellcolor{gray!6}{PRSS23} & \cellcolor{gray!6}{equal} & \cellcolor{gray!6}{0.999} & \cellcolor{gray!6}{neg} & \cellcolor{gray!6}{3.0e-08} & \cellcolor{gray!6}{neg} & \cellcolor{gray!6}{0.062} & \cellcolor{gray!6}{neg} & \cellcolor{gray!6}{1.3e-01}\\
 \bottomrule
+\multicolumn{10}{l}{\textsuperscript{} T/H = comparison of tumour and healthy tissue}\\
+\multicolumn{10}{l}{\textsuperscript{} Adeno = Lung adenocarcinoma}\\
+\multicolumn{10}{l}{\textsuperscript{} SCC = squamous cell carcinoma}\\
+\multicolumn{10}{l}{\textsuperscript{} P = P value}\\
+\multicolumn{10}{l}{\textsuperscript{} pos = hypermethylated}\\
+\multicolumn{10}{l}{\textsuperscript{} neg = hypomethylated}\\
+\multicolumn{10}{l}{\textsuperscript{} For tumour/healthy tissue comparison, pos = hypermethylation of the CpG within the tumour tissue}\\
+\multicolumn{10}{l}{(neg is the opposite)}\\
 \end{tabular}}
 \end{table}
 \hypertarget{gene-expression-associated-with-mqtls-in-blood-and-lung-tissue}{%
@@ -1928,6 +1967,11 @@ KCNQ1 & rs463924 & cg26963277 & N & 11:2717680 & T & C & 0.304 & 0.008 & 0.038 &
 \cellcolor{gray!6}{PRSS23} & \cellcolor{gray!6}{rs1939110} & \cellcolor{gray!6}{cg11660018} & \cellcolor{gray!6}{N} & \cellcolor{gray!6}{11:86505120} & \cellcolor{gray!6}{T} & \cellcolor{gray!6}{C} & \cellcolor{gray!6}{0.286} & \cellcolor{gray!6}{-0.151} & \cellcolor{gray!6}{0.092} & \cellcolor{gray!6}{0.10100} & \cellcolor{gray!6}{0.026} & \cellcolor{gray!6}{0.042} & \cellcolor{gray!6}{0.534}\\
 PRSS23 & rs72967500 & cg23771366 & N & 11:86515072 & T & C & 0.132 & -0.061 & 0.067 & 0.36300 & 0.014 & 0.027 & 0.614\\
 \bottomrule
+\multicolumn{14}{l}{\textsuperscript{} Trans = trans mQTL (Yes/No)}\\
+\multicolumn{14}{l}{\textsuperscript{} chr:position = chromosome:position}\\
+\multicolumn{14}{l}{\textsuperscript{} MAF = minor allele frequency}\\
+\multicolumn{14}{l}{\textsuperscript{} A1 = effect allele}\\
+\multicolumn{14}{l}{\textsuperscript{} P = P value}\\
 \end{tabular}}
 \end{table}
 \hypertarget{discussion-07}{%
