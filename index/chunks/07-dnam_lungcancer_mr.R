@@ -158,8 +158,7 @@ kbl(clean_supp_tables[["S2"]], booktabs = T, caption = captions[["S2"]]) %>%
 
 ## ---- sup-tab3-07 --------------------------------
 kbl(clean_supp_tables[["S3"]], booktabs = T, caption = captions[["S3"]]) %>%
-	# footnote(symbol = "SNP used as an instrumental variable was not replicated in the independent dataset (NSHDS)") %>%
-	add_footnote(c("* = SNP used as an instrumental variable was not replicated in the independent dataset (NSHDS)",
+	add_footnote(c("* = SNPs used as an instrumental variables were not replicated in the independent dataset (NSHDS)",
 				   "Trans = trans mQTL (Yes/No)", 
 				   "chr:position = chromosome:position", 
 				   "MAF = minor allele frequency", 
@@ -183,8 +182,7 @@ kbl(clean_supp_tables[["S4"]], booktabs = T, caption = captions[["S4"]]) %>%
 ## ---- sup-tab5-07 --------------------------------
 kbl(clean_supp_tables[["S5"]], booktabs = T, caption = captions[["S5"]]) %>%
 	add_header_above(add_header[["S5"]]) %>%
-	add_footnote(c("Mean age at each timepoint is in brackets next to that timepoint header", 
-				   "SE = standard error, P = p value, N = sample size", 
+	add_footnote(c("P = p value", "N = sample size", 
 				   "Those estimates in bold are at FDR < 0.05, and so are said to have replicated in that timepoint"), 
 				 notation = "none") %>% 
 	kable_styling(latex_options = ks_latex_options[["S5"]]) %>%
@@ -194,7 +192,9 @@ kbl(clean_supp_tables[["S5"]], booktabs = T, caption = captions[["S5"]]) %>%
 kbl(clean_supp_tables[["S6"]], booktabs = T, caption = captions[["S6"]]) %>%
 	add_header_above(add_header[["S6"]]) %>%
 	add_footnote(c("N SNP = number of SNPs used in the analysis as instrumental variables", 
-				   "Q = Cochrane’s Q statistic", 
+				   "Q = Cochrane’s Q statistic",
+				   "Lung cancer (ever) = lung cancer in ever smokers",
+				   "Lung cancer (never) = lung cancer in never smokers",  
 				   "Where P < 0.05, there is good evidence of heterogeneity across individual SNPs"), 
 				 notation = "none") %>%
 	kable_styling(latex_options = c("striped", "hold_position"))
