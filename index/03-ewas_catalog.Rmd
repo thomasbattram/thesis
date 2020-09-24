@@ -20,9 +20,11 @@ At the time of making the database, to our knowledge, there were no databases th
 
 The EWAS Catalog aims to improve upon current databases to 1) allow easy and programmatic access to summary statistics for downstream analyses by researchers and 2) provide full summary statistics from a range of EWAS conducted in multiple cohorts. To this end we have produced The EWAS Catalog, a manually curated database of currently published EWAS, `r n_aries` EWAS performed in the Avon Longitudinal Study of Parents and Children (ALSPAC) [@Fraser2013; @Boyd2013] and `r n_geo` EWAS performed from data from the Gene Expression Omnibus (GEO) database. The process and data inclusion are summarised in __Figure \@ref(fig:catalog-project-workflow)__.
 
-(ref:catalog-project-workflow-cap) __Project flowchart.__ On the left is a brief description of how the CpG-phenotype associations were assembled from published works and on the right is a brief description of the EWAS performed using individual level data.
+(ref:catalog-project-workflow-cap) __EWAS Catalog project flowchart__. On the left is a brief description of how the CpG-phenotype associations were assembled from published works and on the right is a brief description of the EWAS performed using individual level data.
 
-```{r catalog-project-workflow, fig.cap = '(ref:catalog-project-workflow-cap)', fig.align = "center", out.width = "100%", results = "asis"}
+(ref:catalog-project-workflow-scap) EWAS Catalog project flowchart
+
+```{r catalog-project-workflow, fig.cap = '(ref:catalog-project-workflow-cap)', fig.scap='(ref:catalog-project-workflow-scap)', fig.align = "center", out.width = "100%", results = "asis"}
 ```
 
 I am not responsible for all the work presented in this chapter. Dr James Staley built the original website. Dr Matthew Suderman has been key in development, and maintenance of the website. Dr Paul Yousefi extracted data from GEO. All three also provided (and continue to provide) expert knowledge to adapt the database to optimise user experience. There was also a team to help gather and input the data. I helped develop and maintain the website, gather and input the data, ran all the EWAS using data from the ALSPAC cohort and the GEO database. The team, led by myself, is continuing to develop and maintain the database. Full acknowledgements to the team can be found on the website: http://www.ewascatalog.org/about/.
@@ -84,7 +86,11 @@ Statistical analyses were conducted in R (Version 3.3.3). The smartsva package [
 ### Database interface and use
 There are two ways to access this large, curated database: through the main website www.ewascatalog.org or by using the R package “ewascatalog”. The website provides a simple user interface, which resembles that of the GWAS catalog [@Buniello2019], whereby there is a single search bar to explore the database and links to tabs that contain documentation on the contents and how to cite its use (Figure 1). Users may enter a CpG, gene, genome position or trait into the search bar and it will rapidly return detail for relevant EWAS associations, including CpG, trait, sample size, publication and association (effect and P value) (Figure 1). This information along with additional information such as ancestry, outcome, exposure units, and tissue analysed are available for download as a tab-separated value (tsv) text file. Unlike other EWAS databases, we provide the option of downloading summary results for both the user’s search and for the entire database. 
 
-```{r catalog-use, fig.cap = catalog_cap, fig.align = "center", out.width = "100%", results = "asis"}
+(ref:catalog-use-cap) __Using the EWAS catalog__. At the top of the figures is the home page URL, ewascatalog.org. Below that are examples of three types of searches possible: 1. CpG sites, 2. genes and 3. traits. Finally, the results are displayed after searching the catalog for “Depression”. Circled in red is the download button, this button enables the user to download the results of their search as a tab-separated value file. This file will contain the information shown on the website as well as additional analysis information."
+
+(ref:catalog-use-scap) Using the EWAS catalog
+
+```{r catalog-use, fig.cap='(ref:catalog-use-cap)', fig.scap='(ref:catalog-use-scap)', fig.align="center", out.width="100%", results="asis"}
 ```
 
 The R package, along with installation instructions and examples are available at https://github.com/ewascatalog/ewascatalog-r/. Once installed, the database can be queried directly in R using the “ewascatalog()” function similar to the website: simply supply the function with  a CpG site, gene, genome position or trait and the function returns the same output as is downloadable from the website.

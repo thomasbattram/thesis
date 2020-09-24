@@ -40,9 +40,11 @@ Methods used to estimate h^2^~SNP~ use restricted maximum likelihood (REML) test
 
 ***
 
-(ref:h2ewas-model-comp-cap) Comparison of the grouping and blanket models in the context of the relationship between DNA methylation and gene expression. Both regions are exactly the same, the only difference is how each model assumes the methylation sites should be treated. The grouping model down-weights the contribution of correlated CpGs, effectively grouping them, and the blanket model assumes each CpG independently associates with a trait. As seen here, the grouping of correlated CpG sites may not be the correct thing to do as some of the sites may be acting independently of their correlated partners).
+(ref:h2ewas-model-comp-cap) __Comparison of the grouping and blanket models in the context of the relationship between DNA methylation and gene expression__. Both regions are exactly the same, the only difference is how each model assumes the methylation sites should be treated. The grouping model down-weights the contribution of correlated CpGs, effectively grouping them, and the blanket model assumes each CpG independently associates with a trait. As seen here, the grouping of correlated CpG sites may not be the correct thing to do as some of the sites may be acting independently of their correlated partners).
 
-```{r h2ewas-model-comp, message=FALSE, results="asis", fig.cap='(ref:h2ewas-model-comp-cap)'}
+(ref:h2ewas-model-comp-scap) Comparison of the grouping and blanket models in the context of the relationship between DNA methylation and gene expression
+
+```{r h2ewas-model-comp, message=FALSE, results="asis", fig.cap='(ref:h2ewas-model-comp-cap)', fig.scap='(ref:h2ewas-model-comp-scap)'}
 ```
 
 ## Method {#method-05}
@@ -53,23 +55,28 @@ All data for the chapter came from the Avon Longitudinal Study of Parents and Ch
 
 Continuous and binary phenotypes measured in mothers were extracted from the cohort using the ‘alspac’ R package (github.com/explodecomputer/alspac) and went through extensive quality control. Originally over 15,000 traits that were related to the mothers were extracted from the database. After the quality control process, which is detailed in __Figure \@ref(fig:h2ewas-pheno-qc)__, there were 2408 traits left for analysis.
 
-(ref:h2ewas-pheno-qc-cap) A summary of the data cleaning steps. Binary variables with fewer than 100 cases or controls were removed. Variables with "no clear relevance" to the mothers were identified manually, most were descriptive of how samples were measured, for example the fieldworker that examined the mother several months or years after blood draw. Normality of traits after rank normal transformations were assessed using a Shapiro-Wilk test. Those with some evidence of non-normality (P < 0.05), were re-examined by eye and removed if thought to be non-normal.
+(ref:h2ewas-pheno-qc-cap) __A summary of the data cleaning steps__. Binary variables with fewer than 100 cases or controls were removed. Variables with "no clear relevance" to the mothers were identified manually, most were descriptive of how samples were measured, for example the fieldworker that examined the mother several months or years after blood draw. Normality of traits after rank normal transformations were assessed using a Shapiro-Wilk test. Those with some evidence of non-normality (P < 0.05), were re-examined by eye and removed if thought to be non-normal.
 
-```{r h2ewas-pheno-qc, message=FALSE, results="asis", fig.cap='(ref:h2ewas-pheno-qc-cap)', out.width="75%", out.height="75%"}
+(ref:h2ewas-pheno-qc-scap) A summary of the data cleaning steps
+
+```{r h2ewas-pheno-qc, message=FALSE, results="asis", fig.cap='(ref:h2ewas-pheno-qc-cap)', out.width="75%", out.height="75%", fig.scap='(ref:h2ewas-pheno-qc-scap)'}
 ```
 
 All continuous traits were rank-normalised for further analyses. A Shapiro-Wilk test of normality was performed on these rank-normalised traits and for those with some evidence of non-normality (P < 0.05), the distribution of those traits was re-examined by eye to ensure it was approximately normal. It was found that any non-normality of phenotype distributions corresponded to an inflation of zero values. These traits were removed and overall there were 2408 traits left for analyses. These traits do not necessarily represent independent phenotypes and as such I wanted to prevent correlated traits skewing results. The absolute Pearson’s correlation coefficient between each trait was subtracted from one (1 –[r]). Then traits were greedily selected where 1 –[r] < 0.4 with any other trait. This left 400 traits, which consisted of ~30% clinically measured variables (including roughly 50 metabolites and some anthropometric traits), ~25% health related questions (for example “have you ever had asthma?”), ~40% behavioural and social traits (for example educational attainment variables, use of pesticide, and having pets), and ~5% of traits were related to the partner or child of the participant (for example the employment status of the partner). Phenotypes are presented in Supplementary table 1. Plots showing the correlation between all the phenotypes as well as with just the selected traits can be seen in __Figure \@ref(fig:h2ewas-pheno-corr-all) and \@ref(fig:h2ewas-pheno-corr-subset)__.
 
-(ref:h2ewas-pheno-corr-all-cap) Correlation between all 2408 phenotypes.
+(ref:h2ewas-pheno-corr-all-cap) __Correlation between all 2408 phenotypes__.
 
-```{r h2ewas-pheno-corr-all, message=FALSE, results="asis", fig.cap='(ref:h2ewas-pheno-corr-all-cap)'}
+(ref:h2ewas-pheno-corr-all-scap) Correlation between all 2408 phenotypes
+
+```{r h2ewas-pheno-corr-all, message=FALSE, results="asis", fig.cap='(ref:h2ewas-pheno-corr-all-cap)', fig.scap='(ref:h2ewas-pheno-corr-all-scap)'}
 ```
 
-(ref:h2ewas-pheno-corr-subset-cap) Correlation between the 400 traits with a correlation of 1 - [r] < 0.4.
+(ref:h2ewas-pheno-corr-subset-cap) __Correlation between the 400 traits with a correlation of 1 - [r] < 0.4__.
 
-```{r h2ewas-pheno-corr-subset, message=FALSE, results="asis", fig.cap='(ref:h2ewas-pheno-corr-subset-cap)'}
+(ref:h2ewas-pheno-corr-subset-scap) Correlation between the 400 traits with a correlation of 1 - [r] < 0.4
+
+```{r h2ewas-pheno-corr-subset, message=FALSE, results="asis", fig.cap='(ref:h2ewas-pheno-corr-subset-cap)', fig.scap='(ref:h2ewas-pheno-corr-subset-scap)'}
 ```
-
 
 ### DNA methylation data {#dna-methylation-data-05}
 DNA methylation was measured using the Illumina Infinium HumanMethylation450 (HM450) BeadChip. Before use, the data went through quality control and were normalised separately to the phenotype data. Full details can be found in the Supplementary Material.
@@ -126,9 +133,11 @@ The full EWAS summary statistics of each of the 400 EWAS are available via Zenod
 ## Results {#results-05}
 A flowchart showing our study design and giving a summary of the results is shown in __Figure \@ref(fig:h2ewas-study-design)__.
 
-(ref:h2ewas-study-design-cap) Study design with a summary of the results. ALSPAC = Avon Longitudinal Study of Parents and Children, QC = quality control, EWAS = epigenome-wide association study, MRM = methylation relationship matrix, AUC = area under curve.
+(ref:h2ewas-study-design-cap) __Study design with a summary of the results__. ALSPAC = Avon Longitudinal Study of Parents and Children, QC = quality control, EWAS = epigenome-wide association study, MRM = methylation relationship matrix, AUC = area under curve.
 
-```{r h2ewas-study-design, message=FALSE, results="asis", fig.cap='(ref:h2ewas-study-design-cap)'}
+(ref:h2ewas-study-design-scap) Study design with a summary of the results
+
+```{r h2ewas-study-design, message=FALSE, results="asis", fig.cap='(ref:h2ewas-study-design-cap)', fig.scap='(ref:h2ewas-study-design-scap)'}
 ```
 
 ### Estimating the proportion of phenotypic variance associated with DNA methylation {#estimating-h2ewas}
@@ -137,9 +146,11 @@ Two models were used to estimate the total contribution of all DNA methylation s
 
 There was little evidence that either of the models fit the data better (had higher likelihoods) across the 400 traits tested (difference in median likelihoods = 0.19, Wilcoxon’s paired ranked sum test P = 0.73). Further, the majority of h^2^~EWAS~ estimate differences between the traits were small.
 
-(ref:h2ewas-estimates-cap) A comparison of h^2^~EWAS~ estimates given by applying REML using the blanket and grouping models across 400 traits. The blue dashed line is at x=y. Values with h^2^~EWAS~ lower than 0 are due to imprecision in h^2^~EWAS~ estimates as the true estimate cannot be negative. Smoked_cigs_reg = smoked cigarettes regularly. The h^2^~EWAS~ of this phenotype has the greatest evidence for being above 0 for both the blanket and grouping model (Uncorrected P = 1.44x10^-4^ and P = 2.61x10^-4^, respectively).
+(ref:h2ewas-estimates-cap) __A comparison of h^2^~EWAS~ estimates given by applying REML using the blanket and grouping models across 400 traits__. The blue dashed line is at x=y. Values with h^2^~EWAS~ lower than 0 are due to imprecision in h^2^~EWAS~ estimates as the true estimate cannot be negative. Smoked_cigs_reg = smoked cigarettes regularly. The h^2^~EWAS~ of this phenotype has the greatest evidence for being above 0 for both the blanket and grouping model (Uncorrected P = 1.44x10^-4^ and P = 2.61x10^-4^, respectively).
 
-```{r h2ewas-estimates, message=FALSE, results="asis", fig.cap='(ref:h2ewas-estimates-cap)'}
+(ref:h2ewas-estimates-scap) A comparison of h^2^~EWAS~ estimates given by applying REML using the blanket and grouping models across 400 traits
+
+```{r h2ewas-estimates, message=FALSE, results="asis", fig.cap='(ref:h2ewas-estimates-cap)', fig.scap='(ref:h2ewas-estimates-scap)'}
 ```
 
 ### Sensitivity analyses when estimating the proportion of phenotypic variance associated with DNA methylation {#results-sensitivity-analyses-05}
@@ -148,9 +159,11 @@ After examination of the MRMs required to produce the h^2^~EWAS~ estimates, for 
 
 The weight of predictors used to produce the MRMs was also examined. As more weight was given to sites where methylation variation was greater (increasing alpha value) the h^2^~EWAS~ estimates were slightly higher (__Figure \@ref(fig:h2ewas-sens)__). However, the likelihood varied little, the median likelihood had a range of 2 across the alpha values (__Figure \@ref(fig:h2ewas-sens)__).
 
-(ref:h2ewas-sens-cap) Boxplots summarising of sensitivity analyses. __A__ and __B__ Analyses estimating h^2^~EWAS~ were repeated after removing individuals who had high diagnonal values in the methylation relationship matrix (MRM). Varying thresholds were used to define individuals as an outlier, NA indicates that no individuals were removed from the analysis. __A__ shows the likelihood estimate (model fit) variation and __B__ shows the variation in h^2^~EWAS~ estimates. Analyses were also repeated in the same vein, varying $\alpha$ values, (see equation \@ref(eq:mrm-weights)) (__C__ and __D__).
+(ref:h2ewas-sens-cap) __Boxplots summarising of sensitivity analyses__. __A__ and __B__ Analyses estimating h^2^~EWAS~ were repeated after removing individuals who had high diagnonal values in the methylation relationship matrix (MRM). Varying thresholds were used to define individuals as an outlier, NA indicates that no individuals were removed from the analysis. __A__ shows the likelihood estimate (model fit) variation and __B__ shows the variation in h^2^~EWAS~ estimates. Analyses were also repeated in the same vein, varying $\alpha$ values, (see equation \@ref(eq:mrm-weights)) (__C__ and __D__).
 
-```{r h2ewas-sens, message=FALSE, results="asis", fig.cap='(ref:h2ewas-sens-cap)'}
+(ref:h2ewas-sens-scap) Boxplots summarising of sensitivity analyses
+
+```{r h2ewas-sens, message=FALSE, results="asis", fig.cap='(ref:h2ewas-sens-cap)', fig.scap='(ref:h2ewas-sens-scap)'}
 ```
 
 ### EWAS analyses {#results-ewas-analyses-05}
@@ -159,14 +172,18 @@ In order to assess the association between h^2^~EWAS~ and EWAS results, EWAS of 
 
 As the distributions of hit count data was heavily right skewed with an inflation at 0 and 1 (__Figure \@ref(fig:h2ewas-dmp-dist)__), to test the association between h^2^~EWAS~ and number of DMPs I opted to test goodness of fit for variations of Poisson models. Of the 6 models tested, the negative binomial hurdle Poisson regression model fit the data best, full results can be found in Supplementary table 5. It was found there was some evidence for an association between number of EWAS hits and h^2^~EWAS~ (__Figure \@ref(fig:dmps-and-h2ewas)__). There was some evidence of association between the presence of DMPs and h^2^~EWAS~ (beta = 6.2, [95%CI 2.5, 10]) as well as some evidence of an association between number of DMPs (when the number is above 0) and h^2^~EWAS~ (mean increase of 0.63, [95%CI 0.41, 0.84] DMPs when h^2^~EWAS~ increases by 0.1). Applying the same method to GWAS data, it was found evidence that the presence of identified SNPs associated with h^2^~SNP~ (beta = 21.9 [95%CI 19.6, 24.1]) and the association between number of SNPs identified (when the number is above 0) and h^2^~SNP~ (mean increase of 1.5, [95%CI 0.93, 2.5] SNPs when h^2^~SNP~ increases by 0.1).
 
-(ref:h2ewas-dmp-dist-cap) The distribution of the number of DNA methylation sites identified at P<1x10^-5^ across EWAS of 400 traits.
+(ref:h2ewas-dmp-dist-cap) __The distribution of the number of DNA methylation sites identified at P<1x10^-5^ across EWAS of 400 traits__.
 
-```{r h2ewas-dmp-dist, message=FALSE, results="asis", fig.cap='(ref:h2ewas-dmp-dist-cap)'}
+(ref:h2ewas-dmp-dist-scap) The distribution of the number of DNA methylation sites identified at P<1x10^-5^ across EWAS of 400 traits
+
+```{r h2ewas-dmp-dist, message=FALSE, results="asis", fig.cap='(ref:h2ewas-dmp-dist-cap)', fig.scap='(ref:h2ewas-dmp-dist-scap)'}
 ```
 
-(ref:dmps-and-h2ewas-cap) Association between h^2^~EWAS~ and number of DMPs identified in EWAS. The correlation between DNA methylation and the variance of traits (h^2^~EWAS~) was calculated using REML analysis using the blanket and grouping models. EWAS were conducted on all the same traits and the distribution of the number of DMPs identified at P < 1x10^-5^ and h^2^~EWAS~ are plotted above. Any traits where the h^2^~EWAS~ estimate is below 0 are coloured grey. The true h^2^~EWAS~ value of a trait cannot be negative, but sample sizes in this analysis are small so the estimates are imprecise.
+(ref:dmps-and-h2ewas-cap) __Association between h^2^~EWAS~ and number of DMPs identified in EWAS__. The correlation between DNA methylation and the variance of traits (h^2^~EWAS~) was calculated using REML analysis using the blanket and grouping models. EWAS were conducted on all the same traits and the distribution of the number of DMPs identified at P < 1x10^-5^ and h^2^~EWAS~ are plotted above. Any traits where the h^2^~EWAS~ estimate is below 0 are coloured grey. The true h^2^~EWAS~ value of a trait cannot be negative, but sample sizes in this analysis are small so the estimates are imprecise.
 
-```{r dmps-and-h2ewas, message=FALSE, results="asis", fig.cap='(ref:dmps-and-h2ewas-cap)'}
+(ref:dmps-and-h2ewas-scap) Association between h^2^~EWAS~ and number of DMPs identified in EWAS
+
+```{r dmps-and-h2ewas, message=FALSE, results="asis", fig.cap='(ref:dmps-and-h2ewas-cap)', fig.scap='(ref:dmps-and-h2ewas-scap)'}
 ```
 
 ```{r model-testing-tab, message=FALSE, results="asis"}
@@ -174,9 +191,11 @@ As the distributions of hit count data was heavily right skewed with an inflatio
 
 The ability of h^2^~EWAS~ estimated by both models to predict whether the number of DMPs identified was greater than expected was assessed at varying P value thresholds. ROC curves were produced and the area under the curve (AUC) ranged from 0.65 and 0.67 at P < 1x10^-6^ to 0.79 and 0.71 at P < 1x10^-3^ for the blanket and grouping models respectively and the predictive ability remained fairly stable as the threshold increased (__Figure \@ref(fig:h2ewas-dmp-roc-curve)__).
 
-(ref:h2ewas-dmp-roc-curve-cap) The ability of h^2^~EWAS~ values to predict whether the number of differentially methylated positions identified in an EWAS is higher than expected by chance. ROC curves for h^2^~EWAS~ values predicting number of DMPs at differing P value thresholds. AUC = area under the curve.
+(ref:h2ewas-dmp-roc-curve-cap) __The ability of h^2^~EWAS~ values to predict whether the number of differentially methylated positions identified in an EWAS is higher than expected by chance__. ROC curves for h^2^~EWAS~ values predicting number of DMPs at differing P value thresholds. AUC = area under the curve.
 
-```{r h2ewas-dmp-roc-curve, message=FALSE, results="asis", fig.cap='(ref:h2ewas-dmp-roc-curve-cap)'}
+(ref:h2ewas-dmp-roc-curve-scap) The ability of h^2^~EWAS~ values to predict whether the number of differentially methylated positions identified in an EWAS is higher than expected by chance
+
+```{r h2ewas-dmp-roc-curve, message=FALSE, results="asis", fig.cap='(ref:h2ewas-dmp-roc-curve-cap)', fig.scap='(ref:h2ewas-dmp-roc-curve-scap)'}
 ```
 
 ## Discussion {#discussion-05}

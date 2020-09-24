@@ -16,6 +16,7 @@ toc-depth: 4 # change for the depth of the table of contents - 1 gives two level
 lot: true 
 lof: true
 space_between_paragraphs: true
+graphics: yes
 fig_caption: true
 header-includes:
     \usepackage{tikz}
@@ -55,7 +56,7 @@ acknowledgements: |
   text-align: justify}
   </style>
   
-  THIS IS WHERE YOU THANK PEOPLE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  I'd like to thank myself for being the GOAT. Everyone else can get in the bin.
 publications: |
   Battram,T., Richmond,R.C., Baglietto,L., Haycock,P.C., Perduca,V., Bojesen,S.E., Gaunt,T.R., Hemani,G., Guida,F., Carreras-Torres,R., et al. (2019) Appraising the causal relevance of DNA methylation for risk of lung cancer. Int. J. Epidemiol., 10.1093/ije/dyz190.
   
@@ -146,7 +147,9 @@ In this chapter I present the historical interpretation of ‘information flow�
 
 To gauge how molecular mechanisms result in more observable phenotypes, it is important to understand how molecular machinery interacts. The central dogma of molecular biology was originally proposed by Francis Crick [@Cobb2017; @CRICK1958] and described how information flowed from nucleic acids to proteins within cells (__Figure \@ref(fig:central-dogma)__). Crick postulated that information could flow from nucleic acids to proteins, but not from proteins to nucleic acids. By information, Crick was specifically referencing changes in polymer sequence. Although this is generally the process of information flow, it does not describe other complex interactions that impact function without changing polymer sequence. Post-translational and post-transcriptional modifications can influence the lifespan and function of proteins and RNA respectively [@Hafner2019; @Corbett2018; @Wang2014; @Filipowicz2008]. Proteins of the same polypeptide sequence can take on slightly different conformations when interacting with other cellular factors [@Alberts2017] and certain proteins (known as prions) can even alter the conformation of other polypeptides with the same sequence [@Colby2011]. Further, modifications to the DNA and to DNA-bound proteins may have a profound influence on the concentration of certain gene transcripts as well as the post-transcriptional splicing of transcripts [@Kornberg1999; @Gibney2010]. As mentioned, DNA methylation is one such modification that can occur.
 
-(ref:central-dogma-cap) The central dogma of molecular biology. The dogma stipulates that sequence changes (that is the addition, removal or mutation of elements) can only occur in the direction of the arrows. 1. DNA replication 2. Transcription 3. Translation 4. Reverse transcription 5. RNA replication 6. Direct DNA-protein translation. 
+(ref:central-dogma-cap) __The central dogma of molecular biology__. The dogma stipulates that sequence changes (that is the addition, removal or mutation of elements) can only occur in the direction of the arrows. 1. DNA replication 2. Transcription 3. Translation 4. Reverse transcription 5. RNA replication 6. Direct DNA-protein translation. 
+
+(ref:central-dogma-scap) The central dogma of molecular biology
 
 \begin{figure}
 
@@ -154,7 +157,7 @@ To gauge how molecular mechanisms result in more observable phenotypes, it is im
 
 }
 
-\caption{(ref:central-dogma-cap)}(\#fig:central-dogma)
+\caption[(ref:central-dogma-scap)]{(ref:central-dogma-cap)}(\#fig:central-dogma)
 \end{figure}
 
 The importance of these molecular alterations to phenotypic change is exemplified in the developmental stages of human life. Humans start as a single cell and after roughly nine months are transformed into a multicellular organism with trillions of cells, including hundreds of unique cell types. As these cells arise from a single progenitor, they must contain identical genetic sequences (bar somatic mutations which occur at a low rate – recently estimated to be roughly one mutation per cell division [@Milholland2017]). The process by which the body is able to create such diversely functioning cells and tissues, must come from regulation of how the genetic sequence is read and from the regulation of its products.
@@ -164,7 +167,9 @@ For reasons which I will describe in more detail later, DNA methylation is now b
 ## DNA methylation as part of the regulatory machinery {#dnam-as-part-of-regulation}
 DNA methylation is correlated with gene expression levels and has been hypothesised to contribute to gene regulation [@Suzuki2008; @Siegfried1999; @Bird2002; @Jones2012]. This is the main mechanism by which it is thought DNA methylation influences variability in phenotypes. However, DNA methylation is just one of many epigenetic marks that are involved in gene regulation (__Figure \@ref(fig:epigenetic-marks)__). In this section I describe epigenetics and evidence gathered about the function of different epigenetic marks. 
 
-(ref:epigenetic-marks-cap) Graphic of epigenetic marks taken from @epigenetic-marks-figure.
+(ref:epigenetic-marks-cap) __Epigenetic marks__. Graphic taken from @epigenetic-marks-figure__.
+
+(ref:epigenetic-marks-scap) Epigenetic marks
 
 \begin{figure}
 
@@ -172,7 +177,7 @@ DNA methylation is correlated with gene expression levels and has been hypothesi
 
 }
 
-\caption{(ref:epigenetic-marks-cap)}(\#fig:epigenetic-marks)
+\caption[(ref:epigenetic-marks-scap)]{(ref:epigenetic-marks-cap)}(\#fig:epigenetic-marks)
 \end{figure}
 
 ### Defining epigenetics
@@ -188,7 +193,9 @@ One thing research has revealed is that the location of DNA methylation is impor
 
 These strong associations between DNA methylation and gene expression do not necessarily mean that the addition or removal of methyl groups will actively impact gene expression. Elucidating the causal nature of the association between DNA methylation and gene expression has been fraught with difficulties and has often provided conflicting results. One study showed an enzyme that catalyzes the addition of methyl groups to the DNA, DNA methyltransferase 3A, is required in haematopoeitic stem cells for them to differentiate, suggesting gene expression changes required for differentiation were not possible without addition of methyl groups to the DNA [@Challen2012]. However, studies have provided evidence that DNA methylation is unlikely to initiate the ‘silencing’ of gene expression and may occur at transcription start sites of genes after they’ve already been repressed [@Lock1987; @Ohm2007]. To further complicate things, if DNA methylation does influence gene expression, the mechanism of action is unclear and may depend on the gene being examined. One study showed the presence of DNA methylation at the binding sites of the transcription factor, _MYC_, was inversely associated with its binding [@Prendergast1991], but another study suggested the presence of DNA methylation didn’t have the same impact on the binding of the transcription factor, _SP1_ [@Harrington1988]. Although the body of work presented in this thesis does not aim to explore if and how DNA methylation influences gene expression, it is important to note the relationship between the two isn’t clear when thinking of the implications of DNA methylation-trait associations [@Hemani2017]. This will be discussed further in the following sections.
 
-(ref:dnam-functions-cap) Simplified diagrams of the associations between DNA methylation and gene regulation. In _a_, CpG sites are methylated at the promoter region, but not in the gene body, which is associated with lack of gene expression. In _b_, the opposite is occurring.
+(ref:dnam-functions-cap) __Simplified diagrams of the associations between DNA methylation and gene regulation__. In _a_, CpG sites are methylated at the promoter region, but not in the gene body, which is associated with lack of gene expression. In _b_, the opposite is occurring.
+
+(ref:dnam-functions-scap) Simplified diagrams of the associations between DNA methylation and gene regulation
 
 \begin{figure}
 
@@ -196,7 +203,7 @@ These strong associations between DNA methylation and gene expression do not nec
 
 }
 
-\caption{(ref:dnam-functions-cap)}(\#fig:dnam-functions)
+\caption[(ref:dnam-functions-scap)]{(ref:dnam-functions-cap)}(\#fig:dnam-functions)
 \end{figure}
 
 ## Population-based studies of DNA methylation associations {#dnam-phs}
@@ -300,7 +307,9 @@ Another advantage of MR is the data it uses. Thousands of GWAS have been conduct
 #### Assumptions of MR
 In order for MR analyses to be valid, they must satisfy three instrumental variable assumptions, these are illustrated in __Figure \@ref(fig:mr-diagram)__. Testing assumption one, the instruments associate with the exposure of interest, is simple, but the other two assumptions cannot technically be proven to be true. Horizontal pleiotropy, where genetic variants associate with more variables than just the exposure of interest, can lead to violations in assumptions two and three. Ideally, MR would be performed in the context where the genetic effect on the exposure had been characterised such that the mechanism of action was understood clearly. This would help give evidence against assumptions two and three being broken. Unfortunately, this is rarely possible. However, a plethora of methods have now been developed to test for pleiotropic effects, given the exposure of interest has multiple independent genetic variants reliably associated with it.
 
-(ref:mr-diagram-cap) Mendelian randomization. Mendelian randomization can be used to test the causal nature of exposure-outcome relationships provided the assumptions are met. Assumption 1. There is an association between the instrument and the exposure. Assumption 2. There are no associations between the instrument and outcome, except through the exposure. Assumption 3. The instrument is not associated with any factors that confound the exposure-outcome relationship.
+(ref:mr-diagram-cap) __Mendelian randomization__. Mendelian randomization can be used to test the causal nature of exposure-outcome relationships provided the assumptions are met. Assumption 1. There is an association between the instrument and the exposure. Assumption 2. There are no associations between the instrument and outcome, except through the exposure. Assumption 3. The instrument is not associated with any factors that confound the exposure-outcome relationship.
+
+(ref:mr-diagram-scap) Mendelian randomization
 
 \begin{figure}
 
@@ -308,7 +317,7 @@ In order for MR analyses to be valid, they must satisfy three instrumental varia
 
 }
 
-\caption{(ref:mr-diagram-cap)}(\#fig:mr-diagram)
+\caption[(ref:mr-diagram-scap)]{(ref:mr-diagram-cap)}(\#fig:mr-diagram)
 \end{figure}
 
 #### Applying MR in a DNA methylation context
@@ -335,7 +344,9 @@ __Chapter \@ref(ewas-gwas-comp-chapter)__ will then aim to assess whether the di
 
 Finally, __Chapter \@ref(dnam-lung-cancer-mr)__ will apply MR to explore the causal nature of associations between DNA methylation and lung cancer. This application case-study will compare and contrast findings to conventional EWAS estimates to give an example of the potential residual confounding that can be present in EWAS.
 
-(ref:thesis-flowchart-cap) Flowchart showing questions being asked in the thesis and the corresponding chapters attempting to help answer them.
+(ref:thesis-flowchart-cap) __Thesis flowchart__. Flowchart showing questions being asked in the thesis and the corresponding chapters attempting to help answer them.
+
+(ref:thesis-flowchart-scap) Thesis flowchart
 
 \begin{figure}
 
@@ -343,7 +354,7 @@ Finally, __Chapter \@ref(dnam-lung-cancer-mr)__ will apply MR to explore the cau
 
 }
 
-\caption{(ref:thesis-flowchart-cap)}(\#fig:thesis-flowchart)
+\caption[(ref:thesis-flowchart-scap)]{(ref:thesis-flowchart-cap)}(\#fig:thesis-flowchart)
 \end{figure}
 
 
@@ -371,7 +382,9 @@ At the time of making the database, to our knowledge, there were no databases th
 
 The EWAS Catalog aims to improve upon current databases to 1) allow easy and programmatic access to summary statistics for downstream analyses by researchers and 2) provide full summary statistics from a range of EWAS conducted in multiple cohorts. To this end we have produced The EWAS Catalog, a manually curated database of currently published EWAS, 387 EWAS performed in the Avon Longitudinal Study of Parents and Children (ALSPAC) [@Fraser2013; @Boyd2013] and 40 EWAS performed from data from the Gene Expression Omnibus (GEO) database. The process and data inclusion are summarised in __Figure \@ref(fig:catalog-project-workflow)__.
 
-(ref:catalog-project-workflow-cap) __Project flowchart.__ On the left is a brief description of how the CpG-phenotype associations were assembled from published works and on the right is a brief description of the EWAS performed using individual level data.
+(ref:catalog-project-workflow-cap) __EWAS Catalog project flowchart__. On the left is a brief description of how the CpG-phenotype associations were assembled from published works and on the right is a brief description of the EWAS performed using individual level data.
+
+(ref:catalog-project-workflow-scap) EWAS Catalog project flowchart
 
 \begin{figure}
 
@@ -379,7 +392,7 @@ The EWAS Catalog aims to improve upon current databases to 1) allow easy and pro
 
 }
 
-\caption{(ref:catalog-project-workflow-cap)}(\#fig:catalog-project-workflow)
+\caption[(ref:catalog-project-workflow-scap)]{(ref:catalog-project-workflow-cap)}(\#fig:catalog-project-workflow)
 \end{figure}
 
 I am not responsible for all the work presented in this chapter. Dr James Staley built the original website. Dr Matthew Suderman has been key in development, and maintenance of the website. Dr Paul Yousefi extracted data from GEO. All three also provided (and continue to provide) expert knowledge to adapt the database to optimise user experience. There was also a team to help gather and input the data. I helped develop and maintain the website, gather and input the data, ran all the EWAS using data from the ALSPAC cohort and the GEO database. The team, led by myself, is continuing to develop and maintain the database. Full acknowledgements to the team can be found on the website: http://www.ewascatalog.org/about/.
@@ -401,7 +414,7 @@ Our criteria for inclusion of a study into The EWAS Catalog are as follows:
 
 CpG-phenotype associations are extracted from studies at P < 1x10^-4^. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-09-23, The EWAS Catalog contained 450213 associations from 605 studies. 
+Based on these criteria, from 2020-09-24, The EWAS Catalog contained 450213 associations from 605 studies. 
 
 ### Overview of GEO data extraction
 To recruit additional datasets suitable for new EWAS analysis, the geograbi R package (https://github.com/yousefi138/geograbi) was used to both query GEO for experiments matching The EWAS Catalog inclusion criteria (described above) and extract relevant DNA methylation and phenotype information. The query was performed by Dr Paul Yousefi on 20 March 2019 and identified 148 such experiments with 32,845 samples where DNA methylation and phenotype information could be successfully extracted. From these, the aim was to repeat the analyses performed in the publications linked by PubMed IDs to each GEO record. Thus, I looked up the corresponding full texts for each dataset and identified the main variables of interest. Of the 148 putative GEO studies, only 34 (23%) contained sufficient information to replicate the original analysis. 
@@ -441,19 +454,17 @@ Statistical analyses were conducted in R (Version 3.3.3). The smartsva package [
 ### Database interface and use
 There are two ways to access this large, curated database: through the main website www.ewascatalog.org or by using the R package “ewascatalog”. The website provides a simple user interface, which resembles that of the GWAS catalog [@Buniello2019], whereby there is a single search bar to explore the database and links to tabs that contain documentation on the contents and how to cite its use (Figure 1). Users may enter a CpG, gene, genome position or trait into the search bar and it will rapidly return detail for relevant EWAS associations, including CpG, trait, sample size, publication and association (effect and P value) (Figure 1). This information along with additional information such as ancestry, outcome, exposure units, and tissue analysed are available for download as a tab-separated value (tsv) text file. Unlike other EWAS databases, we provide the option of downloading summary results for both the user’s search and for the entire database. 
 
+(ref:catalog-use-cap) __Using the EWAS catalog__. At the top of the figures is the home page URL, ewascatalog.org. Below that are examples of three types of searches possible: 1. CpG sites, 2. genes and 3. traits. Finally, the results are displayed after searching the catalog for “Depression”. Circled in red is the download button, this button enables the user to download the results of their search as a tab-separated value file. This file will contain the information shown on the website as well as additional analysis information."
+
+(ref:catalog-use-scap) Using the EWAS catalog
+
 \begin{figure}
 
 {\centering \includegraphics[width=1\linewidth]{figure/03-ewas_catalog/using_the_catalog} 
 
 }
 
-\caption{Using the EWAS catalog. 
-At the top of the figures is the home page URL, ewascatalog.org. 
-Below that are examples of three types of searches possible: 
-1. CpG sites, 2. genes and 3. traits. 
-Finally, the results are displayed after searching the catalog for “Depression”. 
-Circled in red is the download button, this button enables the user to download the results of their search as a tab-separated value file. 
-This file will contain the information shown on the website as well as additional analysis information.}(\#fig:catalog-use)
+\caption[(ref:catalog-use-scap)]{(ref:catalog-use-cap)}(\#fig:catalog-use)
 \end{figure}
 
 The R package, along with installation instructions and examples are available at https://github.com/ewascatalog/ewascatalog-r/. Once installed, the database can be queried directly in R using the “ewascatalog()” function similar to the website: simply supply the function with  a CpG site, gene, genome position or trait and the function returns the same output as is downloadable from the website.
@@ -600,7 +611,9 @@ It may be that certain regulatory mechanisms are more important to phenotypic di
 
 The number of traits each CpG associated with was fairly even across chromosomes (__Figure \@ref(fig:traits-manhattan)__). There were five CpGs that associated with more than ten traits, cg01940273 _-_, cg05575921 _AHRR_, cg00574958 _CPT1A_, cg17901584 _DHCR24_, cg06500161 _ABCG1_. cg06500161 _ABCG1_ associated with more traits than any other site - 71 traits. These correspond mostly to metabolites, weight-related traits, and type two diabetes. 
 
-(ref:traits-manhattan-cap) __Number of unique traits associated with each DNA methylation at each CpG.__ Sites associated with more than 10 unique traits are highlighted in orange and labelled.
+(ref:traits-manhattan-cap) __Number of unique traits associated with DNA methylation at each CpG__. Sites associated with more than 10 unique traits are highlighted in orange and labelled.
+
+(ref:traits-manhattan-scap) Number of unique traits associated with DNA methylation at each CpG
 
 \begin{figure}
 
@@ -608,14 +621,16 @@ The number of traits each CpG associated with was fairly even across chromosomes
 
 }
 
-\caption{(ref:traits-manhattan-cap)}(\#fig:traits-manhattan)
+\caption[(ref:traits-manhattan-scap)]{(ref:traits-manhattan-cap)}(\#fig:traits-manhattan)
 \end{figure}
 
 Next we estimated the variance (see equation \@ref(eq:r-squared)) captured by each association to gauge the level of covariation between complex traits and DNA methylation.
 
 The total trait variance correlated with DNA methylation (r^2^) at each site varied from 0.0011 to 0.97 with a median of 0.093 (__Figure \@ref(fig:rsq-distribution)__). The sum of r^2^ values ranged greatly from 0.0055 to 23,879 (__Figure \@ref(fig:rsq-sum-distribution)__), with a median of 1.2. There was evidence that eight studies had a total sum of r^2^ values greater than the mean (FDR < 0.05) and r^2^ values from individual associations from these studies made up the majority of r^2^ values greater than 0.1 (__Figure \@ref(fig:rsq-distribution)__). When excluding those studies from the results, the median r^2^ value at individual sites was 0.025.
 
-(ref:rsq-distribution-cap) __Distribution of r-squared values across all CpG sites in The EWAS Catalog__. Each EWAS can identify multiple differentially methylated positions, each of which will capture some variance of the trait of interest for that EWAS (r^2^). $\sum {r^2}$ is the sum of r^2^ values, the distribution of which is shown in __Figure \@ref(fig:rsq-sum-distribution)__. Eight studies were identified for which there was strong evidence that the sum of r^2^ values were greater than the mean across all studies. All of the differentially methylated positions identified by those studies are highlighted in blue on the plot.
+(ref:rsq-distribution-cap) __Distribution of r^2^ values across all CpG sites in The EWAS Catalog__. Each EWAS can identify multiple differentially methylated positions, each of which will capture some variance of the trait of interest for that EWAS (r^2^). $\sum {r^2}$ is the sum of r^2^ values, the distribution of which is shown in __Figure \@ref(fig:rsq-sum-distribution)__. Eight studies were identified for which there was strong evidence that the sum of r^2^ values were greater than the mean across all studies. All of the differentially methylated positions identified by those studies are highlighted in blue on the plot.
+
+(ref:rsq-distribution-scap) Distribution of r^2^ values across all CpG sites in The EWAS Catalog
 
 \begin{figure}
 
@@ -623,10 +638,12 @@ The total trait variance correlated with DNA methylation (r^2^) at each site var
 
 }
 
-\caption{(ref:rsq-distribution-cap)}(\#fig:rsq-distribution)
+\caption[(ref:rsq-distribution-scap)]{(ref:rsq-distribution-cap)}(\#fig:rsq-distribution)
 \end{figure}
 
-(ref:rsq-sum-distribution-cap) __Distribution of the sum of r^2^ values across each study in The EWAS Catalog.__ 
+(ref:rsq-sum-distribution-cap) __Distribution of the sum of r^2^ values across each study in The EWAS Catalog__.
+
+(ref:catalog-use-scap) Distribution of the sum of r^2^ values across each study in The EWAS Catalog
 
 \begin{figure}
 
@@ -634,7 +651,7 @@ The total trait variance correlated with DNA methylation (r^2^) at each site var
 
 }
 
-\caption{(ref:rsq-sum-distribution-cap)}(\#fig:rsq-sum-distribution)
+\caption[(ref:catalog-use-scap)]{(ref:rsq-sum-distribution-cap)}(\#fig:rsq-sum-distribution)
 \end{figure}
 
 These results suggest that some associations within the database are likely to be inflated, yet for most traits, variation at individual DNA methylation sites captures little trait variance. Summing the r^2^ values indicates a substantial proportion of trait variance can be captured by multiple DNA methylation sites for some traits, but this can only be estimated by jointly modelling the contribution of all sites to trait variance. This is explored in __Chapter \@ref(h2ewas-chapter)__. Here, the sum of r^2^ values is used to indicate whether the results of a study are likely inflated and thus unlikely to be robust. 
@@ -645,7 +662,9 @@ Here we continue to explore the robustness of results to 1. identify potential i
 
 In at least one model, 579 studies adjusted for batch effects, 518 studies adjusted for cell composition, and 489 adjusted for both. Of all DMPs identifed, 9.3% were measured by potentially faulty probes and an extra 0.64% were present on sex chromosomes (__Figure \@ref(fig:faulty-probes-plot)__). 
 
-(ref:faulty-probes-cap) __The percentage of differentially methylated positions that may have been identified by faulty probes and the percentage of EWAS that reported identifying at least one of these probes.__ Some CpGs are both on a sex chromosome and were identified as faulty by Zhou et al. They were labelled as 'potentially faulty'.
+(ref:faulty-probes-cap) __The percentage of differentially methylated positions that may have been identified by faulty probes and the percentage of EWAS that reported identifying at least one of these probes__. Some CpGs are both on a sex chromosome and were identified as faulty by Zhou et al. They were labelled as 'potentially faulty'.
+
+(ref:faulty-probes-scap) The percentage of differentially methylated positions that may have been identified by faulty probes and the percentage of EWAS that reported identifying at least one of these probes
 
 \begin{figure}
 
@@ -653,7 +672,7 @@ In at least one model, 579 studies adjusted for batch effects, 518 studies adjus
 
 }
 
-\caption{(ref:faulty-probes-cap)}(\#fig:faulty-probes-plot)
+\caption[(ref:faulty-probes-scap)]{(ref:faulty-probes-cap)}(\#fig:faulty-probes-plot)
 \end{figure}
 
 There were 30 studies that performed a meta-analysis of discovery and replication samples. A further 48 studies performed a separate replication analysis. Together, this provides 1666 associations within the EWAS Catalog that have been replicated at P < 1x10^-4^. 
@@ -907,7 +926,9 @@ Methods used to estimate h^2^~SNP~ use restricted maximum likelihood (REML) test
 
 ***
 
-(ref:h2ewas-model-comp-cap) Comparison of the grouping and blanket models in the context of the relationship between DNA methylation and gene expression. Both regions are exactly the same, the only difference is how each model assumes the methylation sites should be treated. The grouping model down-weights the contribution of correlated CpGs, effectively grouping them, and the blanket model assumes each CpG independently associates with a trait. As seen here, the grouping of correlated CpG sites may not be the correct thing to do as some of the sites may be acting independently of their correlated partners).
+(ref:h2ewas-model-comp-cap) __Comparison of the grouping and blanket models in the context of the relationship between DNA methylation and gene expression__. Both regions are exactly the same, the only difference is how each model assumes the methylation sites should be treated. The grouping model down-weights the contribution of correlated CpGs, effectively grouping them, and the blanket model assumes each CpG independently associates with a trait. As seen here, the grouping of correlated CpG sites may not be the correct thing to do as some of the sites may be acting independently of their correlated partners).
+
+(ref:h2ewas-model-comp-scap) Comparison of the grouping and blanket models in the context of the relationship between DNA methylation and gene expression
 
 \begin{figure}
 
@@ -915,7 +936,7 @@ Methods used to estimate h^2^~SNP~ use restricted maximum likelihood (REML) test
 
 }
 
-\caption{(ref:h2ewas-model-comp-cap)}(\#fig:h2ewas-model-comp)
+\caption[(ref:h2ewas-model-comp-scap)]{(ref:h2ewas-model-comp-cap)}(\#fig:h2ewas-model-comp)
 \end{figure}
 
 ## Method {#method-05}
@@ -926,7 +947,9 @@ All data for the chapter came from the Avon Longitudinal Study of Parents and Ch
 
 Continuous and binary phenotypes measured in mothers were extracted from the cohort using the ‘alspac’ R package (github.com/explodecomputer/alspac) and went through extensive quality control. Originally over 15,000 traits that were related to the mothers were extracted from the database. After the quality control process, which is detailed in __Figure \@ref(fig:h2ewas-pheno-qc)__, there were 2408 traits left for analysis.
 
-(ref:h2ewas-pheno-qc-cap) A summary of the data cleaning steps. Binary variables with fewer than 100 cases or controls were removed. Variables with "no clear relevance" to the mothers were identified manually, most were descriptive of how samples were measured, for example the fieldworker that examined the mother several months or years after blood draw. Normality of traits after rank normal transformations were assessed using a Shapiro-Wilk test. Those with some evidence of non-normality (P < 0.05), were re-examined by eye and removed if thought to be non-normal.
+(ref:h2ewas-pheno-qc-cap) __A summary of the data cleaning steps__. Binary variables with fewer than 100 cases or controls were removed. Variables with "no clear relevance" to the mothers were identified manually, most were descriptive of how samples were measured, for example the fieldworker that examined the mother several months or years after blood draw. Normality of traits after rank normal transformations were assessed using a Shapiro-Wilk test. Those with some evidence of non-normality (P < 0.05), were re-examined by eye and removed if thought to be non-normal.
+
+(ref:h2ewas-pheno-qc-scap) A summary of the data cleaning steps
 
 \begin{figure}
 
@@ -934,12 +957,14 @@ Continuous and binary phenotypes measured in mothers were extracted from the coh
 
 }
 
-\caption{(ref:h2ewas-pheno-qc-cap)}(\#fig:h2ewas-pheno-qc)
+\caption[(ref:h2ewas-pheno-qc-scap)]{(ref:h2ewas-pheno-qc-cap)}(\#fig:h2ewas-pheno-qc)
 \end{figure}
 
 All continuous traits were rank-normalised for further analyses. A Shapiro-Wilk test of normality was performed on these rank-normalised traits and for those with some evidence of non-normality (P < 0.05), the distribution of those traits was re-examined by eye to ensure it was approximately normal. It was found that any non-normality of phenotype distributions corresponded to an inflation of zero values. These traits were removed and overall there were 2408 traits left for analyses. These traits do not necessarily represent independent phenotypes and as such I wanted to prevent correlated traits skewing results. The absolute Pearson’s correlation coefficient between each trait was subtracted from one (1 –[r]). Then traits were greedily selected where 1 –[r] < 0.4 with any other trait. This left 400 traits, which consisted of ~30% clinically measured variables (including roughly 50 metabolites and some anthropometric traits), ~25% health related questions (for example “have you ever had asthma?”), ~40% behavioural and social traits (for example educational attainment variables, use of pesticide, and having pets), and ~5% of traits were related to the partner or child of the participant (for example the employment status of the partner). Phenotypes are presented in Supplementary table 1. Plots showing the correlation between all the phenotypes as well as with just the selected traits can be seen in __Figure \@ref(fig:h2ewas-pheno-corr-all) and \@ref(fig:h2ewas-pheno-corr-subset)__.
 
-(ref:h2ewas-pheno-corr-all-cap) Correlation between all 2408 phenotypes.
+(ref:h2ewas-pheno-corr-all-cap) __Correlation between all 2408 phenotypes__.
+
+(ref:h2ewas-pheno-corr-all-scap) Correlation between all 2408 phenotypes
 
 \begin{figure}
 
@@ -947,10 +972,12 @@ All continuous traits were rank-normalised for further analyses. A Shapiro-Wilk 
 
 }
 
-\caption{(ref:h2ewas-pheno-corr-all-cap)}(\#fig:h2ewas-pheno-corr-all)
+\caption[(ref:h2ewas-pheno-corr-all-scap)]{(ref:h2ewas-pheno-corr-all-cap)}(\#fig:h2ewas-pheno-corr-all)
 \end{figure}
 
-(ref:h2ewas-pheno-corr-subset-cap) Correlation between the 400 traits with a correlation of 1 - [r] < 0.4.
+(ref:h2ewas-pheno-corr-subset-cap) __Correlation between the 400 traits with a correlation of 1 - [r] < 0.4__.
+
+(ref:h2ewas-pheno-corr-subset-scap) Correlation between the 400 traits with a correlation of 1 - [r] < 0.4
 
 \begin{figure}
 
@@ -958,9 +985,8 @@ All continuous traits were rank-normalised for further analyses. A Shapiro-Wilk 
 
 }
 
-\caption{(ref:h2ewas-pheno-corr-subset-cap)}(\#fig:h2ewas-pheno-corr-subset)
+\caption[(ref:h2ewas-pheno-corr-subset-scap)]{(ref:h2ewas-pheno-corr-subset-cap)}(\#fig:h2ewas-pheno-corr-subset)
 \end{figure}
-
 
 ### DNA methylation data {#dna-methylation-data-05}
 DNA methylation was measured using the Illumina Infinium HumanMethylation450 (HM450) BeadChip. Before use, the data went through quality control and were normalised separately to the phenotype data. Full details can be found in the Supplementary Material.
@@ -1017,7 +1043,9 @@ The full EWAS summary statistics of each of the 400 EWAS are available via Zenod
 ## Results {#results-05}
 A flowchart showing our study design and giving a summary of the results is shown in __Figure \@ref(fig:h2ewas-study-design)__.
 
-(ref:h2ewas-study-design-cap) Study design with a summary of the results. ALSPAC = Avon Longitudinal Study of Parents and Children, QC = quality control, EWAS = epigenome-wide association study, MRM = methylation relationship matrix, AUC = area under curve.
+(ref:h2ewas-study-design-cap) __Study design with a summary of the results__. ALSPAC = Avon Longitudinal Study of Parents and Children, QC = quality control, EWAS = epigenome-wide association study, MRM = methylation relationship matrix, AUC = area under curve.
+
+(ref:h2ewas-study-design-scap) Study design with a summary of the results
 
 \begin{figure}
 
@@ -1025,7 +1053,7 @@ A flowchart showing our study design and giving a summary of the results is show
 
 }
 
-\caption{(ref:h2ewas-study-design-cap)}(\#fig:h2ewas-study-design)
+\caption[(ref:h2ewas-study-design-scap)]{(ref:h2ewas-study-design-cap)}(\#fig:h2ewas-study-design)
 \end{figure}
 
 ### Estimating the proportion of phenotypic variance associated with DNA methylation {#estimating-h2ewas}
@@ -1034,7 +1062,9 @@ Two models were used to estimate the total contribution of all DNA methylation s
 
 There was little evidence that either of the models fit the data better (had higher likelihoods) across the 400 traits tested (difference in median likelihoods = 0.19, Wilcoxon’s paired ranked sum test P = 0.73). Further, the majority of h^2^~EWAS~ estimate differences between the traits were small.
 
-(ref:h2ewas-estimates-cap) A comparison of h^2^~EWAS~ estimates given by applying REML using the blanket and grouping models across 400 traits. The blue dashed line is at x=y. Values with h^2^~EWAS~ lower than 0 are due to imprecision in h^2^~EWAS~ estimates as the true estimate cannot be negative. Smoked_cigs_reg = smoked cigarettes regularly. The h^2^~EWAS~ of this phenotype has the greatest evidence for being above 0 for both the blanket and grouping model (Uncorrected P = 1.44x10^-4^ and P = 2.61x10^-4^, respectively).
+(ref:h2ewas-estimates-cap) __A comparison of h^2^~EWAS~ estimates given by applying REML using the blanket and grouping models across 400 traits__. The blue dashed line is at x=y. Values with h^2^~EWAS~ lower than 0 are due to imprecision in h^2^~EWAS~ estimates as the true estimate cannot be negative. Smoked_cigs_reg = smoked cigarettes regularly. The h^2^~EWAS~ of this phenotype has the greatest evidence for being above 0 for both the blanket and grouping model (Uncorrected P = 1.44x10^-4^ and P = 2.61x10^-4^, respectively).
+
+(ref:h2ewas-estimates-scap) A comparison of h^2^~EWAS~ estimates given by applying REML using the blanket and grouping models across 400 traits
 
 \begin{figure}
 
@@ -1042,7 +1072,7 @@ There was little evidence that either of the models fit the data better (had hig
 
 }
 
-\caption{(ref:h2ewas-estimates-cap)}(\#fig:h2ewas-estimates)
+\caption[(ref:h2ewas-estimates-scap)]{(ref:h2ewas-estimates-cap)}(\#fig:h2ewas-estimates)
 \end{figure}
 
 ### Sensitivity analyses when estimating the proportion of phenotypic variance associated with DNA methylation {#results-sensitivity-analyses-05}
@@ -1051,7 +1081,9 @@ After examination of the MRMs required to produce the h^2^~EWAS~ estimates, for 
 
 The weight of predictors used to produce the MRMs was also examined. As more weight was given to sites where methylation variation was greater (increasing alpha value) the h^2^~EWAS~ estimates were slightly higher (__Figure \@ref(fig:h2ewas-sens)__). However, the likelihood varied little, the median likelihood had a range of 2 across the alpha values (__Figure \@ref(fig:h2ewas-sens)__).
 
-(ref:h2ewas-sens-cap) Boxplots summarising of sensitivity analyses. __A__ and __B__ Analyses estimating h^2^~EWAS~ were repeated after removing individuals who had high diagnonal values in the methylation relationship matrix (MRM). Varying thresholds were used to define individuals as an outlier, NA indicates that no individuals were removed from the analysis. __A__ shows the likelihood estimate (model fit) variation and __B__ shows the variation in h^2^~EWAS~ estimates. Analyses were also repeated in the same vein, varying $\alpha$ values, (see equation \@ref(eq:mrm-weights)) (__C__ and __D__).
+(ref:h2ewas-sens-cap) __Boxplots summarising of sensitivity analyses__. __A__ and __B__ Analyses estimating h^2^~EWAS~ were repeated after removing individuals who had high diagnonal values in the methylation relationship matrix (MRM). Varying thresholds were used to define individuals as an outlier, NA indicates that no individuals were removed from the analysis. __A__ shows the likelihood estimate (model fit) variation and __B__ shows the variation in h^2^~EWAS~ estimates. Analyses were also repeated in the same vein, varying $\alpha$ values, (see equation \@ref(eq:mrm-weights)) (__C__ and __D__).
+
+(ref:h2ewas-sens-scap) Boxplots summarising of sensitivity analyses
 
 \begin{figure}
 
@@ -1059,7 +1091,7 @@ The weight of predictors used to produce the MRMs was also examined. As more wei
 
 }
 
-\caption{(ref:h2ewas-sens-cap)}(\#fig:h2ewas-sens)
+\caption[(ref:h2ewas-sens-scap)]{(ref:h2ewas-sens-cap)}(\#fig:h2ewas-sens)
 \end{figure}
 
 ### EWAS analyses {#results-ewas-analyses-05}
@@ -1068,7 +1100,9 @@ In order to assess the association between h^2^~EWAS~ and EWAS results, EWAS of 
 
 As the distributions of hit count data was heavily right skewed with an inflation at 0 and 1 (__Figure \@ref(fig:h2ewas-dmp-dist)__), to test the association between h^2^~EWAS~ and number of DMPs I opted to test goodness of fit for variations of Poisson models. Of the 6 models tested, the negative binomial hurdle Poisson regression model fit the data best, full results can be found in Supplementary table 5. It was found there was some evidence for an association between number of EWAS hits and h^2^~EWAS~ (__Figure \@ref(fig:dmps-and-h2ewas)__). There was some evidence of association between the presence of DMPs and h^2^~EWAS~ (beta = 6.2, [95%CI 2.5, 10]) as well as some evidence of an association between number of DMPs (when the number is above 0) and h^2^~EWAS~ (mean increase of 0.63, [95%CI 0.41, 0.84] DMPs when h^2^~EWAS~ increases by 0.1). Applying the same method to GWAS data, it was found evidence that the presence of identified SNPs associated with h^2^~SNP~ (beta = 21.9 [95%CI 19.6, 24.1]) and the association between number of SNPs identified (when the number is above 0) and h^2^~SNP~ (mean increase of 1.5, [95%CI 0.93, 2.5] SNPs when h^2^~SNP~ increases by 0.1).
 
-(ref:h2ewas-dmp-dist-cap) The distribution of the number of DNA methylation sites identified at P<1x10^-5^ across EWAS of 400 traits.
+(ref:h2ewas-dmp-dist-cap) __The distribution of the number of DNA methylation sites identified at P<1x10^-5^ across EWAS of 400 traits__.
+
+(ref:h2ewas-dmp-dist-scap) The distribution of the number of DNA methylation sites identified at P<1x10^-5^ across EWAS of 400 traits
 
 \begin{figure}
 
@@ -1076,10 +1110,12 @@ As the distributions of hit count data was heavily right skewed with an inflatio
 
 }
 
-\caption{(ref:h2ewas-dmp-dist-cap)}(\#fig:h2ewas-dmp-dist)
+\caption[(ref:h2ewas-dmp-dist-scap)]{(ref:h2ewas-dmp-dist-cap)}(\#fig:h2ewas-dmp-dist)
 \end{figure}
 
-(ref:dmps-and-h2ewas-cap) Association between h^2^~EWAS~ and number of DMPs identified in EWAS. The correlation between DNA methylation and the variance of traits (h^2^~EWAS~) was calculated using REML analysis using the blanket and grouping models. EWAS were conducted on all the same traits and the distribution of the number of DMPs identified at P < 1x10^-5^ and h^2^~EWAS~ are plotted above. Any traits where the h^2^~EWAS~ estimate is below 0 are coloured grey. The true h^2^~EWAS~ value of a trait cannot be negative, but sample sizes in this analysis are small so the estimates are imprecise.
+(ref:dmps-and-h2ewas-cap) __Association between h^2^~EWAS~ and number of DMPs identified in EWAS__. The correlation between DNA methylation and the variance of traits (h^2^~EWAS~) was calculated using REML analysis using the blanket and grouping models. EWAS were conducted on all the same traits and the distribution of the number of DMPs identified at P < 1x10^-5^ and h^2^~EWAS~ are plotted above. Any traits where the h^2^~EWAS~ estimate is below 0 are coloured grey. The true h^2^~EWAS~ value of a trait cannot be negative, but sample sizes in this analysis are small so the estimates are imprecise.
+
+(ref:dmps-and-h2ewas-scap) Association between h^2^~EWAS~ and number of DMPs identified in EWAS
 
 \begin{figure}
 
@@ -1087,7 +1123,7 @@ As the distributions of hit count data was heavily right skewed with an inflatio
 
 }
 
-\caption{(ref:dmps-and-h2ewas-cap)}(\#fig:dmps-and-h2ewas)
+\caption[(ref:dmps-and-h2ewas-scap)]{(ref:dmps-and-h2ewas-cap)}(\#fig:dmps-and-h2ewas)
 \end{figure}
 
 \begin{table}[!h]
@@ -1113,7 +1149,9 @@ Zero-inflated Poisson & -1501 & 4\\
 
 The ability of h^2^~EWAS~ estimated by both models to predict whether the number of DMPs identified was greater than expected was assessed at varying P value thresholds. ROC curves were produced and the area under the curve (AUC) ranged from 0.65 and 0.67 at P < 1x10^-6^ to 0.79 and 0.71 at P < 1x10^-3^ for the blanket and grouping models respectively and the predictive ability remained fairly stable as the threshold increased (__Figure \@ref(fig:h2ewas-dmp-roc-curve)__).
 
-(ref:h2ewas-dmp-roc-curve-cap) The ability of h^2^~EWAS~ values to predict whether the number of differentially methylated positions identified in an EWAS is higher than expected by chance. ROC curves for h^2^~EWAS~ values predicting number of DMPs at differing P value thresholds. AUC = area under the curve.
+(ref:h2ewas-dmp-roc-curve-cap) __The ability of h^2^~EWAS~ values to predict whether the number of differentially methylated positions identified in an EWAS is higher than expected by chance__. ROC curves for h^2^~EWAS~ values predicting number of DMPs at differing P value thresholds. AUC = area under the curve.
+
+(ref:h2ewas-dmp-roc-curve-scap) The ability of h^2^~EWAS~ values to predict whether the number of differentially methylated positions identified in an EWAS is higher than expected by chance
 
 \begin{figure}
 
@@ -1121,7 +1159,7 @@ The ability of h^2^~EWAS~ estimated by both models to predict whether the number
 
 }
 
-\caption{(ref:h2ewas-dmp-roc-curve-cap)}(\#fig:h2ewas-dmp-roc-curve)
+\caption[(ref:h2ewas-dmp-roc-curve-scap)]{(ref:h2ewas-dmp-roc-curve-cap)}(\#fig:h2ewas-dmp-roc-curve)
 \end{figure}
 
 ## Discussion {#discussion-05}
@@ -1242,7 +1280,7 @@ Two-sample MR was used to establish potential causal effect of differential meth
 #### Sample 1: Accessible Resource for Integrated Epigenomic Studies (ARIES)
 In the first sample, mQTL-methylation effect estimates ($\beta_{GP}$) for each CpG site of interest were identified in an mQTL database from the Accessible Resource for Integrated Epigenomic Studies (ARIES) (http://www.mqtldb.org). Details on the methylation pre-processing, genotyping and quality control (QC) pipelines are outlined below. 
 
-__DNA methylation data__
+##### DNA methylation data
 Samples were drawn from the Avon Longitudinal Study of Parents and Children [@Boyd2013; @Fraser2013]. Blood from 1,018 mother–child pairs were selected for analysis as part of the Accessible Resource for Integrative Epigenomic Studies (ARIES, http://www.ariesepigenomics.org.uk/) [@Relton2015]. There are three timepoints in children and two in their mothers, the timepoints with mean ages (in brackets) in ARIES are as follows for children: birth, childhood (7.5), adolescence (17.1) and for mothers: during pregnancy (28.7), and at middle age (46.9). Following DNA extraction, samples were bisulphite converted using the Zymo EZ DNA Methylation^TM^ kit (Zymo, Irvine, CA, USA). Following conversion, genome-wide methylation was measured using the Illumina Infinium HumanMethylation450 (HM450) BeadChip. Methylation data were normalised in R with the watermelon package [@Pidsley2013] using the Touleimat and Tost [@Touleimat2012] algorithm to reduce the non-biological differences between probes. Methylation data in ARIES were rank-normalised to remove outliers, and then Matrix eQTL software [@Gaunt2016] was used to perform preliminary association analysis of SNPs with all CpG sites in the Illumina Infinium HM450 array with the exception of those failing QC, and those reported to map to more than one location (n=19,834) or to contain a genetic variant at the CpG site (n=74,182) [@Naeem2014].
 
 __Genetic data__
@@ -1333,7 +1371,9 @@ Analyses were conducted in Stata (version 14) and R (version 3.2.2). For the two
 ## Results {#results-07}
 A flowchart representing the study design along with a summary of the results at each step is displayed in __Figure \@ref(fig:fig1-07)__.
 
-(ref:fig1-07-cap) __Study design with results summary.__ ARIES = Accessible Resource for Integrated Epigenomic Studies, TRICL-ILLCO = Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium, MR = Mendelian randomization, CCHS = Copenhagen City Heart Study, TCGA = The Cancer Genome Atlas. * = 2000 individuals with samples at multiple timepoints.
+(ref:fig1-07-cap) __Study design with results summary__. ARIES = Accessible Resource for Integrated Epigenomic Studies, TRICL-ILLCO = Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium, MR = Mendelian randomization, CCHS = Copenhagen City Heart Study, TCGA = The Cancer Genome Atlas. * = 2000 individuals with samples at multiple timepoints.
+
+(ref:fig1-07-scap) Study design with results summary
 
 \begin{figure}
 
@@ -1341,16 +1381,18 @@ A flowchart representing the study design along with a summary of the results at
 
 }
 
-\caption{(ref:fig1-07-cap)}(\#fig:fig1-07)
+\caption[(ref:fig1-07-scap)]{(ref:fig1-07-cap)}(\#fig:fig1-07)
 \end{figure}
 
 ### EWAS meta-analysis {#results-ewas-meta-analysis}
 The basic meta-analysis adjusted for study-specific covariates identified 16 CpG sites which were hypomethylated in relation to lung cancer (FDR<0.05, Model 1, __Figure \@ref(fig:fig2-07)__). Adjusting for 10 surrogate variables (Model 2) and derived cell counts (Model 3) gave similar results (Table 1). The direction of effect at the 16 sites did not vary between studies (median I2=38.6) (__Table \@ref(tab:sup-tab2-07)__), but there was evidence for heterogeneity of effect estimates at some sites when stratifying individuals by smoking status (Table 1).
 
-(ref:fig2-07-cap) __Observational associations of DNA methylation and lung cancer: A fixed effects meta-analysis of lung cancer EWAS weighted on the inverse variance was performed to establish the observational association between differential DNA methylation and lung cancer.__ Left-hand side: Manhattan plot, all points above the solid line are at P < 1x10-7 and all points above the dashed line (and triangular points) are at FDR < 0.05. In total 16 CpG sites are associated with lung cancer (FDR < 0.05). Right-hand side: Quantile-quantile plot of the EWAS results (same data as the Manhattan plot). 
+(ref:fig2-07-cap) __Observational associations of DNA methylation and lung cancer: A fixed effects meta-analysis of lung cancer EWAS weighted on the inverse variance was performed to establish the observational association between differential DNA methylation and lung cancer__. Left-hand side: Manhattan plot, all points above the solid line are at P < 1x10-7 and all points above the dashed line (and triangular points) are at FDR < 0.05. In total 16 CpG sites are associated with lung cancer (FDR < 0.05). Right-hand side: Quantile-quantile plot of the EWAS results (same data as the Manhattan plot). 
+
+(ref:fig2-07-scap) Observational associations of DNA methylation and lung cancer: A fixed effects meta-analysis of lung cancer EWAS weighted on the inverse variance was performed to establish the observational association between differential DNA methylation and lung cancer
 
 \begin{figure}
-\includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_2a} \includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_2b} \caption{(ref:fig2-07-cap)}(\#fig:fig2-07)
+\includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_2a} \includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_2b} \caption[(ref:fig2-07-scap)]{(ref:fig2-07-cap)}(\#fig:fig2-07)
 \end{figure}
 
 
@@ -1484,7 +1526,9 @@ PRSS23 & cg23771366 & 1 & Lung cancer & 0.953 (0.901, 1.01) & 0.086\\
 
 \pagebreak
 
-(ref:fig3-07-cap) __Mendelian randomization (MR) vs. observational analysis.__ Two-sample MR was carried out with methylation at 14/16 CpG sites identified in the EWAS meta-analysis as the exposure and lung cancer as the outcome. cg01901332 and cg05575921 had 2 instruments so the estimate was calculated using the inverse variance weighted method, for the rest the MR estimate was calculated using a Wald ratio. Only 14 of 16 sites could be instrumented using mQTLs from mqtldb.org. * = instrumental variable not replicated in independent dataset (NSHDS). The sites for which instrumental variables have not been replicated are cg01901332, cg21566642, cg05575921 and cg08709672. OR = odds ratio per SD increase in DNA methylation.
+(ref:fig3-07-cap) __Mendelian randomization (MR) vs. observational analysis__. Two-sample MR was carried out with methylation at 14/16 CpG sites identified in the EWAS meta-analysis as the exposure and lung cancer as the outcome. cg01901332 and cg05575921 had 2 instruments so the estimate was calculated using the inverse variance weighted method, for the rest the MR estimate was calculated using a Wald ratio. Only 14 of 16 sites could be instrumented using mQTLs from mqtldb.org. * = instrumental variable not replicated in independent dataset (NSHDS). The sites for which instrumental variables have not been replicated are cg01901332, cg21566642, cg05575921 and cg08709672. OR = odds ratio per SD increase in DNA methylation.
+
+(ref:fig3-07-scap) Mendelian randomization (MR) vs. observational analysis
 
 \begin{figure}
 
@@ -1492,7 +1536,7 @@ PRSS23 & cg23771366 & 1 & Lung cancer & 0.953 (0.901, 1.01) & 0.086\\
 
 }
 
-\caption{(ref:fig3-07-cap)}(\#fig:fig3-07)
+\caption[(ref:fig3-07-scap)]{(ref:fig3-07-cap)}(\#fig:fig3-07)
 \end{figure}
 
 For 9 of out the 16 mQTL-CpG associations, there was strong replication across time points (__Table \@ref(tab:sup-tab5-07)__) and 10 out of 16 mQTL-CpG associations replicated at FDR<0.05 in an independent adult cohort (NSHDS).  Using mQTL effect estimates from NSHDS for the 10 CpG sites that replicated (FDR<0.05), findings were consistent with limited evidence for a causal effect of peripheral blood-derived DNA methylation on lung cancer (__Figure \@ref(fig:sup-fig1-07)__).
@@ -1536,7 +1580,9 @@ cg27241845 & ALPPL2 & rs56080708 & 0.038 & 0.011 & 4.5e-04 & 0.052 & 0.012 & 2.5
 \end{table}
 \end{landscape}
 
-(ref:sup-fig1-07-cap) __Comparison of two-sample Mendelian randomization results when using the discovery (ARIES, n = 1018) and replication (NSHDS, n = 468)__ On the left-hand side of each column the bracketed numbers represent the number of instrumental variables for that CpG site. 
+(ref:sup-fig1-07-cap) __Comparison of two-sample Mendelian randomization results when using the discovery (ARIES, n = 1018) and replication (NSHDS, n = 468)__. On the left-hand side of each column the bracketed numbers represent the number of instrumental variables for that CpG site. 
+
+(ref:sup-fig1-07-scap) Comparison of two-sample Mendelian randomization results when using the discovery (ARIES, n = 1018) and replication (NSHDS, n = 468)
 
 \begin{figure}
 
@@ -1544,12 +1590,14 @@ cg27241845 & ALPPL2 & rs56080708 & 0.038 & 0.011 & 4.5e-04 & 0.052 & 0.012 & 2.5
 
 }
 
-\caption{(ref:sup-fig1-07-cap)}(\#fig:sup-fig1-07)
+\caption[(ref:sup-fig1-07-scap)]{(ref:sup-fig1-07-cap)}(\#fig:sup-fig1-07)
 \end{figure}
 
 There was little evidence of different effect estimates between ever and never smokers at individual CpG sites (__Figure \@ref(fig:sup-fig2-07)__, Z-test for difference, P>0.5). There was some evidence for a possible effect of methylation at cg21566642-_ALPPL2_ and cg23771366-_PRSS23_ on squamous cell lung cancer (OR=0.85 [95% confidence interval (CI)=0.75,0.97] and 0.91 [95% CI=0.84,1.00] per SD [14.4% and 5.8%] increase, respectively) as well as methylation at cg23387569-_AGAP2_, cg16823042-_AGAP2_, and cg01901332-_ARRB1_ on lung adenocarcinoma (OR=0.86 [95% CI=0.77,0.96], 0.84 [95% CI=0.74,0.95], and 0.89 [95% CI=0.80,1.00] per SD [9.47%, 8.35%, and 8.91%] increase, respectively). However, none of the results withstood multiple testing correction (FDR<0.05) (__Figure \@ref(fig:sup-fig3-07)__). For those CpGs where multiple mQTLs were used as instruments (cg05575921-_AHRR_ and cg01901332-_ARRB1_), there was limited evidence for heterogeneity in MR effect estimates (Q-test, P>0.05, __Table \@ref(tab:sup-tab6-07)__).
 
-(ref:sup-fig2-07-cap) __DNA methylation – lung cancer Mendelian randomization effect estimates in ever and never smokers__ On the left-hand side of each column the bracketed numbers represent the number of instrumental variables for that CpG site. * indicates that the SNP(s) being used to instrument that CpG site are more than 1MB away from the CpG site in the genome (trans).
+(ref:sup-fig2-07-cap) __DNA methylation – lung cancer Mendelian randomization effect estimates in ever and never smokers__. On the left-hand side of each column the bracketed numbers represent the number of instrumental variables for that CpG site. * indicates that the SNP(s) being used to instrument that CpG site are more than 1MB away from the CpG site in the genome (trans).
+
+(ref:sup-fig2-07-scap) DNA methylation – lung cancer Mendelian randomization effect estimates in ever and never smokers
 
 \begin{figure}
 
@@ -1557,10 +1605,12 @@ There was little evidence of different effect estimates between ever and never s
 
 }
 
-\caption{(ref:sup-fig2-07-cap)}(\#fig:sup-fig2-07)
+\caption[(ref:sup-fig2-07-scap)]{(ref:sup-fig2-07-cap)}(\#fig:sup-fig2-07)
 \end{figure}
 
 (ref:sup-fig3-07-cap) __Mendelian randomization of DNA methylation on three lung cancer subgroups__ On the left-hand side of each column the bracketed numbers represent the number of instrumental variables for that CpG site. * indicates that the SNP(s) being used to instrument that CpG site are more than 1MB away from the CpG site in the genome (trans). Squamous = squamous cell carcinoma, Small = small cell carcinoma, Adeno = adenocarcinoma.
+
+(ref:sup-fig3-07-scap) Mendelian randomization of DNA methylation on three lung cancer subgroups
 
 \begin{figure}
 
@@ -1568,7 +1618,7 @@ There was little evidence of different effect estimates between ever and never s
 
 }
 
-\caption{(ref:sup-fig3-07-cap)}(\#fig:sup-fig3-07)
+\caption[(ref:sup-fig3-07-scap)]{(ref:sup-fig3-07-cap)}(\#fig:sup-fig3-07)
 \end{figure}
 
 \begin{table}[!h]
@@ -1608,7 +1658,9 @@ cg01901332 & Squamous cell lung cancer & 2 & 1.266 & 0.26\\
 
 Single mQTLs for cg05575921-_AHRR_, cg27241845-_ALPPL2_, and cg26963277-_KCNQ1_ showed some evidence of association with smoking cessation (former vs. current smokers), although these associations were not below the FDR<0.05 threshold (__Figure \@ref(fig:sup-fig4-07)__).
 
-(ref:sup-fig4-07-cap) __Associations of mQTLs and smoking behaviours__ Some SNPs that were genotyped in the TRICL consortium were not within the TAG consortium, thus were not available for analysis here. Units for the traits: age of smoking initiation = log years, ever vs. never smoked = log odds, former vs current smoker = log odds.
+(ref:sup-fig4-07-cap) __Associations of mQTLs and smoking behaviours__. Some SNPs that were genotyped in the TRICL consortium were not within the TAG consortium, thus were not available for analysis here. Units for the traits: age of smoking initiation = log years, ever vs. never smoked = log odds, former vs current smoker = log odds.
+
+(ref:sup-fig4-07-scap) Associations of mQTLs and smoking behaviours
 
 \begin{figure}
 
@@ -1616,7 +1668,7 @@ Single mQTLs for cg05575921-_AHRR_, cg27241845-_ALPPL2_, and cg26963277-_KCNQ1_ 
 
 }
 
-\caption{(ref:sup-fig4-07-cap)}(\#fig:sup-fig4-07)
+\caption[(ref:sup-fig4-07-scap)]{(ref:sup-fig4-07-cap)}(\#fig:sup-fig4-07)
 \end{figure}
 
 #### Potential causal effect of _AHRR_ methylation on lung cancer risk: one sample MR {#ahrr-one-sample-mr}
@@ -1670,7 +1722,9 @@ Never & 1,948 & 9 & 0.83 (0.38; 1.85) & 0.66\\
 
 Given contrasting findings with the main MR analysis, where cg05575921-_AHRR_ methylation was not causally implicated in lung cancer, and the lower power in the one-sample analysis to detect an effect of equivalent size to the observational results (power = 19% at alpha = 0.05), a further two-sample MR was performed based on the four mQTLs using data from both CCHS (sample one) and the TRICL-ILCCO consortium (sample two). Results showed no strong evidence for a causal effect of DNA methylation on total lung cancer risk (OR=1.00 [95% CI=0.83,1.10] per SD increase) (__Figure \@ref(fig:sup-fig5-07)__). There was also limited evidence for an effect of cg05575921-_AHRR_ methylation when stratified by cancer subtype and smoking status (__Figure \@ref(fig:sup-fig5-07)__) and no strong evidence for heterogeneity of the mQTL effects (__Table \@ref(tab:sup-tab9-07)__). Conclusions were consistent when MR-Egger [@Bowden2015] was applied (__Figure \@ref(fig:sup-fig5-07)__) and when accounting for correlation structure between the mQTLs  (__Table \@ref(tab:sup-tab9-07)__). 
 
-(ref:sup-fig5-07-cap) __Two-sample Mendelian randomization analysis of DNA methylation at _AHRR_ on lung cancer__ The top four plots assess the association of DNA methylation at _AHRR_ and different lung cancer subtypes. The bottom two plots assess the association between DNA methylation and all lung cancer after stratifying into groups of ever and never smokers.
+(ref:sup-fig5-07-cap) __Two-sample Mendelian randomization analysis of DNA methylation at _AHRR_ on lung cancer__. The top four plots assess the association of DNA methylation at _AHRR_ and different lung cancer subtypes. The bottom two plots assess the association between DNA methylation and all lung cancer after stratifying into groups of ever and never smokers.
+
+(ref:sup-fig5-07-scap) Two-sample Mendelian randomization analysis of DNA methylation at _AHRR_ on lung cancer
 
 \begin{figure}
 
@@ -1678,7 +1732,7 @@ Given contrasting findings with the main MR analysis, where cg05575921-_AHRR_ me
 
 }
 
-\caption{(ref:sup-fig5-07-cap)}(\#fig:sup-fig5-07)
+\caption[(ref:sup-fig5-07-scap)]{(ref:sup-fig5-07-cap)}(\#fig:sup-fig5-07)
 \end{figure}
 
 \begin{table}[!h]
@@ -1711,10 +1765,12 @@ All in ever smokers & 4 & -0.017 & 0.010 & -0.016 & 0.011 & 1.63 & 3 & 0.65\\
 ### Tumour and adjacent normal lung tissue methylation patterns {#lc-heathly-v-normal}
 For cg05575921-_AHRR_, there was no strong evidence for differential methylation between adenocarcinoma tissue and adjacent healthy tissue (P=0.963), and weak evidence for hypermethylation in squamous cell carcinoma tissue (P=0.035) (__Figure \@ref(fig:fig4-07)__, __Table \@ref(tab:sup-tab10-07)__). For the other CpG sites there was evidence for a difference in DNA methylation between tumour and healthy adjacent tissue at several sites in both adenocarcinoma and squamous cell carcinoma, with consistent differences for CpG sites in _ALPPL2_ (cg2156642, cg05951221 and cg01940273), as well as cg23771366-_PRSS23_, cg26963277-_KCNQ1_, cg09935388-_GFI1_, cg0101332-_ARRB1_, cg08709672-_AVPR1B_ and cg25305703-_CASC21_. However, hypermethylation in tumour tissue was found for the majority of these sites, which is opposite to what was observed in the EWAS analysis.
 
-(ref:fig4-07-cap) Differential DNA methylation in lung cancer tissue: A comparison of methylation at each of the 16 CpG sites identified in the meta-analysis was made between lung cancer tissue and adjacent healthy lung tissue for patients with lung adenocarcinoma (__A__) and squamous cell lung cancer (__B__). Data from The Cancer Genome Atlas was used for this analysis.
+(ref:fig4-07-cap) __Differential DNA methylation in lung cancer tissue__. A comparison of methylation at each of the 16 CpG sites identified in the meta-analysis was made between lung cancer tissue and adjacent healthy lung tissue for patients with lung adenocarcinoma (__A__) and squamous cell lung cancer (__B__). Data from The Cancer Genome Atlas was used for this analysis.
+
+(ref:fig4-07-scap) Differential DNA methylation in lung cancer tissue
 
 \begin{figure}
-\includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_4a} \includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_4b} \caption{(ref:fig4-07-cap)}(\#fig:fig4-07)
+\includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_4a} \includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_4b} \caption{(ref:fig4-07-scap)}(\#fig:fig4-07)
 \end{figure}
 
 \begin{table}[!h]

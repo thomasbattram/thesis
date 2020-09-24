@@ -12,9 +12,11 @@ In this chapter I present the historical interpretation of ‘information flow�
 
 To gauge how molecular mechanisms result in more observable phenotypes, it is important to understand how molecular machinery interacts. The central dogma of molecular biology was originally proposed by Francis Crick [@Cobb2017; @CRICK1958] and described how information flowed from nucleic acids to proteins within cells (__Figure \@ref(fig:central-dogma)__). Crick postulated that information could flow from nucleic acids to proteins, but not from proteins to nucleic acids. By information, Crick was specifically referencing changes in polymer sequence. Although this is generally the process of information flow, it does not describe other complex interactions that impact function without changing polymer sequence. Post-translational and post-transcriptional modifications can influence the lifespan and function of proteins and RNA respectively [@Hafner2019; @Corbett2018; @Wang2014; @Filipowicz2008]. Proteins of the same polypeptide sequence can take on slightly different conformations when interacting with other cellular factors [@Alberts2017] and certain proteins (known as prions) can even alter the conformation of other polypeptides with the same sequence [@Colby2011]. Further, modifications to the DNA and to DNA-bound proteins may have a profound influence on the concentration of certain gene transcripts as well as the post-transcriptional splicing of transcripts [@Kornberg1999; @Gibney2010]. As mentioned, DNA methylation is one such modification that can occur.
 
-(ref:central-dogma-cap) The central dogma of molecular biology. The dogma stipulates that sequence changes (that is the addition, removal or mutation of elements) can only occur in the direction of the arrows. 1. DNA replication 2. Transcription 3. Translation 4. Reverse transcription 5. RNA replication 6. Direct DNA-protein translation. 
+(ref:central-dogma-cap) __The central dogma of molecular biology__. The dogma stipulates that sequence changes (that is the addition, removal or mutation of elements) can only occur in the direction of the arrows. 1. DNA replication 2. Transcription 3. Translation 4. Reverse transcription 5. RNA replication 6. Direct DNA-protein translation. 
 
-```{r central-dogma, results="asis", fig.cap='(ref:central-dogma-cap)', out.width='100%'}
+(ref:central-dogma-scap) The central dogma of molecular biology
+
+```{r central-dogma, results="asis", fig.cap='(ref:central-dogma-cap)', out.width='100%', fig.scap='(ref:central-dogma-scap)'}
 include_graphics(file.path(fig_path, "01-introduction", "central-dogma.pdf"))
 ```
 
@@ -25,9 +27,11 @@ For reasons which I will describe in more detail later, DNA methylation is now b
 ## DNA methylation as part of the regulatory machinery {#dnam-as-part-of-regulation}
 DNA methylation is correlated with gene expression levels and has been hypothesised to contribute to gene regulation [@Suzuki2008; @Siegfried1999; @Bird2002; @Jones2012]. This is the main mechanism by which it is thought DNA methylation influences variability in phenotypes. However, DNA methylation is just one of many epigenetic marks that are involved in gene regulation (__Figure \@ref(fig:epigenetic-marks)__). In this section I describe epigenetics and evidence gathered about the function of different epigenetic marks. 
 
-(ref:epigenetic-marks-cap) Graphic of epigenetic marks taken from @epigenetic-marks-figure.
+(ref:epigenetic-marks-cap) __Epigenetic marks__. Graphic taken from @epigenetic-marks-figure__.
 
-```{r epigenetic-marks, results="asis", fig.cap='(ref:epigenetic-marks-cap)', out.width='100%'}
+(ref:epigenetic-marks-scap) Epigenetic marks
+
+```{r epigenetic-marks, results="asis", fig.cap='(ref:epigenetic-marks-cap)', out.width='100%', fig.scap='(ref:epigenetic-marks-scap)'}
 include_graphics(file.path(fig_path, "01-introduction", "epigenetic-marks.jpg"))
 ```
 
@@ -44,9 +48,11 @@ One thing research has revealed is that the location of DNA methylation is impor
 
 These strong associations between DNA methylation and gene expression do not necessarily mean that the addition or removal of methyl groups will actively impact gene expression. Elucidating the causal nature of the association between DNA methylation and gene expression has been fraught with difficulties and has often provided conflicting results. One study showed an enzyme that catalyzes the addition of methyl groups to the DNA, DNA methyltransferase 3A, is required in haematopoeitic stem cells for them to differentiate, suggesting gene expression changes required for differentiation were not possible without addition of methyl groups to the DNA [@Challen2012]. However, studies have provided evidence that DNA methylation is unlikely to initiate the ‘silencing’ of gene expression and may occur at transcription start sites of genes after they’ve already been repressed [@Lock1987; @Ohm2007]. To further complicate things, if DNA methylation does influence gene expression, the mechanism of action is unclear and may depend on the gene being examined. One study showed the presence of DNA methylation at the binding sites of the transcription factor, _MYC_, was inversely associated with its binding [@Prendergast1991], but another study suggested the presence of DNA methylation didn’t have the same impact on the binding of the transcription factor, _SP1_ [@Harrington1988]. Although the body of work presented in this thesis does not aim to explore if and how DNA methylation influences gene expression, it is important to note the relationship between the two isn’t clear when thinking of the implications of DNA methylation-trait associations [@Hemani2017]. This will be discussed further in the following sections.
 
-(ref:dnam-functions-cap) Simplified diagrams of the associations between DNA methylation and gene regulation. In _a_, CpG sites are methylated at the promoter region, but not in the gene body, which is associated with lack of gene expression. In _b_, the opposite is occurring.
+(ref:dnam-functions-cap) __Simplified diagrams of the associations between DNA methylation and gene regulation__. In _a_, CpG sites are methylated at the promoter region, but not in the gene body, which is associated with lack of gene expression. In _b_, the opposite is occurring.
 
-```{r dnam-functions, results="asis", fig.cap='(ref:dnam-functions-cap)', out.width='100%'}
+(ref:dnam-functions-scap) Simplified diagrams of the associations between DNA methylation and gene regulation
+
+```{r dnam-functions, results="asis", fig.cap='(ref:dnam-functions-cap)', out.width='100%', fig.scap='(ref:dnam-functions-scap)'}
 include_graphics(file.path(fig_path, "01-introduction", "dnam-gene-expression.pdf"))
 ```
 
@@ -151,9 +157,11 @@ Another advantage of MR is the data it uses. Thousands of GWAS have been conduct
 #### Assumptions of MR
 In order for MR analyses to be valid, they must satisfy three instrumental variable assumptions, these are illustrated in __Figure \@ref(fig:mr-diagram)__. Testing assumption one, the instruments associate with the exposure of interest, is simple, but the other two assumptions cannot technically be proven to be true. Horizontal pleiotropy, where genetic variants associate with more variables than just the exposure of interest, can lead to violations in assumptions two and three. Ideally, MR would be performed in the context where the genetic effect on the exposure had been characterised such that the mechanism of action was understood clearly. This would help give evidence against assumptions two and three being broken. Unfortunately, this is rarely possible. However, a plethora of methods have now been developed to test for pleiotropic effects, given the exposure of interest has multiple independent genetic variants reliably associated with it.
 
-(ref:mr-diagram-cap) Mendelian randomization. Mendelian randomization can be used to test the causal nature of exposure-outcome relationships provided the assumptions are met. Assumption 1. There is an association between the instrument and the exposure. Assumption 2. There are no associations between the instrument and outcome, except through the exposure. Assumption 3. The instrument is not associated with any factors that confound the exposure-outcome relationship.
+(ref:mr-diagram-cap) __Mendelian randomization__. Mendelian randomization can be used to test the causal nature of exposure-outcome relationships provided the assumptions are met. Assumption 1. There is an association between the instrument and the exposure. Assumption 2. There are no associations between the instrument and outcome, except through the exposure. Assumption 3. The instrument is not associated with any factors that confound the exposure-outcome relationship.
 
-```{r mr-diagram, results="asis", fig.cap='(ref:mr-diagram-cap)', out.width='100%'}
+(ref:mr-diagram-scap) Mendelian randomization
+
+```{r mr-diagram, results="asis", fig.cap='(ref:mr-diagram-cap)', out.width='100%', fig.scap='(ref:mr-diagram-scap)'}
 include_graphics(file.path(fig_path, "01-introduction", "mr-diagram.pdf"))
 ```
 
@@ -181,9 +189,11 @@ __Chapter \@ref(ewas-gwas-comp-chapter)__ will then aim to assess whether the di
 
 Finally, __Chapter \@ref(dnam-lung-cancer-mr)__ will apply MR to explore the causal nature of associations between DNA methylation and lung cancer. This application case-study will compare and contrast findings to conventional EWAS estimates to give an example of the potential residual confounding that can be present in EWAS.
 
-(ref:thesis-flowchart-cap) Flowchart showing questions being asked in the thesis and the corresponding chapters attempting to help answer them.
+(ref:thesis-flowchart-cap) __Thesis flowchart__. Flowchart showing questions being asked in the thesis and the corresponding chapters attempting to help answer them.
 
-```{r thesis-flowchart, results="asis", fig.cap='(ref:thesis-flowchart-cap)', out.width='100%'}
+(ref:thesis-flowchart-scap) Thesis flowchart
+
+```{r thesis-flowchart, results="asis", fig.cap='(ref:thesis-flowchart-cap)', out.width='100%', fig.scap='(ref:thesis-flowchart-scap)'}
 include_graphics(file.path(fig_path, "01-introduction", "thesis-flowchart.pdf"))
 ```
 

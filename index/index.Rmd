@@ -16,6 +16,7 @@ toc-depth: 4 # change for the depth of the table of contents - 1 gives two level
 lot: true 
 lof: true
 space_between_paragraphs: true
+graphics: yes
 fig_caption: true
 header-includes:
     \usepackage{tikz}
