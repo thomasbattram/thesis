@@ -137,7 +137,7 @@ A flowchart representing the study design along with a summary of the results at
 ```
 
 ### EWAS meta-analysis {#results-ewas-meta-analysis}
-The basic meta-analysis adjusted for study-specific covariates identified 16 CpG sites which were hypomethylated in relation to lung cancer (FDR<0.05, Model 1, __Figure \@ref(fig:fig2-07)__). Adjusting for 10 surrogate variables (Model 2) and derived cell counts (Model 3) gave similar results (Table 1). The direction of effect at the 16 sites did not vary between studies (median I2=38.6) (__Table \@ref(tab:sup-tab2-07)__), but there was evidence for heterogeneity of effect estimates at some sites when stratifying individuals by smoking status (Table 1).
+The basic meta-analysis adjusted for study-specific covariates identified 16 CpG sites which were hypomethylated in relation to lung cancer (FDR<0.05, Model 1, __Figure \@ref(fig:fig2-07)__). Adjusting for 10 surrogate variables (Model 2) and derived cell counts (Model 3) gave similar results (__Table \@ref(tab:tab1-07)__). The direction of effect at the 16 sites did not vary between studies (median I2=38.6) (__Table \@ref(tab:sup-tab2-07)__), but there was evidence for heterogeneity of effect estimates at some sites when stratifying individuals by smoking status (__Table \@ref(tab:tab1-07)__).
 
 (ref:fig2-07-cap) __Observational associations of DNA methylation and lung cancer: A fixed effects meta-analysis of lung cancer EWAS weighted on the inverse variance was performed to establish the observational association between differential DNA methylation and lung cancer__. Left-hand side: Manhattan plot, all points above the solid line are at P < 1x10-7 and all points above the dashed line (and triangular points) are at FDR < 0.05. In total 16 CpG sites are associated with lung cancer (FDR < 0.05). Right-hand side: Quantile-quantile plot of the EWAS results (same data as the Manhattan plot). 
 
@@ -150,8 +150,9 @@ The basic meta-analysis adjusted for study-specific covariates identified 16 CpG
 ```{r sup-tab2-07, message=FALSE, results="asis"}
 ```
 
+```{r tab1-07, message=FALSE, results="asis"}
+```
 
-(Table 1 here)
 
 ### Mendelian randomization {#results-mendelian-randomization-07}
 I identified 15 independent mQTLs (r^2^<0.01) associated with methylation at 14 of 16 CpGs. Ten mQTLs replicated at FDR<0.05 in NSHDS (__Table \@ref(tab:sup-tab3-07)__).  MR power analyses indicated >99% power to detect ORs for lung cancer of the same magnitude as those in the meta-analysis of EWAS.

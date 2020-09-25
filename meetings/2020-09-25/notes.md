@@ -14,7 +14,7 @@ Giving an example of "biological insight" differences using the pathways was ver
 
 __NOTES:__
 
-Some meeting notes
+Could send to people for comments on writing and tell them cba to conduct more analyses
 
 ## colocalisation project
 
@@ -22,8 +22,8 @@ would be up for doing the colocalisation project at some point in the future if 
 
 __NOTES:__
 
-Some meeting notes
+Gib putting some simulations together + may end up doing by himself -- will discuss project more in a few months time! 
 
 ## AOB
 
-* AOB item1
+* Check whether formal process means handing in project

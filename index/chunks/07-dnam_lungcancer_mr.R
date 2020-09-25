@@ -11,7 +11,9 @@ supp_tables <- supp_tables_path %>%
 	set_names() %>%
 	map(read_excel, path = supp_tables_path)
 
-addq <- function(x) paste0("`", x, "`")
+tables_file <- "tables.xlsx"
+
+table1 <- read_excel(file.path(data_dir, tables_file))
 
 ## ---- figures-setup-07 --------------------------------
 
@@ -55,13 +57,7 @@ include_graphics(grep("fig5", sup_figs, value=T))
 
 ## ---- tables-setup-07 --------------------------------
 
-# This is all bs - probs best just to change these tables manually
-# or semi-manually (one-by-one in R)
-
-tables_to_sort <- map_lgl(supp_tables, function(st) {
-	any(grepl("_", colnames(st)))
-})
-tables_to_sort <- names(tables_to_sort)[tables_to_sort]
+### functions
 
 unite_chr_pos <- function(df)
 {
@@ -82,6 +78,36 @@ unite_chr_pos <- function(df)
 	return(df)
 }
 
+get_added_header <- function(df)
+{
+	cols_to_sort <- grep(".*_.*", colnames(df), value = T)
+	prefixes <- unique(gsub("_.*", "", cols_to_sort))
+	suffixes <- unique(gsub(".*_", "", cols_to_sort))
+	pref_ncols <- map_dbl(prefixes, function(x) length(grep(x, colnames(df))))
+	no_pref_ncols <- sum(!colnames(df) %in% cols_to_sort)
+	aha <- setNames(c(no_pref_ncols, pref_ncols), c(" ", prefixes))
+	return(aha)
+}
+
+#### tables
+
+table1_aha <- get_added_header(table1)
+table1_cap <- "Meta-analyses of EWAS of lung cancer using four separate cohorts: 
+			   16 CpG sites associated with lung cancer at false discovery rate < 0.05."
+
+colnames(table1) <- gsub(".*_", "", colnames(table1))
+table1 <- table1 %>%
+	tidy_nums() %>%
+	tidy_colnames() 
+
+#### supplementary tables
+
+tables_to_sort <- map_lgl(supp_tables, function(st) {
+	any(grepl("_", colnames(st)))
+})
+tables_to_sort <- names(tables_to_sort)[tables_to_sort]
+
+
 supp_tables <- lapply(supp_tables, unite_chr_pos)
 
 st=tables_to_sort[1]
@@ -89,12 +115,7 @@ st=tables_to_sort[1]
 add_header <- lapply(tables_to_sort, function(st) {
 	print(st)
 	sup <- supp_tables[[st]]
-	cols_to_sort <- grep(".*_.*", colnames(sup), value = T)
-	prefixes <- unique(gsub("_.*", "", cols_to_sort))
-	suffixes <- unique(gsub(".*_", "", cols_to_sort))
-	pref_ncols <- map_dbl(prefixes, function(x) length(grep(x, colnames(sup))))
-	no_pref_ncols <- sum(!colnames(sup) %in% cols_to_sort)
-	aha <- setNames(c(no_pref_ncols, pref_ncols), c(" ", prefixes))
+	aha <- get_added_header(sup)
 	return(aha)
 })
 names(add_header) <- tables_to_sort
@@ -132,6 +153,20 @@ captions <- list(S1 = "Instrument strength in ARIES",
 				 S9 = "Two sample MR analysis for \\textit{AHRR}", 
 				 S10 = "Comparison of MR results with tumour-healthy tissue differential methylation", 
 				 S11 = "mQTL-gene expression analysis in lung and whole blood using data from GTEx")
+
+## ---- tab1-07 --------------------------------
+kable(table1, booktabs = TRUE, caption = table1_cap) %>%
+	add_footnote(c("Meta-analyses of lung cancer EWAS adjusted for study specific covariates (basic, N = 1809),", 
+				   "basic model + surrogate variables (sv, N = 1809), basic model + surrogate variables + derived cell counts (cc, N = 1809).", 
+				   "Meta-analyses were also conducted stratified by smoking status (ns (N = 304), fs (N = 648), cs (N = 857)) using the basic model", 
+				   "OR = odds ratio per SD increase in DNA methylation, SE = standard error, Chr = chromosome", 
+				   "comp = smoker group comparion = heterogeneity across meta-analyses when stratifying by smoking status", 
+				   "Dir = direction of effect, I2 = Heterogeneity I-squared value, hetP = heterogeneity P value"), 
+			 notation = "none") %>%
+	add_header_above(table1_aha) %>%
+	kable_styling(latex_options = c("striped", "hold_position", "scale_down", "repeat_header"), 
+				  position = "center") %>%
+	landscape()
 
 ## ---- sup-tab1-07 --------------------------------
 kbl(clean_supp_tables[["S1"]], booktabs = TRUE, caption = captions[["S1"]]) %>%

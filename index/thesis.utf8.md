@@ -26,7 +26,7 @@ header-includes:
 output: 
   thesisdown::thesis_pdf: 
     toc: true
-    toc_depth: 3
+    toc-depth: 4
 #  thesisdown::thesis_gitbook: default
 #  thesisdown::thesis_word: default
 #  thesisdown::thesis_epub: default
@@ -59,6 +59,11 @@ acknowledgements: |
   
   I'd like to thank myself for being the GOAT. Everyone else can get in the bin.
 publications: |
+  <style>
+  body {
+  text-align: justify}
+  </style>
+  
   Battram,T., Richmond,R.C., Baglietto,L., Haycock,P.C., Perduca,V., Bojesen,S.E., Gaunt,T.R., Hemani,G., Guida,F., Carreras-Torres,R., et al. (2019) Appraising the causal relevance of DNA methylation for risk of lung cancer. Int. J. Epidemiol., 10.1093/ije/dyz190.
   
 declaration: |
@@ -1386,7 +1391,7 @@ A flowchart representing the study design along with a summary of the results at
 \end{figure}
 
 ### EWAS meta-analysis {#results-ewas-meta-analysis}
-The basic meta-analysis adjusted for study-specific covariates identified 16 CpG sites which were hypomethylated in relation to lung cancer (FDR<0.05, Model 1, __Figure \@ref(fig:fig2-07)__). Adjusting for 10 surrogate variables (Model 2) and derived cell counts (Model 3) gave similar results (Table 1). The direction of effect at the 16 sites did not vary between studies (median I2=38.6) (__Table \@ref(tab:sup-tab2-07)__), but there was evidence for heterogeneity of effect estimates at some sites when stratifying individuals by smoking status (Table 1).
+The basic meta-analysis adjusted for study-specific covariates identified 16 CpG sites which were hypomethylated in relation to lung cancer (FDR<0.05, Model 1, __Figure \@ref(fig:fig2-07)__). Adjusting for 10 surrogate variables (Model 2) and derived cell counts (Model 3) gave similar results (__Table \@ref(tab:tab1-07)__). The direction of effect at the 16 sites did not vary between studies (median I2=38.6) (__Table \@ref(tab:sup-tab2-07)__), but there was evidence for heterogeneity of effect estimates at some sites when stratifying individuals by smoking status (__Table \@ref(tab:tab1-07)__).
 
 (ref:fig2-07-cap) __Observational associations of DNA methylation and lung cancer: A fixed effects meta-analysis of lung cancer EWAS weighted on the inverse variance was performed to establish the observational association between differential DNA methylation and lung cancer__. Left-hand side: Manhattan plot, all points above the solid line are at P < 1x10-7 and all points above the dashed line (and triangular points) are at FDR < 0.05. In total 16 CpG sites are associated with lung cancer (FDR < 0.05). Right-hand side: Quantile-quantile plot of the EWAS results (same data as the Manhattan plot). 
 
@@ -1443,7 +1448,48 @@ cg27241845 & ALPPL2 & 2:233250370 & ---- & 57 & 0.075 & ---- & 48 & 0.122 & ----
 \end{landscape}
 
 
-(Table 1 here)
+\begin{landscape}\begin{table}[!h]
+
+\caption{(\#tab:tab1-07)Meta-analyses of EWAS of lung cancer using four separate cohorts: 
+			   16 CpG sites associated with lung cancer at false discovery rate < 0.05.}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{lllllllllllllllllllllllll}
+\toprule
+\multicolumn{4}{c}{ } & \multicolumn{3}{c}{basic} & \multicolumn{3}{c}{sv} & \multicolumn{3}{c}{cc} & \multicolumn{3}{c}{ns} & \multicolumn{3}{c}{fs} & \multicolumn{3}{c}{cs} & \multicolumn{3}{c}{comp} \\
+\cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10} \cmidrule(l{3pt}r{3pt}){11-13} \cmidrule(l{3pt}r{3pt}){14-16} \cmidrule(l{3pt}r{3pt}){17-19} \cmidrule(l{3pt}r{3pt}){20-22} \cmidrule(l{3pt}r{3pt}){23-25}
+CpG & Gene & Chr & Position & OR & SE & P & OR & SE & P & OR & SE & P & OR & SE & P & OR & SE & P & OR & SE & P & Dir & I2 & hetP\\
+\midrule
+\cellcolor{gray!6}{cg05575921} & \cellcolor{gray!6}{AHRR} & \cellcolor{gray!6}{5} & \cellcolor{gray!6}{3.7e+05} & \cellcolor{gray!6}{0.47} & \cellcolor{gray!6}{0.047} & \cellcolor{gray!6}{1.4e-16} & \cellcolor{gray!6}{0.45} & \cellcolor{gray!6}{0.053} & \cellcolor{gray!6}{6.3e-14} & \cellcolor{gray!6}{0.45} & \cellcolor{gray!6}{0.055} & \cellcolor{gray!6}{3.6e-13} & \cellcolor{gray!6}{0.93} & \cellcolor{gray!6}{0.22} & \cellcolor{gray!6}{0.717} & \cellcolor{gray!6}{0.46} & \cellcolor{gray!6}{0.084} & \cellcolor{gray!6}{6.1e-07} & \cellcolor{gray!6}{0.71} & \cellcolor{gray!6}{0.066} & \cellcolor{gray!6}{5.4e-05} & \cellcolor{gray!6}{+--} & \cellcolor{gray!6}{63} & \cellcolor{gray!6}{0.066}\\
+cg21566642 & ALPPL2 & 2 & 2.3e+08 & 0.54 & 0.045 & 1.7e-15 & 0.53 & 0.050 & 2.5e-13 & 0.51 & 0.051 & 3.1e-13 & 0.89 & 0.14 & 0.418 & 0.52 & 0.081 & 1.4e-06 & 0.75 & 0.067 & 3.7e-04 & +-- & 81 & 0.005\\
+\cellcolor{gray!6}{cg06126421} & \cellcolor{gray!6}{IER3} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{3.1e+07} & \cellcolor{gray!6}{0.58} & \cellcolor{gray!6}{0.046} & \cellcolor{gray!6}{2.1e-13} & \cellcolor{gray!6}{0.54} & \cellcolor{gray!6}{0.054} & \cellcolor{gray!6}{2.5e-11} & \cellcolor{gray!6}{0.51} & \cellcolor{gray!6}{0.054} & \cellcolor{gray!6}{3.9e-12} & \cellcolor{gray!6}{0.78} & \cellcolor{gray!6}{0.19} & \cellcolor{gray!6}{0.222} & \cellcolor{gray!6}{0.56} & \cellcolor{gray!6}{0.087} & \cellcolor{gray!6}{1.9e-05} & \cellcolor{gray!6}{0.73} & \cellcolor{gray!6}{0.112} & \cellcolor{gray!6}{1.8e-02} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{33} & \cellcolor{gray!6}{0.225}\\
+cg03636183 & F2RL3 & 19 & 1.7e+07 & 0.64 & 0.045 & 8.0e-12 & 0.61 & 0.053 & 8.2e-10 & 0.61 & 0.054 & 1.6e-09 & 0.91 & 0.17 & 0.553 & 0.62 & 0.084 & 7.5e-05 & 0.79 & 0.069 & 2.9e-03 & --- & 71 & 0.033\\
+\cellcolor{gray!6}{cg05951221} & \cellcolor{gray!6}{ALPPL2} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{2.3e+08} & \cellcolor{gray!6}{0.66} & \cellcolor{gray!6}{0.045} & \cellcolor{gray!6}{9.7e-11} & \cellcolor{gray!6}{0.64} & \cellcolor{gray!6}{0.051} & \cellcolor{gray!6}{1.8e-09} & \cellcolor{gray!6}{0.63} & \cellcolor{gray!6}{0.052} & \cellcolor{gray!6}{1.5e-09} & \cellcolor{gray!6}{0.87} & \cellcolor{gray!6}{0.18} & \cellcolor{gray!6}{0.409} & \cellcolor{gray!6}{0.63} & \cellcolor{gray!6}{0.082} & \cellcolor{gray!6}{7.2e-05} & \cellcolor{gray!6}{0.82} & \cellcolor{gray!6}{0.066} & \cellcolor{gray!6}{7.4e-03} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{44} & \cellcolor{gray!6}{0.168}\\
+\addlinespace
+cg01940273 & ALPPL2 & 2 & 2.3e+08 & 0.69 & 0.050 & 4.2e-08 & 0.68 & 0.058 & 7.3e-07 & 0.69 & 0.061 & 3.6e-06 & 1.14 & 0.23 & 0.428 & 0.57 & 0.086 & 2.6e-05 & 0.88 & 0.068 & 6.6e-02 & --- & 22 & 0.278\\
+\cellcolor{gray!6}{cg23771366} & \cellcolor{gray!6}{PRSS23} & \cellcolor{gray!6}{11} & \cellcolor{gray!6}{8.7e+07} & \cellcolor{gray!6}{0.77} & \cellcolor{gray!6}{0.040} & \cellcolor{gray!6}{1.1e-07} & \cellcolor{gray!6}{0.73} & \cellcolor{gray!6}{0.051} & \cellcolor{gray!6}{1.5e-06} & \cellcolor{gray!6}{0.71} & \cellcolor{gray!6}{0.052} & \cellcolor{gray!6}{5.6e-07} & \cellcolor{gray!6}{1.09} & \cellcolor{gray!6}{0.16} & \cellcolor{gray!6}{0.490} & \cellcolor{gray!6}{0.62} & \cellcolor{gray!6}{0.076} & \cellcolor{gray!6}{1.4e-05} & \cellcolor{gray!6}{0.86} & \cellcolor{gray!6}{0.061} & \cellcolor{gray!6}{2.0e-02} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.657}\\
+cg11660018 & PRSS23 & 11 & 8.7e+07 & 0.79 & 0.037 & 1.2e-07 & 0.70 & 0.051 & 2.0e-07 & 0.68 & 0.053 & 8.9e-08 & 0.94 & 0.13 & 0.586 & 0.75 & 0.071 & 1.0e-03 & 0.84 & 0.053 & 4.2e-03 & --- & 0 & 0.529\\
+\cellcolor{gray!6}{cg26963277} & \cellcolor{gray!6}{KCNQ1} & \cellcolor{gray!6}{11} & \cellcolor{gray!6}{2.7e+06} & \cellcolor{gray!6}{0.67} & \cellcolor{gray!6}{0.055} & \cellcolor{gray!6}{1.2e-07} & \cellcolor{gray!6}{0.64} & \cellcolor{gray!6}{0.068} & \cellcolor{gray!6}{3.8e-06} & \cellcolor{gray!6}{0.62} & \cellcolor{gray!6}{0.069} & \cellcolor{gray!6}{2.5e-06} & \cellcolor{gray!6}{0.54} & \cellcolor{gray!6}{0.17} & \cellcolor{gray!6}{0.014} & \cellcolor{gray!6}{0.72} & \cellcolor{gray!6}{0.110} & \cellcolor{gray!6}{1.5e-02} & \cellcolor{gray!6}{0.71} & \cellcolor{gray!6}{0.087} & \cellcolor{gray!6}{1.6e-03} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{16} & \cellcolor{gray!6}{0.305}\\
+cg27241845 & ALPPL2 & 2 & 2.3e+08 & 0.67 & 0.055 & 1.4e-07 & 0.68 & 0.067 & 1.7e-05 & 0.67 & 0.069 & 2.5e-05 & 0.75 & 0.21 & 0.193 & 0.68 & 0.108 & 5.0e-03 & 0.73 & 0.087 & 3.1e-03 & --- & 0 & 0.648\\
+\addlinespace
+\cellcolor{gray!6}{cg23387569} & \cellcolor{gray!6}{AGAP2} & \cellcolor{gray!6}{12} & \cellcolor{gray!6}{5.8e+07} & \cellcolor{gray!6}{0.71} & \cellcolor{gray!6}{0.049} & \cellcolor{gray!6}{1.5e-07} & \cellcolor{gray!6}{0.70} & \cellcolor{gray!6}{0.058} & \cellcolor{gray!6}{3.7e-06} & \cellcolor{gray!6}{0.68} & \cellcolor{gray!6}{0.059} & \cellcolor{gray!6}{1.9e-06} & \cellcolor{gray!6}{0.79} & \cellcolor{gray!6}{0.16} & \cellcolor{gray!6}{0.169} & \cellcolor{gray!6}{0.71} & \cellcolor{gray!6}{0.107} & \cellcolor{gray!6}{1.0e-02} & \cellcolor{gray!6}{0.75} & \cellcolor{gray!6}{0.079} & \cellcolor{gray!6}{2.5e-03} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{69} & \cellcolor{gray!6}{0.040}\\
+cg09935388 & GFI1 & 1 & 9.3e+07 & 0.68 & 0.055 & 2.5e-07 & 0.67 & 0.066 & 9.7e-06 & 0.67 & 0.070 & 3.0e-05 & 0.96 & 0.24 & 0.844 & 0.74 & 0.127 & 4.2e-02 & 0.68 & 0.075 & 1.1e-04 & --- & 0 & 0.890\\
+\cellcolor{gray!6}{cg01901332} & \cellcolor{gray!6}{ARRB1} & \cellcolor{gray!6}{11} & \cellcolor{gray!6}{7.5e+07} & \cellcolor{gray!6}{0.72} & \cellcolor{gray!6}{0.048} & \cellcolor{gray!6}{2.8e-07} & \cellcolor{gray!6}{0.69} & \cellcolor{gray!6}{0.064} & \cellcolor{gray!6}{1.1e-05} & \cellcolor{gray!6}{0.66} & \cellcolor{gray!6}{0.064} & \cellcolor{gray!6}{2.2e-06} & \cellcolor{gray!6}{1.02} & \cellcolor{gray!6}{0.21} & \cellcolor{gray!6}{0.922} & \cellcolor{gray!6}{0.60} & \cellcolor{gray!6}{0.093} & \cellcolor{gray!6}{1.5e-04} & \cellcolor{gray!6}{0.78} & \cellcolor{gray!6}{0.072} & \cellcolor{gray!6}{3.9e-03} & \cellcolor{gray!6}{+--} & \cellcolor{gray!6}{81} & \cellcolor{gray!6}{0.006}\\
+cg25305703 & CASC21 & 8 & 1.3e+08 & 0.72 & 0.049 & 4.5e-07 & 0.72 & 0.067 & 1.1e-04 & 0.71 & 0.069 & 1.5e-04 & 0.80 & 0.17 & 0.210 & 0.76 & 0.106 & 2.6e-02 & 0.77 & 0.075 & 3.2e-03 & --- & 0 & 0.981\\
+\cellcolor{gray!6}{cg16823042} & \cellcolor{gray!6}{AGAP2} & \cellcolor{gray!6}{12} & \cellcolor{gray!6}{5.8e+07} & \cellcolor{gray!6}{0.74} & \cellcolor{gray!6}{0.049} & \cellcolor{gray!6}{1.1e-06} & \cellcolor{gray!6}{0.73} & \cellcolor{gray!6}{0.058} & \cellcolor{gray!6}{1.5e-05} & \cellcolor{gray!6}{0.70} & \cellcolor{gray!6}{0.059} & \cellcolor{gray!6}{5.9e-06} & \cellcolor{gray!6}{0.83} & \cellcolor{gray!6}{0.18} & \cellcolor{gray!6}{0.309} & \cellcolor{gray!6}{0.72} & \cellcolor{gray!6}{0.100} & \cellcolor{gray!6}{7.4e-03} & \cellcolor{gray!6}{0.80} & \cellcolor{gray!6}{0.080} & \cellcolor{gray!6}{1.3e-02} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{0.329}\\
+\addlinespace
+cg08709672 & AVPR1B & 1 & 2.1e+08 & 0.75 & 0.048 & 1.4e-06 & 0.76 & 0.058 & 1.1e-04 & 0.74 & 0.060 & 5.3e-05 & 0.73 & 0.17 & 0.102 & 0.74 & 0.085 & 3.5e-03 & 0.82 & 0.079 & 2.1e-02 & --- & 0 & 0.846\\
+\bottomrule
+\multicolumn{25}{l}{\textsuperscript{} Meta-analyses of lung cancer EWAS adjusted for study specific covariates (basic, N = 1809),}\\
+\multicolumn{25}{l}{\textsuperscript{} basic model + surrogate variables (sv, N = 1809), basic model + surrogate variables + derived cell counts (cc, N = 1809).}\\
+\multicolumn{25}{l}{\textsuperscript{} Meta-analyses were also conducted stratified by smoking status (ns (N = 304), fs (N = 648), cs (N = 857)) using the basic model}\\
+\multicolumn{25}{l}{\textsuperscript{} OR = odds ratio per SD increase in DNA methylation, SE = standard error, Chr = chromosome}\\
+\multicolumn{25}{l}{\textsuperscript{} comp = smoker group comparion = heterogeneity across meta-analyses when stratifying by smoking status}\\
+\multicolumn{25}{l}{\textsuperscript{} Dir = direction of effect, I2 = Heterogeneity I-squared value, hetP = heterogeneity P value}\\
+\end{tabular}}
+\end{table}
+\end{landscape}
+
 
 ### Mendelian randomization {#results-mendelian-randomization-07}
 I identified 15 independent mQTLs (r^2^<0.01) associated with methylation at 14 of 16 CpGs. Ten mQTLs replicated at FDR<0.05 in NSHDS (__Table \@ref(tab:sup-tab3-07)__).  MR power analyses indicated >99% power to detect ORs for lung cancer of the same magnitude as those in the meta-analysis of EWAS.
