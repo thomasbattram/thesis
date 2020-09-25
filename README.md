@@ -24,7 +24,7 @@ Meeting notes and items can be found in [meetings](meetings)
 
 ### removing red boxes around cross-references
 
-Add `\usepackage[hidelinks]{hyperref}` to [template.tex](index/template.tex)
+Add `\usepackage[hidelinks]{hyperref}` to [template.tex](index/template.tex) -- this can replace `\usepackage{hyperref}`
 
 ### list of figures
 
