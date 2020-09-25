@@ -26,4 +26,4 @@ Some meeting notes
 
 ## AOB
 
-* Worth going through your comments on intro and sending that copy back to TG + NT?? Not really too sure what else I can do wrt thesis work... 
+* AOB item1
