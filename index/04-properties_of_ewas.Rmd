@@ -135,9 +135,9 @@ The total trait variance correlated with DNA methylation (r^2^) at each site var
 
 (ref:rsq-sum-distribution-cap) __Distribution of the sum of r^2^ values across each study in The EWAS Catalog__.
 
-(ref:catalog-use-scap) Distribution of the sum of r^2^ values across each study in The EWAS Catalog
+(ref:rsq-sum-distribution-scap) Distribution of the sum of r^2^ values across each study in The EWAS Catalog
 
-```{r rsq-sum-distribution, message=FALSE, results="asis", fig.cap='(ref:rsq-sum-distribution-cap)', fig.scap='(ref:catalog-use-scap)'}
+```{r rsq-sum-distribution, message=FALSE, results="asis", fig.cap='(ref:rsq-sum-distribution-cap)', fig.scap='(ref:rsq-sum-distribution-scap)'}
 ```
 
 These results suggest that some associations within the database are likely to be inflated, yet for most traits, variation at individual DNA methylation sites captures little trait variance. Summing the r^2^ values indicates a substantial proportion of trait variance can be captured by multiple DNA methylation sites for some traits, but this can only be estimated by jointly modelling the contribution of all sites to trait variance. This is explored in __Chapter \@ref(h2ewas-chapter)__. Here, the sum of r^2^ values is used to indicate whether the results of a study are likely inflated and thus unlikely to be robust. 

@@ -12,7 +12,6 @@ bibliography: bib/thesis.bib # location of your bibliography
 csl: csl/american-journal-of-epidemiology.csl # location of your referencing style 
 knit: "bookdown::render_book" # doesnt need changing 
 site: bookdown::bookdown_site # doesnt need changing 
-toc-depth: 4 # change for the depth of the table of contents - 1 gives two levels, 2 gives 3 levels etc...
 lot: true 
 lof: true
 space_between_paragraphs: true
@@ -25,7 +24,9 @@ header-includes:
     \usepackage{siunitx}
     \pagestyle{plain}
 output: 
-  thesisdown::thesis_pdf: default
+  thesisdown::thesis_pdf: 
+    toc: true
+    toc_depth: 3
 #  thesisdown::thesis_gitbook: default
 #  thesisdown::thesis_word: default
 #  thesisdown::thesis_epub: default
@@ -414,7 +415,7 @@ Our criteria for inclusion of a study into The EWAS Catalog are as follows:
 
 CpG-phenotype associations are extracted from studies at P < 1x10^-4^. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-09-24, The EWAS Catalog contained 450213 associations from 605 studies. 
+Based on these criteria, from 2020-09-25, The EWAS Catalog contained 450213 associations from 605 studies. 
 
 ### Overview of GEO data extraction
 To recruit additional datasets suitable for new EWAS analysis, the geograbi R package (https://github.com/yousefi138/geograbi) was used to both query GEO for experiments matching The EWAS Catalog inclusion criteria (described above) and extract relevant DNA methylation and phenotype information. The query was performed by Dr Paul Yousefi on 20 March 2019 and identified 148 such experiments with 32,845 samples where DNA methylation and phenotype information could be successfully extracted. From these, the aim was to repeat the analyses performed in the publications linked by PubMed IDs to each GEO record. Thus, I looked up the corresponding full texts for each dataset and identified the main variables of interest. Of the 148 putative GEO studies, only 34 (23%) contained sufficient information to replicate the original analysis. 
@@ -643,7 +644,7 @@ The total trait variance correlated with DNA methylation (r^2^) at each site var
 
 (ref:rsq-sum-distribution-cap) __Distribution of the sum of r^2^ values across each study in The EWAS Catalog__.
 
-(ref:catalog-use-scap) Distribution of the sum of r^2^ values across each study in The EWAS Catalog
+(ref:rsq-sum-distribution-scap) Distribution of the sum of r^2^ values across each study in The EWAS Catalog
 
 \begin{figure}
 
@@ -651,7 +652,7 @@ The total trait variance correlated with DNA methylation (r^2^) at each site var
 
 }
 
-\caption[(ref:catalog-use-scap)]{(ref:rsq-sum-distribution-cap)}(\#fig:rsq-sum-distribution)
+\caption[(ref:rsq-sum-distribution-scap)]{(ref:rsq-sum-distribution-cap)}(\#fig:rsq-sum-distribution)
 \end{figure}
 
 These results suggest that some associations within the database are likely to be inflated, yet for most traits, variation at individual DNA methylation sites captures little trait variance. Summing the r^2^ values indicates a substantial proportion of trait variance can be captured by multiple DNA methylation sites for some traits, but this can only be estimated by jointly modelling the contribution of all sites to trait variance. This is explored in __Chapter \@ref(h2ewas-chapter)__. Here, the sum of r^2^ values is used to indicate whether the results of a study are likely inflated and thus unlikely to be robust. 

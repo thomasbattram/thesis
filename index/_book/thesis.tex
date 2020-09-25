@@ -240,8 +240,11 @@ The limits of the current EWAS study design have revealed, through the masses of
     Dated
   \end{declaration}
   \hypersetup{linkcolor=black}
-  \setcounter{tocdepth}{4}
+  {
+  \setcounter{tocdepth}{2}
+  \setcounter{secnumdepth}{2}
   \tableofcontents
+  }
   \listoftables
   \listoffigures
   \begin{abbreviations}
@@ -605,7 +608,7 @@ Our criteria for inclusion of a study into The EWAS Catalog are as follows:
 \end{enumerate}
 CpG-phenotype associations are extracted from studies at P \textless{} 1x10\textsuperscript{-4}. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-09-24, The EWAS Catalog contained 450213 associations from 605 studies.
+Based on these criteria, from 2020-09-25, The EWAS Catalog contained 450213 associations from 605 studies.
 
 \hypertarget{overview-of-geo-data-extraction}{%
 \subsection{Overview of GEO data extraction}\label{overview-of-geo-data-extraction}}
@@ -841,14 +844,14 @@ The total trait variance correlated with DNA methylation (r\textsuperscript{2}) 
 \end{figure}
 
 
-Using the EWAS catalog Distribution of the sum of r\textsuperscript{2} values across each study in The EWAS Catalog
+
 \begin{figure}
 
 {\centering \includegraphics[width=1\linewidth]{thesis_files/figure-latex/rsq-sum-distribution-1} 
 
 }
 
-\caption[Using the EWAS catalog]{\textbf{Distribution of the sum of r\textsuperscript{2} values across each study in The EWAS Catalog}.}\label{fig:rsq-sum-distribution}
+\caption[Distribution of the sum of r\textsuperscript{2} values across each study in The EWAS Catalog]{\textbf{Distribution of the sum of r\textsuperscript{2} values across each study in The EWAS Catalog}.}\label{fig:rsq-sum-distribution}
 \end{figure}
 These results suggest that some associations within the database are likely to be inflated, yet for most traits, variation at individual DNA methylation sites captures little trait variance. Summing the r\textsuperscript{2} values indicates a substantial proportion of trait variance can be captured by multiple DNA methylation sites for some traits, but this can only be estimated by jointly modelling the contribution of all sites to trait variance. This is explored in \textbf{Chapter \ref{h2ewas-chapter}}. Here, the sum of r\textsuperscript{2} values is used to indicate whether the results of a study are likely inflated and thus unlikely to be robust.
 

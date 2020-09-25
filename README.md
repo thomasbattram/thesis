@@ -20,6 +20,26 @@ Plan for September/October:
 ## Meetings
 Meeting notes and items can be found in [meetings](meetings)
 
+## changes to formatting
+
+### removing red boxes around cross-references
+
+Add `\usepackage[hidelinks]{hyperref}` to [template.tex](index/template.tex)
+
+### list of figures
+
+Within chunk header, use `fig.scap='small caption'`. In this example `small caption` will appear in the list of figures and the figure caption will remain as what was stated for the option `fig.cap`
+
+### toc depth
+
+To manually change the toc depth, in [index.Rmd](index/index.Rmd), swap `thesisdown::thesis_pdf: default` for 
+` thesisdown::thesis_pdf: 
+    toc: true
+    toc_depth: TOC-DEPTH-CHOICE
+`
+
+To make sure the depth of heading numbers matches the toc depth, add `  \setcounter{secnumdepth}{$toc-depth$}` to [template.tex](index/template.tex) below `\setcounter{tocdepth}{$toc-depth$}` -- around line 155.
+
 ## log of errors when building
 
 ### Error: Package inputenc Error: Unicode character (U+2003) (inputenc) not set up for use with LaTeX.
