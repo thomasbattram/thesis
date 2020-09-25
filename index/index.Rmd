@@ -26,7 +26,7 @@ header-includes:
 output: 
   thesisdown::thesis_pdf: 
     toc: true
-    toc_depth: 3
+    toc-depth: 4
 #  thesisdown::thesis_gitbook: default
 #  thesisdown::thesis_word: default
 #  thesisdown::thesis_epub: default

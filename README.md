@@ -34,9 +34,9 @@ Within chunk header, use `fig.scap='small caption'`. In this example `small capt
 
 To manually change the toc depth, in [index.Rmd](index/index.Rmd), swap `thesisdown::thesis_pdf: default` for 
 ` thesisdown::thesis_pdf: 
-    toc: true
-    toc_depth: TOC-DEPTH-CHOICE
-`
+	toc: true
+    toc-depth: TOC-DEPTH-CHOICE
+` -- remember indents (not sure how to show on readme)
 
 To make sure the depth of heading numbers matches the toc depth, add `  \setcounter{secnumdepth}{$toc-depth$}` to [template.tex](index/template.tex) below `\setcounter{tocdepth}{$toc-depth$}` -- around line 155.
 
