@@ -18,15 +18,13 @@ space_between_paragraphs: true
 graphics: yes
 fig_caption: true
 header-includes:
-    \usepackage{tikz}
-    \usepackage{booktabs}
-    \usepackage{longtable}
-    \usepackage{siunitx}
-    \pagestyle{plain}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
 output: 
   thesisdown::thesis_pdf: 
     toc: true
     toc-depth: 4
+    latex_engine: pdflatex
 #  thesisdown::thesis_gitbook: default
 #  thesisdown::thesis_word: default
 #  thesisdown::thesis_epub: default

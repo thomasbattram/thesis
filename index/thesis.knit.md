@@ -18,15 +18,13 @@ space_between_paragraphs: true
 graphics: yes
 fig_caption: true
 header-includes:
-    \usepackage{tikz}
-    \usepackage{booktabs}
-    \usepackage{longtable}
-    \usepackage{siunitx}
-    \pagestyle{plain}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
 output: 
   thesisdown::thesis_pdf: 
     toc: true
     toc-depth: 4
+    latex_engine: pdflatex
 #  thesisdown::thesis_gitbook: default
 #  thesisdown::thesis_word: default
 #  thesisdown::thesis_epub: default
@@ -304,7 +302,7 @@ Understanding both the causes and consequences of complex traits are pertinent t
 
 ### Establishing causality {#establishing-causality}
 
-#### Mendelian randomization
+#### Mendelian randomization {#mr-01}
 As discussed, population-based studies of DNA methylation suffer from the same limitations as any observational epidemiology study, namely confounding and reverse causation. One method that aims to mitigate confounding is Mendelian randomization (MR) [@DaveySmith2003; @DaveySmith2014; @Richmond2016], which uses genetic variants as proxies for the exposure of interest in an instrumental variable framework (illustrated in __Figure \@ref(fig:mr-diagram)__). Using genetic variants as instruments has the advantage that the direction of effect will always be from instrument to exposure and not vice versa, making interpretation of the studies simpler. Furthermore, unlike environmental phenotypes, that tend to be highly correlated and clustered into groups, genetic variants associated with a trait tend to be unconfounded [@DaveySmith2003; @DaveySmith2014]. In the absence of assortative mating, genetic variants should be distributed randomly across the population, so in effect those grouped by genotype should exhibit differences in exposure, but confounding factors should not differ between genotype groups [@DaveySmith2014]. Assortative mating has been reliably shown to occur with some traits such as social behaviours and anthropometric measures [@Silventoinen2003; @Maes1997; @Eaves1981]. Assortment tends to occur on visible social factors and so intentional assortment based on DNA methylation profiles is very unlikely. However, DNA methylation may associate with factors that are assorted on, for example alcohol consumption [@Howe2019; @Dugue2019], which may lead to unintentional assortment on DNA methylation profiles. The impact this may have on MR studies using DNA methylation has not been explored, and this analysis is beyond the scope of this thesis but is something that should be noted when assessing the reliability of such MR studies.
 
 #### Availability of data for MR
@@ -420,7 +418,7 @@ Our criteria for inclusion of a study into The EWAS Catalog are as follows:
 
 CpG-phenotype associations are extracted from studies at P < 1x10^-4^. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-09-25, The EWAS Catalog contained 450213 associations from 605 studies. 
+Based on these criteria, from 2020-09-28, The EWAS Catalog contained 450213 associations from 605 studies. 
 
 ### Overview of GEO data extraction
 To recruit additional datasets suitable for new EWAS analysis, the geograbi R package (https://github.com/yousefi138/geograbi) was used to both query GEO for experiments matching The EWAS Catalog inclusion criteria (described above) and extract relevant DNA methylation and phenotype information. The query was performed by Dr Paul Yousefi on 20 March 2019 and identified 148 such experiments with 32,845 samples where DNA methylation and phenotype information could be successfully extracted. From these, the aim was to repeat the analyses performed in the publications linked by PubMed IDs to each GEO record. Thus, I looked up the corresponding full texts for each dataset and identified the main variables of interest. Of the 148 putative GEO studies, only 34 (23%) contained sufficient information to replicate the original analysis. 
@@ -1240,15 +1238,17 @@ DNA methylation changes in peripheral blood have recently been identified in rel
 I first performed a meta-analysis of four epigenome-wide association studies (EWAS) of lung cancer (918 cases, 918 controls). Next, I conducted a two-sample Mendelian randomization (MR) analysis, using genetic instruments for methylation at CpG sites identified in the EWAS meta-analysis, and 29,863 cases and 55,586 controls from the TRICL-ILCCO lung cancer consortium, to appraise the possible causal role of methylation at these sites on lung cancer.
 
 ### Results {#abstract-results-07}
-16 CpG sites were identified from the EWAS meta-analysis (FDR < 0.05), 14 of which had suitable genetic instruments. MR provided little evidence that DNA methylation in peripheral blood at the 14 CpG sites play a causal role in lung cancer development (FDR > 0.05), including for cg05575921-_AHRR_ where methylation is strongly associated with both smoke exposure and lung cancer risk.
+Sixteen CpG sites were identified from the EWAS meta-analysis (FDR < 0.05), 14 of which had suitable genetic instruments. MR provided little evidence that DNA methylation in peripheral blood at the 14 CpG sites play a causal role in lung cancer development (FDR > 0.05), including for cg05575921-_AHRR_ where methylation is strongly associated with both smoke exposure and lung cancer risk.
 
 ### Conclusions {#abstract-conclusions-07}
 The results contrast with previous observational and mediation analysis, which have made strong claims regarding the causal role of DNA methylation. Thus, previous suggestions of a mediating role of methylation at sites identified in peripheral blood, such as cg05575921-_AHRR_, could be unfounded. However, this study does not preclude the possibility that differential DNA methylation at other sites is causally involved in lung cancer development, especially within lung tissue.
 
 ## Introduction {#introduction-07}
-Lung cancer is the most common cause of cancer-related death worldwide [@Ferlay2013]. Several DNA methylation changes have been recently identified in relation to lung cancer risk [@Fasanelli2015; @Baglietto2017; @McCarthy2016]. Given the plasticity of epigenetic markers, any DNA methylation changes that are causally linked to lung cancer are potentially appealing targets for intervention [@Strathdee2002; @Jones2002]. However, these epigenetic markers are sensitive to reverse causation, being affected by cancer processes [@Jones2002], and are also prone to confounding, for example by socio-economic and lifestyle factors [@Borghol2012; @Elliott2014].
+Lung cancer is the most common cause of cancer-related death worldwide [@Ferlay2013]. Several DNA methylation changes have been recently identified in relation to lung cancer risk [@Fasanelli2015; @Baglietto2017; @McCarthy2016]. However, these epigenetic marks are sensitive to reverse causation, being affected by cancer processes [@Jones2002], and are also prone to confounding, for example by socio-economic and lifestyle factors [@Borghol2012; @Elliott2014].
 
-One CpG site, cg05575921 within the aryl hydrocarbon receptor repressor (_AHRR_) gene, has been consistently replicated in relation to both smoking [@Joehanes2016] and lung cancer [@Fasanelli2015; @Baglietto2017; @Bojesen2017] and functional evidence suggests that this region could be causally involved in lung cancer [@Zudaire2008]. However, the observed association between methylation and lung cancer might simply reflect separate effects of smoking on lung cancer and DNA methylation, i.e. the association may be a result of confounding [@Richmond2016], including residual confounding after adjustment for self-reported smoking behaviour [@Fewell2007; @Munafo2012].  Furthermore, recent epigenome-wide association studies (EWAS) for lung cancer have revealed additional CpG sites which may be causally implicated in development of the disease [@Fasanelli2015; @Baglietto2017]. 
+One CpG site, cg05575921 within the aryl hydrocarbon receptor repressor (_AHRR_) gene, has been consistently replicated in relation to both smoking [@Joehanes2016] and lung cancer [@Fasanelli2015; @Baglietto2017; @Bojesen2017] and functional evidence suggests that this region could be causally involved in lung cancer [@Zudaire2008]. However, the observed association between methylation and lung cancer might simply reflect separate effects of smoking on lung cancer and DNA methylation, i.e. the association may be a result of confounding [@Richmond2016], including residual confounding after adjustment for self-reported smoking behaviour [@Fewell2007; @Munafo2012].  Furthermore, recent EWAS of lung cancer have revealed additional CpG sites which may be causally implicated in development of the disease [@Fasanelli2015; @Baglietto2017]. 
+
+As discussed in __Section \@ref(establishing-causality)__, MR can be used to help infer causality in associations between DNA methylation and complex traits [@Relton2012; @Relton2015; @Richardson2017].
 
 Mendelian randomization (MR) uses genetic variants associated with modifiable factors as instruments to infer causality between the modifiable factor and outcome, overcoming most unmeasured or residual confounding and reverse causation [@DaveySmith2014; @DaveySmith2003]. In order to infer causality, three core assumptions of MR should be met: 1) The instrument is associated with the exposure, 2) The instrument is not associated with any confounders, 3) The instrument is associated with the outcome only through the exposure. MR may be adapted to the setting of DNA methylation [@Relton2012; @Relton2015; @Richardson2017] with the use of single nucleotide polymorphisms (SNPs) that correlate with methylation of CpG sites, known as methylation quantitative trait loci (mQTLs) [@Gaunt2016].
 
@@ -1259,7 +1259,7 @@ In this chapter, Dr Rebecca Richmond performed analysis in the CCHS cohort (see 
 ## Methods {#methods-07}
 
 ### EWAS study details
-A meta-analysis of four lung cancer case-control EWAS was conducted to identify DNA methlyation sites associated with lung cancer. DNA methylation in each EWAS was assessed using the Illumina Infinium® HumanMethylation450 BeadChip. All EWAS are nested within prospective cohorts that measured DNA methylation in peripheral blood samples before diagnosis: EPIC-Italy (185 case-control pairs), Melbourne Collaborative Cohort Study (MCCS) (367 case-control pairs), Norwegian Women and Cancer (NOWAC) (132 case-control pairs) and the Northern Sweden Health and Disease Study (NSHDS) (234 case-control pairs). Study populations, laboratory methods, data pre-processing and quality control methods have been described in detail elsewhere [@Baglietto2017] and are outlined below.
+A meta-analysis of four lung cancer case-control EWAS was conducted to identify DNA methlyation sites associated with lung cancer. DNA methylation in each EWAS was assessed using the Illumina Infinium® HumanMethylation450 (HM450) BeadChip. All EWAS are nested within prospective cohorts that measured DNA methylation in peripheral blood samples before diagnosis: EPIC-Italy (185 case-control pairs), Melbourne Collaborative Cohort Study (MCCS) (367 case-control pairs), Norwegian Women and Cancer (NOWAC) (132 case-control pairs) and the Northern Sweden Health and Disease Study (NSHDS) (234 case-control pairs). Study populations, laboratory methods, data pre-processing and quality control methods have been described in detail elsewhere [@Baglietto2017] and are outlined below.
 
 At the various laboratory sites, samples were distributed into 96-well plates and processed in chips of 12 arrays (8 chips per plate) with case-control pairs arranged randomly on the same chip. Methylation data were pre-processed and normalized in each study, and probe filtering was performed as previously described [@Baglietto2017], leaving 465,886 CpGs suitable for the analysis in EPIC-Italy, 485,330 CpGs in MCCS, 450,890 CpGs in NOWAC and 482,867 CpGs in NSHDS.
 
@@ -1284,27 +1284,14 @@ An inverse-variance weighted fixed effects meta-analysis was performed of the EW
 Two-sample MR was used to establish potential causal effect of differential methylation on lung cancer risk [@Inoue2010; @Pierce2013].
 
 #### Sample 1: Accessible Resource for Integrated Epigenomic Studies (ARIES)
-In the first sample, mQTL-methylation effect estimates ($\beta_{GP}$) for each CpG site of interest were identified in an mQTL database from the Accessible Resource for Integrated Epigenomic Studies (ARIES) (http://www.mqtldb.org). Details on the methylation pre-processing, genotyping and quality control (QC) pipelines are outlined below. 
+In the first sample, mQTL-methylation effect estimates ($\beta_{GP}$) for each CpG site of interest were identified in an mQTL database from the Accessible Resource for Integrated Epigenomic Studies (ARIES) (http://www.mqtldb.org). Details on the methylation pre-processing, genotyping and quality control (QC) pipelines are described in __Section \@ref(alspac-03)__. 
 
-##### DNA methylation data
-Samples were drawn from the Avon Longitudinal Study of Parents and Children [@Boyd2013; @Fraser2013]. Blood from 1,018 mother–child pairs were selected for analysis as part of the Accessible Resource for Integrative Epigenomic Studies (ARIES, http://www.ariesepigenomics.org.uk/) [@Relton2015]. There are three timepoints in children and two in their mothers, the timepoints with mean ages (in brackets) in ARIES are as follows for children: birth, childhood (7.5), adolescence (17.1) and for mothers: during pregnancy (28.7), and at middle age (46.9). Following DNA extraction, samples were bisulphite converted using the Zymo EZ DNA Methylation^TM^ kit (Zymo, Irvine, CA, USA). Following conversion, genome-wide methylation was measured using the Illumina Infinium HumanMethylation450 (HM450) BeadChip. Methylation data were normalised in R with the watermelon package [@Pidsley2013] using the Touleimat and Tost [@Touleimat2012] algorithm to reduce the non-biological differences between probes. Methylation data in ARIES were rank-normalised to remove outliers, and then Matrix eQTL software [@Gaunt2016] was used to perform preliminary association analysis of SNPs with all CpG sites in the Illumina Infinium HM450 array with the exception of those failing QC, and those reported to map to more than one location (n=19,834) or to contain a genetic variant at the CpG site (n=74,182) [@Naeem2014].
-
-__Genetic data__
-Children were genotyped using the Illumina HumanHap550 quad genome-wide SNP genotyping platform (Illumina Inc., San Diego, USA) by the Wellcome Trust Sanger Institute (WTSI, Cambridge, UK) and the Laboratory Corporation of America (LCA, Burlington, NC, USA). Individuals were excluded on the basis of incorrect gender assignment; abnormal heterozygosity (<0.320 or >0.345 for WTSI data; <0.310 or >0.330 for LCA data); high missingness (>3%); cryptic relatedness (>10% identity by descent) and non-European ancestry (detected by multidimensional scaling analysis). Following QC the final directly genotyped dataset contained 500,527 SNP loci.
-
-Mothers were genotyped using the Illumina Human660W-quad genome-wide SNP genotyping platform (Illumina Inc., San Diego, USA) at the Centre National de Génotypage (CNG, Paris, France). Individuals were excluded based on non-European ancestry, missingness, relatedness, gender mismatches and heterozygosity. PLINK (v1.07) [@Purcell2007] was used to carry out quality control measures on an initial set of 10,015 subjects and 557,124 directly genotyped SNPs. Following QC the final directly genotyped dataset contained 526,688 SNP loci.
-
-Imputation was performed to increase the SNP density for all genotyped mothers and children combined. Genotypes were phased together using ShapeIt, and then imputed against the 1000 genomes reference panel (phase 1 version 3, phased using ShapeIt version 2, December 2013, using all populations) using Impute (version 2.2.2). Genotypes were filtered to have Hardy-Weinberg equilibrium P > 5x10^-7^, MAF > 1% and imputation info score > 0.8. Best guess genotypes were used for subsequent analysis. The final imputed dataset used for the analyses presented here contained 8,074,398 loci.
-
-Written informed consent has been obtained from all ALSPAC participants. Ethical approval for the study was obtained from the ALSPAC Ethics and Law Committee and Local Research Ethics Committees.
-Please note that the study website contains details of all the data that is available through a fully searchable data dictionary: http://www.bris.ac.uk/alspac/researchers/data-access/data-dictionary/
-
-### Sample 2: Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium
+#### Sample 2: Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium
 In the second sample, summary data was extracted from a GWAS meta-analysis of lung cancer risk conducted by the Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium (TRICL-ILCCO) (29,863 cases, 55,586 controls) for individuals genotyped using the Illumina Infinium OncoArray-500K BeadChip (Illumina Inc. San Diego, CA) and independent samples for which prior genotyping was performed [@McKay2017]. They were used to obtain mQTL-lung cancer estimates ($\beta_{GD}$).
 
 For each independent mQTL (r^2^ < 0.01), I calculated the log odds ratio (OR) per SD unit increase in methylation by the formula $\frac{\beta_{GD}} {\beta_{GP}}$ (Wald ratio). Standard errors were approximated by the delta method [@Thomas2007]. Where multiple independent mQTLs were available for one CpG site, these were combined in a fixed effects meta-analysis after weighting each ratio estimate by the inverse variance of their associations with the outcome. Heterogeneity in Wald ratios across mQTLs was estimated using Cochran’s Q test, which can be used to indicate horizontal pleiotropy [@Bowden2015]. Differences between the observational and MR estimates were assessed using a Z-test for difference.
 
-If there was evidence for an mQTL-CpG site association in ARIES in at least one time-point, it was assessed whether the mQTL replicated across time points in ARIES (FDR < 0.05, same direction of effect). Further, this association was re-analysed using linear regression of methylation on each genotyped SNP available in an independent cohort (NSHDS), using rvtests [@Zhan2016]. The same NSHDS samples on which DNA methylation was measured were genotyped using the Illumina Infinium OncoArray-500k BeadChip (Illumina Inc. San Diego, CA) and quality control parameters were applied under the recently published TRICL-ILCCO GWAS study on lung cancer [@McKay2017]. Genetic imputation was performed on these samples using the Haplotype Reference Consortium (HRC) Panel (release 1) [@McCarthy2016] through the Michigan Imputation Server [@Das2016]. Replicated mQTLs were included where possible to reduce the effect of winner’s curse using effect estimates from ARIES. The instrument strength of the mQTLs were assessed by the variance explained in methylation by each mQTL (r^2^) as well as the F-statistic in ARIES __Table \@ref(tab:sup-tab1-07)__. The power to detect the observational effect estimates in the two-sample MR analysis was assessed a priori, based on an alpha of 0.05, sample size of 29,863 cases and 55,586 controls (from TRICL-ILCCO) and calculated variance explained (r^2^). \linebreak
+If there was evidence for an mQTL-CpG site association in ARIES in at least one time-point, it was assessed whether the mQTL replicated across time points in ARIES (FDR < 0.05, same direction of effect). Further, this association was re-analysed using linear regression of methylation on each genotyped SNP available in an independent cohort (NSHDS), using rvtests [@Zhan2016]. The same NSHDS samples on which DNA methylation was measured were genotyped using the Illumina Infinium OncoArray-500k BeadChip (Illumina Inc. San Diego, CA) and quality control parameters were applied under the recently published TRICL-ILCCO GWAS study on lung cancer [@McKay2017]. Genetic imputation was performed on these samples using the Haplotype Reference Consortium (HRC) Panel (release 1) [@McCarthy2016] through the Michigan Imputation Server [@Das2016]. Replicated mQTLs were included where possible to reduce the effect of winner’s curse using effect estimates from ARIES. The instrument strength of the mQTLs were assessed by the variance explained in methylation by each mQTL (r^2^) as well as the F-statistic in ARIES __Table \@ref(tab:sup-tab1-07)__. The power to detect the observational effect estimates in the two-sample MR analysis was assessed _a priori_, based on an alpha of 0.05, sample size of 29,863 cases and 55,586 controls (from TRICL-ILCCO) and calculated variance explained (r^2^). \linebreak
 
 \begin{table}[!h]
 
@@ -1313,7 +1300,7 @@ If there was evidence for an mQTL-CpG site association in ARIES in at least one 
 \resizebox{\linewidth}{!}{
 \begin{tabular}[t]{llllllll}
 \toprule
-SNP & CpG & Beta & SE & P & N & F & R2\\
+SNP & CpG & Beta & SE & P & N & F & r\textsuperscript{2}\\
 \midrule
 \cellcolor{gray!6}{rs1048691} & \cellcolor{gray!6}{cg23387569} & \cellcolor{gray!6}{0.35} & \cellcolor{gray!6}{0.053} & \cellcolor{gray!6}{3.9e-11} & \cellcolor{gray!6}{834} & \cellcolor{gray!6}{45} & \cellcolor{gray!6}{0.05}\\
 rs1939110 & cg11660018 & -0.40 & 0.048 & 2.6e-16 & 834 & 70 & 0.08\\
@@ -1335,8 +1322,8 @@ rs56080708 & cg27241845 & 0.72 & 0.070 & 2.4e-23 & 834 & 105 & 0.11\\
 \addlinespace
 rs11746538 & cg05575921 & -0.37 & 0.058 & 3.0e-10 & 834 & 41 & 0.05\\
 \bottomrule
-\multicolumn{8}{l}{\textsuperscript{} SE = standard error, P = P value, N = sample size, F = F statistic, R2 = Variance}\\
-\multicolumn{8}{l}{explained}\\
+\multicolumn{8}{l}{\textsuperscript{} SE = standard error, P = P value, N = sample size}\\
+\multicolumn{8}{l}{\textsuperscript{} F = F statistic, r\textsuperscript{2} = Variance explained}\\
 \end{tabular}}
 \end{table}
 
@@ -1349,24 +1336,28 @@ Next the association was tested between the identified mQTLs and four smoking be
 ### Supplementary analyses {#methods-supplementary-analyses-07}
 
 #### Assessing the potential causal effect of _AHRR_ methylation: one sample MR {#ahrr-one-sample-mr-methods}
+This section (until the heading "Tumour and adjacent normal methylation patterns") was written by Dr Rebecca Richmond. 
+
 Given previous findings implicating methylation at _AHRR_ in relation to lung cancer [@Fasanelli2015; @Baglietto2017], a one-sample MR analysis [@Haycock2016] was performed of _AHRR_ methylation on lung cancer incidence using individual-level data from the Copenhagen City Heart Study (CCHS) (357 incident cases, 8401 remaining free of lung cancer). Copenhagen City Heart Study is a prospective study of the general population [@Kaur-Knudsen2011]. Copenhagen residents were invited to complete a questionnaire and undergo a physical examination and are followed through a unique person identifier in the Danish health registries. All participants gave written informed consent, and a Danish ethics committee approved the study (KF100.2039/91).
 
-__Phenotypic data__
+#### Phenotypic data 
 Participants were asked whether they smoked at the day of attendance or previously. If they answered affirmative to either of these questions, they were asked about their current and former smoking behaviour, including age of smoking initiation, age of smoking cessation, and number of daily consumed cigarettes, cheroots, cigars, and weekly grams of pipe tobacco. Based on these answers, participants were categorized as never, former, and current smokers. In addition, participants reported on alcohol consumption, occupational exposure to dust and/or welding fumes, exposure to passive smoking, education, and familial cases of lung cancer. The answers were reviewed together with an examiner at the day of attendance. Body mass index was calculated as measured weight in kilograms divided by measured height (in meters) squared.
 
-__Methylation data__
+#### Methylation data
 At the physical examination, blood samples were drawn for DNA from which _AHRR_ methylation extent was measured [@Bojesen2017]. The _AHRR_ cg05575921 methylation extent was measured in duplicate samples of bisulphite treated DNA from peripheral blood from 9,234 individuals. A Taqman assay was used that was developed in the CCHS laboratory, and included standard curves, as well as internal controls in each 384-well plate. Coefficients of variation at the methylation level of 71% varied from 5.0 to 6.7%. Laboratory technicians were blinded to smoking and disease status of the individuals. Results were validated with pyrosequencing on a subset of samples.
 
-__Genetic data__
+#### Genetic data
 Genotypes from the iCOGs array [@Bojesen2013] and prospective data on lung cancer incidence were also available for these participants. Of the 9234 individuals, genotype data from iCOGS on 8778 were available. In short, DNA isolated from leukocytes was genotyped with a custom Illumina iSelect genotyping array, designed to test genetic variants related to breast, ovary and prostate cancer, comprising roughly 211,000 SNPs after rigorous quality control [@Bojesen2013].
 
-__Lung cancer data__
+#### Lung cancer data
 For lung cancer (ICD7, codes 1624 or 4624 until 1977, and ICD10, code C34 from 1978 and onwards), the date of first diagnosis was taken from the national Danish Cancer Registry from 1943 to December 2012.
 
-__Identification of mQTLs for CCHS one-sample MR__
+#### Identification of mQTLs for CCHS one-sample MR
 mQTLs located within 1Mb of cg05575921 _AHRR_ were identified in ARIES (FDR<0.05). Of those mQTLs which replicated within the CCHS, an LD pruning step was performed using a less stringent r^2^ threshold of 0.2 and generated an unweighted allele score, calculated by coding and then summing the alleles to reflect the average number of methylation-increasing alleles carried by an individual. Associations between the allele score and several potential confounding factors (sex, alcohol consumption, smoking status, occupational exposure to dust and/or welding fumes, passive smoking) were investigated. Then MR analyses were performed using two-stage Cox regression, with adjustment for age and sex, and further stratified by smoking status.
 
 #### Tumour and adjacent normal methylation patterns {#lc-heathly-v-normal-methods}
+This analysis was performed by Dr Andrew E. Teschendorff.
+
 DNA methylation data from lung cancer tissue and matched normal adjacent tissue (N=40 squamous cell carcinoma and N=29 adenocarcinoma), profiled as part of The Cancer Genome Atlas (TCGA), were used to assess tissue-specific DNA methylation changes across sites identified in the meta-analysis of EWAS, as outlined previously [@Teschendorff2015].
 
 #### mQTL association with gene expression
@@ -1381,7 +1372,9 @@ A flowchart representing the study design along with a summary of the results at
 
 (ref:fig1-07-scap) Study design with results summary
 
-\begin{figure}
+\blandscape
+
+\begin{figure}[htbp]
 
 {\centering \includegraphics[width=1\linewidth]{figure/07-dnam_lungcancer_mr/Figure_1} 
 
@@ -1390,62 +1383,22 @@ A flowchart representing the study design along with a summary of the results at
 \caption[(ref:fig1-07-scap)]{(ref:fig1-07-cap)}(\#fig:fig1-07)
 \end{figure}
 
-### EWAS meta-analysis {#results-ewas-meta-analysis}
-The basic meta-analysis adjusted for study-specific covariates identified 16 CpG sites which were hypomethylated in relation to lung cancer (FDR<0.05, Model 1, __Figure \@ref(fig:fig2-07)__). Adjusting for 10 surrogate variables (Model 2) and derived cell counts (Model 3) gave similar results (__Table \@ref(tab:tab1-07)__). The direction of effect at the 16 sites did not vary between studies (median I2=38.6) (__Table \@ref(tab:sup-tab2-07)__), but there was evidence for heterogeneity of effect estimates at some sites when stratifying individuals by smoking status (__Table \@ref(tab:tab1-07)__).
+\elandscape
 
-(ref:fig2-07-cap) __Observational associations of DNA methylation and lung cancer: A fixed effects meta-analysis of lung cancer EWAS weighted on the inverse variance was performed to establish the observational association between differential DNA methylation and lung cancer__. Left-hand side: Manhattan plot, all points above the solid line are at P < 1x10-7 and all points above the dashed line (and triangular points) are at FDR < 0.05. In total 16 CpG sites are associated with lung cancer (FDR < 0.05). Right-hand side: Quantile-quantile plot of the EWAS results (same data as the Manhattan plot). 
+### EWAS meta-analysis {#results-ewas-meta-analysis}
+The basic meta-analysis adjusted for study-specific covariates identified 16 CpG sites which were hypomethylated in relation to lung cancer (FDR<0.05, Model 1, __Figure \@ref(fig:fig2-07)__). Adjusting for 10 surrogate variables (Model 2) and derived cell counts (Model 3) gave similar results (__Table \@ref(tab:tab1-07)__). The direction of effect at the 16 sites did not vary between studies (median I^2^=38.6) (__Table \@ref(tab:sup-tab2-07)__), but there was evidence for heterogeneity of effect estimates at some sites when stratifying individuals by smoking status (__Table \@ref(tab:tab1-07)__).
+
+(ref:fig2-07-cap) __Observational associations of DNA methylation and lung cancer: A fixed effects meta-analysis of lung cancer EWAS weighted on the inverse variance was performed to establish the observational association between differential DNA methylation and lung cancer__. Left-hand side: Manhattan plot, all points above the solid line are at P < 1x10^-7^ and all points above the dashed line (and triangular points) are at FDR < 0.05. In total 16 CpG sites are associated with lung cancer (FDR < 0.05). Right-hand side: Quantile-quantile plot of the EWAS results (same data as the Manhattan plot). 
 
 (ref:fig2-07-scap) Observational associations of DNA methylation and lung cancer: A fixed effects meta-analysis of lung cancer EWAS weighted on the inverse variance was performed to establish the observational association between differential DNA methylation and lung cancer
 
-\begin{figure}
+\blandscape
+
+\begin{figure}[htbp]
 \includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_2a} \includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_2b} \caption[(ref:fig2-07-scap)]{(ref:fig2-07-cap)}(\#fig:fig2-07)
 \end{figure}
 
-
-
-\begin{landscape}\begin{table}[!h]
-
-\caption{(\#tab:sup-tab2-07)Heterogeneity between studies and smoker groups in the meta-analysis of EWAS in four cohorts}
-\centering
-\resizebox{\linewidth}{!}{
-\begin{tabular}[t]{lllllllllllllllllllll}
-\toprule
-\multicolumn{3}{c}{ } & \multicolumn{3}{c}{basic} & \multicolumn{3}{c}{sv-adjusted} & \multicolumn{3}{c}{sv-and-cell-count} & \multicolumn{3}{c}{never-smokers} & \multicolumn{3}{c}{former-smokers} & \multicolumn{3}{c}{current-smokers} \\
-\cmidrule(l{3pt}r{3pt}){4-6} \cmidrule(l{3pt}r{3pt}){7-9} \cmidrule(l{3pt}r{3pt}){10-12} \cmidrule(l{3pt}r{3pt}){13-15} \cmidrule(l{3pt}r{3pt}){16-18} \cmidrule(l{3pt}r{3pt}){19-21}
-CpG & Gene & chr:pos & Dir & I2 & P & Dir & I2 & P & Dir & I2 & P & Dir & I2 & P & Dir & I2 & P & Dir & I2 & P\\
-\midrule
-\cellcolor{gray!6}{cg01901332} & \cellcolor{gray!6}{ARRB1} & \cellcolor{gray!6}{11:75031054} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.631} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{12} & \cellcolor{gray!6}{0.335} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{29} & \cellcolor{gray!6}{0.237} & \cellcolor{gray!6}{+---} & \cellcolor{gray!6}{11} & \cellcolor{gray!6}{0.337} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.970} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{18} & \cellcolor{gray!6}{0.301}\\
-cg01940273 & ALPPL2 & 2:233284934 & ---- & 35 & 0.201 & ---- & 61 & 0.053 & ---- & 60 & 0.056 & +--+ & 59 & 0.064 & ---- & 7 & 0.356 & ---+ & 34 & 0.206\\
-\cellcolor{gray!6}{cg03636183} & \cellcolor{gray!6}{F2RL3} & \cellcolor{gray!6}{19:17000585} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{42} & \cellcolor{gray!6}{0.159} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{76} & \cellcolor{gray!6}{0.006} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{71} & \cellcolor{gray!6}{0.015} & \cellcolor{gray!6}{+-+-} & \cellcolor{gray!6}{26} & \cellcolor{gray!6}{0.254} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{30} & \cellcolor{gray!6}{0.231} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.540}\\
-cg05575921 & AHRR & 5:373378 & ---- & 47 & 0.131 & ---- & 73 & 0.012 & ---- & 70 & 0.018 & +--+ & 0 & 0.481 & ---- & 0 & 0.433 & ---- & 34 & 0.207\\
-\cellcolor{gray!6}{cg05951221} & \cellcolor{gray!6}{ALPPL2} & \cellcolor{gray!6}{2:233284402} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{45} & \cellcolor{gray!6}{0.139} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{61} & \cellcolor{gray!6}{0.053} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{54} & \cellcolor{gray!6}{0.092} & \cellcolor{gray!6}{--++} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.862} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{33} & \cellcolor{gray!6}{0.217} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{15} & \cellcolor{gray!6}{0.315}\\
-\addlinespace
-cg06126421 & IER3 & 6:30720080 & ?--- & 69 & 0.041 & ---- & 67 & 0.027 & ---- & 68 & 0.024 & ?--- & 0 & 0.464 & ?--- & 11 & 0.326 & ?--- & 0 & 0.400\\
-\cellcolor{gray!6}{cg08709672} & \cellcolor{gray!6}{AVPR1B} & \cellcolor{gray!6}{1:206224334} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{12} & \cellcolor{gray!6}{0.333} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{52} & \cellcolor{gray!6}{0.101} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{57} & \cellcolor{gray!6}{0.071} & \cellcolor{gray!6}{--++} & \cellcolor{gray!6}{55} & \cellcolor{gray!6}{0.085} & \cellcolor{gray!6}{---+} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.584} & \cellcolor{gray!6}{---+} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.735}\\
-cg09935388 & GFI1 & 1:92947588 & ---- & 20 & 0.291 & ---- & 50 & 0.110 & ---- & 29 & 0.241 & ---+ & 0 & 0.967 & -+-- & 60 & 0.056 & ---- & 0 & 0.729\\
-\cellcolor{gray!6}{cg11660018} & \cellcolor{gray!6}{PRSS23} & \cellcolor{gray!6}{11:86510915} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.476} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{7} & \cellcolor{gray!6}{0.358} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.455} & \cellcolor{gray!6}{+-++} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.699} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{9} & \cellcolor{gray!6}{0.349} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.557}\\
-cg16823042 & AGAP2 & 12:58119992 & ---- & 13 & 0.330 & --+- & 0 & 0.482 & --+- & 0 & 0.554 & +-+- & 19 & 0.293 & ---+ & 68 & 0.024 & ---+ & 0 & 0.919\\
-\addlinespace
-\cellcolor{gray!6}{cg21566642} & \cellcolor{gray!6}{ALPPL2} & \cellcolor{gray!6}{2:233284661} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{46} & \cellcolor{gray!6}{0.136} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{38} & \cellcolor{gray!6}{0.184} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{18} & \cellcolor{gray!6}{0.300} & \cellcolor{gray!6}{+-++} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.681} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.798} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{65} & \cellcolor{gray!6}{0.035}\\
-cg23387569 & AGAP2 & 12:58120011 & ---- & 29 & 0.239 & --+- & 35 & 0.204 & --+- & 22 & 0.279 & --+- & 0 & 0.633 & ---+ & 76 & 0.005 & ---+ & 0 & 0.624\\
-\cellcolor{gray!6}{cg23771366} & \cellcolor{gray!6}{PRSS23} & \cellcolor{gray!6}{11:86510998} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{42} & \cellcolor{gray!6}{0.161} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{75} & \cellcolor{gray!6}{0.007} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{72} & \cellcolor{gray!6}{0.013} & \cellcolor{gray!6}{++++} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.805} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.518} & \cellcolor{gray!6}{---+} & \cellcolor{gray!6}{27} & \cellcolor{gray!6}{0.249}\\
-cg25305703 & CASC21 & 8:128378218 & ---- & 53 & 0.096 & ---- & 0 & 0.461 & ---- & 4 & 0.373 & ---- & 0 & 0.780 & ---- & 28 & 0.246 & ---- & 0 & 0.793\\
-\cellcolor{gray!6}{cg26963277} & \cellcolor{gray!6}{KCNQ1} & \cellcolor{gray!6}{11:2722407} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.512} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.516} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.430} & \cellcolor{gray!6}{--++} & \cellcolor{gray!6}{53} & \cellcolor{gray!6}{0.095} & \cellcolor{gray!6}{---+} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.466} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{17} & \cellcolor{gray!6}{0.308}\\
-\addlinespace
-cg27241845 & ALPPL2 & 2:233250370 & ---- & 57 & 0.075 & ---- & 48 & 0.122 & ---- & 41 & 0.163 & ---+ & 0 & 0.643 & ---+ & 0 & 0.672 & ---- & 32 & 0.221\\
-\bottomrule
-\multicolumn{21}{l}{\textsuperscript{} Dir = Direction of effect}\\
-\multicolumn{21}{l}{\textsuperscript{} I2 = Heterogeneity I-squared value}\\
-\multicolumn{21}{l}{\textsuperscript{} P = P value}\\
-\multicolumn{21}{l}{\textsuperscript{} chr:pos = chromosome:position}\\
-\multicolumn{21}{l}{\textsuperscript{} sv-adjusted = surrogate variables included as covariates in analysis}\\
-\multicolumn{21}{l}{\textsuperscript{} sv-and-cell-count = surrogate variables and derived cell counts included as covariates in analysis}\\
-\multicolumn{21}{l}{\textsuperscript{} never-smokers = basic model in never smokers only}\\
-\multicolumn{21}{l}{\textsuperscript{} former-smokers = basic model in former smokers only}\\
-\multicolumn{21}{l}{\textsuperscript{} current-smokers = basic model in current smokers only}\\
-\end{tabular}}
-\end{table}
-\end{landscape}
+\elandscape
 
 
 \begin{landscape}\begin{table}[!h]
@@ -1454,42 +1407,85 @@ cg27241845 & ALPPL2 & 2:233250370 & ---- & 57 & 0.075 & ---- & 48 & 0.122 & ----
 			   16 CpG sites associated with lung cancer at false discovery rate < 0.05.}
 \centering
 \resizebox{\linewidth}{!}{
-\begin{tabular}[t]{lllllllllllllllllllllllll}
+\begin{tabular}[t]{lllllllllllllllllllll}
 \toprule
-\multicolumn{4}{c}{ } & \multicolumn{3}{c}{basic} & \multicolumn{3}{c}{sv} & \multicolumn{3}{c}{cc} & \multicolumn{3}{c}{ns} & \multicolumn{3}{c}{fs} & \multicolumn{3}{c}{cs} & \multicolumn{3}{c}{comp} \\
-\cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10} \cmidrule(l{3pt}r{3pt}){11-13} \cmidrule(l{3pt}r{3pt}){14-16} \cmidrule(l{3pt}r{3pt}){17-19} \cmidrule(l{3pt}r{3pt}){20-22} \cmidrule(l{3pt}r{3pt}){23-25}
-CpG & Gene & Chr & Position & OR & SE & P & OR & SE & P & OR & SE & P & OR & SE & P & OR & SE & P & OR & SE & P & Dir & I2 & hetP\\
+\multicolumn{3}{c}{ } & \multicolumn{3}{c}{basic} & \multicolumn{3}{c}{sv-adjusted} & \multicolumn{3}{c}{sv-and-cell-count} & \multicolumn{3}{c}{never-smokers} & \multicolumn{3}{c}{former-smokers} & \multicolumn{3}{c}{current-smokers} \\
+\cmidrule(l{3pt}r{3pt}){4-6} \cmidrule(l{3pt}r{3pt}){7-9} \cmidrule(l{3pt}r{3pt}){10-12} \cmidrule(l{3pt}r{3pt}){13-15} \cmidrule(l{3pt}r{3pt}){16-18} \cmidrule(l{3pt}r{3pt}){19-21}
+CpG & Gene & chr:pos & OR & SE & P & OR & SE & P & OR & SE & P & OR & SE & P & OR & SE & P & OR & SE & P\\
 \midrule
-\cellcolor{gray!6}{cg05575921} & \cellcolor{gray!6}{AHRR} & \cellcolor{gray!6}{5} & \cellcolor{gray!6}{3.7e+05} & \cellcolor{gray!6}{0.47} & \cellcolor{gray!6}{0.047} & \cellcolor{gray!6}{1.4e-16} & \cellcolor{gray!6}{0.45} & \cellcolor{gray!6}{0.053} & \cellcolor{gray!6}{6.3e-14} & \cellcolor{gray!6}{0.45} & \cellcolor{gray!6}{0.055} & \cellcolor{gray!6}{3.6e-13} & \cellcolor{gray!6}{0.93} & \cellcolor{gray!6}{0.22} & \cellcolor{gray!6}{0.717} & \cellcolor{gray!6}{0.46} & \cellcolor{gray!6}{0.084} & \cellcolor{gray!6}{6.1e-07} & \cellcolor{gray!6}{0.71} & \cellcolor{gray!6}{0.066} & \cellcolor{gray!6}{5.4e-05} & \cellcolor{gray!6}{+--} & \cellcolor{gray!6}{63} & \cellcolor{gray!6}{0.066}\\
-cg21566642 & ALPPL2 & 2 & 2.3e+08 & 0.54 & 0.045 & 1.7e-15 & 0.53 & 0.050 & 2.5e-13 & 0.51 & 0.051 & 3.1e-13 & 0.89 & 0.14 & 0.418 & 0.52 & 0.081 & 1.4e-06 & 0.75 & 0.067 & 3.7e-04 & +-- & 81 & 0.005\\
-\cellcolor{gray!6}{cg06126421} & \cellcolor{gray!6}{IER3} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{3.1e+07} & \cellcolor{gray!6}{0.58} & \cellcolor{gray!6}{0.046} & \cellcolor{gray!6}{2.1e-13} & \cellcolor{gray!6}{0.54} & \cellcolor{gray!6}{0.054} & \cellcolor{gray!6}{2.5e-11} & \cellcolor{gray!6}{0.51} & \cellcolor{gray!6}{0.054} & \cellcolor{gray!6}{3.9e-12} & \cellcolor{gray!6}{0.78} & \cellcolor{gray!6}{0.19} & \cellcolor{gray!6}{0.222} & \cellcolor{gray!6}{0.56} & \cellcolor{gray!6}{0.087} & \cellcolor{gray!6}{1.9e-05} & \cellcolor{gray!6}{0.73} & \cellcolor{gray!6}{0.112} & \cellcolor{gray!6}{1.8e-02} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{33} & \cellcolor{gray!6}{0.225}\\
-cg03636183 & F2RL3 & 19 & 1.7e+07 & 0.64 & 0.045 & 8.0e-12 & 0.61 & 0.053 & 8.2e-10 & 0.61 & 0.054 & 1.6e-09 & 0.91 & 0.17 & 0.553 & 0.62 & 0.084 & 7.5e-05 & 0.79 & 0.069 & 2.9e-03 & --- & 71 & 0.033\\
-\cellcolor{gray!6}{cg05951221} & \cellcolor{gray!6}{ALPPL2} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{2.3e+08} & \cellcolor{gray!6}{0.66} & \cellcolor{gray!6}{0.045} & \cellcolor{gray!6}{9.7e-11} & \cellcolor{gray!6}{0.64} & \cellcolor{gray!6}{0.051} & \cellcolor{gray!6}{1.8e-09} & \cellcolor{gray!6}{0.63} & \cellcolor{gray!6}{0.052} & \cellcolor{gray!6}{1.5e-09} & \cellcolor{gray!6}{0.87} & \cellcolor{gray!6}{0.18} & \cellcolor{gray!6}{0.409} & \cellcolor{gray!6}{0.63} & \cellcolor{gray!6}{0.082} & \cellcolor{gray!6}{7.2e-05} & \cellcolor{gray!6}{0.82} & \cellcolor{gray!6}{0.066} & \cellcolor{gray!6}{7.4e-03} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{44} & \cellcolor{gray!6}{0.168}\\
+\cellcolor{gray!6}{cg05575921} & \cellcolor{gray!6}{AHRR} & \cellcolor{gray!6}{5:373378} & \cellcolor{gray!6}{0.47} & \cellcolor{gray!6}{0.047} & \cellcolor{gray!6}{1.4e-16} & \cellcolor{gray!6}{0.45} & \cellcolor{gray!6}{0.053} & \cellcolor{gray!6}{6.3e-14} & \cellcolor{gray!6}{0.45} & \cellcolor{gray!6}{0.055} & \cellcolor{gray!6}{3.6e-13} & \cellcolor{gray!6}{0.93} & \cellcolor{gray!6}{0.22} & \cellcolor{gray!6}{0.717} & \cellcolor{gray!6}{0.46} & \cellcolor{gray!6}{0.084} & \cellcolor{gray!6}{6.1e-07} & \cellcolor{gray!6}{0.71} & \cellcolor{gray!6}{0.066} & \cellcolor{gray!6}{5.4e-05}\\
+cg21566642 & ALPPL2 & 2:233284661 & 0.54 & 0.045 & 1.7e-15 & 0.53 & 0.050 & 2.5e-13 & 0.51 & 0.051 & 3.1e-13 & 0.89 & 0.14 & 0.418 & 0.52 & 0.081 & 1.4e-06 & 0.75 & 0.067 & 3.7e-04\\
+\cellcolor{gray!6}{cg06126421} & \cellcolor{gray!6}{IER3} & \cellcolor{gray!6}{6:30720080} & \cellcolor{gray!6}{0.58} & \cellcolor{gray!6}{0.046} & \cellcolor{gray!6}{2.1e-13} & \cellcolor{gray!6}{0.54} & \cellcolor{gray!6}{0.054} & \cellcolor{gray!6}{2.5e-11} & \cellcolor{gray!6}{0.51} & \cellcolor{gray!6}{0.054} & \cellcolor{gray!6}{3.9e-12} & \cellcolor{gray!6}{0.78} & \cellcolor{gray!6}{0.19} & \cellcolor{gray!6}{0.222} & \cellcolor{gray!6}{0.56} & \cellcolor{gray!6}{0.087} & \cellcolor{gray!6}{1.9e-05} & \cellcolor{gray!6}{0.73} & \cellcolor{gray!6}{0.112} & \cellcolor{gray!6}{1.8e-02}\\
+cg03636183 & F2RL3 & 19:17000585 & 0.64 & 0.045 & 8.0e-12 & 0.61 & 0.053 & 8.2e-10 & 0.61 & 0.054 & 1.6e-09 & 0.91 & 0.17 & 0.553 & 0.62 & 0.084 & 7.5e-05 & 0.79 & 0.069 & 2.9e-03\\
+\cellcolor{gray!6}{cg05951221} & \cellcolor{gray!6}{ALPPL2} & \cellcolor{gray!6}{2:233284402} & \cellcolor{gray!6}{0.66} & \cellcolor{gray!6}{0.045} & \cellcolor{gray!6}{9.7e-11} & \cellcolor{gray!6}{0.64} & \cellcolor{gray!6}{0.051} & \cellcolor{gray!6}{1.8e-09} & \cellcolor{gray!6}{0.63} & \cellcolor{gray!6}{0.052} & \cellcolor{gray!6}{1.5e-09} & \cellcolor{gray!6}{0.87} & \cellcolor{gray!6}{0.18} & \cellcolor{gray!6}{0.409} & \cellcolor{gray!6}{0.63} & \cellcolor{gray!6}{0.082} & \cellcolor{gray!6}{7.2e-05} & \cellcolor{gray!6}{0.82} & \cellcolor{gray!6}{0.066} & \cellcolor{gray!6}{7.4e-03}\\
 \addlinespace
-cg01940273 & ALPPL2 & 2 & 2.3e+08 & 0.69 & 0.050 & 4.2e-08 & 0.68 & 0.058 & 7.3e-07 & 0.69 & 0.061 & 3.6e-06 & 1.14 & 0.23 & 0.428 & 0.57 & 0.086 & 2.6e-05 & 0.88 & 0.068 & 6.6e-02 & --- & 22 & 0.278\\
-\cellcolor{gray!6}{cg23771366} & \cellcolor{gray!6}{PRSS23} & \cellcolor{gray!6}{11} & \cellcolor{gray!6}{8.7e+07} & \cellcolor{gray!6}{0.77} & \cellcolor{gray!6}{0.040} & \cellcolor{gray!6}{1.1e-07} & \cellcolor{gray!6}{0.73} & \cellcolor{gray!6}{0.051} & \cellcolor{gray!6}{1.5e-06} & \cellcolor{gray!6}{0.71} & \cellcolor{gray!6}{0.052} & \cellcolor{gray!6}{5.6e-07} & \cellcolor{gray!6}{1.09} & \cellcolor{gray!6}{0.16} & \cellcolor{gray!6}{0.490} & \cellcolor{gray!6}{0.62} & \cellcolor{gray!6}{0.076} & \cellcolor{gray!6}{1.4e-05} & \cellcolor{gray!6}{0.86} & \cellcolor{gray!6}{0.061} & \cellcolor{gray!6}{2.0e-02} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.657}\\
-cg11660018 & PRSS23 & 11 & 8.7e+07 & 0.79 & 0.037 & 1.2e-07 & 0.70 & 0.051 & 2.0e-07 & 0.68 & 0.053 & 8.9e-08 & 0.94 & 0.13 & 0.586 & 0.75 & 0.071 & 1.0e-03 & 0.84 & 0.053 & 4.2e-03 & --- & 0 & 0.529\\
-\cellcolor{gray!6}{cg26963277} & \cellcolor{gray!6}{KCNQ1} & \cellcolor{gray!6}{11} & \cellcolor{gray!6}{2.7e+06} & \cellcolor{gray!6}{0.67} & \cellcolor{gray!6}{0.055} & \cellcolor{gray!6}{1.2e-07} & \cellcolor{gray!6}{0.64} & \cellcolor{gray!6}{0.068} & \cellcolor{gray!6}{3.8e-06} & \cellcolor{gray!6}{0.62} & \cellcolor{gray!6}{0.069} & \cellcolor{gray!6}{2.5e-06} & \cellcolor{gray!6}{0.54} & \cellcolor{gray!6}{0.17} & \cellcolor{gray!6}{0.014} & \cellcolor{gray!6}{0.72} & \cellcolor{gray!6}{0.110} & \cellcolor{gray!6}{1.5e-02} & \cellcolor{gray!6}{0.71} & \cellcolor{gray!6}{0.087} & \cellcolor{gray!6}{1.6e-03} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{16} & \cellcolor{gray!6}{0.305}\\
-cg27241845 & ALPPL2 & 2 & 2.3e+08 & 0.67 & 0.055 & 1.4e-07 & 0.68 & 0.067 & 1.7e-05 & 0.67 & 0.069 & 2.5e-05 & 0.75 & 0.21 & 0.193 & 0.68 & 0.108 & 5.0e-03 & 0.73 & 0.087 & 3.1e-03 & --- & 0 & 0.648\\
+cg01940273 & ALPPL2 & 2:233284934 & 0.69 & 0.050 & 4.2e-08 & 0.68 & 0.058 & 7.3e-07 & 0.69 & 0.061 & 3.6e-06 & 1.14 & 0.23 & 0.428 & 0.57 & 0.086 & 2.6e-05 & 0.88 & 0.068 & 6.6e-02\\
+\cellcolor{gray!6}{cg23771366} & \cellcolor{gray!6}{PRSS23} & \cellcolor{gray!6}{11:86510998} & \cellcolor{gray!6}{0.77} & \cellcolor{gray!6}{0.040} & \cellcolor{gray!6}{1.1e-07} & \cellcolor{gray!6}{0.73} & \cellcolor{gray!6}{0.051} & \cellcolor{gray!6}{1.5e-06} & \cellcolor{gray!6}{0.71} & \cellcolor{gray!6}{0.052} & \cellcolor{gray!6}{5.6e-07} & \cellcolor{gray!6}{1.09} & \cellcolor{gray!6}{0.16} & \cellcolor{gray!6}{0.490} & \cellcolor{gray!6}{0.62} & \cellcolor{gray!6}{0.076} & \cellcolor{gray!6}{1.4e-05} & \cellcolor{gray!6}{0.86} & \cellcolor{gray!6}{0.061} & \cellcolor{gray!6}{2.0e-02}\\
+cg11660018 & PRSS23 & 11:86510915 & 0.79 & 0.037 & 1.2e-07 & 0.70 & 0.051 & 2.0e-07 & 0.68 & 0.053 & 8.9e-08 & 0.94 & 0.13 & 0.586 & 0.75 & 0.071 & 1.0e-03 & 0.84 & 0.053 & 4.2e-03\\
+\cellcolor{gray!6}{cg26963277} & \cellcolor{gray!6}{KCNQ1} & \cellcolor{gray!6}{11:2722407} & \cellcolor{gray!6}{0.67} & \cellcolor{gray!6}{0.055} & \cellcolor{gray!6}{1.2e-07} & \cellcolor{gray!6}{0.64} & \cellcolor{gray!6}{0.068} & \cellcolor{gray!6}{3.8e-06} & \cellcolor{gray!6}{0.62} & \cellcolor{gray!6}{0.069} & \cellcolor{gray!6}{2.5e-06} & \cellcolor{gray!6}{0.54} & \cellcolor{gray!6}{0.17} & \cellcolor{gray!6}{0.014} & \cellcolor{gray!6}{0.72} & \cellcolor{gray!6}{0.110} & \cellcolor{gray!6}{1.5e-02} & \cellcolor{gray!6}{0.71} & \cellcolor{gray!6}{0.087} & \cellcolor{gray!6}{1.6e-03}\\
+cg27241845 & ALPPL2 & 2:233250370 & 0.67 & 0.055 & 1.4e-07 & 0.68 & 0.067 & 1.7e-05 & 0.67 & 0.069 & 2.5e-05 & 0.75 & 0.21 & 0.193 & 0.68 & 0.108 & 5.0e-03 & 0.73 & 0.087 & 3.1e-03\\
 \addlinespace
-\cellcolor{gray!6}{cg23387569} & \cellcolor{gray!6}{AGAP2} & \cellcolor{gray!6}{12} & \cellcolor{gray!6}{5.8e+07} & \cellcolor{gray!6}{0.71} & \cellcolor{gray!6}{0.049} & \cellcolor{gray!6}{1.5e-07} & \cellcolor{gray!6}{0.70} & \cellcolor{gray!6}{0.058} & \cellcolor{gray!6}{3.7e-06} & \cellcolor{gray!6}{0.68} & \cellcolor{gray!6}{0.059} & \cellcolor{gray!6}{1.9e-06} & \cellcolor{gray!6}{0.79} & \cellcolor{gray!6}{0.16} & \cellcolor{gray!6}{0.169} & \cellcolor{gray!6}{0.71} & \cellcolor{gray!6}{0.107} & \cellcolor{gray!6}{1.0e-02} & \cellcolor{gray!6}{0.75} & \cellcolor{gray!6}{0.079} & \cellcolor{gray!6}{2.5e-03} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{69} & \cellcolor{gray!6}{0.040}\\
-cg09935388 & GFI1 & 1 & 9.3e+07 & 0.68 & 0.055 & 2.5e-07 & 0.67 & 0.066 & 9.7e-06 & 0.67 & 0.070 & 3.0e-05 & 0.96 & 0.24 & 0.844 & 0.74 & 0.127 & 4.2e-02 & 0.68 & 0.075 & 1.1e-04 & --- & 0 & 0.890\\
-\cellcolor{gray!6}{cg01901332} & \cellcolor{gray!6}{ARRB1} & \cellcolor{gray!6}{11} & \cellcolor{gray!6}{7.5e+07} & \cellcolor{gray!6}{0.72} & \cellcolor{gray!6}{0.048} & \cellcolor{gray!6}{2.8e-07} & \cellcolor{gray!6}{0.69} & \cellcolor{gray!6}{0.064} & \cellcolor{gray!6}{1.1e-05} & \cellcolor{gray!6}{0.66} & \cellcolor{gray!6}{0.064} & \cellcolor{gray!6}{2.2e-06} & \cellcolor{gray!6}{1.02} & \cellcolor{gray!6}{0.21} & \cellcolor{gray!6}{0.922} & \cellcolor{gray!6}{0.60} & \cellcolor{gray!6}{0.093} & \cellcolor{gray!6}{1.5e-04} & \cellcolor{gray!6}{0.78} & \cellcolor{gray!6}{0.072} & \cellcolor{gray!6}{3.9e-03} & \cellcolor{gray!6}{+--} & \cellcolor{gray!6}{81} & \cellcolor{gray!6}{0.006}\\
-cg25305703 & CASC21 & 8 & 1.3e+08 & 0.72 & 0.049 & 4.5e-07 & 0.72 & 0.067 & 1.1e-04 & 0.71 & 0.069 & 1.5e-04 & 0.80 & 0.17 & 0.210 & 0.76 & 0.106 & 2.6e-02 & 0.77 & 0.075 & 3.2e-03 & --- & 0 & 0.981\\
-\cellcolor{gray!6}{cg16823042} & \cellcolor{gray!6}{AGAP2} & \cellcolor{gray!6}{12} & \cellcolor{gray!6}{5.8e+07} & \cellcolor{gray!6}{0.74} & \cellcolor{gray!6}{0.049} & \cellcolor{gray!6}{1.1e-06} & \cellcolor{gray!6}{0.73} & \cellcolor{gray!6}{0.058} & \cellcolor{gray!6}{1.5e-05} & \cellcolor{gray!6}{0.70} & \cellcolor{gray!6}{0.059} & \cellcolor{gray!6}{5.9e-06} & \cellcolor{gray!6}{0.83} & \cellcolor{gray!6}{0.18} & \cellcolor{gray!6}{0.309} & \cellcolor{gray!6}{0.72} & \cellcolor{gray!6}{0.100} & \cellcolor{gray!6}{7.4e-03} & \cellcolor{gray!6}{0.80} & \cellcolor{gray!6}{0.080} & \cellcolor{gray!6}{1.3e-02} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{0.329}\\
+\cellcolor{gray!6}{cg23387569} & \cellcolor{gray!6}{AGAP2} & \cellcolor{gray!6}{12:58120011} & \cellcolor{gray!6}{0.71} & \cellcolor{gray!6}{0.049} & \cellcolor{gray!6}{1.5e-07} & \cellcolor{gray!6}{0.70} & \cellcolor{gray!6}{0.058} & \cellcolor{gray!6}{3.7e-06} & \cellcolor{gray!6}{0.68} & \cellcolor{gray!6}{0.059} & \cellcolor{gray!6}{1.9e-06} & \cellcolor{gray!6}{0.79} & \cellcolor{gray!6}{0.16} & \cellcolor{gray!6}{0.169} & \cellcolor{gray!6}{0.71} & \cellcolor{gray!6}{0.107} & \cellcolor{gray!6}{1.0e-02} & \cellcolor{gray!6}{0.75} & \cellcolor{gray!6}{0.079} & \cellcolor{gray!6}{2.5e-03}\\
+cg09935388 & GFI1 & 1:92947588 & 0.68 & 0.055 & 2.5e-07 & 0.67 & 0.066 & 9.7e-06 & 0.67 & 0.070 & 3.0e-05 & 0.96 & 0.24 & 0.844 & 0.74 & 0.127 & 4.2e-02 & 0.68 & 0.075 & 1.1e-04\\
+\cellcolor{gray!6}{cg01901332} & \cellcolor{gray!6}{ARRB1} & \cellcolor{gray!6}{11:75031054} & \cellcolor{gray!6}{0.72} & \cellcolor{gray!6}{0.048} & \cellcolor{gray!6}{2.8e-07} & \cellcolor{gray!6}{0.69} & \cellcolor{gray!6}{0.064} & \cellcolor{gray!6}{1.1e-05} & \cellcolor{gray!6}{0.66} & \cellcolor{gray!6}{0.064} & \cellcolor{gray!6}{2.2e-06} & \cellcolor{gray!6}{1.02} & \cellcolor{gray!6}{0.21} & \cellcolor{gray!6}{0.922} & \cellcolor{gray!6}{0.60} & \cellcolor{gray!6}{0.093} & \cellcolor{gray!6}{1.5e-04} & \cellcolor{gray!6}{0.78} & \cellcolor{gray!6}{0.072} & \cellcolor{gray!6}{3.9e-03}\\
+cg25305703 & CASC21 & 8:128378218 & 0.72 & 0.049 & 4.5e-07 & 0.72 & 0.067 & 1.1e-04 & 0.71 & 0.069 & 1.5e-04 & 0.80 & 0.17 & 0.210 & 0.76 & 0.106 & 2.6e-02 & 0.77 & 0.075 & 3.2e-03\\
+\cellcolor{gray!6}{cg16823042} & \cellcolor{gray!6}{AGAP2} & \cellcolor{gray!6}{12:58119992} & \cellcolor{gray!6}{0.74} & \cellcolor{gray!6}{0.049} & \cellcolor{gray!6}{1.1e-06} & \cellcolor{gray!6}{0.73} & \cellcolor{gray!6}{0.058} & \cellcolor{gray!6}{1.5e-05} & \cellcolor{gray!6}{0.70} & \cellcolor{gray!6}{0.059} & \cellcolor{gray!6}{5.9e-06} & \cellcolor{gray!6}{0.83} & \cellcolor{gray!6}{0.18} & \cellcolor{gray!6}{0.309} & \cellcolor{gray!6}{0.72} & \cellcolor{gray!6}{0.100} & \cellcolor{gray!6}{7.4e-03} & \cellcolor{gray!6}{0.80} & \cellcolor{gray!6}{0.080} & \cellcolor{gray!6}{1.3e-02}\\
 \addlinespace
-cg08709672 & AVPR1B & 1 & 2.1e+08 & 0.75 & 0.048 & 1.4e-06 & 0.76 & 0.058 & 1.1e-04 & 0.74 & 0.060 & 5.3e-05 & 0.73 & 0.17 & 0.102 & 0.74 & 0.085 & 3.5e-03 & 0.82 & 0.079 & 2.1e-02 & --- & 0 & 0.846\\
+cg08709672 & AVPR1B & 1:206224334 & 0.75 & 0.048 & 1.4e-06 & 0.76 & 0.058 & 1.1e-04 & 0.74 & 0.060 & 5.3e-05 & 0.73 & 0.17 & 0.102 & 0.74 & 0.085 & 3.5e-03 & 0.82 & 0.079 & 2.1e-02\\
 \bottomrule
-\multicolumn{25}{l}{\textsuperscript{} Meta-analyses of lung cancer EWAS adjusted for study specific covariates (basic, N = 1809),}\\
-\multicolumn{25}{l}{\textsuperscript{} basic model + surrogate variables (sv, N = 1809), basic model + surrogate variables + derived cell counts (cc, N = 1809).}\\
-\multicolumn{25}{l}{\textsuperscript{} Meta-analyses were also conducted stratified by smoking status (ns (N = 304), fs (N = 648), cs (N = 857)) using the basic model}\\
-\multicolumn{25}{l}{\textsuperscript{} OR = odds ratio per SD increase in DNA methylation, SE = standard error, Chr = chromosome}\\
-\multicolumn{25}{l}{\textsuperscript{} comp = smoker group comparion = heterogeneity across meta-analyses when stratifying by smoking status}\\
-\multicolumn{25}{l}{\textsuperscript{} Dir = direction of effect, I2 = Heterogeneity I-squared value, hetP = heterogeneity P value}\\
+\multicolumn{21}{l}{\textsuperscript{} Meta-analyses of lung cancer EWAS adjusted for study specific covariates (basic, N = 1809),}\\
+\multicolumn{21}{l}{\textsuperscript{} basic model + surrogate variables (sv-adjusted, N = 1809), basic model + surrogate variables + derived cell counts (sv-and-cell-count, N = 1809).}\\
+\multicolumn{21}{l}{\textsuperscript{} Meta-analyses were also conducted stratified by smoking status (never-smokers (N = 304), former-smokers (N = 648), current-smokers (N = 857)) using the basic model}\\
+\multicolumn{21}{l}{\textsuperscript{} OR = odds ratio per SD increase in DNA methylation, SE = standard error, chr:pos = chromosome:position}\\
 \end{tabular}}
 \end{table}
 \end{landscape}
 
+
+\begin{landscape}\begin{table}[!h]
+
+\caption{(\#tab:sup-tab2-07)Heterogeneity between studies and smoker groups in the meta-analysis of EWAS in four cohorts}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{llllllllllllllllllllll}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{3}{c}{basic} & \multicolumn{3}{c}{sv-adjusted} & \multicolumn{3}{c}{sv-and-cell-count} & \multicolumn{3}{c}{never-smokers} & \multicolumn{3}{c}{former-smokers} & \multicolumn{3}{c}{current-smokers} & \multicolumn{3}{c}{comp} \\
+\cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10} \cmidrule(l{3pt}r{3pt}){11-13} \cmidrule(l{3pt}r{3pt}){14-16} \cmidrule(l{3pt}r{3pt}){17-19} \cmidrule(l{3pt}r{3pt}){20-22}
+CpG & Dir & I\textbackslash{}textsuperscript\{2\} & P & Dir & I\textbackslash{}textsuperscript\{2\} & P & Dir & I\textbackslash{}textsuperscript\{2\} & P & Dir & I\textbackslash{}textsuperscript\{2\} & P & Dir & I\textbackslash{}textsuperscript\{2\} & P & Dir & I\textbackslash{}textsuperscript\{2\} & P & Dir & I\textbackslash{}textsuperscript\{2\} & P\\
+\midrule
+\cellcolor{gray!6}{cg01901332} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.631} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{12} & \cellcolor{gray!6}{0.335} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{29} & \cellcolor{gray!6}{0.237} & \cellcolor{gray!6}{+---} & \cellcolor{gray!6}{11} & \cellcolor{gray!6}{0.337} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.970} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{18} & \cellcolor{gray!6}{0.301} & \cellcolor{gray!6}{+--} & \cellcolor{gray!6}{63} & \cellcolor{gray!6}{0.066}\\
+cg01940273 & ---- & 35 & 0.201 & ---- & 61 & 0.053 & ---- & 60 & 0.056 & +--+ & 59 & 0.064 & ---- & 7 & 0.356 & ---+ & 34 & 0.206 & +-- & 81 & 0.005\\
+\cellcolor{gray!6}{cg03636183} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{42} & \cellcolor{gray!6}{0.159} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{76} & \cellcolor{gray!6}{0.006} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{71} & \cellcolor{gray!6}{0.015} & \cellcolor{gray!6}{+-+-} & \cellcolor{gray!6}{26} & \cellcolor{gray!6}{0.254} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{30} & \cellcolor{gray!6}{0.231} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.540} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{33} & \cellcolor{gray!6}{0.225}\\
+cg05575921 & ---- & 47 & 0.131 & ---- & 73 & 0.012 & ---- & 70 & 0.018 & +--+ & 0 & 0.481 & ---- & 0 & 0.433 & ---- & 34 & 0.207 & --- & 71 & 0.033\\
+\cellcolor{gray!6}{cg05951221} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{45} & \cellcolor{gray!6}{0.139} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{61} & \cellcolor{gray!6}{0.053} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{54} & \cellcolor{gray!6}{0.092} & \cellcolor{gray!6}{--++} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.862} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{33} & \cellcolor{gray!6}{0.217} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{15} & \cellcolor{gray!6}{0.315} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{44} & \cellcolor{gray!6}{0.168}\\
+\addlinespace
+cg06126421 & ?--- & 69 & 0.041 & ---- & 67 & 0.027 & ---- & 68 & 0.024 & ?--- & 0 & 0.464 & ?--- & 11 & 0.326 & ?--- & 0 & 0.400 & --- & 22 & 0.278\\
+\cellcolor{gray!6}{cg08709672} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{12} & \cellcolor{gray!6}{0.333} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{52} & \cellcolor{gray!6}{0.101} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{57} & \cellcolor{gray!6}{0.071} & \cellcolor{gray!6}{--++} & \cellcolor{gray!6}{55} & \cellcolor{gray!6}{0.085} & \cellcolor{gray!6}{---+} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.584} & \cellcolor{gray!6}{---+} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.735} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.657}\\
+cg09935388 & ---- & 20 & 0.291 & ---- & 50 & 0.110 & ---- & 29 & 0.241 & ---+ & 0 & 0.967 & -+-- & 60 & 0.056 & ---- & 0 & 0.729 & --- & 0 & 0.529\\
+\cellcolor{gray!6}{cg11660018} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.476} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{7} & \cellcolor{gray!6}{0.358} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.455} & \cellcolor{gray!6}{+-++} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.699} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{9} & \cellcolor{gray!6}{0.349} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.557} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{16} & \cellcolor{gray!6}{0.305}\\
+cg16823042 & ---- & 13 & 0.330 & --+- & 0 & 0.482 & --+- & 0 & 0.554 & +-+- & 19 & 0.293 & ---+ & 68 & 0.024 & ---+ & 0 & 0.919 & --- & 0 & 0.648\\
+\addlinespace
+\cellcolor{gray!6}{cg21566642} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{46} & \cellcolor{gray!6}{0.136} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{38} & \cellcolor{gray!6}{0.184} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{18} & \cellcolor{gray!6}{0.300} & \cellcolor{gray!6}{+-++} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.681} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.798} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{65} & \cellcolor{gray!6}{0.035} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{69} & \cellcolor{gray!6}{0.040}\\
+cg23387569 & ---- & 29 & 0.239 & --+- & 35 & 0.204 & --+- & 22 & 0.279 & --+- & 0 & 0.633 & ---+ & 76 & 0.005 & ---+ & 0 & 0.624 & --- & 0 & 0.890\\
+\cellcolor{gray!6}{cg23771366} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{42} & \cellcolor{gray!6}{0.161} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{75} & \cellcolor{gray!6}{0.007} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{72} & \cellcolor{gray!6}{0.013} & \cellcolor{gray!6}{++++} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.805} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.518} & \cellcolor{gray!6}{---+} & \cellcolor{gray!6}{27} & \cellcolor{gray!6}{0.249} & \cellcolor{gray!6}{+--} & \cellcolor{gray!6}{81} & \cellcolor{gray!6}{0.006}\\
+cg25305703 & ---- & 53 & 0.096 & ---- & 0 & 0.461 & ---- & 4 & 0.373 & ---- & 0 & 0.780 & ---- & 28 & 0.246 & ---- & 0 & 0.793 & --- & 0 & 0.981\\
+\cellcolor{gray!6}{cg26963277} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.512} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.516} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.430} & \cellcolor{gray!6}{--++} & \cellcolor{gray!6}{53} & \cellcolor{gray!6}{0.095} & \cellcolor{gray!6}{---+} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.466} & \cellcolor{gray!6}{----} & \cellcolor{gray!6}{17} & \cellcolor{gray!6}{0.308} & \cellcolor{gray!6}{---} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{0.329}\\
+\addlinespace
+cg27241845 & ---- & 57 & 0.075 & ---- & 48 & 0.122 & ---- & 41 & 0.163 & ---+ & 0 & 0.643 & ---+ & 0 & 0.672 & ---- & 32 & 0.221 & --- & 0 & 0.846\\
+\bottomrule
+\multicolumn{22}{l}{\textsuperscript{} Dir = Direction of effect}\\
+\multicolumn{22}{l}{\textsuperscript{} I\textbackslash{}textsuperscript\{2\} = Heterogeneity I-squared value}\\
+\multicolumn{22}{l}{\textsuperscript{} P = Heterogeneity P value}\\
+\multicolumn{22}{l}{\textsuperscript{} chr:pos = chromosome:position}\\
+\multicolumn{22}{l}{\textsuperscript{} sv-adjusted = surrogate variables included as covariates in analysis}\\
+\multicolumn{22}{l}{\textsuperscript{} sv-and-cell-count = surrogate variables and derived cell counts included as covariates in analysis}\\
+\multicolumn{22}{l}{\textsuperscript{} never-smokers = basic model in never smokers only}\\
+\multicolumn{22}{l}{\textsuperscript{} former-smokers = basic model in former smokers only}\\
+\multicolumn{22}{l}{\textsuperscript{} current-smokers = basic model in current smokers only}\\
+\multicolumn{22}{l}{\textsuperscript{} comp = comparison of smoker groups.}\\
+\end{tabular}}
+\end{table}
+\end{landscape}
 
 ### Mendelian randomization {#results-mendelian-randomization-07}
 I identified 15 independent mQTLs (r^2^<0.01) associated with methylation at 14 of 16 CpGs. Ten mQTLs replicated at FDR<0.05 in NSHDS (__Table \@ref(tab:sup-tab3-07)__).  MR power analyses indicated >99% power to detect ORs for lung cancer of the same magnitude as those in the meta-analysis of EWAS.
@@ -1621,8 +1617,6 @@ cg25305703 & CASC21 & rs9643220 & 0.028 & 0.004 & 1.5e-10 & 0.023 & 0.004 & 1.6e
 cg27241845 & ALPPL2 & rs56080708 & 0.038 & 0.011 & 4.5e-04 & 0.052 & 0.012 & 2.5e-05 & 0.095 & 0.010 & 6.4e-22 & 0.102 & 0.010 & 8.4e-25 & 0.051 & 0.011 & 4.4e-06\\
 \bottomrule
 \multicolumn{18}{l}{\textsuperscript{} P = p value}\\
-\multicolumn{18}{l}{\textsuperscript{} N = sample size}\\
-\multicolumn{18}{l}{\textsuperscript{} Those estimates in bold are at FDR < 0.05, and so are said to have replicated in that timepoint}\\
 \end{tabular}}
 \end{table}
 \end{landscape}
@@ -1640,7 +1634,7 @@ cg27241845 & ALPPL2 & rs56080708 & 0.038 & 0.011 & 4.5e-04 & 0.052 & 0.012 & 2.5
 \caption[(ref:sup-fig1-07-scap)]{(ref:sup-fig1-07-cap)}(\#fig:sup-fig1-07)
 \end{figure}
 
-There was little evidence of different effect estimates between ever and never smokers at individual CpG sites (__Figure \@ref(fig:sup-fig2-07)__, Z-test for difference, P>0.5). There was some evidence for a possible effect of methylation at cg21566642-_ALPPL2_ and cg23771366-_PRSS23_ on squamous cell lung cancer (OR=0.85 [95% confidence interval (CI)=0.75,0.97] and 0.91 [95% CI=0.84,1.00] per SD [14.4% and 5.8%] increase, respectively) as well as methylation at cg23387569-_AGAP2_, cg16823042-_AGAP2_, and cg01901332-_ARRB1_ on lung adenocarcinoma (OR=0.86 [95% CI=0.77,0.96], 0.84 [95% CI=0.74,0.95], and 0.89 [95% CI=0.80,1.00] per SD [9.47%, 8.35%, and 8.91%] increase, respectively). However, none of the results withstood multiple testing correction (FDR<0.05) (__Figure \@ref(fig:sup-fig3-07)__). For those CpGs where multiple mQTLs were used as instruments (cg05575921-_AHRR_ and cg01901332-_ARRB1_), there was limited evidence for heterogeneity in MR effect estimates (Q-test, P>0.05, __Table \@ref(tab:sup-tab6-07)__).
+There was little evidence of different effect estimates between ever and never smokers at individual CpG sites (__Figure \@ref(fig:sup-fig2-07)__, Z-test for difference, P>0.5). There was some evidence for a possible effect of methylation at cg21566642-_ALPPL2_ and cg23771366-_PRSS23_ on squamous cell lung cancer (OR=0.85 [95% CI=0.75,0.97] and 0.91 [95% CI=0.84,1.00] per SD [14.4% and 5.8%] increase, respectively) as well as methylation at cg23387569-_AGAP2_, cg16823042-_AGAP2_, and cg01901332-_ARRB1_ on lung adenocarcinoma (OR=0.86 [95% CI=0.77,0.96], 0.84 [95% CI=0.74,0.95], and 0.89 [95% CI=0.80,1.00] per SD [9.47%, 8.35%, and 8.91%] increase, respectively). However, none of the results withstood multiple testing correction (FDR<0.05) (__Figure \@ref(fig:sup-fig3-07)__). For those CpGs where multiple mQTLs were used as instruments (cg05575921-_AHRR_ and cg01901332-_ARRB1_), there was limited evidence for heterogeneity in MR effect estimates (Q-test, P>0.05, __Table \@ref(tab:sup-tab6-07)__).
 
 (ref:sup-fig2-07-cap) __DNA methylation – lung cancer Mendelian randomization effect estimates in ever and never smokers__. On the left-hand side of each column the bracketed numbers represent the number of instrumental variables for that CpG site. * indicates that the SNP(s) being used to instrument that CpG site are more than 1MB away from the CpG site in the genome (trans).
 
@@ -1719,6 +1713,8 @@ Single mQTLs for cg05575921-_AHRR_, cg27241845-_ALPPL2_, and cg26963277-_KCNQ1_ 
 \end{figure}
 
 #### Potential causal effect of _AHRR_ methylation on lung cancer risk: one sample MR {#ahrr-one-sample-mr}
+Dr Rebecca Richmond completed the analysis and writing of this section.
+
 In the CCHS, a per (average methylation-increasing) allele change in a four-mQTL allele score was associated with a 0.73% [95% CI=0.56,0.90] increase in methylation (P<1x10^-10^) and explained 0.8% of the variance in cg05575921-_AHRR_ methylation (F-statistic=74.2). Confounding factors were not strongly associated with the genotypes in this cohort (P>=0.11) (__Table \@ref(tab:sup-tab7-07)__).  Results provided some evidence for an effect of cg05575921 methylation on total lung cancer risk (HR=0.30 [95% CI=0.10,1.00] per SD (9.2%) increase) (__Table \@ref(tab:sup-tab8-07)__). The effect estimate did not change substantively when stratified by smoking status (__Table \@ref(tab:sup-tab8-07)__). \linebreak
 
 \begin{table}[!h]
@@ -1743,7 +1739,7 @@ Exposure to passive smoking & -0.46 & -0.78; -0.15 & 4.0e-03 & -3e-02 & -0.08; 0
 Cumulative use of tobacco to per pack-year & -0.05 & -0.06; -0.04 & 4.0e-28 & -5e-04 & -0.002; 0.001 & 0.54\\
 \bottomrule
 \multicolumn{7}{l}{\textsuperscript{} For the allele score, genotypic effects were scaled to equate to the same magnitude of effect as a per 1\% increase in}\\
-\multicolumn{7}{l}{methylation. Regressions were adjusted for the other factors in the tab}\\
+\multicolumn{7}{l}{methylation. Regressions were adjusted for the other factors in the table}\\
 \end{tabular}}
 \end{table}
 
@@ -1789,8 +1785,8 @@ Given contrasting findings with the main MR analysis, where cg05575921-_AHRR_ me
 \resizebox{\linewidth}{!}{
 \begin{tabular}[t]{lllllllll}
 \toprule
-\multicolumn{5}{c}{ } & \multicolumn{2}{c}{FE meta-analysis} & \multicolumn{2}{c}{Correction for correlation} \\
-\cmidrule(l{3pt}r{3pt}){6-7} \cmidrule(l{3pt}r{3pt}){8-9}
+\multicolumn{2}{c}{ } & \multicolumn{2}{c}{FE meta-analysis} & \multicolumn{2}{c}{Correction for correlation} & \multicolumn{3}{c}{ } \\
+\cmidrule(l{3pt}r{3pt}){3-4} \cmidrule(l{3pt}r{3pt}){5-6}
 Lung cancer & N SNP & Beta & SE & Beta & SE & Het-Q & Het-DF & Het-P\\
 \midrule
 \cellcolor{gray!6}{All} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{-0.005} & \cellcolor{gray!6}{0.010} & \cellcolor{gray!6}{-0.004} & \cellcolor{gray!6}{0.009} & \cellcolor{gray!6}{2.73} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{0.43}\\
@@ -1810,15 +1806,19 @@ All in ever smokers & 4 & -0.017 & 0.010 & -0.016 & 0.011 & 1.63 & 3 & 0.65\\
 \end{table}
 
 ### Tumour and adjacent normal lung tissue methylation patterns {#lc-heathly-v-normal}
-For cg05575921-_AHRR_, there was no strong evidence for differential methylation between adenocarcinoma tissue and adjacent healthy tissue (P=0.963), and weak evidence for hypermethylation in squamous cell carcinoma tissue (P=0.035) (__Figure \@ref(fig:fig4-07)__, __Table \@ref(tab:sup-tab10-07)__). For the other CpG sites there was evidence for a difference in DNA methylation between tumour and healthy adjacent tissue at several sites in both adenocarcinoma and squamous cell carcinoma, with consistent differences for CpG sites in _ALPPL2_ (cg2156642, cg05951221 and cg01940273), as well as cg23771366-_PRSS23_, cg26963277-_KCNQ1_, cg09935388-_GFI1_, cg0101332-_ARRB1_, cg08709672-_AVPR1B_ and cg25305703-_CASC21_. However, hypermethylation in tumour tissue was found for the majority of these sites, which is opposite to what was observed in the EWAS analysis.
+For cg05575921-_AHRR_, there was no strong evidence for differential methylation between adenocarcinoma tissue and adjacent healthy tissue (P=0.963), and weak evidence for hypermethylation in squamous cell carcinoma tissue (P=0.035) (__Figure \@ref(fig:fig4-07)__, __Table \@ref(tab:sup-tab10-07)__). For the other CpG sites there was evidence for a difference in DNA methylation between tumour and healthy adjacent tissue at several sites in both adenocarcinoma and squamous cell carcinoma, with consistent differences for CpG sites in _ALPPL2_ (cg2156642, cg05951221 and cg01940273), as well as cg23771366-_PRSS23_, cg26963277-_KCNQ1_, cg09935388-_GFI1_, cg0101332-_ARRB1_, cg08709672-_AVPR1B_ and cg25305703-_CASC21_. However, hypermethylation in tumour tissue was found for the majority of these sites, which is the opposite to what was observed in the EWAS analysis.
 
 (ref:fig4-07-cap) __Differential DNA methylation in lung cancer tissue__. A comparison of methylation at each of the 16 CpG sites identified in the meta-analysis was made between lung cancer tissue and adjacent healthy lung tissue for patients with lung adenocarcinoma (__A__) and squamous cell lung cancer (__B__). Data from The Cancer Genome Atlas was used for this analysis.
 
 (ref:fig4-07-scap) Differential DNA methylation in lung cancer tissue
 
-\begin{figure}
-\includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_4a} \includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_4b} \caption{(ref:fig4-07-scap)}(\#fig:fig4-07)
+\blandscape
+
+\begin{figure}[htbp]
+\includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_4a} \includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_4b} \caption[(ref:fig4-07-scap)]{(ref:fig4-07-cap)}(\#fig:fig4-07)
 \end{figure}
+
+\elandscape
 
 \begin{table}[!h]
 
@@ -1831,35 +1831,35 @@ For cg05575921-_AHRR_, there was no strong evidence for differential methylation
 \cmidrule(l{3pt}r{3pt}){3-4} \cmidrule(l{3pt}r{3pt}){5-6} \cmidrule(l{3pt}r{3pt}){7-8} \cmidrule(l{3pt}r{3pt}){9-10}
 CpG & Gene & Direction & P & Direction & P & Direction & P & Direction & P\\
 \midrule
-\cellcolor{gray!6}{cg23387569} & \cellcolor{gray!6}{AGAP2} & \cellcolor{gray!6}{neg} & \cellcolor{gray!6}{0.006} & \cellcolor{gray!6}{pos} & \cellcolor{gray!6}{8.8e-01} & \cellcolor{gray!6}{pos} & \cellcolor{gray!6}{0.364} & \cellcolor{gray!6}{neg} & \cellcolor{gray!6}{5.0e-01}\\
-cg05575921 & AHRR & neg & 0.089 & neg & 9.6e-01 & neg & 0.052 & pos & 3.5e-02\\
-\cellcolor{gray!6}{cg05951221} & \cellcolor{gray!6}{ALPPL2} & \cellcolor{gray!6}{pos} & \cellcolor{gray!6}{0.916} & \cellcolor{gray!6}{pos} & \cellcolor{gray!6}{8.0e-03} & \cellcolor{gray!6}{pos} & \cellcolor{gray!6}{0.273} & \cellcolor{gray!6}{pos} & \cellcolor{gray!6}{1.0e-09}\\
-cg21566642 & ALPPL2 & neg & 0.673 & pos & 1.0e-04 & neg & 0.016 & pos & 8.0e-07\\
-\cellcolor{gray!6}{cg27241845} & \cellcolor{gray!6}{ALPPL2} & \cellcolor{gray!6}{pos} & \cellcolor{gray!6}{0.532} & \cellcolor{gray!6}{neg} & \cellcolor{gray!6}{7.6e-02} & \cellcolor{gray!6}{neg} & \cellcolor{gray!6}{0.101} & \cellcolor{gray!6}{pos} & \cellcolor{gray!6}{2.8e-01}\\
+\cellcolor{gray!6}{cg23387569} & \cellcolor{gray!6}{AGAP2} & \cellcolor{gray!6}{hypo} & \cellcolor{gray!6}{0.006} & \cellcolor{gray!6}{hyper} & \cellcolor{gray!6}{8.8e-01} & \cellcolor{gray!6}{hyper} & \cellcolor{gray!6}{0.364} & \cellcolor{gray!6}{hypo} & \cellcolor{gray!6}{5.0e-01}\\
+cg05575921 & AHRR & hypo & 0.089 & hypo & 9.6e-01 & hypo & 0.052 & hyper & 3.5e-02\\
+\cellcolor{gray!6}{cg05951221} & \cellcolor{gray!6}{ALPPL2} & \cellcolor{gray!6}{hyper} & \cellcolor{gray!6}{0.916} & \cellcolor{gray!6}{hyper} & \cellcolor{gray!6}{8.0e-03} & \cellcolor{gray!6}{hyper} & \cellcolor{gray!6}{0.273} & \cellcolor{gray!6}{hyper} & \cellcolor{gray!6}{1.0e-09}\\
+cg21566642 & ALPPL2 & hypo & 0.673 & hyper & 1.0e-04 & hypo & 0.016 & hyper & 8.0e-07\\
+\cellcolor{gray!6}{cg27241845} & \cellcolor{gray!6}{ALPPL2} & \cellcolor{gray!6}{hyper} & \cellcolor{gray!6}{0.532} & \cellcolor{gray!6}{hypo} & \cellcolor{gray!6}{7.6e-02} & \cellcolor{gray!6}{hypo} & \cellcolor{gray!6}{0.101} & \cellcolor{gray!6}{hyper} & \cellcolor{gray!6}{2.8e-01}\\
 \addlinespace
-cg01901332 & ARRB1 & neg & 0.045 & pos & 3.0e-16 & neg & 0.778 & pos & 8.0e-12\\
-\cellcolor{gray!6}{cg08709672} & \cellcolor{gray!6}{AVPR1B} & \cellcolor{gray!6}{pos} & \cellcolor{gray!6}{0.129} & \cellcolor{gray!6}{pos} & \cellcolor{gray!6}{3.0e-02} & \cellcolor{gray!6}{neg} & \cellcolor{gray!6}{0.862} & \cellcolor{gray!6}{pos} & \cellcolor{gray!6}{2.0e-02}\\
-cg25305703 & CASC21 & pos & 0.170 & neg & 3.0e-05 & neg & 0.792 & neg & 8.0e-04\\
-\cellcolor{gray!6}{cg03636183} & \cellcolor{gray!6}{F2RL3} & \cellcolor{gray!6}{neg} & \cellcolor{gray!6}{0.151} & \cellcolor{gray!6}{pos} & \cellcolor{gray!6}{8.0e-04} & \cellcolor{gray!6}{pos} & \cellcolor{gray!6}{0.758} & \cellcolor{gray!6}{neg} & \cellcolor{gray!6}{7.6e-01}\\
-cg09935388 & GFI1 & neg & 0.831 & pos & 2.0e-04 & pos & 0.567 & pos & 2.0e-20\\
+cg01901332 & ARRB1 & hypo & 0.045 & hyper & 3.0e-16 & hypo & 0.778 & hyper & 8.0e-12\\
+\cellcolor{gray!6}{cg08709672} & \cellcolor{gray!6}{AVPR1B} & \cellcolor{gray!6}{hyper} & \cellcolor{gray!6}{0.129} & \cellcolor{gray!6}{hyper} & \cellcolor{gray!6}{3.0e-02} & \cellcolor{gray!6}{hypo} & \cellcolor{gray!6}{0.862} & \cellcolor{gray!6}{hyper} & \cellcolor{gray!6}{2.0e-02}\\
+cg25305703 & CASC21 & hyper & 0.170 & hypo & 3.0e-05 & hypo & 0.792 & hypo & 8.0e-04\\
+\cellcolor{gray!6}{cg03636183} & \cellcolor{gray!6}{F2RL3} & \cellcolor{gray!6}{hypo} & \cellcolor{gray!6}{0.151} & \cellcolor{gray!6}{hyper} & \cellcolor{gray!6}{8.0e-04} & \cellcolor{gray!6}{hyper} & \cellcolor{gray!6}{0.758} & \cellcolor{gray!6}{hypo} & \cellcolor{gray!6}{7.6e-01}\\
+cg09935388 & GFI1 & hypo & 0.831 & hyper & 2.0e-04 & hyper & 0.567 & hyper & 2.0e-20\\
 \addlinespace
-\cellcolor{gray!6}{cg26963277} & \cellcolor{gray!6}{KCNQ1} & \cellcolor{gray!6}{neg} & \cellcolor{gray!6}{0.299} & \cellcolor{gray!6}{pos} & \cellcolor{gray!6}{3.6e-02} & \cellcolor{gray!6}{neg} & \cellcolor{gray!6}{0.314} & \cellcolor{gray!6}{pos} & \cellcolor{gray!6}{3.0e-03}\\
-cg23771366 & PRSS23 & pos & 0.819 & neg & 4.0e-09 & neg & 0.047 & neg & 3.3e-02\\
-\cellcolor{gray!6}{cg11660018} & \cellcolor{gray!6}{PRSS23} & \cellcolor{gray!6}{equal} & \cellcolor{gray!6}{0.999} & \cellcolor{gray!6}{neg} & \cellcolor{gray!6}{3.0e-08} & \cellcolor{gray!6}{neg} & \cellcolor{gray!6}{0.062} & \cellcolor{gray!6}{neg} & \cellcolor{gray!6}{1.3e-01}\\
+\cellcolor{gray!6}{cg26963277} & \cellcolor{gray!6}{KCNQ1} & \cellcolor{gray!6}{hypo} & \cellcolor{gray!6}{0.299} & \cellcolor{gray!6}{hyper} & \cellcolor{gray!6}{3.6e-02} & \cellcolor{gray!6}{hypo} & \cellcolor{gray!6}{0.314} & \cellcolor{gray!6}{hyper} & \cellcolor{gray!6}{3.0e-03}\\
+cg23771366 & PRSS23 & hyper & 0.819 & hypo & 4.0e-09 & hypo & 0.047 & hypo & 3.3e-02\\
+\cellcolor{gray!6}{cg11660018} & \cellcolor{gray!6}{PRSS23} & \cellcolor{gray!6}{equal} & \cellcolor{gray!6}{0.999} & \cellcolor{gray!6}{hypo} & \cellcolor{gray!6}{3.0e-08} & \cellcolor{gray!6}{hypo} & \cellcolor{gray!6}{0.062} & \cellcolor{gray!6}{hypo} & \cellcolor{gray!6}{1.3e-01}\\
 \bottomrule
 \multicolumn{10}{l}{\textsuperscript{} T/H = comparison of tumour and healthy tissue}\\
 \multicolumn{10}{l}{\textsuperscript{} Adeno = Lung adenocarcinoma}\\
 \multicolumn{10}{l}{\textsuperscript{} SCC = squamous cell carcinoma}\\
 \multicolumn{10}{l}{\textsuperscript{} P = P value}\\
-\multicolumn{10}{l}{\textsuperscript{} pos = hypermethylated}\\
-\multicolumn{10}{l}{\textsuperscript{} neg = hypomethylated}\\
-\multicolumn{10}{l}{\textsuperscript{} For tumour/healthy tissue comparison, pos = hypermethylation of the CpG within the tumour tissue}\\
-\multicolumn{10}{l}{(neg is the opposite)}\\
+\multicolumn{10}{l}{\textsuperscript{} hyper = hypermethylation is associated with lung cancer}\\
+\multicolumn{10}{l}{\textsuperscript{} hypo = hypomethylation is associated with lung cancer}\\
+\multicolumn{10}{l}{\textsuperscript{} For tumour/healthy tissue comparison, pos = hypermethylation of the CpG within the tumour tissue (neg is}\\
+\multicolumn{10}{l}{the opposite)}\\
 \end{tabular}}
 \end{table}
 
 ### Gene expression associated with mQTLs in blood and lung tissue
-Of the 10 genes annotated to the 14 CpG sites, eight genes were expressed sufficiently to be detected in lung (_AVPR1B_ and _CASC21_ were not) and seven in blood (_AVPR1B_, _CASC21_ and _ALPPL2_ were not). Of these, gene expression of ARRB1 could not be investigated as the mQTLs in that region were not present in the GTEx data. rs3748971 and rs878481, mQTLs for cg21566642 and cg05951221 respectively, were associated with increased expression of _ALPPL2_ (P=0.002 and P=0.0001). No other mQTLs were associated with expression of the annotated gene at a Bonferroni corrected P value threshold (P<0.05/19=0.0026) (__Table \@ref(tab:sup-tab11-07)__).
+Of the 10 genes annotated to the 14 CpG sites, eight genes were expressed sufficiently to be detected in lung (_AVPR1B_ and _CASC21_ were not) and seven in blood (_AVPR1B_, _CASC21_ and _ALPPL2_ were not). Of these, gene expression of _ARRB1_ could not be investigated as the mQTLs in that region were not present in the GTEx data. rs3748971 and rs878481, mQTLs for cg21566642 and cg05951221 respectively, were associated with increased expression of _ALPPL2_ in lung tissue (P=0.002 and P=0.0001). No other mQTLs were associated with expression of the annotated gene at a Bonferroni corrected P value threshold (P<0.05/19=0.0026) (__Table \@ref(tab:sup-tab11-07)__).
 
 \begin{table}[!h]
 
@@ -1888,7 +1888,7 @@ KCNQ1 & rs463924 & cg26963277 & N & 11:2717680 & T & C & 0.304 & 0.008 & 0.038 &
 PRSS23 & rs72967500 & cg23771366 & N & 11:86515072 & T & C & 0.132 & -0.061 & 0.067 & 0.36300 & 0.014 & 0.027 & 0.614\\
 \bottomrule
 \multicolumn{14}{l}{\textsuperscript{} Trans = trans mQTL (Yes/No)}\\
-\multicolumn{14}{l}{\textsuperscript{} chr:position = chromosome:position}\\
+\multicolumn{14}{l}{\textsuperscript{} chr:pos = chromosome:position}\\
 \multicolumn{14}{l}{\textsuperscript{} MAF = minor allele frequency}\\
 \multicolumn{14}{l}{\textsuperscript{} A1 = effect allele}\\
 \multicolumn{14}{l}{\textsuperscript{} P = P value}\\
@@ -1900,13 +1900,15 @@ In this study, 16 CpG sites associated, at P<1x10^-7^, with lung cancer in a met
 
 A major strength of the study was the use of two-sample MR to integrate an extensive epigenetic resource and summary data from a large lung cancer GWAS to appraise causality of observational associations with >99% power. Evidence against the observational findings were also acquired through tissue-specific DNA methylation and gene expression analyses.
 
-Limitations include potential “winner’s curse” which may bias causal estimates in a two-sample MR analysis towards the null if the discovery sample for identifying genetic instruments is used as the first sample, as was done for the main MR analysis using data from ARIES [@Burgess2011]. However, findings were similar when using replicated mQTLs in NSHDS, indicating the potential impact of this bias was minimal (__Figure \@ref(fig:sup-fig1-07)__). Another limitation relates to the potential issue of consistency and validity of the instruments across the two samples. For a minority of the mQTL-CpG associations (4 out of 16), there was limited replication across time points and in particular, 6 mQTLs were not strongly associated with DNA methylation in adults. Further, the primary data used for the first sample in the two-sample MR was ARIES, which contains no male adults. If the mQTLs identified vary by sex and time, then this could bias the results. However, the replication cohort NSHDS contains adult males. Therefore, the 10 mQTLs that replicated in NSHDS are unlikely to be biased by the sex discordance. Also, the findings for cg05575921 _AHRR_ in CCHS, which contains both adult males and females, were replicated in a two-sample MR analysis, suggesting these results are also not influenced by sex discordance. Caution is therefore warranted when interpreting the null results for the two-sample MR estimates for the CpG sites for which mQTLs were not repliacted, which could be the result of weak-instrument bias.
+Limitations include potential “winner’s curse” which may bias causal estimates in a two-sample MR analysis towards the null if the discovery sample for identifying genetic instruments is used as the first sample, as was done for the main MR analysis using data from ARIES [@Burgess2011]. However, findings were similar when using replicated mQTLs in NSHDS, indicating the potential impact of this bias was minimal (__Figure \@ref(fig:sup-fig1-07)__). Another limitation relates to the potential issue of consistency and validity of the instruments across the two samples. For a minority of the mQTL-CpG associations (4 out of 16), there was limited replication across time points and in particular, 6 mQTLs were not strongly associated with DNA methylation in adults. Further, the primary data used for the first sample in the two-sample MR was ARIES, which contained no male adults at the time of the study.. If the mQTLs identified vary by sex and time, then this could bias the results. However, the replication cohort NSHDS contains adult males. Therefore, the 10 mQTLs that replicated in NSHDS are unlikely to be biased by the sex discordance. Also, the findings for cg05575921 _AHRR_ in CCHS, which contains both adult males and females, were replicated in a two-sample MR analysis, suggesting these results are also not influenced by sex discordance. Caution is therefore warranted when interpreting the null results for the two-sample MR estimates for the CpG sites for which mQTLs were not repliacted, which could be the result of weak-instrument bias.
 
-The lack of independent mQTLs for each CpG site did not allow us to properly appraise horizontal pleiotropy in the MR analyses. Where possible I only included cis-acting mQTLs to minimise pleiotropy and investigated heterogeneity where there were multiple independent mQTLs. Three mQTLs were nominally associated with smoking phenotypes, but not to the extent that this would bias the MR results substantially. Some of the mQTLs used influence multiple CpGs in the same region, suggesting genomic control of methylation at a regional rather than single CpG level. This was untested, but methods to detect differentially methylated regions (DMRs) and identify genetic variants which proxy for them may be fruitful in probing the effect of methylation across gene regions.
+The lack of independent mQTLs for each CpG site did not allow us to properly appraise horizontal pleiotropy in the MR analyses. Where possible I only included cis-acting mQTLs to minimise pleiotropy and investigated heterogeneity where there were multiple independent mQTLs. Three mQTLs were nominally associated with smoking phenotypes, but not to the extent that this would bias the MR results substantially. Since this study was conducted, GoDMC has released a large set of SNP-DNA methylation associations from a sample size that is over ten times that of ARIES [@Min2020]. Replication of this analysis using mQTL estimates from GoDMC may mitigate some of these limitations. 
+
+Some of the mQTLs used influence multiple CpGs in the same region, suggesting genomic control of methylation at a regional rather than single CpG level. This was untested, but methods to detect differentially methylated regions (DMRs) and identify genetic variants which proxy for them may be fruitful in probing the effect of methylation across gene regions.
 
 A further limitation relates to the inconsistency in effect estimates between the one- and two-sample MR analysis to appraise the causal role of _AHRR_ methylation. While findings in CCHS were supportive of a causal effect of _AHRR_ methylation on lung cancer (HR=0.30 [95% CI=0.10,1.00] per SD), in two-sample MR this site was not causally implicated (OR=1.00 [95% CI=0.83,1.10] per SD increase). It was verified that this was not due to differences in the genetic instruments used, nor due to issues of weak instrument bias. Given the CCHS one-sample MR had little power (19% at alpha = 0.05) to detect a causal effect with a size equivalent to that of the observational analysis, there should be more confidence in the results from the two-sample approach.
 
-Peripheral blood may not be the ideal tissue to assess the association between DNA methylation and lung cancer. While a high degree of concordance in mQTLs has been observed across lung tissue, skin and peripheral blood DNA [@Shi2014], this was not directly evaluated here. A possible explanation for a lack of causal effect at _AHRR_ is due to the limitation of tissue specificity as it was found that the mQTLs used to instrument cg05575921 were not strongly related to expression of _AHRR_ in lung tissue. However, findings from MR analysis were corroborated by the lack of evidence for differential methylation at _AHRR_ between lung adenocarcinoma tissue and adjacent healthy tissue, and weak evidence for hypermethylation (opposite to the expected direction) in squamous cell lung cancer tissue. This result may be interesting in itself as smoking is hypothesized to influence squamous cell carcinoma more than adenocarcinoma. However, the result conflicts with that found in the MR analysis. Furthermore, another study investigating tumorous lung tissue (N=511) found only weak evidence for an association between smoking and cg05575921 _AHRR_ methylation, that did not survive multiple testing correction (P=0.02) [@Freeman2016]. However, the results do not fully exclude _AHRR_ from involvement in the disease process. _AHRR_ and _AHR_ form a regulatory feedback loop, which means that the actual effect of differential methylation or differential expression of _AHR_/_AHRR_ on pathway activity is complex [@Chen2017]. In addition, some of the CpG sites identified in the EWAS were found to be differentially methylated in the tumour and adjacent normal lung tissue comparison. While this could represent a false negative result of the MR analysis, it is of interest that differential methylation in the tissue comparison analysis was typically in the opposite direction to that observed in the EWAS. Furthermore, while this method can be used to minimize confounding, it does not fully eliminate the possibility of bias due to reverse causation (whereby cancer induces changes in DNA methylation) or intra-individual confounding e.g. by gene expression. Therefore, it doesn’t give conclusive evidence that DNA methylation changes at these sites are not relevant to the development of lung cancer.
+Peripheral blood may not be the ideal tissue to assess the association between DNA methylation and lung cancer. While a high degree of concordance in mQTLs has been observed across lung tissue, skin and peripheral blood DNA [@Shi2014], this was not directly evaluated here. A possible explanation for a lack of causal effect at _AHRR_ is due to the limitation of tissue specificity as it was found that the mQTLs used to instrument cg05575921 were not strongly related to expression of _AHRR_ in lung tissue. However, findings from MR analysis were corroborated by the lack of evidence for differential methylation at _AHRR_ between lung adenocarcinoma tissue and adjacent healthy tissue, and weak evidence for hypermethylation (opposite to the expected direction) in squamous cell lung cancer tissue. This result may be interesting in itself as smoking is hypothesized to influence squamous cell carcinoma more than adenocarcinoma. However, the result conflicts with that found in the MR analysis. Furthermore, another study investigating tumorous lung tissue (N=511) found only weak evidence for an association between smoking and cg05575921 _AHRR_ methylation, that did not survive multiple testing correction (P=0.02) [@Freeman2016]. These results do not fully exclude _AHRR_ from involvement in the disease process. _AHRR_ and _AHR_ form a regulatory feedback loop, which means that the actual effect of differential methylation or differential expression of _AHR_/_AHRR_ on pathway activity is complex [@Chen2017]. In addition, some of the CpG sites identified in the EWAS were found to be differentially methylated in the tumour and adjacent normal lung tissue comparison. While this could represent a false negative result of the MR analysis, it is of interest that differential methylation in the tissue comparison analysis was typically in the opposite direction to that observed in the EWAS. Furthermore, while this method can be used to minimize confounding, it does not fully eliminate the possibility of bias due to reverse causation (whereby cancer induces changes in DNA methylation) or intra-individual confounding e.g. by gene expression. Therefore, it doesn’t give conclusive evidence that DNA methylation changes at these sites are not relevant to the development of lung cancer.
 
 While DNA methylation in peripheral blood may be predictive of lung cancer risk, according to the present analysis it is unlikely to play a causal role in lung carcinogenesis at the CpG sites investigated. Findings from this study issue caution over the use of traditional mediation analyses to implicate intermediate biomarkers (such as DNA methylation) in pathways linking an exposure with disease, given the potential for residual confounding in this context [@Richmond2016]. However, the findings of this study do not preclude the possibility that other DNA methylation changes (i.e. changes at different sites in the genome or in different tissues) are causally related to lung cancer (or other smoking-associated disease) [@Gao2016].
 
