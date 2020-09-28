@@ -14,6 +14,9 @@
 %% Packages - these are those which i used for my thesis so might not be specific to yours
 \usepackage{graphicx,latexsym}
 \usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{longtable}
@@ -35,7 +38,7 @@
 \newcommand{\esmall}{\end{small}}
 \renewcommand{\UrlBreaks}{\do\/\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z\do\0\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9\do\%\do\.\do\-}
 \renewcommand{\chapterautorefname}{Chapter}
-\usepackage{times} % other fonts are available like times, bookman, charter, palatino
+% \usepackage{times} % other fonts are available like times, bookman, charter, palatino
 \usepackage{caption}
 
 % Use ref for internal links
@@ -45,6 +48,10 @@
 \def\subsectionautorefname{Subsection}
 \usepackage{caption}
 \captionsetup{width=5in}
+
+\usepackage{lscape}
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
 
 % Syntax highlighting #22
 $if(highlighting-macros)$
@@ -163,9 +170,11 @@ $if(toc)$
 $endif$
 $if(lot)$
   \listoftables
+  \addcontentsline{toc}{chapter}{List of Tables}
 $endif$
 $if(lof)$
   \listoffigures
+  \addcontentsline{toc}{chapter}{List of Figures}
 $endif$
 $if(abbreviations)$
   \begin{abbreviations}

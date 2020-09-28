@@ -298,7 +298,7 @@
   \else
     \@restonecolfalse
   \fi
-  \chapter*{Abstract}
+  \chapter{Abstract}
   \fontsize{12}{14}\selectfont
 }{\clearpage \if@restonecol\twocolumn\fi}%
 
@@ -309,7 +309,7 @@
   \else
     \@restonecolfalse
   \fi
-  \chapter*{Acknowledgements}
+  \chapter{Acknowledgements}
   \fontsize{12}{14}\selectfont
 }{\clearpage \if@restonecol\twocolumn\fi}%
 
@@ -320,7 +320,7 @@
   \else
     \@restonecolfalse
   \fi
-  \chapter*{Declaration}
+  \chapter{Declaration}
   \fontsize{12}{14}\selectfont
 }{\clearpage \if@restonecol\twocolumn\fi}%
 
@@ -331,7 +331,7 @@
   \else
     \@restonecolfalse
   \fi
-  \chapter*{Abbreviations}
+  \chapter{Abbreviations}
   \fontsize{12}{14}\selectfont
 }{\clearpage \if@restonecol\twocolumn\fi}%
 
@@ -342,7 +342,7 @@
   \else
     \@restonecolfalse
   \fi
-  \chapter*{Publications}
+  \chapter{List of Publications}
   \fontsize{12}{14}\selectfont
 }{\clearpage \if@restonecol\twocolumn\fi}%
 
