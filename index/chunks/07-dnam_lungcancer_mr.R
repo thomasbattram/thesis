@@ -37,8 +37,12 @@ include_graphics(c(fig2a, fig2b))
 ## ---- fig3-07 --------------------------------
 include_graphics(fig3)
 
+## ---- fig4a-07 --------------------------------
+include_graphics(fig4a)
+
 ## ---- fig4-07 --------------------------------
-include_graphics(c(fig4a,fig4b))
+include_graphics(fig4b)
+
 
 ## ---- sup-fig1-07 --------------------------------
 include_graphics(grep("fig1", sup_figs, value=T))

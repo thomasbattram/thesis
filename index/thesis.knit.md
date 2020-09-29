@@ -1765,11 +1765,13 @@ Never & 1,948 & 9 & 0.83 (0.38; 1.85) & 0.66\\
 
 Given contrasting findings with the main MR analysis, where cg05575921-_AHRR_ methylation was not causally implicated in lung cancer, and the lower power in the one-sample analysis to detect an effect of equivalent size to the observational results (power = 19% at alpha = 0.05), a further two-sample MR was performed based on the four mQTLs using data from both CCHS (sample one) and the TRICL-ILCCO consortium (sample two). Results showed no strong evidence for a causal effect of DNA methylation on total lung cancer risk (OR=1.00 [95% CI=0.83,1.10] per SD increase) (__Figure \@ref(fig:sup-fig5-07)__). There was also limited evidence for an effect of cg05575921-_AHRR_ methylation when stratified by cancer subtype and smoking status (__Figure \@ref(fig:sup-fig5-07)__) and no strong evidence for heterogeneity of the mQTL effects (__Table \@ref(tab:sup-tab9-07)__). Conclusions were consistent when MR-Egger [@Bowden2015] was applied (__Figure \@ref(fig:sup-fig5-07)__) and when accounting for correlation structure between the mQTLs  (__Table \@ref(tab:sup-tab9-07)__). 
 
-(ref:sup-fig5-07-cap) __Two-sample Mendelian randomization analysis of DNA methylation at _AHRR_ on lung cancer__. The top four plots assess the association of DNA methylation at _AHRR_ and different lung cancer subtypes. The bottom two plots assess the association between DNA methylation and all lung cancer after stratifying into groups of ever and never smokers.
+(ref:sup-fig5-07-cap) __Two-sample Mendelian randomization analysis of DNA methylation at _AHRR_ on lung cancer__. Analysis are divided into these categories: a) All lung cancer b) Squamous cell carcinoma c) Adenocarcinoma d) Small cell carcinoma e) All lung cancer in never smokers only f) All lung cancer in ever smokers only
 
 (ref:sup-fig5-07-scap) Two-sample Mendelian randomization analysis of DNA methylation at _AHRR_ on lung cancer
 
-\begin{figure}
+\blandscape
+
+\begin{figure}[htbp]
 
 {\centering \includegraphics[width=1\linewidth]{figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp} 
 
@@ -1777,6 +1779,8 @@ Given contrasting findings with the main MR analysis, where cg05575921-_AHRR_ me
 
 \caption[(ref:sup-fig5-07-scap)]{(ref:sup-fig5-07-cap)}(\#fig:sup-fig5-07)
 \end{figure}
+
+\elandscape
 
 \begin{table}[!h]
 
@@ -1812,13 +1816,17 @@ For cg05575921-_AHRR_, there was no strong evidence for differential methylation
 
 (ref:fig4-07-scap) Differential DNA methylation in lung cancer tissue
 
-\blandscape
 
-\begin{figure}[htbp]
-\includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_4a} \includegraphics[width=0.5\linewidth]{figure/07-dnam_lungcancer_mr/Figure_4b} \caption[(ref:fig4-07-scap)]{(ref:fig4-07-cap)}(\#fig:fig4-07)
+\begin{center}\includegraphics[width=1\linewidth]{figure/07-dnam_lungcancer_mr/Figure_4a} \end{center}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figure/07-dnam_lungcancer_mr/Figure_4b} 
+
+}
+
+\caption[(ref:fig4-07-scap)]{(ref:fig4-07-cap)}(\#fig:fig4-07)
 \end{figure}
-
-\elandscape
 
 \begin{table}[!h]
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.28)  29 SEP 2020 17:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.28)  29 SEP 2020 18:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1439,200 +1439,199 @@ Underfull \hbox (badness 10000) in paragraph at lines 1916--1960
 
  []
 
-[134 <./figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf>] [135]
-<figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf, id=1904, 380.42125pt x 5
-99.23875pt>
+[134 <./figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf>] [135] [136]
+<figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf, id=1908, 774.895pt x 544
+.0325pt>
 File: figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf Graphic file (type p
 df)
 <use figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf  
-used on input line 1968.
-(pdftex.def)             Requested size: 360.0pt x 567.08826pt.
+used on input line 1970.
+(pdftex.def)             Requested size: 541.40024pt x 380.10625pt.
 
-Overfull \hbox (0.675pt too wide) in paragraph at lines 1972--1972
+LaTeX Warning: Float too large for page by 98.10626pt on input line 1975.
+
+[137 <./figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf>]
+Overfull \hbox (0.675pt too wide) in paragraph at lines 1979--1979
 [] [] 
  []
 
-
-Overfull \hbox (0.675pt too wide) in paragraph at lines 1976--1976
-[] [] 
- []
-
-[136]
-Overfull \vbox (103.68803pt too high) has occurred while \output is active []
-
-[137 <./figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf>] [138]
-<figure/07-dnam_lungcancer_mr/Figure_4a.jpg, id=1943, 4818.0pt x 3613.5pt>
+<figure/07-dnam_lungcancer_mr/Figure_4a.jpg, id=1941, 4818.0pt x 3613.5pt>
 File: figure/07-dnam_lungcancer_mr/Figure_4a.jpg Graphic file (type jpg)
 <use figure/07-dnam_lungcancer_mr/Figure_4a.jpg>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/Figure_4a.jpg  used on in
 put line 2011.
-(pdftex.def)             Requested size: 270.70012pt x 203.01627pt.
-<figure/07-dnam_lungcancer_mr/Figure_4b.jpg, id=1944, 4818.0pt x 3613.5pt>
+(pdftex.def)             Requested size: 360.0pt x 269.9532pt.
+[138
+
+
+]
+<figure/07-dnam_lungcancer_mr/Figure_4b.jpg, id=1948, 4818.0pt x 3613.5pt>
 File: figure/07-dnam_lungcancer_mr/Figure_4b.jpg Graphic file (type jpg)
 <use figure/07-dnam_lungcancer_mr/Figure_4b.jpg>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/Figure_4b.jpg  used on in
-put line 2011.
-(pdftex.def)             Requested size: 270.70012pt x 203.01627pt.
+put line 2014.
+(pdftex.def)             Requested size: 360.0pt x 269.9532pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 2011--2011
-[][] [] 
- []
-
-[139 <./figure/07-dnam_lungcancer_mr/Figure_4a.jpg> <./figure/07-dnam_lungcance
-r_mr/Figure_4b.jpg>]
-Overfull \hbox (0.675pt too wide) in paragraph at lines 2016--2016
+Overfull \hbox (0.675pt too wide) in paragraph at lines 2018--2018
 [] [] 
  []
 
 
-Overfull \hbox (0.675pt too wide) in paragraph at lines 2057--2057
+Overfull \hbox (0.675pt too wide) in paragraph at lines 2022--2022
 [] [] 
  []
 
+[139 <./figure/07-dnam_lungcancer_mr/Figure_4a.jpg>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[140
 
+Overfull \hbox (0.675pt too wide) in paragraph at lines 2063--2063
+[] [] 
+ []
 
-] [141] [142] [143] [144] [145]
+[140 <./figure/07-dnam_lungcancer_mr/Figure_4b.jpg>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[141] [142] [143] [144] [145] [146]
 Chapter 8.
-[146
+[147
 
-] [147] [148] [149] [150] [151] [152] [153] [154]
+] [148] [149] [150] [151] [152] [153] [154] [155]
 Appendix A.
 
-LaTeX Warning: Reference `ref-labels' on page 155 undefined on input line 2187.
+LaTeX Warning: Reference `ref-labels' on page 156 undefined on input line 2193.
 
 
-[155
+[156
 
 ]
 Appendix B.
-[156
+[157
 
-] [157
+] [158
 
 
-] [158] [159] [160] [161] [162]
-Underfull \hbox (badness 10000) in paragraph at lines 2389--2391
+] [159] [160] [161] [162] [163]
+Underfull \hbox (badness 10000) in paragraph at lines 2395--2397
  \T1/lmtt/m/n/10.95 m a r k e t i n g / d o c u m e n t s / p r o d u c t s / d
  a t a s h e e t s / d a t a s h e e t % 7 B /[] % 7 D h u
  []
 
-[163] [164] [165] [166] [167] [168] [169]
-Overfull \hbox (1.00293pt too wide) in paragraph at lines 2569--2571
+[164] [165] [166] [167] [168] [169] [170]
+Overfull \hbox (1.00293pt too wide) in paragraph at lines 2575--2577
  \T1/lmr/m/n/10.95 (-20) epidemiology. \T1/lmr/m/it/10.95 (-20) Nature Reviews 
 Genetics \T1/lmr/m/n/10.95 (-20) [electronic article]. 2013;14(8):585--
  []
 
-[170] [171] [172] [173] [174]
-Underfull \hbox (badness 10000) in paragraph at lines 2668--2670
+[171] [172] [173] [174] [175]
+Underfull \hbox (badness 10000) in paragraph at lines 2674--2676
  \T1/lmr/m/n/10.95 (+20) ([]$\T1/lmtt/m/n/10.95 h t tp : / / w w w . p u b m e 
 d c e n t r a l . n i h . g o v / a r t i c l e r e n d e r . f c gi? a r t id 
 =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2668--2670
+Underfull \hbox (badness 10000) in paragraph at lines 2674--2676
  \T1/lmtt/m/n/10.95 2 8 4 8 1 2 4 % 7 B /& % 7 D t o ol = p m c e n t r e z % 7
  B /& % 7 D r e n d e r t y pe = a b s t r a c t % 7
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2668--2670
+Underfull \hbox (badness 10000) in paragraph at lines 2674--2676
  \T1/lmtt/m/n/10.95 B / % % 7 D 5 C n h t t p : / / w w w . n c b i . n l m . n
  i h . g o v / e n t r e z / q u e r y . f c gi? c md =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2668--2670
+Underfull \hbox (badness 10000) in paragraph at lines 2674--2676
  \T1/lmtt/m/n/10.95 R e t r i e v e % 7 B / & % 7 D db = P u b M e d % 7 B / & 
 % 7 D d o pt = C i t a t i o n % 7 B / & % 7 D l i s t % 7
  []
 
-[175]
-Underfull \hbox (badness 7099) in paragraph at lines 2686--2688
+[176]
+Underfull \hbox (badness 7099) in paragraph at lines 2692--2694
  \T1/lmr/m/n/10.95 (+20) 486. ([]$\T1/lmtt/m/n/10.95 h t tp : / / w w w . s c o
  p u s . c o m / i n w a r d / r e c o r d . u rl? e id = 2 -[] s 2 .0 -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2686--2688
+Underfull \hbox (badness 10000) in paragraph at lines 2692--2694
  \T1/lmtt/m/n/10.95 8 4 9 3 1 3 6 0 0 2 2 % 7 B /& % 7 D p a r t n e r I D = 4 
 0 % 7 B / & % 7 D m d 5 = 9 6 d 2 e 2 d d 1 2 4 d 4 6 8 e
  []
 
 
-Overfull \hbox (1.4607pt too wide) in paragraph at lines 2692--2694
+Overfull \hbox (1.4607pt too wide) in paragraph at lines 2698--2700
  \T1/lmr/m/n/10.95 (-20) complex human traits. \T1/lmr/m/it/10.95 (-20) Nature 
 Genetics \T1/lmr/m/n/10.95 (-20) [electronic article]. 2017;49(7):986--
  []
 
-[176]
-Underfull \hbox (badness 8075) in paragraph at lines 2713--2715
+[177]
+Underfull \hbox (badness 8075) in paragraph at lines 2719--2721
  \T1/lmr/m/n/10.95 (+20) 443. ([]$\T1/lmtt/m/n/10.95 h t tp : / / w w w . n c b
  i . n l m . n i h . g o v / p u b m e d / 2 9 2 1 2 7 7 8 % 2 0 h t t p :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2713--2715
+Underfull \hbox (badness 10000) in paragraph at lines 2719--2721
  \T1/lmtt/m/n/10.95 / / w w w . p u b m e d c e n t r a l . n i h . g o v / a r
  t i c l e r e n d e r . f c gi? a r t id =
  []
 
-[177] [178]
-Underfull \hbox (badness 3323) in paragraph at lines 2752--2754
+[178] [179]
+Underfull \hbox (badness 3323) in paragraph at lines 2758--2760
  \T1/lmr/m/n/10.95 (+20) anal-y-sis iden-ti-fies new lung can-cer sus-cep-ti-bi
 l-ity loci and het-
  []
 
 
-Underfull \hbox (badness 4479) in paragraph at lines 2752--2754
+Underfull \hbox (badness 4479) in paragraph at lines 2758--2760
  \T1/lmr/m/n/10.95 (+20) ero-gene-ity in ge-netic sus-cep-ti-bil-ity across his
 -to-log-i-cal sub-types.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2752--2754
+Underfull \hbox (badness 10000) in paragraph at lines 2758--2760
  \T1/lmtt/m/n/10.95 / / w w w . n a t u r e . c o m / d o i f i n d e r / 1 0 .
  1 0 3 8 / n g . 3 8 9 2 % 7 B / % % 7 D 5 C n h t t p :
  []
 
-[179]
-Underfull \hbox (badness 2277) in paragraph at lines 2779--2781
+[180]
+Underfull \hbox (badness 2277) in paragraph at lines 2785--2787
  \T1/lmr/m/n/10.95 (+20) project. \T1/lmr/m/it/10.95 (+20) Na-ture ge-net-ics \
 T1/lmr/m/n/10.95 (+20) [elec-tronic ar-ti-cle]. 2013;45(6):580--5.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2779--2781
+Underfull \hbox (badness 10000) in paragraph at lines 2785--2787
  \T1/lmr/m/n/10.95 (+20) ([]$\T1/lmtt/m/n/10.95 h t tp : / / w w w . n c b i . 
 n l m . n i h . g o v / p u b m e d / 2 3 7 1 5 3 2 3 % 7 B / % % 7 D 5 C n h t
  t p :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2779--2781
+Underfull \hbox (badness 10000) in paragraph at lines 2785--2787
  \T1/lmtt/m/n/10.95 / / w w w . p u b m e d c e n t r a l . n i h . g o v / a r
  t i c l e r e n d e r . f c gi? a r t id =
  []
 
-[180] [181] [182]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2866.
-[183]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2866.
+[181] [182] [183]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2872.
+[184]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2872.
 (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2866.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2866.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2872.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2872.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 2B8FB7722D7C585C93C492A14603D799;8022.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2866.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2872.
  )
 (\end occurred inside a group at level 2)
 
@@ -1640,13 +1639,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2866.
 ### semi simple group (level 1) entered at line 203 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 16743 strings out of 482798
- 304755 string characters out of 5954049
+ 16744 strings out of 482798
+ 304763 string characters out of 5954049
  661187 words of memory out of 5000000
  30787 multiletter control sequences out of 15000+600000
  623876 words of font info for 184 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 43i,15n,49p,2619b,2451s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,15n,49p,2619b,2465s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/tb13101/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/l
 m-ec.enc}{/Users/tb13101/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathi
 t.enc}{/Users/tb13101/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}
@@ -1668,10 +1667,10 @@ e1/public/lm/lmri10.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/fonts/type1/
 public/lm/lmsy10.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/fonts/type1/pub
 lic/lm/lmsy8.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/fonts/type1/public/
 lm/lmtt10.pfb>
-Output written on thesis.pdf (199 pages, 13879862 bytes).
+Output written on thesis.pdf (200 pages, 13903515 bytes).
 PDF statistics:
- 2662 PDF objects out of 2984 (max. 8388607)
- 2320 compressed objects within 24 object streams
- 740 named destinations out of 1000 (max. 500000)
+ 2670 PDF objects out of 2984 (max. 8388607)
+ 2325 compressed objects within 24 object streams
+ 741 named destinations out of 1000 (max. 500000)
  15366 words of extra memory for PDF output out of 17280 (max. 10000000)
 
