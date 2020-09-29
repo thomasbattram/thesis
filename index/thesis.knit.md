@@ -418,7 +418,7 @@ Our criteria for inclusion of a study into The EWAS Catalog are as follows:
 
 CpG-phenotype associations are extracted from studies at P < 1x10^-4^. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-09-28, The EWAS Catalog contained 450213 associations from 605 studies. 
+Based on these criteria, from 2020-09-29, The EWAS Catalog contained 450213 associations from 605 studies. 
 
 ### Overview of GEO data extraction
 To recruit additional datasets suitable for new EWAS analysis, the geograbi R package (https://github.com/yousefi138/geograbi) was used to both query GEO for experiments matching The EWAS Catalog inclusion criteria (described above) and extract relevant DNA methylation and phenotype information. The query was performed by Dr Paul Yousefi on 20 March 2019 and identified 148 such experiments with 32,845 samples where DNA methylation and phenotype information could be successfully extracted. From these, the aim was to repeat the analyses performed in the publications linked by PubMed IDs to each GEO record. Thus, I looked up the corresponding full texts for each dataset and identified the main variables of interest. Of the 148 putative GEO studies, only 34 (23%) contained sufficient information to replicate the original analysis. 
@@ -1699,7 +1699,7 @@ cg01901332 & Squamous cell lung cancer & 2 & 1.266 & 0.26\\
 
 Single mQTLs for cg05575921-_AHRR_, cg27241845-_ALPPL2_, and cg26963277-_KCNQ1_ showed some evidence of association with smoking cessation (former vs. current smokers), although these associations were not below the FDR<0.05 threshold (__Figure \@ref(fig:sup-fig4-07)__).
 
-(ref:sup-fig4-07-cap) __Associations of mQTLs and smoking behaviours__. Some SNPs that were genotyped in the TRICL consortium were not within the TAG consortium, thus were not available for analysis here. Units for the traits: age of smoking initiation = log years, ever vs. never smoked = log odds, former vs current smoker = log odds.
+(ref:sup-fig4-07-cap) __Associations of mQTLs and smoking behaviours__. Some SNPs that were genotyped in the TRICL consortium were not within the TAG consortium, thus were not available for analysis here. Units for the traits: AoI (age of smoking initiation) = log years, EvN (ever vs. never smoked) = log odds, FvS (former vs current smoker) = log odds. CpD = cigarettes smoked per day.
 
 (ref:sup-fig4-07-scap) Associations of mQTLs and smoking behaviours
 

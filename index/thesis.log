@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.28)  28 SEP 2020 20:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.28)  29 SEP 2020 17:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1350,13 +1350,12 @@ Overfull \hbox (0.675pt too wide) in paragraph at lines 1791--1791
 [127 <./figure/07-dnam_lungcancer_mr/Figure_3.jpg>] [128] [129
 
 ]
-<figure/07-dnam_lungcancer_mr/sup_fig1.pdf, id=1838, 452.69125pt x 302.12875pt>
-
+<figure/07-dnam_lungcancer_mr/sup_fig1.pdf, id=1838, 722.7pt x 578.16pt>
 File: figure/07-dnam_lungcancer_mr/sup_fig1.pdf Graphic file (type pdf)
 <use figure/07-dnam_lungcancer_mr/sup_fig1.pdf>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/sup_fig1.pdf  used on inp
 ut line 1834.
-(pdftex.def)             Requested size: 360.0pt x 240.26497pt.
+(pdftex.def)             Requested size: 360.0pt x 288.003pt.
 
 Overfull \hbox (0.675pt too wide) in paragraph at lines 1838--1838
 [] [] 
@@ -1365,27 +1364,27 @@ Overfull \hbox (0.675pt too wide) in paragraph at lines 1838--1838
 [130
 
  <./figure/07-dnam_lungcancer_mr/sup_fig1.pdf>]
-<figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smokers.pdf, id=1862, 452.6
-9125pt x 302.12875pt>
+<figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smokers.pdf, id=1852, 722.7
+pt x 578.16pt>
 File: figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smokers.pdf Graphic fi
 le (type pdf)
 <use figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smokers.pdf>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smo
 kers.pdf  used on input line 1847.
-(pdftex.def)             Requested size: 360.0pt x 240.26497pt.
+(pdftex.def)             Requested size: 360.0pt x 288.003pt.
 
 Overfull \hbox (0.675pt too wide) in paragraph at lines 1851--1851
 [] [] 
  []
 
-<figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf, id=1863, 452.69125pt 
-x 302.12875pt>
+<figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf, id=1853, 722.7pt x 57
+8.16pt>
 File: figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf Graphic file (typ
 e pdf)
 <use figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pd
 f  used on input line 1858.
-(pdftex.def)             Requested size: 360.0pt x 240.26497pt.
+(pdftex.def)             Requested size: 360.0pt x 288.003pt.
 
 Overfull \hbox (0.675pt too wide) in paragraph at lines 1862--1862
 [] [] 
@@ -1401,14 +1400,14 @@ Overfull \hbox (0.675pt too wide) in paragraph at lines 1866--1866
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [132 <./figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf>]
-<figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf, id=1905, 452.69125p
-t x 296.10625pt>
+<figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf, id=1875, 722.7pt x 
+578.16pt>
 File: figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf Graphic file (t
 ype pdf)
 <use figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.
 pdf  used on input line 1905.
-(pdftex.def)             Requested size: 360.0pt x 235.47563pt.
+(pdftex.def)             Requested size: 360.0pt x 288.003pt.
 
 Overfull \hbox (0.675pt too wide) in paragraph at lines 1909--1909
 [] [] 
@@ -1441,7 +1440,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1916--1960
  []
 
 [134 <./figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf>] [135]
-<figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf, id=1951, 380.42125pt x 5
+<figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf, id=1904, 380.42125pt x 5
 99.23875pt>
 File: figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf Graphic file (type p
 df)
@@ -1463,13 +1462,13 @@ Overfull \hbox (0.675pt too wide) in paragraph at lines 1976--1976
 Overfull \vbox (103.68803pt too high) has occurred while \output is active []
 
 [137 <./figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf>] [138]
-<figure/07-dnam_lungcancer_mr/Figure_4a.jpg, id=1989, 4818.0pt x 3613.5pt>
+<figure/07-dnam_lungcancer_mr/Figure_4a.jpg, id=1943, 4818.0pt x 3613.5pt>
 File: figure/07-dnam_lungcancer_mr/Figure_4a.jpg Graphic file (type jpg)
 <use figure/07-dnam_lungcancer_mr/Figure_4a.jpg>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/Figure_4a.jpg  used on in
 put line 2011.
 (pdftex.def)             Requested size: 270.70012pt x 203.01627pt.
-<figure/07-dnam_lungcancer_mr/Figure_4b.jpg, id=1990, 4818.0pt x 3613.5pt>
+<figure/07-dnam_lungcancer_mr/Figure_4b.jpg, id=1944, 4818.0pt x 3613.5pt>
 File: figure/07-dnam_lungcancer_mr/Figure_4b.jpg Graphic file (type jpg)
 <use figure/07-dnam_lungcancer_mr/Figure_4b.jpg>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/Figure_4b.jpg  used on in
@@ -1669,10 +1668,10 @@ e1/public/lm/lmri10.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/fonts/type1/
 public/lm/lmsy10.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/fonts/type1/pub
 lic/lm/lmsy8.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/fonts/type1/public/
 lm/lmtt10.pfb>
-Output written on thesis.pdf (199 pages, 13839015 bytes).
+Output written on thesis.pdf (199 pages, 13879862 bytes).
 PDF statistics:
- 2708 PDF objects out of 2984 (max. 8388607)
- 2352 compressed objects within 24 object streams
+ 2662 PDF objects out of 2984 (max. 8388607)
+ 2320 compressed objects within 24 object streams
  740 named destinations out of 1000 (max. 500000)
  15366 words of extra memory for PDF output out of 17280 (max. 10000000)
 

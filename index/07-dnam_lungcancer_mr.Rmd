@@ -208,7 +208,7 @@ There was little evidence of different effect estimates between ever and never s
 
 Single mQTLs for cg05575921-_AHRR_, cg27241845-_ALPPL2_, and cg26963277-_KCNQ1_ showed some evidence of association with smoking cessation (former vs. current smokers), although these associations were not below the FDR<0.05 threshold (__Figure \@ref(fig:sup-fig4-07)__).
 
-(ref:sup-fig4-07-cap) __Associations of mQTLs and smoking behaviours__. Some SNPs that were genotyped in the TRICL consortium were not within the TAG consortium, thus were not available for analysis here. Units for the traits: age of smoking initiation = log years, ever vs. never smoked = log odds, former vs current smoker = log odds.
+(ref:sup-fig4-07-cap) __Associations of mQTLs and smoking behaviours__. Some SNPs that were genotyped in the TRICL consortium were not within the TAG consortium, thus were not available for analysis here. Units for the traits: AoI (age of smoking initiation) = log years, EvN (ever vs. never smoked) = log odds, FvS (former vs current smoker) = log odds. CpD = cigarettes smoked per day.
 
 (ref:sup-fig4-07-scap) Associations of mQTLs and smoking behaviours
 
