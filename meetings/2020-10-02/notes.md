@@ -19,11 +19,17 @@ If we just look at "encode segmentation" then that would make things easiest I t
 
 Of roughly 10,000 sites at p<1e-7, roughly 6000 are hypomethylated in relation to trait... If DNAm changes are tagging changes in gene expression, then this is what I'd expect given enrichment for transcribed genes + TSS
 
-How to present these results concisely??
+How to present these results concisely?? - see notes
 
 __NOTES:__
 
-Some meeting notes
+Things seem same no matter how portion up the CpG sites (i.e. no difference between "all" CpGs and "replicated")
+
+Double check that Charlie sent all results regardless of P value etc. -- not many cell types in encode_segmentation collection
+
+Do chromatin states stuff (ENCODE and ROADMAP)
+
+Present results as something like: There is enrichment across these regions (FIGURE(S)). Then can discuss why this might be. Enrichment at TFBS fits with notion that TFs are what are altering DNAm in relation to traits -- confounding + reverse causation. Also fits with GoDMC --> CpGs of TransQTLs in TFBS too... 
 
 ## Updating ewas-gwas comparison scripts
 
@@ -31,13 +37,13 @@ Updating scripts to make second run through easier.
 
 * Is there a way to search the studies data for the open gwas project like the website? Or do I need to come up with my own "fuzzy" matching code in R?
 
-* Think opengwas project is missing data from a big smoking/alcohol gwas: [pmid=30643251](https://pubmed.ncbi.nlm.nih.gov/30643251/)
+* Think opengwas project is missing data from a big smoking/alcohol gwas: [pmid=30643251](https://pubmed.ncbi.nlm.nih.gov/30643251/) -- send details 
 
-* Also, the "ieu-b" IDs aren't present here: "/mnt/storage/private/mrcieu/data/IGD/data/public" - is extracting data using that directory reproducible (will it keep being updated??)
+* Also, the "ieu-b" IDs aren't present here: "/mnt/storage/private/mrcieu/data/IGD/data/public" - is extracting data using that directory reproducible (will it keep being updated??) -- just use the R package!!! 
 
 * Smoking phenotypes... 
 	+ miss phenotyped former vs never
-	+ current vs never EWAS == ever smoked regularly GWAS?
+	+ current vs never EWAS == ever smoked regularly GWAS? -- should be fine. Could do one of two things: 1. supplementary analyses looking at another smoking GWAS. 2. Just use the results from the "all-vs-all" pathway enrichment correlation stuff!
 
 ## Updates on everything else
 
@@ -49,8 +55,14 @@ Updating scripts to make second run through easier.
 
 __NOTES:__
 
-Some meeting notes
-
 ## AOB
 
-* AOB item1
+* Mock vivas:
+	+ Matt
+	+ Josine
+	+ Lavinia
+	+ Oliver Davis
+	+ Gemma 
+	+ End of november! 
+
+* Find out about whether the data.bris data has been accepted! and then can submit h2ewas paper! 
