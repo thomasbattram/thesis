@@ -98,6 +98,21 @@ get_gene_col <- function(df)
 	grep("gene", colnames(df), ignore.case = T)
 }
 
+sort_dir_for_latex <- function(dirs)
+{
+	chars <- nchar(dirs)
+	if (!length(unique(chars)) == 1) stop("need character length of each string to be the same")
+	vals <- seq(1, unique(chars), by=1)
+	out <- map_chr(dirs, function(x) {
+		adirection <- lapply(vals, function(i) {
+			achar <- substr(x, i, i)
+			paste0("{", achar, "}")			
+		})
+		paste0(unlist(adirection), collapse = "")
+	})
+	return(out)
+}
+
 #### tables
 
 table1 <- unite_chr_pos(table1)
@@ -121,6 +136,17 @@ tables_to_sort <- names(tables_to_sort)[tables_to_sort]
 
 
 supp_tables <- lapply(supp_tables, unite_chr_pos)
+
+cols <- colnames(supp_tables[["S2"]])
+supp_tables[["S2"]] <- map_dfc(seq_along(supp_tables[["S2"]]), function(x) {
+	col_nam <- colnames(supp_tables[["S2"]])[x]
+	column <- supp_tables[["S2"]][[col_nam]]
+	names(column) <- col_nam
+	if (!grepl("_Dir", col_nam)) return(column)
+	out <- sort_dir_for_latex(column)
+	return(out)
+})
+colnames(supp_tables[["S2"]]) <- cols
 
 st=tables_to_sort[4]
 ## get additional header data for supplementary tables that need it!
@@ -147,6 +173,8 @@ clean_supp_tables <- lapply(seq_along(supp_tables), function(x) {
 })
 names(clean_supp_tables) <- names(supp_tables)
 
+clean_supp_tables[["S2"]][1,2] <- "{-}{-}{-}{-}"
+
 ## get tables with "Gene" in column names and convert these columns to italics
 gene_cols <- lapply(clean_supp_tables, get_gene_col)
 
@@ -156,6 +184,8 @@ colnames(clean_supp_tables[["S1"]])[col_to_change] <- "r\\textsuperscript{2}"
 
 col_to_change <- grep("I2", colnames(clean_supp_tables[["S2"]]))
 colnames(clean_supp_tables[["S2"]])[col_to_change] <- "I\\textsuperscript{2}"
+
+
 
 # manually do this one because it isn't like the others!
 add_header[["S9"]] <- c(" " = 2, "FE meta-analysis" = 2, "Correction for correlation" = 2, " " = 3)
@@ -202,7 +232,7 @@ kbl(clean_supp_tables[["S1"]], booktabs = TRUE, caption = captions[["S1"]],
 
 
 ## ---- sup-tab2-07 --------------------------------
-kbl(clean_supp_tables[["S2"]], booktabs = T, caption = captions[["S2"]]) %>%
+kbl(clean_supp_tables[["S2"]], booktabs = T, caption = captions[["S2"]], escape = FALSE) %>%
 	add_footnote(c("Dir = Direction of effect", 
 				   "I\\textsuperscript{2} = Heterogeneity I-squared value", 
 				   "P = Heterogeneity P value", 
@@ -213,7 +243,7 @@ kbl(clean_supp_tables[["S2"]], booktabs = T, caption = captions[["S2"]]) %>%
 				   "former-smokers = basic model in former smokers only", 
 				   "current-smokers = basic model in current smokers only",
 				   "comp = comparison of smoker groups."), 
-			 	notation = "none") %>%
+			 	notation = "none", escape = FALSE) %>%
 	add_header_above(add_header[["S2"]]) %>%
 	kable_styling(latex_options = ks_latex_options[["S2"]]) %>%
 	landscape()
