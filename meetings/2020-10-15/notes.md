@@ -5,7 +5,7 @@ Attendees: Tom B, Gib, Nic, Tom G
 ## Agenda
 
 * [comments](#comments)
-* [a method by any other name](#a-method-by-any-other-name)
+* [a statistic by any other name](#a-statistic-by-any-other-name)
 * [other thesis bits](#other-thesis-bits)
 * [properties of ewas enrichment](#properties-of-ewas-enrichment)
 * [AOB](#aob)
@@ -20,7 +20,7 @@ __NOTES:__
 
 Some meeting notes
 
-## a method by any other name
+## a statistic by any other name
 
 * Don't mind how we name h<sup>2</sup><sub>EWAS</sub> 
 	+ originally called it m<sup>2</sup>
