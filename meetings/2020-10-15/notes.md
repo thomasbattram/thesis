@@ -10,7 +10,7 @@ Attendees: Tom B, Gib, Nic, Tom G
 * [properties of ewas enrichment](#properties-of-ewas-enrichment)
 * [AOB](#aob)
 
-## h<sup>2</sup><sub>EWAS</sub> name change {#name-change}
+## h<sup>2</sup><sub>EWAS</sub> name change <a name="name-change"></a>
 
 * Don't mind how we name h<sup>2</sup><sub>EWAS</sub> 
 	+ originally called it m<sup>2</sup>
