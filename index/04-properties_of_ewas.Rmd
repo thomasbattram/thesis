@@ -210,9 +210,11 @@ The combined variance in effect size estimates explained by DNA methylation vari
 
 \linebreak
 
-As the position of DNA methylation relative to genes is pertinent to its association with gene expression (__Section \@ref(dna-methylation)__) [@Jones2012; @Ando2019; @Deaton2011; @Wolf1984; @Hellman2007], the enrichment of DNA methylation sites identified at P<1x10^-7^ across genomic regions and chromatin states were assessed (__Figure XXX__). Across the XXX tissues there was a trend for sites to be enriched for transcription start sites (TSS) (OR range = XXX to XXX), and areas of strong and weak transcription (OR range = XXX to XXX). Evidence of enrichment across different enhancer types was mixed (OR range = XXX to XXX) and there was a trend towards depletion of sites within heterochromatic regions, poised and bivalent promoters, regions repressed by PolyComb proteins and quiesscant regions (__Figure XXX__). 
+As the position of DNA methylation relative to genes is pertinent to its association with gene expression (__Section \@ref(dna-methylation)__) [@Jones2012; @Ando2019; @Deaton2011; @Wolf1984; @Hellman2007], the enrichment of DNA methylation sites identified at P<1e-7 across genomic regions and chromatin states were assessed (__Figure XXX__). Across the XXX tissues there was a trend for sites to be enriched for transcription start sites (TSS) (OR range = XXX to XXX), and areas of strong and weak transcription (OR range = XXX to XXX). Evidence of enrichment across different enhancer types was mixed (OR range = XXX to XXX) and there was a trend towards depletion of sites within heterochromatic regions, poised and bivalent promoters, regions repressed by polycomb proteins and quiesscant regions (__Figure XXX__). 
 
-The sites identified by EWAS were also enriched for transcription factor binding sites (__Figure XXX__). Of the XXX transcription factor binding sites tested, there was evidence that identified CpG sites were enriched in XXX of them. 
+The sites identified by EWAS were also enriched for transcription factor binding sites (__Figure XXX__). Of the XXX transcription factor binding sites tested, there was evidence that identified CpG sites were enriched in XXX of them across all tissue types (P<XXX). 
+
+Similar enrichment results were recorded after altering inclusion criteria of the CpG sites said to be identified by EWAS (__Figure XXX__). 
 
 \newpage
 
