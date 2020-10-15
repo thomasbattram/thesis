@@ -130,7 +130,7 @@ Some meeting notes
 
 * Will incorporate ewas-gwas comparison comments and put into thesis -- will then have all chapters in one place
 
-SET UP ONE DRIVE SPACE!
+SET UP SHAREPOINT
 
 ## AOB
 
