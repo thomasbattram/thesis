@@ -16,6 +16,7 @@ Attendees: Tom B, Gib
 * EWAS have been coducted in different ethnicities for 7 traits
 * There have been at least 4 papers that have done a direct comparison of EWAS results in different ethnicities -- not sure it's worth us exploring this? 
 * could put a few sentences in discussion??
+	+ Here's what we found 
 
 ### Enrichment work
 
@@ -26,11 +27,21 @@ waiting for Josine to give me access to a folder so I can have all the data need
 
 __NOTES:__
 
-Some meeting notes
+chrom state:
+- log scale y-axis
+- rows as type
+- mixture of colours and symbols for plot
+
+what current 450k array is targeting. Is that a good idea?
+what current epic array is targeting. Is that a good idea?
+tissue specificity
+strict p versus not strict p
+all versus others
+
 
 ## ibsc
 
-Could help out if you still need it
+Could help out if you still need it -- Gib to send over deets
 
 __NOTES:__
 
@@ -38,4 +49,4 @@ Some meeting notes
 
 ## AOB
 
-* Thinking of submitting h2ewas stuff to ajhg
+* Thinking of submitting h2ewas stuff to ajhg -- go for it
