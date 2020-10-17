@@ -179,3 +179,27 @@ include_graphics(cpg_chars_file)
 kable(cpg_chars_tab, format = "latex", caption = cpg_chars_cap, booktabs = TRUE) %>%
     kable_styling(latex_options = c("striped", "hold_position", "scale_down")) 
 
+## ---- enrichment-setup --------------------------------
+
+chrom_state_file <- file.path(fp_04, "chromatin_states_enrichment_boxplots_onepage.pdf")
+tfbs_file <- file.path(fp_04, "cpg_corebg_matched_all_enrichment_All_OR.pdf")
+
+strict_p_threshold <- comma(1e-7 / rob_summary$n_ewas)
+
+## ---- chrom-state-plot --------------------------------
+include_graphics(chrom_state_file)
+
+## ---- tfbs-plot --------------------------------
+include_graphics(tfbs_file)
+
+
+
+
+
+
+
+
+
+
+
+
