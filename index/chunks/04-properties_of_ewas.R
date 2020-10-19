@@ -36,7 +36,10 @@ study_dat <- study_dat %>%
 
 ## ---- study-data-tab --------------------------------
 kable(study_dat, format = "latex", caption = study_caption, booktabs = TRUE) %>%
-    kable_styling(latex_options = c("striped", "hold_position", "scale_down")) 
+    kable_styling(latex_options = c("striped", "hold_position", "scale_down")) %>%
+    add_footnote(c("Identified associations were defined as those P < 1x10\\textsuperscript{-7}"), 
+                notation = "none", escape = FALSE)
+
 
 ## ---- traits-manhattan-setup --------------------------------
 
@@ -120,18 +123,31 @@ rep_study_n <- replication_dat$rep_study_n
 rep_rates <- replication_dat$rep_rates
 
 rep_tab <- rep_rates %>%
+    dplyr::select(Trait = trait, N_DMPs = n_cpgs, N_replicated = rep_cpgs, 
+                  N_replication_studies = n_rep_studies, Prop_replicated = prop_rep) %>%
     # dplyr::select(-studyid) %>%
     tidy_nums() %>%
     tidy_colnames()
 
 rep_tab_no_smoking <- rep_tab %>%
-    dplyr::filter(!grepl("smoking", trait))
+    dplyr::filter(!grepl("smoking", Trait)) %>%
+    dplyr::filter(!grepl("Body mass index", Trait))
 
 rep_tab_smoking <- rep_tab %>%
-    dplyr::filter(grepl("smoking", trait))
+    dplyr::filter(grepl("smoking", Trait))
+
+rep_tab_bmi <- rep_tab %>%
+    dplyr::filter(grepl("Body mass index", Trait))
+
 
 rep_caption <- "Replication rate"
 rep_caption_smoking <- "Replication rate in EWAS of smoking"
+rep_caption_bmi <- "Replication rate in EWAS of body mass index"
+
+rep_tab_footnote <- c("N-DMPs = number of differentially methylated positions identified at P<1x10\\textsuperscript{-7}", 
+                      "N-replicated = number of DMPs replicated in the GEO re-analysis at P<1x10\\textsuperscript{-4}", 
+                      "N-replication-studies = number of studies for which replication was examined", 
+                      "Prop-replicated = proportion of DMPs replicated.") 
 
 # geo re-analysis stuff
 geo_rean_tab <- geo_rean %>%
@@ -147,16 +163,29 @@ geo_rean_caption <- "GEO re-analysis replication"
 
 ## ---- replication-tab --------------------------------
 kable(rep_tab_no_smoking, format = "latex", caption = rep_caption, booktabs = TRUE) %>%
-    kable_styling(latex_options = c("striped", "scale_down")) 
+    kable_styling(latex_options = c("striped", "scale_down")) %>%
+    add_footnote(rep_tab_footnote, 
+                notation = "none", escape = FALSE)
 
 ## ---- replication-tab-smoking --------------------------------
 kable(rep_tab_smoking, format = "latex", caption = rep_caption_smoking, booktabs = TRUE) %>%
-    kable_styling(latex_options = c("striped", "scale_down")) 
+    kable_styling(latex_options = c("striped", "scale_down")) %>%
+    add_footnote(rep_tab_footnote, 
+                notation = "none", escape = FALSE)
 
+## ---- replication-tab-bmi --------------------------------
+kable(rep_tab_bmi, format = "latex", caption = rep_caption_bmi, booktabs = TRUE) %>%
+    kable_styling(latex_options = c("striped", "scale_down")) %>%
+    add_footnote(rep_tab_footnote, 
+                notation = "none", escape = FALSE)
 
 ## ---- geo-reanalysis-tab --------------------------------
 kable(geo_rean_tab, format = "latex", caption = geo_rean_caption, booktabs = TRUE) %>%
-    kable_styling(latex_options = c("striped", "hold_position", "scale_down")) 
+    kable_styling(latex_options = c("striped", "hold_position", "scale_down")) %>%
+    add_footnote(c("N-DMPs = number of differentially methylated positions identified at P < 1x10\\textsuperscript{-7}", 
+                   "N-replicated = number of DMPs replicated in the GEO re-analysis at P < P < 1x10\\textsuperscript{-4}"), 
+                notation = "none", escape = FALSE)
+
 
 ## ---- cpg-characteristics-setup --------------------------------
 
@@ -169,6 +198,12 @@ cpg_chars_file <- file.path(fp_04, "combined_characteristics_plots.png")
 cpg_chars_tab <- cpg_chars_res %>%
     tidy_nums() %>%
     tidy_colnames()
+
+colnames(cpg_chars_tab)[colnames(cpg_chars_tab) == "r2"] <- "r\\textsuperscript{2}"
+h2_row <- grep("^h2", cpg_chars_tab$characteristic)
+h2_and_var_row <- grep("variance \\+ h2", cpg_chars_tab$characteristic)
+cpg_chars_tab[h2_row, "characteristic"] <- "h\\textsuperscript{2}"
+cpg_chars_tab[h2_and_var_row, "characteristic"] <- "variance + h\\textsuperscript{2}"
 
 chars <- unique(cpg_chars_res$characteristic)
 assoc_val <- colnames(cpg_chars_res)[colnames(cpg_chars_res) != "characteristic"]
@@ -188,8 +223,13 @@ cpg_chars_cap <- "Association between CpG chars and associations in EWAS"
 include_graphics(cpg_chars_file)
 
 ## ---- cpg-chars-tab --------------------------------
-kable(cpg_chars_tab, format = "latex", caption = cpg_chars_cap, booktabs = TRUE) %>%
-    kable_styling(latex_options = c("striped", "hold_position", "scale_down")) 
+kable(cpg_chars_tab, format = "latex", caption = cpg_chars_cap, booktabs = TRUE, escape = FALSE) %>%
+    kable_styling(latex_options = c("striped", "hold_position", "scale_down")) %>%
+    add_footnote(c("avg-meth = average methylation level", 
+                   "beta > 0 = DNA methylation hypermethylated with respect to the trait", 
+                   "beta < 0 = DNA methylation hypomethylated with respect to the trait",
+                   "auc = area under the curve"), 
+                notation = "none", escape = FALSE)
 
 ## ---- enrichment-setup --------------------------------
 

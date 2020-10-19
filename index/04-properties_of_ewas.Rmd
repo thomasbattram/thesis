@@ -167,12 +167,15 @@ From the studies that put their data on GEO, we re-analysed the association betw
 
 \linebreak
 
-Using the Catalog data I looked up whether CpG sites identified in relation to a trait in one study at P < 1x10^-7^ were also associated with that same trait in another study at P < 1x10^-4^. There were `r comma(nrow(rep_rates))` studies that shared a common phenotype of interest. Replication rate, judged as the percentage of CpGs also present in any other study of the same trait with P value < 1x10^-4^, varied from `r comma(min(rep_rates$prop_rep)*100)` to `r comma(max(rep_rates$prop_rep)*100)` between studies (__Table \@ref(tab:replication-tab)__ and __Table \@ref(tab:replication-tab-smoking)__). \linebreak
+Using the Catalog data I looked up whether CpG sites identified in relation to a trait in one study at P < 1x10^-7^ were also associated with that same trait in another study at P < 1x10^-4^. There were `r comma(nrow(rep_rates))` studies that shared a common phenotype of interest. Replication rate, judged as the percentage of CpGs also present in any other study of the same trait with P value < 1x10^-4^, varied from `r comma(min(rep_rates$prop_rep)*100)` to `r comma(max(rep_rates$prop_rep)*100)` between studies (__Table \@ref(tab:replication-tab), __Table \@ref(tab:replication-tab-smoking)__, __Table \@ref(tab:replication-tab-bmi)__). \linebreak
 
 ```{r replication-tab, message=FALSE, results="asis"}
 ```
 
 ```{r replication-tab-smoking, message=FALSE, results="asis"}
+```
+
+```{r replication-tab-bmi, message=FALSE, results="asis"}
 ```
 
 \pagebreak
