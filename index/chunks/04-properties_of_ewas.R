@@ -120,11 +120,18 @@ rep_study_n <- replication_dat$rep_study_n
 rep_rates <- replication_dat$rep_rates
 
 rep_tab <- rep_rates %>%
-    dplyr::select(-studyid) %>%
+    # dplyr::select(-studyid) %>%
     tidy_nums() %>%
     tidy_colnames()
 
+rep_tab_no_smoking <- rep_tab %>%
+    dplyr::filter(!grepl("smoking", trait))
+
+rep_tab_smoking <- rep_tab %>%
+    dplyr::filter(grepl("smoking", trait))
+
 rep_caption <- "Replication rate"
+rep_caption_smoking <- "Replication rate in EWAS of smoking"
 
 # geo re-analysis stuff
 geo_rean_tab <- geo_rean %>%
@@ -139,8 +146,13 @@ geo_rean_tab <- geo_rean %>%
 geo_rean_caption <- "GEO re-analysis replication"
 
 ## ---- replication-tab --------------------------------
-kable(rep_tab, format = "latex", caption = rep_caption, booktabs = TRUE) %>%
+kable(rep_tab_no_smoking, format = "latex", caption = rep_caption, booktabs = TRUE) %>%
     kable_styling(latex_options = c("striped", "scale_down")) 
+
+## ---- replication-tab-smoking --------------------------------
+kable(rep_tab_smoking, format = "latex", caption = rep_caption_smoking, booktabs = TRUE) %>%
+    kable_styling(latex_options = c("striped", "scale_down")) 
+
 
 ## ---- geo-reanalysis-tab --------------------------------
 kable(geo_rean_tab, format = "latex", caption = geo_rean_caption, booktabs = TRUE) %>%

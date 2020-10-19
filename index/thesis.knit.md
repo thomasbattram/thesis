@@ -424,7 +424,7 @@ Our criteria for inclusion of a study into The EWAS Catalog are as follows:
 
 CpG-phenotype associations are extracted from studies at P < 1x10^-4^. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-10-14, The EWAS Catalog contained 450213 associations from 605 studies. 
+Based on these criteria, from 2020-10-19, The EWAS Catalog contained 450213 associations from 605 studies. 
 
 ### Overview of GEO data extraction
 To recruit additional datasets suitable for new EWAS analysis, the geograbi R package (https://github.com/yousefi138/geograbi) was used to both query GEO for experiments matching The EWAS Catalog inclusion criteria (described above) and extract relevant DNA methylation and phenotype information. The query was performed by Dr Paul Yousefi on 20 March 2019 and identified 148 such experiments with 32,845 samples where DNA methylation and phenotype information could be successfully extracted. From these, the aim was to repeat the analyses performed in the publications linked by PubMed IDs to each GEO record. Thus, I looked up the corresponding full texts for each dataset and identified the main variables of interest. Of the 148 putative GEO studies, only 34 (23%) contained sufficient information to replicate the original analysis. 
@@ -507,8 +507,10 @@ Therefore, despite the fact no extra information about EWAS was presented in thi
 
 
 
+
+
 ## Abstract {#abstract-04}
-Understanding the nature of EWAS associations is imperative for biological inference from these studies. This understanding may also impact future study design. Of the data in the EWAS Catalog, 9.9% of reported associations are from CpGs measured by unreliable probes and 20.8737864% of studies did not account for both batch effects and cellular composition. Suggesting, some associations may be false positives. However, characteristics of DNA methylation also likely partly explain some EWAS associations - heritability and variability of DNA methylation explained 0.084% of the variance of effect EWAS effect sizes. This study also identifies associations at sites common to multiple traits. cg06500161 _ABCG1_ associated with 71 traits, which were all traits relating to weight, metabolites or type-2-diabetes. This highlights the potential to use the data collected for the EWAS Catalog in __Chapter \@ref(ewas-catalog)__ to generate new hypotheses and connect DNA methylation changes to the broad range of potential phenotypic changes.
+Understanding the nature of EWAS associations is imperative for biological inference from these studies. This understanding may also impact future study design. Of the data in the EWAS Catalog, 9.9% of reported associations are from CpGs measured by unreliable probes and 21% of studies did not account for both batch effects and cellular composition. Suggesting, some associations may be false positives. However, characteristics of DNA methylation also likely partly explain some EWAS associations - heritability and variability of DNA methylation explained 0.084% of the variance of effect EWAS effect sizes. Differentially methylated positions (DMPs) were found to be present in actively transcribed promoter regions, enhancer regions and in over 100 transcription factor binding sites more than expected by chance, suggesting targeting these sites for measurement of DNA methylation may be more likely to yield results in future EWAS. This study also identifies associations at sites common to multiple traits. cg06500161 _ABCG1_ associated with 71 traits, which were all traits relating to weight, metabolites or type-2-diabetes. This highlights the potential to use the data collected for the EWAS Catalog in __Chapter \@ref(ewas-catalog)__ to generate new hypotheses and connect DNA methylation changes to the broad range of potential phenotypic changes.
 
 ## Introduction {#introduction-04}
 Learning from successes and mistakes helps drive forward development. Hundreds of epigenome-wide association studies (EWAS) have been conducted in the last 10-15 years, yet no cross-EWAS studies, comparing results across a large group of EWAS results has been performed. By exploring the patterns of association across a large group of EWAS, one can discover potential explanations for the results found, that may shed light on failings in the literature as well as shared epigenetic architectures across traits.
@@ -517,7 +519,7 @@ Since the inception of EWAS, it has become clear that batch effects and cellular
 
 The characteristics of the DNA methylome may also explain some EWAS findings. Heritability varies across DNA methylation sites [VanDongen2016; @McRae2014; @Hannon2018], and so if genetic effects are driving associations, either through confounding or with DNA methylation as a mediator, one would expect heritable sites to be commonly identified in EWAS. Variance is also heterogenous across sites [@Garg2018]. Technical effects are more likely to influence DNA methylation variation at sites for which measured variation is low. Thus, some studies have advocated removing these sites to prevent reporting  generating false positives and to reduce the multiple testing burden [@Meng2010; @Logue2017]. However, it is unclear how variance in DNA methylation relates to the magnitude of effect estimates. Experimental studies have shown DNA methylation changes at different locations of the genome correlate with different regulatory functions. For example, an increase in DNA methylation at transcriptional start sites is correlated with a decrease in gene expression [@Jones2012; @Ando2019; @Deaton2011], but an increase in DNA methylation within a gene body shows the opposite association [@Wolf1984; @Hellman2007]. Thus, genomic location of DNA methylation sites is likely to influence their likelihood of association with a trait.
 
-Understanding underlying reasons that drive EWAS results is essential for future study design. This may come in the form of proper consideration of potential biasing factors, or by selecting certain DNA methylation sites based on their specific characteristics. Further, understanding the characteristics of DNA methylation-trait associations can inform the design of future technologies aimed at measuring DNA methylation for EWAS. 
+Understanding underlying factors that drive EWAS results is essential for future study design. This may come in the form of proper consideration of potential biasing factors, or by selecting certain DNA methylation sites based on their specific characteristics. Further, understanding the characteristics of DNA methylation-trait associations can inform the design of future technologies aimed at measuring DNA methylation for EWAS. 
 
 Also, by examining the commonalities of EWAS results, one has the potential to uncover links between traits that have not previously been made or to identify new potential mediating factors between traits.
 
@@ -546,22 +548,22 @@ We identified traits for which r^2^ values might be inflated. For each EWAS the 
 By far the most common method to measure DNA methylation across the studies in The EWAS Catalog is using the Illumina Infinium HumanMethylation450 Beadchip. Since its development, the array has been extensively characterised [@Price2018; @Forest2018; @Jaffe2014; @Zhou2017] and it was found that not all probes map just to the CpG they were designed to bind to. Some probes map to SNPs, others are non-specific and some are prone to cross-hybridisation. We assigned probes to be 'potentially faulty' if they were characterised as such by Zhou et al. [@Zhou2017]. 
 
 ### Replication
-An association was deemed to be replicated at P < 1x10^-4^. We assessed replicability of EWAS within the database in two separate ways. Firstly, replication within studies is recorded in the EWAS Catalog, thus we simply performed a lookup for any studies that performed a replication or meta-analysed discovery and replication datasets. Secondly, we performed a lookup of results for any traits for which multiple EWAS had been conducted. 
+An association (at P<1x10^-7^) was deemed to be replicated if it had been identified by another study at P < 1x10^-4^. We assessed replicability of EWAS within the database in two separate ways. Firstly, replication within studies is recorded in the EWAS Catalog, thus we simply performed a lookup for any studies that performed a replication or meta-analysed discovery and replication datasets. Secondly, we performed a lookup of results for any traits for which multiple EWAS had been conducted. 
 
 The Catalog also contains results from studies that have uploaded their data to GEO as well as results from the re-analysis of that data performed by The EWAS Catalog team. These re-analyses adjusted for 20 surrogate variables only as many studies did not provide a complete set of covariates to GEO. We performed a lookup of results found in the original EWAS in the re-analysed data. 
 
 ### Selecting data to assess DNA methylation characteristics
-We decided to only use studies and results thought to be more "robust" when assessing how characteristics of DNA methylation might impact EWAS results. To this end, we removed all potentially faulty probes and probes that mapped to sex chromomsomes, excluded studies with likely inflated r^2^ values, and removed studies for which re-analysis of the data replicated less than 10% of the findings.
+Before further analyses, all potentially faulty probes and probes that mapped to sex chromomsomes were removed, studies with likely inflated r^2^ values were excluded, and studies for which re-analysis of the data replicated less than 10% of the findings were removed.
 
 ### DNA methylation characteristics
-The association between heritability, variability and average level of DNA methylation at each CpG site and EWAS effect size was assessed. To allow this across traits, we standardised beta coefficients, $\beta_{standard}$, like so, 
+The relationship between heritability, variability and average level of DNA methylation at each CpG site and EWAS effect size was assessed. To allow this across traits, we standardised beta coefficients, $\beta_{standard}$, like so, 
 
 \begin{equation}
     \beta_{standard} = \frac{\beta\sigma(x)} {\sigma(y)}
     (\#eq:standardised-beta-coeffs)
 \end{equation}
 
-As individual data were not available to us, the variance in DNA methylation sites was approximated by the variance in DNA methylation at sites as supplied by the Genetics of DNA Methylation Consortium (GoDMC) [@Min2020] and the trait variance was estimated by rearranging the equation \@ref(eq:r-squared-from-beta) depending on whether DNA methylation was the independent ($x$) or dependent ($y$) variable in the model.
+As individual participant data were not available to us, the variance in DNA methylation sites was approximated by the variance in DNA methylation at sites as supplied by the GoDMC [@Min2020] and the trait variance was estimated by rearranging equation \@ref(eq:r-squared-from-beta) depending on whether DNA methylation was the independent ($x$) or dependent ($y$) variable in the model.
 
 \begin{equation}
 	r^2 = \frac{\beta^2\sigma^2(x)} {\sigma^2(y)}
@@ -570,14 +572,15 @@ As individual data were not available to us, the variance in DNA methylation sit
 
 GoDMC [@Min2020] also provided the mean levels of DNA methylation at each site. Heritability of DNA methylation at each site has been previously estimated by McRae et al. 2014 [@McRae2014] and Van Dongen et al. 2016 [@VanDongen2016], these values were kindly made publically available by the authors of those studies and were used in this study. 
 
-Associations between each characteristic and effect size were assessed using linear regression, fitting the standardised effect size as the dependent variable and the characteristic as the independent variable. The standardised effect sizes were rank normalised to ensure normality and remove the impact of outliers.
+Relationships between each characteristic and effect size were assessed using linear regression, fitting the standardised effect size as the dependent variable and the characteristic as the independent variable. The standardised effect sizes were rank normalised to ensure normality and remove the impact of outliers.
 
 ### Enrichment tests
-It was assessed whether the sites identified by EWAS that were present in the catalog were enriched in any genomic region etc. This analysis was performed using LOLA... 
+Locus Overlap Analysis (LOLA) [@Sheffield2016] was used to assess whether DMPs identified in the EWAS Catalog were enriched for 25 chromatin states and 167 transcription factor binding sites in 127 different cell types comprising 30 distinct tissues. These data were generated by the Roadmap Epigenomics Project [@Kundaje2015] and ENCODE [@Dunham2012].
 
+Five different groups of DMPs were defined for the enrichment analyses. Group A comprised all sites associated with any complex trait at the conventional P-value threshold used in EWAS, P < 1x10^-7^. As multiple EWAS were conducted, DMPs in group B were defined as being associated with any complex trait at a stricter P-value threshold, defined as the conventional threshold divided by the number of EWAS included in the analyses, P < 1.3e-10. DMPs replicated at P < 1x10^-4^ in any other EWAS of the same trait comprised group C. Group D and E were equivalent to groups A and B, except were restricted to DMPs identified in whole blood.
 
-### Code availability {#code-availability-04}
-Code used to run the analyses is available here: https://github.com/thomasbattram/something
+To assess enrichment, LOLA performs Fisher's exact test and generates an odds ratio that can be interpreted as the odds of the DMPs being within an annotation divided by the odds of the DMPs not being within an annotation. Genomic annotations may differ by CG content and thus a differential CG content of regions containing the DMPs of interest and the background group of CpG sites might bias enrichment estimates. Thus, background sites were matched on CG content before the analysis.
+
 
 All analyses were completed using R (version 3.6.2).
 
@@ -619,7 +622,7 @@ Most common tissues (\%) & whole blood (84.14), cord blood (4.34), cd4+ t-cells 
 
 It may be that certain regulatory mechanisms are more important to phenotypic differences between individuals. By analysing datasets such as the EWAS Catalog, it might be possible to identify which regions may be more important and further, it could be used to identify novel mediating factors between traits.
 
-The number of traits each CpG associated with was fairly even across chromosomes (__Figure \@ref(fig:traits-manhattan)__). There were five CpGs that associated with more than ten traits, cg01940273 _-_, cg05575921 _AHRR_, cg00574958 _CPT1A_, cg17901584 _DHCR24_, cg06500161 _ABCG1_. cg06500161 _ABCG1_ associated with more traits than any other site - 71 traits. These correspond mostly to metabolites, weight-related traits, and type two diabetes. 
+The number of traits each CpG associated with was fairly even across chromosomes (__Figure \@ref(fig:traits-manhattan)__). There were five CpGs that associated with more than ten traits, cg01940273 _-_, cg05575921 _AHRR_, cg00574958 _CPT1A_, cg17901584 _DHCR24_, cg06500161 _ABCG1_. cg06500161 _ABCG1_ was associated with more traits than any other site - 71 traits. These correspond mostly to metabolites, weight-related traits, and type two diabetes. 
 
 (ref:traits-manhattan-cap) __Number of unique traits associated with DNA methylation at each CpG__. Sites associated with more than 10 unique traits are highlighted in orange and labelled.
 
@@ -667,10 +670,9 @@ The total trait variance correlated with DNA methylation (r^2^) at each site var
 These results suggest that some associations within the database are likely to be inflated, yet for most traits, variation at individual DNA methylation sites captures little trait variance. Summing the r^2^ values indicates a substantial proportion of trait variance can be captured by multiple DNA methylation sites for some traits, but this can only be estimated by jointly modelling the contribution of all sites to trait variance. This is explored in __Chapter \@ref(h2ewas-chapter)__. Here, the sum of r^2^ values is used to indicate whether the results of a study are likely inflated and thus unlikely to be robust. 
 
 ### Robustness of results {#robustness-of-results}
+As discussed, cellular heterogeneity, batch effects and inclusion of faulty probes can lead to false positives in EWAS. The extent to which this might be the case within EWAS included within The EWAS Catalog was explored.
 
-Here we continue to explore the robustness of results to 1. identify potential improvements that could be made for future studies and 2. identify potentially erroneous associations to exclude from downstream analyses.
-
-In at least one model, 579 studies adjusted for batch effects, 518 studies adjusted for cell composition, and 489 adjusted for both. Of all DMPs identifed, 9.3% were measured by potentially faulty probes and an extra 0.64% were present on sex chromosomes (__Figure \@ref(fig:faulty-probes-plot)__). 
+Each study may have reported results across multiple EWAS models, adjusting for different covariates. In at least one model, 579 studies adjusted for batch effects, 518 studies adjusted for cell composition, and 489 adjusted for both. Of all DMPs identifed, 9.3% were measured by potentially faulty probes and an extra 0.64% were present on sex chromosomes (__Figure \@ref(fig:faulty-probes-plot)__). 
 
 (ref:faulty-probes-cap) __The percentage of differentially methylated positions that may have been identified by faulty probes and the percentage of EWAS that reported identifying at least one of these probes__. Some CpGs are both on a sex chromosome and were identified as faulty by Zhou et al. They were labelled as 'potentially faulty'.
 
@@ -715,7 +717,7 @@ Smoking & 32 & 31 & 96.88\\
 
 \linebreak
 
-Using the Catalog data we further performed replication analyses. There were 62 studies that shared a common phenotype of interest. Replication rate, judged as the percentage of CpGs also present in any other study of the same trait with P value < 1x10^-4^, varied from 0 to 100 between studies (__Table \@ref(tab:replication-tab)__). \linebreak
+Using the Catalog data I looked up whether CpG sites identified in relation to a trait in one study at P < 1x10^-7^ were also associated with that same trait in another study at P < 1x10^-4^. There were 72 studies that shared a common phenotype of interest. Replication rate, judged as the percentage of CpGs also present in any other study of the same trait with P value < 1x10^-4^, varied from 0 to 100 between studies (__Table \@ref(tab:replication-tab)__ and __Table \@ref(tab:replication-tab-smoking)__). \linebreak
 
 \begin{table}
 
@@ -726,87 +728,111 @@ Using the Catalog data we further performed replication analyses. There were 62 
 \toprule
 trait & n-cpgs & rep-cpgs & n-rep-studies & prop-rep\\
 \midrule
-\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{23} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.26087}\\
-Smoking & 15 & 1 & 19 & 0.06667\\
-\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{17} & \cellcolor{gray!6}{14} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.82353}\\
-Rheumatoid arthritis & 51,476 & 8 & 1 & 0.00016\\
-\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{972} & \cellcolor{gray!6}{766} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.78807}\\
+\cellcolor{gray!6}{glucose} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.25000}\\
+insulin & 3 & 1 & 2 & 0.33333\\
+\cellcolor{gray!6}{insulin} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{0.00000}\\
+alzheimers & 21 & 5 & 7 & 0.23810\\
+\cellcolor{gray!6}{alzheimers} & \cellcolor{gray!6}{25} & \cellcolor{gray!6}{7} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.28000}\\
 \addlinespace
-Smoking & 25 & 5 & 19 & 0.20000\\
-\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{29} & \cellcolor{gray!6}{25} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.86207}\\
-Smoking & 30 & 9 & 19 & 0.30000\\
-\cellcolor{gray!6}{Birth weight} & \cellcolor{gray!6}{15} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{0.00000}\\
-Body mass index & 3 & 3 & 8 & 1.00000\\
+Birth weight & 27 & 0 & 4 & 0.00000\\
+\cellcolor{gray!6}{Birth weight} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{5} & \cellcolor{gray!6}{0.00000}\\
+Birth weight & 2 & 0 & 5 & 0.00000\\
+\cellcolor{gray!6}{Triglycerides} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{9} & \cellcolor{gray!6}{0.50000}\\
+Triglycerides & 11 & 6 & 8 & 0.54545\\
 \addlinespace
-\cellcolor{gray!6}{Depression} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.00000}\\
-Smoking & 1 & 1 & 19 & 1.00000\\
-\cellcolor{gray!6}{Maternal smoking during pregnancy} & \cellcolor{gray!6}{185} & \cellcolor{gray!6}{7} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.03784}\\
-Schizophrenia & 1 & 0 & 2 & 0.00000\\
-\cellcolor{gray!6}{Alzheimers disease Braak stage} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1.00000}\\
+\cellcolor{gray!6}{Triglycerides} & \cellcolor{gray!6}{33} & \cellcolor{gray!6}{26} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{0.78788}\\
+Triglycerides & 1 & 1 & 9 & 1.00000\\
+\cellcolor{gray!6}{Body mass index} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{25} & \cellcolor{gray!6}{1.00000}\\
+Body mass index & 133 & 83 & 24 & 0.62406\\
+\cellcolor{gray!6}{Body mass index} & \cellcolor{gray!6}{13} & \cellcolor{gray!6}{8} & \cellcolor{gray!6}{22} & \cellcolor{gray!6}{0.61538}\\
 \addlinespace
-Alzheimers disease Braak stage & 100 & 2 & 1 & 0.02000\\
-\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{37} & \cellcolor{gray!6}{35} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.94595}\\
-Maternal smoking in pregnancy & 25 & 10 & 2 & 0.40000\\
-\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{53} & \cellcolor{gray!6}{48} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.90566}\\
-Birth weight & 1 & 0 & 4 & \vphantom{1}0.00000\\
+Body mass index & 14 & 12 & 25 & 0.85714\\
+\cellcolor{gray!6}{Body mass index} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{25} & \cellcolor{gray!6}{0.33333}\\
+Body mass index & 5 & 3 & 26 & 0.60000\\
+\cellcolor{gray!6}{Body mass index} & \cellcolor{gray!6}{821} & \cellcolor{gray!6}{306} & \cellcolor{gray!6}{20} & \cellcolor{gray!6}{0.37272}\\
+Body mass index & 182 & 113 & 23 & 0.62088\\
 \addlinespace
-\cellcolor{gray!6}{Maternal smoking in pregnancy} & \cellcolor{gray!6}{22} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.86364}\\
-Smoking & 461 & 415 & 19 & 0.90022\\
-\cellcolor{gray!6}{High-density lipoprotein cholesterol} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1.00000}\\
-Smoking & 3 & 3 & 19 & 1.00000\\
-\cellcolor{gray!6}{Body mass index} & \cellcolor{gray!6}{76} & \cellcolor{gray!6}{30} & \cellcolor{gray!6}{8} & \cellcolor{gray!6}{0.39474}\\
+\cellcolor{gray!6}{Body mass index} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{26} & \cellcolor{gray!6}{1.00000}\\
+Waist circumference & 172 & 6 & 4 & 0.03488\\
+\cellcolor{gray!6}{Waist circumference} & \cellcolor{gray!6}{11} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{0.27273}\\
+Waist circumference & 2 & 1 & 6 & 0.50000\\
+\cellcolor{gray!6}{Type II diabetes} & \cellcolor{gray!6}{11} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{0.18182}\\
 \addlinespace
-Type II diabetes & 7 & 1 & 2 & 0.14286\\
-\cellcolor{gray!6}{Body mass index} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{8} & \cellcolor{gray!6}{1.00000}\\
-Body mass index & 9 & 5 & 8 & 0.55556\\
-\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{14} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.73684}\\
-Type II diabetes & 39 & 1 & 2 & 0.02564\\
+Type II diabetes & 6 & 0 & 5 & 0.00000\\
+\cellcolor{gray!6}{Type II diabetes} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{7} & \cellcolor{gray!6}{1.00000}\\
+HOMA-IR & 1 & 1 & 2 & 1.00000\\
+\cellcolor{gray!6}{HOMA-IR} & \cellcolor{gray!6}{5} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.20000}\\
+Schizophrenia & 3 & 0 & 4 & 0.00000\\
 \addlinespace
-\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{1.00000}\\
-Birth weight & 1 & 0 & 4 & 0.00000\\
-\cellcolor{gray!6}{Type II diabetes} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{1.00000}\\
-Smoking & 316 & 201 & 19 & 0.63608\\
-\cellcolor{gray!6}{Arsenic exposure} & \cellcolor{gray!6}{200} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.00500}\\
+\cellcolor{gray!6}{Schizophrenia} & \cellcolor{gray!6}{163} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{0.00000}\\
+C-reactive protein & 3 & 3 & 2 & 1.00000\\
+\cellcolor{gray!6}{C-reactive protein} & \cellcolor{gray!6}{226} & \cellcolor{gray!6}{17} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.07522}\\
+High-density lipoprotein cholesterol & 2 & 2 & 6 & 1.00000\\
+\cellcolor{gray!6}{High-density lipoprotein cholesterol} & \cellcolor{gray!6}{63} & \cellcolor{gray!6}{5} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.07937}\\
 \addlinespace
-Smoking & 66 & 66 & 19 & 1.00000\\
-\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{748} & \cellcolor{gray!6}{544} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.72727}\\
-Maternal smoking in pregnancy & 2,187 & 24 & 2 & 0.01097\\
-\cellcolor{gray!6}{Schizophrenia} & \cellcolor{gray!6}{94} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.01064}\\
-Smoking & 100 & 3 & 19 & 0.03000\\
+Serum high-density lipoprotein cholesterol & 22 & 17 & 5 & 0.77273\\
+\cellcolor{gray!6}{Serum high-density lipoprotein cholesterol} & \cellcolor{gray!6}{213} & \cellcolor{gray!6}{11} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{0.05164}\\
+Serum low-density lipoprotein cholesterol & 61 & 0 & 3 & 0.00000\\
+\cellcolor{gray!6}{Serum total cholesterol} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{7} & \cellcolor{gray!6}{0.00000}\\
+Serum total cholesterol & 111 & 0 & 6 & 0.00000\\
 \addlinespace
-\cellcolor{gray!6}{Maternal smoking during pregnancy} & \cellcolor{gray!6}{25} & \cellcolor{gray!6}{7} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.28000}\\
-Body mass index & 3 & 1 & 8 & 0.33333\\
-\cellcolor{gray!6}{Schizophrenia} & \cellcolor{gray!6}{1,223} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.00082}\\
-Smoking & 9,159 & 1,458 & 19 & 0.15919\\
-\cellcolor{gray!6}{C-reactive protein} & \cellcolor{gray!6}{31} & \cellcolor{gray!6}{14} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.45161}\\
+\cellcolor{gray!6}{Serum total cholesterol} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{11} & \cellcolor{gray!6}{0.00000}\\
+Serum triglycerides & 46 & 38 & 6 & 0.82609\\
+\cellcolor{gray!6}{Serum triglycerides} & \cellcolor{gray!6}{99} & \cellcolor{gray!6}{33} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{0.33333}\\
+Rheumatoid arthritis & 47,875 & 8 & 2 & 0.00017\\
+\cellcolor{gray!6}{Rheumatoid arthritis} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.00000}\\
 \addlinespace
-Body mass index & 20 & 8 & 8 & 0.40000\\
-\cellcolor{gray!6}{C-reactive protein} & \cellcolor{gray!6}{218} & \cellcolor{gray!6}{14} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.06422}\\
-Body mass index & 278 & 39 & 8 & 0.14029\\
-\cellcolor{gray!6}{Birth weight} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{0.00000}\\
-Body mass index & 2 & 2 & 8 & 1.00000\\
-\addlinespace
-\cellcolor{gray!6}{Serum high-density lipoprotein cholesterol} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.21053}\\
-High-density lipoprotein cholesterol & 3 & 1 & 1 & 0.33333\\
-\cellcolor{gray!6}{Serum high-density lipoprotein cholesterol} & \cellcolor{gray!6}{110} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.03636}\\
-Birth weight & 8 & 0 & 4 & 0.00000\\
-\cellcolor{gray!6}{Rheumatoid arthritis} & \cellcolor{gray!6}{64} & \cellcolor{gray!6}{8} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.12500}\\
-\addlinespace
-Depression & 5 & 0 & 2 & 0.00000\\
-\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{525} & \cellcolor{gray!6}{424} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0.80762}\\
-Arsenic exposure & 371 & 1 & 1 & 0.00270\\
-\cellcolor{gray!6}{Depression} & \cellcolor{gray!6}{39} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.00000}\\
-Alzheimer's disease & 656 & 3 & 1 & 0.00457\\
-\addlinespace
-\cellcolor{gray!6}{Alzheimer's disease} & \cellcolor{gray!6}{350} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.00857}\\
-Body mass index & 71 & 8 & 8 & 0.11268\\
+Depression & 1 & 0 & 1 & 0.00000\\
+\cellcolor{gray!6}{Depression} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.00000}\\
 \bottomrule
 \end{tabular}}
 \end{table}
 
-\linebreak
+\begin{table}
 
-Before continuing to assess what CpG characteristics might, in part, explain some associations found in EWAS, we removed sites that were identified by a potentially faulty probes and were on either of the sex chromosomes. Further, we removed the eight studies that had an inflated sum of r^2^ values and studies for which fewer than 10% of sites identified in the original analyses were identified in a re-analysis using the data provided via GEO. Overall, this left 789 EWAS and 77127 associations (at P < 1x10^-4^).
+\caption{(\#tab:replication-tab-smoking)Replication rate in EWAS of smoking}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{lllll}
+\toprule
+trait & n-cpgs & rep-cpgs & n-rep-studies & prop-rep\\
+\midrule
+\cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{37} & \cellcolor{gray!6}{\vphantom{1}1.00000}\\
+smoking & 1 & 1 & 36 & 1.00000\\
+\cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{36} & \cellcolor{gray!6}{1.00000}\\
+smoking & 1,065 & 862 & 35 & 0.80939\\
+\cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{37} & \cellcolor{gray!6}{1.00000}\\
+\addlinespace
+smoking & 22 & 20 & 37 & 0.90909\\
+\cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{30} & \cellcolor{gray!6}{9} & \cellcolor{gray!6}{37} & \cellcolor{gray!6}{0.30000}\\
+smoking & 44 & 42 & 36 & 0.95455\\
+\cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{32} & \cellcolor{gray!6}{31} & \cellcolor{gray!6}{37} & \cellcolor{gray!6}{0.96875}\\
+smoking & 450 & 417 & 36 & 0.92667\\
+\addlinespace
+\cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{37} & \cellcolor{gray!6}{28} & \cellcolor{gray!6}{35} & \cellcolor{gray!6}{0.75676}\\
+smoking & 3 & 3 & 37 & 1.00000\\
+\cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{60} & \cellcolor{gray!6}{57} & \cellcolor{gray!6}{37} & \cellcolor{gray!6}{0.95000}\\
+smoking & 171 & 171 & 35 & 1.00000\\
+\cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{258} & \cellcolor{gray!6}{257} & \cellcolor{gray!6}{36} & \cellcolor{gray!6}{0.99612}\\
+\addlinespace
+smoking & 20 & 1 & 37 & 0.05000\\
+\cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{2,780} & \cellcolor{gray!6}{1,117} & \cellcolor{gray!6}{36} & \cellcolor{gray!6}{0.40180}\\
+smoking & 524 & 424 & 37 & 0.80916\\
+\cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{192} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{33} & \cellcolor{gray!6}{0.00000}\\
+smoking & 177 & 172 & 37 & 0.97175\\
+\addlinespace
+\cellcolor{gray!6}{Maternal smoking in pregnancy} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{1.00000}\\
+Maternal smoking in pregnancy & 24 & 24 & 11 & 1.00000\\
+\cellcolor{gray!6}{Maternal smoking in pregnancy} & \cellcolor{gray!6}{1,591} & \cellcolor{gray!6}{93} & \cellcolor{gray!6}{9} & \cellcolor{gray!6}{0.05845}\\
+Maternal smoking during pregnancy & 121 & 18 & 2 & 0.14876\\
+\cellcolor{gray!6}{Maternal smoking during pregnancy} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{1.00000}\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\pagebreak
+
+Before continuing to assess what CpG characteristics might, in part, explain some associations found in EWAS, we removed sites that were identified by potentially faulty probes and were on either of the sex chromosomes. Further, we removed the eight studies that had an inflated sum of r^2^ values and studies for which fewer than 10% of sites identified in the original analyses were identified in a re-analysis using the data provided via GEO. Overall, this left 789 EWAS and 77127 associations (at P < 1x10^-4^).
 
 
 <!-- Smoking is associated with large changes in DNA methylation across the genome (REF) and is associated with many different traits (REF). Thus, it may confound DNA methylation associations found in the catalog. If this was the case, one might expect smoking related CpGs to appear more in the catalog than expected by chance. The DMPs identified by EWAS of traits other than smoking were enriched for smoking related CpG sites (P = X).
@@ -860,17 +886,45 @@ h2 & 8.1e-02 & 0.00037 & 5.9e-05 & 0.78\\
 
 \linebreak
 
-As the position of DNA methylation relative to genes is pertinent to its association with gene expression (__Section \@ref(dna-methylation)__) [@Jones2012; @Ando2019; @Deaton2011; @Wolf1984; @Hellman2007], the enrichment of DNA methylation sites identified at P<1e-7 across genomic regions and chromatin states were assessed (__Figure XXX__). Across the XXX tissues there was a trend for sites to be enriched for transcription start sites (TSS) (OR range = XXX to XXX), and areas of strong and weak transcription (OR range = XXX to XXX). Evidence of enrichment across different enhancer types was mixed (OR range = XXX to XXX) and there was a trend towards depletion of sites within heterochromatic regions, poised and bivalent promoters, regions repressed by polycomb proteins and quiesscant regions (__Figure XXX__). 
+As the position of DNA methylation relative to genes is pertinent to its association with gene expression (__Section \@ref(dna-methylation)__) [@Jones2012; @Ando2019; @Deaton2011; @Wolf1984; @Hellman2007], the enrichment of DMPs identified in The EWAS Catalog across genomic regions and chromatin states were assessed (__Figure \@ref(fig:chrom-state-plot)__). Across all tissues, there was a trend for sites to be enriched for promoter regions (OR > 1). Evidence of enrichment across different enhancer types was mixed and there was a trend towards depletion of sites within heterochromatic regions, poised and bivalent promoters, regions repressed by polycomb proteins and quiesscant regions (__Figure \@ref(fig:chrom-state-plot)__, OR < 1). 
 
-The sites identified by EWAS were also enriched for transcription factor binding sites (__Figure XXX__). Of the XXX transcription factor binding sites tested, there was evidence that identified CpG sites were enriched in XXX of them across all tissue types (P<XXX). 
+(ref:chrom-state-cap) __Enrichment of DMPs for 25 chromatin states__. Chromatin states across the genome of 127 cell types comprising 30 distinct tissues were available from the Roadmap Epigenomics Project. Using LOLA, the enrichment of DMPs from across all data in The EWAS Catalog for chromatin states were assessed. DMPs were divided into five categories __A__: CpG sites associated with any complex trait at P<1e-7, __B__: sites from A that replicated in another study at P<1e-4, __C__: CpG sites associated with any complex trait at P<1.3e-10 (P < conventional threshold divided by total number of EWAS), __D__: sites from A that were measured in blood, __E__: sites from C that were measured in blood. The x-axis show the 25 chromatin states: TssA, Active TSS; PromU, Promoter Upstream TSS; PromD1, Promoter Downstream TSS with DNase; PromD2, Promoter Downstream TSS; Tx5', Transcription 5'; Tx, Transcription; Tx3', Transcription 3'; TxWk, Weak transcription; TxReg, Transcription Regulatory; TxEnh5', Transcription 5' Enhancer; TxEnh3', Transcription 3' Enhancer; TxEnhW, Transcription Weak Enhancer; EnhA1, Active Enhancer 1; EnhA2, Active Enhancer 2; EnhAF, Active Enhancer Flank; EnhW1, Weak Enhancer 1; EnhW2, Weak Enhancer 2; EnhAc, Enhancer Acetylation Only; DNase, DNase only; ZNF/Rpts, ZNF genes & repeats; Het, Heterochromatin; PromP, Poised Promoter; PromBiv, Bivalent Promoter; ReprPC, Repressed PolyComb, Quies, Quiescent/Low.
 
-Similar enrichment results were recorded after altering inclusion criteria of the CpG sites said to be identified by EWAS (__Figure XXX__). 
+(ref:chrom-state-scap) Enrichment of DMPs for 25 chromatin states
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figure/04-properties_of_ewas/chromatin_states_enrichment_boxplots_onepage} 
+
+}
+
+\caption[(ref:chrom-state-scap)]{(ref:chrom-state-cap)}(\#fig:chrom-state-plot)
+\end{figure}
+
+The sites identified by EWAS were also enriched for transcription factor binding sites (__Figure \@ref(fig:tfbs-plot)__). Of the 167 transcription factor binding sites tested, there was evidence that identified DMPs (P<1e-7) were enriched in XXX of them across all tissue types (P<XXX). 
+
+(ref:tfbs-cap) __Enrichment of DMPs for 167 transcription factor binding sites__. 
+
+(ref:tfbs-scap) Enrichment of DMPs for 167 transcription factor binding sites
+
+\blandscape
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figure/04-properties_of_ewas/cpg_corebg_matched_all_enrichment_All_OR} 
+
+}
+
+\caption[(ref:tfbs-scap)]{(ref:tfbs-cap)}(\#fig:tfbs-plot)
+\end{figure}
+
+\elandscape
 
 \newpage
 
 ## Discussion {#discussion-04}
 
-Understanding the nature of EWAS associations is imperative for biological inference. Using data from the EWAS Catalog we show that many CpGs associate with multiple different unique traits and the magnitude of these associations are partly explained by the characteristics of DNA methylation levels. False positives may also explain a proportion of EWAS associations. Roughly 10% of the differentially methylated positions identified were measured by potentially faulty probes and the median percentage of CpGs that could be replicated across studies was 24%.
+Understanding the nature of EWAS associations is imperative for biological inference. Using data from the EWAS Catalog we show that many CpGs associate with multiple different unique traits and the magnitude of these associations are partly explained by the characteristics of DNA methylation levels. False positives may also explain a proportion of EWAS associations. Roughly 10% of the differentially methylated positions identified were measured by potentially faulty probes and the median percentage of CpGs that could be replicated across studies was 50%.
 
 ### Identifying mediators {#identifying-mediators}
 
@@ -888,11 +942,19 @@ Characteristics of DNA methylation discovered in experimental studies, such as i
 
 Our results suggest removing CpG sites with low variances may make it more likely to remove sites with greater effects. Variance had a modest ability to predict whether or not a CpG site was likely to be identified in an EWAS, and it did not add to the predictive ability of heritability, despite explaining a higher proportion of variance in effect estimates. This may be explained by two things. Firstly, having a lower variance in the independent or dependent variable increases the standard error of the beta coefficient in a linear regression. Secondly, heritability will in part determine variance of DNA methylation. 
 
-* Enrichment stuff here
+### Choosing sites to measure {#choosing-sites-to-measure}
 
-### Limitations {#limitations}
+As discussed in __Section \@ref(ewas)__, the HM450 array was designed to capture DNA methylation in various regions of the genome. The probes of the array target over 99% of protein coding genes and predominantly target the promoter regions of these genes (REF). The newer HMEPIC array captures much of what the HM450 does, and further covers 58% of FANTOM5 enhancers [@Pidsley2016]. 
 
-Individual level data were not available and thus to calculate standardised betas, the variance of the trait had to be estimated from external measures of DNA methylation. If the GoDMC sample is not representative of the sample used for the study EWAS then these estimates may be substantially biased. Further, many studies do not report the effect estimates from their statistical analyses. If there is a marked difference in the studies that do not report effect sizes and those that do, then any associations between standardised effect estimates and DNA methylation site characteristics are likely to be biased.
+The trend for DMPs to be enriched for promoter regions suggests there may have been some justification for the chosen sites. However, not all promoter regions were enriched with DMPs and bivalent promoters were depleted for DMPs. Enrichment of enhancers was also seen, but the magnitude of enrichment was smaller. When designing future arrays, these results suggest that continuing to target promoters and enhancers, whilst avoiding gene regions that are less likely to be actively transcribed may yield more associations in EWAS.
+
+Despite the tissue specific nature of DNA methylation, the regions for which DMPs identified in The EWAS Catalog were found to be enriched were fairly consistent across tissues. However, enrichment of DMPs tended to be greater for blood-based genomic annotations, perhaps reflecting the fact the majority of EWAS in the EWAS Catalog were conducted using DNA methylation measured in whole blood. 
+
+### Limitations {#limitations-04}
+
+Individual participant data were not available and thus to calculate standardised betas, the variance of the trait had to be estimated from external measures of DNA methylation. If the GoDMC sample is not representative of the sample used for the study EWAS then these estimates may be substantially biased. Further, many studies do not report the effect estimates from their statistical analyses. If there is a marked difference in the studies that do not report effect sizes and those that do, then any associations between standardised effect estimates and DNA methylation site characteristics are likely to be biased.
+
+Like other observable phenotypes, DNA methylation varies under many contexts. Time, sex, tissue type, population, socioeconmic position and many other factors may influence the results of EWAS. The majority of EWAS conducted have used DNA methylation measured in whole blood from European adults making the results not necessarily apply broadly outside those bounds. The need for tissue-specific data has been discussed previously in __Section \@ref(problems-for-ewas)__. Differences in DNA methylation between ethnic groups has been shown previously [@ToinetCronje2020] and the predictive value of a smoking-related methylation score was shown to differ between Europeans and South Asians [@Elliott2014]. This suggests any biological insight and population health benefits that may be the result of EWAS is likely to to be maximised by diversifying populations. It is unclear from this study whether the CpG characteristics and genomic annotations that show evidence that they influence EWAS results, will also influence EWAS results in the same way within a more ethnically diverse selection of samples.
 
 ## Conclusion {#conclusion-04}
 This chapter demonstrates the potential for using large-scale EWAS databases to understand DNA methylation-trait associations. It was found that study design flaws can help explain some associations. However, it is noteworthy that the vast majority of studies have accounted for some potential biasing factors, for example 79.1262136% of studies adjusted for batch effects and cell composition. Further, there was an invese association between DNA methylation variability and effect size, suggesting that studies that remove variable sites prior to analysis could be excluding important regions from the analysis. Finally, cg06500161 _ABCG1_ was identified as being associated with 71 traits that share known biological relationships. This highlights the potential to use The EWAS Catalog to identify molecular markers that might underlie the relationship between traits.
@@ -2007,14 +2069,6 @@ If you feel it necessary to include an appendix, it goes here.
 # The First Appendix
 
 This first appendix includes all of the R chunks of code that were hidden throughout the document (using the `include = FALSE` chunk tag) to help with readibility and/or setup.
-
-**In the main Rmd file**
-
-
-
-**In Chapter \@ref(ref-labels):**
-
-
 
 # The Second Appendix, for Fun
 
