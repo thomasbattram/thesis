@@ -2,7 +2,7 @@
 
 Thesis written using [thesisdown](https://github.com/ismayc/thesisdown). This was altered to comply with the University of Bristol's regulations by Matt Lee: [bristolthesis](https://github.com/mattlee821/bristolthesis).
 
-Current version of the thesis can be found [here](index/_book)
+Current version of the thesis can be found [here](index/_book/thesis.pdf)
 
 Plan for September/October:
 
