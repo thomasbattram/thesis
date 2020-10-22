@@ -8,7 +8,7 @@ Attendees: Tom B, Gib
 * [Item2](#item2)
 * [AOB](#aob)
 
-## ewas-gwas comparison v2 (#item1)
+## ewas-gwas comparison v2 <a name="item1"></a>
 
 Some pre-meeting notes
 
