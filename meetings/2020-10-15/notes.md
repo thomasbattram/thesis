@@ -89,7 +89,7 @@ Need to make it clear when the data is from! Can say this snapshot was from time
 
 __notes:__
 
-Need to justify relative plausiblility of confounding/reverse causation compared to otther things brought up (see above)
+Need to justify relative plausiblility of confounding/reverse causation compared to other things brought up (see above)
 
 Could have connections between downstream and upstream pathways --- needs to be mentioned, but hard to think about how to actually do this analysis
 
