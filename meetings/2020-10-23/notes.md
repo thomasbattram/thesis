@@ -11,17 +11,22 @@ Attendees: Tom B, Gib
 ## ewas-gwas comparison v2 <a name="item1"></a>
 
 * How can I replace pathway in intro/discussion? -- feels weird to use pathway throughout and then in the main analyses use a database that isn't technically a pathway database...
+	+ Can use term "genesets"!!! -- probably should define how genesets are different from pathways and that pathways are made up of genesets 
 
 * Justifying why confounding/reverse causation is reason that EWAS and GWAS may differ -- if all DNAm sites have a genetic component (???) then would a GWAS large enough capture genes captured by EWAS? 
 	+ also is it enough in the intro to put differences in EWAS and GWAS likely mean EWAS results due to confounding/reverse causation and then explain other options in the discussion?
+	+ "extent to which this holds is discussed in more detail in the discussion"
 
 * Tom suggested filtering out big pathways as a sensitivity analyses but how?? -- looking at the data it seems... 
 
 * In the paper I talk about overlap between "causal" and "non-causal" genes, but technically speaking a gene can't be causal and non-causal... 
+	+ Use term associated set also!! 
 
 * Don't understand one of Nic's comments (not mentioning mediation -- in discussion) -- that's the only part I discuss the results of all GWAS vs. all GWAS vs. 7 EWAS.
+	+ Make it clear mediation is one mechanism by which this could occur
 
 * Tom mentioned "reverse causality" is dismissed as a bad thing...
+	+ [paper](https://pubmed.ncbi.nlm.nih.gov/32228717/) showing prediction longitudinally may be unlikely 
 
 __NOTES:__
 
