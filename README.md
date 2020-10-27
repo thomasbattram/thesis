@@ -9,12 +9,11 @@ Plan for September/October:
 | Task                            | Comments needed | Comments needed from | Complete |
 | ------------------------------- |:---------------:|:--------------------:|:--------:|
 | Discussion V1                   | N 			  	| 					   | Y 		  |
-| EWAS-GWAS comparisons V2        | Y 			  	| TG + NT              | N 		  |
+| EWAS-GWAS comparisons V2        | N 			  	| 		               | N 		  |
 | Chapters integrated into thesis | N 			  	|					   | N 		  |
-| Properties of EWAS V2           | Y 			  	| GH + TG + NT         | N 		  |
-| Intro V3                        | Y 			  	| TG + NT              | N 		  |
+| Properties of EWAS V2           | N 			  	| 			           | N 		  |
+| Intro V3                        | Y 			  	| TG                   | N 		  |
 | Discussion V2                   | Y 	  		  	| TG + NT         	   | N 		  |
-| Finished everything (mostly...) | N 			  	|                      | N 		  |
 
 
 ## Meetings
