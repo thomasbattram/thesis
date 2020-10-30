@@ -15,18 +15,22 @@ Attendees: Tom B, Gib
 * Not limiting to "independent" SNPs means there are a lot of genes... -- currently just added this to the limitations. 
 	+ All SNPs at P<5e-8 kept and mapped to either gene they're within OR nearest gene
 	+ For BMI, if the independent SNPs are taken from the Yengo paper then mapped to genes a few more genes than SNPs are present (expected), but this is about 3x fewer genes than with the method currently used...
+	+ Worth doing a sensitivity analyses: limit to independent SNPs AND/OR eQTL stuff.
+		could also look at various other GWAS that have done gene mapping!
 
 * Some of the new architecture sim results are wild: [plot](architecture_sims_crp_fvns_only_correlation_of_pathway_enrichment_scores.png)
 
 __NOTES:__
 
-Some meeting notes
+Allan McRae -- repeatability of probes -- could see if repeatable probes more likely to come up as EWAS hits
 
 ## ewas catalog data <a name="item2"></a>
 
 * Need to "timestamp" results chapters that use EWAS Catalog data. 
 	+ Was thinking to have a sentence or two at the end of that chapter
 	+ For ewas-gwas comparison it's weird because of glucose + insulin EWAS...
+	+ Can mention will update for the paper and that just added those two studies!
+
 
 __NOTES:__
 
