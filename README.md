@@ -12,8 +12,9 @@ Plan for September/October:
 | EWAS-GWAS comparisons V2        | N 			  	| 		               | N 		  |
 | Chapters integrated into thesis | N 			  	|					   | N 		  |
 | Properties of EWAS V2           | N 			  	| 			           | N 		  |
-| Intro V3                        | Y 			  	| TG                   | N 		  |
 | Discussion V2                   | Y 	  		  	| TG + NT         	   | N 		  |
+| Intro V3                        | Y 			  	| TG                   | N 		  |
+| DNAm-lung cancer MR V2          | N 			  	| TG + GH 			   | N 		  |
 
 
 ## Meetings
