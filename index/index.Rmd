@@ -1,6 +1,6 @@
 ---
 author: 'Thomas Battram'
-date: 'December 2020' # Month and year of submission
+date: 'November 2020' # Month and year of submission
 title: "Complex trait architecture through the lens of epigenome-wide association studies"
 university: "University of Bristol"
 faculty: "Health Sciences"
@@ -28,7 +28,7 @@ output:
 #  thesisdown::thesis_gitbook: default
 #  thesisdown::thesis_word: default
 #  thesisdown::thesis_epub: default
-geometry: "left=1cm, right=1cm, top=1cm, bottom=1cm" # This doesn't work
+geometry: left=0cm, right=0cm, top=0cm, bottom=0cm # This doesn't work
 abstract: |
   `r if(knitr:::is_latex_output()) paste(readLines("00-abstract.Rmd"), collapse = '\n  ')`
 acknowledgements: |
