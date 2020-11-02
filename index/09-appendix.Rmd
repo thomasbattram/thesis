@@ -7,8 +7,52 @@ If you feel it necessary to include an appendix, it goes here.
 -->
 
 
-# The First Appendix
+# Further assessment of the overlap between genes and genesets identified by EWAS and GWAS
 
-This first appendix includes all of the R chunks of code that were hidden throughout the document (using the `include = FALSE` chunk tag) to help with readibility and/or setup.
+(ref:sim1-full-plot-cap) __Full results from simulations assessing power to detect overlap between genes and genesets identified by corresponding EWAS and GWAS__. Simulations were set up as illustrated in __Figure \@ref(fig:method-simulations-schematic)__. The ability to distinguish between results generated when EWAS and GWAS were sampling, in part, from the same set of causal genes and results generated when EWAS was sampling random genes from the genome. The header of each set indicates the proportion of genes identified by the simulated EWAS that were set to be causal. or_g = assessing overlap of genes, or_p = assessing overlap of genesets, rho_p = assessing correlation between geneset enrichment scores. go = gene ontology, ppi = protein-protein interaction database from EpiGraphDB. 
+
+(ref:sim1-full-plot-scap) Full results from simulations assessing power to detect overlap between genes and genesets identified by corresponding EWAS and GWAS
+
+```{r sim1-full-plot1, message=FALSE, results="asis"}
+```
+
+```{r sim1-full-plot2, message=FALSE, results="asis"}
+```
+
+```{r sim1-full-plot3, message=FALSE, results="asis"}
+```
+
+```{r sim1-full-plot4, message=FALSE, results="asis"}
+```
+
+```{r sim1-full-plot5, message=FALSE, results="asis", fig.cap = "(ref:sim1-full-plot-cap)", fig.scap="(ref:sim1-full-plot-scap)"}
+```
+
+(ref:arch-simulations-supp-res-cap) __Simulations to understand the likely number of genes still to identify in EWAS and GWAS of six traits under different trait architectures__. Simulations were set up as illustrated in __Figure \@ref(fig:arch-simulations-schematic)__. Correlation of geneset enrichment scores from empirical data (__Table \@ref(tab:empirical-pathway-tab)__), is shown as a red dashed line. Box plots show the range of enrichment score correlations from 1000 simulations using the parameters indicated. The number of causal and associated genes, as well as the overlap between these genes were varied. N~KEG~ = number of known EWAS genes, N~KEG~ = number of known GWAS genes, N~KTG~ = number of known total genes (N~KEG~ + N~KGG~). By way of an example, when N~KTG~ = 557 and the ratio of causal and associated genes relative to N~KTG~ is 1:1, the number of causal genes in the simulations will be 557 and the number of associated genes in the simulations will be 557. Scenarios which lie close to the empirical result (red dashed line) are more likely to reflect the true underlying number of genes related to a trait and the true overlap between the causal and associated genes.
+
+(ref:arch-simulations-supp-res-scap) Simulations to understand the likely number of genes still to identify in EWAS and GWAS of six traits under different trait architectures
+
+```{r arch-simulations-supp-res, message=FALSE, results="asis", fig.cap = '(ref:arch-simulations-supp-res-cap)', fig.scap='(ref:arch-simulations-supp-res-scap)'}
+```
+
+(ref:sim1-go-kegg-gene-comp-cap) __Power to detect overlap between genes and genesets identified by corresponding EWAS and GWAS when mapping signal to all genes and protein coding genes__. Simulations were set up as illustrated in __Figure \@ref(fig:method-simulations-schematic)__. The ability to distinguish between results generated when EWAS and GWAS were sampling, in part, from the same set of causal genes and results generated when EWAS was sampling random genes from the genome. The header of each set indicates the proportion of genes identified by the simulated EWAS that were set to be causal. or_g = assessing overlap of genes, or_p = assessing overlap of genesets, rho_p = assessing correlation between geneset enrichment scores. go = gene ontology, suffix of '-genes' denotes using all Ensembl gene IDs for the analysis and the suffix of '-proteins' denotes using only protein coding genes.  
+
+(ref:sim1-go-kegg-gene-comp-scap) Power to detect overlap between genes and genesets identified by corresponding EWAS and GWAS when mapping signal to all genes and protein coding genes
+
+```{r sim1-go-kegg-gene-comp1, message=FALSE, results="asis"}
+```
+
+```{r sim1-go-kegg-gene-comp2, message=FALSE, results="asis"}
+```
+
+```{r sim1-go-kegg-gene-comp3, message=FALSE, results="asis"}
+```
+
+```{r sim1-go-kegg-gene-comp4, message=FALSE, results="asis"}
+```
+
+```{r sim1-go-kegg-gene-comp5, message=FALSE, results="asis", fig.cap = "(ref:sim1-go-kegg-gene-comp-cap)", fig.scap = "(ref:sim1-go-kegg-gene-comp-scap)"}
+```
+
 
 # The Second Appendix, for Fun
