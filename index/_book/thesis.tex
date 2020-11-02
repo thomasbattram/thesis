@@ -623,7 +623,7 @@ Our criteria for inclusion of a study into The EWAS Catalog are as follows:
 \end{enumerate}
 CpG-phenotype associations are extracted from studies at P \textless{} 1x10\textsuperscript{-4}. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-10-19, The EWAS Catalog contained 450213 associations from 605 studies.
+Based on these criteria, from 2020-11-02, The EWAS Catalog contained 450213 associations from 605 studies.
 
 \hypertarget{overview-of-geo-data-extraction}{%
 \subsection{Overview of GEO data extraction}\label{overview-of-geo-data-extraction}}
@@ -1494,7 +1494,341 @@ The factors important for the correlation structure of DNA methylation data are 
 Overall, the number of traits with good evidence for h\textsuperscript{2}\textsubscript{EWAS} \textgreater{} 0 was low (only smoking behaviour met the threshold of FDR \textless{} 0.1) and mean h\textsuperscript{2}\textsubscript{EWAS} value across both models was roughly 0, suggesting that for many traits DNA methylation variation as measured on the HM450 BeadChip in blood is of little relevance. However, these estimates varied greatly and therefore DNA methylation measured in this way will likely have relevance for some traits, for example smoking cigarettes regularly. Further, these estimates were correlated with the number of DMPs identified, suggesting that for traits whose variance associates with DNA methylation then increasing sample size will yield an increase in the number of CpGs identified in EWAS. I also provide evidence that there is value in assessing individual CpG-trait associations as opposed to groups of correlated CpG sites within 100Kb. However, this does not preclude the possibility that a more complex model of CpG site correlation may provide a better fit.
 
 \hypertarget{ewas-gwas-comp-chapter}{%
-\chapter{EWAS-GWAS comparison}\label{ewas-gwas-comp-chapter}}
+\chapter{A comparison of the genes and genesets identified by EWAS and GWAS of eight complex traits}\label{ewas-gwas-comp-chapter}}
+
+\hypertarget{abstract-06}{%
+\section{Abstract}\label{abstract-06}}
+
+Identifying the genes, properties of these genes and pathways to understand the underlying biology of complex traits responsible for differential health states in the population is a common goal of epigenome-wide and genome-wide association studies (EWAS and GWAS). Genetic variants identified in GWAS will not be caused by phenotypic variation and their associations with complex traits are unlikely to be confounded. Whilst DNA methylation changes identified in EWAS do not share the same properties, the goal of identifying facets of genomic change that cause differential health states among the population remains the same for both studies. A simple method, routinely applied, to aid in this goal involves mapping regions of the genome identified by the study to genes and genesets. Whether EWAS is identifying similar genes and genesets to GWAS indicates whether EWAS is capturing the same underlying biology of a trait. Across eight different traits with large EWAS (N \textgreater{} 4500), the number of 500kb genomic regions with both an associated genetic variant (P\textless5x10\textsuperscript{-8}) and differentially methylated position (P\textless1x10\textsuperscript{-7}) identified was a small percentage of the total number variants and differentially methylated positions identified (ranging from 0 to 9\%). Fisher's exact test was used to estimate whether genes identified by EWAS were more likely to be also identified by GWAS. The overlap was found to be no more than expected by chance across all the traits (P \textgreater{} 0.05 in all cases). Further, correlation between gene ontology term enrichment scores was no higher than expected by chance. Overall, the EWAS findings for these eight traits are vastly different to the GWAS findings and implicate different biological genesets. By way of example, the GWAS of alcohol consumption identified genes enriched in the ethanol catabolism pathway (FDR \textless{} 0.1), whereas the corresponding EWAS identified no genes in this pathway. Simulations suggested these results were likely due to the majority of EWAS signal being the consequence of trait variation or confounding. However, they did not preclude the possibility that some of the differentially methylated positions may be pertinent to the aetiology of the traits. Currently, interpreting EWAS is difficult, but even if only a small proportion of the DNA methylation sites identified are causally related in some way to the traits of interest here, it is likely they are acting through distinct biological pathways.
+
+\hypertarget{introduction-06}{%
+\section{Introduction}\label{introduction-06}}
+
+The molecular underpinning of disease is arguably the most important field of human research that has the potential to ultimately eradicate all non-communicable diseases. Large efforts have been put in place to conduct hypothesis free searches to identify molecular changes pertinent to phenotypic variation. Two popular study designs include genome-wide association studies (GWAS) and epigenome-wide association studies (EWAS).
+
+Often in EWAS, the potential biological implications of differentially methylated positions or regions (DMPs or DMRs) will be investigated further through genomic annotations (181--184). Previous studies have shown a link between DNA methylation levels and the expression of proximal genes (18,32). Therefore, sites identified in EWAS are often mappped to nearby genes and these genes and their function are probed to ascertain their relevance to the trait of interest (181--184). Further, genes can be grouped with others into ``genesets'' that have similar functionality or lie within the same pathway. The geneset a gene is part of may provide insight into the trait, for example for EWAS of autoimmune diseases, the sites might tag genes within immunological pathways more than expected by chance. Other assessments may be made to infer potential biological understanding, including enrichment of other epigenetic marks at the regions identified (185) and follow-up experimental studies (66). However, using open access databases to investigate tagged genes and genesets is a simple and potentially effective approach to further biological understanding.
+
+GWAS often use similar approaches to EWAS to help infer function from the signals identified (66,186). However, the properties of genetic variants and DNA methylation differ making potential inferences from EWAS and GWAS diverge. Importantly, DNA methylation is responsive to environmental stimuli, thus making associations identified in EWAS potentially attributable to reverse causation and to confounding (1,49,180). It should be noted GWAS may be susceptible to confounding, but it is reasonable to assume it is less pervasive amongst GWAS associaitons (92,93).
+
+Given what we know about the properties of genetic variants, a direct comparison between EWAS and GWAS results can provide insight into what biological information EWAS is capturing. If EWAS are highlighting a similar set of genes and genesets, it suggests changes in DNA methylation are identifying facets of trait aetiology. However, if there is no more overlap than expected by chance, it suggests covariation between DNA methylation and complex traits is driven by either phenotypic variation causing alterations in the DNA methylome, or confounding, or both. Indeed it is possible that different genes may be identified by GWAS and EWAS due to other factors, such as DNA methylation mediating non-genetic effects on complex traits and the miss-mapping of sites to genes. Further, genetic variants may cause changes in DNA methylation at distal regions, which will be missed when mapping CpGs and genetic variants to nearby genes. However, we expect that overlap could still be detected between EWAS and GWAS, especially between genesets, in the abscence of confounding and reverse causation. The extent to which this assumption holds is discussed in more detail in the \textbf{Section \ref{discussion-06}}.
+
+In this chapter, the overlap between genes and genesets identified by GWAS and EWAS of eight complex traits is explored and the scenarios in which one would and would not expect to find overlap are modelled through simulations.
+
+\hypertarget{results-06}{%
+\section{Results}\label{results-06}}
+
+\hypertarget{study-data}{%
+\subsection{Study data}\label{study-data}}
+
+Traits were selected for which EWAS had been conducted with over 4500 samples and for which corresponding GWAS summary data were available. At the time of conducting these analyses, traits were identified using data from The EWAS Catalog (\textbf{Chapter \ref{ewas-catalog}}) that contained EWAS published before 2019. The EWAS of glucose and insulin were also added at a later date. Traits and study data information is in \textbf{Table \ref{tab:trait-data-tab-06}}.
+\begin{table}[!h]
+
+\caption{\label{tab:trait-data-tab-06}Study data}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{lllllll}
+\toprule
+trait & ewas-author & ewas-pmid & ewas-n & gwas-author & gwas-pmid & gwas-n\\
+\midrule
+\cellcolor{gray!6}{current versus never smoking} & \cellcolor{gray!6}{Joehanes R} & \cellcolor{gray!6}{27651444} & \cellcolor{gray!6}{9,389} & \cellcolor{gray!6}{Liu M} & \cellcolor{gray!6}{30643251} & \cellcolor{gray!6}{632,802}\\
+former versus never smoking & Joehanes R & 27651444 & 13,474 & Elsworth B & NA & 424,960\\
+\cellcolor{gray!6}{alcohol consumption per day} & \cellcolor{gray!6}{Liu C} & \cellcolor{gray!6}{27843151} & \cellcolor{gray!6}{9,643} & \cellcolor{gray!6}{Liu M} & \cellcolor{gray!6}{30643251} & \cellcolor{gray!6}{537,349}\\
+c-reactive protein & Ligthart S & 27955697 & 8,863 & Ligthart S & 30388399 & 204,402\\
+\cellcolor{gray!6}{body mass index} & \cellcolor{gray!6}{Wahl S} & \cellcolor{gray!6}{28002404} & \cellcolor{gray!6}{10,238} & \cellcolor{gray!6}{Yengo L} & \cellcolor{gray!6}{30124842} & \cellcolor{gray!6}{681,275}\\
+\addlinespace
+educational attainment & Karlsson Linner R & 29086770 & 10,767 & Lee & 30038396 & 766,345\\
+\cellcolor{gray!6}{insulin} & \cellcolor{gray!6}{Liu J} & \cellcolor{gray!6}{31197173} & \cellcolor{gray!6}{4,740} & \cellcolor{gray!6}{Manning AK} & \cellcolor{gray!6}{22581228} & \cellcolor{gray!6}{51,750}\\
+glucose & Liu J & 31197173 & 4,808 & Manning AK & 22581228 & 58,074\\
+\bottomrule
+\multicolumn{7}{l}{\textsuperscript{} Where gwas-pmid = NA, the GWAS were conducted as part of a UK Biobank GWAS pipeline within the}\\
+\multicolumn{7}{l}{Univeristy of Bristol's Integrative Epidemiology Unit and can be found on the OpenGWAS Project}\\
+\multicolumn{7}{l}{website (see Methods for more)}\\
+\end{tabular}}
+\end{table}
+\hypertarget{genomic-position-overlap}{%
+\subsection{Genomic position overlap}\label{genomic-position-overlap}}
+
+We divided the genome into 5591 500kb non-overlapping regions and mapped EWAS and GWAS signals for each trait to these regions (See \textbf{Methods} for more details). The number of regions that were identified by one study type and not the other was higher for each trait than the number of overlapping regions (\textbf{Figure \ref{fig:overlap-barplot}}). Further, the magnitude of the greatest GWAS effect estimate in each region had little ability to predict whether or not a DNA methylation site was likely to be identified in the same region (AUC range = 0.43-0.56, \textbf{Supplementary figure 1}).
+
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figure/06-ewas_gwas_comparison/all_traits_overlap_bar} 
+
+}
+
+\caption[Overlap between genomic positions identified by corresponding EWAS and GWAS]{\textbf{Overlap between genomic positions identified by corresponding EWAS and GWAS.} The genome was divided into 500Kb regions. Those where no probes on the HM450 array measured DNA methylation were excluded from the analysis. Regions were counted as being identified by a GWAS if one or more SNPs associated with the trait and as being identified by an EWAS if one or more CpGs associated with the trait. Neither = no EWAS or GWAS sites identified in the region, GWAS = GWAS sites only were identified, EWAS = EWAS sites only were identified, Both = Both EWAS and GWAS sites were identified, AC = alcohol consumption per day, BMI = body mass index, CsNs = current smokers vs never smokers, EA = educational attainment, FsNs = former smokers vs never smokers.}\label{fig:overlap-barplot}
+\end{figure}
+\hypertarget{assessing-power-sims}{%
+\subsection{Assessing power to detect shared annotations between GWAS and EWAS}\label{assessing-power-sims}}
+
+Genomic function and trait biology are not divided into discrete 500kb genomic chunks, thus GWAS and EWAS could still be identifying similar facets of trait biology without identifying the same genomic regions.
+
+We sought to assess whether the genes and genesets identified overlapped more than expected by chance, thus genomic positions were mapped to genes and genes to genesets (details in \textbf{Methods}). Overlap between genes identified was assessed using Fisher's exact test. Two methods for testing overlap between genesets were considered, one simply mapped genes to genesets and used Fisher's exact test in the same way as assessing overlap between identified genes. The other generated `enrichment scores' for each geneset and assessed correlation between the geneset enrichment scores across studies.
+
+Assuming all genetic effects on DNA methylation are proximal. If all DMPs that associated with a trait were on the pathway from SNP to disease, then EWAS and GWAS would be identifying genes from the exact same geneset (i.e.~genes that caused changes in the trait). The more DMPs that are identified because of confounding effects or reverse causation, the smaller the chance of overlap, assuming that causal and responsive genesets are distinct. This breaks down in the event of trans-mQTLs (genetic variants distal to the DNA methylation sites they influence). However, geneset-based analyses will likely capture this. In a scenario where no DMPs are causing phenotypic changes then any overlap in genes and genesets found would be entirely attributable to chance (ignoring potential feedback loops whereby the trait causes changes in genesets that it is affected by). We ran simulations to assess which scenarios the enrichment and annotation methods had power to detect whether there was more overlap than expected by chance. Power was also assessed across different annotation methods. A schematic of how the simulations were set up can be found in \textbf{Supplementary figure 2}.
+
+Under each scenario, the ability to predict whether EWAS were identifying, in part, the same set of genes as GWAS (`causal genes') compared to a random set of genes (`associated genes') was tested. As expected, predictive capacity increased as study power and the proportion of causal DMPs increased (\textbf{Figure \ref{fig:sim1-summ-plot}}, \textbf{Supplementary figure 3}). Predictive ability tended to increase as the number of identified genes increased, but this parameter was largely inconsequential when the proportion of causal DMPs was low (\textbf{Supplementary figure 3}). Performance was similar across annotation methods and between methods attempting to assess geneset overlap, with assessment of gene overlap performing better (\textbf{Figure \ref{fig:sim1-summ-plot}}). Overall there was more power to detect overlap in genes than overlap in genesets. Between the geneset methods, there was more power to detect correlation between enrichment scores than direct overlap in genesets. Therefore, gene overlap and correlation between geneset enrichment scores were taken forward for the empirical analyses. Assessing overlap of genesets using GO terms had slightly more power (\textbf{Figure \ref{fig:sim1-summ-plot}}), so these geneset annotations were taken forward to assess geneset overlap in the empirical analyses.
+
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figure/06-ewas_gwas_comparison/methods_test_gene_up_auc_plot_all_databases_summary} 
+
+}
+
+\caption[Power to detect overlap between genes and genesets identified by corresponding EWAS and GWAS]{\textbf{Power to detect overlap between genes and genesets identified by corresponding EWAS and GWAS.} Simulations were set up as illustrated in \textbf{Supplementary figure 2}. The area under receiver operator curves (AUC) was used to estimate the ability to distinguish between results generated when EWAS and GWAS were sampling, in part, from the same set of causal genes and results generated when EWAS was sampling random genes from the genome. The header of each set indicates the proportion of genes identified by the simulated EWAS that were set to be causal. or\_g = assessing overlap of genes, or\_p = assessing overlap of genesets, rho\_p = assessing correlation between geneset enrichment scores. go = gene ontology, ppi = protein-protein interaction database from EpiGraphDB. This is a summary of the results, full results can be found in \textbf{Supplementary figure 3}.}\label{fig:sim1-summ-plot}
+\end{figure}
+\hypertarget{gwas-ewas-overlap}{%
+\subsection{Gene and geneset overlap between GWAS and EWAS}\label{gwas-ewas-overlap}}
+
+For the eight traits used, the number of genes identified by EWAS and GWAS that overlapped was low and for two traits no genes identified by the studies overlapped (\textbf{Table \ref{tab:empirical-gene-tab}}). The number of genesets that overlapped was higher, peaking at 1,243 for GWAS and EWAS of body mass index (\textbf{Table \ref{tab:empirical-pathway-tab}}).
+
+The number of overlapping genes identified was no more than expected by chance for each trait (\textbf{Table \ref{tab:empirical-gene-tab}}). There was also no evidence that correlation between enrichment scores of the GO terms was greater than expected by chance (\textbf{Table \ref{tab:empirical-pathway-tab}}). As suggested by the previous simulations, this does not preclude the possibility that EWAS are identifying changes in DNA methylation that are upstream of phenotypic change.
+\begin{table}[!h]
+
+\caption{\label{tab:empirical-gene-tab}Overlap of genes identified by EWAS and GWAS}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{llllllll}
+\toprule
+trait & n-ewas-genes & n-gwas-genes & gene-overlap & observed-OR & expected-gene-overlap & expected-OR & p-diff\\
+\midrule
+\cellcolor{gray!6}{current versus never smoking} & \cellcolor{gray!6}{1,933} & \cellcolor{gray!6}{312} & \cellcolor{gray!6}{27} & \cellcolor{gray!6}{2.9} & \cellcolor{gray!6}{39} & \cellcolor{gray!6}{3.4} & \cellcolor{gray!6}{0.322}\\
+former versus never smoking & 282 & 320 & 9 & 6.4 & 7 & 3.4 & 0.022\\
+\cellcolor{gray!6}{alcohol consumption per day} & \cellcolor{gray!6}{361} & \cellcolor{gray!6}{196} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{2.6} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{2.4} & \cellcolor{gray!6}{0.908}\\
+c-reactive protein & 189 & 302 & 3 & 3.2 & 2 & 1.4 & 0.121\\
+\cellcolor{gray!6}{body mass index} & \cellcolor{gray!6}{232} & \cellcolor{gray!6}{3,221} & \cellcolor{gray!6}{23} & \cellcolor{gray!6}{2.0} & \cellcolor{gray!6}{40} & \cellcolor{gray!6}{3.1} & \cellcolor{gray!6}{0.052}\\
+\addlinespace
+educational attainment & 25 & 1,594 & 1 & 1.5 & 3 & 3.1 & 0.430\\
+\cellcolor{gray!6}{insulin} & \cellcolor{gray!6}{36} & \cellcolor{gray!6}{5} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{6.2} & \cellcolor{gray!6}{0.881}\\
+glucose & 15 & 50 & 0 & 0.0 & 0 & 6.4 & 0.820\\
+\bottomrule
+\multicolumn{8}{l}{\textsuperscript{} odds ratios (ORs) can be interpreted as the odds of an gene being identified by EWAS and a GWAS over the odds of a gene}\\
+\multicolumn{8}{l}{being identified by an EWAS but not by a GWAS.}\\
+\multicolumn{8}{l}{\textsuperscript{} expected-OR = the mean OR after repeating the analysis 1000 times, randomly sampling EWAS genes equal to the number}\\
+\multicolumn{8}{l}{identified in the empirical analysis.}\\
+\end{tabular}}
+\end{table}
+\begin{table}[!h]
+
+\caption{\label{tab:empirical-pathway-tab}Correlation of geneset enrichment scores between EWAS and GWAS}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{lllllll}
+\toprule
+trait & n-ewas-genes & n-gwas-genes & geneset-overlap & observed-cor & expected-cor & p-diff\\
+\midrule
+\cellcolor{gray!6}{current versus never smoking} & \cellcolor{gray!6}{1,933} & \cellcolor{gray!6}{312} & \cellcolor{gray!6}{1,053} & \cellcolor{gray!6}{0.200} & \cellcolor{gray!6}{0.22} & \cellcolor{gray!6}{0.034}\\
+former versus never smoking & 282 & 320 & 661 & 0.298 & 0.30 & 0.994\\
+\cellcolor{gray!6}{alcohol consumption per day} & \cellcolor{gray!6}{361} & \cellcolor{gray!6}{196} & \cellcolor{gray!6}{562} & \cellcolor{gray!6}{0.259} & \cellcolor{gray!6}{0.27} & \cellcolor{gray!6}{0.575}\\
+c-reactive protein & 189 & 302 & 600 & 0.265 & 0.26 & 0.798\\
+\cellcolor{gray!6}{body mass index} & \cellcolor{gray!6}{232} & \cellcolor{gray!6}{3,221} & \cellcolor{gray!6}{1,243} & \cellcolor{gray!6}{0.187} & \cellcolor{gray!6}{0.20} & \cellcolor{gray!6}{0.229}\\
+\addlinespace
+educational attainment & 25 & 1,594 & 215 & 0.105 & 0.13 & 0.173\\
+\cellcolor{gray!6}{insulin} & \cellcolor{gray!6}{36} & \cellcolor{gray!6}{5} & \cellcolor{gray!6}{16} & \cellcolor{gray!6}{0.093} & \cellcolor{gray!6}{0.12} & \cellcolor{gray!6}{0.376}\\
+glucose & 15 & 50 & 49 & 0.153 & 0.16 & 0.809\\
+\bottomrule
+\multicolumn{7}{l}{\textsuperscript{} For each geneset, odds of study genes being in the geneset divided by the odds the study genes not}\\
+\multicolumn{7}{l}{being in the geneset were assessed and correlation between these odds ratios are given here.}\\
+\multicolumn{7}{l}{\textsuperscript{} expected-cor = the mean correlation between odds ratios after repeating the analysis 1000 times,}\\
+\multicolumn{7}{l}{randomly sampling EWAS genes equal to the number identified in the empirical analysis}\\
+\multicolumn{7}{l}{\textsuperscript{} geneset-overlap indicates the number of gene ontology terms that map to both genes identified by the}\\
+\multicolumn{7}{l}{EWAS and GWAS.}\\
+\end{tabular}}
+\end{table}
+There were 16 GO term genesets that were commonly enriched (FDR \textless{} 0.1) for both the EWAS and GWAS traits. Of these zero were specific (contained under 100 genes). There were 51 specific genesets (geneset size \textless{} 100 genes) that did not overlap between studies of corresponding traits, for example, the genes identified by the GWAS of alcohol consumption were enriched for the ``ethanol catabolism'' pathway (geneset size = 12 genes), however none of the genes identified by the EWAS were present in this pathway.
+
+\hypertarget{architecture-sims}{%
+\subsection{Understanding architecture from geneset overlap}\label{architecture-sims}}
+
+The total number of genes and genesets that can be identified by GWAS and EWAS are unknown and the proportion of causal and non-causal genes EWAS will identify is also unknown. Thus it is uncertain how much overlap there will be between genes and genesets of corresponding GWAS and EWAS as sample sizes increase and more genes and genesets are discovered. Using the empirical data from \textbf{Table \ref{tab:empirical-pathway-tab}} to inform simulations, we sought to identify the proportion of overlap between causal and ``associated'' genes (genes that may or may not be causal) and how this is related to the number of genes yet to be discovered.
+
+For the simulations, three sets of genes were linked to each trait: genes identified by the GWAS (known GWAS genes), genes identified by the EWAS (known EWAS genes) and a random set of genes sampled from the total set of Ensembl gene IDs (excluding the genes identified by the EWAS and GWAS). Those genes identified by the GWAS and a number of the randomly selected set of genes was assigned as ``causal'' and the genes identified by the EWAS and the rest of the randomly selected set of genes was assigned as ``associated''. The overlap between the causal and associated genes as well as the number of total genes (causal and associated) was pre-determined. From these pools of causal and associated genes, \(X\) genes were sampled randomly to represent GWAS and EWAS genes, respectively. The number of genes, \(X\), sampled was equal to the number identified in the empirical GWAS and EWAS.
+
+Having generated the GWAS and EWAS genes, enrichment of GO terms was performed and the correlation between enrichment scores across all the terms was estimated. Under a single simulation scenario, the number of total genes and the proportion of causal and associated gene overlap was pre-determined. The known GWAS and EWAS genes was determined by those discovered from the empirical results, thus the random set of genes was varied to alter the total number of genes and proportion of overlap. The proportion of overlap was 0, 0.01, 0.1, 0.5 or 1 and the total number of genes equalled the total number of EWAS and GWAS genes discoved multiplied by 1, 2, 3, 5, 10 or 20. For each scenario, the analyses were repeated 1000 times for each trait. A schematic of the methods for these simulations can be found in \textbf{Supplementary figure 4} and it is described in full in the \textbf{Methods}.
+
+From the simulations, we determined, that for each trait, it is likely that if the number of genes discovered currently is near to the total genes to discover for these traits, the proportion of overlap between causal and associated genes is low. The results of all these simulations are represented in \textbf{Figure \ref{fig:arch-simulations-crp-fvns}} by simulations using empirical data from EWAS and GWAS of smoking (current vs.~never smokers) and body mass index. \textbf{Supplementary figures 5} shows the same results for the other traits. Each simulation was repeated 1000 times. Evidence for a difference in the empirically determined correlation of geneset enrichment scores and the mean correlation of geneset enrichment scores across simulations was assessed using a z-test for difference. There was some evidence against 53 simulation scenarios (FDR \textless{} 0.05). Across the traits, the scenarios that were least likely tended to be when the number of genes yet to discover was low, and the overlap between causal and associated genes was high, except for former vs.~never smoking (\textbf{Supplementary figures 5}), highlighting architecture differences between traits.
+
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figure/06-ewas_gwas_comparison/architecture_sims_crp_fvns_only_correlation_of_pathway_enrichment_scores} 
+
+}
+
+\caption[Simulations to understand the likely number of genes still to identify in EWAS and GWAS of c-reactive protein and smoking (former vs.~never smokers) under different trait architectures]{\textbf{Simulations to understand the likely number of genes still to identify in EWAS and GWAS of c-reactive protein and smoking (former vs.~never smokers) under different trait architectures}. Simulations were set up as illustrated in \textbf{Supplementary figure 4}. Correlation of geneset enrichment scores from empirical data (\textbf{Table \ref{tab:empirical-pathway-tab}}), is shown as a red dashed line. Box plots show the range of enrichment score correlations from 1000 simulations using the parameters indicated. The number of causal and associated genes, as well as the overlap between these genes were varied. N\textsubscript{KEG} = number of known EWAS genes, N\textsubscript{KEG} = number of known GWAS genes, N\textsubscript{KTG} = number of known total genes (N\textsubscript{KEG} + N\textsubscript{KGG}). By way of an example, when N\textsubscript{KTG} = 557 and the ratio of causal and associated genes relative to N\textsubscript{KTG} is 1:1, the number of causal genes in the simulations will be 557 and the number of associated genes in the simulations will be 557. Scenarios which lie close to the empirical result (red dashed line) are more likely to reflect the true underlying number of genes related to a trait and the true overlap between the causal and associated genes. Therefore, for both current vs.~never smoking and for body mass index, one could say that the overlap of causal and associated genes is likely to be below 0.5, unless there are many more genes to identify in EWAS and GWAS.}\label{fig:arch-simulations-crp-fvns}
+\end{figure}
+\hypertarget{matching-gwas-to-ewas}{%
+\subsection{Overlap of non-corresponding EWAS and GWAS}\label{matching-gwas-to-ewas}}
+
+It may be the case that EWAS of one trait are actually more closely related to GWAS of another trait. For example, if DNA methylation changes related to BMI were mediating the effect of BMI on changes in metabolites, then one could expect to see greater correspondence in identified genes and genesets with GWAS of those metabolites.
+
+To test if this was the case for any of the EWAS in this study we extracted 1886 GWAS with SNPs associated at 5x10\textsuperscript{-8} with a sample size above 5000 from the IEU OpenGWAS Project (187). For each GWAS and the eight EWAS, enrichment scores were calculated using geneset enrichment analysis and correlation between the enrichment scores was calculated, as in previous analyses.
+
+Across all pairwise comparisons, correlations between enrichment scores ranged from -0.014 to 1 and had a mean of 0.12 (\textbf{Supplementary figure 6}). The mean correlation between GWAS traits and EWAS traits was 0.23, which was slightly higher than the correlations between just GWAS traits (0.12). Amongst just GWAS results, there was evidence that 14653 pairwise enrichment score correlations were greater than the the mean (FDR \textless{} 0.05). However, there was little evidence that any pairwise correlations between enrichment scores derived from EWAS and GWAS were greater than the mean correlation (FDR \textgreater{} 0.05).
+
+This suggests that the signal from EWAS is not capturing aspects of any specific factor that impacts the aetiology of any of the eight traits of interest.
+
+\hypertarget{discussion-06}{%
+\section{Discussion}\label{discussion-06}}
+
+Several EWAS papers have compared their findings with those of the corresponding trait GWAS (183,188--191), but it's unknown if any overlap that might occur should be attributed to shared underlying architectures or if it occurs by chance. In this study, the genes and genesets identified by eight large EWAS (N\textgreater4500) were not identified in their corresponding GWAS any more than expected by chance. Simulations suggested these EWAS could still be identifying aspects of trait aetiology, but it's likely most DMPs identified are due to confounding or reverse causation. Further simulations suggested that the overlap between genes that impact phenotypic variation and those that might be identified through confounded analyses or because of reverse causation is likely to be low. However, if the number of genes still to identify in EWAS and GWAS is high, it is possible that the overlap between ``causal'' and ``associated'' genes could be high also.
+
+\hypertarget{overlap-expected}{%
+\subsection{Overlap expected}\label{overlap-expected}}
+
+GWAS identifies the effects of genetic variation on complex traits. These effects are less likely to be confounded than associations estimated between observational phenotypes (92,93). Thus, one would expect overlap between genes and gemesets identified by EWAS and GWAS of the same trait if the DMPs identified are also of aetiological relevance. Assuming mapping of DMPs and SNPs to genes is correct, the genes identifed by EWAS may cause variation in complex traits without overlapping with genes identified in GWAS. Under the scenario where the effect of a SNP on a complex trait is mediated by a distal DNA methylation site (or the gene that site is tagging), GWAS and EWAS may identify genes that do not overlap, but that are along the same causal pathway from genome to complex trait. One plausible mechanism for which trans-mQTLs may act is via transcription factors. A trans-mQTL may influence the transcription of a nearby transcription factor then the transcription factor could cause a change in DNA methylation at distal sites. One study has provided evidence this may occur frequently (119). In this scenario the genes proximal to the identified SNP and DMP would lie on the same causal pathway and so would likely be part of the same genesets. This is likely not the only plausible mechanism of trans-mQTL function though. DNA methylation may also mediate non-genetic effects, allowing for causal DMPs to identified at genes not near pertinent genetic variation. However, there is strong evidence that the majority of DNA methylation sites have a heritable component. As such any effect of DNA methylation on a trait could be influenced by genetic variation. If DNA methylation is influenced by proximal genetic variants then the discovery of the same gene(s) will be a function of GWAS and EWAS power. If only distal genetic variants influence the DNA methylation site, then the overlap of genesets is a function of regulatory mechanisms and power. These two issues, and likely others, may introduce some noise into the results. However, there is overwhelming evidence that confounding and reverse causation are pervasive across observational epidemiology (192--195) as well as within EWAS (1,196). This suggests that the evidence that EWAS and GWAS are not identifying any more overlapping genes and genesets than expected by chance, is likely due to identified DMPs being mostly being the result of reverse causation or confounding.
+
+As the simulations showed, even if an EWAS identifies DMPs that cause a change in the trait, if the majority of DMPs identified are due to confounding or reverse causation then the overlap will be indistinguishable to the overlap expected by chance. Thus, our empirical results do not preclude the possibility that some DMPs identified by the EWAS are pertinent to trait aetiology.
+
+For smoking and body mass index, work has already suggested the traits cause changes in DNA methylation rather than \emph{vice versa} (70,73), supporting our findings here. Other studies also make our results for body mass index expected. One study suggested DNA methylation changes capture different components of body mass index variance than genetic variation (60). Another estimated the percentage of trait variance captured by DNA methylation was 75.7\% when accounting for genotype (126).
+
+If EWAS is discovering some DMPs that influence genes that cause changes in the trait of interest, study power is the limiting factor for detecting overlap. For traits with a weak polygenic architecture (few genes explain most of the heritability), such as gene expression (197,198), discovering almost total overlap would be inevitable even with modest sample sizes.
+
+\hypertarget{little-overlap-with-any-gwas}{%
+\subsection{Little overlap with any GWAS}\label{little-overlap-with-any-gwas}}
+
+Little correlation was found between geneset enrichment scores for EWAS and GWAS of different traits. In a scenario where DNA methylation was capturing a specific facet of a trait one might expect correlation between EWAS of the original trait and GWAS of that facet. For example, if changes in DNA methylation associated with smoking were mostly responsible the effect of smoking on lung cancer then one would expect to observe an overlap between the genes and pathways identified by an EWAS of smoking and GWAS of lung cancer. This specific example has been examined before, with studies suggesting either methylation at two sites mediate over 30\% of the effect of smoking on lung cancer (199) or that there is little evidence for a causal effect of DNA methylation on lung cancer (200). The results of either study suggest most sites will not mediate the effect of smoking on lung cancer and thus there would be little overlap between genes and pathways of an EWAS of smoking and a GWAS of lung cancer. This is corroborated by the results of our study: there was little evidence that correlation of pathway enrichment scores between the two, 0.15, was greater than the mean correlation enrichment score across all GWAS-GWAS and GWAS-EWAS correlations, 0.12 (FDR \textgreater{} 0.05).
+
+It is important to note that overlap between EWAS and GWAS genesets may be missed even if this mediation model is true for various traits. As shown in the simulations, detecting this overlap depends on individual study power as well as the underlying genetic architecture of the trait. There are further things that may limit detection of geneset overlap that is discussed later on.
+
+\hypertarget{information-gained}{%
+\subsection{Information gained from EWAS}\label{information-gained}}
+
+The fact that genes and pathways identified from GWAS and EWAS of the same traits are seemingly very separate suggests we are gaining new information from EWAS, even if interpreting the new information may be difficult. Key to interpreting the EWAS results would be to try and disentangle whether the EWAS results are likely due to confounding. Interpreting EWAS can also be difficult due to cell type heterogeneity and the complexity of mechanisms which mediate DNA methylation changes (1,18,45,78,79). Due to these difficulties we are not suggesting that EWAS definitely help increase our biological understanding of complex traits. Rather, DNA methylation is capturing different biological information. Indeed biological information may not be important to attain translational impact from DNA methylation studies. DNA methylation may aid diagnoses by acting as a reliable biomarker or could help predict various health outcomes (49).
+
+There is also benefit to understanding the biological consequences of a trait, something that EWAS might help identify and GWAS will not (at least not directly). This does depend on further research to understand how changes in DNA methylation downstream to complex trait variation is relevant to human health though. Further, establishing where exactly DNA methylation may lie on the causal pathway may be difficult and work is ongoing to discover this for various traits (117). Use of causal inference methods such as Mendelian randomization (92,93,115) have been applied, but this still comes with various caveats (115,117). Some studies also try and confirm effects experimentally (66,200) and use previous biological knowledge of the trait to try and understand EWAS results.
+
+However, some of the biological knowledge of complex traits relating to genes and pathways comes from GWAS of those traits. This study suggests that EWAS is unlikely to identify many genes proximal to genetic variation pertinent to the trait of interest and further the genesets are unlikely to overlap with those identified in GWAS. Therefore, comparison of EWAS results to those of a corresponding GWAS is unlikely to yield much insight. This may make inference from EWAS difficult, yet it seems likely the interpretability of DNA methylation studies will continue to improve over the coming years, as understanding the underlying epigenetic architecture of complex traits could still provide translational benefits (49).
+
+\hypertarget{limitations-06}{%
+\subsection{Limitations}\label{limitations-06}}
+
+As discussed, detecting gene or pathway overlap depends on the genetic and DNA methylation architecture of the trait. Here we have only studied eight traits, two of which are smoking behaviour traits. ADD HERE ABOUT RG etc. This means we cannot generalise our results to all or even the majority of complex traits. These analyses could be repeated by setting a less restrictive sample size limit, but we felt it would make our results less reliable and impossible in many circumstances where too few DNA methylation sites had been discovered by EWAS. As sample sizes increase and technologies measuring more DNA methylation sites become more common, it would be interesting to repeat the analysis.
+
+Often in GWAS and EWAS, prioritisation of SNPs and DMPs identified occurs before functional mapping. Prioritsation for both studies may be informed by prior knowledge of the trait, prior understanding of molecular biology, predicted consequences of observed variation (for example Ensembl's Variant Effect Predictor (201)), replication of findings or a number of other methods. In this study, we did not perform any prioritisation (besides the conventional P value threshold cutoffs) and thus may have increased the amount of ``noise'' in the signal taken forward for functional annotation. Unfortunately, this extra prioritisation of sites is not tractable when comparing many different association studies and may reduce power to detect any overlap between genes and pathways. However, added noise is unlikely to prevent detection of true overlap if that true overlap is substantial, as shown by our simulations (\textbf{\ref{fig:sim1-summ-plot}}).
+
+The nearest gene, by chromosomal position, to a DMP or SNP is not necessarily the gene of interest. SNPs may have effects on genes distal to their position (202) and the correlation between genetic variants inflates associations of variants proximal to the true causal variant. Further, the correlation structure in DNA methylation data may induce associations between complex traits at a site far from where variation in DNA methylation causes complex trait changes (202). Therefore, the mapping of DMPs and SNPs to genes in this study could likely be improved. The ``correct'' method for this mapping has not yet been established though and even though some tools are available (such as eQTL studies), there are caveats to them too (203,204).
+
+Our understanding of molecular pathways is not complete and thus attributing genes to certain pathways may be erroneous. However, our results remained consistent across four different methods that annotate genes to pathway, suggesting differences in mapping genes to pathways should not impact our conclusions.
+
+Biological information gained from EWAS and GWAS may be defined in various ways and depending on the interpretation of this, one could alter methods used to extract biological information. However, first exploring the genomic regions identified and then mapping these to potentially relevant biological pathways is common amongst GWAS and EWAS (166,178,181--184,205) and gave a simple way to compare the information from the two studies.
+
+\hypertarget{conclusion-06}{%
+\section{Conclusion}\label{conclusion-06}}
+
+Overall this study provides evidence that, for eight complex traits, there is little overlap between genes and genesets identified by EWAS and GWAS of the same trait. Given the differences in properties between DNA methylation and genetic variants the results presented in this study may apply to other traits, but this is still to be confirmed. Where lack of overlap between genes and genesets is found, it suggests EWAS may be providing new biological information, however, the interpretability of EWAS is still in question and with current methods it is hard to determine if EWAS results are attributable to confounding or reverse causation. Regardless, as causal inference within epigenetic epidemiology improves, it seems likely we will be able to interpret this apparent gain in biological information.
+
+\hypertarget{methods-06}{%
+\section{Methods}\label{methods-06}}
+
+\hypertarget{samples-06}{%
+\subsection{Samples}\label{samples-06}}
+
+EWAS summary data and GWAS summary data were extracted from the EWAS Catalog (\url{www.ewascatalog.org}) and the \href{https://gwas.mrcieu.ac.uk/}{IEU Open GWAS Project} (95,206) respectively. For traits that had multiple EWAS with a sample size of greater than 4500, the EWAS with the largest sample size was used, the same was applied to the GWAS. The sample size, first authors and PubMed IDs can be found in \textbf{Table \ref{tab:trait-data-tab-06}}.
+
+\hypertarget{overlapping-genomic-regions}{%
+\subsection{Overlapping genomic regions}\label{overlapping-genomic-regions}}
+
+Each chromosome was divided into 500Kb blocks, each block that did not contain a DNA methylation site measured by the Illumina Infinium HumanMethylation450 BeadChip was removed. For each trait, the genome blocks that had one or more EWAS sites and one or more GWAS sites that reached the set p-value threshold were tallied. The p-value threshold was set at a lenient P \textless{} 1e-05 or if it was lower, the maximum reported p-value in the EWAS of that trait.
+
+\hypertarget{mapping-sites-to-genes-and-genesets}{%
+\subsection{Mapping sites to genes and genesets}\label{mapping-sites-to-genes-and-genesets}}
+
+The R package biomaRt (207) was used to extract Ensembl gene ids along with chromosome positions of all genes. The package was also used to extract gene ontology (GO) terms (208,209) and map these to the Ensembl gene ids. The R package limma (86) was used to extract KEGG terms (210,211,211) and these were mapped to Ensembl gene ids.
+
+Protein-protein interaction data, which includes data from StringDB (212) and IntAct (213), and terms from the Reactome database (214) were extracted from \href{http://www.epigraphdb.org/}{EpiGraphDB} (215).
+
+CpG sites associated with traits at P \textless{} 1x10\textsuperscript{-7} and SNPs associated with traits at P \textless{} 5x10\textsuperscript{-8} were taken forward to be mapped to genes. The correlation structure present in genetic and DNA methylation data makes it difficult to ascertain the precise site driving any signal observed. Thus, no filtering based on correlation between variants or CpG sites was performed.
+
+For each CpG site identified by EWAS and used in the analyses, it was mapped to the nearest gene (Ensembl gene ID) by chromosome position. If a CpG site lay within the bounds of multiple genes then the site was mapped to all of those genes. Therefore, one CpG site could map to multiple genes and one gene could map to multiple CpG sites. The same gene mapping approach was used for variants identified in GWAS. The positions of CpG sites were extracted using the R package meffil (173).
+
+\hypertarget{methods-for-assessing-overlap}{%
+\subsection{Methods for assessing overlap}\label{methods-for-assessing-overlap}}
+
+To test the overlap between genes identified we generated ORs as so
+\begin{equation}
+    OR_{gene-overlap} = \frac{odds_{EG}} {odds_{EnG}}
+    \label{eq:overlap-of-genes}
+\end{equation}
+where \(odds_{EG}\) is the odds of a gene being identified in EWAS and GWAS and \(odds_{EnG}\) is the odds of a gene being identified in EWAS, but not in GWAS.
+
+Genes may map to genesets by chance. Often in EWAS and GWAS, enrichment for any genesets are tested by assessing whether the genes identified are more common in any geneset than expected by chance. We tested mapping genes to genesets and directly assessing overlap like in Equation \eqref{eq:overlap-of-genes} against correlation between enrichment scores for each geneset. Enrichment scores are also odds ratios generated in a similar way to those in Equation \eqref{eq:overlap-of-genes}:
+\begin{equation}
+    OR_{geneset-enrichment} = \frac{odds_{GS}} {odds_{nGS}}
+    \label{eq:geneset-enrichment}
+\end{equation}
+where \(odds_{GS}\) is the odds of a gene being annotated to the geneset and \(odds_{nGS}\) is the odds of a gene not being annotated to the geneset.
+
+For many genesets, genes annotated to that geneset would not be identified in an EWAS or GWAS, causing the enrichment score for many genesets to be zero. Further, some genesets would have very large enrichment scores. This made the relationship between enrichment scores generated for the EWAS results and the enrichment scores generated for the GWAS non-normal. Thus, to examine the relationship between the two, we generated Spearman's rank correlation coefficients for the logarithm of enrichment scores.
+
+\hypertarget{testing-power-to-detect-overlap}{%
+\subsection{Testing power to detect overlap}\label{testing-power-to-detect-overlap}}
+
+Simulations were setup as seen in \textbf{Supplementary figure 2}. The simulations iterated over each set of parameters 1000 times. For each iteration, two sets of genes, GWAS genes and EWAS genes, were sampled from the total set of genes. Each iteration assessed gene overlap and geneset overlap between these gene sets using Equation \eqref{eq:overlap-of-genes}. Equation \eqref{eq:geneset-enrichment} was used to generate enrichment scores for each gene set and then correlation between the enrichment scores was assessed.
+
+GWAS genes were only sampled from a set of ``causal'' genes and a proportion of EWAS genes were sampled from the set of causal genes and the rest from the set of ``associated'' genes. Receiver operator characteristic (ROC) curves were generated to assess whether it was possible to predict the gene overlap, geneset overlap and enrichment score correlations for scenarios where the proportion of causal EWAS genes was greater than zero from the scenario where the proportion of causal EWAS genes was zero. The area under these ROC curves were then calculated in each case.
+
+These simulations were repeated for each geneset and protein-protein interaction database. The protein-protein interaction and Reactome databases all map only to protein coding genes, whereas the GO and KEGG databases map to all Ensembl gene IDs. To compare predictive ability across annotation methods, we excluded Ensembl gene IDs that were not protein coding genes. We also compared the performance of models when mapping to all Ensembl gene IDs and protein coding genes only for GO and KEGG databases. (\textbf{Supplementary figure 7}).
+
+From these simulations, the best method to assess geneset overlap, and the best geneset annotation method to assess that overlap and the scenarios (i.e.~study power required, proportion of DMPs that need to be causal) in which we expect to be able to detect overlap could be deduced.
+
+\hypertarget{empirical-analyses}{%
+\subsection{Empirical analyses}\label{empirical-analyses}}
+
+The DNA methylation sites identified in the EWAS at P \textless{} 1x10\textsuperscript{-7} and the SNPs identified in the GWAS at P \textless{} 5x10\textsuperscript{-8} were mapped to genes and genesets. Overlap between genes was calculated as before (Equation \eqref{eq:overlap-of-genes}), enrichment scores were generated and correlated as described above.
+
+Expected overlap was generated to compare to the observed results. For this, random positions were chosen in the genome equal to the number of DMPs identified in the EWAS. These genes were then used to assess gene and geneset overlap as for the observed results. This was repeated 1000 times to generate a null distribution and a z-test was used to assess whether there was a difference between the observed results and the mean of the null distribution.
+
+There is a correlation structure within DNA methylation data (216), we hypothesised this might contribute to the observed results. By randomly sampling positions from the genome, a new correlation structure between DMPs would be generated. We tested whether sampling the genome in a non-random way, aimed at keeping some correlation structure, altered the results. To generate new data whilst attempting to keep a similar correlation structure, a fixed number of base pairs were added to each of the DMPs identified in the empirical analysis such that
+\begin{equation}
+    BP_{new} = BP_{dmp} + max(G) \times I
+    \label{eq:generating-new-positions}
+\end{equation}
+where \(BP_{new}\) = base pair of new site, \(BP_{dmp}\) = base pair of DMP identified in the EWAS, \(G\) = gene size, and \(I\) = iteration.
+
+If \(BP_{new}\) extended beyond the end of a chromosome the position moved onto the next chromosome, with positions moving past the end of chromosome 22, being moved to chromosome 1.
+
+Overall, the overlap between genes and genesets identified by EWAS and GWAS did not change across null distribution sampling methods (\textbf{Supplementary table X}).
+
+\hypertarget{architecture-sims-method}{%
+\subsection{Understanding architecture from geneset overlap}\label{architecture-sims-method}}
+
+Simulations were setup as illustrated in \textbf{Supplementary figure 4}. Here we describe simulations for a single trait. These were repeated for all traits. Firstly, SNPs identified in GWAS and DMPs identified in EWAS were mapped to genes as described in \protect\hyperlink{empirical-analyses}{Empirical analyses}. Genes were then randomly sampled from Ensembl gene IDs and were assigned as either ``causal'', meaning changes in that gene effect variation in the phenotype across individuals, or ``associated'', meaning changes in the gene are associated with the phenotype across individuals, but the nature of association is not known. The empirically identified (or ``known'') GWAS genes (\(KGG\)) were added to the list of causal genes and the empirically identified (or ``known'') EWAS genes (\(KEG\)) were added to the list of associated genes. These combined set of causal and associated genes can be thought of as all the genes related to the trait of interest. A number of genes, equal to the number of \(KGG\) (\(N_{KGG}\)), was sampled from the causal set of genes and assigned to be the ``GWAS genes'' in the simulations. A number of genes, equal to the number of \(KEG\) (\(N_{KEG}\)), was sampled from the associated set of genes and assigned to be the ``EWAS genes'' in the simulations. Then geneset enrichment analyses for both the EWAS and GWAS genes were performed (equation \eqref{eq:geneset-enrichment}) and correlation between the enrichment scores was assessed as previously. In these simulations, the number of total genes was varied and the number of causal and associated genes was always set to be half of the total number of genes related to a trait. The total number of genes was proportional to the total number of known genes (\(N_{KTG} = N_{KGG} + N_{KEG}\)). The smallest number of total genes for any simulation was double the number of \(N_{KTG}\) and the greatest number of total genes was 20 times \(N_{KTG}\). The other variable set to vary between simulations was the proportion of overlap between causal and associated genes. This varied between zero and one, where zero represented the scenario where only the overlap in \(KGG\) and \(KEG\) would be present in the overlap between causal and associated genes and one represented the scenario where all causal and associated genes were the same. For each simulation scenario, the simulations were repeated 1000 times and box plots show the range of output from those 1000 repeats.
+
+\hypertarget{assessing-the-correlation-between-geneset-enrichment-results}{%
+\subsection{Assessing the correlation between geneset enrichment results}\label{assessing-the-correlation-between-geneset-enrichment-results}}
+
+GWAS were extracted from the \href{https://gwas.mrcieu.ac.uk/}{IEU Open GWAS Project} with the following criteria:
+\begin{itemize}
+\tightlist
+\item
+  Sample size \textgreater{} 5000
+\item
+  European population
+\item
+  For binary traits, cases and controls had to be greater than 500
+\item
+  Full genome-wide results, i.e.~not just associations between a molecular trait and variants in cis.
+\end{itemize}
+For each GWAS, all SNPs that associated with the trait at P\textless5x10\textsuperscript{-8} were extracted. CpGs associated with the eight EWAS at P\textless1x10\textsuperscript{-7} were then extracted and mapped to genes. For each study, enrichment scores were generated for GO terms as before (Equation \eqref{eq:geneset-enrichment}) and correlation between them assessed.
+
+When assessing whether gene overlap or geneset enrichment score correlations were greater than the mean, a z-test was performed. As multiple tests were performed we applied the Benjamini-Hochberg method (217) to limit the false discovery rate
+
+\hypertarget{code-availability}{%
+\subsection*{Code availability}\label{code-availability}}
+\addcontentsline{toc}{subsection}{Code availability}
+
+Code used to run the analyses is available here: \url{https://github.com/thomasbattram/something}
+
+Analyses were completed using R (version 3.6.2) and Python (version 3.7.4).
 
 \hypertarget{dnam-lung-cancer-mr}{%
 \chapter{Appraising the causal relevance of DNA methylation for risk of lung cancer}\label{dnam-lung-cancer-mr}}
@@ -1525,11 +1859,11 @@ The results contrast with previous observational and mediation analysis, which h
 \hypertarget{introduction-07}{%
 \section{Introduction}\label{introduction-07}}
 
-Lung cancer is the most common cause of cancer-related death worldwide (181). Several DNA methylation changes have been recently identified in relation to lung cancer risk (124,182,183). However, these epigenetic marks are sensitive to reverse causation, being affected by cancer processes (184), and are also prone to confounding, for example by socio-economic and lifestyle factors (140,185).
+Lung cancer is the most common cause of cancer-related death worldwide (218). Several DNA methylation changes have been recently identified in relation to lung cancer risk (124,199,219). However, these epigenetic marks are sensitive to reverse causation, being affected by cancer processes (220), and are also prone to confounding, for example by socio-economic and lifestyle factors (140,221).
 
-One CpG site, cg05575921 within the aryl hydrocarbon receptor repressor (\emph{AHRR}) gene, has been consistently replicated in relation to both smoking (68) and lung cancer (104,124,182) and functional evidence suggests that this region could be causally involved in lung cancer (141). However, the observed association between methylation and lung cancer might simply reflect separate effects of smoking on lung cancer and DNA methylation, i.e.~the association may be a result of confounding (107), including residual confounding after adjustment for self-reported smoking behaviour (186,187). Furthermore, recent EWAS of lung cancer have revealed additional CpG sites which may be causally implicated in development of the disease (124,182).
+One CpG site, cg05575921 within the aryl hydrocarbon receptor repressor (\emph{AHRR}) gene, has been consistently replicated in relation to both smoking (68) and lung cancer (104,124,199) and functional evidence suggests that this region could be causally involved in lung cancer (141). However, the observed association between methylation and lung cancer might simply reflect separate effects of smoking on lung cancer and DNA methylation, i.e.~the association may be a result of confounding (107), including residual confounding after adjustment for self-reported smoking behaviour (195,222). Furthermore, recent EWAS of lung cancer have revealed additional CpG sites which may be causally implicated in development of the disease (124,199).
 
-As discussed in \textbf{Section \ref{establishing-causality}}, Mendelian randomization (MR) can be used to help infer causality in associations between DNA methylation and complex traits (115,180,188) under a paradigm that largely mitigates the problem of confounding if certain assumptions are met (\textbf{Figure \ref{fig:mr-diagram}}).
+As discussed in \textbf{Section \ref{establishing-causality}}, Mendelian randomization (MR) can be used to help infer causality in associations between DNA methylation and complex traits (115,180,223) under a paradigm that largely mitigates the problem of confounding if certain assumptions are met (\textbf{Figure \ref{fig:mr-diagram}}).
 
 In this study, I performed a meta-analysis of four lung cancer EWAS (918 case-control pairs) from prospective cohort studies to identify CpG sites associated with lung cancer risk and applied MR to investigate whether the observed DNA methylation changes at these sites are causally linked to lung cancer.
 
@@ -1568,7 +1902,7 @@ NSHDS is an ongoing prospective cohort and intervention study intended for healt
 \hypertarget{methods-ewas-meta-analysis}{%
 \subsection{EWAS Meta-analysis}\label{methods-ewas-meta-analysis}}
 
-To quantify the association between the methylation level at each CpG and the risk of lung cancer conditional logistic regression models were fitted for beta values of methylation (which ranges from 0 (no cytosines methylated) to 1 (all cytosines methylated)) on lung cancer status for the four studies. The cases and controls in each study were matched, details can be found above. Surrogate variables were computed in the four studies using the SVA R package (189) and the proportion of CD8+ and CD4+ T cells, B cells, monocytes, natural killer cells and granulocytes within whole blood were derived from DNA methylation (78). The following EWAS models were included in the meta-analysis: Model 1 -- unadjusted; Model 2 -- adjusted for 10 surrogate variables (SVs); Model 3 -- adjusted for 10 SVs and derived cell proportions. EWAS stratified by smoking status was also conducted (never (N=304), former (N=648) and current smoking (N=857)). For Model 1 and Model 2, the case-control studies not matched on smoking status (EPIC-Italy and NOWAC) were adjusted for smoking.
+To quantify the association between the methylation level at each CpG and the risk of lung cancer conditional logistic regression models were fitted for beta values of methylation (which ranges from 0 (no cytosines methylated) to 1 (all cytosines methylated)) on lung cancer status for the four studies. The cases and controls in each study were matched, details can be found above. Surrogate variables were computed in the four studies using the SVA R package (224) and the proportion of CD8+ and CD4+ T cells, B cells, monocytes, natural killer cells and granulocytes within whole blood were derived from DNA methylation (78). The following EWAS models were included in the meta-analysis: Model 1 -- unadjusted; Model 2 -- adjusted for 10 surrogate variables (SVs); Model 3 -- adjusted for 10 SVs and derived cell proportions. EWAS stratified by smoking status was also conducted (never (N=304), former (N=648) and current smoking (N=857)). For Model 1 and Model 2, the case-control studies not matched on smoking status (EPIC-Italy and NOWAC) were adjusted for smoking.
 
 An inverse-variance weighted fixed effects meta-analysis was performed of the EWAS (918 case-control pairs) using the \href{http://csg.sph.umich.edu/abecasis/metal/}{METAL software}. Direction of effect, effect estimates and the I\textsuperscript{2} statistic were used to assess heterogeneity across the studies in addition to effect estimates across smoking strata (never, former and current). All sites identified at a false discovery rate (FDR) \textless{} 0.05 in Model 2 and 3 were also present in the sites identified in Model 1. The effect size differences between models for all sites identified in Model 1 were assessed by a Kruskal-Wallis test and a post-hoc Dunn's test. There was little evidence for a difference (P \textgreater{} 0.1), so to maximize inclusion into the MR analyses sites identified in the unadjusted model (Model 1) were taken forward.
 
@@ -1585,11 +1919,11 @@ In the first sample, mQTL-methylation effect estimates (\(\beta_{GP}\)) for each
 \hypertarget{sample-2-transdisciplinary-research-in-cancer-of-the-lung-and-the-international-lung-cancer-consortium}{%
 \subsubsection{Sample 2: Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium}\label{sample-2-transdisciplinary-research-in-cancer-of-the-lung-and-the-international-lung-cancer-consortium}}
 
-In the second sample, summary data was extracted from a GWAS meta-analysis of lung cancer risk conducted by the Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium (TRICL-ILCCO) (29,863 cases, 55,586 controls) for individuals genotyped using the Illumina Infinium OncoArray-500K BeadChip (Illumina Inc.~San Diego, CA) and independent samples for which prior genotyping was performed (190). They were used to obtain mQTL-lung cancer estimates (\(\beta_{GD}\)).
+In the second sample, summary data was extracted from a GWAS meta-analysis of lung cancer risk conducted by the Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium (TRICL-ILCCO) (29,863 cases, 55,586 controls) for individuals genotyped using the Illumina Infinium OncoArray-500K BeadChip (Illumina Inc.~San Diego, CA) and independent samples for which prior genotyping was performed (225). They were used to obtain mQTL-lung cancer estimates (\(\beta_{GD}\)).
 
-For each independent mQTL (r\textsuperscript{2} \textless{} 0.01), I calculated the log odds ratio (OR) per SD unit increase in methylation by the formula \(\frac{\beta_{GD}} {\beta_{GP}}\) (Wald ratio). Standard errors were approximated by the delta method (191). Where multiple independent mQTLs were available for one CpG site, these were combined in a fixed effects meta-analysis after weighting each ratio estimate by the inverse variance of their associations with the outcome. Heterogeneity in Wald ratios across mQTLs was estimated using Cochran's Q test, which can be used to indicate horizontal pleiotropy (192). Differences between the observational and MR estimates were assessed using a Z-test for difference.
+For each independent mQTL (r\textsuperscript{2} \textless{} 0.01), I calculated the log odds ratio (OR) per SD unit increase in methylation by the formula \(\frac{\beta_{GD}} {\beta_{GP}}\) (Wald ratio). Standard errors were approximated by the delta method (226). Where multiple independent mQTLs were available for one CpG site, these were combined in a fixed effects meta-analysis after weighting each ratio estimate by the inverse variance of their associations with the outcome. Heterogeneity in Wald ratios across mQTLs was estimated using Cochran's Q test, which can be used to indicate horizontal pleiotropy (227). Differences between the observational and MR estimates were assessed using a Z-test for difference.
 
-If there was evidence for an mQTL-CpG site association in ARIES in at least one time-point, it was assessed whether the mQTL replicated across time points in ARIES (FDR \textless{} 0.05, same direction of effect). Further, this association was re-analysed using linear regression of methylation on each genotyped SNP available in an independent cohort (NSHDS), using rvtests (193). The same NSHDS samples on which DNA methylation was measured were genotyped using the Illumina Infinium OncoArray-500k BeadChip (Illumina Inc.~San Diego, CA) and quality control parameters were applied under the recently published TRICL-ILCCO GWAS study on lung cancer (190). Genetic imputation was performed on these samples using the Haplotype Reference Consortium (HRC) Panel (release 1) (183) through the Michigan Imputation Server (194). Replicated mQTLs were included where possible to reduce the effect of winner's curse using effect estimates from ARIES. The instrument strength of the mQTLs were assessed by the variance explained in methylation by each mQTL (r\textsuperscript{2}) as well as the F-statistic in ARIES \textbf{Table \ref{tab:sup-tab1-07}}. The power to detect the observational effect estimates in the two-sample MR analysis was assessed \emph{a priori}, based on an alpha of 0.05, sample size of 29,863 cases and 55,586 controls (from TRICL-ILCCO) and calculated variance explained (r\textsuperscript{2}). \linebreak
+If there was evidence for an mQTL-CpG site association in ARIES in at least one time-point, it was assessed whether the mQTL replicated across time points in ARIES (FDR \textless{} 0.05, same direction of effect). Further, this association was re-analysed using linear regression of methylation on each genotyped SNP available in an independent cohort (NSHDS), using rvtests (228). The same NSHDS samples on which DNA methylation was measured were genotyped using the Illumina Infinium OncoArray-500k BeadChip (Illumina Inc.~San Diego, CA) and quality control parameters were applied under the recently published TRICL-ILCCO GWAS study on lung cancer (225). Genetic imputation was performed on these samples using the Haplotype Reference Consortium (HRC) Panel (release 1) (219) through the Michigan Imputation Server (229). Replicated mQTLs were included where possible to reduce the effect of winner's curse using effect estimates from ARIES. The instrument strength of the mQTLs were assessed by the variance explained in methylation by each mQTL (r\textsuperscript{2}) as well as the F-statistic in ARIES \textbf{Table \ref{tab:sup-tab1-07}}. The power to detect the observational effect estimates in the two-sample MR analysis was assessed \emph{a priori}, based on an alpha of 0.05, sample size of 29,863 cases and 55,586 controls (from TRICL-ILCCO) and calculated variance explained (r\textsuperscript{2}). \linebreak
 \begin{table}[!h]
 
 \caption{\label{tab:sup-tab1-07}Instrument strength in ARIES}
@@ -1625,9 +1959,9 @@ rs11746538 & cg05575921 & -0.37 & 0.058 & 3.0e-10 & 834 & 41 & 0.05\\
 \end{table}
 \linebreak
 
-MR analyses were also performed to investigate the impact of methylation on lung cancer subtypes in TRICL-ILCCO: adenocarcinoma (11,245 cases, 54,619 controls), small cell carcinoma (2791 cases, 20,580 controls), and squamous cell carcinoma (7704 cases, 54,763 controls). The association in never smokers (2303 cases, 6995 controls) and ever smokers (23,848 cases, 16,605 controls) (190) was also assessed. Differences between the smoking subgroups were assessed using a Z-test for difference.
+MR analyses were also performed to investigate the impact of methylation on lung cancer subtypes in TRICL-ILCCO: adenocarcinoma (11,245 cases, 54,619 controls), small cell carcinoma (2791 cases, 20,580 controls), and squamous cell carcinoma (7704 cases, 54,763 controls). The association in never smokers (2303 cases, 6995 controls) and ever smokers (23,848 cases, 16,605 controls) (225) was also assessed. Differences between the smoking subgroups were assessed using a Z-test for difference.
 
-Next the association was tested between the identified mQTLs and four smoking behaviour traits which could confound the methylation-lung cancer association: number of cigarettes per day, smoking cessation rate, smoking initiation and age of smoking initiation using GWAS data from the Tobacco and Genetics (TAG) consortium (N=74,053) (195).
+Next the association was tested between the identified mQTLs and four smoking behaviour traits which could confound the methylation-lung cancer association: number of cigarettes per day, smoking cessation rate, smoking initiation and age of smoking initiation using GWAS data from the Tobacco and Genetics (TAG) consortium (N=74,053) (230).
 
 \hypertarget{methods-supplementary-analyses-07}{%
 \subsection{Supplementary analyses}\label{methods-supplementary-analyses-07}}
@@ -1637,7 +1971,7 @@ Next the association was tested between the identified mQTLs and four smoking be
 
 This section (until the heading ``Tumour and adjacent normal methylation patterns'') was written by Dr Rebecca Richmond.
 
-Given previous findings implicating methylation at \emph{AHRR} in relation to lung cancer (124,182), a one-sample MR analysis (196) was performed of \emph{AHRR} methylation on lung cancer incidence using individual-level data from the Copenhagen City Heart Study (CCHS) (357 incident cases, 8401 remaining free of lung cancer). Copenhagen City Heart Study is a prospective study of the general population (197). Copenhagen residents were invited to complete a questionnaire and undergo a physical examination and are followed through a unique person identifier in the Danish health registries. All participants gave written informed consent, and a Danish ethics committee approved the study (KF100.2039/91).
+Given previous findings implicating methylation at \emph{AHRR} in relation to lung cancer (124,199), a one-sample MR analysis (231) was performed of \emph{AHRR} methylation on lung cancer incidence using individual-level data from the Copenhagen City Heart Study (CCHS) (357 incident cases, 8401 remaining free of lung cancer). Copenhagen City Heart Study is a prospective study of the general population (232). Copenhagen residents were invited to complete a questionnaire and undergo a physical examination and are followed through a unique person identifier in the Danish health registries. All participants gave written informed consent, and a Danish ethics committee approved the study (KF100.2039/91).
 
 \hypertarget{phenotypic-data}{%
 \subsubsection{Phenotypic data}\label{phenotypic-data}}
@@ -1652,7 +1986,7 @@ At the physical examination, blood samples were drawn for DNA from which \emph{A
 \hypertarget{genetic-data}{%
 \subsubsection{Genetic data}\label{genetic-data}}
 
-Genotypes from the iCOGs array (198) and prospective data on lung cancer incidence were also available for these participants. Of the 9234 individuals, genotype data from iCOGS on 8778 were available. In short, DNA isolated from leukocytes was genotyped with a custom Illumina iSelect genotyping array, designed to test genetic variants related to breast, ovary and prostate cancer, comprising roughly 211,000 SNPs after rigorous quality control (198).
+Genotypes from the iCOGs array (233) and prospective data on lung cancer incidence were also available for these participants. Of the 9234 individuals, genotype data from iCOGS on 8778 were available. In short, DNA isolated from leukocytes was genotyped with a custom Illumina iSelect genotyping array, designed to test genetic variants related to breast, ovary and prostate cancer, comprising roughly 211,000 SNPs after rigorous quality control (233).
 
 \hypertarget{lung-cancer-data}{%
 \subsubsection{Lung cancer data}\label{lung-cancer-data}}
@@ -1674,9 +2008,9 @@ DNA methylation data from lung cancer tissue and matched normal adjacent tissue 
 \hypertarget{mqtl-association-with-gene-expression}{%
 \subsubsection{mQTL association with gene expression}\label{mqtl-association-with-gene-expression}}
 
-Gene expression at genes annotated to CpG sites identified in the lung cancer EWAS was examined in whole blood and lung tissue using data from the Gene-Tissue Expression (GTEx) consortium (199).
+Gene expression at genes annotated to CpG sites identified in the lung cancer EWAS was examined in whole blood and lung tissue using data from the Gene-Tissue Expression (GTEx) consortium (234).
 
-Analyses were conducted in Stata (version 14) and R (version 3.2.2). For the two-sample MR analysis the MR-Base R package TwoSampleMR (200) was used. An adjusted P value that limited the FDR was calculated using the Benjamini-Hochberg method (201). All statistical tests were two-sided.
+Analyses were conducted in Stata (version 14) and R (version 3.2.2). For the two-sample MR analysis the MR-Base R package TwoSampleMR (235) was used. An adjusted P value that limited the FDR was calculated using the Benjamini-Hochberg method (217). All statistical tests were two-sided.
 
 \hypertarget{results-07}{%
 \section{Results}\label{results-07}}
@@ -2053,7 +2387,7 @@ Never & 1,948 & 9 & 0.83 (0.38; 1.85) & 0.66\\
 \end{table}
 \linebreak
 
-Given contrasting findings with the main MR analysis, where cg05575921-\emph{AHRR} methylation was not causally implicated in lung cancer, and the lower power in the one-sample analysis to detect an effect of equivalent size to the observational results (power = 19\% at alpha = 0.05), a further two-sample MR was performed based on the four mQTLs using data from both CCHS (sample one) and the TRICL-ILCCO consortium (sample two). Results showed no strong evidence for a causal effect of DNA methylation on total lung cancer risk (OR=1.00 {[}95\% CI=0.83,1.10{]} per SD increase) (\textbf{Figure \ref{fig:sup-fig5-07}}). There was also limited evidence for an effect of cg05575921-\emph{AHRR} methylation when stratified by cancer subtype and smoking status (\textbf{Figure \ref{fig:sup-fig5-07}}) and no strong evidence for heterogeneity of the mQTL effects (\textbf{Table \ref{tab:sup-tab9-07}}). Conclusions were consistent when MR-Egger (192) was applied (\textbf{Figure \ref{fig:sup-fig5-07}}) and when accounting for correlation structure between the mQTLs (\textbf{Table \ref{tab:sup-tab9-07}}).
+Given contrasting findings with the main MR analysis, where cg05575921-\emph{AHRR} methylation was not causally implicated in lung cancer, and the lower power in the one-sample analysis to detect an effect of equivalent size to the observational results (power = 19\% at alpha = 0.05), a further two-sample MR was performed based on the four mQTLs using data from both CCHS (sample one) and the TRICL-ILCCO consortium (sample two). Results showed no strong evidence for a causal effect of DNA methylation on total lung cancer risk (OR=1.00 {[}95\% CI=0.83,1.10{]} per SD increase) (\textbf{Figure \ref{fig:sup-fig5-07}}). There was also limited evidence for an effect of cg05575921-\emph{AHRR} methylation when stratified by cancer subtype and smoking status (\textbf{Figure \ref{fig:sup-fig5-07}}) and no strong evidence for heterogeneity of the mQTL effects (\textbf{Table \ref{tab:sup-tab9-07}}). Conclusions were consistent when MR-Egger (227) was applied (\textbf{Figure \ref{fig:sup-fig5-07}}) and when accounting for correlation structure between the mQTLs (\textbf{Table \ref{tab:sup-tab9-07}}).
 
 
 
@@ -2189,11 +2523,11 @@ PRSS23 & rs72967500 & cg23771366 & N & 11:86515072 & T & C & 0.132 & -0.061 & 0.
 \hypertarget{discussion-07}{%
 \section{Discussion}\label{discussion-07}}
 
-In this study, 16 CpG sites associated, at P\textless1x10\textsuperscript{-7}, with lung cancer in a meta-analysis of EWAS, of which 14 have been previously identified in relation to smoke exposure (68) and six were highlighted in a previous study as being associated with lung cancer (124). This previous study used the same data from the four cohorts investigated here, but in a discovery and replication, rather than meta-analysis framework. Overall, using MR we found limited evidence supporting a potential causal effect of methylation at the CpG sites identified in peripheral blood on lung cancer. These findings are in contrast to previous analyses suggesting that methylation at two CpG sites investigated (in \emph{AHRR} and \emph{F2RL3}) mediated \textgreater{} 30\% of the effect of smoking on lung cancer risk (182). This previous study used methods which are sensitive to residual confounding and measurement error that may have biased results (45,107). These limitations are largely overcome using MR (107). While there was some evidence for an effect of methylation at some of the other CpG sites on risk of subtypes of lung cancer, these effects were not robust to multiple testing correction and were not validated in the analysis of tumour and adjacent normal lung tissue methylation nor in gene expression analysis.
+In this study, 16 CpG sites associated, at P\textless1x10\textsuperscript{-7}, with lung cancer in a meta-analysis of EWAS, of which 14 have been previously identified in relation to smoke exposure (68) and six were highlighted in a previous study as being associated with lung cancer (124). This previous study used the same data from the four cohorts investigated here, but in a discovery and replication, rather than meta-analysis framework. Overall, using MR we found limited evidence supporting a potential causal effect of methylation at the CpG sites identified in peripheral blood on lung cancer. These findings are in contrast to previous analyses suggesting that methylation at two CpG sites investigated (in \emph{AHRR} and \emph{F2RL3}) mediated \textgreater{} 30\% of the effect of smoking on lung cancer risk (199). This previous study used methods which are sensitive to residual confounding and measurement error that may have biased results (45,107). These limitations are largely overcome using MR (107). While there was some evidence for an effect of methylation at some of the other CpG sites on risk of subtypes of lung cancer, these effects were not robust to multiple testing correction and were not validated in the analysis of tumour and adjacent normal lung tissue methylation nor in gene expression analysis.
 
 A major strength of the study was the use of two-sample MR to integrate an extensive epigenetic resource and summary data from a large lung cancer GWAS to appraise causality of observational associations with \textgreater99\% power. Evidence against the observational findings were also acquired through tissue-specific DNA methylation and gene expression analyses.
 
-Limitations include potential ``winner's curse'' which may bias causal estimates in a two-sample MR analysis towards the null if the discovery sample for identifying genetic instruments is used as the first sample, as was done for the main MR analysis using data from ARIES (202). However, findings were similar when using replicated mQTLs in NSHDS, indicating the potential impact of this bias was minimal (\textbf{Figure \ref{fig:sup-fig1-07}}). Another limitation relates to the potential issue of consistency and validity of the instruments across the two samples. For a minority of the mQTL-CpG associations (4 out of 16), there was limited replication across time points and in particular, 6 mQTLs were not strongly associated with DNA methylation in adults. Further, the primary data used for the first sample in the two-sample MR was ARIES, which contained no male adults at the time of the study.. If the mQTLs identified vary by sex and time, then this could bias the results. However, the replication cohort NSHDS contains adult males. Therefore, the 10 mQTLs that replicated in NSHDS are unlikely to be biased by the sex discordance. Also, the findings for cg05575921 \emph{AHRR} in CCHS, which contains both adult males and females, were replicated in a two-sample MR analysis, suggesting these results are also not influenced by sex discordance. Caution is therefore warranted when interpreting the null results for the two-sample MR estimates for the CpG sites for which mQTLs were not repliacted, which could be the result of weak-instrument bias.
+Limitations include potential ``winner's curse'' which may bias causal estimates in a two-sample MR analysis towards the null if the discovery sample for identifying genetic instruments is used as the first sample, as was done for the main MR analysis using data from ARIES (236). However, findings were similar when using replicated mQTLs in NSHDS, indicating the potential impact of this bias was minimal (\textbf{Figure \ref{fig:sup-fig1-07}}). Another limitation relates to the potential issue of consistency and validity of the instruments across the two samples. For a minority of the mQTL-CpG associations (4 out of 16), there was limited replication across time points and in particular, 6 mQTLs were not strongly associated with DNA methylation in adults. Further, the primary data used for the first sample in the two-sample MR was ARIES, which contained no male adults at the time of the study.. If the mQTLs identified vary by sex and time, then this could bias the results. However, the replication cohort NSHDS contains adult males. Therefore, the 10 mQTLs that replicated in NSHDS are unlikely to be biased by the sex discordance. Also, the findings for cg05575921 \emph{AHRR} in CCHS, which contains both adult males and females, were replicated in a two-sample MR analysis, suggesting these results are also not influenced by sex discordance. Caution is therefore warranted when interpreting the null results for the two-sample MR estimates for the CpG sites for which mQTLs were not repliacted, which could be the result of weak-instrument bias.
 
 The lack of independent mQTLs for each CpG site did not allow us to properly appraise horizontal pleiotropy in the MR analyses. Where possible I only included cis-acting mQTLs to minimise pleiotropy and investigated heterogeneity where there were multiple independent mQTLs. Three mQTLs were nominally associated with smoking phenotypes, but not to the extent that this would bias the MR results substantially. Since this study was conducted, GoDMC has released a large set of SNP-DNA methylation associations from a sample size that is over ten times that of ARIES (147). Replication of this analysis using mQTL estimates from GoDMC may mitigate some of these limitations.
 
@@ -2201,9 +2535,9 @@ Some of the mQTLs used influence multiple CpGs in the same region, suggesting ge
 
 A further limitation relates to the inconsistency in effect estimates between the one- and two-sample MR analysis to appraise the causal role of \emph{AHRR} methylation. While findings in CCHS were supportive of a causal effect of \emph{AHRR} methylation on lung cancer (HR=0.30 {[}95\% CI=0.10,1.00{]} per SD), in two-sample MR this site was not causally implicated (OR=1.00 {[}95\% CI=0.83,1.10{]} per SD increase). It was verified that this was not due to differences in the genetic instruments used, nor due to issues of weak instrument bias. Given the CCHS one-sample MR had little power (19\% at alpha = 0.05) to detect a causal effect with a size equivalent to that of the observational analysis, there should be more confidence in the results from the two-sample approach.
 
-Peripheral blood may not be the ideal tissue to assess the association between DNA methylation and lung cancer. While a high degree of concordance in mQTLs has been observed across lung tissue, skin and peripheral blood DNA (203), this was not directly evaluated here. A possible explanation for a lack of causal effect at \emph{AHRR} is due to the limitation of tissue specificity as it was found that the mQTLs used to instrument cg05575921 were not strongly related to expression of \emph{AHRR} in lung tissue. However, findings from MR analysis were corroborated by the lack of evidence for differential methylation at \emph{AHRR} between lung adenocarcinoma tissue and adjacent healthy tissue, and weak evidence for hypermethylation (opposite to the expected direction) in squamous cell lung cancer tissue. This result may be interesting in itself as smoking is hypothesized to influence squamous cell carcinoma more than adenocarcinoma. However, the result conflicts with that found in the MR analysis. Furthermore, another study investigating tumorous lung tissue (N=511) found only weak evidence for an association between smoking and cg05575921 \emph{AHRR} methylation, that did not survive multiple testing correction (P=0.02) (204). These results do not fully exclude \emph{AHRR} from involvement in the disease process. \emph{AHRR} and \emph{AHR} form a regulatory feedback loop, which means that the actual effect of differential methylation or differential expression of \emph{AHR}/\emph{AHRR} on pathway activity is complex (133). In addition, some of the CpG sites identified in the EWAS were found to be differentially methylated in the tumour and adjacent normal lung tissue comparison. While this could represent a false negative result of the MR analysis, it is of interest that differential methylation in the tissue comparison analysis was typically in the opposite direction to that observed in the EWAS. Furthermore, while this method can be used to minimize confounding, it does not fully eliminate the possibility of bias due to reverse causation (whereby cancer induces changes in DNA methylation) or intra-individual confounding e.g.~by gene expression. Therefore, it doesn't give conclusive evidence that DNA methylation changes at these sites are not relevant to the development of lung cancer.
+Peripheral blood may not be the ideal tissue to assess the association between DNA methylation and lung cancer. While a high degree of concordance in mQTLs has been observed across lung tissue, skin and peripheral blood DNA (237), this was not directly evaluated here. A possible explanation for a lack of causal effect at \emph{AHRR} is due to the limitation of tissue specificity as it was found that the mQTLs used to instrument cg05575921 were not strongly related to expression of \emph{AHRR} in lung tissue. However, findings from MR analysis were corroborated by the lack of evidence for differential methylation at \emph{AHRR} between lung adenocarcinoma tissue and adjacent healthy tissue, and weak evidence for hypermethylation (opposite to the expected direction) in squamous cell lung cancer tissue. This result may be interesting in itself as smoking is hypothesized to influence squamous cell carcinoma more than adenocarcinoma. However, the result conflicts with that found in the MR analysis. Furthermore, another study investigating tumorous lung tissue (N=511) found only weak evidence for an association between smoking and cg05575921 \emph{AHRR} methylation, that did not survive multiple testing correction (P=0.02) (238). These results do not fully exclude \emph{AHRR} from involvement in the disease process. \emph{AHRR} and \emph{AHR} form a regulatory feedback loop, which means that the actual effect of differential methylation or differential expression of \emph{AHR}/\emph{AHRR} on pathway activity is complex (133). In addition, some of the CpG sites identified in the EWAS were found to be differentially methylated in the tumour and adjacent normal lung tissue comparison. While this could represent a false negative result of the MR analysis, it is of interest that differential methylation in the tissue comparison analysis was typically in the opposite direction to that observed in the EWAS. Furthermore, while this method can be used to minimize confounding, it does not fully eliminate the possibility of bias due to reverse causation (whereby cancer induces changes in DNA methylation) or intra-individual confounding e.g.~by gene expression. Therefore, it doesn't give conclusive evidence that DNA methylation changes at these sites are not relevant to the development of lung cancer.
 
-While DNA methylation in peripheral blood may be predictive of lung cancer risk, according to the present analysis it is unlikely to play a causal role in lung carcinogenesis at the CpG sites investigated. Findings from this study issue caution over the use of traditional mediation analyses to implicate intermediate biomarkers (such as DNA methylation) in pathways linking an exposure with disease, given the potential for residual confounding in this context (107). However, the findings of this study do not preclude the possibility that other DNA methylation changes (i.e.~changes at different sites in the genome or in different tissues) are causally related to lung cancer (or other smoking-associated disease) (205).
+While DNA methylation in peripheral blood may be predictive of lung cancer risk, according to the present analysis it is unlikely to play a causal role in lung carcinogenesis at the CpG sites investigated. Findings from this study issue caution over the use of traditional mediation analyses to implicate intermediate biomarkers (such as DNA methylation) in pathways linking an exposure with disease, given the potential for residual confounding in this context (107). However, the findings of this study do not preclude the possibility that other DNA methylation changes (i.e.~changes at different sites in the genome or in different tissues) are causally related to lung cancer (or other smoking-associated disease) (239).
 
 \hypertarget{discussion-thesis}{%
 \chapter{Discussion}\label{discussion-thesis}}
@@ -2229,35 +2563,35 @@ These findings suggest that substantial changes are required in the design of EW
 
 This work focuses on the measures taken for contemporary EWAS, namely use of the HM450 to measure blood-based DNA methylation. Given the correlation structure across all DNA methylation sites in the genome is not known, this work can not be generalised to DNA methylation as a whole. Further, although certain aspects of observational EWAS, such as propensity for confounding, will always hinder interpretation of results, other aspects of this thesis may not apply to data from other tissues.
 
-There is overwhelming evidence that complex traits are polygenic (178,206) and some hypothesise that they may even be omnigenic (207). As DNA methylation is so tightly linked to gene expression regulation, it seems likely that either DNA methylation or something coupled to it has a substantial impact on the aetiology of many complex traits. Thus, the issues uncovered with EWAS in this thesis, such as the lack of covariation between DNA methylation and complex traits, is likely because too few sites are being measured in the wrong tissues. Finucane et al.~devised a method, which used LD-score regression and gene expression data, to identify the most relevant tissue and cell types for 34 traits (208). Without access to large datasets with DNA methylation available in a plethora of tissues, molecular epidemiologists could rely on inferences made from studies such as this to help design future EWAS.
+There is overwhelming evidence that complex traits are polygenic (178,240) and some hypothesise that they may even be omnigenic (241). As DNA methylation is so tightly linked to gene expression regulation, it seems likely that either DNA methylation or something coupled to it has a substantial impact on the aetiology of many complex traits. Thus, the issues uncovered with EWAS in this thesis, such as the lack of covariation between DNA methylation and complex traits, is likely because too few sites are being measured in the wrong tissues. Finucane et al.~devised a method, which used LD-score regression and gene expression data, to identify the most relevant tissue and cell types for 34 traits (242). Without access to large datasets with DNA methylation available in a plethora of tissues, molecular epidemiologists could rely on inferences made from studies such as this to help design future EWAS.
 
-The impact of different methylation states of the genome, such as hydroxymethylation, is also beginning to be explored (209--211). The current methods employed by EWAS, which revolve around bisulphite conversion, capture all methylation states as one measurement. If these states have differing effects, separating these out will increase power and impart greater biological understanding.
+The impact of different methylation states of the genome, such as hydroxymethylation, is also beginning to be explored (243--245). The current methods employed by EWAS, which revolve around bisulphite conversion, capture all methylation states as one measurement. If these states have differing effects, separating these out will increase power and impart greater biological understanding.
 
-In a similar vein to other omics, sequencing technology will likely continue to improve and will become cheap enough to use across population samples (212,213). Also, despite the vast majority of EWAS being conducted using blood (\textbf{Table \ref{tab:study-data-tab}}), there are 42 tissue types recorded in the EWAS Catalog. The Cancer Genome Atlas (TCGA) has recorded DNA methylation data in a large number of tissues also (214), and the trend to measure other tissues is likely to continue, especially as the number of reliable sites identified in EWAS tends to be low. In addition, manuscripts using techniques to measure gene expression and DNA methylation in single cells are becoming more common (215--219). Given the issues of cell specificity, these studies may prove pivotal in advancement of the field of epigenetic epidemiology.
+In a similar vein to other omics, sequencing technology will likely continue to improve and will become cheap enough to use across population samples (246,247). Also, despite the vast majority of EWAS being conducted using blood (\textbf{Table \ref{tab:study-data-tab}}), there are 42 tissue types recorded in the EWAS Catalog. The Cancer Genome Atlas (TCGA) has recorded DNA methylation data in a large number of tissues also (248), and the trend to measure other tissues is likely to continue, especially as the number of reliable sites identified in EWAS tends to be low. In addition, manuscripts using techniques to measure gene expression and DNA methylation in single cells are becoming more common (249--253). Given the issues of cell specificity, these studies may prove pivotal in advancement of the field of epigenetic epidemiology.
 
 As discussed in \textbf{Chapter \ref{properties-of-ewas}}, DNA methylation is a binary measure, yet by pooling groups of cells and measuring methylation at each site as a proportion of the DNA molecules that are methylated, a continuous measure is derived. If cells of the same type are identical then one would expect they would be methylated at the same sites as one another (1). However, a mosaicism of methylation across cells may exist. If so, then pooling groups of cells for analysis, and taking account differences between higher order cell types, will remain a valid approach for EWAS. However, if strong evidence is provided that this cellular mosaicism is improbable between cells of the same type, rapid movement towards single-cell techniques is likely.
 
 \hypertarget{new-methods-and-data}{%
 \subsection{New methods and data}\label{new-methods-and-data}}
 
-There is still substantial interest in assessing the association between DNA methylation and complex traits. In 2020, there have been over XXX EWAS conducted that have been added to the EWAS Catalog. Further, new methods are being developed to measure the association between DNA methylation and complex traits. Two recent examples include Zhang F et al., who created a command line tool to conduct EWAS using different models, OSCA, (220) and a study that developed a Bayesian approach to conduct EWAS, using various confounders including genotype in their model (126).
+There is still substantial interest in assessing the association between DNA methylation and complex traits. In 2020, there have been over XXX EWAS conducted that have been added to the EWAS Catalog. Further, new methods are being developed to measure the association between DNA methylation and complex traits. Two recent examples include Zhang F et al., who created a command line tool to conduct EWAS using different models, OSCA, (254) and a study that developed a Bayesian approach to conduct EWAS, using various confounders including genotype in their model (126).
 
 This interest will hopefully lead to a continuation in developments across the field of molecular epidemiology, but the complex nature of molecular pathways to disease may make aetiological inference progression slow. Causal inference methods such as MR aid aetiological studies, but the lack of independent instruments coupled with the complexity of gene regulation make it difficult to be confident the key assumptions of MR (\textbf{Figure \ref{fig:mr-diagram}}) are met (49,115,116,147). Colocalization is now being readily used in the context of molecular MR (116,147), but this only provides evidence that the complex trait and the molecular phenotype have the same causal genetic variant(s) (116), and do not provide evidence against these variants being pleiotropic.
 
 Lack of large-scale studies was a problem in identifying valid instruments for individual CpG sites, including within my study in \textbf{Chapter \ref{dnam-lung-cancer-mr}}, but this has been partially eleviated by the formation of GoDMC (147). This consortium has already yielded interesting results. Min et al.~performed MR to establish whether there was likely an effect of DNA methylation changes, measured by the HM450, on 116 complex traits (147). Similarly to the results presented in this thesis, they found that evidence for the aetiological relevance of DNA methylation measured across those sites was severely lacking. In the future, establishing tissue-specific mQTLs will be important in understanding whether tissue-specific DNA methylation changes are likely to have an effect on complex trait variation.
 
-For prediction, the complexity of establishing causality and understanding cellular function need not apply. Whether the goal is to identify DNA methylation differences that co-exist with disease states and could therefore help diagnose these states, or truly predict diseases before they arrive is important to consider. For the former, cross-sectional studies suffice, but for the latter cohort studies that have DNA methylation data collected prior to other measurements such as ALSPAC (128,129) are required. Larger studies, such as Generation Scotland (221), provide the opportunity for developing more precise predictors and further, the power gained from the extra samples would enable one to estimate the total predictive capacity of DNA methylation for individual traits with relatively high precision using the methods laid out in \textbf{Chapter \ref{h2ewas-chapter}}.
+For prediction, the complexity of establishing causality and understanding cellular function need not apply. Whether the goal is to identify DNA methylation differences that co-exist with disease states and could therefore help diagnose these states, or truly predict diseases before they arrive is important to consider. For the former, cross-sectional studies suffice, but for the latter cohort studies that have DNA methylation data collected prior to other measurements such as ALSPAC (128,129) are required. Larger studies, such as Generation Scotland (255), provide the opportunity for developing more precise predictors and further, the power gained from the extra samples would enable one to estimate the total predictive capacity of DNA methylation for individual traits with relatively high precision using the methods laid out in \textbf{Chapter \ref{h2ewas-chapter}}.
 
 \hypertarget{beyond-dnam}{%
 \subsection{Beyond DNA methylation}\label{beyond-dnam}}
 
 As the premise of aetiological EWAS is that DNA methylation changes may impact upon some cellular function, which leads to phenotypic changes, reliable associations between DNA methylation and complex traits is not enough to impart translatable opportunities. How DNA methylation is changing these cellular functions is key for two reasons, 1. it might not be possible to target DNA methylation directly to treat/prevent disease and 2. DNA methylation may just be tagging some other epigenetic mark and in fact be inconsequential to phenotypic state. Therefore, once a link between DNA methylation and complex traits is established, it is required that experimental work is undertaken to fill in the gap of how DNA methylation changes relate to cellular function differences that influence the trait.
 
-With initiatives such as ENCODE and the Roadmap Epigenomics Project (151,222), along with gene expression datasets such as GTEx (199), the functional implications of DNA methylation changes may be predicted. However, experimental work should be used to confirm these predictions.
+With initiatives such as ENCODE and the Roadmap Epigenomics Project (151,256), along with gene expression datasets such as GTEx (234), the functional implications of DNA methylation changes may be predicted. However, experimental work should be used to confirm these predictions.
 
-As discussed in \textbf{Section \ref{dnam-as-part-of-regulation}}, DNA methylation is not the only epigenetic mark in human cells. Lack of understanding and technology has been a hinderance to population based studies of histone modifications genome-wide. At least one such study has been conducted (223), and the frequency is likely to increase as the cost of high throughput chromatin immunoprecipitation procedures, such as ChIP-seq, decreases.
+As discussed in \textbf{Section \ref{dnam-as-part-of-regulation}}, DNA methylation is not the only epigenetic mark in human cells. Lack of understanding and technology has been a hinderance to population based studies of histone modifications genome-wide. At least one such study has been conducted (257), and the frequency is likely to increase as the cost of high throughput chromatin immunoprecipitation procedures, such as ChIP-seq, decreases.
 
-Recently large-scale datasets have been developed to analyse the relationship between protein expression and gene expression with complex traits (199,224,225). Proteins are often the ultimate target for many pharmaceuticals, as understanding of function and quantification of proteins and their variants increases, protein-based epidemiological studies may supersede EWAS with regards to their frequency.
+Recently large-scale datasets have been developed to analyse the relationship between protein expression and gene expression with complex traits (234,258,259). Proteins are often the ultimate target for many pharmaceuticals, as understanding of function and quantification of proteins and their variants increases, protein-based epidemiological studies may supersede EWAS with regards to their frequency.
 
 Similarly to DNA methylation studies, problems with confounding and cell specificity will be present in protein and gene based studies. Modifications to RNA transcripts and proteins provide an additional level of complication. RNA transcripts can be spliced and altered by post-transcriptional modifications and proteins can be modified post-translation of gene transcript (6--9). In extreme cases, proteins have been known to have their function reversed after their state is modified. The protein p53 naturally acts as a tumour suppressor, but during cancer development there is evidence that the protein can be modified and become oncogenic (6).
 
@@ -2266,7 +2600,7 @@ Studying each molecular measure will come with its own difficulties, and each ca
 \hypertarget{final-conclusions}{%
 \section{Final conclusions}\label{final-conclusions}}
 
-The human body is unfathomably complex. Understanding it requires a huge concerted effort from the entire, global research community. Returning to the example of \emph{p53}, by 2010 there had been nearly 50,000 studies on this single family of genes (226). The decades of research conducted to elucidate the function, importance and interactions of this single family of genes illustrates the patience required to understand the molecular underpinnings of disease. Given the brevity of existance molecular epidemiology has had, I'd argue that judging whether it has been a success or failure is a frivolous task. However, to speed up development of the field, there is a need to understand why EWAS have not yielded the aetiological or predictive capacity hoped.
+The human body is unfathomably complex. Understanding it requires a huge concerted effort from the entire, global research community. Returning to the example of \emph{p53}, by 2010 there had been nearly 50,000 studies on this single family of genes (260). The decades of research conducted to elucidate the function, importance and interactions of this single family of genes illustrates the patience required to understand the molecular underpinnings of disease. Given the brevity of existance molecular epidemiology has had, I'd argue that judging whether it has been a success or failure is a frivolous task. However, to speed up development of the field, there is a need to understand why EWAS have not yielded the aetiological or predictive capacity hoped.
 
 This thesis provides evidence that the study design of current EWAS is unlikely to provide substantial improvements in the ability to predict or understand the aetiological aspects of complex traits.
 
@@ -2843,143 +3177,245 @@ This first appendix includes all of the R chunks of code that were hidden throug
 \leavevmode\hypertarget{ref-Relton2015}{}%
 180. Relton CL, Davey Smith G. Mendelian randomization: Applications and limitations in epigenetic studies. 2015;
 
-\leavevmode\hypertarget{ref-Ferlay2013}{}%
-181. Ferlay J, Soerjomataram I, Ervik M, et al. GLOBOCAN 2012 v1.0, Cancer Incidence and Mortality Worldwide: IARC CancerBase. No. 11 {[}Internet{]}. 2013;11:http://globocan.iarc.f. (\url{http://arxiv.org/abs/arXiv:1011.1669v3})
+\leavevmode\hypertarget{ref-Sharp2017}{}%
+181. Sharp GC, Salas LA, Monnereau C, et al. Maternal BMI at the start of pregnancy and offspring epigenome-wide DNA methylation: Findings from the pregnancy and childhood epigenetics (PACE) consortium. \emph{Human Molecular Genetics}. 2017;
 
-\leavevmode\hypertarget{ref-Fasanelli2015}{}%
-182. Fasanelli F, Baglietto L, Ponzi E, et al. Hypomethylation of smoking-related genes is associated with future lung cancer in four prospective cohorts. \emph{Nature Communications} {[}electronic article{]}. 2015;6:10192. (\url{http://www.nature.com/doifinder/10.1038/ncomms10192})
+\leavevmode\hypertarget{ref-Reese2019}{}%
+182. Reese SE, Xu CJ, Dekker HT den, et al. Epigenome-wide meta-analysis of DNA methylation and childhood asthma. \emph{Journal of Allergy and Clinical Immunology}. 2019;
 
-\leavevmode\hypertarget{ref-McCarthy2016}{}%
-183. McCarthy S, Das S, Kretzschmar W, et al. A reference panel of 64,976 haplotypes for genotype imputation. \emph{Nature Genetics}. 2016;
+\leavevmode\hypertarget{ref-Everson2019}{}%
+183. Everson TM, Marsit CJ, Michael O'Shea T, et al. Epigenome-wide Analysis Identifies Genes and Pathways Linked to Neurobehavioral Variation in Preterm Infants. \emph{Scientific Reports}. 2019;
 
-\leavevmode\hypertarget{ref-Jones2002}{}%
-184. Jones P a, Baylin SB. The fundamental role of epigenetic events in cancer. \emph{Nature reviews. Genetics} {[}electronic article{]}. 2002;3(6):415--28. (\url{http://www.ncbi.nlm.nih.gov/pubmed/16136652\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/pubmed/12042769})
+\leavevmode\hypertarget{ref-Chen2020}{}%
+184. Chen J, Zang Z, Braun U, et al. Association of a Reproducible Epigenetic Risk Profile for Schizophrenia with Brain Methylation and Function. \emph{JAMA Psychiatry}. 2020;
 
-\leavevmode\hypertarget{ref-Borghol2012}{}%
-185. Borghol N, Suderman M, Mcardle W, et al. Associations with early-life socio-economic position in adult DNA methylation. \emph{International Journal of Epidemiology}. 2012;
+\leavevmode\hypertarget{ref-Breeze2016}{}%
+185. Breeze CE, Paul DS, Dongen J van, et al. eFORGE: A Tool for Identifying Cell Type-Specific Signal in Epigenomic Data. \emph{Cell Reports}. 2016;
+
+\leavevmode\hypertarget{ref-Gallagher2018}{}%
+186. Gallagher MD, Chen-Plotkin AS. The Post-GWAS Era: From Association to Function. 2018;
+
+\leavevmode\hypertarget{ref-Elsworth2020}{}%
+187. Elsworth\hspace{0pt} B, Lyon\hspace{0pt} M, Alexander\hspace{0pt} T, et al. The MRC IEU OpenGWAS data infrastructure. \emph{bioRxiv}. 2020;
+
+\leavevmode\hypertarget{ref-Kurushima2019}{}%
+188. Kurushima Y, Tsai PC, Castillo-Fernandez J, et al. Epigenetic findings in periodontitis in UK twins: A cross-sectional study. \emph{Clinical Epigenetics}. 2019;
+
+\leavevmode\hypertarget{ref-Agha2019}{}%
+189. Agha G, Mendelson MM, Ward-Caviness CK, et al. Blood Leukocyte DNA Methylation Predicts Risk of Future Myocardial Infarction and Coronary Heart Disease. \emph{Circulation}. 2019;
+
+\leavevmode\hypertarget{ref-Odintsova2019}{}%
+190. Odintsova VV, Hagenbeek FA, Suderman M, et al. DNA methylation signatures of breastfeeding in buccal cells collected in mid-childhood. \emph{Nutrients}. 2019;
+
+\leavevmode\hypertarget{ref-Geurtsen2019}{}%
+191. Geurtsen ML, Jaddoe VWV, Salas LA, et al. Newborn and childhood differential DNA methylation and liver fat in school-age children. \emph{Clinical Epigenetics}. 2019;
+
+\leavevmode\hypertarget{ref-Lawlor2004}{}%
+192. Lawlor DA, Smith GD, Kundu D, et al. Those confounded vitamins: What can we learn from the differences between observational versus randomised trial evidence? 2004;
+
+\leavevmode\hypertarget{ref-Sattar2017}{}%
+193. Sattar N, Preiss D. Reverse Causality in Cardiovascular Epidemiological Research: More Common Than Imagined? 2017;
+
+\leavevmode\hypertarget{ref-DaveySmith1992}{}%
+194. Davey Smith G, Phillips AN. Confounding in epidemiological studies: Why 'independent' effects may not be all they seem. 1992;
 
 \leavevmode\hypertarget{ref-Fewell2007}{}%
-186. Fewell Z, Davey Smith G, Sterne JAC. The impact of residual and unmeasured confounding in epidemiologic studies: A simulation study. \emph{American Journal of Epidemiology}. 2007;
+195. Fewell Z, Davey Smith G, Sterne JAC. The impact of residual and unmeasured confounding in epidemiologic studies: A simulation study. \emph{American Journal of Epidemiology}. 2007;
 
-\leavevmode\hypertarget{ref-Munafo2012}{}%
-187. Munafò MR, Timofeeva MN, Morris RW, et al. Association between genetic variants on chromosome 15q25 locus and objective measures of Tobacco exposure. 2012;
+\leavevmode\hypertarget{ref-Heijmans2012}{}%
+196. Heijmans BT, Mill J. Commentary: The seven plagues of epigenetic epidemiology. \emph{International Journal of Epidemiology} {[}electronic article{]}. 2012;41(1):74--78. (\url{http://dx.doi.org/10.1093/ije/dyr225})
 
-\leavevmode\hypertarget{ref-Richardson2017}{}%
-188. Richardson TG, Zheng J, Davey Smith G, et al. Mendelian Randomization Analysis Identifies CpG Sites as Putative Mediators for Genetic Influences on Cardiovascular Disease Risk. \emph{American Journal of Human Genetics}. 2017;
+\leavevmode\hypertarget{ref-Wheeler2016}{}%
+197. Wheeler HE, Shah KP, Brenner J, et al. Survey of the Heritability and Sparse Architecture of Gene Expression Traits across Human Tissues. \emph{PLoS Genetics}. 2016;
 
-\leavevmode\hypertarget{ref-Leek2016}{}%
-189. Leek JT, Johnson WE, Parker HS, et al. sva: Surrogate Variable Analysis. 2016;
+\leavevmode\hypertarget{ref-Mogil2018}{}%
+198. Mogil LS, Andaleon A, Badalamenti A, et al. Genetic architecture of gene expression traits across diverse populations. \emph{PLoS Genetics}. 2018;
 
-\leavevmode\hypertarget{ref-McKay2017}{}%
-190. McKay JD, Hung RJ, Han Y, et al. Large-scale association analysis identifies new lung cancer susceptibility loci and heterogeneity in genetic susceptibility across histological subtypes. \emph{Nature genetics} {[}electronic article{]}. 2017;49(7):1126--1132. (\url{http://www.nature.com/doifinder/10.1038/ng.3892\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/pubmed/28604730})
+\leavevmode\hypertarget{ref-Fasanelli2015}{}%
+199. Fasanelli F, Baglietto L, Ponzi E, et al. Hypomethylation of smoking-related genes is associated with future lung cancer in four prospective cohorts. \emph{Nature Communications} {[}electronic article{]}. 2015;6:10192. (\url{http://www.nature.com/doifinder/10.1038/ncomms10192})
 
-\leavevmode\hypertarget{ref-Thomas2007}{}%
-191. Thomas DC, Lawlor DA, Thompson JR. Re: Estimation of Bias in Nongenetic Observational Studies Using "Mendelian Triangulation" by Bautista et~al. 2007;
+\leavevmode\hypertarget{ref-Battram2019}{}%
+200. Battram T, Richmond RC, Baglietto L, et al. Appraising the causal relevance of DNA methylation for risk of lung cancer. \emph{International Journal of Epidemiology}. 2019;
 
-\leavevmode\hypertarget{ref-Bowden2015}{}%
-192. Bowden J, Smith GD, Burgess S. Mendelian randomization with invalid instruments: Effect estimation and bias detection through Egger regression. \emph{International Journal of Epidemiology} {[}electronic article{]}. 2015;44(2):512--525. (\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4469799/})
+\leavevmode\hypertarget{ref-McLaren2016}{}%
+201. McLaren W, Gil L, Hunt SE, et al. The Ensembl Variant Effect Predictor. \emph{Genome Biology}. 2016;
 
-\leavevmode\hypertarget{ref-Zhan2016}{}%
-193. Zhan X, Hu Y, Li B, et al. RVTESTS: An efficient and comprehensive tool for rare variant association analysis using sequence data. \emph{Bioinformatics}. 2016;32(9):1423--1426.
+\leavevmode\hypertarget{ref-Aguet2017}{}%
+202. Aguet F, Brown AA, Castel SE, et al. Genetic effects on gene expression across human tissues. \emph{Nature}. 2017;
 
-\leavevmode\hypertarget{ref-Das2016}{}%
-194. Das S, Forer L, Schönherr S, et al. Next-generation genotype imputation service and methods. \emph{Nature Genetics}. 2016;
+\leavevmode\hypertarget{ref-Huang2018}{}%
+203. Huang QQ, Ritchie SC, Brozynska M, et al. Power, false discovery rate and Winner's Curse in eQTL studies. \emph{Nucleic Acids Research}. 2018;
 
-\leavevmode\hypertarget{ref-Furberg2010}{}%
-195. Furberg H, Kim Y, Dackor J, et al. Genome-wide meta-analyses identify multiple loci associated with smoking behavior. \emph{Nature Genetics}. 2010;
+\leavevmode\hypertarget{ref-Kanduri2019}{}%
+204. Kanduri C, Bock C, Gundersen S, et al. Colocalization analyses of genomic elements: Approaches, recommendations and challenges. \emph{Bioinformatics}. 2019;
 
-\leavevmode\hypertarget{ref-Haycock2016}{}%
-196. Haycock PC, Burgess S, Wade KH, et al. Best (but oft-forgotten) practices: The design, analysis, and interpretation of Mendelian randomization studies. \emph{American Journal of Clinical Nutrition}. 2016;
+\leavevmode\hypertarget{ref-Ellinghaus2016}{}%
+205. Ellinghaus D, Jostins L, Spain SL, et al. Analysis of five chronic inflammatory diseases identifies 27 new associations and highlights disease-specific patterns at shared loci. \emph{Nature Genetics}. 2016;
 
-\leavevmode\hypertarget{ref-Kaur-Knudsen2011}{}%
-197. Kaur-Knudsen D, Bojesen SE, Tybjærg-Hansen A, et al. Nicotinic acetylcholine receptor polymorphism, smoking behavior, and tobacco-related cancer and lung and cardiovascular diseases: A cohort study. \emph{Journal of Clinical Oncology}. 2011;
+\leavevmode\hypertarget{ref-Lyon2020}{}%
+206. Lyon M, Andrews SJ, Elsworth B, et al. The variant call format provides efficient and robust storage of GWAS summary statistics. \emph{bioRxiv}. 2020;
 
-\leavevmode\hypertarget{ref-Bojesen2013}{}%
-198. Bojesen SE, Pooley KA, Johnatty SE, et al. Multiple independent variants at the TERT locus are associated with telomere length and risks of breast and ovarian cancer. \emph{Nature Genetics}. 2013;
+\leavevmode\hypertarget{ref-Durinck2009}{}%
+207. Durinck S, Spellman PT, Birney E, et al. Mapping identifiers for the integration of genomic datasets with the R/ Bioconductor package biomaRt. \emph{Nature Protocols}. 2009;
 
-\leavevmode\hypertarget{ref-GTExConsortium2013}{}%
-199. GTEx Consortium TG. The Genotype-Tissue Expression (GTEx) project. \emph{Nature genetics} {[}electronic article{]}. 2013;45(6):580--5. (\url{http://www.ncbi.nlm.nih.gov/pubmed/23715323\%7B/\%\%7D5Cnhttp://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC4010069})
+\leavevmode\hypertarget{ref-Ashburner2000}{}%
+208. Ashburner M, Ball CA, Blake JA, et al. Gene ontology: Tool for the unification of biology. 2000;
 
-\leavevmode\hypertarget{ref-Hemani2016}{}%
-200. Hemani G, Zheng J, Wade KH, et al. MR-Base: a platform for systematic causal inference across the phenome using billions of genetic associations. \emph{bioRxiv} {[}electronic article{]}. 2016;(\url{http://biorxiv.org/content/early/2016/12/16/078972.abstract})
+\leavevmode\hypertarget{ref-Carbon2019}{}%
+209. Carbon S, Douglass E, Dunn N, et al. The Gene Ontology Resource: 20 years and still GOing strong. \emph{Nucleic Acids Research}. 2019;
+
+\leavevmode\hypertarget{ref-Kanehisa2000}{}%
+210. Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. 2000;
+
+\leavevmode\hypertarget{ref-Kanehisa2019}{}%
+211. Kanehisa M, Sato Y, Furumichi M, et al. New approach for understanding genome variations in KEGG. \emph{Nucleic Acids Research}. 2019;
+
+\leavevmode\hypertarget{ref-Szklarczyk2019}{}%
+212. Szklarczyk D, Gable AL, Lyon D, et al. STRING v11: Protein-protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets. \emph{Nucleic Acids Research}. 2019;
+
+\leavevmode\hypertarget{ref-Orchard2014}{}%
+213. Orchard S, Ammari M, Aranda B, et al. The MIntAct project - IntAct as a common curation platform for 11 molecular interaction databases. \emph{Nucleic Acids Research}. 2014;
+
+\leavevmode\hypertarget{ref-Jassal2020}{}%
+214. Jassal B, Matthews L, Viteri G, et al. The reactome pathway knowledgebase. \emph{Nucleic Acids Research}. 2020;
+
+\leavevmode\hypertarget{ref-Liu2020}{}%
+215. Liu Y, Elsworth B, Erola P, et al. EpiGraphDB: A database and data mining platform for health data science. \emph{bioRxiv} {[}electronic article{]}. 2020;2020.08.01.230193. (\url{http://biorxiv.org/content/early/2020/08/04/2020.08.01.230193.abstract})
+
+\leavevmode\hypertarget{ref-Zhang2015}{}%
+216. Zhang W, Spector TD, Deloukas P, et al. Predicting genome-wide DNA methylation using methylation marks, genomic position, and DNA regulatory elements. \emph{Genome Biology} {[}electronic article{]}. 2015;(\url{http://arxiv.org/abs/1308.2134})
 
 \leavevmode\hypertarget{ref-Benjamini1995}{}%
-201. Benjamini Y, Hochberg Y. Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. \emph{Journal of the Royal Statistical Society: Series B (Methodological)}. 1995;
+217. Benjamini Y, Hochberg Y. Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. \emph{Journal of the Royal Statistical Society: Series B (Methodological)}. 1995;
+
+\leavevmode\hypertarget{ref-Ferlay2013}{}%
+218. Ferlay J, Soerjomataram I, Ervik M, et al. GLOBOCAN 2012 v1.0, Cancer Incidence and Mortality Worldwide: IARC CancerBase. No. 11 {[}Internet{]}. 2013;11:http://globocan.iarc.f. (\url{http://arxiv.org/abs/arXiv:1011.1669v3})
+
+\leavevmode\hypertarget{ref-McCarthy2016}{}%
+219. McCarthy S, Das S, Kretzschmar W, et al. A reference panel of 64,976 haplotypes for genotype imputation. \emph{Nature Genetics}. 2016;
+
+\leavevmode\hypertarget{ref-Jones2002}{}%
+220. Jones P a, Baylin SB. The fundamental role of epigenetic events in cancer. \emph{Nature reviews. Genetics} {[}electronic article{]}. 2002;3(6):415--28. (\url{http://www.ncbi.nlm.nih.gov/pubmed/16136652\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/pubmed/12042769})
+
+\leavevmode\hypertarget{ref-Borghol2012}{}%
+221. Borghol N, Suderman M, Mcardle W, et al. Associations with early-life socio-economic position in adult DNA methylation. \emph{International Journal of Epidemiology}. 2012;
+
+\leavevmode\hypertarget{ref-Munafo2012}{}%
+222. Munafò MR, Timofeeva MN, Morris RW, et al. Association between genetic variants on chromosome 15q25 locus and objective measures of Tobacco exposure. 2012;
+
+\leavevmode\hypertarget{ref-Richardson2017}{}%
+223. Richardson TG, Zheng J, Davey Smith G, et al. Mendelian Randomization Analysis Identifies CpG Sites as Putative Mediators for Genetic Influences on Cardiovascular Disease Risk. \emph{American Journal of Human Genetics}. 2017;
+
+\leavevmode\hypertarget{ref-Leek2016}{}%
+224. Leek JT, Johnson WE, Parker HS, et al. sva: Surrogate Variable Analysis. 2016;
+
+\leavevmode\hypertarget{ref-McKay2017}{}%
+225. McKay JD, Hung RJ, Han Y, et al. Large-scale association analysis identifies new lung cancer susceptibility loci and heterogeneity in genetic susceptibility across histological subtypes. \emph{Nature genetics} {[}electronic article{]}. 2017;49(7):1126--1132. (\url{http://www.nature.com/doifinder/10.1038/ng.3892\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/pubmed/28604730})
+
+\leavevmode\hypertarget{ref-Thomas2007}{}%
+226. Thomas DC, Lawlor DA, Thompson JR. Re: Estimation of Bias in Nongenetic Observational Studies Using "Mendelian Triangulation" by Bautista et~al. 2007;
+
+\leavevmode\hypertarget{ref-Bowden2015}{}%
+227. Bowden J, Smith GD, Burgess S. Mendelian randomization with invalid instruments: Effect estimation and bias detection through Egger regression. \emph{International Journal of Epidemiology} {[}electronic article{]}. 2015;44(2):512--525. (\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4469799/})
+
+\leavevmode\hypertarget{ref-Zhan2016}{}%
+228. Zhan X, Hu Y, Li B, et al. RVTESTS: An efficient and comprehensive tool for rare variant association analysis using sequence data. \emph{Bioinformatics}. 2016;32(9):1423--1426.
+
+\leavevmode\hypertarget{ref-Das2016}{}%
+229. Das S, Forer L, Schönherr S, et al. Next-generation genotype imputation service and methods. \emph{Nature Genetics}. 2016;
+
+\leavevmode\hypertarget{ref-Furberg2010}{}%
+230. Furberg H, Kim Y, Dackor J, et al. Genome-wide meta-analyses identify multiple loci associated with smoking behavior. \emph{Nature Genetics}. 2010;
+
+\leavevmode\hypertarget{ref-Haycock2016}{}%
+231. Haycock PC, Burgess S, Wade KH, et al. Best (but oft-forgotten) practices: The design, analysis, and interpretation of Mendelian randomization studies. \emph{American Journal of Clinical Nutrition}. 2016;
+
+\leavevmode\hypertarget{ref-Kaur-Knudsen2011}{}%
+232. Kaur-Knudsen D, Bojesen SE, Tybjærg-Hansen A, et al. Nicotinic acetylcholine receptor polymorphism, smoking behavior, and tobacco-related cancer and lung and cardiovascular diseases: A cohort study. \emph{Journal of Clinical Oncology}. 2011;
+
+\leavevmode\hypertarget{ref-Bojesen2013}{}%
+233. Bojesen SE, Pooley KA, Johnatty SE, et al. Multiple independent variants at the TERT locus are associated with telomere length and risks of breast and ovarian cancer. \emph{Nature Genetics}. 2013;
+
+\leavevmode\hypertarget{ref-GTExConsortium2013}{}%
+234. GTEx Consortium TG. The Genotype-Tissue Expression (GTEx) project. \emph{Nature genetics} {[}electronic article{]}. 2013;45(6):580--5. (\url{http://www.ncbi.nlm.nih.gov/pubmed/23715323\%7B/\%\%7D5Cnhttp://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC4010069})
+
+\leavevmode\hypertarget{ref-Hemani2016}{}%
+235. Hemani G, Zheng J, Wade KH, et al. MR-Base: a platform for systematic causal inference across the phenome using billions of genetic associations. \emph{bioRxiv} {[}electronic article{]}. 2016;(\url{http://biorxiv.org/content/early/2016/12/16/078972.abstract})
 
 \leavevmode\hypertarget{ref-Burgess2011}{}%
-202. Burgess S, Thompson SG. Avoiding bias from weak instruments in mendelian randomization studies. \emph{International Journal of Epidemiology}. 2011;
+236. Burgess S, Thompson SG. Avoiding bias from weak instruments in mendelian randomization studies. \emph{International Journal of Epidemiology}. 2011;
 
 \leavevmode\hypertarget{ref-Shi2014}{}%
-203. Shi J, Marconett CN, Duan J, et al. Characterizing the genetic basis of methylome diversity in histologically normal human lung tissue. \emph{Nature communications}. 2014;
+237. Shi J, Marconett CN, Duan J, et al. Characterizing the genetic basis of methylome diversity in histologically normal human lung tissue. \emph{Nature communications}. 2014;
 
 \leavevmode\hypertarget{ref-Freeman2016}{}%
-204. Freeman JR, Chu S, Hsu T, et al. Epigenome-wide association study of smoking and DNA methylation in non-small cell lung neoplasms. \emph{Oncotarget}. 2016;7(43).
+238. Freeman JR, Chu S, Hsu T, et al. Epigenome-wide association study of smoking and DNA methylation in non-small cell lung neoplasms. \emph{Oncotarget}. 2016;7(43).
 
 \leavevmode\hypertarget{ref-Gao2016}{}%
-205. Gao X, Zhang Y, Breitling LP, et al. Tobacco smoking and methylation of genes related to lung cancer development. \emph{Oncotarget}. 2016;
+239. Gao X, Zhang Y, Breitling LP, et al. Tobacco smoking and methylation of genes related to lung cancer development. \emph{Oncotarget}. 2016;
 
 \leavevmode\hypertarget{ref-Timpson2017}{}%
-206. Timpson NJ, Greenwood CMT, Soranzo N, et al. Genetic architecture: the shape of the genetic contribution to human traits and disease. \emph{Nature Reviews Genetics} {[}electronic article{]}. 2017;19(2):110--124. (\url{http://www.nature.com/doifinder/10.1038/nrg.2017.101})
+240. Timpson NJ, Greenwood CMT, Soranzo N, et al. Genetic architecture: the shape of the genetic contribution to human traits and disease. \emph{Nature Reviews Genetics} {[}electronic article{]}. 2017;19(2):110--124. (\url{http://www.nature.com/doifinder/10.1038/nrg.2017.101})
 
 \leavevmode\hypertarget{ref-Boyle2017}{}%
-207. Boyle EA, Li YI, Pritchard JK. An Expanded View of Complex Traits: From Polygenic to Omnigenic. 2017;
+241. Boyle EA, Li YI, Pritchard JK. An Expanded View of Complex Traits: From Polygenic to Omnigenic. 2017;
 
 \leavevmode\hypertarget{ref-Finucane2018}{}%
-208. Finucane HK, Reshef YA, Anttila V, et al. Heritability enrichment of specifically expressed genes identifies disease-relevant tissues and cell types. \emph{Nature Genetics}. 2018;
+242. Finucane HK, Reshef YA, Anttila V, et al. Heritability enrichment of specifically expressed genes identifies disease-relevant tissues and cell types. \emph{Nature Genetics}. 2018;
 
 \leavevmode\hypertarget{ref-Wilkins2020}{}%
-209. Wilkins OM, Johnson KC, Houseman EA, et al. Genome-wide characterization of cytosine-specific 5-hydroxymethylation in normal breast tissue. \emph{Epigenetics}. 2020;
+243. Wilkins OM, Johnson KC, Houseman EA, et al. Genome-wide characterization of cytosine-specific 5-hydroxymethylation in normal breast tissue. \emph{Epigenetics}. 2020;
 
 \leavevmode\hypertarget{ref-Marshall2020}{}%
-210. Marshall LL, Killinger BA, Ensink E, et al. Epigenomic analysis of Parkinson's disease neurons identifies Tet2 loss as neuroprotective. \emph{Nature Neuroscience}. 2020;
+244. Marshall LL, Killinger BA, Ensink E, et al. Epigenomic analysis of Parkinson's disease neurons identifies Tet2 loss as neuroprotective. \emph{Nature Neuroscience}. 2020;
 
 \leavevmode\hypertarget{ref-Greco2016}{}%
-211. Greco CM, Kunderfranco P, Rubino M, et al. DNA hydroxymethylation controls cardiomyocyte gene expression in development and hypertrophy. \emph{Nature Communications}. 2016;
+245. Greco CM, Kunderfranco P, Rubino M, et al. DNA hydroxymethylation controls cardiomyocyte gene expression in development and hypertrophy. \emph{Nature Communications}. 2016;
 
 \leavevmode\hypertarget{ref-Shendure2017}{}%
-212. Shendure J, Balasubramanian S, Church GM, et al. DNA sequencing at 40: Past, present and future. \emph{Nature}. 2017;
+246. Shendure J, Balasubramanian S, Church GM, et al. DNA sequencing at 40: Past, present and future. \emph{Nature}. 2017;
 
 \leavevmode\hypertarget{ref-Stark2019}{}%
-213. Stark R, Grzelak M, Hadfield J. RNA sequencing: the teenage years. 2019;
+247. Stark R, Grzelak M, Hadfield J. RNA sequencing: the teenage years. 2019;
 
 \leavevmode\hypertarget{ref-Weinstein2013}{}%
-214. Weinstein JN, Collisson EA, Mills GB, et al. The cancer genome atlas pan-cancer analysis project. 2013;
+248. Weinstein JN, Collisson EA, Mills GB, et al. The cancer genome atlas pan-cancer analysis project. 2013;
 
 \leavevmode\hypertarget{ref-Hedlund2018}{}%
-215. Hedlund E, Deng Q. Single-cell RNA sequencing: Technical advancements and biological applications. 2018;
+249. Hedlund E, Deng Q. Single-cell RNA sequencing: Technical advancements and biological applications. 2018;
 
 \leavevmode\hypertarget{ref-Papalexi2018}{}%
-216. Papalexi E, Satija R. Single-cell RNA sequencing to explore immune cell heterogeneity. 2018;
+250. Papalexi E, Satija R. Single-cell RNA sequencing to explore immune cell heterogeneity. 2018;
 
 \leavevmode\hypertarget{ref-Karemaker2018}{}%
-217. Karemaker ID, Vermeulen M. Single-Cell DNA Methylation Profiling: Technologies and Biological Applications. 2018;
+251. Karemaker ID, Vermeulen M. Single-Cell DNA Methylation Profiling: Technologies and Biological Applications. 2018;
 
 \leavevmode\hypertarget{ref-Gravina2015}{}%
-218. Gravina S, Ganapathi S, Vijg J. Single-cell, locus-specific bisulfite sequencing (SLBS) for direct detection of epimutations in DNA methylation patterns. \emph{Nucleic Acids Research}. 2015;
+252. Gravina S, Ganapathi S, Vijg J. Single-cell, locus-specific bisulfite sequencing (SLBS) for direct detection of epimutations in DNA methylation patterns. \emph{Nucleic Acids Research}. 2015;
 
 \leavevmode\hypertarget{ref-Farlik2015}{}%
-219. Farlik M, Sheffield NC, Nuzzo A, et al. Single-Cell DNA Methylome Sequencing and Bioinformatic Inference of Epigenomic Cell-State Dynamics. \emph{Cell Reports}. 2015;
+253. Farlik M, Sheffield NC, Nuzzo A, et al. Single-Cell DNA Methylome Sequencing and Bioinformatic Inference of Epigenomic Cell-State Dynamics. \emph{Cell Reports}. 2015;
 
 \leavevmode\hypertarget{ref-Zhang2019}{}%
-220. Zhang F, Chen W, Zhu Z, et al. OSCA: A tool for omic-data-based complex trait analysis. \emph{Genome Biology}. 2019;
+254. Zhang F, Chen W, Zhu Z, et al. OSCA: A tool for omic-data-based complex trait analysis. \emph{Genome Biology}. 2019;
 
 \leavevmode\hypertarget{ref-Smith2013}{}%
-221. Smith BH, Campbell A, Linksted P, et al. Cohort profile: Generation scotland: Scottish family health study (GS: SFHS). The study, its participants and their potential for genetic research on health and illness. \emph{International Journal of Epidemiology}. 2013;
+255. Smith BH, Campbell A, Linksted P, et al. Cohort profile: Generation scotland: Scottish family health study (GS: SFHS). The study, its participants and their potential for genetic research on health and illness. \emph{International Journal of Epidemiology}. 2013;
 
 \leavevmode\hypertarget{ref-RoadmapEpigenomicsConsortium2015}{}%
-222. Roadmap Epigenomics Consortium, Kundaje A, Meuleman W, et al. Integrative analysis of 111 reference human epigenomes. \emph{Nature}. 2015;
+256. Roadmap Epigenomics Consortium, Kundaje A, Meuleman W, et al. Integrative analysis of 111 reference human epigenomes. \emph{Nature}. 2015;
 
 \leavevmode\hypertarget{ref-Marzi2018}{}%
-223. Marzi SJ, Leung SK, Ribarska T, et al. A histone acetylome-wide association study of Alzheimer's disease identifies disease-associated H3K27ac differences in the entorhinal cortex. \emph{Nature Neuroscience}. 2018;
+257. Marzi SJ, Leung SK, Ribarska T, et al. A histone acetylome-wide association study of Alzheimer's disease identifies disease-associated H3K27ac differences in the entorhinal cortex. \emph{Nature Neuroscience}. 2018;
 
 \leavevmode\hypertarget{ref-Uhlen2015}{}%
-224. Uhlén M, Fagerberg L, Hallström BM, et al. Tissue-based map of the human proteome. \emph{Science}. 2015;
+258. Uhlén M, Fagerberg L, Hallström BM, et al. Tissue-based map of the human proteome. \emph{Science}. 2015;
 
 \leavevmode\hypertarget{ref-Thul2017}{}%
-225. Thul PJ, Akesson L, Wiking M, et al. A subcellular map of the human proteome. \emph{Science}. 2017;
+259. Thul PJ, Akesson L, Wiking M, et al. A subcellular map of the human proteome. \emph{Science}. 2017;
 
 \leavevmode\hypertarget{ref-Lane2010}{}%
-226. Lane D, Levine A. p53 Research: the past thirty years and the next thirty years. 2010;
+260. Lane D, Levine A. p53 Research: the past thirty years and the next thirty years. 2010;
 \end{cslreferences}
 \end{document}
 
