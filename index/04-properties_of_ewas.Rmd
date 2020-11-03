@@ -48,8 +48,8 @@ In this study we first describe the data present in the EWAS Catalog before expl
 
 ## Methods {#methods-04}
 
-### Epigenome-wide association studies data 
-All the data for the analysis were extracted from The EWAS Catalog (__Chapter \@ref(ewas-catalog)__). This includes `r n_pubs` published studies, `r n_aries` EWAS from the ARIES subsection of ALSPAC (__Section \@ref(alspac-03)__) [@Relton2015-aries; @Fraser2013; @Boyd2013] and `r n_geo` EWAS performed using data from the gene expression omnibus (GEO) resource. See __Chapter \@ref(ewas-catalog)__ for more details.
+### Epigenome-wide association studies data {#ewas-data-04}
+All the data for the analysis were extracted from The EWAS Catalog (__Chapter \@ref(ewas-catalog)__). This includes `r n_pubs` published studies, `r n_aries` EWAS from the ARIES subsection of ALSPAC (__Section \@ref(aries-02)__) [@Relton2015-aries; @Fraser2013; @Boyd2013] and `r n_geo` EWAS performed using data from the gene expression omnibus (GEO) resource (__Section \@ref(geo-02)__). See __Chapter \@ref(ewas-catalog)__ for more details.
 
 ### Description of catalog data {-#description-of-data}
 Associations between DNA methylation and traits, unless otherwise stated, were extracted at P < 1x10^-7^. Each of the CpGs in the Catalog are annotated to genes, using data from the meffil R package . 
@@ -63,10 +63,10 @@ T-statistics ($t$) were calculated using P-values, sample sizes ($n$) and the qt
 
 We identified traits for which r^2^ values might be inflated. For each EWAS the estimated r^2^ values were summed and these values were transformed to approximate a normal distribution. Then a z-test was performed to assess which sum of r^2^ values were greater than the mean sum of r^2^ values. From the z-test, those with a FDR-corrected P-value of less than 0.05 were labelled as having inflated r^2^ values.
 
-### Identifying faulty probes
+### Identifying faulty probes {#identifying-faulty-probes}
 By far the most common method to measure DNA methylation across the studies in The EWAS Catalog is using the Illumina Infinium HumanMethylation450 Beadchip. Since its development, the array has been extensively characterised [@Price2018; @Forest2018; @Jaffe2014; @Zhou2017] and it was found that not all probes map just to the CpG they were designed to bind to. Some probes map to SNPs, others are non-specific and some are prone to cross-hybridisation. We assigned probes to be 'potentially faulty' if they were characterised as such by Zhou et al. [@Zhou2017]. 
 
-### Replication
+### Replication {#replication-methods-04}
 An association (at P<1x10^-7^) was deemed to be replicated if it had been identified by another study at P < 1x10^-4^. We assessed replicability of EWAS within the database in two separate ways. Firstly, replication within studies is recorded in the EWAS Catalog, thus we simply performed a lookup for any studies that performed a replication or meta-analysed discovery and replication datasets. Secondly, we performed a lookup of results for any traits for which multiple EWAS had been conducted. 
 
 The Catalog also contains results from studies that have uploaded their data to GEO as well as results from the re-analysis of that data performed by The EWAS Catalog team. These re-analyses adjusted for 20 surrogate variables only as many studies did not provide a complete set of covariates to GEO. We performed a lookup of results found in the original EWAS in the re-analysed data. 

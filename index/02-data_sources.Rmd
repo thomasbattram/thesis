@@ -1,1 +1,92 @@
 # Data sources {#data-sources}
+
+```{r call_source-02}
+read_chunk("chunks/02-data_sources.R")
+```
+
+``` {r load-data-02, results="hide", message=FALSE}
+```
+
+I utilize multiple data sources throughout this thesis and in this chapter, each of these sources will be described in relevant detail so that they can be referenced for future results chapters. __Table \@ref(tab:data-overview-tab)__ gives a list of the data sources used, which results chapters they appear in and what type of data I extracted from  each source.
+
+```{r data-overview-tab, message=FALSE, results="asis"}
+```
+
+## Accessible Resource for Integrated Epigenomic Studies (ARIES) {#aries-02}
+
+### Summary {#aries-summary}
+
+ARIES is a subsection of the Avon Longitudinal Study of Parents and Children (ALSPAC) prospective birth cohort. This data source contains dense phenotypic data, DNA methylation data measured by the HM450 BeadChip, and genotype data from 1018 mother–child pairs. Whole blood samples were collected for DNA methylation measurement at three timepoints in children and two in their mothers, the timepoints with mean ages (in brackets) are as follows for children: birth, childhood (7.5), adolescence (17.1) and for mothers: during pregnancy (28.7), and at middle age (46.9). Within this thesis, data from mothers at middle age was used for all the analyses.
+
+### ALSPAC description {#alspac-description-02}
+
+ALSPAC recruited pregnant women in the Bristol and Avon area, United Kingdom, with an expected delivery date between April 1991 and December 1992 (http://www.bris.ac.uk/alspac/). Over 14,000 pregnancies have been followed up (both children and parents) throughout the life-course. Full details of the cohort have been published previously [@Fraser2013; @Boyd2013]. 
+
+Ethical approval for ALSPAC was obtained from the ALSPAC Ethics and Law Committee and from the UK National Health Service Local Research Ethics Committees. Written informed consent was obtained from both the parent/guardian and, after the age of 16, children provided written assent. The study website contains details of all the data that is available through a fully searchable data dictionary (http://www.bristol.ac.uk/alspac/researchers/access/).
+
+Study data were collected and managed using REDCap electronic data capture tools hosted at ALSPAC [@Harris2009; @Harris2019]. REDCap (Research Electronic Data Capture) is a secure, web-based software platform designed to support data capture for research studies, providing 1) an intuitive interface for validated data capture; 2) audit trails for tracking data manipulation and export procedures; 3) automated export procedures for seamless data downloads to common statistical packages; and 4) procedures for data integration and interoperability with external sources.
+
+### ALSPAC genetic data {#alspac-genetic-data}
+
+Mothers were genotyped using the Illumina human660W-quad genome-wide single nucleotide polymorphism (SNP) genotyping platform (Illumina Inc., San Diego, CA, USA) at the Centre National de Génotypage (CNG; Paris, France). SNPs were removed if they displayed more than 5% missingness or a Hardy-Weinberg equilibrium P value of less than 1.0e-06. Additionally, SNPs with a minor allele frequency of less than 1% were removed. Samples were excluded if they displayed more than 5% missingness, had indeterminate X chromosome heterozygosity or extreme autosomal heterozygosity. Samples showing evidence of population stratification were identified by multidimensional scaling of genome-wide identity by state pairwise distances using the four HapMap populations as a reference, and then excluded. Cryptic relatedness was assessed using a IBD estimate of more than 0.125 which is expected to correspond to roughly 12.5% alleles shared IBD or a relatedness at the first cousin level. Related subjects that passed all other quality control thresholds were retained during subsequent phasing and imputation.
+
+Imputation of mother’s genotype data in ALSPAC was done with ALSPAC children’s data. So, genotypes in common between the sample of mothers and sample of children were combined. SNPs with genotype missingness above 1% due to poor quality were removed along with subjects due to potential ID mismatches. We estimated haplotypes using ShapeIT (v2.r644) which utilises relatedness during phasing. We obtained a phased version of the 1000 genomes reference panel (Phase 1, Version 3) from the Impute2 reference data repository (phased using ShapeIt v2.r644, haplotype release date Dec 2013). Imputation of the target data was performed using Impute V2.2.2 against the reference panel (all polymorphic SNPs excluding singletons), using all 2186 reference haplotypes (including non-Europeans).
+
+### ARIES DNA methylation data {#aries-dnam-data}
+
+Following DNA extraction samples were bisulfite converted using the Zymo EZ DNA Methylation kit (Zymo, Irvine, CA). Genome-wide methylation was measured using the HM450 BeadChip. The arrays were scanned using an Illumina iScan, with initial quality review using GenomeStudio. During the data generation process, a wide range of batch variables were recorded in a purpose-built laboratory information management system (LIMS). The LIMS also reported quality control (QC) metrics from the standard control probes on the HM450 BeadChip for each sample. Methylation data were normalised in R with the wateRmelon package (1) using the Touleimat and Tost (2) algorithm to reduce the non-biological differences between probes.
+
+Cell proportions (CD8+ and CD4+ T cells, B cells, monocytes, natural killer cells, and granulocytes) were estimated using an algorithm proposed by Houseman et al. [@Houseman2012].
+
+## Gene expression omnibus (GEO) {#geo-02}
+
+The GEO database is an online repository that allows deposition of functional genomics datasets that are made publically available. It contains individual participant data from various EWAS and so was queried to recruit additional datasets for entry into The EWAS Catalog (__Chapter \@ref(ewas-catalog)__). More details of how the database was queried for The EWAS Catalog can be found in __Section \@ref(geo-data-extraction)__.
+
+## UK Biobank {#uk-biobank-02}
+
+The UK Biobank is a prospective cohort study that recruited over 500,000 people aged 37-73 years were recruited for the study between 2006 and 2010. Phenotype and genotype data were collected from assessment centres all over the United Kingdom. The quality control and the participants have been described in detail elsewhere (REF). 
+
+Importantly, this data was made easily accessible to researchers, which has lead to multiple efforts to perform hundreds of GWAS in parallel and make the summary data from these openly available. This can be found on platforms such as the IEU OpenGWAS Project (__Section \@ref(ieu-opengwas-project-02)__). The GWAS summary statistics from these efforts were utilized in __Chapters \@ref(h2ewas-chapter) and \@ref(ewas-gwas-comp-chapter)__. Further, the Neale Lab (http://www.nealelab.is/uk-biobank/) calculated h^2^~SNP~ for the traits for which they performed GWAS. __ADD IN HOW THEY CALCULATED HERITABILITY???__ This was used in __Chapter \@ref(h2ewas-chapter)__. More details can be found in those chapters.
+
+## IEU OpenGWAS Project {#ieu-opengwas-project-02}
+
+A team at the IEU recently produced a database of full GWAS summary statistics, the IEU OpenGWAS Project [@Elsworth2020; @Hemani2018]. This is accompanied by a website and packages to extract the data and perform various analyses [@Elsworth2020; @Hemani2018]. There are thousands of GWAS present in the database. For each GWAS, the database stores meta-data such as sample size, participant ancestry and sex, as well as full association statistics (betas, standard errors, P values) for all genetic variants assayed in the GWAS, i.e. not just those surpassing a given P value threshold.
+
+There are thousands of GWAS with this data present in the database. These come from studies which the authors have released full summary statistics and from many GWAS performed in large-scale biobanks by members of the IEU OpenGWAS Project team or by other groups.
+
+The IEU OpenGWAS Project was used in __Chapters \@ref(h2ewas-chapter) and \@ref(ewas-gwas-comp-chapter)__. More details of why summary level GWAS statistics were required can be found in those chapters.
+
+## Summary data for an EWAS of lung cancer {#lc-ewas-data}
+
+In __Chapter \@ref(dnam-lung-cancer-mr)__, I assess the association between DNA methylation and lung cancer by meta-analysing summary data from four case-control studies nested within prospective cohorts. In total 918 case-control pairs were used in the analyses. Below I give a description of the cohorts and how DNA methylation was measured for this meta-analysis of EWAS, referencing an earlier study where the methods are described in more detail [@Baglietto2017].
+
+At the various laboratory sites, samples were distributed into 96-well plates and processed in chips of 12 arrays (8 chips per plate) with case-control pairs arranged randomly on the same chip. Methylation data were pre-processed and normalized in each study, and probe filtering was performed as previously described [@Baglietto2017], leaving 465,886 CpGs suitable for the analysis in EPIC-Italy, 485,330 CpGs in MCCS, 450,890 CpGs in NOWAC and 482,867 CpGs in NSHDS.
+
+### European Prospective Investigation into Cancer and Nutrition-Italy (EPIC-Italy) {#epic-italy}
+EPIC-Italy includes 47,749 volunteers (32,579 women) aged 35–70 years at the time of recruitment (1992–1998). Anthropometric measurements and lifestyle variables including detailed information on smoking history were collected at recruitment through standardized questionnaires, together with a blood sample. Within EPIC-Italy a nested case-control study was conducted utilizing incident cases diagnosed within follow-up and healthy controls individually matched to cases by gender, date of birth (±5 years), date of inclusion in the study and study centre. Analysis was performed for 185 incident cases diagnosed within follow-up and matched controls. Laboratory procedures were carried out at the Human Genetics Foundation (Turin, Italy) and DNA extracted from buffy coats as previously described [@Baglietto2017]. All participants signed an informed consent form, and the ethical review boards of the International Agency for Research on Cancer and of each local participating centre approved the study protocol.
+
+### Melbourne Collaborative Cohort Study (MCCS) {#mccs}
+The MCCS is a prospective cohort study of 41,514 volunteers (24,469 women) aged between 27 and 76 years at baseline (1990-1994). At baseline attendance, participants completed questionnaires that measured demographic characteristics and lifestyle factors. Height and weight were directly measured, and a blood sample was collected and stored. Incident cases of lung cancer were identified through linkage with the State and National Cancer Registries during follow-up up to the end of 2011. The MCCS sample included 367 cases and 367 matched controls selected from MCCS participants who were lung cancer free at the age of diagnosis of the matching case (density sampling). Matching variables included gender, date of blood collection (within 6 months), date of birth (within 1 year), country of birth (Australia and UK versus Southern Europe), type of biospecimen (lymphocyte, buffy coat and dried blood spot) and smoking status (never smokers; short-term former smokers: quitting smoking less than 10 years before blood draw; long-term former smokers: quitting smoking 10 years or more before blood draw; current light smokers: less than 15 cigarettes per day at blood draw; and current heavy smokers: 15 cigarettes or more at blood draw). For the MCCS, laboratory procedures were carried out at the Genetic Epidemiology Laboratory, the University of Melbourne according to manufacturers' protocols. DNA extraction from lymphocytes and buffy coats was performed as previously described [@Baglietto2017]. The Cancer Council Victoria's Human Research Ethics Committee approved the study protocol. Subjects gave written consent to participate and for the investigators to obtain access to their medical records.
+
+### Norwegian Women and Cancer (NOWAC) {#nowac}
+The biobank of the NOWAC cohort was established in the years 2003-2006. Those who filled in an eight-page questionnaire and accepted the invitation to donate blood were sent blood drawing equipment together with a two-page epidemiological questionnaire. Around 50 000 women returned two tubes of blood to the Institute of Community Medicine at UiT The Arctic University of Norway and data linkage to the National Cancer Registry of Norway was performed. During follow-up to the end of 2011, 132 eligible cases of lung cancer were identified and were used for the EWAS. For each case, one control with an available blood sample was selected and matched on time since blood sampling and year of birth in order to control for effects of storage time and ageing. The cases and the controls were processed together for all laboratory procedures in order to reduce any batch effect. Laboratory procedures were carried out at the Human Genetics Foundation (Turin, Italy). DNA extraction from buffy coats was performed as previously described [@Baglietto2017]. All participants gave informed consent. The study was approved by the Regional Committee for Medical and Health Research Ethics in North Norway. Data storage and linkage was approved by the Norwegian Data Inspectorate.
+
+### Northern Sweden Health and Disease Study (NSHDS) {#nshds}
+NSHDS is an ongoing prospective cohort and intervention study intended for health promotion of the population of Västerbotten County in northern Sweden. All residents were invited to participate by attending a health check-up at their local health care centre at 40, 50 and 60 years of age. At the health check-up, participants were asked to complete a self-administered questionnaire covering various factors such as education, smoking habits, physical activity and diet. In addition, height and weight were measured and participants were asked to donate a blood sample. Incident lung cancer cases were identified through linkage to the regional cancer registry. One control was chosen at random for each lung cancer case from appropriate risk sets consisting of all cohort members alive and free of cancer (except non-melanoma skin cancer) at the time of diagnosis of the index case. Matching criteria were the same as for the MCCS except there was no matching for type of biospecimens as DNA was extracted from whole blood for all samples. After quality control, a total of 234 incident lung cancer cases and 234 individually matched controls were available for this analysis. Laboratory procedures for NSHDS were carried out at two sites. DNA extraction from the buffy coat was conducted at Umeå University, Sweden, as previously described. Illumina Infinium HumanMethylation450 BeadChip analysis was conducted at the ALSPAC/IEU Laboratory at the University of Bristol. All study subjects provided written informed consent at time of the recruitment into the NSHDS.
+
+## Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium (TRICL-ILCCO) {#tricl-ilcco-02}
+
+To perform the two-sample MR analyses in __Chapter \@ref(dnam-lung-cancer-mr)__, summary statistics from a large lung cancer GWAS were required. This was taken from a GWAS using data from the TRICL-ILCCO consortium. 
+
+In the consortium there are XXX cohorts, which provide data on XXX lung cancer cases and XXX controls. These individuals were all genotyped. Information on the genotyping, quality control, and cohorts can be found elsewhere (REFS).
+
+
+
+
+
+
+
+
+
+
+

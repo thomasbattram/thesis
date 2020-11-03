@@ -279,7 +279,7 @@ In order to remedy some of the problems EWAS face and to help understand whether
 Statistical genetics is concerned with ascertaining the connection between traits and genetic variation. Germline genetic variants, the units of measurement for genome-wide association studies (GWAS), are fixed from conception and the association between these variants and complex traits tends to be unconfounded [@DaveySmith2003; @DaveySmith2014]. Therefore, the properties of these variants and DNA methylation are different and one would expect the genetic and epigenetic architectures of complex traits to differ. However, genetic epidemiologists have had to overcome problems to help interpret GWAS, which are also pertinent to EWAS. These include understanding how much trait variation is captured by all the variants used in the study and how to infer function from genetic variation. Further, cataloging genetic associations has proven an invaluable resource for the research community [@Buniello2019] and these variants can be used as tools to augment the understanding of DNA methylation-trait associations. In this section I briefly describe some examples of these efforts and explain how they might be adapted to help inform future EWAS.
 
 ### Catalogues of genome-wide associations {#gwas-catalog}
-Cataloging genome-wide associations has a broad range of applications for researchers, from replication of GWAS, to identifying overlapping GWAS signals between traits, to pooling the data to try and understand the genetic architecture of complex traits as a whole. There are multiple databases now available to the genetic epidemiologist community that have catalogued these associations. These include manually curated databases of publicly available GWAS data, The GWAS Catalog, [@Buniello2019] and the IEU Open GWAS Project [@Hemani2018]. A corollary database for EWAS is likely to also provide value for epigenetic epidemiologists. At the very least it would provide an easy tool to assess whether results replicate. Catalogues such as EWASdb [@Liu2019] and the EWAS Atlas [@Li2019] are currently available but fall short of some key researcher requirements including ease of use and access to full summary statistics. The development of a new database, The EWAS Catalog, is the focus of __Chapter \@ref(ewas-catalog)__. 
+Cataloging genome-wide associations has a broad range of applications for researchers, from replication of GWAS, to identifying overlapping GWAS signals between traits, to pooling the data to try and understand the genetic architecture of complex traits as a whole. There are multiple databases now available to the genetic epidemiologist community that have catalogued these associations. These include manually curated databases of publicly available GWAS data, The GWAS Catalog, [@Buniello2019] and the IEU OpenGWAS Project [@Elsworth2020; @Hemani2018]. A corollary database for EWAS is likely to also provide value for epigenetic epidemiologists. At the very least it would provide an easy tool to assess whether results replicate. Catalogues such as EWASdb [@Liu2019] and the EWAS Atlas [@Li2019] are currently available but fall short of some key researcher requirements including ease of use and access to full summary statistics. The development of a new database, The EWAS Catalog, is the focus of __Chapter \@ref(ewas-catalog)__. 
 
 ### Total variance captured by all sites measured genome-wide {#heritability}
 In addition to cataloguing the information gained, efforts also need to be made in understanding the epigenetic architecture of complex traits to enable interpretation of these data.
@@ -312,7 +312,7 @@ Understanding both the causes and consequences of complex traits are pertinent t
 As discussed, population-based studies of DNA methylation suffer from the same limitations as any observational epidemiology study, namely confounding and reverse causation. One method that aims to mitigate confounding is Mendelian randomization (MR) [@DaveySmith2003; @DaveySmith2014; @Richmond2016], which uses genetic variants as proxies for the exposure of interest in an instrumental variable framework (illustrated in __Figure \@ref(fig:mr-diagram)__). Using genetic variants as instruments has the advantage that the direction of effect will always be from instrument to exposure and not vice versa, making interpretation of the studies simpler. Furthermore, unlike environmental phenotypes, that tend to be highly correlated and clustered into groups, genetic variants associated with a trait tend to be unconfounded [@DaveySmith2003; @DaveySmith2014]. In the absence of assortative mating, genetic variants should be distributed randomly across the population, so in effect those grouped by genotype should exhibit differences in exposure, but confounding factors should not differ between genotype groups [@DaveySmith2014]. Assortative mating has been reliably shown to occur with some traits such as social behaviours and anthropometric measures [@Silventoinen2003; @Maes1997; @Eaves1981]. Assortment tends to occur on visible social factors and so intentional assortment based on DNA methylation profiles is very unlikely. However, DNA methylation may associate with factors that are assorted on, for example alcohol consumption [@Howe2019; @Dugue2019], which may lead to unintentional assortment on DNA methylation profiles. The impact this may have on MR studies using DNA methylation has not been explored, and this analysis is beyond the scope of this thesis but is something that should be noted when assessing the reliability of such MR studies.
 
 #### Availability of data for MR
-Another advantage of MR is the data it uses. Thousands of GWAS have been conducted giving researchers ample instruments for a wide variety of traits and many of these instruments are easily accessible through databases such as the GWAS Catalog [@Buniello2019] and IEU Open GWAS Project [@Hemani2018]. Furthermore, it isn’t necessary to use individual-level data to conduct MR studies; summary statistics from GWAS are all that is needed to provide data in a two-sample MR framework [@Inoue2010; @Pierce2013]. This is especially valuable to conducting MR studies using DNA methylation data as DNA methylation is not widely measured across cohorts and case-control studies. Thus, without a method to combine summary data from both GWAS of DNA methylation and GWAS of other complex traits, well-powered MR studies would not be possible to assess the potential effect of DNA methylation on complex traits (and _vice versa_).
+Another advantage of MR is the data it uses. Thousands of GWAS have been conducted giving researchers ample instruments for a wide variety of traits and many of these instruments are easily accessible through databases such as the GWAS Catalog [@Buniello2019] and IEU OpenGWAS Project [@Elsworth2020; @Hemani2018]. Furthermore, it isn’t necessary to use individual-level data to conduct MR studies; summary statistics from GWAS are all that is needed to provide data in a two-sample MR framework [@Inoue2010; @Pierce2013]. This is especially valuable to conducting MR studies using DNA methylation data as DNA methylation is not widely measured across cohorts and case-control studies. Thus, without a method to combine summary data from both GWAS of DNA methylation and GWAS of other complex traits, well-powered MR studies would not be possible to assess the potential effect of DNA methylation on complex traits (and _vice versa_).
 
 #### Assumptions of MR
 In order for MR analyses to be valid, they must satisfy three instrumental variable assumptions, these are illustrated in __Figure \@ref(fig:mr-diagram)__. Testing assumption one, the instruments associate with the exposure of interest, is simple, but the other two assumptions cannot technically be proven to be true. Horizontal pleiotropy, where genetic variants associate with more variables than just the exposure of interest, can lead to violations in assumptions two and three. Ideally, MR would be performed in the context where the genetic effect on the exposure had been characterised such that the mechanism of action was understood clearly. This would help give evidence against assumptions two and three being broken. Unfortunately, this is rarely possible. However, a plethora of methods have now been developed to test for pleiotropic effects, given the exposure of interest has multiple independent genetic variants reliably associated with it.
@@ -372,6 +372,126 @@ Finally, __Chapter \@ref(dnam-lung-cancer-mr)__ will apply MR to explore the cau
 
 # Data sources {#data-sources}
 
+
+
+
+
+I utilize multiple data sources throughout this thesis and in this chapter, each of these sources will be described in relevant detail so that they can be referenced for future results chapters. __Table \@ref(tab:data-overview-tab)__ gives a list of the data sources used, which results chapters they appear in and what type of data I extracted from  each source.
+
+\begin{table}[!h]
+
+\caption{(\#tab:data-overview-tab)Overview of data used in this thesis}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{llll}
+\toprule
+data-source & chapters & level & data-types\\
+\midrule
+\cellcolor{gray!6}{ARIES} & \cellcolor{gray!6}{3, 4, 5, 7} & \cellcolor{gray!6}{individual and summary} & \cellcolor{gray!6}{DNAm, genetic, phenotypic, GWAS}\\
+EWAS Catalog* & 3, 4, 6 & summary & EWAS\\
+\cellcolor{gray!6}{GEO} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{individual} & \cellcolor{gray!6}{DNAm, phenotypic}\\
+IEU OpenGWAS Project & 5, 6 & summary & GWAS\\
+\cellcolor{gray!6}{EPIC-Italy} & \cellcolor{gray!6}{7} & \cellcolor{gray!6}{summary} & \cellcolor{gray!6}{EWAS}\\
+\addlinespace
+MCCS & 7 & summary & EWAS\\
+\cellcolor{gray!6}{NOWAC} & \cellcolor{gray!6}{7} & \cellcolor{gray!6}{summary} & \cellcolor{gray!6}{EWAS}\\
+NSHDS & 7 & summary & EWAS\\
+\cellcolor{gray!6}{TRICL-ILCCO} & \cellcolor{gray!6}{7} & \cellcolor{gray!6}{summary} & \cellcolor{gray!6}{GWAS}\\
+\bottomrule
+\multicolumn{4}{l}{\textsuperscript{} ARIES = Accessible Resource for Integrated Epigenomic Studies}\\
+\multicolumn{4}{l}{\textsuperscript{} GEO = Gene Expression Omnibus}\\
+\multicolumn{4}{l}{\textsuperscript{} IEU = Integrative Epidemiology Unit}\\
+\multicolumn{4}{l}{\textsuperscript{} EPIC-Italy = Italian strand of the European Prospective Investigation into Cancer}\\
+\multicolumn{4}{l}{and Nutrition study}\\
+\multicolumn{4}{l}{\textsuperscript{} MCCS = Melbourne Collaborative Cohort Study}\\
+\multicolumn{4}{l}{\textsuperscript{} NOWAC = Norwegian Women and Cancer}\\
+\multicolumn{4}{l}{\textsuperscript{} NSHDS = Northern Sweden Health and Disease Study}\\
+\multicolumn{4}{l}{\textsuperscript{} TRICL-ILCCO = Transdisciplinary Research in Cancer of the Lung and The}\\
+\multicolumn{4}{l}{International Lung Cancer Consortium}\\
+\multicolumn{4}{l}{\textsuperscript{} DNAm = DNA methylation}\\
+\multicolumn{4}{l}{\textsuperscript{*} Data source created in Chapter 3}\\
+\end{tabular}}
+\end{table}
+
+## Accessible Resource for Integrated Epigenomic Studies (ARIES) {#aries-02}
+
+### Summary {#aries-summary}
+
+ARIES is a subsection of the Avon Longitudinal Study of Parents and Children (ALSPAC) prospective birth cohort. This data source contains dense phenotypic data, DNA methylation data measured by the HM450 BeadChip, and genotype data from 1018 mother–child pairs. Whole blood samples were collected for DNA methylation measurement at three timepoints in children and two in their mothers, the timepoints with mean ages (in brackets) are as follows for children: birth, childhood (7.5), adolescence (17.1) and for mothers: during pregnancy (28.7), and at middle age (46.9). Within this thesis, data from mothers at middle age was used for all the analyses.
+
+### ALSPAC description {#alspac-description-02}
+
+ALSPAC recruited pregnant women in the Bristol and Avon area, United Kingdom, with an expected delivery date between April 1991 and December 1992 (http://www.bris.ac.uk/alspac/). Over 14,000 pregnancies have been followed up (both children and parents) throughout the life-course. Full details of the cohort have been published previously [@Fraser2013; @Boyd2013]. 
+
+Ethical approval for ALSPAC was obtained from the ALSPAC Ethics and Law Committee and from the UK National Health Service Local Research Ethics Committees. Written informed consent was obtained from both the parent/guardian and, after the age of 16, children provided written assent. The study website contains details of all the data that is available through a fully searchable data dictionary (http://www.bristol.ac.uk/alspac/researchers/access/).
+
+Study data were collected and managed using REDCap electronic data capture tools hosted at ALSPAC [@Harris2009; @Harris2019]. REDCap (Research Electronic Data Capture) is a secure, web-based software platform designed to support data capture for research studies, providing 1) an intuitive interface for validated data capture; 2) audit trails for tracking data manipulation and export procedures; 3) automated export procedures for seamless data downloads to common statistical packages; and 4) procedures for data integration and interoperability with external sources.
+
+### ALSPAC genetic data {#alspac-genetic-data}
+
+Mothers were genotyped using the Illumina human660W-quad genome-wide single nucleotide polymorphism (SNP) genotyping platform (Illumina Inc., San Diego, CA, USA) at the Centre National de Génotypage (CNG; Paris, France). SNPs were removed if they displayed more than 5% missingness or a Hardy-Weinberg equilibrium P value of less than 1.0e-06. Additionally, SNPs with a minor allele frequency of less than 1% were removed. Samples were excluded if they displayed more than 5% missingness, had indeterminate X chromosome heterozygosity or extreme autosomal heterozygosity. Samples showing evidence of population stratification were identified by multidimensional scaling of genome-wide identity by state pairwise distances using the four HapMap populations as a reference, and then excluded. Cryptic relatedness was assessed using a IBD estimate of more than 0.125 which is expected to correspond to roughly 12.5% alleles shared IBD or a relatedness at the first cousin level. Related subjects that passed all other quality control thresholds were retained during subsequent phasing and imputation.
+
+Imputation of mother’s genotype data in ALSPAC was done with ALSPAC children’s data. So, genotypes in common between the sample of mothers and sample of children were combined. SNPs with genotype missingness above 1% due to poor quality were removed along with subjects due to potential ID mismatches. We estimated haplotypes using ShapeIT (v2.r644) which utilises relatedness during phasing. We obtained a phased version of the 1000 genomes reference panel (Phase 1, Version 3) from the Impute2 reference data repository (phased using ShapeIt v2.r644, haplotype release date Dec 2013). Imputation of the target data was performed using Impute V2.2.2 against the reference panel (all polymorphic SNPs excluding singletons), using all 2186 reference haplotypes (including non-Europeans).
+
+### ARIES DNA methylation data {#aries-dnam-data}
+
+Following DNA extraction samples were bisulfite converted using the Zymo EZ DNA Methylation kit (Zymo, Irvine, CA). Genome-wide methylation was measured using the HM450 BeadChip. The arrays were scanned using an Illumina iScan, with initial quality review using GenomeStudio. During the data generation process, a wide range of batch variables were recorded in a purpose-built laboratory information management system (LIMS). The LIMS also reported quality control (QC) metrics from the standard control probes on the HM450 BeadChip for each sample. Methylation data were normalised in R with the wateRmelon package (1) using the Touleimat and Tost (2) algorithm to reduce the non-biological differences between probes.
+
+Cell proportions (CD8+ and CD4+ T cells, B cells, monocytes, natural killer cells, and granulocytes) were estimated using an algorithm proposed by Houseman et al. [@Houseman2012].
+
+## Gene expression omnibus (GEO) {#geo-02}
+
+The GEO database is an online repository that allows deposition of functional genomics datasets that are made publically available. It contains individual participant data from various EWAS and so was queried to recruit additional datasets for entry into The EWAS Catalog (__Chapter \@ref(ewas-catalog)__). More details of how the database was queried for The EWAS Catalog can be found in __Section \@ref(geo-data-extraction)__.
+
+## UK Biobank {#uk-biobank-02}
+
+The UK Biobank is a prospective cohort study that recruited over 500,000 people aged 37-73 years were recruited for the study between 2006 and 2010. Phenotype and genotype data were collected from assessment centres all over the United Kingdom. The quality control and the participants have been described in detail elsewhere (REF). 
+
+Importantly, this data was made easily accessible to researchers, which has lead to multiple efforts to perform hundreds of GWAS in parallel and make the summary data from these openly available. This can be found on platforms such as the IEU OpenGWAS Project (__Section \@ref(ieu-opengwas-project-02)__). The GWAS summary statistics from these efforts were utilized in __Chapters \@ref(h2ewas-chapter) and \@ref(ewas-gwas-comp-chapter)__. Further, the Neale Lab (http://www.nealelab.is/uk-biobank/) calculated h^2^~SNP~ for the traits for which they performed GWAS. __ADD IN HOW THEY CALCULATED HERITABILITY???__ This was used in __Chapter \@ref(h2ewas-chapter)__. More details can be found in those chapters.
+
+## IEU OpenGWAS Project {#ieu-opengwas-project-02}
+
+A team at the IEU recently produced a database of full GWAS summary statistics, the IEU OpenGWAS Project [@Elsworth2020; @Hemani2018]. This is accompanied by a website and packages to extract the data and perform various analyses [@Elsworth2020; @Hemani2018]. There are thousands of GWAS present in the database. For each GWAS, the database stores meta-data such as sample size, participant ancestry and sex, as well as full association statistics (betas, standard errors, P values) for all genetic variants assayed in the GWAS, i.e. not just those surpassing a given P value threshold.
+
+There are thousands of GWAS with this data present in the database. These come from studies which the authors have released full summary statistics and from many GWAS performed in large-scale biobanks by members of the IEU OpenGWAS Project team or by other groups.
+
+The IEU OpenGWAS Project was used in __Chapters \@ref(h2ewas-chapter) and \@ref(ewas-gwas-comp-chapter)__. More details of why summary level GWAS statistics were required can be found in those chapters.
+
+## Summary data for an EWAS of lung cancer {#lc-ewas-data}
+
+In __Chapter \@ref(dnam-lung-cancer-mr)__, I assess the association between DNA methylation and lung cancer by meta-analysing summary data from four case-control studies nested within prospective cohorts. In total 918 case-control pairs were used in the analyses. Below I give a description of the cohorts and how DNA methylation was measured for this meta-analysis of EWAS, referencing an earlier study where the methods are described in more detail [@Baglietto2017].
+
+At the various laboratory sites, samples were distributed into 96-well plates and processed in chips of 12 arrays (8 chips per plate) with case-control pairs arranged randomly on the same chip. Methylation data were pre-processed and normalized in each study, and probe filtering was performed as previously described [@Baglietto2017], leaving 465,886 CpGs suitable for the analysis in EPIC-Italy, 485,330 CpGs in MCCS, 450,890 CpGs in NOWAC and 482,867 CpGs in NSHDS.
+
+### European Prospective Investigation into Cancer and Nutrition-Italy (EPIC-Italy) {#epic-italy}
+EPIC-Italy includes 47,749 volunteers (32,579 women) aged 35–70 years at the time of recruitment (1992–1998). Anthropometric measurements and lifestyle variables including detailed information on smoking history were collected at recruitment through standardized questionnaires, together with a blood sample. Within EPIC-Italy a nested case-control study was conducted utilizing incident cases diagnosed within follow-up and healthy controls individually matched to cases by gender, date of birth (±5 years), date of inclusion in the study and study centre. Analysis was performed for 185 incident cases diagnosed within follow-up and matched controls. Laboratory procedures were carried out at the Human Genetics Foundation (Turin, Italy) and DNA extracted from buffy coats as previously described [@Baglietto2017]. All participants signed an informed consent form, and the ethical review boards of the International Agency for Research on Cancer and of each local participating centre approved the study protocol.
+
+### Melbourne Collaborative Cohort Study (MCCS) {#mccs}
+The MCCS is a prospective cohort study of 41,514 volunteers (24,469 women) aged between 27 and 76 years at baseline (1990-1994). At baseline attendance, participants completed questionnaires that measured demographic characteristics and lifestyle factors. Height and weight were directly measured, and a blood sample was collected and stored. Incident cases of lung cancer were identified through linkage with the State and National Cancer Registries during follow-up up to the end of 2011. The MCCS sample included 367 cases and 367 matched controls selected from MCCS participants who were lung cancer free at the age of diagnosis of the matching case (density sampling). Matching variables included gender, date of blood collection (within 6 months), date of birth (within 1 year), country of birth (Australia and UK versus Southern Europe), type of biospecimen (lymphocyte, buffy coat and dried blood spot) and smoking status (never smokers; short-term former smokers: quitting smoking less than 10 years before blood draw; long-term former smokers: quitting smoking 10 years or more before blood draw; current light smokers: less than 15 cigarettes per day at blood draw; and current heavy smokers: 15 cigarettes or more at blood draw). For the MCCS, laboratory procedures were carried out at the Genetic Epidemiology Laboratory, the University of Melbourne according to manufacturers' protocols. DNA extraction from lymphocytes and buffy coats was performed as previously described [@Baglietto2017]. The Cancer Council Victoria's Human Research Ethics Committee approved the study protocol. Subjects gave written consent to participate and for the investigators to obtain access to their medical records.
+
+### Norwegian Women and Cancer (NOWAC) {#nowac}
+The biobank of the NOWAC cohort was established in the years 2003-2006. Those who filled in an eight-page questionnaire and accepted the invitation to donate blood were sent blood drawing equipment together with a two-page epidemiological questionnaire. Around 50 000 women returned two tubes of blood to the Institute of Community Medicine at UiT The Arctic University of Norway and data linkage to the National Cancer Registry of Norway was performed. During follow-up to the end of 2011, 132 eligible cases of lung cancer were identified and were used for the EWAS. For each case, one control with an available blood sample was selected and matched on time since blood sampling and year of birth in order to control for effects of storage time and ageing. The cases and the controls were processed together for all laboratory procedures in order to reduce any batch effect. Laboratory procedures were carried out at the Human Genetics Foundation (Turin, Italy). DNA extraction from buffy coats was performed as previously described [@Baglietto2017]. All participants gave informed consent. The study was approved by the Regional Committee for Medical and Health Research Ethics in North Norway. Data storage and linkage was approved by the Norwegian Data Inspectorate.
+
+### Northern Sweden Health and Disease Study (NSHDS) {#nshds}
+NSHDS is an ongoing prospective cohort and intervention study intended for health promotion of the population of Västerbotten County in northern Sweden. All residents were invited to participate by attending a health check-up at their local health care centre at 40, 50 and 60 years of age. At the health check-up, participants were asked to complete a self-administered questionnaire covering various factors such as education, smoking habits, physical activity and diet. In addition, height and weight were measured and participants were asked to donate a blood sample. Incident lung cancer cases were identified through linkage to the regional cancer registry. One control was chosen at random for each lung cancer case from appropriate risk sets consisting of all cohort members alive and free of cancer (except non-melanoma skin cancer) at the time of diagnosis of the index case. Matching criteria were the same as for the MCCS except there was no matching for type of biospecimens as DNA was extracted from whole blood for all samples. After quality control, a total of 234 incident lung cancer cases and 234 individually matched controls were available for this analysis. Laboratory procedures for NSHDS were carried out at two sites. DNA extraction from the buffy coat was conducted at Umeå University, Sweden, as previously described. Illumina Infinium HumanMethylation450 BeadChip analysis was conducted at the ALSPAC/IEU Laboratory at the University of Bristol. All study subjects provided written informed consent at time of the recruitment into the NSHDS.
+
+## Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium (TRICL-ILCCO) {#tricl-ilcco-02}
+
+To perform the two-sample MR analyses in __Chapter \@ref(dnam-lung-cancer-mr)__, summary statistics from a large lung cancer GWAS were required. This was taken from a GWAS using data from the TRICL-ILCCO consortium. 
+
+In the consortium there are XXX cohorts, which provide data on XXX lung cancer cases and XXX controls. These individuals were all genotyped. Information on the genotyping, quality control, and cohorts can be found elsewhere (REFS).
+
+
+
+
+
+
+
+
+
+
+
+
 <!--chapter:end:02-data_sources.Rmd-->
 
 # The EWAS Catalog: a database of epigenome-wide association studies {#ewas-catalog}
@@ -424,30 +544,21 @@ Our criteria for inclusion of a study into The EWAS Catalog are as follows:
 
 CpG-phenotype associations are extracted from studies at P < 1x10^-4^. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-11-02, The EWAS Catalog contained 450213 associations from 605 studies. 
+Based on these criteria, from 2020-11-03, The EWAS Catalog contained 450213 associations from 605 studies. 
 
-### Overview of GEO data extraction
-To recruit additional datasets suitable for new EWAS analysis, the geograbi R package (https://github.com/yousefi138/geograbi) was used to both query GEO for experiments matching The EWAS Catalog inclusion criteria (described above) and extract relevant DNA methylation and phenotype information. The query was performed by Dr Paul Yousefi on 20 March 2019 and identified 148 such experiments with 32,845 samples where DNA methylation and phenotype information could be successfully extracted. From these, the aim was to repeat the analyses performed in the publications linked by PubMed IDs to each GEO record. Thus, I looked up the corresponding full texts for each dataset and identified the main variables of interest. Of the 148 putative GEO studies, only 34 (23%) contained sufficient information to replicate the original analysis. 
+### Overview of GEO data extraction {#geo-data-extraction}
+To recruit additional datasets suitable for new EWAS analysis, the geograbi R package (https://github.com/yousefi138/geograbi) was used to both query GEO for experiments matching The EWAS Catalog inclusion criteria (described above) and extract relevant DNA methylation and phenotype information. The GEO database is briefly described in __Section \@ref(geo-02)__. The query of this database performed by Dr Paul Yousefi on 20 March 2019 and identified 148 such experiments with 32,845 samples where DNA methylation and phenotype information could be successfully extracted. From these, the aim was to repeat the analyses performed in the publications linked by PubMed IDs to each GEO record. Thus, I looked up the corresponding full texts for each dataset and identified the main variables of interest. Of the 148 putative GEO studies, only 34 (23%) contained sufficient information to replicate the original analysis. 
 
 ### EWAS methods {#ewas-methods-03}
 
 #### Avon Longitudinal Study of Parents and Children (ALSPAC) {#alspac-03}
-EWAS were conducted for 387 continuous and binary traits in peripheral blood DNA methylation of ALSPAC mothers in middle age (N = 940), generated as part of the Accessible Resource for Integrated Epigenomics Studies (ARIES) project [@Relton2015-aries].
+EWAS were conducted for 387 continuous and binary traits in peripheral blood DNA methylation of ALSPAC mothers in middle age (N = 940), generated as part of the Accessible Resource for Integrated Epigenomics Studies (ARIES) project [@Relton2015-aries]. All phenotypes used in this chapter were measured at the same time blood was drawn for DNA methylation measurement. The ARIES dataset is summarised and is described in more detail in __Section \@ref(aries-02)__
 
-ALSPAC recruited pregnant women in the Bristol and Avon area, United Kingdom, with an expected delivery date between April 1991 and December 1992 (http://www.bris.ac.uk/alspac/). Over 14,000 pregnancies have been followed up (both children and parents) throughout the life-course. Full details of the cohort have been published previously [@Fraser2013; @Boyd2013]. The EWAS performed for the EWAS catalog were done so using phenotypic and DNA methylation data from the mothers (N = 940).
-All continuous and binary phenotypes were extracted from the same timepoint that blood was drawn for DNA methylation assays.
-
-Ethical approval for ALSPAC was obtained from the ALSPAC Ethics and Law Committee and from the UK National Health Service Local Research Ethics Committees. Written informed consent was obtained from both the parent/guardian and, after the age of 16, children provided written assent. The study website contains details of all the data that is available through a fully searchable data dictionary (http://www.bristol.ac.uk/alspac/researchers/access/).
-
-Study data were collected and managed using REDCap electronic data capture tools hosted at ALSPAC [@Harris2009; @Harris2019]. REDCap (Research Electronic Data Capture) is a secure, web-based software platform designed to support data capture for research studies, providing 1) an intuitive interface for validated data capture; 2) audit trails for tracking data manipulation and export procedures; 3) automated export procedures for seamless data downloads to common statistical packages; and 4) procedures for data integration and interoperability with external sources.
-
-Ancestry principal components were generated within ALSPAC mothers using PLINK (v1.9). Before analysis, genetic data went through quality control and were imputed as follows.
-
-Mothers were genotyped using the Illumina human660W-quad genome-wide single nucleotide polymorphism (SNP) genotyping platform (Illumina Inc., San Diego, CA, USA) at the Centre National de Génotypage (CNG; Paris, France). SNPs were removed if they displayed more than 5% missingness or a Hardy-Weinberg equilibrium P value of less than 1.0e-06. Additionally, SNPs with a minor allele frequency of less than 1% were removed. Samples were excluded if they displayed more than 5% missingness, had indeterminate X chromosome heterozygosity or extreme autosomal heterozygosity. Samples showing evidence of population stratification were identified by multidimensional scaling of genome-wide identity by state pairwise distances using the four HapMap populations as a reference, and then excluded. Cryptic relatedness was assessed using a IBD estimate of more than 0.125 which is expected to correspond to roughly 12.5% alleles shared IBD or a relatedness at the first cousin level. Related subjects that passed all other quality control thresholds were retained during subsequent phasing and imputation.
-
-Imputation of mother’s genotype data in ALSPAC was done with ALSPAC children’s data. So, genotypes in common between the sample of mothers and sample of children were combined. SNPs with genotype missingness above 1% due to poor quality were removed along with subjects due to potential ID mismatches. We estimated haplotypes using ShapeIT (v2.r644) which utilises relatedness during phasing. We obtained a phased version of the 1000 genomes reference panel (Phase 1, Version 3) from the Impute2 reference data repository (phased using ShapeIt v2.r644, haplotype release date Dec 2013). Imputation of the target data was performed using Impute V2.2.2 against the reference panel (all polymorphic SNPs excluding singletons), using all 2186 reference haplotypes (including non-Europeans).
+Ancestry principal components were used as covariates in the EWAS. These were generated within ALSPAC mothers using PLINK (v1.9). Quality control and imputation of the genetic data are described in __Section \@ref(alspac-genetic-data)__.
 
 After quality control and imputation, independent SNPs (r^2^ < 0.01) were used to calculate the top 10 ancestry principal components.
+
+As discussed, batch effects and cell type heterogeneity may account for a large proportion of covariation observed between DNA methylation and a phenotype of interest. In an attempt to combat this, surrogate variables were generated from the DNA methylation data using the SmartSVA R package (REF). Surrogate variables capture variation in DNA methylation that are orthagonal to the relationship between the trait of interest and DNA methylation. When used in an EWAS model, they capture the largest portion of DNA methylation variation that is not due to the trait of interest. Thus, if batch effects and cell type heterogeneity are causing variation in the DNA methylation data, this should be captured by the surrogate variables (REFs).
 
 For all traits, linear regression models were fitted with DNA methylation at each site as the outcome and the phenotype as the exposure. DNA methylation was coded as beta values between 0 and 1. For a particular site, a beta value of 0 represents no methylation being detected in all cells measured and a value of 1 represents all cells being methylated at that site. Covariates included age, the top 10 ancestry principal components, and 20 surrogate variables. 
 
@@ -529,8 +640,8 @@ In this study we first describe the data present in the EWAS Catalog before expl
 
 ## Methods {#methods-04}
 
-### Epigenome-wide association studies data 
-All the data for the analysis were extracted from The EWAS Catalog (__Chapter \@ref(ewas-catalog)__). This includes 178 published studies, 387 EWAS from the ARIES subsection of ALSPAC (__Section \@ref(alspac-03)__) [@Relton2015-aries; @Fraser2013; @Boyd2013] and 40 EWAS performed using data from the gene expression omnibus (GEO) resource. See __Chapter \@ref(ewas-catalog)__ for more details.
+### Epigenome-wide association studies data {#ewas-data-04}
+All the data for the analysis were extracted from The EWAS Catalog (__Chapter \@ref(ewas-catalog)__). This includes 178 published studies, 387 EWAS from the ARIES subsection of ALSPAC (__Section \@ref(aries-02)__) [@Relton2015-aries; @Fraser2013; @Boyd2013] and 40 EWAS performed using data from the gene expression omnibus (GEO) resource (__Section \@ref(geo-02)__). See __Chapter \@ref(ewas-catalog)__ for more details.
 
 ### Description of catalog data {-#description-of-data}
 Associations between DNA methylation and traits, unless otherwise stated, were extracted at P < 1x10^-7^. Each of the CpGs in the Catalog are annotated to genes, using data from the meffil R package . 
@@ -544,10 +655,10 @@ T-statistics ($t$) were calculated using P-values, sample sizes ($n$) and the qt
 
 We identified traits for which r^2^ values might be inflated. For each EWAS the estimated r^2^ values were summed and these values were transformed to approximate a normal distribution. Then a z-test was performed to assess which sum of r^2^ values were greater than the mean sum of r^2^ values. From the z-test, those with a FDR-corrected P-value of less than 0.05 were labelled as having inflated r^2^ values.
 
-### Identifying faulty probes
+### Identifying faulty probes {#identifying-faulty-probes}
 By far the most common method to measure DNA methylation across the studies in The EWAS Catalog is using the Illumina Infinium HumanMethylation450 Beadchip. Since its development, the array has been extensively characterised [@Price2018; @Forest2018; @Jaffe2014; @Zhou2017] and it was found that not all probes map just to the CpG they were designed to bind to. Some probes map to SNPs, others are non-specific and some are prone to cross-hybridisation. We assigned probes to be 'potentially faulty' if they were characterised as such by Zhou et al. [@Zhou2017]. 
 
-### Replication
+### Replication {#replication-methods-04}
 An association (at P<1x10^-7^) was deemed to be replicated if it had been identified by another study at P < 1x10^-4^. We assessed replicability of EWAS within the database in two separate ways. Firstly, replication within studies is recorded in the EWAS Catalog, thus we simply performed a lookup for any studies that performed a replication or meta-analysed discovery and replication datasets. Secondly, we performed a lookup of results for any traits for which multiple EWAS had been conducted. 
 
 The Catalog also contains results from studies that have uploaded their data to GEO as well as results from the re-analysis of that data performed by The EWAS Catalog team. These re-analyses adjusted for 20 surrogate variables only as many studies did not provide a complete set of covariates to GEO. We performed a lookup of results found in the original EWAS in the re-analysed data. 
@@ -1056,7 +1167,7 @@ Methods used to estimate h^2^~SNP~ use restricted maximum likelihood (REML) test
 
 ### Study samples {#study-samples-05}
 
-All data for the chapter came from the Avon Longitudinal Study of Parents and Children (ALSPAC) cohort (see __Section \@ref(alspac-03)__ for study details). This chapter uses phenotypic and DNA methylation data from the 940 mothers. Not all individuals had data on the various covariates used in the analyses, thus the sample size varied with each analysis (mean of 805 and range of 491 to 940).
+All data used in this chapter came from the ARIES subsection of the ALSPAC cohort (see __Section \@ref(aries-02)__ for study details). This chapter uses phenotypic and DNA methylation data from the 940 mothers. Not all individuals had data on the various covariates used in the analyses, thus the sample size varied with each analysis (mean of 805 and range of 491 to 940).
 
 Continuous and binary phenotypes measured in mothers were extracted from the cohort using the ‘alspac’ R package (github.com/explodecomputer/alspac) and went through extensive quality control. Originally over 15,000 traits that were related to the mothers were extracted from the database. After the quality control process, which is detailed in __Figure \@ref(fig:h2ewas-pheno-qc)__, there were 2408 traits left for analysis.
 
@@ -1102,6 +1213,8 @@ All continuous traits were rank-normalised for further analyses. A Shapiro-Wilk 
 \end{figure}
 
 ### DNA methylation data {#dna-methylation-data-05}
+The DNA methylation data also came from ARIES. Measurement and quality control of this data are found in __Section \@ref()__
+
 DNA methylation was measured using the Illumina Infinium HumanMethylation450 (HM450) BeadChip. Before use, the data went through quality control and were normalised separately to the phenotype data. Full details can be found in the Supplementary Material.
 
 DNA methylation data generated from blood collected at a single clinic visit was used for each of the participants.
@@ -1344,7 +1457,7 @@ Overall, the number of traits with good evidence for h^2^~EWAS~ > 0 was low (onl
 ## Chapter summary {#chapter-summary}
 Despite little evidence that DNA methylation correlates highly with complex trait variation (__Chapter \@ref(h2-ewas)__), it is of interest to understand whether the DNA methylation sites identified may be valuable in understanding the underlying biology of complex traits. As discussed previously, it is well understood that observational associations between DNA methylation and complex traits are sucesptible to confounding and reverse causation. Genetic variants identified in GWAS will not be caused by phenotypic variation and their associations with complex traits are unlikely to be confounded. Yet, both GWAS and EWAS aim to identify regions of the genome that will give an indication of the molecular nature of complex traits. 
 
-Using data from The EWAS Catalog (__Chapter \@ref(ewas-catalog)__) and the IEU OpenGWAS Project [@Elsworth2020], in this chapter I examine whether EWAS is likely uncovering similar facets of complex trait aeitiology as GWAS. 
+Using data from The EWAS Catalog (__Chapter \@ref(ewas-catalog)__) and the IEU OpenGWAS Project [@Elsworth2020; @Hemani2018], in this chapter I examine whether EWAS is likely uncovering similar facets of complex trait aeitiology as GWAS. 
 
 ## Introduction {#introduction-06}
 Often in EWAS, the potential biological implications of differentially methylated positions or regions (DMPs or DMRs) will be investigated further through genomic annotations [@Sharp2017; @Reese2019; @Everson2019; @Chen2020]. Previous studies have shown a link between DNA methylation levels and the expression of proximal genes [@Jones2012; @Illingworth2009]. Therefore, sites identified in EWAS are often mappped to nearby genes and these genes and their function are probed to ascertain their relevance to the trait of interest [@Sharp2017; @Reese2019; @Everson2019; @Chen2020]. Further, genes can be grouped with others into "genesets" that have similar functionality or lie within the same pathway. The geneset a gene is part of may provide insight into the trait, for example for EWAS of autoimmune diseases, the sites might tag genes within immunological pathways more than expected by chance. Other assessments may be made to infer potential biological understanding, including enrichment of other epigenetic marks at the regions identified [@Breeze2016] and follow-up experimental studies [@Rakyan2011]. However, using open access databases to investigate tagged genes and genesets is a simple and potentially effective approach to further biological understanding. 

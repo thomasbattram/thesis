@@ -51,7 +51,7 @@ Methods used to estimate h^2^~SNP~ use restricted maximum likelihood (REML) test
 
 ### Study samples {#study-samples-05}
 
-All data for the chapter came from the Avon Longitudinal Study of Parents and Children (ALSPAC) cohort (see __Section \@ref(alspac-03)__ for study details). This chapter uses phenotypic and DNA methylation data from the 940 mothers. Not all individuals had data on the various covariates used in the analyses, thus the sample size varied with each analysis (mean of 805 and range of 491 to 940).
+All data used in this chapter came from the ARIES subsection of the ALSPAC cohort (see __Section \@ref(aries-02)__ for study details). This chapter uses phenotypic and DNA methylation data from the 940 mothers. Not all individuals had data on the various covariates used in the analyses, thus the sample size varied with each analysis (mean of 805 and range of 491 to 940).
 
 Continuous and binary phenotypes measured in mothers were extracted from the cohort using the ‘alspac’ R package (github.com/explodecomputer/alspac) and went through extensive quality control. Originally over 15,000 traits that were related to the mothers were extracted from the database. After the quality control process, which is detailed in __Figure \@ref(fig:h2ewas-pheno-qc)__, there were 2408 traits left for analysis.
 
@@ -79,15 +79,11 @@ All continuous traits were rank-normalised for further analyses. A Shapiro-Wilk 
 ```
 
 ### DNA methylation data {#dna-methylation-data-05}
-DNA methylation was measured using the Illumina Infinium HumanMethylation450 (HM450) BeadChip. Before use, the data went through quality control and were normalised separately to the phenotype data. Full details can be found in the Supplementary Material.
-
-DNA methylation data generated from blood collected at a single clinic visit was used for each of the participants.
+The DNA methylation data also came from ARIES. Measurement, quality control of this data are found in __Section \@ref(aries-dnam-data)__
 
 Probes were excluded if they were present on either of the sex chromosomes, a SNP/control probe, had a detection p value < 0.05 across over 10% of samples or were identified as problematic by Zhou et al. [@Zhou2017]. This left 421,693 CpG sites for analyses.
 
 Before analysis a linear regression model was fitted with beta values for methylation (which ranges from 0 (no cytosines methylated) to 1 (all cytosines methylated)) as the outcome against batch variables (plate ID in ALSPAC) modelled as a random effect to help remove the effects of batch in the subsequent analyses.
-
-Cell proportions (CD8+ and CD4+ T cells, B cells, monocytes, natural killer cells, and granulocytes) were estimated using an algorithm proposed by Houseman et al. [@Houseman2012].
 
 ### REML analysis {#reml-analysis}
 Using LDAK [@Speed2017] the relationship between the methylomes (as measured by the HM450 BeadChip) of 940 individuals was estimated by producing a DNA methylation relationship matrix (MRM). This matrix was used as input for the REML analysis to estimate the proportion of a trait’s variation that was explained by DNA methylation (h^2^~EWAS~). Age, the top 10 ancestry principal components, and derived cell proportions were added as covariates to the model.
