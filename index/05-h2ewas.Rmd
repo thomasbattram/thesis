@@ -51,7 +51,7 @@ Methods used to estimate h^2^~SNP~ use restricted maximum likelihood (REML) test
 
 ### Study samples {#study-samples-05}
 
-All data used in this chapter came from the ARIES subsection of the ALSPAC cohort (see __Section \@ref(aries-02)__ for study details). This chapter uses phenotypic and DNA methylation data from the 940 mothers. Not all individuals had data on the various covariates used in the analyses, thus the sample size varied with each analysis (mean of 805 and range of 491 to 940).
+All data used in this chapter came from the ARIES subsection of the ALSPAC cohort (see __Section \@ref(aries-02)__ for study details). This chapter uses phenotypic and DNA methylation data from 940 mothers at middle age for which data could be extracted. Not all individuals had data on the various covariates used in the analyses, thus the sample size varied with each analysis (mean of 805 and range of 491 to 940).
 
 Continuous and binary phenotypes measured in mothers were extracted from the cohort using the ‘alspac’ R package (github.com/explodecomputer/alspac) and went through extensive quality control. Originally over 15,000 traits that were related to the mothers were extracted from the database. After the quality control process, which is detailed in __Figure \@ref(fig:h2ewas-pheno-qc)__, there were 2408 traits left for analysis.
 

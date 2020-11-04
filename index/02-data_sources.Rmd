@@ -16,7 +16,7 @@ I utilize multiple data sources throughout this thesis and in this chapter, each
 
 ### Summary {#aries-summary}
 
-ARIES is a subsection of the Avon Longitudinal Study of Parents and Children (ALSPAC) prospective birth cohort. This data source contains dense phenotypic data, DNA methylation data measured by the HM450 BeadChip, and genotype data from 1018 mother–child pairs. Whole blood samples were collected for DNA methylation measurement at three timepoints in children and two in their mothers, the timepoints with mean ages (in brackets) are as follows for children: birth, childhood (7.5), adolescence (17.1) and for mothers: during pregnancy (28.7), and at middle age (46.9). Within this thesis, data from mothers at middle age was used for all the analyses.
+ARIES is a subsection of the Avon Longitudinal Study of Parents and Children (ALSPAC) prospective birth cohort. This data source contains dense phenotypic data, DNA methylation data measured by the HM450 BeadChip, and genotype data from 1018 mother–child pairs. Whole blood samples were collected for DNA methylation measurement at three timepoints in children and two in their mothers, the timepoints with mean ages (in brackets) are as follows for children: birth, childhood (7.5), adolescence (17.1) and for mothers: during pregnancy (28.7), and at middle age (46.9). Within this thesis, data from mothers at middle age was used for all the analyses and after exclusion of individuals during quality control steps, this lead to a maximum of 940 mothers used in any analyses.
 
 ### ALSPAC description {#alspac-description-02}
 
@@ -76,9 +76,9 @@ NSHDS is an ongoing prospective cohort and intervention study intended for healt
 
 ## Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium (TRICL-ILCCO) {#tricl-ilcco-02}
 
-To perform the two-sample MR analyses in __Chapter \@ref(dnam-lung-cancer-mr)__, summary statistics from a large lung cancer GWAS were required. This was taken from a GWAS using data from the TRICL-ILCCO consortium. 
+To perform the two-sample MR analyses in __Chapter \@ref(dnam-lung-cancer-mr)__, summary statistics from a large lung cancer GWAS were required. This was taken from a GWAS using data from the TRICL-ILCCO consortium. Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium (TRICL-ILCCO) 
 
-In the consortium there are XXX cohorts, which provide data on XXX lung cancer cases and XXX controls. These individuals were all genotyped. Information on the genotyping, quality control, and cohorts can be found elsewhere (REFS).
+In the consortium there are 26 cohorts, which provide data on 29,863 lung cancer cases and 55,586 controls. These individuals were genotyped using various different methods, with the most recent and largest cohort being genotyped by the Illumina Infinium OncoArray-500K BeadChip (Illumina Inc. San Diego, CA). This data went through extensive quality control and harmonsiation before the meta-analysis was performed. Detailed information on the genotyping, quality control, and cohorts can be found in the original study [@McKay2017]. 
 
 
 
