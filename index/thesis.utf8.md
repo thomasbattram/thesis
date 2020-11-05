@@ -544,7 +544,7 @@ Our criteria for inclusion of a study into The EWAS Catalog are as follows:
 
 CpG-phenotype associations are extracted from studies at P < 1x10^-4^. All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-11-04, The EWAS Catalog contained 450213 associations from 605 studies. 
+Based on these criteria, from 2020-11-05, The EWAS Catalog contained 450213 associations from 605 studies. 
 
 ### Overview of GEO data extraction {#geo-data-extraction}
 To recruit additional datasets suitable for new EWAS analysis, the geograbi R package (https://github.com/yousefi138/geograbi) was used to both query GEO for experiments matching The EWAS Catalog inclusion criteria (described above) and extract relevant DNA methylation and phenotype information. The GEO database is briefly described in __Section \@ref(geo-02)__. The query of this database performed by Dr Paul Yousefi on 20 March 2019 and identified 148 such experiments with 32,845 samples where DNA methylation and phenotype information could be successfully extracted. From these, the aim was to repeat the analyses performed in the publications linked by PubMed IDs to each GEO record. Thus, I looked up the corresponding full texts for each dataset and identified the main variables of interest. Of the 148 putative GEO studies, only 34 (23%) contained sufficient information to replicate the original analysis. 
@@ -1482,13 +1482,13 @@ former versus never smoking & Joehanes R & 27651444 & 13,474 & Elsworth B & NA &
 c-reactive protein & Ligthart S & 27955697 & 8,863 & Ligthart S & 30388399 & 204,402\\
 \cellcolor{gray!6}{body mass index} & \cellcolor{gray!6}{Wahl S} & \cellcolor{gray!6}{28002404} & \cellcolor{gray!6}{10,238} & \cellcolor{gray!6}{Yengo L} & \cellcolor{gray!6}{30124842} & \cellcolor{gray!6}{681,275}\\
 \addlinespace
-educational attainment & Karlsson Linner R & 29086770 & 10,767 & Lee & 30038396 & 766,345\\
+educational attainment & Karlsson Linner R & 29086770 & 10,767 & Lee JJ & 30038396 & 766,345\\
 \cellcolor{gray!6}{insulin} & \cellcolor{gray!6}{Liu J} & \cellcolor{gray!6}{31197173} & \cellcolor{gray!6}{4,740} & \cellcolor{gray!6}{Manning AK} & \cellcolor{gray!6}{22581228} & \cellcolor{gray!6}{51,750}\\
 glucose & Liu J & 31197173 & 4,808 & Manning AK & 22581228 & 58,074\\
 \bottomrule
 \multicolumn{7}{l}{\textsuperscript{} Where gwas-pmid = NA, the GWAS were conducted as part of a UK Biobank GWAS pipeline within the}\\
-\multicolumn{7}{l}{Univeristy of Bristol's Integrative Epidemiology Unit and can be found on the OpenGWAS Project}\\
-\multicolumn{7}{l}{website (see Methods for more)}\\
+\multicolumn{7}{l}{Univeristy of Bristol's Integrative Epidemiology Unit and can be found on the OpenGWAS Project website}\\
+\multicolumn{7}{l}{(see Methods for more)}\\
 \end{tabular}}
 \end{table}
 
@@ -1560,7 +1560,7 @@ Under each scenario, the ability to predict whether EWAS were identifying, in pa
 
 For the eight traits used, the number of genes identified by EWAS and GWAS that overlapped was low and for two traits no genes identified by the studies overlapped (__Table \@ref(tab:empirical-gene-tab)__). The number of genesets that overlapped was higher, peaking at 1,243 for GWAS and EWAS of body mass index              (__Table \@ref(tab:empirical-pathway-tab)__). 
 
-The number of overlapping genes identified was no more than expected by chance for each trait (__Table \@ref(tab:empirical-gene-tab)__). There was also little evidence that correlation between enrichment scores of the GO terms was greater than expected by chance (__Table \@ref(tab:empirical-pathway-tab)__). As suggested by the previous simulations, this does not preclude the possibility that EWAS are identifying changes in DNA methylation that are upstream of phenotypic change. \linebreak
+There was no strong evidence that the number of overlapping genes identified was more than expected by chance (__Table \@ref(tab:empirical-gene-tab)__). Although, power was low in most cases to detect a high level of gene overlap in most cases. There was also little evidence that correlation between enrichment scores of the GO terms was greater than expected by chance (__Table \@ref(tab:empirical-pathway-tab)__). As suggested by the previous simulations, this does not preclude the possibility that EWAS are identifying changes in DNA methylation that are upstream of phenotypic change. \linebreak
 
 \begin{table}[!h]
 
@@ -1569,22 +1569,23 @@ The number of overlapping genes identified was no more than expected by chance f
 \resizebox{\linewidth}{!}{
 \begin{tabular}[t]{llllllll}
 \toprule
-trait & n-ewas-genes & n-gwas-genes & gene-overlap & observed-OR & expected-gene-overlap & expected-OR & p-diff\\
+trait & n-ewas-genes & n-gwas-genes & gene-overlap & obs-OR & exp-gene-overlap & exp-OR & p-diff\\
 \midrule
-\cellcolor{gray!6}{current versus never smoking} & \cellcolor{gray!6}{1,933} & \cellcolor{gray!6}{312} & \cellcolor{gray!6}{27} & \cellcolor{gray!6}{2.9} & \cellcolor{gray!6}{39} & \cellcolor{gray!6}{3.4} & \cellcolor{gray!6}{0.322}\\
-former versus never smoking & 282 & 320 & 9 & 6.4 & 7 & 3.4 & 0.022\\
-\cellcolor{gray!6}{alcohol consumption per day} & \cellcolor{gray!6}{361} & \cellcolor{gray!6}{196} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{2.6} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{2.4} & \cellcolor{gray!6}{0.908}\\
-c-reactive protein & 189 & 302 & 3 & 3.2 & 2 & 1.4 & 0.121\\
-\cellcolor{gray!6}{body mass index} & \cellcolor{gray!6}{232} & \cellcolor{gray!6}{3,221} & \cellcolor{gray!6}{23} & \cellcolor{gray!6}{2.0} & \cellcolor{gray!6}{40} & \cellcolor{gray!6}{3.1} & \cellcolor{gray!6}{0.052}\\
+\cellcolor{gray!6}{current versus never smoking} & \cellcolor{gray!6}{1,933} & \cellcolor{gray!6}{312} & \cellcolor{gray!6}{27} & \cellcolor{gray!6}{2.9} & \cellcolor{gray!6}{39} & \cellcolor{gray!6}{3.42} & \cellcolor{gray!6}{0.322}\\
+former versus never smoking & 282 & 320 & 9 & 6.4 & 7 & 3.43 & 0.022\\
+\cellcolor{gray!6}{alcohol consumption per day} & \cellcolor{gray!6}{361} & \cellcolor{gray!6}{196} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{2.6} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{2.44} & \cellcolor{gray!6}{0.908}\\
+c-reactive protein & 189 & 302 & 3 & 3.2 & 1 & 0.91 & 0.121\\
+\cellcolor{gray!6}{body mass index} & \cellcolor{gray!6}{232} & \cellcolor{gray!6}{3,221} & \cellcolor{gray!6}{23} & \cellcolor{gray!6}{2.0} & \cellcolor{gray!6}{39} & \cellcolor{gray!6}{3.04} & \cellcolor{gray!6}{0.052}\\
 \addlinespace
-educational attainment & 25 & 1,594 & 1 & 1.5 & 3 & 3.1 & 0.430\\
-\cellcolor{gray!6}{insulin} & \cellcolor{gray!6}{36} & \cellcolor{gray!6}{5} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{6.2} & \cellcolor{gray!6}{0.881}\\
-glucose & 15 & 50 & 0 & 0.0 & 0 & 6.4 & 0.820\\
+educational attainment & 25 & 1,594 & 1 & 1.5 & 3 & 3.00 & 0.430\\
+\cellcolor{gray!6}{insulin} & \cellcolor{gray!6}{36} & \cellcolor{gray!6}{5} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.00} & \cellcolor{gray!6}{1.000}\\
+glucose & 15 & 50 & 0 & 0.0 & 0 & 0.00 & 1.000\\
 \bottomrule
-\multicolumn{8}{l}{\textsuperscript{} odds ratios (ORs) can be interpreted as the odds of an gene being identified by EWAS and a GWAS over the odds of a gene}\\
-\multicolumn{8}{l}{being identified by an EWAS but not by a GWAS.}\\
-\multicolumn{8}{l}{\textsuperscript{} expected-OR = the mean OR after repeating the analysis 1000 times, randomly sampling EWAS genes equal to the number}\\
-\multicolumn{8}{l}{identified in the empirical analysis.}\\
+\multicolumn{8}{l}{\textsuperscript{} exp = expected, obs = observed}\\
+\multicolumn{8}{l}{\textsuperscript{} odds ratios (ORs) can be interpreted as the odds of an gene being identified by EWAS and a GWAS over the odds}\\
+\multicolumn{8}{l}{of a gene being identified by an EWAS but not by a GWAS.}\\
+\multicolumn{8}{l}{\textsuperscript{} exp-OR = the mean OR after repeating the analysis 1000 times, randomly sampling EWAS genes equal to the}\\
+\multicolumn{8}{l}{number identified in the empirical analysis.}\\
 \end{tabular}}
 \end{table}
 
@@ -1595,7 +1596,7 @@ glucose & 15 & 50 & 0 & 0.0 & 0 & 6.4 & 0.820\\
 \resizebox{\linewidth}{!}{
 \begin{tabular}[t]{lllllll}
 \toprule
-trait & n-ewas-genes & n-gwas-genes & geneset-overlap & observed-cor & expected-cor & p-diff\\
+trait & n-ewas-genes & n-gwas-genes & geneset-overlap & obs-cor & exp-cor & p-diff\\
 \midrule
 \cellcolor{gray!6}{current versus never smoking} & \cellcolor{gray!6}{1,933} & \cellcolor{gray!6}{312} & \cellcolor{gray!6}{1,053} & \cellcolor{gray!6}{0.200} & \cellcolor{gray!6}{0.22} & \cellcolor{gray!6}{0.034}\\
 former versus never smoking & 282 & 320 & 661 & 0.298 & 0.30 & 0.994\\
@@ -1607,12 +1608,13 @@ educational attainment & 25 & 1,594 & 215 & 0.105 & 0.13 & 0.173\\
 \cellcolor{gray!6}{insulin} & \cellcolor{gray!6}{36} & \cellcolor{gray!6}{5} & \cellcolor{gray!6}{16} & \cellcolor{gray!6}{0.093} & \cellcolor{gray!6}{0.12} & \cellcolor{gray!6}{0.376}\\
 glucose & 15 & 50 & 49 & 0.153 & 0.16 & 0.809\\
 \bottomrule
-\multicolumn{7}{l}{\textsuperscript{} For each geneset, odds of study genes being in the geneset divided by the odds the study genes not}\\
-\multicolumn{7}{l}{being in the geneset were assessed and correlation between these odds ratios are given here.}\\
-\multicolumn{7}{l}{\textsuperscript{} expected-cor = the mean correlation between odds ratios after repeating the analysis 1000 times,}\\
-\multicolumn{7}{l}{randomly sampling EWAS genes equal to the number identified in the empirical analysis}\\
-\multicolumn{7}{l}{\textsuperscript{} geneset-overlap indicates the number of gene ontology terms that map to both genes identified by the}\\
-\multicolumn{7}{l}{EWAS and GWAS.}\\
+\multicolumn{7}{l}{\textsuperscript{} For each geneset, odds of study genes being in the geneset divided by the odds the study}\\
+\multicolumn{7}{l}{genes not being in the geneset were assessed and correlation between these odds ratios are}\\
+\multicolumn{7}{l}{given here.}\\
+\multicolumn{7}{l}{\textsuperscript{} expected-cor = the mean correlation between odds ratios after repeating the analysis 1000}\\
+\multicolumn{7}{l}{times, randomly sampling EWAS genes equal to the number identified in the empirical analysis}\\
+\multicolumn{7}{l}{\textsuperscript{} geneset-overlap indicates the number of gene ontology terms that map to both genes identified}\\
+\multicolumn{7}{l}{by the EWAS and GWAS.}\\
 \end{tabular}}
 \end{table}
 
@@ -1680,7 +1682,7 @@ Simulations involving empirical data from former vs. never smoking EWAS and GWAS
 If EWAS is discovering some DMPs that influence genes that cause changes in the trait of interest, study power is the limiting factor for detecting overlap. For traits with a weak polygenic architecture (few genes explain most of the heritability), such as gene expression [@Wheeler2016; @Mogil2018], discovering almost total overlap would be inevitable even with modest sample sizes.
 
 ### Little overlap with any GWAS {#little-overlap-with-any-gwas}
-Little correlation was found between geneset enrichment scores for EWAS and GWAS of different traits. In a scenario where DNA methylation was capturing a specific facet of a trait one might expect correlation between EWAS of the original trait and GWAS of that facet. For example, if changes in DNA methylation associated with smoking were mostly responsible the effect of smoking on lung cancer then one would expect to observe an overlap between the genes and pathways identified by an EWAS of smoking and GWAS of lung cancer. This specific example has been examined before, with studies suggesting either methylation at two sites mediate over 30% of the effect of smoking on lung cancer [@Fasanelli2015] or that there is little evidence for a causal effect of DNA methylation on lung cancer [@Battram2019]. The results of either study suggest most sites will not mediate the effect of smoking on lung cancer and thus there would be little overlap between genes and pathways of an EWAS of smoking and a GWAS of lung cancer. This is corroborated by the results of our study: there was little evidence that correlation of pathway enrichment scores between the two, 0.15, was greater than the mean correlation enrichment score across all GWAS-GWAS and GWAS-EWAS correlations, 0.12 (FDR > 0.05).
+Little correlation was found between geneset enrichment scores for EWAS and GWAS of non-corresponding traits. In a scenario where DNA methylation was capturing a specific facet of a trait one might expect correlation between EWAS of the original trait and GWAS of that facet. For example, if changes in DNA methylation associated with smoking were mostly responsible the effect of smoking on lung cancer then one would expect to observe an overlap between the genes and pathways identified by an EWAS of smoking and GWAS of lung cancer. This specific example is explored, in part, in __Chapter \@ref(dnam-lung-cancer-mr)__ under a Mendelian randomization framework and has been examined before, with a study suggesting methylation at two sites (of over 1000 smoking-related sites) mediate over 30% of the effect of smoking on lung cancer [@Fasanelli2015]. The results of either study suggest most sites will not mediate the effect of smoking on lung cancer and thus there would be little overlap between genes and pathways of an EWAS of smoking and a GWAS of lung cancer. This is corroborated by the results of our study: there was little evidence that correlation of pathway enrichment scores between the two, 0.15, was greater than the mean correlation enrichment score across all GWAS-GWAS and GWAS-EWAS correlations, 0.12 (FDR > 0.05).
 
 It is important to note that overlap between EWAS and GWAS genesets may be missed even if this mediation model is true for various traits. As shown in the simulations, detecting this overlap depends on individual study power as well as the underlying genetic and epigenetic architecture of the trait. There are further things that may limit detection of geneset overlap that is discussed later on.
 

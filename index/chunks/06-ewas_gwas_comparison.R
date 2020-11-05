@@ -70,6 +70,13 @@ tidy_nums <- function(df)
     return(out)
 }
 
+shorten_obs_exp <- function(df)
+{
+    colnames(df) <- gsub("observed", "obs", colnames(df))
+    colnames(df) <- gsub("expected", "exp", colnames(df))
+    return(df)
+}
+
 ## ---- trait-data-setup-06 --------------------------------
 
 # some changes to trait_dat
@@ -178,6 +185,7 @@ include_graphics(methods_sims_go_kegg_gene_res_files[5])
 
 ## ---- empirical-results-setup --------------------------------
 gene_empirical_tabs <- gene_overlap_tabs %>%
+    map(shorten_obs_exp) %>%
     map(tidy_colnames) %>% 
     map(tidy_traits) %>%
     map(tidy_nums)
@@ -187,6 +195,7 @@ gene_empirical_out_tab <- gene_empirical_tabs$go
 n_traits_no_g_overlap <- sum(gene_empirical_out_tab[['gene-overlap']] == " 0")
 
 pathway_empirical_tabs <- pathway_enrich_tabs %>%
+    map(shorten_obs_exp) %>%
     map(tidy_colnames) %>% 
     map(tidy_traits) %>%
     map(tidy_nums)
@@ -202,8 +211,9 @@ mpo_trait <- pathway_empirical_out_tab %>%
 ## ---- empirical-gene-tab --------------------------------
 kable(gene_empirical_out_tab, format = "latex", caption = "Overlap of genes identified by EWAS and GWAS", booktabs = TRUE) %>%
     kable_styling(latex_options = c("striped", "hold_position", "scale_down")) %>%
-    add_footnote(c("odds ratios (ORs) can be interpreted as the odds of an gene being identified by EWAS and a GWAS over the odds of a gene being identified by an EWAS but not by a GWAS.", 
-                   "expected-OR = the mean OR after repeating the analysis 1000 times, randomly sampling EWAS genes equal to the number identified in the empirical analysis."), 
+    add_footnote(c("exp = expected, obs = observed", 
+                   "odds ratios (ORs) can be interpreted as the odds of an gene being identified by EWAS and a GWAS over the odds of a gene being identified by an EWAS but not by a GWAS.", 
+                   "exp-OR = the mean OR after repeating the analysis 1000 times, randomly sampling EWAS genes equal to the number identified in the empirical analysis."), 
                  notation = "none")
 
 ## ---- empirical-pathway-tab --------------------------------
