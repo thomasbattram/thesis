@@ -13,20 +13,12 @@ read_chunk("chunks/07-dnam_lungcancer_mr.R")
 ``` {r figures-setup-07, results="hide", message=FALSE, warning=FALSE}
 ```
 
+## Chapter summary {#chapter-summary-07}
+The results of __Chapter \@ref(ewas-gwas-comp-chapter)__ suggested that epigenome-wide association studies (EWAS) might be identifying differential facets of complex trait biology when compared to genome-wide association studies (GWAS) of corresponding traits. As discussed in __Section \@ref(problems-for-ewas)__, observational studies such as EWAS suffer from issues of reverse causation and confounding, which could have explained the results in __Chapter \@ref(ewas-gwas-comp-chapter)__.
 
-## Abstract {#abstract-07}
+In this chapter I attempt to explore the extent to which EWAS results may be confounded. To acheive this I first perform a meta-analysis of lung cancer EWAS and then compare the results from this observational analysis to the same analysis in a well-powered Mendelian randomization (MR) framework. DNA methylation has recently been postulated to mediate over 30% of the effect on smoking on lung cancer [@Fasanelli2015], making this case of particular interest to potential lung cancer preventative stratergies. 
 
-### Background {#abstract-background-07}
-DNA methylation changes in peripheral blood have recently been identified in relation to lung cancer risk. Some of these changes have been suggested to mediate part of the effect of smoking on lung cancer. However, limitations with conventional mediation analyses mean that the causal nature of these methylation changes has yet to be fully elucidated.
-
-### Methods {#abstract-methods-07}
-I first performed a meta-analysis of four epigenome-wide association studies (EWAS) of lung cancer (918 cases, 918 controls). Next, I conducted a two-sample Mendelian randomization (MR) analysis, using genetic instruments for methylation at CpG sites identified in the EWAS meta-analysis, and 29,863 cases and 55,586 controls from the TRICL-ILCCO lung cancer consortium, to appraise the possible causal role of methylation at these sites on lung cancer.
-
-### Results {#abstract-results-07}
-Sixteen CpG sites were identified from the EWAS meta-analysis (FDR < 0.05), 14 of which had suitable genetic instruments. MR provided little evidence that DNA methylation in peripheral blood at the 14 CpG sites play a causal role in lung cancer development (FDR > 0.05), including for cg05575921-_AHRR_ where methylation is strongly associated with both smoke exposure and lung cancer risk.
-
-### Conclusions {#abstract-conclusions-07}
-The results contrast with previous observational and mediation analysis, which have made strong claims regarding the causal role of DNA methylation. Thus, previous suggestions of a mediating role of methylation at sites identified in peripheral blood, such as cg05575921-_AHRR_, could be unfounded. However, this study does not preclude the possibility that differential DNA methylation at other sites is causally involved in lung cancer development, especially within lung tissue.
+I performed all the main analyses (meta-analysis of EWAS and main MR analyses) and wrote the majority of the work up. However, some supplemetnary analyses, which provided more evidence on the relationship between DNA methylation and lung cancer was performed by others. A full contributions statement can be found at the end of this chapter (__Section \@ref(contributions-statement-07)__). 
 
 ## Introduction {#introduction-07}
 Lung cancer is the most common cause of cancer-related death worldwide [@Ferlay2013]. Several DNA methylation changes have been recently identified in relation to lung cancer risk [@Fasanelli2015; @Baglietto2017; @McCarthy2016]. However, these epigenetic marks are sensitive to reverse causation, being affected by cancer processes [@Jones2002], and are also prone to confounding, for example by socio-economic and lifestyle factors [@Borghol2012; @Elliott2014].
@@ -36,8 +28,6 @@ One CpG site, cg05575921 within the aryl hydrocarbon receptor repressor (_AHRR_)
 As discussed in __Section \@ref(establishing-causality)__, Mendelian randomization (MR) can be used to help infer causality in associations between DNA methylation and complex traits [@Relton2012; @Relton2015; @Richardson2017] under a paradigm that largely mitigates the problem of confounding if certain assumptions are met (__Figure \@ref(fig:mr-diagram)__).
 
 In this study, I performed a meta-analysis of four lung cancer EWAS (918 case-control pairs) from prospective cohort studies to identify CpG sites associated with lung cancer risk and applied MR to investigate whether the observed DNA methylation changes at these sites are causally linked to lung cancer.
-
-In this chapter, Dr Rebecca Richmond performed analysis in the CCHS cohort (see __Sections \@ref(ahrr-one-sample-mr-methods) and \@ref(ahrr-one-sample-mr)__) and contributed to writing the introduction and discussion. Dr Andrew E. Teschendorff analysed differences in lung tumour and adjacent healthy tissue (see __Sections \@ref(lc-heathly-v-normal-methods) and \@ref(lc-heathly-v-normal)__). I completed the rest of the analyses and wrote each section, except those for which Dr Rebecca Richmond completed the analyses.
 
 ## Methods {#methods-07}
 
@@ -266,4 +256,11 @@ A further limitation relates to the inconsistency in effect estimates between th
 Peripheral blood may not be the ideal tissue to assess the association between DNA methylation and lung cancer. While a high degree of concordance in mQTLs has been observed across lung tissue, skin and peripheral blood DNA [@Shi2014], this was not directly evaluated here. A possible explanation for a lack of causal effect at _AHRR_ is due to the limitation of tissue specificity as it was found that the mQTLs used to instrument cg05575921 were not strongly related to expression of _AHRR_ in lung tissue. However, findings from MR analysis were corroborated by the lack of evidence for differential methylation at _AHRR_ between lung adenocarcinoma tissue and adjacent healthy tissue, and weak evidence for hypermethylation (opposite to the expected direction) in squamous cell lung cancer tissue. This result may be interesting in itself as smoking is hypothesized to influence squamous cell carcinoma more than adenocarcinoma. However, the result conflicts with that found in the MR analysis. Furthermore, another study investigating tumorous lung tissue (N=511) found only weak evidence for an association between smoking and cg05575921 _AHRR_ methylation, that did not survive multiple testing correction (P=0.02) [@Freeman2016]. These results do not fully exclude _AHRR_ from involvement in the disease process. _AHRR_ and _AHR_ form a regulatory feedback loop, which means that the actual effect of differential methylation or differential expression of _AHR_/_AHRR_ on pathway activity is complex [@Chen2017]. In addition, some of the CpG sites identified in the EWAS were found to be differentially methylated in the tumour and adjacent normal lung tissue comparison. While this could represent a false negative result of the MR analysis, it is of interest that differential methylation in the tissue comparison analysis was typically in the opposite direction to that observed in the EWAS. Furthermore, while this method can be used to minimize confounding, it does not fully eliminate the possibility of bias due to reverse causation (whereby cancer induces changes in DNA methylation) or intra-individual confounding e.g. by gene expression. Therefore, it doesn’t give conclusive evidence that DNA methylation changes at these sites are not relevant to the development of lung cancer.
 
 While DNA methylation in peripheral blood may be predictive of lung cancer risk, according to the present analysis it is unlikely to play a causal role in lung carcinogenesis at the CpG sites investigated. Findings from this study issue caution over the use of traditional mediation analyses to implicate intermediate biomarkers (such as DNA methylation) in pathways linking an exposure with disease, given the potential for residual confounding in this context [@Richmond2016]. However, the findings of this study do not preclude the possibility that other DNA methylation changes (i.e. changes at different sites in the genome or in different tissues) are causally related to lung cancer (or other smoking-associated disease) [@Gao2016].
+
+## Contributions statement {#contributions-statement-07}
+
+In this chapter, Dr Rebecca Richmond performed analysis in the CCHS cohort (see __Sections \@ref(ahrr-one-sample-mr-methods) and \@ref(ahrr-one-sample-mr)__) and wrote the sections for which she performed the analyses. Dr Andrew E. Teschendorff analysed differences in lung tumour and adjacent healthy tissue (see __Sections \@ref(lc-heathly-v-normal-methods) and \@ref(lc-heathly-v-normal)__). I performed all other analyses and wrote everything else.
+
+
+
 

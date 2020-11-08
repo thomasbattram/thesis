@@ -37,7 +37,8 @@ study_dat <- study_dat %>%
 ## ---- study-data-tab --------------------------------
 kable(study_dat, format = "latex", caption = study_caption, booktabs = TRUE) %>%
     kable_styling(latex_options = c("striped", "hold_position", "scale_down")) %>%
-    add_footnote(c("Identified associations were defined as those P < 1x10\\textsuperscript{-7}"), 
+    add_footnote(c("Identified associations were defined as those P < 1x10\\textsuperscript{-7}", 
+                   "Results for Sex, Ethnicities, Age, and Most common tissues were calculated per EWAS. So if one EWAS (or meta-analysis) contained just Afican indviduals then that would be counted as one"), 
                 notation = "none", escape = FALSE)
 
 
@@ -153,7 +154,7 @@ rep_tab_footnote <- c("N-DMPs = number of differentially methylated positions id
 geo_rean_tab <- geo_rean %>%
     dplyr::select(Trait = trait, 
                   N_DMPs = ori_dmps, 
-                  N_replicated = n_replicated, 
+                  N_replicated = n_rep, 
                   Percent_replicated = rep_percent) %>%
     tidy_nums() %>%
     tidy_colnames() %>%

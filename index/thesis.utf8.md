@@ -302,7 +302,7 @@ Methods have already been developed to assess the total contribution of genetic 
 ### Inferring biology from signals {#inferring-biology-from-signals}
 As discussed, the complexity of cellular processes makes it difficult to infer what consequences a change in methylation at a specific site may have. Similarly, for the majority of SNPs identified in GWAS, the functional change that relates to an association between genetic variation at that site and the trait of interest is unclear. Complex traits themselves are the result of a large number of complicated biological pathways that are determined by potentially thousands of gene products. It is often assumed that the signal from GWAS highlight genomic regions of importance to the trait and thus as a step to investigate the nature of the signal, sites identified are mapped to nearby genes. These genes can then be mapped to pathways and gene set enrichment analysis performed to assess whether the genes identified are present in any particular pathways more than expected by chance. This method has been adopted by epigenetic epidemiologists for use to examine EWAS signal [@Phipson2016]. Given the DNA methylation probes on contemporary arrays were chosen specifically based on their proximity to protein coding genes, this gene mapping technique may actually be more valid for CpG sites.
 
-Establishing causality from DNA methylation signal is difficult (See __Sections \@ref(dnam-phs) \@ref(establishing-causality)__). Thus, when applying gene set enrichment analyses to identify prominent pathways in EWAS signals, the pathways identified may be downstream consequences of one or many confounders rather than of aetiological relevance to the trait of interest. Further, the EWAS signals, and therefore pathways they might influence, may be a consequence of trait variation. This is important to remember when interpreting the results of such an analysis, but it doesn’t render the results useless. There is a huge body of work that characterises gene action and relationships of this gene action with various traits. By mapping EWAS signals to genes and pathways, a path between the trait (or a confounder) and changes in DNA methylation might become clearer. One example of this comes with EWAS of smoking, that have consistently identified DNA methylation at the _AHRR_ gene [@Joehanes2016; @Philibert2012; @Shenker2013; @Zeilinger2013; @Bojesen2017]. This gene is known to play a role in handling toxic substances found in tobacco smoke [@Haarmann-Stemmann2006; @Larigot2018]. Thus, large changes in DNA methylation related to this gene points towards epigenetic changes at that locus influencing the cellular response to smoking. This shows, that despite difficulties in interpreting EWAS findings and subsequent pathway analysis, EWAS can actually add to the pool of information about underlying trait biology when used in conjuncture with other evidence. 
+Establishing causality from DNA methylation signal is difficult (See __Sections \@ref(dnam-phs) \@ref(establishing-causality)__). Thus, when applying gene set enrichment analyses to identify prominent pathways in EWAS signals, the pathways identified may be downstream consequences of one or many confounders rather than of aetiological relevance to the trait of interest. Further, the EWAS signals, and therefore pathways they might influence, may be a consequence of trait variation. This is important to remember when interpreting the results of such an analysis, but it does not render the results useless. There is a huge body of work that characterises gene action and relationships of this gene action with various traits. By mapping EWAS signals to genes and pathways, a path between the trait (or a confounder) and changes in DNA methylation might become clearer. One example of this comes with EWAS of smoking, that have consistently identified DNA methylation at the _AHRR_ gene [@Joehanes2016; @Philibert2012; @Shenker2013; @Zeilinger2013; @Bojesen2017]. This gene is known to play a role in handling toxic substances found in tobacco smoke [@Haarmann-Stemmann2006; @Larigot2018]. Thus, large changes in DNA methylation related to this gene points towards epigenetic changes at that locus influencing the cellular response to smoking. This shows, that despite difficulties in interpreting EWAS findings and subsequent pathway analysis, EWAS can actually add to the pool of information about underlying trait biology when used in conjuncture with other evidence. 
 
 Understanding both the causes and consequences of complex traits are pertinent to intervening on health outcomes. As EWAS has the potential to identify both, it could identify important facets of trait biology missed by GWAS studies; however, it is unclear as to whether the analogous gene set enrichment design adopted by EWAS is currently adding to the information discovered by GWAS. In __Chapter \@ref(ewas-gwas-comp-chapter)__ I compare overlap of GWAS and EWAS signals in this context and discuss the use of both study designs in elucidating underlying trait biology.
 
@@ -505,7 +505,7 @@ In the consortium there are 26 cohorts, which provide data on 29,863 lung cancer
 ## Chapter summary {#chapter-summary-03}
 Before investigating the properties of DNA methylation-trait associations, I sought to bring together published EWAS results to help identify studies for use in future chapters and to allow joint analysis of currently available EWAS results in __Chapter \@ref(properties-of-ewas)__. To this end, I led a project to produce The EWAS Catalog. This database contains EWAS summary statistics from 218 publications and 428 EWAS performed in ARIES (__Section \@ref(aries-summary)__) and GEO (__Section \@ref(geo-02)__). The database is accompanied by an open access web-based tool and R package that allow these associations to be easily queried. In this chapter I describe the implementation and production of The EWAS Catalog. 
 
-I developed the website, conducted EWAS in ARIES and GEO, extracted published data, and led the project, however I was not the sole contributor. A full contributions statement can be found at the end of this chapter (__Section \@ref(contributions-statement-03)__)
+I developed the website, conducted EWAS in ARIES and GEO, extracted published data, and led the project, however I was not the sole contributor. A full contributions statement can be found at the end of this chapter (__Section \@ref(contributions-statement-03)__).
 
 ## Introduction {#introduction-03}
 In recent years, there has been a dramatic increase in the number of EWAS being performed and published due to technological advancements making it possible to measure DNA methylation at hundreds of thousands of CpG sites cheaply and effectively [@Logue2017; @Rakyan2011; @Illumina2012; @IlluminaEPIC]. Curating these EWAS results and making them freely available would enable researchers to use the data to inform or enhance studies on specific traits of genomic regions of interest. Furthermore, the joint analysis of these data could provide insights into the properties of DNA methylation-trait associations, potentially leading to an understanding of how to improve design of EWAS. The latter is explored in __Chapter \@ref(properties-of-ewas)__.
@@ -548,7 +548,7 @@ CpG-phenotype associations are extracted from studies at P < 1x10^-4^. A P-value
 
 All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-11-07, The EWAS Catalog contained 582,801 associations from 218 published studies. 
+Based on these criteria, from 2020-11-08, The EWAS Catalog contained 582,801 associations from 218 published studies. 
 
 ### New EWAS performed {#new-ewas-03}
 
@@ -637,21 +637,27 @@ Contributors and their role are listed below:
 
 
 
-## Abstract {#abstract-04}
-Understanding the nature of EWAS associations is imperative for biological inference from these studies. This understanding may also impact future study design. Of the data in the EWAS Catalog, 9.9% of reported associations are from CpGs measured by unreliable probes and 21% of studies did not account for both batch effects and cellular composition. Suggesting, some associations may be false positives. However, characteristics of DNA methylation also likely partly explain some EWAS associations - heritability and variability of DNA methylation explained 0.084% of the variance of effect EWAS effect sizes. Differentially methylated positions (DMPs) were found to be present in actively transcribed promoter regions, enhancer regions and in over 100 transcription factor binding sites more than expected by chance, suggesting targeting these sites for measurement of DNA methylation may be more likely to yield results in future EWAS. This study also identifies associations at sites common to multiple traits. cg06500161 _ABCG1_ associated with 71 traits, which were all traits relating to weight, metabolites or type-2-diabetes. This highlights the potential to use the data collected for the EWAS Catalog in __Chapter \@ref(ewas-catalog)__ to generate new hypotheses and connect DNA methylation changes to the broad range of potential phenotypic changes.
+## Chapter summary {#chapter-summary-04}
+The EWAS Catalog database developed in __Chapter \@ref(ewas-catalog)__ contains thousands associations from hundreds studies. By far the most common method of measuring DNA methylation amongst these EWAS is by using the Illumina Infinium HumanMethylation450 BeadChip (HM450 array). This platform assays fewer than 2% of CpG sites in the human genome, and those selected are ascertained for regions hypothesised to be relevant to gene regulation. Understanding what drives the associations found by measuring DNA methylation in this way could help prioritise CpG sites or regions of the genome to target for future technologies used in EWAS and could guide EWAS study design. 
+
+In this chapter I use the data collected for The EWAS Catalog to evaluate the characteristics of known DNA methylation associations to determine the characteristics that increase the chance of association in EWAS studies. This is evaluated in three contexts. Firstly, the extent to which associations might be explained by known biases is examined. Next, individual statistical characteristics of DNA methylation (variance, heritability, and mean methylation level) are explored. Finally, analyses are performed to assess whether differentially methylated positions (DMPs) (CpGs that associate with a trait at P < 1x10^-7^), are enriched for particular genomic locations. 
+
+The analyses were performed here were using data from The EWAS Catalog that was up to date as of 2019-01-01.
+
+I performed analyses in and wrote up all sections of the work, but was helped with the enrichment analyses. A full contributions statement can be found at the end of this chapter (__Section \@ref(contributions-statement-04)__).
 
 ## Introduction {#introduction-04}
-Learning from successes and mistakes helps drive forward development. Hundreds of epigenome-wide association studies (EWAS) have been conducted in the last 10-15 years, yet no cross-EWAS studies, comparing results across a large group of EWAS results has been performed. By exploring the patterns of association across a large group of EWAS, one can discover potential explanations for the results found, that may shed light on failings in the literature as well as shared epigenetic architectures across traits.
+Hundreds of epigenome-wide association studies (EWAS) have been conducted in the last 10-15 years, yet no systematic evaluation of published EWAS across many traits has been conducted. By exploring the patterns of association across a large group of EWAS, one can discover potential explanations for the results found, that may shed light on technical issues affecting previous studies as well as shared epigenetic architectures across traits.
 
-Since the inception of EWAS, it has become clear that batch effects and cellular heterogeneity can generate false positives and bias effect sizes [@Price2018; @Forest2018; @Jaffe2014]. However, there are examples of replication amongst EWAS results, [@Nano2017; @Kaushal2017; @Morris2017; @Hedman2017; @Braun2017; @Teschendorff2015; @Zeilinger2013] and further, use of triangulation can be used to bolster evidence that changes in DNA methylation estimated are unlikely due to bias. By way of an example, changes in DNA methylation at _AHRR_ have been replicated across multiple smoking EWAS [@Zeilinger2013; @Elliott2014; @Joehanes2016; @Bojesen2017] and as functional reaseach has implicated this gene in handling toxic substances found in tobacco smoke [@Zudaire2008], it seems unlikely these findings are chance occurances. 
+Since the inception of EWAS, it has become clear that batch effects and cellular heterogeneity can generate false positives and bias effect sizes [@Price2018; @Forest2018; @Jaffe2014]. Also, as discussed in __Section \@ref(measuring-dna-methylation)__, characterisation of probes used by common arrays (e.g. HM450 and HMEPIC) has shown that unreliable methylation measurements may occur because of cross-hybridisation of probes, non-specific probe mapping and SNPs being present at the binding sites of probes [@Zhou2017; @Naeem2014]. However, there are examples of replication amongst EWAS results, [@Nano2017; @Kaushal2017; @Morris2017; @Hedman2017; @Braun2017; @Teschendorff2015; @Zeilinger2013]. Further funcitonal characterisation of EWAS results, such as new experimental studies or the application of existing gene function knowledge, can be used to bolster evidence that changes in DNA methylation estimated are unlikely due to bias [@Rakyan2011; @Corbin2019]. By way of an example, changes in DNA methylation at _AHRR_ have been replicated across multiple smoking EWAS [@Zeilinger2013; @Elliott2014; @Joehanes2016; @Bojesen2017] and as functional reaseach has implicated this gene in handling toxic substances found in tobacco smoke [@Zudaire2008], it seems unlikely these findings are chance occurances. 
 
-The characteristics of the DNA methylome may also explain some EWAS findings. Heritability varies across DNA methylation sites [VanDongen2016; @McRae2014; @Hannon2018], and so if genetic effects are driving associations, either through confounding or with DNA methylation as a mediator, one would expect heritable sites to be commonly identified in EWAS. Variance is also heterogenous across sites [@Garg2018]. Technical effects are more likely to influence DNA methylation variation at sites for which measured variation is low. Thus, some studies have advocated removing these sites to prevent reporting  generating false positives and to reduce the multiple testing burden [@Meng2010; @Logue2017]. However, it is unclear how variance in DNA methylation relates to the magnitude of effect estimates. Experimental studies have shown DNA methylation changes at different locations of the genome correlate with different regulatory functions. For example, an increase in DNA methylation at transcriptional start sites is correlated with a decrease in gene expression [@Jones2012; @Ando2019; @Deaton2011], but an increase in DNA methylation within a gene body shows the opposite association [@Wolf1984; @Hellman2007]. Thus, genomic location of DNA methylation sites is likely to influence their likelihood of association with a trait.
+The characteristics of the DNA methylome may also explain some EWAS findings. Heritability varies across DNA methylation sites [VanDongen2016; @McRae2014; @Hannon2018], and so if genetic effects are driving EWAS associations, either through confounding or with DNA methylation as a mediator, one would expect heritable sites to be commonly identified in EWAS. Variance is also heterogenous across sites [@Garg2018]. At sites where variation is low, the ratio of noise to signal may be greater. Thus, some studies have advocated removing these sites to prevent reporting  generating false positives and to reduce the multiple testing burden [@Meng2010; @Logue2017]. However, it is unclear how variance in DNA methylation relates to the magnitude of effect estimates. Experimental studies have shown DNA methylation changes at different locations of the genome correlate with different regulatory functions. For example, an increase in DNA methylation at transcriptional start sites is correlated with a decrease in gene expression [@Jones2012; @Ando2019; @Deaton2011], but an increase in DNA methylation within a gene body shows the opposite association [@Wolf1984; @Hellman2007]. As discussed in __Section \@ref(ewas)__, the understanding that the genomic contexts in which DNA methylation occurs is related to gene regulation likely contributed to the design of contemporary arrays designed to measure DNA methylation. Yet, it is not known whether targeting protein-coding regions and enhancers has likely led to an increase in discovery of DNA methylation-trait assocaitions.
 
-Understanding underlying factors that drive EWAS results is essential for future study design. This may come in the form of proper consideration of potential biasing factors, or by selecting certain DNA methylation sites based on their specific characteristics. Further, understanding the characteristics of DNA methylation-trait associations can inform the design of future technologies aimed at measuring DNA methylation for EWAS. 
+Understanding underlying factors that drive EWAS results is essential for future study design. This may come in the form of consideration of potential biasing factors, or by selecting certain DNA methylation sites based on their specific characteristics. Further, the HM450 and HMEPIC BeadChips both capture less than 5% of the total number of CpG sites in the genome, therefore understanding the characteristics of DNA methylation-trait associations and could provide vital information when designing future technologies targeting the other 95%.
 
 Also, by examining the commonalities of EWAS results, one has the potential to uncover links between traits that have not previously been made or to identify new potential mediating factors between traits.
 
-In this study we first describe the data present in the EWAS Catalog before exploring various explanations for the findings.
+In this chapter I first describe the data present in The EWAS Catalog going on to explore the factors that predict EWAS hits.
 
 \newpage
 
@@ -670,28 +676,28 @@ T-statistics ($t$) were calculated using P-values, sample sizes ($n$) and the qt
     (\#eq:r-squared)
 \end{equation}
 
-We identified traits for which r^2^ values might be inflated. For each EWAS the estimated r^2^ values were summed and these values were transformed to approximate a normal distribution. Then a z-test was performed to assess which sum of r^2^ values were greater than the mean sum of r^2^ values. From the z-test, those with a FDR-corrected P-value of less than 0.05 were labelled as having inflated r^2^ values.
+We identified traits for which r^2^ values might be inflated. For each EWAS the estimated r^2^ values were summed and these values were transformed to approximate a normal distribution. Then a z-test was performed to assess for which studies the sum of r^2^ values were greater than the mean of summed r^2^ values across all studies. From the z-test, those with a FDR-corrected P-value of less than 0.05 were labelled as having inflated r^2^ values.
 
 ### Identifying faulty probes {#identifying-faulty-probes}
-By far the most common method to measure DNA methylation across the studies in The EWAS Catalog is using the Illumina Infinium HumanMethylation450 Beadchip. Since its development, the array has been extensively characterised [@Price2018; @Forest2018; @Jaffe2014; @Zhou2017] and it was found that not all probes map just to the CpG they were designed to bind to. Some probes map to SNPs, others are non-specific and some are prone to cross-hybridisation. We assigned probes to be 'potentially faulty' if they were characterised as such by Zhou et al. [@Zhou2017]. 
+By far the most common method to measure DNA methylation across the studies in The EWAS Catalog is using the Illumina Infinium HumanMethylation450 Beadchip. Since its development, the array has been extensively characterised [@Price2018; @Forest2018; @Jaffe2014; @Zhou2017] and it was found not all probes measure DNA methylation reliably. Some probes map to CpG sites that are influenced by SNPs, others are non-specific and some are prone to cross-hybridisation. Probes were assigned to be 'potentially faulty' if they were characterised as such by Zhou et al. [@Zhou2017]. 
 
 ### Replication {#replication-methods-04}
-An association (at P<1x10^-7^) was deemed to be replicated if it had been identified by another study at P < 1x10^-4^. We assessed replicability of EWAS within the database in two separate ways. Firstly, replication within studies is recorded in the EWAS Catalog, thus we simply performed a lookup for any studies that performed a replication or meta-analysed discovery and replication datasets. Secondly, we performed a lookup of results for any traits for which multiple EWAS had been conducted. 
+A study-wide significant association (P<1x10^-7^) was deemed to be replicated if it had been identified by another study at P<1x10^-4^. It should be re-iterated that the published data collected for The EWAS Catalog was scraped from the articles themselves and there is heterogeneity in reporting of EWAS associations. Therefore, many studies would not have reported any results with a P-value lower than the conventional EWAS P-value threshold (P<1x10^-7^), making power a key limitation to attempts to assess replication. We assessed replicability of EWAS within the database in two separate ways. Firstly, replication within studies is recorded in the EWAS Catalog, thus we simply performed a lookup for any studies that performed a replication or meta-analysed discovery and replication datasets. Secondly, we performed a lookup of results for any traits for which multiple EWAS had been conducted. 
 
-The Catalog also contains results from studies that have uploaded their data to GEO as well as results from the re-analysis of that data performed by The EWAS Catalog team. These re-analyses adjusted for 20 surrogate variables only as many studies did not provide a complete set of covariates to GEO. We performed a lookup of results found in the original EWAS in the re-analysed data. 
+The Catalog also contains results from studies that have uploaded their data to GEO as well as results from the re-analysis of that data (details in __Section \@ref(new-ewas-03)__). These re-analyses adjusted for 20 surrogate variables only as many studies did not provide a complete set of covariates to GEO. A lookup in the re-analysed data for results found in the original EWAS was performed. 
 
 ### Selecting data to assess DNA methylation characteristics
 Before further analyses, all potentially faulty probes and probes that mapped to sex chromomsomes were removed, studies with likely inflated r^2^ values were excluded, and studies for which re-analysis of the data replicated less than 10% of the findings were removed.
 
 ### DNA methylation characteristics
-The relationship between heritability, variability and average level of DNA methylation at each CpG site and EWAS effect size was assessed. To allow this across traits, we standardised beta coefficients, $\beta_{standard}$, like so, 
+The relationship between heritability, variability and average level of DNA methylation at each CpG site and EWAS effect size was assessed. To allow this across traits, beta coefficients were standardised, $\beta_{standard}$, like so, 
 
 \begin{equation}
     \beta_{standard} = \frac{\beta\sigma(x)} {\sigma(y)}
     (\#eq:standardised-beta-coeffs)
 \end{equation}
 
-As individual participant data were not available to us, the variance in DNA methylation sites was approximated by the variance in DNA methylation at sites as supplied by the GoDMC [@Min2020] and the trait variance was estimated by rearranging equation \@ref(eq:r-squared-from-beta) depending on whether DNA methylation was the independent ($x$) or dependent ($y$) variable in the model.
+where $\beta$ = beta coefficient, $\sigma(x)$ = the standard deviation of $x$, $\sigma(y)$ = the standard deviation of $y$. As individual participant data were not available to us, the variance in DNA methylation sites was approximated by the variance in DNA methylation at sites as supplied by the GoDMC [@Min2020] and the trait variance was estimated by rearranging equation \@ref(eq:r-squared-from-beta) depending on whether DNA methylation was the independent ($x$) or dependent ($y$) variable in the model.
 
 \begin{equation}
 	r^2 = \frac{\beta^2\sigma^2(x)} {\sigma^2(y)}
@@ -702,10 +708,16 @@ GoDMC [@Min2020] also provided the mean levels of DNA methylation at each site. 
 
 Relationships between each characteristic and effect size were assessed using linear regression, fitting the standardised effect size as the dependent variable and the characteristic as the independent variable. The standardised effect sizes were rank normalised to ensure normality and remove the impact of outliers.
 
-### Enrichment tests
-Locus Overlap Analysis (LOLA) [@Sheffield2016] was used to assess whether DMPs identified in the EWAS Catalog were enriched for 25 chromatin states and 167 transcription factor binding sites in 127 different cell types comprising 30 distinct tissues. These data were generated by the Roadmap Epigenomics Project [@Kundaje2015] and ENCODE [@Dunham2012].
+### Enrichment tests {#enrichment-tests-04}
+Assessment of enrichment of DMPs amongst various genomic regions was carried out to help understand whether selecting regions to measure could maximise EWAS yield. Locus Overlap Analysis (LOLA) [@Sheffield2016] was used to assess whether DMPs identified in the EWAS Catalog were enriched for 25 chromatin states and 167 transcription factor binding sites in 127 different cell types comprising 30 distinct tissues. These data were generated by the Roadmap Epigenomics Project [@Kundaje2015] and ENCODE [@Dunham2012].
 
-Five different groups of DMPs were defined for the enrichment analyses. Group A comprised all sites associated with any complex trait at the conventional P-value threshold used in EWAS, P < 1x10^-7^. As multiple EWAS were conducted, DMPs in group B were defined as being associated with any complex trait at a stricter P-value threshold, defined as the conventional threshold divided by the number of EWAS included in the analyses, P < 1.3e-10. DMPs replicated at P < 1x10^-4^ in any other EWAS of the same trait comprised group C. Group D and E were equivalent to groups A and B, except were restricted to DMPs identified in whole blood.
+Five different groups of DMPs were defined for the enrichment analyses:
+
+* Group A - all sites associated with any complex trait at the conventional P-value threshold used in EWAS, P < 1x10^-7^.
+* Group B - a subset of group A, all sites associated with any complex trait at a more stringent threshold, P < 1.3e-10. Multiple EWAS were conducted to produce the results in the database and so the stricter threshold of group B aimed to limit the false discovery rate by taking into account the multiple EWAS.
+* Group C - DMPs replicated at P < 1x10^-4^ in any other EWAS of the same trait.
+* Group D - a subset of group A, but restricted to results from studies where DNA methylation was measured in whole blood.
+* Group E - a subset of group B, but restricted to results from studies where DNA methylation was measured in whole blood.
 
 To assess enrichment, LOLA performs Fisher's exact test and generates an odds ratio that can be interpreted as the odds of the DMPs being within an annotation divided by the odds of the DMPs not being within an annotation. Genomic annotations may differ by CG content and thus a differential CG content of regions containing the DMPs of interest and the background group of CpG sites might bias enrichment estimates. Thus, background sites were matched on CG content before the analysis.
 
@@ -717,7 +729,7 @@ All analyses were completed using R (version 3.6.2).
 ## Results {#results-04}
 
 ### Description of the catalog {-#catalog-description}
-Before assessing what might be underlying various EWAS results, we present a brief summary of the data in the EWAS Catalog (__Table \@ref(tab:study-data-tab)__). \linebreak
+Before assessing the factors predicting DMPs (associations at P < 1x10^-7^), a brief summary of the data in the EWAS Catalog is presented (__Table \@ref(tab:study-data-tab)__). \linebreak
 
 \begin{table}[!h]
 
@@ -729,13 +741,13 @@ Before assessing what might be underlying various EWAS results, we present a bri
 study-trait & value\\
 \midrule
 \cellcolor{gray!6}{Number of EWAS} & \cellcolor{gray!6}{614}\\
-Number of traits & 556\\
+Unique traits & 556\\
 \cellcolor{gray!6}{Number of samples} & \cellcolor{gray!6}{389527}\\
 Median sample size (range) & 536 (93 - 13474)\\
 \cellcolor{gray!6}{Number of associations} & \cellcolor{gray!6}{155976}\\
 \addlinespace
-Number of CpGs identified & 129670\\
-\cellcolor{gray!6}{Number of genes identified} & \cellcolor{gray!6}{19305}\\
+Unique CpGs identified & 129670\\
+\cellcolor{gray!6}{Unique genes identified} & \cellcolor{gray!6}{19305}\\
 Sex (\%) & Both (38.6), Females (52.0), Males (2.1)\\
 \cellcolor{gray!6}{Ethnicities} & \cellcolor{gray!6}{EUR (75.3), Unclear (12.5), AFR (4.6), Other (3.6), ADM (1.6), EAS (1.4), SAS (1.0)}\\
 Age (\%) & Adults (72.5), Geriatrics (11.2), Children (4.9), Infants (4.4)\\
@@ -744,14 +756,14 @@ Age (\%) & Adults (72.5), Geriatrics (11.2), Children (4.9), Infants (4.4)\\
 Most common tissues (\%) & whole blood (84.14), cord blood (4.34), cd4+ t-cells (2.60), placenta (1.24), saliva (0.99)\\
 \bottomrule
 \multicolumn{2}{l}{\textsuperscript{} Identified associations were defined as those P < 1x10\textsuperscript{-7}}\\
+\multicolumn{2}{l}{\textsuperscript{} Results for Sex, Ethnicities, Age, and Most common tissues were calculated per EWAS. So if one EWAS (or meta-analysis) contained just}\\
+\multicolumn{2}{l}{Afican indviduals then that would be counted as one}\\
 \end{tabular}}
 \end{table}
 
 \linebreak
 
-It may be that certain regulatory mechanisms are more important to phenotypic differences between individuals. By analysing datasets such as the EWAS Catalog, it might be possible to identify which regions may be more important and further, it could be used to identify novel mediating factors between traits.
-
-The number of traits each CpG associated with was fairly even across chromosomes (__Figure \@ref(fig:traits-manhattan)__). There were five CpGs that associated with more than ten traits, cg01940273 _-_, cg05575921 _AHRR_, cg00574958 _CPT1A_, cg17901584 _DHCR24_, cg06500161 _ABCG1_. cg06500161 _ABCG1_ was associated with more traits than any other site - 71 traits. These correspond mostly to metabolites, weight-related traits, and type two diabetes. 
+There were five CpGs that associated with more than ten traits (__Figure \@ref(fig:traits-manhattan)__). Here those sites with gene names, as mapped by Illumina??, in brackets: cg01940273 _-_, cg05575921 _AHRR_, cg00574958 _CPT1A_, cg17901584 _DHCR24_, cg06500161 _ABCG1_. cg06500161 (_ABCG1_) was associated with more traits than any other site - 71 traits. These correspond mostly to metabolites, weight-related traits, and type two diabetes. 
 
 (ref:traits-manhattan-cap) __Number of unique traits associated with DNA methylation at each CpG__. Sites associated with more than 10 unique traits are highlighted in orange and labelled.
 
@@ -766,11 +778,11 @@ The number of traits each CpG associated with was fairly even across chromosomes
 \caption[(ref:traits-manhattan-scap)]{(ref:traits-manhattan-cap)}(\#fig:traits-manhattan)
 \end{figure}
 
-Next we estimated the variance (see equation \@ref(eq:r-squared)) captured by each association to gauge the level of covariation between complex traits and DNA methylation.
+Next we estimated the trait variance (see equation \@ref(eq:r-squared)) explained by each association. This indicates the predictive performance from EWAS, although it should be noted that winner's curse will artificially inflate the performance, even amongst EWAS with true positive results.
 
-The total trait variance correlated with DNA methylation (r^2^) at each site varied from 0.0011 to 0.97 with a median of 0.093 (__Figure \@ref(fig:rsq-distribution)__). The sum of r^2^ values ranged greatly from 0.0055 to 23,879 (__Figure \@ref(fig:rsq-sum-distribution)__), with a median of 1.2. There was evidence that eight studies had a total sum of r^2^ values greater than the mean (FDR < 0.05) and r^2^ values from individual associations from these studies made up the majority of r^2^ values greater than 0.1 (__Figure \@ref(fig:rsq-distribution)__). When excluding those studies from the results, the median r^2^ value at individual sites was 0.025.
+The proportion of trait variance (ranging from 0 to 1) that correlated with DNA methylation (r^2^) at each site varied from 0.0011 to 0.97 with a median of 0.093 (__Figure \@ref(fig:rsq-distribution)__). The sum of r^2^ values ranged greatly from 0.0055 to 23,879 (__Figure \@ref(fig:rsq-sum-distribution)__), with a median of 1.2. There was evidence that 18 studies had a total sum of r^2^ values greater than the mean (FDR < 0.05) and r^2^ values from individual associations from these studies made up the majority of r^2^ values greater than 0.1 (__Figure \@ref(fig:rsq-distribution)__). When excluding those studies from the results, the median r^2^ value at individual sites was 0.044.
 
-(ref:rsq-distribution-cap) __Distribution of r^2^ values across all CpG sites in The EWAS Catalog__. Each EWAS can identify multiple differentially methylated positions, each of which will capture some variance of the trait of interest for that EWAS (r^2^). $\sum {r^2}$ is the sum of r^2^ values, the distribution of which is shown in __Figure \@ref(fig:rsq-sum-distribution)__. Eight studies were identified for which there was strong evidence that the sum of r^2^ values were greater than the mean across all studies. All of the differentially methylated positions identified by those studies are highlighted in blue on the plot.
+(ref:rsq-distribution-cap) __Distribution of r^2^ values across all CpG sites in The EWAS Catalog__. Each EWAS can identify multiple differentially methylated positions, each of which will capture some variance of the trait of interest for that EWAS (r^2^). $\sum {r^2}$ is the sum of r^2^ values, the distribution of which is shown in __Figure \@ref(fig:rsq-sum-distribution)__. Eighteen studies were identified for which there was strong evidence that the sum of r^2^ values were greater than the mean across all studies. All of the differentially methylated positions identified by those studies are highlighted in blue on the plot.
 
 (ref:rsq-distribution-scap) Distribution of r^2^ values across all CpG sites in The EWAS Catalog
 
@@ -803,9 +815,9 @@ As discussed, cellular heterogeneity, batch effects and inclusion of faulty prob
 
 Each study may have reported results across multiple EWAS models, adjusting for different covariates. In at least one model, 579 studies adjusted for batch effects, 518 studies adjusted for cell composition, and 489 adjusted for both. Of all DMPs identifed, 9.3% were measured by potentially faulty probes and an extra 0.64% were present on sex chromosomes (__Figure \@ref(fig:faulty-probes-plot)__). 
 
-(ref:faulty-probes-cap) __The percentage of differentially methylated positions that may have been identified by faulty probes and the percentage of EWAS that reported identifying at least one of these probes__. Some CpGs are both on a sex chromosome and were identified as faulty by Zhou et al. They were labelled as 'potentially faulty'.
+(ref:faulty-probes-cap) __The percentage of DMPs that may have been identified by faulty probes and the percentage of EWAS that reported identifying at least one of these probes__. The left-hand bar represents all DMPs reported across all EWAS that fit into the categories shown, the right-hand bar represents the number of EWAS that include CpGs that fit into the categories shown. Some CpGs are both on a sex chromosome and were identified as faulty by Zhou et al. They were labelled as 'potentially faulty'.
 
-(ref:faulty-probes-scap) The percentage of differentially methylated positions that may have been identified by faulty probes and the percentage of EWAS that reported identifying at least one of these probes
+(ref:faulty-probes-scap) The percentage of DMPs that may have been identified by faulty probes and the percentage of EWAS that reported identifying at least one of these probes
 
 \begin{figure}
 
@@ -818,7 +830,7 @@ Each study may have reported results across multiple EWAS models, adjusting for 
 
 There were 30 studies that performed a meta-analysis of discovery and replication samples. A further 48 studies performed a separate replication analysis. Together, this provides 1666 associations within the EWAS Catalog that have been replicated at P < 1x10^-4^. 
 
-From the studies that put their data on GEO, we re-analysed the association between DNA methylation and the phenotype of interest from the original study, including 20 surrogate variables as covariates. Both the original study results and the results from the re-analysis of the phenotype of interest are in The EWAS Catalog database for 10 studies. Across the studies, between 0% and 96.875% of DMPs were replicated at P < 1x10^-4^ (__Table \@ref(tab:geo-reanalysis-tab)__). \linebreak
+From the studies that put their data on GEO, we re-analysed the association between DNA methylation and the phenotype of interest from the original study, including 20 surrogate variables as covariates. Both the original study results and the results from the re-analysis of the phenotype of interest are in The EWAS Catalog database for 9 studies. Across the studies, between 0% and 96.875% of DMPs were replicated at P < 1x10^-4^ (__Table \@ref(tab:geo-reanalysis-tab)__). Some of these EWAS reported very few DMPs (some only 1) and as they would have used different models, replicating the single reported result was not expected. \linebreak
 
 \begin{table}[!h]
 
@@ -830,16 +842,15 @@ From the studies that put their data on GEO, we re-analysed the association betw
 Trait & N-DMPs & N-replicated & Percent-replicated\\
 \midrule
 \cellcolor{gray!6}{Age at menarche} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.00}\\
-Arsenic exposure & 11 & 0 & 0.00\\
-\cellcolor{gray!6}{Arsenic exposure} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.00}\\
-Fetal alcohol spectrum disorder & 19 & 1 & 5.26\\
-\cellcolor{gray!6}{Inflammatory bowel disease} & \cellcolor{gray!6}{14} & \cellcolor{gray!6}{13} & \cellcolor{gray!6}{92.86}\\
+Arsenic exposure & 12 & 0 & 0.00\\
+\cellcolor{gray!6}{Fetal alcohol spectrum disorder} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{5.26}\\
+Inflammatory bowel disease & 14 & 13 & 92.86\\
+\cellcolor{gray!6}{Nevus count} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.00}\\
 \addlinespace
-Nevus count & 1 & 0 & 0.00\\
-\cellcolor{gray!6}{Psoriasis} & \cellcolor{gray!6}{16} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0.00}\\
-Rheumatoid arthritis & 47,875 & 116 & 0.24\\
-\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{30} & \cellcolor{gray!6}{12} & \cellcolor{gray!6}{40.00}\\
+Psoriasis & 16 & 0 & 0.00\\
+\cellcolor{gray!6}{Rheumatoid arthritis} & \cellcolor{gray!6}{47,875} & \cellcolor{gray!6}{116} & \cellcolor{gray!6}{0.24}\\
 Smoking & 32 & 31 & 96.88\\
+\cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{30} & \cellcolor{gray!6}{12} & \cellcolor{gray!6}{40.00}\\
 \bottomrule
 \multicolumn{4}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions}\\
 \multicolumn{4}{l}{identified at P < 1x10\textsuperscript{-7}}\\
@@ -850,7 +861,7 @@ Smoking & 32 & 31 & 96.88\\
 
 \linebreak
 
-Using the Catalog data I looked up whether CpG sites identified in relation to a trait in one study at P < 1x10^-7^ were also associated with that same trait in another study at P < 1x10^-4^. There were 72 studies that shared a common phenotype of interest. Replication rate, judged as the percentage of CpGs also present in any other study of the same trait with P value < 1x10^-4^, varied from 0 to 100 between studies (__Table \@ref(tab:replication-tab), __Table \@ref(tab:replication-tab-smoking)__, __Table \@ref(tab:replication-tab-bmi)__). \linebreak
+Using the Catalog data CpG sites identified in relation to a trait in one study at P < 1x10^-7^ were looked up to examine if they were also associated with that same trait in another study at P < 1x10^-4^. There were 72 studies that shared a common phenotype of interest. Replication rate, judged as the percentage of CpGs also present in any other study of the same trait with P value < 1x10^-4^, varied from 0 to 100 between studies (__Table \@ref(tab:replication-tab)__, __Table \@ref(tab:replication-tab-smoking)__, __Table \@ref(tab:replication-tab-bmi)__). \linebreak
 
 \begin{table}
 
@@ -949,11 +960,11 @@ smoking & 524 & 424 & 21 & 0.80916\\
 \cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{192} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{21} & \cellcolor{gray!6}{0.00000}\\
 smoking & 177 & 172 & 21 & 0.97175\\
 \addlinespace
-\cellcolor{gray!6}{Maternal smoking in pregnancy} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{1.00000}\\
-Maternal smoking in pregnancy & 24 & 24 & 2 & 1.00000\\
-\cellcolor{gray!6}{Maternal smoking in pregnancy} & \cellcolor{gray!6}{1,591} & \cellcolor{gray!6}{93} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.05845}\\
-Maternal smoking during pregnancy & 121 & 18 & 1 & 0.14876\\
-\cellcolor{gray!6}{Maternal smoking during pregnancy} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1.00000}\\
+\cellcolor{gray!6}{maternal\_smoking\_in\_pregnancy} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{1.00000}\\
+maternal\_smoking\_in\_pregnancy & 24 & 24 & 4 & 1.00000\\
+\cellcolor{gray!6}{maternal\_smoking\_in\_pregnancy} & \cellcolor{gray!6}{1,591} & \cellcolor{gray!6}{413} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{0.25959}\\
+maternal\_smoking\_in\_pregnancy & 121 & 121 & 4 & 1.00000\\
+\cellcolor{gray!6}{maternal\_smoking\_in\_pregnancy} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{1.00000}\\
 \bottomrule
 \multicolumn{5}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions identified at}\\
 \multicolumn{5}{l}{P<1x10\textsuperscript{-7}}\\
@@ -995,7 +1006,7 @@ Body mass index & 182 & 113 & 8 & 0.62088\\
 
 \pagebreak
 
-Before continuing to assess what CpG characteristics might, in part, explain some associations found in EWAS, we removed sites that were identified by potentially faulty probes and were on either of the sex chromosomes. Further, we removed the eight studies that had an inflated sum of r^2^ values and studies for which fewer than 10% of sites identified in the original analyses were identified in a re-analysis using the data provided via GEO. Overall, this left 789 EWAS and 77127 associations (at P < 1x10^-4^).
+Before continuing to assess what CpG characteristics might, in part, explain some associations found in EWAS, we removed sites that were identified by potentially faulty probes and were on either of the sex chromosomes. Further, we removed the 18 studies that had an inflated sum of r^2^ values and studies for which fewer than 10% of sites identified in the original analyses were identified in a re-analysis using the data provided via GEO. Overall, this left 789 EWAS and 77127 associations (at P < 1x10^-4^).
 
 
 <!-- Smoking is associated with large changes in DNA methylation across the genome (REF) and is associated with many different traits (REF). Thus, it may confound DNA methylation associations found in the catalog. If this was the case, one might expect smoking related CpGs to appear more in the catalog than expected by chance. The DMPs identified by EWAS of traits other than smoking were enriched for smoking related CpG sites (P = X).
@@ -1015,11 +1026,11 @@ Before continuing to assess what CpG characteristics might, in part, explain som
 
 Using the selected EWAS results, we investigated whether the characteristics of DNA methylation at CpG sites explained associations found in EWAS. 
 
-It has previously been suggested that sites at which DNA methylation variability is low should be removed [@Meng2010; @Logue2017]. The rationale being if total variation is low then the ratio of variation due to technical effects to variation due to biological effects will be greater and thus any association with a complex trait is more likely to be due to technical artefacts. However, selection would dictate that phenotypes (including DNA methylation) that have a large effect would be selected for (if they had a positive impact on fitness) or against (if they had a negative impact on fitness) [@Frank2011; @Gilad2006]. Therefore, it would be expected that DNA methylation at sites that have large impacts on cellular function would end up stabilising over time, and so the largest effects may be missed by removing CpG sites with low variances.
+It has previously been suggested that sites at which DNA methylation variability is low should be removed [@Meng2010; @Logue2017]. The rationale for this is that if total variation is low then the ratio of variation due to technical effects to variation due to biological effects will be greater and thus any association with a complex trait is more likely to be due to technical artefacts. However, it's unknown whether this may be removing sites pertinent to complex trait variation.
 
 There was strong evidence of an inverse association between variance at a CpG site and effect size (P = 1e-99, __Table \@ref(tab:cpg-chars-tab)__), suggesting that removal of sites with little variation may reduce the chances of discovering changes in DNA methylation that have larger effects.
 
-DNA methylation is a binary measurement, a CpG site can either be methylated or not. However, when measuring methylation across multiple DNA molecules, the proportion of those molecules methylated at a given site will be between 0 and 1. If DNA methylation at a given site is important for specific regulatory functions within a group of cells, one might expect that site to be methylated (or unmethylated) in the majority of the cells. Thus, changes in methylation away from an extreme, might have more of impact on cellular function.
+DNA methylation is a binary feature, a CpG site can either be methylated or not on a particular DNA molecule. However, when measuring methylation across multiple DNA molecules, the proportion of those molecules methylated at a given site will be between 0 and 1. If DNA methylation at a given site is important for specific regulatory functions within a group of cells, one might expect that site to be methylated (or unmethylated) in the majority of the cells. Thus, changes in methylation away from an extreme, might have more of an impact on cellular function.
 
 There was strong evidence of an association between mean DNA methylation levels and negative effect sizes (P = 5.1e-86, __Table \@ref(tab:cpg-chars-tab)__) and an inverse association between mean methylation levels and positive effect sizes (P = 1e-99, __Table \@ref(tab:cpg-chars-tab)__).
 
@@ -1055,7 +1066,7 @@ h\textsuperscript{2} & 8.1e-02 & 0.00037 & 5.9e-05 & 0.78\\
 
 As the position of DNA methylation relative to genes is pertinent to its association with gene expression (__Section \@ref(dna-methylation)__) [@Jones2012; @Ando2019; @Deaton2011; @Wolf1984; @Hellman2007], the enrichment of DMPs identified in The EWAS Catalog across genomic regions and chromatin states were assessed (__Figure \@ref(fig:chrom-state-plot)__). Across all tissues, there was a trend for sites to be enriched for promoter regions (OR > 1). Evidence of enrichment across different enhancer types was mixed and there was a trend towards depletion of sites within heterochromatic regions, poised and bivalent promoters, regions repressed by polycomb proteins and quiesscant regions (__Figure \@ref(fig:chrom-state-plot)__, OR < 1). 
 
-(ref:chrom-state-cap) __Enrichment of DMPs for 25 chromatin states__. Chromatin states across the genome of 127 cell types comprising 30 distinct tissues were available from the Roadmap Epigenomics Project. Using LOLA, the enrichment of DMPs from across all data in The EWAS Catalog for chromatin states were assessed. DMPs were divided into five categories __A__: CpG sites associated with any complex trait at P<1e-7, __B__: sites from A that replicated in another study at P<1e-4, __C__: CpG sites associated with any complex trait at P<1.3e-10 (P < conventional threshold divided by total number of EWAS), __D__: sites from A that were measured in blood, __E__: sites from C that were measured in blood. The x-axis show the 25 chromatin states: TssA, Active TSS; PromU, Promoter Upstream TSS; PromD1, Promoter Downstream TSS with DNase; PromD2, Promoter Downstream TSS; Tx5', Transcription 5'; Tx, Transcription; Tx3', Transcription 3'; TxWk, Weak transcription; TxReg, Transcription Regulatory; TxEnh5', Transcription 5' Enhancer; TxEnh3', Transcription 3' Enhancer; TxEnhW, Transcription Weak Enhancer; EnhA1, Active Enhancer 1; EnhA2, Active Enhancer 2; EnhAF, Active Enhancer Flank; EnhW1, Weak Enhancer 1; EnhW2, Weak Enhancer 2; EnhAc, Enhancer Acetylation Only; DNase, DNase only; ZNF/Rpts, ZNF genes & repeats; Het, Heterochromatin; PromP, Poised Promoter; PromBiv, Bivalent Promoter; ReprPC, Repressed PolyComb, Quies, Quiescent/Low.
+(ref:chrom-state-cap) __Enrichment of DMPs for 25 chromatin states__. Chromatin states across the genome of 127 cell types comprising 30 distinct tissues were available from the Roadmap Epigenomics Project. Using LOLA, the enrichment of DMPs from across all data in The EWAS Catalog for chromatin states were assessed. DMPs were divided into five categories __A__: CpG sites associated with any complex trait at P<1x10^-7^, __B__: CpG sites associated with any complex trait at P<1.3e-10 (P < conventional threshold divided by total number of EWAS), __C__: sites from A that replicated in another study at P<1e-4, __D__: sites from A that were measured in blood, __B__: sites from C that were measured in blood. The x-axis show the 25 chromatin states: TssA, Active TSS; PromU, Promoter Upstream TSS; PromD1, Promoter Downstream TSS with DNase; PromD2, Promoter Downstream TSS; Tx5', Transcription 5'; Tx, Transcription; Tx3', Transcription 3'; TxWk, Weak transcription; TxReg, Transcription Regulatory; TxEnh5', Transcription 5' Enhancer; TxEnh3', Transcription 3' Enhancer; TxEnhW, Transcription Weak Enhancer; EnhA1, Active Enhancer 1; EnhA2, Active Enhancer 2; EnhAF, Active Enhancer Flank; EnhW1, Weak Enhancer 1; EnhW2, Weak Enhancer 2; EnhAc, Enhancer Acetylation Only; DNase, DNase only; ZNF/Rpts, ZNF genes & repeats; Het, Heterochromatin; PromP, Poised Promoter; PromBiv, Bivalent Promoter; ReprPC, Repressed PolyComb, Quies, Quiescent/Low.
 
 (ref:chrom-state-scap) Enrichment of DMPs for 25 chromatin states
 
@@ -1091,7 +1102,7 @@ The sites identified by EWAS were also enriched for transcription factor binding
 
 ## Discussion {#discussion-04}
 
-Understanding the nature of EWAS associations is imperative for biological inference. Using data from the EWAS Catalog we show that many CpGs associate with multiple different unique traits and the magnitude of these associations are partly explained by the characteristics of DNA methylation levels. False positives may also explain a proportion of EWAS associations. Roughly 10% of the differentially methylated positions identified were measured by potentially faulty probes and the median percentage of CpGs that could be replicated across studies was 50%.
+Understanding the nature of EWAS associations is imperative for biological inference. Using data from the EWAS Catalog we show that many CpGs associate with multiple different unique traits and the magnitude of these associations are partly explained by the characteristics of DNA methylation levels. False positives may also explain a proportion of EWAS associations. Roughly 10% of the differentially methylated positions identified were measured by potentially faulty probes and the median percentage of CpGs that could be replicated across studies was 52%.
 
 ### Identifying mediators {#identifying-mediators}
 
@@ -1111,21 +1122,22 @@ Our results suggest removing CpG sites with low variances may make it more likel
 
 ### Choosing sites to measure {#choosing-sites-to-measure}
 
-As discussed in __Section \@ref(ewas)__, the HM450 array was designed to capture DNA methylation in various regions of the genome. The probes of the array target over 99% of protein coding genes and predominantly target the promoter regions of these genes (REF). The newer HMEPIC array captures much of what the HM450 does, and further covers 58% of FANTOM5 enhancers [@Pidsley2016]. 
+As discussed in __Section \@ref(ewas)__, the HM450 array was designed to capture DNA methylation in various regions of the genome. The probes of the array target roughly only 2% of CpG sites in the genome, yet target over 99% of protein coding genes and predominantly target the promoter regions of these genes [@Illumina2012]. The newer HMEPIC array captures much of what the HM450 does, and further covers 58% of FANTOM5 enhancers [@Pidsley2016]. 
 
-The trend for DMPs to be enriched for promoter regions suggests there may have been some justification for the chosen sites. However, not all promoter regions were enriched with DMPs and bivalent promoters were depleted for DMPs. Enrichment of enhancers was also seen, but the magnitude of enrichment was smaller. When designing future arrays, these results suggest that continuing to target promoters and enhancers, whilst avoiding gene regions that are less likely to be actively transcribed may yield more associations in EWAS.
+The trend for DMPs to be enriched for promoter regions (compared to regions of similar CG density) suggests there may have been some justification for the chosen sites. However, not all promoter regions were enriched with DMPs and bivalent promoters were depleted for DMPs. Enrichment of enhancers was also seen, but the magnitude of enrichment was smaller. When designing future arrays, these results suggest that continuing to target promoters and enhancers, whilst avoiding gene regions that are less likely to be actively transcribed may yield more associations in EWAS.
 
 Despite the tissue specific nature of DNA methylation, the regions for which DMPs identified in The EWAS Catalog were found to be enriched were fairly consistent across tissues. However, enrichment of DMPs tended to be greater for blood-based genomic annotations, perhaps reflecting the fact the majority of EWAS in the EWAS Catalog were conducted using DNA methylation measured in whole blood. 
 
 ### Limitations {#limitations-04}
 
-Individual participant data were not available and thus to calculate standardised betas, the variance of the trait had to be estimated from external measures of DNA methylation. If the GoDMC sample is not representative of the sample used for the study EWAS then these estimates may be substantially biased. Further, many studies do not report the effect estimates from their statistical analyses. If there is a marked difference in the studies that do not report effect sizes and those that do, then any associations between standardised effect estimates and DNA methylation site characteristics are likely to be biased.
+Individual participant data were not available and thus to calculate standardised betas, the variance of the trait had to be estimated from external measures of DNA methylation. If the GoDMC sample is not representative of the sample used for the study EWAS then these estimates may be substantially biased. Further, many studies do not report the effect estimates from their statistical analyses. If there is a marked difference in the studies that do not report effect sizes and those that do, then any associations between standardised effect estimates and DNA methylation site characteristics are likely to be biased. 
 
-Like other observable phenotypes, DNA methylation varies under many contexts. Time, sex, tissue type, population, socioeconmic position and many other factors may influence the results of EWAS. The majority of EWAS conducted have used DNA methylation measured in whole blood from European adults making the results not necessarily apply broadly outside those bounds. The need for tissue-specific data has been discussed previously in __Section \@ref(problems-for-ewas)__. Differences in DNA methylation between ethnic groups has been shown previously [@ToinetCronje2020] and the predictive value of a smoking-related methylation score was shown to differ between Europeans and South Asians [@Elliott2014]. This suggests any biological insight and population health benefits that may be the result of EWAS is likely to to be maximised by diversifying populations. It is unclear from this study whether the CpG characteristics and genomic annotations that show evidence that they influence EWAS results, will also influence EWAS results in the same way within a more ethnically diverse selection of samples.
+Like other observable phenotypes, DNA methylation varies under many contexts. Time, sex, tissue type, population, socioeconomic position and many other factors may influence the results of EWAS. The majority of EWAS conducted have used DNA methylation measured in whole blood from European adults making the results not necessarily apply broadly outside those bounds. The need for tissue-specific data has been discussed previously in __Section \@ref(problems-for-ewas)__. Differences in DNA methylation between ethnic groups has been shown previously [@ToinetCronje2020] and the predictive value of a smoking-related methylation score was shown to differ between Europeans and South Asians [@Elliott2014]. This suggests any biological insight and population health benefits that may be the result of EWAS is likely to to be maximised by diversifying populations. It is unclear from this study whether the CpG characteristics and genomic annotations that show evidence that they influence EWAS results, will also influence EWAS results in the same way within a more ethnically diverse selection of samples.
 
 ## Conclusion {#conclusion-04}
 This chapter demonstrates the potential for using large-scale EWAS databases to understand DNA methylation-trait associations. It was found that study design flaws can help explain some associations. However, it is noteworthy that the vast majority of studies have accounted for some potential biasing factors, for example 79.1262136% of studies adjusted for batch effects and cell composition. Further, there was an invese association between DNA methylation variability and effect size, suggesting that studies that remove variable sites prior to analysis could be excluding important regions from the analysis. Finally, cg06500161 _ABCG1_ was identified as being associated with 71 traits that share known biological relationships. This highlights the potential to use The EWAS Catalog to identify molecular markers that might underlie the relationship between traits.
 
+## Contributions statement {#contributions-statement-04}
 
 <!--chapter:end:04-properties_of_ewas.Rmd-->
 
@@ -1137,8 +1149,12 @@ This chapter demonstrates the potential for using large-scale EWAS databases to 
 
 
 
-## Abstract {#abstract-05}
-Following several years of epigenome-wide association studies (EWAS), traits analysed to date tend to yield few associations. Reinforcing this observation, EWAS on 400 traits were conducted and only 16 of the traits yielded at least one association at a conservative significance threshold. To begin investigating why EWAS yield is low, the proportion of phenotypic variation captured by 421,693 blood derived DNA methylation markers (h^2^~EWAS~) across all 400 traits was formally estimated. The mean h^2^~EWAS~ was zero, with evidence for regular cigarette smoking exhibiting the largest association with all markers (h^2^~EWAS~ = 0.42) and the only one surpassing a false discovery rate < 0.1. Though underpowered to determine the h^2^~EWAS~ value for any one trait, h^2^~EWAS~ was predictive of the number of EWAS hits across the traits analysed (AUC=0.7). Modelling the contributions of the methylome on a per-site versus a per-region basis gave varied h^2^~EWAS~ estimates (r=0.47) but neither approach obtained substantially higher model fits across all traits. Our analysis indicates that most complex traits do not heavily associate with the markers commonly measured in EWAS within blood. However, it is likely DNA methylation does capture variation in some traits and h^2^~EWAS~ may be a reasonable way to prioritise these traits that are likely to yield associations in EWAS.
+## Chapter summary {#chapter-summary-05}
+In __Chapter \@ref(properties-of-ewas)__, various aspects of DNA methylation were shown to correlate with the chances of a CpG site being identified in epigenome-wide association studies (EWAS). However, whether these identified CpG sites, or those that do not associate with with traits at a given P-value threshold, capture much complex trait variance is unclear. Quantifying the total covariation between the DNA methylation marks most commonly measured in EWAS and complex traits, would reveal how much more information is to gain from the current EWAS design if just increasing sample sizes. 
+
+In this chapter I estimate the proportion of phenotypic variation captured by 421,693 blood derived DNA methylation markers (h^2^~EWAS~) across 400 traits. Then I explore whether h^2^~EWAS~ could be used to prioritise traits for which EWAS are likely to yield associations.
+
+I performed all analyses and written communication in this chapter.
 
 ## Introduction {#introduction-05}
 Epigenome-wide association studies (EWAS) aim to assess the association between phenotypes of interest and DNA methylation across hundreds of thousands of CpG sites throughout the genome [@Birney2016; @Rakyan2011]. As seen in __Chapter \@ref(properties-of-ewas)__, many recent EWAS yielded few sites across the genome with strong evidence for association. The proportion of total trait variance associated with each of these sites tended to be small (__Figure \@ref(fig:rsq-distribution)__), but when modelled together, may be large. There is a need to have a global view of the contribution of DNA methylation to complex traits in order to interpret these results.
@@ -1465,10 +1481,12 @@ Overall, the number of traits with good evidence for h^2^~EWAS~ > 0 was low (onl
 
 
 
-## Chapter summary {#chapter-summary}
+## Chapter summary {#chapter-summary-06}
 Despite little evidence that DNA methylation correlates highly with complex trait variation (__Chapter \@ref(h2ewas-chapter)__), it is of interest to understand whether the DNA methylation sites identified may be valuable in understanding the underlying biology of complex traits. As discussed previously, it is well understood that observational associations between DNA methylation and complex traits are sucesptible to confounding and reverse causation. Genetic variants identified in GWAS will not be caused by phenotypic variation and their associations with complex traits are unlikely to be confounded. Yet, both GWAS and EWAS aim to identify regions of the genome that will give an indication of the molecular nature of complex traits. 
 
 Using data from The EWAS Catalog (__Chapter \@ref(ewas-catalog)__) and the IEU OpenGWAS Project [@Elsworth2020; @Hemani2018], in this chapter I examine whether EWAS is likely uncovering similar facets of complex trait aeitiology to GWAS. 
+
+I conducted all analyses and did the written communication in this chapter.
 
 ## Introduction {#introduction-06}
 Often in EWAS, the potential biological implications of differentially methylated positions or regions (DMPs or DMRs) will be investigated further through genomic annotations [@Sharp2017; @Reese2019; @Everson2019; @Chen2020]. As discussed in __Section \@ref(dna-methylation)__, previous studies have demonstrated a relationship between DNA methylation levels and proximal genes [@Jones2012; @Illingworth2009]. This observation has lead to it being common place to map sites identified in EWAS to nearby genes and these genes and their function are often probed to ascertain their relevance to the trait of interest [@Sharp2017; @Reese2019; @Everson2019; @Chen2020]. Further, genes can be grouped with others into "genesets" that have similar functionality or lie within the same pathway. Over-represented genesets may provide an insight into the molecular biology of a trait, for example, DNA methylation sites identified in an autoimmune disease EWAS might tag genes within immunological pathways more than expected by chance. Other assessments may be made to infer potential biological understanding, including enrichment of other epigenetic marks at the regions identified [@Breeze2016] and follow-up experimental studies [@Rakyan2011]. However, using open access databases to investigate tagged genes and genesets is a simple and potentially effective approach to further biological understanding. 
@@ -1820,20 +1838,12 @@ When assessing whether gene overlap or geneset enrichment score correlations wer
 
 
 
+## Chapter summary {#chapter-summary-07}
+The results of __Chapter \@ref(ewas-gwas-comp-chapter)__ suggested that epigenome-wide association studies (EWAS) might be identifying differential facets of complex trait biology when compared to genome-wide association studies (GWAS) of corresponding traits. As discussed in __Section \@ref(problems-for-ewas)__, observational studies such as EWAS suffer from issues of reverse causation and confounding, which could have explained the results in __Chapter \@ref(ewas-gwas-comp-chapter)__.
 
-## Abstract {#abstract-07}
+In this chapter I attempt to explore the extent to which EWAS results may be confounded. To acheive this I first perform a meta-analysis of lung cancer EWAS and then compare the results from this observational analysis to the same analysis in a well-powered Mendelian randomization (MR) framework. DNA methylation has recently been postulated to mediate over 30% of the effect on smoking on lung cancer [@Fasanelli2015], making this case of particular interest to potential lung cancer preventative stratergies. 
 
-### Background {#abstract-background-07}
-DNA methylation changes in peripheral blood have recently been identified in relation to lung cancer risk. Some of these changes have been suggested to mediate part of the effect of smoking on lung cancer. However, limitations with conventional mediation analyses mean that the causal nature of these methylation changes has yet to be fully elucidated.
-
-### Methods {#abstract-methods-07}
-I first performed a meta-analysis of four epigenome-wide association studies (EWAS) of lung cancer (918 cases, 918 controls). Next, I conducted a two-sample Mendelian randomization (MR) analysis, using genetic instruments for methylation at CpG sites identified in the EWAS meta-analysis, and 29,863 cases and 55,586 controls from the TRICL-ILCCO lung cancer consortium, to appraise the possible causal role of methylation at these sites on lung cancer.
-
-### Results {#abstract-results-07}
-Sixteen CpG sites were identified from the EWAS meta-analysis (FDR < 0.05), 14 of which had suitable genetic instruments. MR provided little evidence that DNA methylation in peripheral blood at the 14 CpG sites play a causal role in lung cancer development (FDR > 0.05), including for cg05575921-_AHRR_ where methylation is strongly associated with both smoke exposure and lung cancer risk.
-
-### Conclusions {#abstract-conclusions-07}
-The results contrast with previous observational and mediation analysis, which have made strong claims regarding the causal role of DNA methylation. Thus, previous suggestions of a mediating role of methylation at sites identified in peripheral blood, such as cg05575921-_AHRR_, could be unfounded. However, this study does not preclude the possibility that differential DNA methylation at other sites is causally involved in lung cancer development, especially within lung tissue.
+I performed all the main analyses (meta-analysis of EWAS and main MR analyses) and wrote the majority of the work up. However, some supplemetnary analyses, which provided more evidence on the relationship between DNA methylation and lung cancer was performed by others. A full contributions statement can be found at the end of this chapter (__Section \@ref(contributions-statement-07)__). 
 
 ## Introduction {#introduction-07}
 Lung cancer is the most common cause of cancer-related death worldwide [@Ferlay2013]. Several DNA methylation changes have been recently identified in relation to lung cancer risk [@Fasanelli2015; @Baglietto2017; @McCarthy2016]. However, these epigenetic marks are sensitive to reverse causation, being affected by cancer processes [@Jones2002], and are also prone to confounding, for example by socio-economic and lifestyle factors [@Borghol2012; @Elliott2014].
@@ -1843,8 +1853,6 @@ One CpG site, cg05575921 within the aryl hydrocarbon receptor repressor (_AHRR_)
 As discussed in __Section \@ref(establishing-causality)__, Mendelian randomization (MR) can be used to help infer causality in associations between DNA methylation and complex traits [@Relton2012; @Relton2015; @Richardson2017] under a paradigm that largely mitigates the problem of confounding if certain assumptions are met (__Figure \@ref(fig:mr-diagram)__).
 
 In this study, I performed a meta-analysis of four lung cancer EWAS (918 case-control pairs) from prospective cohort studies to identify CpG sites associated with lung cancer risk and applied MR to investigate whether the observed DNA methylation changes at these sites are causally linked to lung cancer.
-
-In this chapter, Dr Rebecca Richmond performed analysis in the CCHS cohort (see __Sections \@ref(ahrr-one-sample-mr-methods) and \@ref(ahrr-one-sample-mr)__) and contributed to writing the introduction and discussion. Dr Andrew E. Teschendorff analysed differences in lung tumour and adjacent healthy tissue (see __Sections \@ref(lc-heathly-v-normal-methods) and \@ref(lc-heathly-v-normal)__). I completed the rest of the analyses and wrote each section, except those for which Dr Rebecca Richmond completed the analyses.
 
 ## Methods {#methods-07}
 
@@ -2495,6 +2503,13 @@ A further limitation relates to the inconsistency in effect estimates between th
 Peripheral blood may not be the ideal tissue to assess the association between DNA methylation and lung cancer. While a high degree of concordance in mQTLs has been observed across lung tissue, skin and peripheral blood DNA [@Shi2014], this was not directly evaluated here. A possible explanation for a lack of causal effect at _AHRR_ is due to the limitation of tissue specificity as it was found that the mQTLs used to instrument cg05575921 were not strongly related to expression of _AHRR_ in lung tissue. However, findings from MR analysis were corroborated by the lack of evidence for differential methylation at _AHRR_ between lung adenocarcinoma tissue and adjacent healthy tissue, and weak evidence for hypermethylation (opposite to the expected direction) in squamous cell lung cancer tissue. This result may be interesting in itself as smoking is hypothesized to influence squamous cell carcinoma more than adenocarcinoma. However, the result conflicts with that found in the MR analysis. Furthermore, another study investigating tumorous lung tissue (N=511) found only weak evidence for an association between smoking and cg05575921 _AHRR_ methylation, that did not survive multiple testing correction (P=0.02) [@Freeman2016]. These results do not fully exclude _AHRR_ from involvement in the disease process. _AHRR_ and _AHR_ form a regulatory feedback loop, which means that the actual effect of differential methylation or differential expression of _AHR_/_AHRR_ on pathway activity is complex [@Chen2017]. In addition, some of the CpG sites identified in the EWAS were found to be differentially methylated in the tumour and adjacent normal lung tissue comparison. While this could represent a false negative result of the MR analysis, it is of interest that differential methylation in the tissue comparison analysis was typically in the opposite direction to that observed in the EWAS. Furthermore, while this method can be used to minimize confounding, it does not fully eliminate the possibility of bias due to reverse causation (whereby cancer induces changes in DNA methylation) or intra-individual confounding e.g. by gene expression. Therefore, it doesn’t give conclusive evidence that DNA methylation changes at these sites are not relevant to the development of lung cancer.
 
 While DNA methylation in peripheral blood may be predictive of lung cancer risk, according to the present analysis it is unlikely to play a causal role in lung carcinogenesis at the CpG sites investigated. Findings from this study issue caution over the use of traditional mediation analyses to implicate intermediate biomarkers (such as DNA methylation) in pathways linking an exposure with disease, given the potential for residual confounding in this context [@Richmond2016]. However, the findings of this study do not preclude the possibility that other DNA methylation changes (i.e. changes at different sites in the genome or in different tissues) are causally related to lung cancer (or other smoking-associated disease) [@Gao2016].
+
+## Contributions statement {#contributions-statement-07}
+
+In this chapter, Dr Rebecca Richmond performed analysis in the CCHS cohort (see __Sections \@ref(ahrr-one-sample-mr-methods) and \@ref(ahrr-one-sample-mr)__) and wrote the sections for which she performed the analyses. Dr Andrew E. Teschendorff analysed differences in lung tumour and adjacent healthy tissue (see __Sections \@ref(lc-heathly-v-normal-methods) and \@ref(lc-heathly-v-normal)__). I performed all other analyses and wrote everything else.
+
+
+
 
 
 <!--chapter:end:07-dnam_lungcancer_mr.Rmd-->
