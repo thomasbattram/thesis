@@ -37,7 +37,7 @@ Also figure 4.5 (rendering)
 
 __NOTES:__
 
-Some meeting notes
+Check distributions again. Could use rank transformations as a 
 
 ## Item2 <a name="item2"></a>
 
