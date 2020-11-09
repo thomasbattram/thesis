@@ -8,6 +8,9 @@ study_dat <- read_tsv(file.path(tp_04, "data_description.tsv"))
 # traits per DMP
 t_dat <- read_tsv(file.path(tp_04, "n_traits_per_cpg.tsv"))
 
+# hyper/hypo percentages
+dir_of_effect <- new_load(file.path(tp_04, "meth_direction_of_effect.RData"))
+
 # r-squared values
 rsq_dat <- read_tsv(file.path(tp_04, "rsquared_data.tsv"))
 rsq_sum_dat <- read_tsv(file.path(tp_04, "sum_of_rsquared_data.tsv"))
@@ -30,6 +33,8 @@ cpg_chars_res <- read_tsv(file.path(tp_04, "characteristics_assoc_tab.tsv"))
 ## ---- study-data-setup --------------------------------
 
 study_caption <- "Description of data present in the EWAS Catalog"
+
+n_ewas_04 <- study_dat[study_dat$study_trait == "Number of EWAS", "value", drop=T]
 
 study_dat <- study_dat %>%
 	tidy_colnames()

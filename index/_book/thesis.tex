@@ -749,7 +749,7 @@ CpG-phenotype associations are extracted from studies at P \textless{} 1x10\text
 
 All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-11-08, The EWAS Catalog contained 582,801 associations from 218 published studies.
+Based on these criteria, from 2020-11-09, The EWAS Catalog contained 582,801 associations from 218 published studies.
 
 \hypertarget{new-ewas-03}{%
 \subsection{New EWAS performed}\label{new-ewas-03}}
@@ -865,7 +865,7 @@ In this chapter I first describe the data present in The EWAS Catalog going on t
 \hypertarget{ewas-data-04}{%
 \subsection{Epigenome-wide association studies data}\label{ewas-data-04}}
 
-All the data for the analysis were extracted from The EWAS Catalog (\textbf{Chapter \ref{ewas-catalog}}). This includes 218 published studies, 387 EWAS from the ARIES subsection of ALSPAC (\textbf{Section \ref{aries-02}}) (126,127,134) and 41 EWAS performed using data from the gene expression omnibus (GEO) resource (\textbf{Section \ref{geo-02}}). See \textbf{Chapter \ref{ewas-catalog}} for more details.
+All the data for the analysis were extracted from The EWAS Catalog (\textbf{Chapter \ref{ewas-catalog}}). Data were extracted when The EWAS Catalog had published EWAS data from before 2019. Studies were removed that compared DNA methylation levels between tissue, race, and age. This was done because these variables are not complex traits and thus the properties of those study results are unlikely to be informative when attempting to understand how to best design EWAS. Overall, this left 614 EWAS, including 387 EWAS from the ARIES subsection of ALSPAC (\textbf{Section \ref{aries-02}}) (126,127,134) and 40 EWAS performed using data from the gene expression omnibus (GEO) resource (\textbf{Section \ref{geo-02}}). See \textbf{Chapter \ref{ewas-catalog}} for more details.
 
 \hypertarget{description-of-data}{%
 \subsection*{Description of catalog data}\label{description-of-data}}
@@ -978,7 +978,7 @@ Most common tissues (\%) & whole blood (84.14), cord blood (4.34), cd4+ t-cells 
 \end{table}
 \linebreak
 
-There were five CpGs that associated with more than ten traits (\textbf{Figure \ref{fig:traits-manhattan}}). Here those sites with gene names, as mapped by Illumina??, in brackets: cg01940273 \emph{-}, cg05575921 \emph{AHRR}, cg00574958 \emph{CPT1A}, cg17901584 \emph{DHCR24}, cg06500161 \emph{ABCG1}. cg06500161 (\emph{ABCG1}) was associated with more traits than any other site - 71 traits. These correspond mostly to metabolites, weight-related traits, and type two diabetes.
+The percentage of hypermethylated sites in relation to traits was 52\% and there were five CpGs that associated with more than ten traits (\textbf{Figure \ref{fig:traits-manhattan}}). Here those sites with gene names, as mapped by Illumina??, in brackets: cg01940273 \emph{-}, cg05575921 \emph{AHRR}, cg00574958 \emph{CPT1A}, cg17901584 \emph{DHCR24}, cg06500161 \emph{ABCG1}. cg06500161 (\emph{ABCG1}) was associated with more traits than any other site - 71 traits. These correspond mostly to metabolites, weight-related traits, and type two diabetes.
 
 
 
@@ -1209,7 +1209,7 @@ Body mass index & 182 & 113 & 8 & 0.62088\\
 \end{table}
 \pagebreak
 
-Before continuing to assess what CpG characteristics might, in part, explain some associations found in EWAS, we removed sites that were identified by potentially faulty probes and were on either of the sex chromosomes. Further, we removed the 18 studies that had an inflated sum of r\textsuperscript{2} values and studies for which fewer than 10\% of sites identified in the original analyses were identified in a re-analysis using the data provided via GEO. Overall, this left 789 EWAS and 77127 associations (at P \textless{} 1x10\textsuperscript{-4}).
+Before continuing to assess what CpG characteristics might, in part, explain some associations found in EWAS, we removed sites that were identified by potentially faulty probes and were on either of the sex chromosomes. Further, we removed the 18 studies that had an inflated sum of r\textsuperscript{2} values and studies for which fewer than 10\% of sites identified in the original analyses were identified in a re-analysis using the data provided via GEO. Overall, this left 779 EWAS and 78796 associations (at P \textless{} 1x10\textsuperscript{-4}).
 
 \hypertarget{cpg-characteristics}{%
 \subsection{CpG characteristics}\label{cpg-characteristics}}
@@ -1218,7 +1218,7 @@ Using the selected EWAS results, we investigated whether the characteristics of 
 
 It has previously been suggested that sites at which DNA methylation variability is low should be removed (131,148). The rationale for this is that if total variation is low then the ratio of variation due to technical effects to variation due to biological effects will be greater and thus any association with a complex trait is more likely to be due to technical artefacts. However, it's unknown whether this may be removing sites pertinent to complex trait variation.
 
-There was strong evidence of an inverse association between variance at a CpG site and effect size (P = 1e-99, \textbf{Table \ref{tab:cpg-chars-tab}}), suggesting that removal of sites with little variation may reduce the chances of discovering changes in DNA methylation that have larger effects.
+The variability of DNA methylation could predict replicability little more than chance (AUC = XXX), but there was strong evidence of an inverse association between variance at a CpG site and effect size (P = 1e-99, \textbf{Table \ref{tab:cpg-chars-tab}}). This suggests that removal of sites with little variation may reduce the chances of discovering changes in DNA methylation that have larger effects, whilst not removing more unreliable sites than would be expected if randomly removing sites from the analyses.
 
 DNA methylation is a binary feature, a CpG site can either be methylated or not on a particular DNA molecule. However, when measuring methylation across multiple DNA molecules, the proportion of those molecules methylated at a given site will be between 0 and 1. If DNA methylation at a given site is important for specific regulatory functions within a group of cells, one might expect that site to be methylated (or unmethylated) in the majority of the cells. Thus, changes in methylation away from an extreme, might have more of an impact on cellular function.
 

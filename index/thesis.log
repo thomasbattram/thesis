@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.2)  8 NOV 2020 21:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.2)  9 NOV 2020 13:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1665,11 +1665,11 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 ### semi simple group (level 1) entered at line 204 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 16869 strings out of 481441
- 308937 string characters out of 5919745
+ 16866 strings out of 481441
+ 308907 string characters out of 5919745
  701657 words of memory out of 5000000
  32027 multiletter control sequences out of 15000+600000
- 619697 words of font info for 272 fonts, out of 8000000 for 9000
+ 619472 words of font info for 270 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  66i,15n,73p,2836b,2560s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/tb13101/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base
@@ -1690,7 +1690,7 @@ ist/fonts/type1/urw/times/utmb8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist
 /fonts/type1/urw/times/utmbi8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/font
 s/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (219 pages, 14534504 bytes).
+Output written on thesis.pdf (219 pages, 14534908 bytes).
 PDF statistics:
  3338 PDF objects out of 3580 (max. 8388607)
  2913 compressed objects within 30 object streams

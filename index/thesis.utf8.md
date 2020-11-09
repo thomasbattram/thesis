@@ -548,7 +548,7 @@ CpG-phenotype associations are extracted from studies at P < 1x10^-4^. A P-value
 
 All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-11-08, The EWAS Catalog contained 582,801 associations from 218 published studies. 
+Based on these criteria, from 2020-11-09, The EWAS Catalog contained 582,801 associations from 218 published studies. 
 
 ### New EWAS performed {#new-ewas-03}
 
@@ -664,7 +664,7 @@ In this chapter I first describe the data present in The EWAS Catalog going on t
 ## Methods {#methods-04}
 
 ### Epigenome-wide association studies data {#ewas-data-04}
-All the data for the analysis were extracted from The EWAS Catalog (__Chapter \@ref(ewas-catalog)__). This includes 218 published studies, 387 EWAS from the ARIES subsection of ALSPAC (__Section \@ref(aries-02)__) [@Relton2015-aries; @Fraser2013; @Boyd2013] and 41 EWAS performed using data from the gene expression omnibus (GEO) resource (__Section \@ref(geo-02)__). See __Chapter \@ref(ewas-catalog)__ for more details.
+All the data for the analysis were extracted from The EWAS Catalog (__Chapter \@ref(ewas-catalog)__). Data were extracted when The EWAS Catalog had published EWAS data from before 2019. Studies were removed that compared DNA methylation levels between tissue, race, and age. This was done because these variables are not complex traits and thus the properties of those study results are unlikely to be informative when attempting to understand how to best design EWAS. Overall, this left 614 EWAS, including 387 EWAS from the ARIES subsection of ALSPAC (__Section \@ref(aries-02)__) [@Relton2015-aries; @Fraser2013; @Boyd2013] and 40 EWAS performed using data from the gene expression omnibus (GEO) resource (__Section \@ref(geo-02)__). See __Chapter \@ref(ewas-catalog)__ for more details.
 
 ### Description of catalog data {-#description-of-data}
 Associations between DNA methylation and traits, unless otherwise stated, were extracted at P < 1x10^-7^. Each of the CpGs in the Catalog are annotated to genes, using data from the meffil R package . 
@@ -763,7 +763,7 @@ Most common tissues (\%) & whole blood (84.14), cord blood (4.34), cd4+ t-cells 
 
 \linebreak
 
-There were five CpGs that associated with more than ten traits (__Figure \@ref(fig:traits-manhattan)__). Here those sites with gene names, as mapped by Illumina??, in brackets: cg01940273 _-_, cg05575921 _AHRR_, cg00574958 _CPT1A_, cg17901584 _DHCR24_, cg06500161 _ABCG1_. cg06500161 (_ABCG1_) was associated with more traits than any other site - 71 traits. These correspond mostly to metabolites, weight-related traits, and type two diabetes. 
+The percentage of hypermethylated sites in relation to traits was 52% and there were five CpGs that associated with more than ten traits (__Figure \@ref(fig:traits-manhattan)__). Here those sites with gene names, as mapped by Illumina??, in brackets: cg01940273 _-_, cg05575921 _AHRR_, cg00574958 _CPT1A_, cg17901584 _DHCR24_, cg06500161 _ABCG1_. cg06500161 (_ABCG1_) was associated with more traits than any other site - 71 traits. These correspond mostly to metabolites, weight-related traits, and type two diabetes. 
 
 (ref:traits-manhattan-cap) __Number of unique traits associated with DNA methylation at each CpG__. Sites associated with more than 10 unique traits are highlighted in orange and labelled.
 
@@ -1006,7 +1006,7 @@ Body mass index & 182 & 113 & 8 & 0.62088\\
 
 \pagebreak
 
-Before continuing to assess what CpG characteristics might, in part, explain some associations found in EWAS, we removed sites that were identified by potentially faulty probes and were on either of the sex chromosomes. Further, we removed the 18 studies that had an inflated sum of r^2^ values and studies for which fewer than 10% of sites identified in the original analyses were identified in a re-analysis using the data provided via GEO. Overall, this left 789 EWAS and 77127 associations (at P < 1x10^-4^).
+Before continuing to assess what CpG characteristics might, in part, explain some associations found in EWAS, we removed sites that were identified by potentially faulty probes and were on either of the sex chromosomes. Further, we removed the 18 studies that had an inflated sum of r^2^ values and studies for which fewer than 10% of sites identified in the original analyses were identified in a re-analysis using the data provided via GEO. Overall, this left 779 EWAS and 78796 associations (at P < 1x10^-4^).
 
 
 <!-- Smoking is associated with large changes in DNA methylation across the genome (REF) and is associated with many different traits (REF). Thus, it may confound DNA methylation associations found in the catalog. If this was the case, one might expect smoking related CpGs to appear more in the catalog than expected by chance. The DMPs identified by EWAS of traits other than smoking were enriched for smoking related CpG sites (P = X).
@@ -1028,7 +1028,7 @@ Using the selected EWAS results, we investigated whether the characteristics of 
 
 It has previously been suggested that sites at which DNA methylation variability is low should be removed [@Meng2010; @Logue2017]. The rationale for this is that if total variation is low then the ratio of variation due to technical effects to variation due to biological effects will be greater and thus any association with a complex trait is more likely to be due to technical artefacts. However, it's unknown whether this may be removing sites pertinent to complex trait variation.
 
-There was strong evidence of an inverse association between variance at a CpG site and effect size (P = 1e-99, __Table \@ref(tab:cpg-chars-tab)__), suggesting that removal of sites with little variation may reduce the chances of discovering changes in DNA methylation that have larger effects.
+The variability of DNA methylation could predict replicability little more than chance (AUC = XXX), but there was strong evidence of an inverse association between variance at a CpG site and effect size (P = 1e-99, __Table \@ref(tab:cpg-chars-tab)__). This suggests that removal of sites with little variation may reduce the chances of discovering changes in DNA methylation that have larger effects, whilst not removing more unreliable sites than would be expected if randomly removing sites from the analyses.
 
 DNA methylation is a binary feature, a CpG site can either be methylated or not on a particular DNA molecule. However, when measuring methylation across multiple DNA molecules, the proportion of those molecules methylated at a given site will be between 0 and 1. If DNA methylation at a given site is important for specific regulatory functions within a group of cells, one might expect that site to be methylated (or unmethylated) in the majority of the cells. Thus, changes in methylation away from an extreme, might have more of an impact on cellular function.
 

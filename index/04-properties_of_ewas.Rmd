@@ -55,7 +55,7 @@ In this chapter I first describe the data present in The EWAS Catalog going on t
 ## Methods {#methods-04}
 
 ### Epigenome-wide association studies data {#ewas-data-04}
-All the data for the analysis were extracted from The EWAS Catalog (__Chapter \@ref(ewas-catalog)__). This includes `r n_pubs` published studies, `r n_aries` EWAS from the ARIES subsection of ALSPAC (__Section \@ref(aries-02)__) [@Relton2015-aries; @Fraser2013; @Boyd2013] and `r n_geo` EWAS performed using data from the gene expression omnibus (GEO) resource (__Section \@ref(geo-02)__). See __Chapter \@ref(ewas-catalog)__ for more details.
+All the data for the analysis were extracted from The EWAS Catalog (__Chapter \@ref(ewas-catalog)__). Data were extracted when The EWAS Catalog had published EWAS data from before 2019. Studies were removed that compared DNA methylation levels between tissue, race, and age. This was done because these variables are not complex traits and thus the properties of those study results are unlikely to be informative when attempting to understand how to best design EWAS. Overall, this left `r n_ewas_04` EWAS, including `r n_aries` EWAS from the ARIES subsection of ALSPAC (__Section \@ref(aries-02)__) [@Relton2015-aries; @Fraser2013; @Boyd2013] and 40 EWAS performed using data from the gene expression omnibus (GEO) resource (__Section \@ref(geo-02)__). See __Chapter \@ref(ewas-catalog)__ for more details.
 
 ### Description of catalog data {-#description-of-data}
 Associations between DNA methylation and traits, unless otherwise stated, were extracted at P < 1x10^-7^. Each of the CpGs in the Catalog are annotated to genes, using data from the meffil R package . 
@@ -127,7 +127,7 @@ Before assessing the factors predicting DMPs (associations at P < 1x10^-7^), a b
 
 \linebreak
 
-There were `r num_to_text(nrow(h_genes))` CpGs that associated with more than ten traits (__Figure \@ref(fig:traits-manhattan)__). Here those sites with gene names, as mapped by Illumina??, in brackets: `r h_cpg_genes`. `r h_cpgs[length(h_cpgs)]` (_`r names(h_cpgs)[length(h_cpgs)]`_) was associated with more traits than any other site - `r max(h_genes$n_traits)` traits. These correspond mostly to metabolites, weight-related traits, and type two diabetes. 
+The percentage of hypermethylated sites in relation to traits was `r comma(dir_of_effect$hyper * 100)`% and there were `r num_to_text(nrow(h_genes))` CpGs that associated with more than ten traits (__Figure \@ref(fig:traits-manhattan)__). Here those sites with gene names, as mapped by Illumina??, in brackets: `r h_cpg_genes`. `r h_cpgs[length(h_cpgs)]` (_`r names(h_cpgs)[length(h_cpgs)]`_) was associated with more traits than any other site - `r max(h_genes$n_traits)` traits. These correspond mostly to metabolites, weight-related traits, and type two diabetes. 
 
 (ref:traits-manhattan-cap) __Number of unique traits associated with DNA methylation at each CpG__. Sites associated with more than 10 unique traits are highlighted in orange and labelled.
 
@@ -212,7 +212,7 @@ Using the selected EWAS results, we investigated whether the characteristics of 
 
 It has previously been suggested that sites at which DNA methylation variability is low should be removed [@Meng2010; @Logue2017]. The rationale for this is that if total variation is low then the ratio of variation due to technical effects to variation due to biological effects will be greater and thus any association with a complex trait is more likely to be due to technical artefacts. However, it's unknown whether this may be removing sites pertinent to complex trait variation.
 
-There was strong evidence of an inverse association between variance at a CpG site and effect size (P = `r comma(char_vals$variance$p)`, __Table \@ref(tab:cpg-chars-tab)__), suggesting that removal of sites with little variation may reduce the chances of discovering changes in DNA methylation that have larger effects.
+The variability of DNA methylation could predict replicability little more than chance (AUC = XXX), but there was strong evidence of an inverse association between variance at a CpG site and effect size (P = `r comma(char_vals$variance$p)`, __Table \@ref(tab:cpg-chars-tab)__). This suggests that removal of sites with little variation may reduce the chances of discovering changes in DNA methylation that have larger effects, whilst not removing more unreliable sites than would be expected if randomly removing sites from the analyses.
 
 DNA methylation is a binary feature, a CpG site can either be methylated or not on a particular DNA molecule. However, when measuring methylation across multiple DNA molecules, the proportion of those molecules methylated at a given site will be between 0 and 1. If DNA methylation at a given site is important for specific regulatory functions within a group of cells, one might expect that site to be methylated (or unmethylated) in the majority of the cells. Thus, changes in methylation away from an extreme, might have more of an impact on cellular function.
 
