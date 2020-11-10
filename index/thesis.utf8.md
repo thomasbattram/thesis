@@ -62,8 +62,14 @@ publications: |
   text-align: justify}
   </style>
   
-  Battram,T., Richmond,R.C., Baglietto,L., Haycock,P.C., Perduca,V., Bojesen,S.E., Gaunt,T.R., Hemani,G., Guida,F., Carreras-Torres,R., et al. (2019) Appraising the causal relevance of DNA methylation for risk of lung cancer. Int. J. Epidemiol., 10.1093/ije/dyz190.
+  Below is a list of publications I have been involved with throughout my PhD, some of which is presented in this thesis. I conducted the vast majority of the work, but in certain scenarios others also contributed and I have detailed this in contributions statements at the end of each chapter. The first and senior authors for each piece of work have agreed on my contributions detailed in these statements. <br>
   
+  \textbf{Relevant to this thesis} <br>
+  
+  Battram,T., Richmond,R.C., Baglietto,L., Haycock,P.C., Perduca,V., Bojesen,S.E., Gaunt,T.R., Hemani,G., Guida,F., Carreras-Torres,R., et al. (2019) Appraising the causal relevance of DNA methylation for risk of lung cancer. Int. J. Epidemiol., 10.1093/ije/dyz190. <br>
+  
+  
+  \textbf{Not relevant to this thesis} <br>
 declaration: |
   <style>
   body {
@@ -604,7 +610,7 @@ In this chapter, a platform has been generated that enables us to examine 1) wha
 
 Contributors and their role are listed below:
 
-* James Staley produced the original website (this was later re-formatted and developed by myself). 
+* James Staley produced the original website (this has since been developed by myself and Matthew Suderman). 
 * Matthew Suderman helped re-format and develop the website
 * Paul Yousefi extracted GEO data
 * Matthew Suderman and Paul Yousefi are part of the core development team (along with myself) and continue to provide expert guidance
@@ -1857,8 +1863,6 @@ The results of __Chapter \@ref(ewas-gwas-comp-chapter)__ suggested that epigenom
 
 In this chapter I attempt to explore the extent to which EWAS results may be confounded. To acheive this I first perform a meta-analysis of lung cancer EWAS and then compare the results from this observational analysis to the same analysis in a well-powered Mendelian randomization (MR) framework. DNA methylation has recently been postulated to mediate over 30% of the effect on smoking on lung cancer [@Fasanelli2015], making this case of particular interest to potential lung cancer preventative stratergies. 
 
-I performed all the main analyses (meta-analysis of EWAS and main MR analyses) and wrote the majority of the work up. However, some supplemetnary analyses, which provided more evidence on the relationship between DNA methylation and lung cancer was performed by others. A full contributions statement can be found at the end of this chapter (__Section \@ref(contributions-statement-07)__). 
-
 ## Introduction {#introduction-07}
 Lung cancer is the most common cause of cancer-related death worldwide [@Ferlay2013]. Several DNA methylation changes have been recently identified in relation to lung cancer risk [@Fasanelli2015; @Baglietto2017; @McCarthy2016]. However, these epigenetic marks are sensitive to reverse causation, being affected by cancer processes [@Jones2002], and are also prone to confounding, for example by socio-economic and lifestyle factors [@Borghol2012; @Elliott2014].
 
@@ -2520,9 +2524,7 @@ While DNA methylation in peripheral blood may be predictive of lung cancer risk,
 
 ## Contributions statement {#contributions-statement-07}
 
-In this chapter, Dr Rebecca Richmond performed analysis in the CCHS cohort (see __Sections \@ref(ahrr-one-sample-mr-methods) and \@ref(ahrr-one-sample-mr)__) and wrote the sections for which she performed the analyses. Dr Andrew E. Teschendorff analysed differences in lung tumour and adjacent healthy tissue (see __Sections \@ref(lc-heathly-v-normal-methods) and \@ref(lc-heathly-v-normal)__). I performed all other analyses and wrote everything else.
-
-
+I performed the main analyses: the meta-analysis of the EWAS, the MR using mQTLs identified in ARIES, the replication of mQTLs in the NSHDS cohort and the supplementary analyses assessing the association between mQTLs and gene expression using GTEx data. I also wrote the majority of the text. Some supplementary analyses, which provided more clarity on the relationship between DNA methylation and lung cancer were performed by others. Dr Stig E. Bojesen performed analysis in the CCHS cohort (see __Sections \@ref(ahrr-one-sample-mr-methods) and \@ref(ahrr-one-sample-mr)__) and Dr Rebecca Richmond wrote these sections. Dr Andrew E. Teschendorff analysed differences in lung tumour and adjacent healthy tissue (see __Sections \@ref(lc-heathly-v-normal-methods) and \@ref(lc-heathly-v-normal)__).
 
 
 

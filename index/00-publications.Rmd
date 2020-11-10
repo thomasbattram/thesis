@@ -3,5 +3,11 @@ body {
 text-align: justify}
 </style>
 
-Battram,T., Richmond,R.C., Baglietto,L., Haycock,P.C., Perduca,V., Bojesen,S.E., Gaunt,T.R., Hemani,G., Guida,F., Carreras-Torres,R., et al. (2019) Appraising the causal relevance of DNA methylation for risk of lung cancer. Int. J. Epidemiol., 10.1093/ije/dyz190.
+Below is a list of publications I have been involved with throughout my PhD, some of which is presented in this thesis. I conducted the vast majority of the work, but in certain scenarios others also contributed and I have detailed this in contributions statements at the end of each chapter. The first and senior authors for each piece of work have agreed on my contributions detailed in these statements. <br>
 
+\textbf{Relevant to this thesis} <br>
+
+Battram,T., Richmond,R.C., Baglietto,L., Haycock,P.C., Perduca,V., Bojesen,S.E., Gaunt,T.R., Hemani,G., Guida,F., Carreras-Torres,R., et al. (2019) Appraising the causal relevance of DNA methylation for risk of lung cancer. Int. J. Epidemiol., 10.1093/ije/dyz190. <br>
+
+
+\textbf{Not relevant to this thesis} <br>

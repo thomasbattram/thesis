@@ -100,7 +100,7 @@ In this chapter, a platform has been generated that enables us to examine 1) wha
 
 Contributors and their role are listed below:
 
-* James Staley produced the original website (this was later re-formatted and developed by myself). 
+* James Staley produced the original website (this has since been developed by myself and Matthew Suderman). 
 * Matthew Suderman helped re-format and develop the website
 * Paul Yousefi extracted GEO data
 * Matthew Suderman and Paul Yousefi are part of the core development team (along with myself) and continue to provide expert guidance
