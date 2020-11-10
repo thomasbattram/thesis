@@ -29,6 +29,10 @@ replication_dat <- new_load(file.path(tp_04, "replication_data.RData"))
 
 # cpg-chars data
 cpg_chars_res <- read_tsv(file.path(tp_04, "characteristics_assoc_tab.tsv"))
+cpg_chars_res_2 <- new_load(file.path(tp_04, "cpg_chars_results.RData"))
+
+# tfbs enrichment data
+tfbs_en <- new_load(file.path(tp_04, "tfbs_data_for_chapter.RData"))
 
 ## ---- study-data-setup --------------------------------
 
@@ -56,7 +60,7 @@ h_genes <- t_dat %>%
 h_cpgs <- h_genes$CpG
 names(h_cpgs) <- h_genes$Gene
 
-h_cpg_genes <- paste0(h_cpgs, " _", names(h_cpgs), "_", collapse = ", ")
+h_cpg_genes <- paste0(h_cpgs, " (_", names(h_cpgs), "_)", collapse = ", ")
 
 trait_man_file <- file.path(fp_04, "traits_per_dmp_at_1e-07.png")
 
@@ -88,9 +92,10 @@ new_med_rsq <- new_rsq_dat %>%
     dplyr::filter(high_total_rsq == FALSE) %>%
     pull(med_rsq)
 
-rsq_plot <- ggplot(new_rsq_dat, aes(x = rsq, fill = as.factor(high_total_rsq))) +
-    geom_histogram(colour = "black", binwidth = 0.01) +
+rsq_plot <- ggplot(new_rsq_dat, aes(x = rsq, fill = as.factor(high_total_rsq), alpha = as.factor(high_total_rsq))) +
+    geom_histogram(colour = "black", binwidth = 0.01, position = "identity") +
     theme_bw(base_size = 15) + 
+    scale_alpha_manual(values = c("FALSE" = 1, "TRUE" = 0.3), guide = "none") + 
     labs(x = expression(r^{2}), y = "Differentially methylated positions", 
          fill = expression(inflated ~ ~sum(r^{2})))
 
@@ -225,6 +230,18 @@ names(char_vals) <- chars
 
 cpg_chars_cap <- "Association between CpG chars and associations in EWAS"
 
+get_cc_res <- function(outcome, pred_nam)
+{
+    ## outcome needs to be "rep" "effect" or "dmp"
+    df <- get(paste0("cc_", outcome))
+    out <- dplyr::filter(df, predictor == pred_nam)
+    return(out)
+}
+
+cc_rep <- cpg_chars_res_2$log_model
+cc_effect <- cpg_chars_res_2$lm_model
+cc_dmp <- cpg_chars_res_2$dmp_pred
+
 ## ---- cpg-chars-plot --------------------------------
 include_graphics(cpg_chars_file)
 
@@ -240,7 +257,7 @@ kable(cpg_chars_tab, format = "latex", caption = cpg_chars_cap, booktabs = TRUE,
 ## ---- enrichment-setup --------------------------------
 
 chrom_state_file <- file.path(fp_04, "chromatin_states_enrichment_boxplots_onepage.pdf")
-tfbs_file <- file.path(fp_04, "cpg_corebg_matched_all_enrichment_All_OR.pdf")
+tfbs_file <- file.path(fp_04, "tfbs_enrichment_plot.pdf")
 
 strict_p_threshold <- comma(1e-7 / rob_summary$n_ewas)
 
