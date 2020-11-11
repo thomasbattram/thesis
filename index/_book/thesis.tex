@@ -2676,53 +2676,57 @@ While DNA methylation in peripheral blood may be predictive of lung cancer risk,
 \hypertarget{overview-08}{%
 \section{Overview}\label{overview-08}}
 
-Phenotypic variation cannot occur without molecular change. Identifying these changes adds to the aetiological understanding of traits and thus has the potential to uncover novel therapeutic targets. Further, studying the association between molecular marks and complex traits may yield new, valid predictors that could augment current prediction capacity within clinical practice (57).
+Phenotypic variation cannot occur without molecular change. Identifying the changes that causes phenotypic variation adds to the aetiological understanding of traits and thus has the potential to uncover novel therapeutic targets. Further, studying the association between molecular marks and complex traits may yield new, valid predictors, regardless of whether the molecular marks are causal, that could augment current prediction capacity within clinical practice (57).
 
-Given the strong links made by experimental researchers between DNA methylation and the regulatory processes in cells (20--23,41--44), there was precedent for studying the covariation between DNA methylation and complex traits with the hope of discovering new facets underlying trait biology.
+Given the strong links made by experimental researchers between DNA methylation and the regulatory processes in cells (20--23,41--44), there has been precedence for studying the covariation between DNA methylation and complex traits with the hope of discovering new regulatory features underlying trait biology.
 
-Over the past 15 years, there have been some EWAS that have identified several reliable associations between DNA methylation and complex traits, for example with smoking (1,110,111) and body mass index (3,69,163,164). However, the trend has been for EWAS to identify few sites that reliably associate with complex traits. This was showcased in \textbf{Chapter \ref{ewas-catalog}}. Understanding the aspects of EWAS that have led to this trend is imperative to progressing study designs and was the focus of this thesis.
+Over the past 15 years hundreds of EWAS have been conducted, but the number of associations identified have varied dramatically by trait. EWAS have identified numerous associations between DNA methylation and complex traits such as smoking (1,110,111) and body mass index (3,69,163,164). However, there are also many examples where EWAS have identified few sites that reliably associate with a complex trait; in The EWAS Catalog (\textbf{Chapter \ref{ewas-catalog}}), roughly 25\% of the EWAS report fewer than 10 associations. Understanding the aspects of EWAS that can explain associations across complex traits is imperative to progressing study designs and was the focus of this thesis.
 
-In this body of work hundreds of published EWAS along with hundreds more EWAS I conducted were catalogued in an open access database. Using this data, I showed that unaccounted for technical effects may explain over 10\% of reported associations. The biological characteristics, mean methylation level, variance and heritability, also explain over 10\% of the variance in effect estimates. The trait variance captured by individual DNA methylation sites was highly varied and likely inflated amongst some studies. Upon further examination of this covariation, it was found that the average variance captured by all DNA methylation sites used in EWAS for 400 complex traits was near zero. This suggests DNA methylation measured in blood by the HM450 has low predictive capacity for complex traits. The capacity to understand aetiological aspects of traits from EWAS also appeared to be limited, although this was only tested amongst seven traits. Upon comparison of associations between DNA methylation and lung cancer from observational EWAS and Mendelian randomization analyses, confounding was confirmed to be a problem, potentially accounting for a substantial proportion of observed EWAS associations.
+In this body of work hundreds of published EWAS along with hundreds more EWAS I conducted were catalogued in an open access database. Using these results, I showed that unaccounted for technical effects may explain over 10\% of reported associations. When accounting for these technical effects, the total predictive capacity of DNA methylation measured using the HM450 array in whole blood was low across 400 complex traits (median was near zero). This did vary substantially between traits, with having smoked cigarettes being the only trait for which there was evidence that the total predicitive capacity was greater than zero (FDR \textless{} 0.1). This suggests that the lack of association between DNA methylation (as measured in blood by the HM450 array) and some complex traits is unlikely due to power, and we should not expect to see similar levels of wide-spread pertubations of DNA methylation in relation to traits like with smoking, when similar sample sizes for analysis are obtained. This apparent lack of covariation between DNA methylation and complex traits may be surprising given the phenotypic nature of DNA methylation, but as this study (as with most EWAS) only measured methylation at less than 2\% of the total number of CpG sites across the genome and in only one tissue, it is plausible that much of the covariation between DNA methylation and complex traits was missed. Despite lack of total predictive capacity, there are still EWAS that have identified numerous differentially methylated positions. However, it was found that EWAS for eight traits identified no more genes and genesets in common with corresponding GWAS than expected by chance, suggesting the majority of associations were not of aetiological relevance. Confounding and reverse causation may explain the marked differences in EWAS and GWAS results of corresponding traits. In the specific scenario of an EWAS of lung cancer, the extent to which DNA methylation changes may not be on the causal pathway to traits was examined. Observational EWAS of lung cancer identified associations with large effect sizes between DNA methylation, measured long before disease onset, and lung cancer risk. However, in a well powered Mendelian randomization framework, none of these associations could be replicated. By way of example, the strongest observational association found was at cg05575921, OR = 0.47, and under the MR framework OR = 0.943. This suggests that, even with large effect sizes, the causal EWAS associations may not be causal.
 
-These findings suggest that substantial changes are required in the design of EWAS to improve predictive capacity and enhance aetiological insight.
+This work also revealed some promising aspects of the current EWAS study design. Firstly, the regions targeted by probes on the HM450 array were designed to be enriched for promoters of protein-coding genes and work presented in \textbf{Chapter \ref{properties-of-ewas}} suggests DMPs are also enriched for these regions. Therefore, this decision may have increased likelihood in identifying sites associated with complex traits. Secondly, the evidence that EWAS are identifying separate genes and genesets to GWAS does not preclude the possibility that these EWAS associations are useful. In fact, if overlap was very high then it would suggest a large amount of redundancy in the studies, but instead it is likely the study types are capturing very different information.
+
+Overall though, these findings suggest that substantial changes may be required in the design of EWAS to improve predictive capacity and enhance aetiological insight.
 
 \hypertarget{extensions-to-work}{%
 \section{Extensions to this work}\label{extensions-to-work}}
 
+Indeed the issues pertaining to some design flaws and potential improvements that can aid interpretation of EWAS has already been reviewed (6,56,202,243). Lappalainen \& Greally also suggested moving to conducting ``second generation EWAS'', which focused on improving interpretability of EWAS, especially when conducting them as a means to understand trait biology (243). They argue improvement amongst four key aspects should be aspired towards. Firstly, the hypothesised method for which cellular changes will result in phenotypic variation should be clear. Secondly, participants and cell samples collected should be obtained to answer necessary questions regarding causality. Thirdly, cell types present in samples should be measured as precisely as possible. Finally, as many complementary genome-wide assays as possible should be conducted in the same samples and these assays should survey the maximum amount of loci possible. Reflecting on the work presented in this thesis, and following on from these points, here I discuss ideas that could be applied to improve both yield and interpretation of EWAS.
+
 \hypertarget{beyond-the-hm450}{%
 \subsection{Beyond the HM450 in blood}\label{beyond-the-hm450}}
 
-This work focuses on the measures taken for contemporary EWAS, namely use of the HM450 to measure blood-based DNA methylation. Given the correlation structure across all DNA methylation sites in the genome is not known, this work can not be generalised to DNA methylation as a whole. Further, although certain aspects of observational EWAS, such as propensity for confounding, will always hinder interpretation of results, other aspects of this thesis may not apply to data from other tissues.
+The work in this thesis focuses on the measures taken for the majority of published EWAS, namely use of the HM450 array to measure blood-based DNA methylation. The HMEPIC array is now regularly used, but as will be explained, the limitations of EWAS identified in this thesis apply to studies using the contemporary array technology. Given the correlation structure across all DNA methylation sites in the genome is not known, this work can not be generalised to DNA methylation as a whole. Further, although certain aspects of observational EWAS, such as propensity for confounding, will always hinder interpretation of results, other aspects of this thesis may not apply to data from other tissues.
 
-There is overwhelming evidence that complex traits are polygenic (187,243) and some hypothesise that they may even be omnigenic (244). As DNA methylation is so tightly linked to gene expression regulation, it seems likely that either DNA methylation or something coupled to it has a substantial impact on the aetiology of many complex traits. Thus, the issues uncovered with EWAS in this thesis, such as the lack of covariation between DNA methylation and complex traits, is likely because too few sites are being measured in the wrong tissues. Finucane et al.~devised a method, which used LD-score regression and gene expression data, to identify the most relevant tissue and cell types for 34 traits (245). Without access to large datasets with DNA methylation available in a plethora of tissues, molecular epidemiologists could rely on inferences made from studies such as this to help design future EWAS.
+There is overwhelming evidence that complex traits are polygenic (influenced by multiple genes) (187,244) and some hypothesise that they may even be omnigenic (influenced by potentially all genes, even if the influence of some genes is almost immeasurably small) (245). As DNA methylation is highly correlated with factors of gene expression regulation, it seems likely that either DNA methylation or something coupled to it has a substantial impact on the aetiology of many complex traits. Thus, the issues uncovered with EWAS in this thesis, such as the lack of covariation between DNA methylation and complex traits, may be because too few sites are being measured in the wrong tissues. Finucane et al.~devised a method that used LD-score regression and publically available gene expression data to identify the most relevant tissue and cell types for 34 traits (246). Without access to large datasets with DNA methylation available in a plethora of tissues, molecular epidemiologists could rely on inferences made from studies such as this to help design future EWAS.
 
-The impact of different methylation states of the genome, such as hydroxymethylation, is also beginning to be explored (246--248). The current methods employed by EWAS, which revolve around bisulphite conversion, capture all methylation states as one measurement. If these states have differing effects, separating these out will increase power and impart greater biological understanding.
+The impact of different methylation states of the genome, such as hydroxymethylation, is also beginning to be explored (247--249). The current methods employed by EWAS, which revolve around bisulphite conversion, capture all methylation states as one measurement. If these states have differing effects, separating these out will increase power and impart greater biological understanding.
 
-In a similar vein to other omics, sequencing technology will likely continue to improve and will become cheap enough to use across population samples (249,250). Also, despite the vast majority of EWAS being conducted using blood (\textbf{Table \ref{tab:study-data-tab}}), there are 42 tissue types recorded in the EWAS Catalog. The Cancer Genome Atlas (TCGA) has recorded DNA methylation data in a large number of tissues also (251), and the trend to measure other tissues is likely to continue, especially as the number of reliable sites identified in EWAS tends to be low. In addition, manuscripts using techniques to measure gene expression and DNA methylation in single cells are becoming more common (252--256). Given the issues of cell specificity, these studies may prove pivotal in advancement of the field of epigenetic epidemiology.
+In a similar vein to other omics, sequencing technology will likely continue to improve and will become cheap enough to use across population samples (250,251). Therefore, identifying the differential methylation states using techniques such as single-molecule real-time (SMRT) sequencing will hopefully become more frequent (252). Also, despite the vast majority of EWAS being conducted using blood (\textbf{Table \ref{tab:study-data-tab}}), there are 42 tissue types recorded in the EWAS Catalog. The Cancer Genome Atlas (TCGA) has recorded DNA methylation data in a large number of tissues also (253), and the trend to measure other tissues is likely to continue, especially as the number of reliable sites identified in EWAS tends to be low. As discussed in \textbf{Section \ref{appeal-of-dnam}}, DNA methylation is a relatively stable molecular trait and this is consistent across tissues. Therefore, if tissues can be sampled, measurement of DNA methylation is simpler to measure than molecular traits such as RNA levels and histone modifications across any tissue. In addition, manuscripts using techniques to measure gene expression and DNA methylation in single cells are becoming more common (254--258). Given the issues of cell specificity, these studies may prove pivotal in advancement of the field of epigenetic epidemiology. In fact, one thing Lapallainen and Greally stress is how, in their opinion, investment in deep molecular phenotyping of the same samples, although expensive, will likely pay high dividends with regards to interpretability of molecular epidemiological studies (243).
 
-As discussed in \textbf{Chapter \ref{properties-of-ewas}}, DNA methylation is a binary measure, yet by pooling groups of cells and measuring methylation at each site as a proportion of the DNA molecules that are methylated, a continuous measure is derived. If cells of the same type are identical then one would expect they would be methylated at the same sites as one another (6). However, a mosaicism of methylation across cells may exist. If so, then pooling groups of cells for analysis, and taking account differences between higher order cell types, will remain a valid approach for EWAS. However, if strong evidence is provided that this cellular mosaicism is improbable between cells of the same type, rapid movement towards single-cell techniques is likely.
+As discussed in \textbf{Chapter \ref{properties-of-ewas}}, DNA methylation is a binary measure, yet by pooling groups of cells and measuring methylation at each site as a proportion of the DNA molecules that are methylated, a continuous measure is derived. If cells of the same type are identical then one might expect they would be methylated at the same sites as one another (6). However, a mosaicism of methylation across cells may exist. If so, then pooling groups of cells for analysis, and taking account of differences between higher order cell types, will remain a valid approach for EWAS. However, if strong evidence is provided that this cellular mosaicism is improbable between cells of the same type, rapid movement towards single-cell techniques is likely.
 
 \hypertarget{new-methods-and-data}{%
 \subsection{New methods and data}\label{new-methods-and-data}}
 
-There is still substantial interest in assessing the association between DNA methylation and complex traits. In 2020, there have been over XXX EWAS conducted that have been added to the EWAS Catalog. Further, new methods are being developed to measure the association between DNA methylation and complex traits. Two recent examples include Zhang F et al., who created a command line tool to conduct EWAS using different models, OSCA, (257) and a study that developed a Bayesian approach to conduct EWAS, using various confounders including genotype in their model (185).
+There is still substantial interest in assessing the association between DNA methylation and complex traits. In 2020, there have been over 100 EWAS conducted that have been or will be added to The EWAS Catalog. Further, new methods are being developed to measure the association between DNA methylation and complex traits. Two recent examples include Zhang F et al., who created a command line tool to conduct EWAS using different models, OSCA, (259) and a study that developed a Bayesian approach to conduct EWAS, using various confounders including genotype in their model (185).
 
-This interest will hopefully lead to a continuation in developments across the field of molecular epidemiology, but the complex nature of molecular pathways to disease may make aetiological inference progression slow. Causal inference methods such as MR aid aetiological studies, but the lack of independent instruments coupled with the complexity of gene regulation make it difficult to be confident the key assumptions of MR (\textbf{Figure \ref{fig:mr-diagram}}) are met (57,124,125,158). Colocalization is now being readily used in the context of molecular MR (125,158), but this only provides evidence that the complex trait and the molecular phenotype have the same causal genetic variant(s) (125), and do not provide evidence against these variants being pleiotropic.
+This interest will hopefully lead to a continuation in developments across the field of molecular epidemiology, but the complex nature of molecular pathways to disease may make aetiological inference progression slow. Causal inference methods such as MR aid aetiological studies, but the lack of independent instruments coupled with the complexity of gene regulation make it difficult to be confident the key assumptions of MR (\textbf{Figure \ref{fig:mr-diagram}}) are met (57,124,125,158). Colocalization is now being readily used in the context of molecular MR (125,158), but this only provides evidence that the complex trait and the molecular phenotype have the same putatively causal genetic variant(s) (125), and do not provide evidence against these variants being pleiotropic.
 
-Lack of large-scale studies was a problem in identifying valid instruments for individual CpG sites, including within my study in \textbf{Chapter \ref{dnam-lung-cancer-mr}}, but this has been partially eleviated by the formation of GoDMC (158). This consortium has already yielded interesting results. Min et al.~performed MR to establish whether there was likely an effect of DNA methylation changes, measured by the HM450, on 116 complex traits (158). Similarly to the results presented in this thesis, they found that evidence for the aetiological relevance of DNA methylation measured across those sites was severely lacking. In the future, establishing tissue-specific mQTLs will be important in understanding whether tissue-specific DNA methylation changes are likely to have an effect on complex trait variation.
+Lack of large-scale studies was a problem in identifying valid instruments for individual CpG sites, including within my study in \textbf{Chapter \ref{dnam-lung-cancer-mr}}, but this has been partially eleviated by the formation of Genetics of DNA Methylation Consortium (GoDMC) (158). This consortium has already yielded interesting results. Min et al.~performed MR to establish whether there was likely an effect of DNA methylation changes, measured by the HM450, on 116 complex traits (158). Similarly to the results presented in this thesis, they found that evidence for the aetiological relevance of DNA methylation measured across those sites was severely lacking. In the future, establishing tissue-specific mQTLs will be important in understanding whether tissue-specific DNA methylation changes are likely to have an effect on complex trait variation.
 
-For prediction, the complexity of establishing causality and understanding cellular function need not apply. Whether the goal is to identify DNA methylation differences that co-exist with disease states and could therefore help diagnose these states, or truly predict diseases before they arrive is important to consider. For the former, cross-sectional studies suffice, but for the latter cohort studies that have DNA methylation data collected prior to other measurements such as ALSPAC (135,136) are required. Larger studies, such as Generation Scotland (258), provide the opportunity for developing more precise predictors and further, the power gained from the extra samples would enable one to estimate the total predictive capacity of DNA methylation for individual traits with relatively high precision using the methods laid out in \textbf{Chapter \ref{h2ewas-chapter}}.
+For prediction, the complexity of establishing causality and understanding cellular function need not apply. Whether the goal is to identify DNA methylation differences that co-exist with disease states and could therefore help diagnose these states, or truly predict diseases before they arrive is important to consider. For the former, cross-sectional studies suffice, but for the latter cohort studies that have DNA methylation data collected prior to disease onset such as ALSPAC (135,136) are required. Larger studies, such as Generation Scotland (260), provide the opportunity for developing more precise predictors and further, the power gained from the extra samples would enable one to estimate the total predictive capacity of DNA methylation for individual traits with relatively high precision using the methods laid out in \textbf{Chapter \ref{h2ewas-chapter}}.
 
 \hypertarget{beyond-dnam}{%
 \subsection{Beyond DNA methylation}\label{beyond-dnam}}
 
-As the premise of aetiological EWAS is that DNA methylation changes may impact upon some cellular function, which leads to phenotypic changes, reliable associations between DNA methylation and complex traits is not enough to impart translatable opportunities. How DNA methylation is changing these cellular functions is key for two reasons, 1. it might not be possible to target DNA methylation directly to treat/prevent disease and 2. DNA methylation may just be tagging some other epigenetic mark and in fact be inconsequential to phenotypic state. Therefore, once a link between DNA methylation and complex traits is established, it is required that experimental work is undertaken to fill in the gap of how DNA methylation changes relate to cellular function differences that influence the trait.
+As the premise of aetiological EWAS is that DNA methylation changes may impact upon some cellular function, which leads to phenotypic changes, reliable associations between DNA methylation and complex traits is not enough to impart translatable opportunities. How DNA methylation is changing these cellular functions is key for two reasons, 1. It might not be possible to target DNA methylation directly to treat/prevent disease and 2. DNA methylation may just be tagging some other epigenetic mark and in fact be inconsequential to phenotypic state. Therefore, once a link between DNA methylation and complex traits is established, it is required that experimental work is undertaken to fill in the gap of how DNA methylation changes relate to cellular function differences that influence the trait.
 
-With initiatives such as ENCODE and the Roadmap Epigenomics Project (162,259), along with gene expression datasets such as GTEx (237), the functional implications of DNA methylation changes may be predicted. However, experimental work should be used to confirm these predictions.
+With initiatives such as ENCODE and the Roadmap Epigenomics Project (162,261), along with gene expression datasets such as GTEx (237), the functional implications of DNA methylation changes may be predicted. However, experimental work should be used to confirm these predictions.
 
-As discussed in \textbf{Section \ref{dnam-as-part-of-regulation}}, DNA methylation is not the only epigenetic mark in human cells. Lack of understanding and technology has been a hinderance to population based studies of histone modifications genome-wide. At least one such study has been conducted (260), and the frequency is likely to increase as the cost of high throughput chromatin immunoprecipitation procedures, such as ChIP-seq, decreases.
+As discussed in \textbf{Section \ref{dnam-as-part-of-regulation}}, DNA methylation is not the only epigenetic mark in human cells. Technology has been a hinderance to population based studies of histone modifications genome-wide. At least one such study has been conducted (262), and the frequency is likely to increase as the cost of high throughput chromatin immunoprecipitation procedures, such as ChIP-seq, decreases.
 
-Recently large-scale datasets have been developed to analyse the relationship between protein expression and gene expression with complex traits (237,261,262). Proteins are often the ultimate target for many pharmaceuticals, as understanding of function and quantification of proteins and their variants increases, protein-based epidemiological studies may supersede EWAS with regards to their frequency.
+Recently large-scale datasets have been developed to analyse the relationship between protein expression and gene expression with complex traits (237,263,264). Proteins are often the ultimate target for many pharmaceuticals, as understanding of function and quantification of proteins and their variants increases, protein-based epidemiological studies may supersede EWAS with regards to their frequency. Indeed pharmaceutical companies may start interogating potential drugs by identifying targetable proteins. DNA methylation, and other molecular traits, may also add to the evidence that regulation of a particular protein target is important for disease development or progression. However, as discussed, the interpretability of EWAS does not yet allow for us to identify whether observed differences in DNA methylation between individuals are actually important for disease aetiology.
 
 Similarly to DNA methylation studies, problems with confounding and cell specificity will be present in protein and gene based studies. Modifications to RNA transcripts and proteins provide an additional level of complication. RNA transcripts can be spliced and altered by post-transcriptional modifications and proteins can be modified post-translation of gene transcript (9--12). In extreme cases, proteins have been known to have their function reversed after their state is modified. The protein p53 naturally acts as a tumour suppressor, but during cancer development there is evidence that the protein can be modified and become oncogenic (9).
 
@@ -2731,7 +2735,7 @@ Studying each molecular measure will come with its own difficulties, and each ca
 \hypertarget{final-conclusions}{%
 \section{Final conclusions}\label{final-conclusions}}
 
-The human body is unfathomably complex. Understanding it requires a huge concerted effort from the entire, global research community. Returning to the example of \emph{p53}, by 2010 there had been nearly 50,000 studies on this single family of genes (263). The decades of research conducted to elucidate the function, importance and interactions of this single family of genes illustrates the patience required to understand the molecular underpinnings of disease. Given the brevity of existance molecular epidemiology has had, I'd argue that judging whether it has been a success or failure is a frivolous task. However, to speed up development of the field, there is a need to understand why EWAS have not yielded the aetiological or predictive capacity hoped.
+The human body is unfathomably complex. Understanding it requires a huge concerted effort from the entire, global research community. Returning to the example of \emph{p53}, by 2010 there had been nearly 50,000 studies on this single family of genes (265). The decades of research conducted to elucidate the function, importance and interactions of this single family of genes illustrates the patience required to understand the molecular underpinnings of disease. Given the brevity of existance molecular epidemiology has had, I'd argue that judging whether it has been a success or failure is a frivolous task. However, to speed up development of the field, there is a need to understand the limits of the current methodologies.
 
 This thesis provides evidence that the study design of current EWAS is unlikely to provide substantial improvements in the ability to predict or understand the aetiological aspects of complex traits.
 
@@ -2832,16 +2836,16 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 8. CRICK FH. On protein synthesis. \emph{Symposia of the Society for Experimental Biology}. 1958;
 
 \leavevmode\hypertarget{ref-Hafner2019}{}%
-9. Hafner A, Bulyk ML, Jambhekar A, et al. The multiple mechanisms that regulate p53 activity and cell fate. 2019;
+9. Hafner A, Bulyk ML, Jambhekar A, et al. The multiple mechanisms that regulate p53 activity and cell fate. \emph{Nature Reviews Molecular Cell Biology}. 2019;
 
 \leavevmode\hypertarget{ref-Corbett2018}{}%
-10. Corbett AH. Post-transcriptional regulation of gene expression and human disease. 2018;
+10. Corbett AH. Post-transcriptional regulation of gene expression and human disease. \emph{Current Opinion in Cell Biology}. 2018;
 
 \leavevmode\hypertarget{ref-Wang2014}{}%
-11. Wang YC, Peterson SE, Loring JF. Protein post-translational modifications and regulation of pluripotency in human stem cells. 2014;
+11. Wang YC, Peterson SE, Loring JF. Protein post-translational modifications and regulation of pluripotency in human stem cells. \emph{Cell Research}. 2014;
 
 \leavevmode\hypertarget{ref-Filipowicz2008}{}%
-12. Filipowicz W, Bhattacharyya SN, Sonenberg N. Mechanisms of post-transcriptional regulation by microRNAs: Are the answers in sight? 2008;
+12. Filipowicz W, Bhattacharyya SN, Sonenberg N. Mechanisms of post-transcriptional regulation by microRNAs: Are the answers in sight? \emph{Nature Reviews Genetics}. 2008;
 
 \leavevmode\hypertarget{ref-Alberts2017}{}%
 13. Alberts B, Johnson A, Lewis J, et al. Molecular Biology of the Cell. 2017.
@@ -2850,10 +2854,10 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 14. Colby DW, Prusiner SB. Prions. \emph{Cold Spring Harbor Perspectives in Biology}. 2011;
 
 \leavevmode\hypertarget{ref-Kornberg1999}{}%
-15. Kornberg RD. Eukaryotic transcriptional control. 1999;
+15. Kornberg RD. Eukaryotic transcriptional control. \emph{Trends in Biochemical Sciences}. 1999;
 
 \leavevmode\hypertarget{ref-Gibney2010}{}%
-16. Gibney ER, Nolan CM. Epigenetics and gene expression. 2010;
+16. Gibney ER, Nolan CM. Epigenetics and gene expression. \emph{Heredity}. 2010;
 
 \leavevmode\hypertarget{ref-Milholland2017}{}%
 17. Milholland B, Dong X, Zhang L, et al. Differences between germline and somatic mutation rates in humans and mice. \emph{Nature Communications}. 2017;
@@ -2865,19 +2869,19 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 19. Hughes DA, Kircher M, He Z, et al. Evaluating intra- and inter-individual variation in the human placental transcriptome. \emph{Genome Biology}. 2015;
 
 \leavevmode\hypertarget{ref-Suzuki2008}{}%
-20. Suzuki MM, Bird A. DNA methylation landscapes: Provocative insights from epigenomics. 2008;
+20. Suzuki MM, Bird A. DNA methylation landscapes: Provocative insights from epigenomics. \emph{Nature Reviews Genetics}. 2008;
 
 \leavevmode\hypertarget{ref-Siegfried1999}{}%
 21. Siegfried Z, Eden S, Mendelsohn M, et al. DNA methylation represses transcription in vivo. \emph{Nature Genetics}. 1999;
 
 \leavevmode\hypertarget{ref-Bird2002}{}%
-22. Bird A. DNA methylation patterns and epigenetic memory. 2002;
+22. Bird A. DNA methylation patterns and epigenetic memory. \emph{Genes and Development}. 2002;
 
 \leavevmode\hypertarget{ref-Jones2012}{}%
 23. Jones PA. Functions of DNA methylation: islands, start sites, gene bodies and beyond. \emph{Nature Reviews Genetics} {[}electronic article{]}. 2012;13(7):484--492. (\url{http://www.nature.com/articles/nrg3230})
 
 \leavevmode\hypertarget{ref-Greally2018}{}%
-24. Greally JM. A user's guide to the ambiguous word 'epigenetics'. 2018;
+24. Greally JM. A user's guide to the ambiguous word 'epigenetics'. \emph{Nature Reviews Molecular Cell Biology}. 2018;
 
 \leavevmode\hypertarget{ref-Stern2000}{}%
 25. Stern CD. Conrad H. Waddington's contributions to avian and mammalian development, 1930-1940. \emph{International Journal of Developmental Biology}. 2000;
@@ -2886,22 +2890,22 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 26. Kornberg RD. Chromatin structure: A repeating unit of histones and DNA. \emph{Science}. 1974;
 
 \leavevmode\hypertarget{ref-Li2011}{}%
-27. Li G, Reinberg D. Chromatin higher-order structures and gene regulation. 2011;
+27. Li G, Reinberg D. Chromatin higher-order structures and gene regulation. \emph{Current Opinion in Genetics and Development}. 2011;
 
 \leavevmode\hypertarget{ref-Olins2003}{}%
-28. Olins DE, Olins AL. Chromatin history: Our view from the bridge. 2003;
+28. Olins DE, Olins AL. Chromatin history: Our view from the bridge. \emph{Nature Reviews Molecular Cell Biology}. 2003;
 
 \leavevmode\hypertarget{ref-Bannister2011}{}%
-29. Bannister AJ, Kouzarides T. Regulation of chromatin by histone modifications. 2011;
+29. Bannister AJ, Kouzarides T. Regulation of chromatin by histone modifications. \emph{Cell Research}. 2011;
 
 \leavevmode\hypertarget{ref-Berger2007}{}%
-30. Berger SL. The complex language of chromatin regulation during transcription. 2007;
+30. Berger SL. The complex language of chromatin regulation during transcription. \emph{Nature}. 2007;
 
 \leavevmode\hypertarget{ref-Jenuwein2001}{}%
-31. Jenuwein T, Allis CD. Translating the histone code. 2001;
+31. Jenuwein T, Allis CD. Translating the histone code. \emph{Science}. 2001;
 
 \leavevmode\hypertarget{ref-Kouzarides2007}{}%
-32. Kouzarides T. Chromatin Modifications and Their Function. 2007;
+32. Kouzarides T. Chromatin Modifications and Their Function. \emph{Cell}. 2007;
 
 \leavevmode\hypertarget{ref-Holliday1975}{}%
 33. Holliday R, Pugh J. DNA modification mechanisms and gene activity during development. \emph{Science}. 1975;
@@ -2913,7 +2917,7 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 35. Bell AC, Felsenfeld G. Methylation of a CTCF-dependent boundary controls imprinted expression of the Igf2 gene. \emph{Nature}. 2000;
 
 \leavevmode\hypertarget{ref-Yoder1997}{}%
-36. Yoder JA, Walsh CP, Bestor TH. Cytosine methylation and the ecology of intragenomic parasites. 1997;
+36. Yoder JA, Walsh CP, Bestor TH. Cytosine methylation and the ecology of intragenomic parasites. \emph{Trends in Genetics}. 1997;
 
 \leavevmode\hypertarget{ref-Casadesus2006}{}%
 37. Casadesús J, Low D. Epigenetic Gene Regulation in the Bacterial World. \emph{Microbiology and Molecular Biology Reviews}. 2006;
@@ -2925,7 +2929,7 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 39. Rountree MR, Selker EU. DNA methylation inhibits elongation but not initiation of transcription in Neurospora crassa. \emph{Genes and Development}. 1997;
 
 \leavevmode\hypertarget{ref-Illingworth2009}{}%
-40. Illingworth RS, Bird AP. CpG islands - 'A rough guide'. 2009;
+40. Illingworth RS, Bird AP. CpG islands - 'A rough guide'. \emph{FEBS Letters}. 2009;
 
 \leavevmode\hypertarget{ref-Ando2019}{}%
 41. Ando M, Saito Y, Xu G, et al. Chromatin dysregulation and DNA methylation at transcription start sites associated with transcriptional repression in cancers. \emph{Nature Communications}. 2019;
@@ -2967,10 +2971,10 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 53. Hemani G, Tilling K, Davey Smith G. Orienting the causal relationship between imprecisely measured traits using GWAS summary data. \emph{PLoS Genetics}. 2017;
 
 \leavevmode\hypertarget{ref-Wrzeska2004}{}%
-54. Wrzeska M, Rejduch B. Genomic imprinting in mammals. 2004;
+54. Wrzeska M, Rejduch B. Genomic imprinting in mammals. \emph{Journal of Applied Genetics}. 2004;
 
 \leavevmode\hypertarget{ref-Nicholls2000}{}%
-55. Nicholls RD. The impact of genomic imprinting for neurobehavioral and developmental disorders. 2000;
+55. Nicholls RD. The impact of genomic imprinting for neurobehavioral and developmental disorders. \emph{Journal of Clinical Investigation}. 2000;
 
 \leavevmode\hypertarget{ref-Rakyan2011}{}%
 56. Rakyan VK, Down TA, Balding DJ, et al. Epigenome-wide association studies for common human diseases. \emph{Nature Reviews Genetics} {[}electronic article{]}. 2011;12(8):529--541. (\url{http://www.nature.com/articles/nrg3000})
@@ -2985,7 +2989,7 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 59. Weaver ICG, Cervoni N, Champagne FA, et al. Epigenetic programming by maternal behavior. \emph{Nature Neuroscience}. 2004;
 
 \leavevmode\hypertarget{ref-Koch2018}{}%
-60. Koch A, Joosten SC, Feng Z, et al. Analysis of DNA methylation in cancer: Location revisited. 2018;
+60. Koch A, Joosten SC, Feng Z, et al. Analysis of DNA methylation in cancer: Location revisited. \emph{Nature Reviews Clinical Oncology}. 2018;
 
 \leavevmode\hypertarget{ref-Hentze2019}{}%
 61. Hentze J, Hødall C, Høgdall E. Methylation and ovarian cancer: Can DNA methylation be of diagnostic use? (Review). \emph{Molecular and Clinical Oncology}. 2019;
@@ -2994,19 +2998,19 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 62. Cortellino S, Xu J, Sannai M, et al. Thymine DNA glycosylase is essential for active DNA demethylation by linked deamination-base excision repair. \emph{Cell}. 2011;
 
 \leavevmode\hypertarget{ref-Kohli2013}{}%
-63. Kohli RM, Zhang Y. TET enzymes, TDG and the dynamics of DNA demethylation. 2013;
+63. Kohli RM, Zhang Y. TET enzymes, TDG and the dynamics of DNA demethylation. \emph{Nature}. 2013;
 
 \leavevmode\hypertarget{ref-Venolia1983}{}%
-64. Venolia L, Gartler SM. Comparison of transformation efficiency of human active and inactive X-chromosomal DNA. 1983;
+64. Venolia L, Gartler SM. Comparison of transformation efficiency of human active and inactive X-chromosomal DNA. \emph{Nature}. 1983;
 
 \leavevmode\hypertarget{ref-Bonasio2010}{}%
-65. Bonasio R, Tu S, Reinberg D. Molecular signals of epigenetic states. 2010;
+65. Bonasio R, Tu S, Reinberg D. Molecular signals of epigenetic states. \emph{Science}. 2010;
 
 \leavevmode\hypertarget{ref-Allis2016}{}%
 66. Allis CD, Jenuwein T. The molecular hallmarks of epigenetic control. \emph{Nat Rev Genet} {[}electronic article{]}. 2016;17(8):487--500. (\url{http://dx.doi.org/10.1038/nrg.2016.59\%20http://10.0.4.14/nrg.2016.59})
 
 \leavevmode\hypertarget{ref-Wade2001}{}%
-67. Wade PA, Wolffe AP. ReCoGnizing methylated DNA. 2001;
+67. Wade PA, Wolffe AP. ReCoGnizing methylated DNA. \emph{Nature Structural Biology}. 2001;
 
 \leavevmode\hypertarget{ref-Ernst2015}{}%
 68. Ernst J, Kellis M. Large-scale imputation of epigenomic datasets for systematic annotation of diverse human tissues. \emph{Nature Biotechnology}. 2015;
@@ -3021,10 +3025,10 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 71. Bosker FJ, Hartman CA, Nolte IM, et al. Poor replication of candidate genes for major depressive disorder using genome-wide association data. \emph{Molecular Psychiatry}. 2011;
 
 \leavevmode\hypertarget{ref-Hirschhorn2002}{}%
-72. Hirschhorn JN, Lohmueller K, Byrne E, et al. A comprehensive review of genetic association studies. 2002;
+72. Hirschhorn JN, Lohmueller K, Byrne E, et al. A comprehensive review of genetic association studies. \emph{Genetics in Medicine}. 2002;
 
 \leavevmode\hypertarget{ref-Munafo2006}{}%
-73. Munafò MR. Candidate gene studies in the 21st century: meta-analysis, mediation, moderation. 2006;
+73. Munafò MR. Candidate gene studies in the 21st century: meta-analysis, mediation, moderation. \emph{Genes, brain, and behavior}. 2006;
 
 \leavevmode\hypertarget{ref-Yang2004}{}%
 74. Yang AS. A simple method for estimating global DNA methylation using bisulfite PCR of repetitive DNA elements. \emph{Nucleic Acids Research}. 2004;
@@ -3051,10 +3055,10 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 81. Horvath S. DNA methylation age of human tissues and cell types. \emph{Genome Biology}. 2013;
 
 \leavevmode\hypertarget{ref-Jones2015}{}%
-82. Jones MJ, Goodman SJ, Kobor MS. DNA methylation and healthy human aging. 2015;
+82. Jones MJ, Goodman SJ, Kobor MS. DNA methylation and healthy human aging. \emph{Aging Cell}. 2015;
 
 \leavevmode\hypertarget{ref-Horvath2018}{}%
-83. Horvath S, Raj K. DNA methylation-based biomarkers and the epigenetic clock theory of ageing. 2018;
+83. Horvath S, Raj K. DNA methylation-based biomarkers and the epigenetic clock theory of ageing. \emph{Nature Reviews Genetics}. 2018;
 
 \leavevmode\hypertarget{ref-Houseman2012}{}%
 84. Houseman EA, Accomando WP, Koestler DC, et al. DNA methylation arrays as surrogate measures of cell mixture distribution. \emph{BMC Bioinformatics}. 2012;
@@ -3066,7 +3070,7 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 86. McGregor K, Bernatsky S, Colmegna I, et al. An evaluation of methods correcting for cell-type heterogeneity in DNA methylation studies. \emph{Genome Biology}. 2016;
 
 \leavevmode\hypertarget{ref-Teschendorff2017}{}%
-87. Teschendorff AE, Zheng SC. Cell-type deconvolution in epigenome-wide association studies: A review and recommendations. 2017;
+87. Teschendorff AE, Zheng SC. Cell-type deconvolution in epigenome-wide association studies: A review and recommendations. \emph{Epigenomics}. 2017;
 
 \leavevmode\hypertarget{ref-Forest2018}{}%
 88. Forest M, O'Donnell KJ, Voisin G, et al. Agreement in DNA methylation levels from the Illumina 450K array across batches, tissues, and time. \emph{Epigenetics}. 2018;
@@ -3090,19 +3094,19 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 94. Perrier F, Novoloaca A, Ambatipudi S, et al. Identifying and correcting epigenetics measurements for systematic sources of variation. \emph{Clinical Epigenetics}. 2018;
 
 \leavevmode\hypertarget{ref-Piekarz2009}{}%
-95. Piekarz RL, Bates SE. Epigenetic modifiers: Basic understanding and clinical development. 2009;
+95. Piekarz RL, Bates SE. Epigenetic modifiers: Basic understanding and clinical development. \emph{Clinical Cancer Research}. 2009;
 
 \leavevmode\hypertarget{ref-Nebbioso2018}{}%
-96. Nebbioso A, Tambaro FP, Dell'Aversana C, et al. Cancer epigenetics: Moving forward. 2018;
+96. Nebbioso A, Tambaro FP, Dell'Aversana C, et al. Cancer epigenetics: Moving forward. \emph{PLoS Genetics}. 2018;
 
 \leavevmode\hypertarget{ref-Pickar-Oliver2019}{}%
-97. Pickar-Oliver A, Gersbach CA. The next generation of CRISPR--Cas technologies and applications. 2019;
+97. Pickar-Oliver A, Gersbach CA. The next generation of CRISPR--Cas technologies and applications. \emph{Nature Reviews Molecular Cell Biology}. 2019;
 
 \leavevmode\hypertarget{ref-Liao2017}{}%
 98. Liao HK, Hatanaka F, Araoka T, et al. In Vivo Target Gene Activation via CRISPR/Cas9-Mediated Trans-epigenetic Modulation. \emph{Cell}. 2017;
 
 \leavevmode\hypertarget{ref-DaveySmith2003}{}%
-99. Davey Smith G, Ebrahim S. 'Mendelian randomization': Can genetic epidemiology contribute to understanding environmental determinants of disease? 2003;
+99. Davey Smith G, Ebrahim S. 'Mendelian randomization': Can genetic epidemiology contribute to understanding environmental determinants of disease? \emph{International Journal of Epidemiology}. 2003;
 
 \leavevmode\hypertarget{ref-DaveySmith2014}{}%
 100. Davey Smith G, Hemani G. Mendelian randomization: genetic anchors for causal inference in epidemiological studies. \emph{Human molecular genetics} {[}electronic article{]}. 2014;23(R1):R89--98. (\url{http://hmg.oxfordjournals.org/cgi/content/long/23/R1/R89})
@@ -3144,13 +3148,13 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 112. Bojesen SE, Timpson N, Relton C, et al. AHRR (cg05575921) hypomethylation marks smoking behaviour, morbidity and mortality. \emph{Thorax}. 2017;
 
 \leavevmode\hypertarget{ref-Haarmann-Stemmann2006}{}%
-113. Haarmann-Stemmann T, Abel J. The arylhydrocarbon receptor repressor (AhRR): Structure, expression, and function. 2006;
+113. Haarmann-Stemmann T, Abel J. The arylhydrocarbon receptor repressor (AhRR): Structure, expression, and function. \emph{Biological Chemistry}. 2006;
 
 \leavevmode\hypertarget{ref-Larigot2018}{}%
-114. Larigot L, Juricek L, Dairou J, et al. AhR signaling pathways and regulatory functions. 2018;
+114. Larigot L, Juricek L, Dairou J, et al. AhR signaling pathways and regulatory functions. \emph{Biochimie Open}. 2018;
 
 \leavevmode\hypertarget{ref-Lawlor2004}{}%
-115. Lawlor DA, Smith GD, Kundu D, et al. Those confounded vitamins: What can we learn from the differences between observational versus randomised trial evidence? 2004;
+115. Lawlor DA, Smith GD, Kundu D, et al. Those confounded vitamins: What can we learn from the differences between observational versus randomised trial evidence? \emph{Lancet}. 2004;
 
 \leavevmode\hypertarget{ref-Richmond2016}{}%
 116. Richmond RC, Hemani G, Tilling K, et al. Challenges and novel approaches for investigating molecular mediation. \emph{Human molecular genetics} {[}electronic article{]}. 2016;ddw197. (\url{http://hmg.oxfordjournals.org/cgi/content/long/ddw197v2})
@@ -3159,7 +3163,7 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 117. Silventoinen K, Kaprio J, Lahelma E, et al. Assortative mating by body height and BMI: Finnish twins and their spouses. \emph{American Journal of Human Biology}. 2003;
 
 \leavevmode\hypertarget{ref-Maes1997}{}%
-118. Maes HHM, Neale MC, Eaves LJ. Genetic and environmental factors in relative body weight and human adiposity. 1997;
+118. Maes HHM, Neale MC, Eaves LJ. Genetic and environmental factors in relative body weight and human adiposity. \emph{Behavior Genetics}. 1997;
 
 \leavevmode\hypertarget{ref-Eaves1981}{}%
 119. Eaves LJ, Heath AC. Detection of the effects of asymmetric assortative mating. \emph{Nature}. 1981;
@@ -3186,7 +3190,7 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 126. Gaunt TR, Shihab HA, Hemani G, et al. Systematic identification of genetic influences on methylation across the human life course. \emph{Genome Biology} {[}electronic article{]}. 2016;17(1):61. (\url{http://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0926-z})
 
 \leavevmode\hypertarget{ref-Neumeyer2020}{}%
-127. Neumeyer S, Hemani G, Zeggini E. Strengthening Causal Inference for Complex Disease Using Molecular Quantitative Trait Loci. 2020;
+127. Neumeyer S, Hemani G, Zeggini E. Strengthening Causal Inference for Complex Disease Using Molecular Quantitative Trait Loci. \emph{Trends in Molecular Medicine}. 2020;
 
 \leavevmode\hypertarget{ref-Johnston2019}{}%
 128. Johnston AD, Simões-Pires CA, Thompson TV, et al. Functional genetic variants can mediate their regulatory effects through alteration of transcription factor binding. \emph{Nature Communications}. 2019;
@@ -3198,7 +3202,7 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 130. Lawlor DA, Tilling K, Smith GD. Triangulation in aetiological epidemiology. \emph{International Journal of Epidemiology}. 2016;
 
 \leavevmode\hypertarget{ref-Pearl2010}{}%
-131. Pearl J. An introduction to causal inference. 2010;
+131. Pearl J. An introduction to causal inference. \emph{International Journal of Biostatistics}. 2010;
 
 \leavevmode\hypertarget{ref-Hernan2016}{}%
 132. Hernán MA, Robins JM. Using Big Data to Emulate a Target Trial When a Randomized Trial Is Not Available. \emph{American Journal of Epidemiology}. 2016;
@@ -3219,7 +3223,7 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 137. Harris PA, Taylor R, Thielke R, et al. Research electronic data capture (REDCap)-A metadata-driven methodology and workflow process for providing translational research informatics support. \emph{Journal of Biomedical Informatics}. 2009;
 
 \leavevmode\hypertarget{ref-Harris2019}{}%
-138. Harris PA, Taylor R, Minor BL, et al. The REDCap consortium: Building an international community of software platform partners. 2019;
+138. Harris PA, Taylor R, Minor BL, et al. The REDCap consortium: Building an international community of software platform partners. \emph{Journal of Biomedical Informatics}. 2019;
 
 \leavevmode\hypertarget{ref-McKay2017}{}%
 139. McKay JD, Hung RJ, Han Y, et al. Large-scale association analysis identifies new lung cancer susceptibility loci and heterogeneity in genetic susceptibility across histological subtypes. \emph{Nature genetics} {[}electronic article{]}. 2017;49(7):1126--1132. (\url{http://www.nature.com/doifinder/10.1038/ng.3892\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/pubmed/28604730})
@@ -3366,13 +3370,13 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 186. Harst P van der, Verweij N. Identification of 64 Novel Genetic Loci Provides an Expanded View on the Genetic Architecture of Coronary Artery Disease. \emph{Circulation research} {[}electronic article{]}. 2018;122(3):433--443. (\url{http://www.ncbi.nlm.nih.gov/pubmed/29212778\%20http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC5805277})
 
 \leavevmode\hypertarget{ref-Visscher2017}{}%
-187. Visscher PM, Wray NR, Zhang Q, et al. 10 Years of GWAS Discovery: Biology, Function, and Translation. 2017;
+187. Visscher PM, Wray NR, Zhang Q, et al. 10 Years of GWAS Discovery: Biology, Function, and Translation. \emph{American Journal of Human Genetics}. 2017;
 
 \leavevmode\hypertarget{ref-Hanahan2011}{}%
-188. Hanahan D, Weinberg RA. Hallmarks of cancer: The next generation. 2011;144:646--674. (\url{http://arxiv.org/abs/0208024})
+188. Hanahan D, Weinberg RA. Hallmarks of cancer: The next generation. \emph{Cell} {[}electronic article{]}. 2011;144(5):646--674. (\url{http://arxiv.org/abs/0208024})
 
 \leavevmode\hypertarget{ref-Relton2015}{}%
-189. Relton CL, Davey Smith G. Mendelian randomization: Applications and limitations in epigenetic studies. 2015;
+189. Relton CL, Davey Smith G. Mendelian randomization: Applications and limitations in epigenetic studies. \emph{Epigenomics}. 2015;
 
 \leavevmode\hypertarget{ref-Sharp2017}{}%
 190. Sharp GC, Salas LA, Monnereau C, et al. Maternal BMI at the start of pregnancy and offspring epigenome-wide DNA methylation: Findings from the pregnancy and childhood epigenetics (PACE) consortium. \emph{Human Molecular Genetics}. 2017;
@@ -3387,7 +3391,7 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 193. Breeze CE, Paul DS, Dongen J van, et al. eFORGE: A Tool for Identifying Cell Type-Specific Signal in Epigenomic Data. \emph{Cell Reports}. 2016;
 
 \leavevmode\hypertarget{ref-Gallagher2018}{}%
-194. Gallagher MD, Chen-Plotkin AS. The Post-GWAS Era: From Association to Function. 2018;
+194. Gallagher MD, Chen-Plotkin AS. The Post-GWAS Era: From Association to Function. \emph{American Journal of Human Genetics}. 2018;
 
 \leavevmode\hypertarget{ref-Kurushima2019}{}%
 195. Kurushima Y, Tsai PC, Castillo-Fernandez J, et al. Epigenetic findings in periodontitis in UK twins: A cross-sectional study. \emph{Clinical Epigenetics}. 2019;
@@ -3402,10 +3406,10 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 198. Geurtsen ML, Jaddoe VWV, Salas LA, et al. Newborn and childhood differential DNA methylation and liver fat in school-age children. \emph{Clinical Epigenetics}. 2019;
 
 \leavevmode\hypertarget{ref-Sattar2017}{}%
-199. Sattar N, Preiss D. Reverse Causality in Cardiovascular Epidemiological Research: More Common Than Imagined? 2017;
+199. Sattar N, Preiss D. Reverse Causality in Cardiovascular Epidemiological Research: More Common Than Imagined? \emph{Circulation}. 2017;
 
 \leavevmode\hypertarget{ref-DaveySmith1992}{}%
-200. Davey Smith G, Phillips AN. Confounding in epidemiological studies: Why 'independent' effects may not be all they seem. 1992;
+200. Davey Smith G, Phillips AN. Confounding in epidemiological studies: Why 'independent' effects may not be all they seem. \emph{British Medical Journal}. 1992;
 
 \leavevmode\hypertarget{ref-Fewell2007}{}%
 201. Fewell Z, Davey Smith G, Sterne JAC. The impact of residual and unmeasured confounding in epidemiologic studies: A simulation study. \emph{American Journal of Epidemiology}. 2007;
@@ -3441,13 +3445,13 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 211. Durinck S, Spellman PT, Birney E, et al. Mapping identifiers for the integration of genomic datasets with the R/ Bioconductor package biomaRt. \emph{Nature Protocols}. 2009;
 
 \leavevmode\hypertarget{ref-Ashburner2000}{}%
-212. Ashburner M, Ball CA, Blake JA, et al. Gene ontology: Tool for the unification of biology. 2000;
+212. Ashburner M, Ball CA, Blake JA, et al. Gene ontology: Tool for the unification of biology. \emph{Nature Genetics}. 2000;
 
 \leavevmode\hypertarget{ref-Carbon2019}{}%
 213. Carbon S, Douglass E, Dunn N, et al. The Gene Ontology Resource: 20 years and still GOing strong. \emph{Nucleic Acids Research}. 2019;
 
 \leavevmode\hypertarget{ref-Kanehisa2000}{}%
-214. Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. 2000;
+214. Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. \emph{Nucleic Acids Research}. 2000;
 
 \leavevmode\hypertarget{ref-Kanehisa2019}{}%
 215. Kanehisa M, Sato Y, Furumichi M, et al. New approach for understanding genome variations in KEGG. \emph{Nucleic Acids Research}. 2019;
@@ -3471,7 +3475,7 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 221. Benjamini Y, Hochberg Y. Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. \emph{Journal of the Royal Statistical Society: Series B (Methodological)}. 1995;
 
 \leavevmode\hypertarget{ref-Ferlay2013}{}%
-222. Ferlay J, Soerjomataram I, Ervik M, et al. GLOBOCAN 2012 v1.0, Cancer Incidence and Mortality Worldwide: IARC CancerBase. No. 11 {[}Internet{]}. 2013;11:http://globocan.iarc.f. (\url{http://arxiv.org/abs/arXiv:1011.1669v3})
+222. Ferlay J, Soerjomataram I, Ervik M, et al. GLOBOCAN 2012 v1.0, Cancer Incidence and Mortality Worldwide: IARC CancerBase. No. 11 {[}Internet{]}. \emph{Lyon, France: International Agency for Research on Cancer.} {[}electronic article{]}. 2013;11:http://globocan.iarc.f. (\url{http://arxiv.org/abs/arXiv:1011.1669v3})
 
 \leavevmode\hypertarget{ref-McCarthy2016}{}%
 223. McCarthy S, Das S, Kretzschmar W, et al. A reference panel of 64,976 haplotypes for genotype imputation. \emph{Nature Genetics}. 2016;
@@ -3483,16 +3487,16 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 225. Borghol N, Suderman M, Mcardle W, et al. Associations with early-life socio-economic position in adult DNA methylation. \emph{International Journal of Epidemiology}. 2012;
 
 \leavevmode\hypertarget{ref-Munafo2012}{}%
-226. Munafò MR, Timofeeva MN, Morris RW, et al. Association between genetic variants on chromosome 15q25 locus and objective measures of Tobacco exposure. 2012;
+226. Munafò MR, Timofeeva MN, Morris RW, et al. Association between genetic variants on chromosome 15q25 locus and objective measures of Tobacco exposure. \emph{Journal of the National Cancer Institute}. 2012;
 
 \leavevmode\hypertarget{ref-Richardson2017}{}%
 227. Richardson TG, Zheng J, Davey Smith G, et al. Mendelian Randomization Analysis Identifies CpG Sites as Putative Mediators for Genetic Influences on Cardiovascular Disease Risk. \emph{American Journal of Human Genetics}. 2017;
 
 \leavevmode\hypertarget{ref-Leek2016}{}%
-228. Leek JT, Johnson WE, Parker HS, et al. sva: Surrogate Variable Analysis. 2016;
+228. Leek JT, Johnson WE, Parker HS, et al. sva: Surrogate Variable Analysis. \emph{R package version 3.20.0.} 2016;
 
 \leavevmode\hypertarget{ref-Thomas2007}{}%
-229. Thomas DC, Lawlor DA, Thompson JR. Re: Estimation of Bias in Nongenetic Observational Studies Using "Mendelian Triangulation" by Bautista et~al. 2007;
+229. Thomas DC, Lawlor DA, Thompson JR. Re: Estimation of Bias in Nongenetic Observational Studies Using "Mendelian Triangulation" by Bautista et~al. \emph{Annals of Epidemiology}. 2007;
 
 \leavevmode\hypertarget{ref-Bowden2015}{}%
 230. Bowden J, Smith GD, Burgess S. Mendelian randomization with invalid instruments: Effect estimation and bias detection through Egger regression. \emph{International Journal of Epidemiology} {[}electronic article{]}. 2015;44(2):512--525. (\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4469799/})
@@ -3533,68 +3537,74 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 \leavevmode\hypertarget{ref-Gao2016}{}%
 242. Gao X, Zhang Y, Breitling LP, et al. Tobacco smoking and methylation of genes related to lung cancer development. \emph{Oncotarget}. 2016;
 
+\leavevmode\hypertarget{ref-Lappalainen2017}{}%
+243. Lappalainen T, Greally JM. Associating cellular epigenetic models with human phenotypes. \emph{Nat Rev Genet} {[}electronic article{]}. 2017;18(7):441--451. (\url{http://dx.doi.org/10.1038/nrg.2017.32\%20http://10.0.4.14/nrg.2017.32})
+
 \leavevmode\hypertarget{ref-Timpson2017}{}%
-243. Timpson NJ, Greenwood CMT, Soranzo N, et al. Genetic architecture: the shape of the genetic contribution to human traits and disease. \emph{Nature Reviews Genetics} {[}electronic article{]}. 2017;19(2):110--124. (\url{http://www.nature.com/doifinder/10.1038/nrg.2017.101})
+244. Timpson NJ, Greenwood CMT, Soranzo N, et al. Genetic architecture: the shape of the genetic contribution to human traits and disease. \emph{Nature Reviews Genetics} {[}electronic article{]}. 2017;19(2):110--124. (\url{http://www.nature.com/doifinder/10.1038/nrg.2017.101})
 
 \leavevmode\hypertarget{ref-Boyle2017}{}%
-244. Boyle EA, Li YI, Pritchard JK. An Expanded View of Complex Traits: From Polygenic to Omnigenic. 2017;
+245. Boyle EA, Li YI, Pritchard JK. An Expanded View of Complex Traits: From Polygenic to Omnigenic. \emph{Cell}. 2017;
 
 \leavevmode\hypertarget{ref-Finucane2018}{}%
-245. Finucane HK, Reshef YA, Anttila V, et al. Heritability enrichment of specifically expressed genes identifies disease-relevant tissues and cell types. \emph{Nature Genetics}. 2018;
+246. Finucane HK, Reshef YA, Anttila V, et al. Heritability enrichment of specifically expressed genes identifies disease-relevant tissues and cell types. \emph{Nature Genetics}. 2018;
 
 \leavevmode\hypertarget{ref-Wilkins2020}{}%
-246. Wilkins OM, Johnson KC, Houseman EA, et al. Genome-wide characterization of cytosine-specific 5-hydroxymethylation in normal breast tissue. \emph{Epigenetics}. 2020;
+247. Wilkins OM, Johnson KC, Houseman EA, et al. Genome-wide characterization of cytosine-specific 5-hydroxymethylation in normal breast tissue. \emph{Epigenetics}. 2020;
 
 \leavevmode\hypertarget{ref-Marshall2020}{}%
-247. Marshall LL, Killinger BA, Ensink E, et al. Epigenomic analysis of Parkinson's disease neurons identifies Tet2 loss as neuroprotective. \emph{Nature Neuroscience}. 2020;
+248. Marshall LL, Killinger BA, Ensink E, et al. Epigenomic analysis of Parkinson's disease neurons identifies Tet2 loss as neuroprotective. \emph{Nature Neuroscience}. 2020;
 
 \leavevmode\hypertarget{ref-Greco2016}{}%
-248. Greco CM, Kunderfranco P, Rubino M, et al. DNA hydroxymethylation controls cardiomyocyte gene expression in development and hypertrophy. \emph{Nature Communications}. 2016;
+249. Greco CM, Kunderfranco P, Rubino M, et al. DNA hydroxymethylation controls cardiomyocyte gene expression in development and hypertrophy. \emph{Nature Communications}. 2016;
 
 \leavevmode\hypertarget{ref-Shendure2017}{}%
-249. Shendure J, Balasubramanian S, Church GM, et al. DNA sequencing at 40: Past, present and future. \emph{Nature}. 2017;
+250. Shendure J, Balasubramanian S, Church GM, et al. DNA sequencing at 40: Past, present and future. \emph{Nature}. 2017;
 
 \leavevmode\hypertarget{ref-Stark2019}{}%
-250. Stark R, Grzelak M, Hadfield J. RNA sequencing: the teenage years. 2019;
+251. Stark R, Grzelak M, Hadfield J. RNA sequencing: the teenage years. \emph{Nature Reviews Genetics}. 2019;
+
+\leavevmode\hypertarget{ref-Song2012}{}%
+252. Song CX, Clark TA, Lu XY, et al. Sensitive and specific single-molecule sequencing of 5- hydroxymethylcytosine. \emph{Nature Methods}. 2012;
 
 \leavevmode\hypertarget{ref-Weinstein2013}{}%
-251. Weinstein JN, Collisson EA, Mills GB, et al. The cancer genome atlas pan-cancer analysis project. 2013;
+253. Weinstein JN, Collisson EA, Mills GB, et al. The cancer genome atlas pan-cancer analysis project. \emph{Nature Genetics}. 2013;
 
 \leavevmode\hypertarget{ref-Hedlund2018}{}%
-252. Hedlund E, Deng Q. Single-cell RNA sequencing: Technical advancements and biological applications. 2018;
+254. Hedlund E, Deng Q. Single-cell RNA sequencing: Technical advancements and biological applications. \emph{Molecular Aspects of Medicine}. 2018;
 
 \leavevmode\hypertarget{ref-Papalexi2018}{}%
-253. Papalexi E, Satija R. Single-cell RNA sequencing to explore immune cell heterogeneity. 2018;
+255. Papalexi E, Satija R. Single-cell RNA sequencing to explore immune cell heterogeneity. \emph{Nature Reviews Immunology}. 2018;
 
 \leavevmode\hypertarget{ref-Karemaker2018}{}%
-254. Karemaker ID, Vermeulen M. Single-Cell DNA Methylation Profiling: Technologies and Biological Applications. 2018;
+256. Karemaker ID, Vermeulen M. Single-Cell DNA Methylation Profiling: Technologies and Biological Applications. \emph{Trends in Biotechnology}. 2018;
 
 \leavevmode\hypertarget{ref-Gravina2015}{}%
-255. Gravina S, Ganapathi S, Vijg J. Single-cell, locus-specific bisulfite sequencing (SLBS) for direct detection of epimutations in DNA methylation patterns. \emph{Nucleic Acids Research}. 2015;
+257. Gravina S, Ganapathi S, Vijg J. Single-cell, locus-specific bisulfite sequencing (SLBS) for direct detection of epimutations in DNA methylation patterns. \emph{Nucleic Acids Research}. 2015;
 
 \leavevmode\hypertarget{ref-Farlik2015}{}%
-256. Farlik M, Sheffield NC, Nuzzo A, et al. Single-Cell DNA Methylome Sequencing and Bioinformatic Inference of Epigenomic Cell-State Dynamics. \emph{Cell Reports}. 2015;
+258. Farlik M, Sheffield NC, Nuzzo A, et al. Single-Cell DNA Methylome Sequencing and Bioinformatic Inference of Epigenomic Cell-State Dynamics. \emph{Cell Reports}. 2015;
 
 \leavevmode\hypertarget{ref-Zhang2019}{}%
-257. Zhang F, Chen W, Zhu Z, et al. OSCA: A tool for omic-data-based complex trait analysis. \emph{Genome Biology}. 2019;
+259. Zhang F, Chen W, Zhu Z, et al. OSCA: A tool for omic-data-based complex trait analysis. \emph{Genome Biology}. 2019;
 
 \leavevmode\hypertarget{ref-Smith2013}{}%
-258. Smith BH, Campbell A, Linksted P, et al. Cohort profile: Generation scotland: Scottish family health study (GS: SFHS). The study, its participants and their potential for genetic research on health and illness. \emph{International Journal of Epidemiology}. 2013;
+260. Smith BH, Campbell A, Linksted P, et al. Cohort profile: Generation scotland: Scottish family health study (GS: SFHS). The study, its participants and their potential for genetic research on health and illness. \emph{International Journal of Epidemiology}. 2013;
 
 \leavevmode\hypertarget{ref-RoadmapEpigenomicsConsortium2015}{}%
-259. Roadmap Epigenomics Consortium, Kundaje A, Meuleman W, et al. Integrative analysis of 111 reference human epigenomes. \emph{Nature}. 2015;
+261. Roadmap Epigenomics Consortium, Kundaje A, Meuleman W, et al. Integrative analysis of 111 reference human epigenomes. \emph{Nature}. 2015;
 
 \leavevmode\hypertarget{ref-Marzi2018}{}%
-260. Marzi SJ, Leung SK, Ribarska T, et al. A histone acetylome-wide association study of Alzheimer's disease identifies disease-associated H3K27ac differences in the entorhinal cortex. \emph{Nature Neuroscience}. 2018;
+262. Marzi SJ, Leung SK, Ribarska T, et al. A histone acetylome-wide association study of Alzheimer's disease identifies disease-associated H3K27ac differences in the entorhinal cortex. \emph{Nature Neuroscience}. 2018;
 
 \leavevmode\hypertarget{ref-Uhlen2015}{}%
-261. Uhlén M, Fagerberg L, Hallström BM, et al. Tissue-based map of the human proteome. \emph{Science}. 2015;
+263. Uhlén M, Fagerberg L, Hallström BM, et al. Tissue-based map of the human proteome. \emph{Science}. 2015;
 
 \leavevmode\hypertarget{ref-Thul2017}{}%
-262. Thul PJ, Akesson L, Wiking M, et al. A subcellular map of the human proteome. \emph{Science}. 2017;
+264. Thul PJ, Akesson L, Wiking M, et al. A subcellular map of the human proteome. \emph{Science}. 2017;
 
 \leavevmode\hypertarget{ref-Lane2010}{}%
-263. Lane D, Levine A. p53 Research: the past thirty years and the next thirty years. 2010;
+265. Lane D, Levine A. p53 Research: the past thirty years and the next thirty years. \emph{Cold Spring Harbor perspectives in biology}. 2010;
 \end{cslreferences}
 \end{document}
 
