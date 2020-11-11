@@ -142,7 +142,7 @@ The percentage of hypermethylated sites in relation to traits was `r comma(dir_o
 ```{r traits-manhattan, message=FALSE, results="asis", fig.cap='(ref:traits-manhattan-cap)', fig.scap='(ref:traits-manhattan-scap)'}
 ```
 
-Next we estimated the trait variance (see equation \@ref(eq:r-squared)) explained by each association. This indicates the predictive performance from EWAS, although it should be noted that winner's curse will artificially inflate the performance, even amongst EWAS with true positive results.
+Next estimates of the trait variance (see equation \@ref(eq:r-squared)) explained by each association were assessed. This indicates the predictive performance from EWAS, although it should be noted that winner's curse will artificially inflate the performance, even amongst EWAS with true positive results.
 
 The proportion of trait variance (ranging from 0 to 1) that correlated with DNA methylation (r^2^) at each site varied from `r comma(min_r2)` to `r comma(max_r2)` with a median of `r comma(median(rsq_dat$rsq, na.rm = T))` (__Figure \@ref(fig:rsq-distribution)__). The sum of r^2^ values ranged greatly from `r comma(min(rsq_sum_dat$total_rsq))` to `r comma(max(rsq_sum_dat$total_rsq))` (__Figure \@ref(fig:rsq-sum-distribution)__), with a median of `r comma(median(rsq_sum_dat$total_rsq))`. There was evidence that `r num_to_text(nrow(suspect_studies))` studies had a total sum of r^2^ values greater than the mean (FDR < 0.05) and r^2^ values from individual associations from these studies made up the majority of r^2^ values greater than 0.1 (__Figure \@ref(fig:rsq-distribution)__). When excluding those studies from the results, the median r^2^ value at individual sites was `r comma(new_med_rsq)`.
 

@@ -201,7 +201,7 @@ For each CpG site identified by EWAS and used in the analyses, it was mapped to 
 
 ### Methods for assessing overlap {#methods-for-assessing-overlap}
 
-To test the overlap between genes identified we generated ORs as follows
+To test the overlap between genes identified ORs were generated as follows
 
 \begin{equation}
     OR_{gene-overlap} = \frac{odds_{EG}} {odds_{EnG}}
@@ -263,5 +263,5 @@ GWAS were extracted from the IEU OpenGWAS Project [@Elsworth2020] with the follo
 
 For each GWAS, all SNPs that associated with the trait at P<5x10^-8^ were extracted. CpGs associated with the `r num_to_text(nrow(trait_dat_tab))` EWAS at P<1x10^-7^ were then extracted and mapped to genes. For each study, enrichment scores were generated for GO terms as before (Equation \@ref(eq:geneset-enrichment)) and correlation between them assessed. 
 
-When assessing whether gene overlap or geneset enrichment score correlations were greater than the mean, a z-test was performed. As multiple tests were performed we applied the Benjamini-Hochberg method [@Benjamini1995] to limit the false discovery rate. 
+When assessing whether gene overlap or geneset enrichment score correlations were greater than the mean, a z-test was performed. As multiple tests were performed the false discovery rate was limited by applying the Benjamini-Hochberg method [@Benjamini1995].
 
