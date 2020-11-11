@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.2)  11 NOV 2020 12:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.2)  11 NOV 2020 13:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -865,15 +865,17 @@ ine 510.
 pdfTeX warning: pdflatex (file ./figure/01-introduction/mr-diagram.pdf): PDF in
 clusion: invalid other resource which is no dict (key 'ProcSets', type <array>)
 ; ignored.
->] [23] [24]
-<figure/01-introduction/thesis-flowchart.pdf, id=1186, 551.1792pt x 232.9503pt>
+>] [23] [24] [25]
+<figure/01-introduction/thesis-flowchart.pdf, id=1190, 551.1792pt x 232.9503pt>
 
 File: figure/01-introduction/thesis-flowchart.pdf Graphic file (type pdf)
 <use figure/01-introduction/thesis-flowchart.pdf>
 Package pdftex.def Info: figure/01-introduction/thesis-flowchart.pdf  used on i
-nput line 549.
-(pdftex.def)             Requested size: 420.0pt x 177.51326pt.
-[25 <./figure/01-introduction/thesis-flowchart.pdf
+nput line 551.
+(pdftex.def)             Requested size: 600.0pt x 253.60509pt.
+[26
+
+ <./figure/01-introduction/thesis-flowchart.pdf
 
 pdfTeX warning: pdflatex (file ./figure/01-introduction/thesis-flowchart.pdf): 
 PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <a
@@ -884,321 +886,322 @@ Chapter 2.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 594--594
+Underfull \hbox (badness 10000) in paragraph at lines 598--598
 []\T1/ptm/b/n/14.4 Accessible Re-source for In-te-grated Epige-nomic Stud-ies
  []
 
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 60
-4.
+8.
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [26
+) [27
 
-] [27] [28] [29] [30]
+
+] [28] [29] [30] [31]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 6
-55.
+59.
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [31] [32] [33]
+) [32] [33] [34]
 Chapter 3.
-[34
+[35
 
-] [35]
-<figure/03-ewas_catalog/project_flowchart.pdf, id=1288, 963.6pt x 542.025pt>
+] [36]
+<figure/03-ewas_catalog/project_flowchart.pdf, id=1292, 963.6pt x 542.025pt>
 File: figure/03-ewas_catalog/project_flowchart.pdf Graphic file (type pdf)
 <use figure/03-ewas_catalog/project_flowchart.pdf>
 Package pdftex.def Info: figure/03-ewas_catalog/project_flowchart.pdf  used on 
-input line 720.
+input line 724.
 (pdftex.def)             Requested size: 420.0pt x 236.2504pt.
-[36]
-Underfull \hbox (badness 1694) in paragraph at lines 732--733
+[37]
+Underfull \hbox (badness 1694) in paragraph at lines 736--737
 \T1/ptm/m/n/10.95 (+20) The EWAS Cat-a-log web app was built us-ing the Django 
 Python pack-age ([]$\T1/pcr/m/n/10.95 h t t p s :
  []
 
-[37 <./figure/03-ewas_catalog/project_flowchart.pdf>]
-Underfull \hbox (badness 1874) in paragraph at lines 754--755
+[38 <./figure/03-ewas_catalog/project_flowchart.pdf>]
+Underfull \hbox (badness 1874) in paragraph at lines 758--759
 []\T1/ptm/m/n/10.95 (+20) All these cri-te-ria along with the vari-ables ex-tra
 cted are doc-u-mented on the web-site
  []
 
-[38] [39] [40] [41]
-<figure/03-ewas_catalog/using_the_catalog.pdf, id=1365, 1043.9pt x 640.3925pt>
+[39] [40] [41] [42]
+<figure/03-ewas_catalog/using_the_catalog.pdf, id=1369, 1043.9pt x 640.3925pt>
 File: figure/03-ewas_catalog/using_the_catalog.pdf Graphic file (type pdf)
 <use figure/03-ewas_catalog/using_the_catalog.pdf>
 Package pdftex.def Info: figure/03-ewas_catalog/using_the_catalog.pdf  used on 
-input line 799.
+input line 803.
 (pdftex.def)             Requested size: 600.0pt x 368.07625pt.
 
-LaTeX Warning: Float too large for page by 39.67627pt on input line 804.
+LaTeX Warning: Float too large for page by 39.67627pt on input line 808.
 
-[42 <./figure/03-ewas_catalog/using_the_catalog.pdf>] [43
+[43 <./figure/03-ewas_catalog/using_the_catalog.pdf>] [44
 
 
 ]
 Chapter 4.
-[44
+[45
 
-] [45] [46] [47] [48] [49] [50] [51] [52]
-Underfull \hbox (badness 10000) in paragraph at lines 943--974
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 943--974
+] [46] [47] [48] [49] [50] [51] [52] [53]
+Underfull \hbox (badness 10000) in paragraph at lines 947--978
 
  []
 
-<figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png, id=1492, 867.24pt x 
+
+Underfull \hbox (badness 10000) in paragraph at lines 947--978
+
+ []
+
+<figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png, id=1496, 867.24pt x 
 505.89pt>
 File: figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png Graphic file (ty
 pe png)
 <use figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png>
 Package pdftex.def Info: figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.p
-ng  used on input line 982.
+ng  used on input line 986.
 (pdftex.def)             Requested size: 420.0pt x 245.00125pt.
-[53]
-<thesis_files/figure-latex/rsq-distribution-1.pdf, id=1503, 469.755pt x 325.215
+[54]
+<thesis_files/figure-latex/rsq-distribution-1.pdf, id=1507, 469.755pt x 325.215
 pt>
 File: thesis_files/figure-latex/rsq-distribution-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/rsq-distribution-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/rsq-distribution-1.pdf  used
- on input line 997.
+ on input line 1001.
 (pdftex.def)             Requested size: 420.0pt x 290.77036pt.
-[54 <./figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png (PNG copy)>]
-<thesis_files/figure-latex/rsq-sum-distribution-1.pdf, id=1510, 469.755pt x 325
+[55 <./figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png (PNG copy)>]
+<thesis_files/figure-latex/rsq-sum-distribution-1.pdf, id=1514, 469.755pt x 325
 .215pt>
 File: thesis_files/figure-latex/rsq-sum-distribution-1.pdf Graphic file (type p
 df)
 <use thesis_files/figure-latex/rsq-sum-distribution-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/rsq-sum-distribution-1.pdf  
-used on input line 1008.
+used on input line 1012.
 (pdftex.def)             Requested size: 420.0pt x 290.77036pt.
-[55 <./thesis_files/figure-latex/rsq-distribution-1.pdf>] [56 <./thesis_files/f
+[56 <./thesis_files/figure-latex/rsq-distribution-1.pdf>] [57 <./thesis_files/f
 igure-latex/rsq-sum-distribution-1.pdf>]
-<thesis_files/figure-latex/faulty-probes-plot-1.pdf, id=1539, 469.755pt x 325.2
+<thesis_files/figure-latex/faulty-probes-plot-1.pdf, id=1543, 469.755pt x 325.2
 15pt>
 File: thesis_files/figure-latex/faulty-probes-plot-1.pdf Graphic file (type pdf
 )
 <use thesis_files/figure-latex/faulty-probes-plot-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/faulty-probes-plot-1.pdf  us
-ed on input line 1028.
+ed on input line 1032.
 (pdftex.def)             Requested size: 420.0pt x 290.77036pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1036--1064
+Underfull \hbox (badness 10000) in paragraph at lines 1040--1068
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1036--1064
+Underfull \hbox (badness 10000) in paragraph at lines 1040--1068
 
  []
 
-[57 <./thesis_files/figure-latex/faulty-probes-plot-1.pdf>] [58] [59] [60] [61]
-[62] [63]
+[58 <./thesis_files/figure-latex/faulty-probes-plot-1.pdf>] [59] [60] [61] [62]
+[63] [64]
 <figure/04-properties_of_ewas/chromatin_states_enrichment_boxplots_onepage.pdf,
- id=1583, 505.89pt x 505.89pt>
+ id=1588, 505.89pt x 505.89pt>
 File: figure/04-properties_of_ewas/chromatin_states_enrichment_boxplots_onepage
 .pdf Graphic file (type pdf)
 <use figure/04-properties_of_ewas/chromatin_states_enrichment_boxplots_onepage.
 pdf>
 Package pdftex.def Info: figure/04-properties_of_ewas/chromatin_states_enrichme
-nt_boxplots_onepage.pdf  used on input line 1235.
+nt_boxplots_onepage.pdf  used on input line 1239.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
-[64]
+[65]
 Overfull \vbox (6.80443pt too high) has occurred while \output is active []
 
-[65 <./figure/04-properties_of_ewas/chromatin_states_enrichment_boxplots_onepag
+[66 <./figure/04-properties_of_ewas/chromatin_states_enrichment_boxplots_onepag
 e.pdf>]
-<figure/04-properties_of_ewas/tfbs_enrichment_plot.pdf, id=1602, 505.89pt x 505
+<figure/04-properties_of_ewas/tfbs_enrichment_plot.pdf, id=1606, 505.89pt x 505
 .89pt>
 File: figure/04-properties_of_ewas/tfbs_enrichment_plot.pdf Graphic file (type 
 pdf)
 <use figure/04-properties_of_ewas/tfbs_enrichment_plot.pdf>
 Package pdftex.def Info: figure/04-properties_of_ewas/tfbs_enrichment_plot.pdf 
- used on input line 1248.
+ used on input line 1252.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
-[66] [67 <./figure/04-properties_of_ewas/tfbs_enrichment_plot.pdf>] [68] [69] [
-70] [71]
+[67] [68 <./figure/04-properties_of_ewas/tfbs_enrichment_plot.pdf>] [69] [70] [
+71] [72]
 Chapter 5.
-[72
+[73
 
-] [73] [74] [75]
-<figure/05-h2ewas/m2_model_comparison.pdf, id=1670, 601.28638pt x 406.3983pt>
+] [74] [75] [76]
+<figure/05-h2ewas/m2_model_comparison.pdf, id=1675, 601.28638pt x 406.3983pt>
 File: figure/05-h2ewas/m2_model_comparison.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/m2_model_comparison.pdf>
 Package pdftex.def Info: figure/05-h2ewas/m2_model_comparison.pdf  used on inpu
-t line 1346.
+t line 1350.
 (pdftex.def)             Requested size: 420.0pt x 283.86916pt.
-[76] [77 <./figure/05-h2ewas/m2_model_comparison.pdf
+[77] [78 <./figure/05-h2ewas/m2_model_comparison.pdf
 
 pdfTeX warning: pdflatex (file ./figure/05-h2ewas/m2_model_comparison.pdf): PDF
  inclusion: invalid other resource which is no dict (key 'ProcSets', type <arra
 y>); ignored.
 >]
-<figure/05-h2ewas/m2_data_cleaning.pdf, id=1703, 287.15279pt x 478.66827pt>
+<figure/05-h2ewas/m2_data_cleaning.pdf, id=1707, 287.15279pt x 478.66827pt>
 File: figure/05-h2ewas/m2_data_cleaning.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/m2_data_cleaning.pdf>
 Package pdftex.def Info: figure/05-h2ewas/m2_data_cleaning.pdf  used on input l
-ine 1367.
+ine 1371.
 (pdftex.def)             Requested size: 315.02776pt x 450.00667pt.
-[78] [79 <./figure/05-h2ewas/m2_data_cleaning.pdf
+[79] [80 <./figure/05-h2ewas/m2_data_cleaning.pdf
 
 pdfTeX warning: pdflatex (file ./figure/05-h2ewas/m2_data_cleaning.pdf): PDF in
 clusion: invalid other resource which is no dict (key 'ProcSets', type <array>)
 ; ignored.
 >]
-<figure/05-h2ewas/test_correlation_plot_all.png, id=1725, 505.89pt x 505.89pt>
+<figure/05-h2ewas/test_correlation_plot_all.png, id=1729, 505.89pt x 505.89pt>
 File: figure/05-h2ewas/test_correlation_plot_all.png Graphic file (type png)
 <use figure/05-h2ewas/test_correlation_plot_all.png>
 Package pdftex.def Info: figure/05-h2ewas/test_correlation_plot_all.png  used o
-n input line 1380.
+n input line 1384.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
-[80]
-<figure/05-h2ewas/test_correlation_plot.png, id=1730, 505.89pt x 505.89pt>
+[81]
+<figure/05-h2ewas/test_correlation_plot.png, id=1734, 505.89pt x 505.89pt>
 File: figure/05-h2ewas/test_correlation_plot.png Graphic file (type png)
 <use figure/05-h2ewas/test_correlation_plot.png>
 Package pdftex.def Info: figure/05-h2ewas/test_correlation_plot.png  used on in
-put line 1391.
+put line 1395.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
-[81 <./figure/05-h2ewas/test_correlation_plot_all.png (PNG copy)>] [82 <./figur
-e/05-h2ewas/test_correlation_plot.png (PNG copy)>] [83]
-Underfull \hbox (badness 4254) in paragraph at lines 1435--1435
+[82 <./figure/05-h2ewas/test_correlation_plot_all.png (PNG copy)>] [83 <./figur
+e/05-h2ewas/test_correlation_plot.png (PNG copy)>] [84]
+Underfull \hbox (badness 4254) in paragraph at lines 1439--1439
 []\T1/ptm/b/n/12 Association be-tween h$[]$$[]$ and epigenome-wide as-so-ci-a-t
 ion stud-ies
  []
 
-[84] [85]
-<figure/05-h2ewas/m2_workflow.pdf, id=1765, 522.03032pt x 341.35529pt>
+[85] [86]
+<figure/05-h2ewas/m2_workflow.pdf, id=1769, 522.03032pt x 341.35529pt>
 File: figure/05-h2ewas/m2_workflow.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/m2_workflow.pdf>
 Package pdftex.def Info: figure/05-h2ewas/m2_workflow.pdf  used on input line 1
-462.
+466.
 (pdftex.def)             Requested size: 420.0pt x 274.65239pt.
-[86 <./figure/05-h2ewas/m2_workflow.pdf
+[87 <./figure/05-h2ewas/m2_workflow.pdf
 
 pdfTeX warning: pdflatex (file ./figure/05-h2ewas/m2_workflow.pdf): PDF inclusi
 on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
 ored.
 >]
-<figure/05-h2ewas/model_m2_comparison.pdf, id=1813, 505.89pt x 505.89pt>
+<figure/05-h2ewas/model_m2_comparison.pdf, id=1817, 505.89pt x 505.89pt>
 File: figure/05-h2ewas/model_m2_comparison.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/model_m2_comparison.pdf>
 Package pdftex.def Info: figure/05-h2ewas/model_m2_comparison.pdf  used on inpu
-t line 1480.
+t line 1484.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
-[87] [88 <./figure/05-h2ewas/model_m2_comparison.pdf>]
-<figure/05-h2ewas/sens_boxplots.pdf, id=1835, 505.89pt x 505.89pt>
+[88] [89 <./figure/05-h2ewas/model_m2_comparison.pdf>]
+<figure/05-h2ewas/sens_boxplots.pdf, id=1839, 505.89pt x 505.89pt>
 File: figure/05-h2ewas/sens_boxplots.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/sens_boxplots.pdf>
 Package pdftex.def Info: figure/05-h2ewas/sens_boxplots.pdf  used on input line
- 1498.
+ 1502.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
-[89] [90 <./figure/05-h2ewas/sens_boxplots.pdf>]
-<figure/05-h2ewas/FOM_hit_count_distribution.pdf, id=1857, 504.88625pt x 504.88
+[90] [91 <./figure/05-h2ewas/sens_boxplots.pdf>]
+<figure/05-h2ewas/FOM_hit_count_distribution.pdf, id=1861, 504.88625pt x 504.88
 625pt>
 File: figure/05-h2ewas/FOM_hit_count_distribution.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/FOM_hit_count_distribution.pdf>
 Package pdftex.def Info: figure/05-h2ewas/FOM_hit_count_distribution.pdf  used 
-on input line 1516.
+on input line 1520.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
-[91]
-<figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf, id=1862, 505.89pt x 505.89p
+[92]
+<figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf, id=1866, 505.89pt x 505.89p
 t>
 File: figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf Graphic file (type pdf)
 
 <use figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf>
 Package pdftex.def Info: figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf  use
-d on input line 1527.
+d on input line 1531.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
-[92 <./figure/05-h2ewas/FOM_hit_count_distribution.pdf>]
+[93 <./figure/05-h2ewas/FOM_hit_count_distribution.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[93 <./figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf>]
-<figure/05-h2ewas/roc_plot.pdf, id=1884, 504.88625pt x 504.88625pt>
+[94 <./figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf>]
+<figure/05-h2ewas/roc_plot.pdf, id=1889, 504.88625pt x 504.88625pt>
 File: figure/05-h2ewas/roc_plot.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/roc_plot.pdf>
-Package pdftex.def Info: figure/05-h2ewas/roc_plot.pdf  used on input line 1560
+Package pdftex.def Info: figure/05-h2ewas/roc_plot.pdf  used on input line 1564
 .
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
-[94] [95 <./figure/05-h2ewas/roc_plot.pdf>] [96] [97] [98] [99] [100]
+[95] [96 <./figure/05-h2ewas/roc_plot.pdf>] [97] [98] [99] [100] [101]
 Chapter 6.
-[101
+[102
 
-] [102] [103] [104]
-<figure/06-ewas_gwas_comparison/all_traits_overlap_bar.pdf, id=1962, 505.89pt x
+] [103] [104] [105]
+<figure/06-ewas_gwas_comparison/all_traits_overlap_bar.pdf, id=1966, 505.89pt x
  505.89pt>
 File: figure/06-ewas_gwas_comparison/all_traits_overlap_bar.pdf Graphic file (t
 ype pdf)
 <use figure/06-ewas_gwas_comparison/all_traits_overlap_bar.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/all_traits_overlap_bar.
-pdf  used on input line 1683.
+pdf  used on input line 1687.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
-[105]
-<thesis_files/figure-latex/auc-plot-1.pdf, id=1967, 469.755pt x 325.215pt>
+[106]
+<thesis_files/figure-latex/auc-plot-1.pdf, id=1972, 469.755pt x 325.215pt>
 File: thesis_files/figure-latex/auc-plot-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/auc-plot-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/auc-plot-1.pdf  used on inpu
-t line 1694.
+t line 1698.
 (pdftex.def)             Requested size: 420.0pt x 290.77036pt.
-[106 <./figure/06-ewas_gwas_comparison/all_traits_overlap_bar.pdf>]
-Underfull \hbox (badness 3646) in paragraph at lines 1701--1701
+[107 <./figure/06-ewas_gwas_comparison/all_traits_overlap_bar.pdf>]
+Underfull \hbox (badness 3646) in paragraph at lines 1705--1705
 []\T1/ptm/b/n/12 Assessing power to de-tect shared an-no-ta-tions be-tween GWAS
  and
  []
 
-[107 <./thesis_files/figure-latex/auc-plot-1.pdf>]
-<figure/06-ewas_gwas_comparison/simulations-gene-up-flowchart.pdf, id=1991, 449
+[108 <./thesis_files/figure-latex/auc-plot-1.pdf>]
+<figure/06-ewas_gwas_comparison/simulations-gene-up-flowchart.pdf, id=1995, 449
 .76028pt x 566.115pt>
 File: figure/06-ewas_gwas_comparison/simulations-gene-up-flowchart.pdf Graphic 
 file (type pdf)
 <use figure/06-ewas_gwas_comparison/simulations-gene-up-flowchart.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/simulations-gene-up-flo
-wchart.pdf  used on input line 1714.
+wchart.pdf  used on input line 1718.
 (pdftex.def)             Requested size: 420.0pt x 528.65834pt.
-[108]
+[109]
 Overfull \vbox (6.65836pt too high) has occurred while \output is active []
 
-[109 <./figure/06-ewas_gwas_comparison/simulations-gene-up-flowchart.pdf
+[110 <./figure/06-ewas_gwas_comparison/simulations-gene-up-flowchart.pdf
 
 pdfTeX warning: pdflatex (file ./figure/06-ewas_gwas_comparison/simulations-gen
 e-up-flowchart.pdf): PDF inclusion: invalid other resource which is no dict (ke
 y 'ProcSets', type <array>); ignored.
 >]
 <figure/06-ewas_gwas_comparison/methods_test_gene_up_auc_plot_all_databases_sum
-mary.pdf, id=2023, 505.89pt x 505.89pt>
+mary.pdf, id=2027, 505.89pt x 505.89pt>
 File: figure/06-ewas_gwas_comparison/methods_test_gene_up_auc_plot_all_database
 s_summary.pdf Graphic file (type pdf)
 <use figure/06-ewas_gwas_comparison/methods_test_gene_up_auc_plot_all_databases
 _summary.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/methods_test_gene_up_au
-c_plot_all_databases_summary.pdf  used on input line 1727.
+c_plot_all_databases_summary.pdf  used on input line 1731.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
-[110] [111 <./figure/06-ewas_gwas_comparison/methods_test_gene_up_auc_plot_all_
+[111] [112 <./figure/06-ewas_gwas_comparison/methods_test_gene_up_auc_plot_all_
 databases_summary.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1738--1794
+Underfull \hbox (badness 10000) in paragraph at lines 1742--1798
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1738--1794
+Underfull \hbox (badness 10000) in paragraph at lines 1742--1798
 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[112] [113]
-<figure/06-ewas_gwas_comparison/architecture-simulations-schematic.pdf, id=2062
+[113] [114]
+<figure/06-ewas_gwas_comparison/architecture-simulations-schematic.pdf, id=2066
 , 478.66827pt x 427.5975pt>
 File: figure/06-ewas_gwas_comparison/architecture-simulations-schematic.pdf Gra
 phic file (type pdf)
 <use figure/06-ewas_gwas_comparison/architecture-simulations-schematic.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/architecture-simulation
-s-schematic.pdf  used on input line 1811.
+s-schematic.pdf  used on input line 1815.
 (pdftex.def)             Requested size: 420.0pt x 375.19083pt.
-[114] [115 <./figure/06-ewas_gwas_comparison/architecture-simulations-schematic
+[115] [116 <./figure/06-ewas_gwas_comparison/architecture-simulations-schematic
 .pdf
 
 pdfTeX warning: pdflatex (file ./figure/06-ewas_gwas_comparison/architecture-si
@@ -1206,411 +1209,411 @@ mulations-schematic.pdf): PDF inclusion: invalid other resource which is no dic
 t (key 'ProcSets', type <array>); ignored.
 >]
 <figure/06-ewas_gwas_comparison/architecture_sims_crp_fvns_only_correlation_of_
-pathway_enrichment_scores.png, id=2093, 505.89pt x 505.89pt>
+pathway_enrichment_scores.png, id=2097, 505.89pt x 505.89pt>
 File: figure/06-ewas_gwas_comparison/architecture_sims_crp_fvns_only_correlatio
 n_of_pathway_enrichment_scores.png Graphic file (type png)
 <use figure/06-ewas_gwas_comparison/architecture_sims_crp_fvns_only_correlation
 _of_pathway_enrichment_scores.png>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/architecture_sims_crp_f
-vns_only_correlation_of_pathway_enrichment_scores.png  used on input line 1824.
+vns_only_correlation_of_pathway_enrichment_scores.png  used on input line 1828.
 
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
-[116]
+[117]
 Overfull \vbox (20.40443pt too high) has occurred while \output is active []
 
-[117 <./figure/06-ewas_gwas_comparison/architecture_sims_crp_fvns_only_correlat
-ion_of_pathway_enrichment_scores.png (PNG copy)>] [118] [119] [120] [121] [122]
-[123] [124] [125] [126] [127] [128] [129]
+[118 <./figure/06-ewas_gwas_comparison/architecture_sims_crp_fvns_only_correlat
+ion_of_pathway_enrichment_scores.png (PNG copy)>] [119] [120] [121] [122] [123]
+[124] [125] [126] [127] [128] [129] [130]
 Chapter 7.
-[130
+[131
 
-] [131] [132] [133]
-Underfull \hbox (badness 10000) in paragraph at lines 2053--2088
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2053--2088
+] [132] [133] [134]
+Underfull \hbox (badness 10000) in paragraph at lines 2057--2092
 
  []
 
-[134] [135] [136] [137] [138] [139]
-<figure/07-dnam_lungcancer_mr/Figure_1.jpg, id=2286, 963.6pt x 542.025pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 2057--2092
+
+ []
+
+[135] [136] [137] [138] [139] [140]
+<figure/07-dnam_lungcancer_mr/Figure_1.jpg, id=2290, 963.6pt x 542.025pt>
 File: figure/07-dnam_lungcancer_mr/Figure_1.jpg Graphic file (type jpg)
 <use figure/07-dnam_lungcancer_mr/Figure_1.jpg>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/Figure_1.jpg  used on inp
-ut line 2154.
+ut line 2158.
 (pdftex.def)             Requested size: 600.0pt x 337.50764pt.
-[140 <./figure/07-dnam_lungcancer_mr/Figure_1.jpg>] [141
+[141 <./figure/07-dnam_lungcancer_mr/Figure_1.jpg>] [142
 
 
 ]
-<figure/07-dnam_lungcancer_mr/Figure_2a.jpg, id=2300, 722.7pt x 578.16pt>
+<figure/07-dnam_lungcancer_mr/Figure_2a.jpg, id=2305, 722.7pt x 578.16pt>
 File: figure/07-dnam_lungcancer_mr/Figure_2a.jpg Graphic file (type jpg)
 <use figure/07-dnam_lungcancer_mr/Figure_2a.jpg>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/Figure_2a.jpg  used on in
-put line 2173.
+put line 2177.
 (pdftex.def)             Requested size: 300.0pt x 240.0025pt.
-<figure/07-dnam_lungcancer_mr/Figure_2b.jpg, id=2301, 722.7pt x 578.16pt>
+<figure/07-dnam_lungcancer_mr/Figure_2b.jpg, id=2306, 722.7pt x 578.16pt>
 File: figure/07-dnam_lungcancer_mr/Figure_2b.jpg Graphic file (type jpg)
 <use figure/07-dnam_lungcancer_mr/Figure_2b.jpg>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/Figure_2b.jpg  used on in
-put line 2173.
+put line 2177.
 (pdftex.def)             Requested size: 300.0pt x 240.0025pt.
 
-Overfull \hbox (2.0805pt too wide) in paragraph at lines 2173--2173
+Overfull \hbox (2.0805pt too wide) in paragraph at lines 2177--2177
 [][] [] 
  []
 
-[142 <./figure/07-dnam_lungcancer_mr/Figure_2a.jpg> <./figure/07-dnam_lungcance
-r_mr/Figure_2b.jpg>] [143
+[143 <./figure/07-dnam_lungcancer_mr/Figure_2a.jpg> <./figure/07-dnam_lungcance
+r_mr/Figure_2b.jpg>] [144
 
-
-
-] [144
 
 
 ] [145
+
 
 ] [146
 
 ] [147
 
+] [148
+
 ]
-<figure/07-dnam_lungcancer_mr/Figure_3.jpg, id=2332, 722.7pt x 578.16pt>
+<figure/07-dnam_lungcancer_mr/Figure_3.jpg, id=2337, 722.7pt x 578.16pt>
 File: figure/07-dnam_lungcancer_mr/Figure_3.jpg Graphic file (type jpg)
 <use figure/07-dnam_lungcancer_mr/Figure_3.jpg>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/Figure_3.jpg  used on inp
-ut line 2343.
+ut line 2347.
 (pdftex.def)             Requested size: 420.0pt x 336.00351pt.
-[148 <./figure/07-dnam_lungcancer_mr/Figure_3.jpg>] [149
+[149 <./figure/07-dnam_lungcancer_mr/Figure_3.jpg>] [150
 
 ]
-<figure/07-dnam_lungcancer_mr/sup_fig1.pdf, id=2344, 722.7pt x 578.16pt>
+<figure/07-dnam_lungcancer_mr/sup_fig1.pdf, id=2348, 722.7pt x 578.16pt>
 File: figure/07-dnam_lungcancer_mr/sup_fig1.pdf Graphic file (type pdf)
 <use figure/07-dnam_lungcancer_mr/sup_fig1.pdf>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/sup_fig1.pdf  used on inp
-ut line 2390.
+ut line 2394.
 (pdftex.def)             Requested size: 420.0pt x 336.00351pt.
-[150
+[151
 
  <./figure/07-dnam_lungcancer_mr/sup_fig1.pdf>]
-<figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smokers.pdf, id=2358, 722.7
+<figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smokers.pdf, id=2362, 722.7
 pt x 578.16pt>
 File: figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smokers.pdf Graphic fi
 le (type pdf)
 <use figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smokers.pdf>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smo
-kers.pdf  used on input line 2403.
+kers.pdf  used on input line 2407.
 (pdftex.def)             Requested size: 420.0pt x 336.00351pt.
-<figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf, id=2359, 722.7pt x 57
+<figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf, id=2363, 722.7pt x 57
 8.16pt>
 File: figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf Graphic file (typ
 e pdf)
 <use figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pd
-f  used on input line 2414.
+f  used on input line 2418.
 (pdftex.def)             Requested size: 420.0pt x 336.00351pt.
-[151 <./figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smokers.pdf>]
+[152 <./figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smokers.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[152 <./figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf>]
-<figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf, id=2381, 722.7pt x 
+[153 <./figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf>]
+<figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf, id=2385, 722.7pt x 
 578.16pt>
 File: figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf Graphic file (t
 ype pdf)
 <use figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.
-pdf  used on input line 2461.
+pdf  used on input line 2465.
 (pdftex.def)             Requested size: 420.0pt x 336.00351pt.
-[153]
-Underfull \hbox (badness 10000) in paragraph at lines 2472--2516
+[154]
+Underfull \hbox (badness 10000) in paragraph at lines 2476--2520
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2472--2516
+Underfull \hbox (badness 10000) in paragraph at lines 2476--2520
 
  []
 
-[154 <./figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf>] [155] [156]
-<figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf, id=2414, 774.895pt x 544
+[155 <./figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf>] [156] [157]
+<figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf, id=2418, 774.895pt x 544
 .0325pt>
 File: figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf Graphic file (type p
 df)
 <use figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf  
-used on input line 2526.
+used on input line 2530.
 (pdftex.def)             Requested size: 600.0pt x 421.24727pt.
 
-LaTeX Warning: Float too large for page by 65.64728pt on input line 2531.
+LaTeX Warning: Float too large for page by 65.64728pt on input line 2535.
 
-[157 <./figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf>]
-<figure/07-dnam_lungcancer_mr/Figure_4a.jpg, id=2448, 4818.0pt x 3613.5pt>
+[158 <./figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf>]
+<figure/07-dnam_lungcancer_mr/Figure_4a.jpg, id=2452, 4818.0pt x 3613.5pt>
 File: figure/07-dnam_lungcancer_mr/Figure_4a.jpg Graphic file (type jpg)
 <use figure/07-dnam_lungcancer_mr/Figure_4a.jpg>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/Figure_4a.jpg  used on in
-put line 2567.
+put line 2571.
 (pdftex.def)             Requested size: 420.0pt x 315.00053pt.
-[158
+[159
 
 
 ]
-<figure/07-dnam_lungcancer_mr/Figure_4b.jpg, id=2454, 4818.0pt x 3613.5pt>
+<figure/07-dnam_lungcancer_mr/Figure_4b.jpg, id=2458, 4818.0pt x 3613.5pt>
 File: figure/07-dnam_lungcancer_mr/Figure_4b.jpg Graphic file (type jpg)
 <use figure/07-dnam_lungcancer_mr/Figure_4b.jpg>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/Figure_4b.jpg  used on in
-put line 2570.
+put line 2574.
 (pdftex.def)             Requested size: 420.0pt x 315.00053pt.
-[159 <./figure/07-dnam_lungcancer_mr/Figure_4a.jpg>]
+[160 <./figure/07-dnam_lungcancer_mr/Figure_4a.jpg>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[160 <./figure/07-dnam_lungcancer_mr/Figure_4b.jpg>] [161] [162] [163] [164] [1
-65]
+[161 <./figure/07-dnam_lungcancer_mr/Figure_4b.jpg>] [162] [163] [164] [165] [1
+66]
 Chapter 8.
-[166
+[167
 
-] [167] [168] [169] [170] [171] [172]
+] [168] [169] [170] [171] [172] [173]
 Appendix A.
-<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.05.pdf, id=2534, 
+<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.05.pdf, id=2538, 
 504.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.05.pdf Graph
 ic file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.05.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_up_all
-/PEC_0.05.pdf  used on input line 2748.
+/PEC_0.05.pdf  used on input line 2752.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
-[173
+[174
 
 ]
 Overfull \vbox (139.95363pt too high) has occurred while \output is active []
 
-[174 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.05.pdf>]
-<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.1.pdf, id=2552, 5
+[175 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.05.pdf>]
+<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.1.pdf, id=2556, 5
 04.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.1.pdf Graphi
 c file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.1.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_up_all
-/PEC_0.1.pdf  used on input line 2749.
+/PEC_0.1.pdf  used on input line 2753.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
-<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.2.pdf, id=2553, 5
+<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.2.pdf, id=2557, 5
 04.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.2.pdf Graphi
 c file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.2.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_up_all
-/PEC_0.2.pdf  used on input line 2750.
+/PEC_0.2.pdf  used on input line 2754.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
-[175 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.1.pdf>]
-<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.5.pdf, id=2566, 5
+[176 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.1.pdf>]
+<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.5.pdf, id=2570, 5
 04.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.5.pdf Graphi
 c file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.5.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_up_all
-/PEC_0.5.pdf  used on input line 2751.
+/PEC_0.5.pdf  used on input line 2755.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
-[176 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.2.pdf>]
-<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_1.pdf, id=2579, 504
+[177 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.2.pdf>]
+<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_1.pdf, id=2583, 504
 .88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_1.pdf Graphic 
 file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_1.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_up_all
-/PEC_1.pdf  used on input line 2754.
+/PEC_1.pdf  used on input line 2758.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
-[177 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.5.pdf>]
+[178 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.5.pdf>]
 <figure/06-ewas_gwas_comparison/architecture_sims_other_traits_corr.png, id=259
-4, 505.89pt x 505.89pt>
+9, 505.89pt x 505.89pt>
 File: figure/06-ewas_gwas_comparison/architecture_sims_other_traits_corr.png Gr
 aphic file (type png)
 <use figure/06-ewas_gwas_comparison/architecture_sims_other_traits_corr.png>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/architecture_sims_other
-_traits_corr.png  used on input line 2765.
+_traits_corr.png  used on input line 2769.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
-[178 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_1.pdf>]
+[179 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_1.pdf>]
 <figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.05.pdf, id=261
-2, 504.88625pt x 504.88625pt>
+6, 504.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.05.pdf Gr
 aphic file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.05.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_v_prot
-ein/PEC_0.05.pdf  used on input line 2774.
+ein/PEC_0.05.pdf  used on input line 2778.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
-[179 <./figure/06-ewas_gwas_comparison/architecture_sims_other_traits_corr.png 
+[180 <./figure/06-ewas_gwas_comparison/architecture_sims_other_traits_corr.png 
 (PNG copy)>]
-<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.1.pdf, id=2617
+<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.1.pdf, id=2621
 , 504.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.1.pdf Gra
 phic file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.1.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_v_prot
-ein/PEC_0.1.pdf  used on input line 2775.
+ein/PEC_0.1.pdf  used on input line 2779.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
-[180 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.05.pdf>
+[181 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.05.pdf>
 ]
-<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.2.pdf, id=2630
+<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.2.pdf, id=2634
 , 504.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.2.pdf Gra
 phic file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.2.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_v_prot
-ein/PEC_0.2.pdf  used on input line 2776.
+ein/PEC_0.2.pdf  used on input line 2780.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
-[181 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.1.pdf>]
-<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.5.pdf, id=2643
+[182 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.1.pdf>]
+<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.5.pdf, id=2647
 , 504.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.5.pdf Gra
 phic file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.5.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_v_prot
-ein/PEC_0.5.pdf  used on input line 2777.
+ein/PEC_0.5.pdf  used on input line 2781.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
-[182 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.2.pdf>]
-<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_1.pdf, id=2656, 
+[183 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.2.pdf>]
+<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_1.pdf, id=2660, 
 504.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_1.pdf Graph
 ic file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_1.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_v_prot
-ein/PEC_1.pdf  used on input line 2780.
+ein/PEC_1.pdf  used on input line 2784.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
-[183 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.5.pdf>]
-[184 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_1.pdf>]
+[184 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.5.pdf>]
+[185 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_1.pdf>]
 Appendix B.
-[185
+[186
 
-] [186
+] [187
 
 
-] [187] [188] [189] [190] [191]
-Underfull \hbox (badness 10000) in paragraph at lines 3034--3036
+] [188] [189] [190] [191] [192]
+Underfull \hbox (badness 10000) in paragraph at lines 3038--3040
  \T1/pcr/m/n/10.95 / / e m e a . i l l u m i n a . c o m / c o n t e n t / d a 
 m / i l l u m i na -[] m a r k e t i n g / d o c u m e n t s /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3034--3036
+Underfull \hbox (badness 10000) in paragraph at lines 3038--3040
  \T1/pcr/m/n/10.95 p r o d u c t s / d a t a s h e e t s / d a t a s h e e t % 
 7 B /[] % 7 D h u m a n m e t h y l a t i o n 4 5 0 . p d f$[]\T1/ptm/m/n/10.95
  (+20) ).
  []
 
-[192] [193] [194] [195]
-Underfull \hbox (badness 10000) in paragraph at lines 3181--3183
+[193] [194] [195] [196]
+Underfull \hbox (badness 10000) in paragraph at lines 3185--3187
  \T1/ptm/m/n/10.95 (+20) ([]$\T1/pcr/m/n/10.95 h t tp : / / g e n o m e b i o l
  o g y . b i o m e d c e n t r a l . c o m / a r t i c l e s / 1 0 . 1 1 8 6 / 
 s 1 3 0 5
  []
 
-[196]
-Underfull \hbox (badness 1509) in paragraph at lines 3220--3222
+[197]
+Underfull \hbox (badness 1509) in paragraph at lines 3224--3226
  \T1/ptm/m/n/10.95 (+20) his-to-log-i-cal sub-types. \T1/ptm/m/it/10.95 (+20) N
 a-ture ge-net-ics \T1/ptm/m/n/10.95 (+20) [elec-tronic ar-ti-cle]. 2017;49(7):1
 126--1132.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3220--3222
+Underfull \hbox (badness 10000) in paragraph at lines 3224--3226
  \T1/ptm/m/n/10.95 (+20) ([]$\T1/pcr/m/n/10.95 h t tp : / / w w w . n a t u r e
  . c o m / d o i f i n d e r / 1 0 . 1 0 3 8 / n g . 3 8 9 2 % 7 B / % % 7 D 5 
 C n h t t
  []
 
-[197]
-Underfull \hbox (badness 10000) in paragraph at lines 3226--3228
+[198]
+Underfull \hbox (badness 10000) in paragraph at lines 3230--3232
  \T1/pcr/m/n/10.95 . i l l u m i n a . c o m / d o c u m e n t s / M i c r o a 
 r r a y / i n f i n i u m -[] m e t h y l a t i o n -[] e p ic -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3226--3228
+Underfull \hbox (badness 10000) in paragraph at lines 3230--3232
  \T1/pcr/m/n/10.95 d a ta -[] s h e e t -[] 1 0 70 -[] 2 0 15 -[] 0 0 8 / C o n
  t e n t / S o u r c e / M i c r o a r r a y / I n f i n i u m / M
  []
 
-[198]
-Underfull \hbox (badness 10000) in paragraph at lines 3277--3279
+[199]
+Underfull \hbox (badness 10000) in paragraph at lines 3281--3283
  \T1/ptm/m/n/10.95 (+20) ([]$\T1/pcr/m/n/10.95 h t tp : / / m e d r x i v . o r
  g / c o n t e n t / e a r l y / 2 0 2 0 / 0 9 / 0 3 / 2 0 2 0 . 0 9 . 0 1 . 2 
 0 1 8 0 4
  []
 
-[199] [200]
-Underfull \hbox (badness 10000) in paragraph at lines 3316--3318
+[200] [201]
+Underfull \hbox (badness 10000) in paragraph at lines 3320--3322
  \T1/pcr/m/n/10.95 c e n t r a l . n i h . g o v / a r t i c l e r e n d e r . 
 f c gi? a r t id = 2 8 4 8 1 2 4 % 7 B /& % 7 D t o ol =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3316--3318
+Underfull \hbox (badness 10000) in paragraph at lines 3320--3322
  \T1/pcr/m/n/10.95 p m c e n t r e z % 7 B /& % 7 D r e n d e r t y pe = a b s 
 t r a c t % 7 B / % % 7 D 5 C n h t t p : / / w w w . n c
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3316--3318
+Underfull \hbox (badness 10000) in paragraph at lines 3320--3322
  \T1/pcr/m/n/10.95 b i . n l m . n i h . g o v / e n t r e z / q u e r y . f c 
 gi? c md = R e t r i e v e % 7 B / & % 7 D db = P u b M
  []
 
-[201]
-Underfull \hbox (badness 10000) in paragraph at lines 3334--3336
+[202]
+Underfull \hbox (badness 10000) in paragraph at lines 3338--3340
  \T1/pcr/m/n/10.95 / i n w a r d / r e c o r d . u rl? e id = 2 -[] s 2 .0 -[] 
 8 4 9 3 1 3 6 0 0 2 2 % 7 B /& % 7 D p a r t n e r I D =
  []
 
 
-Underfull \hbox (badness 2088) in paragraph at lines 3346--3348
+Underfull \hbox (badness 2088) in paragraph at lines 3350--3352
  [][]\T1/ptm/m/n/10.95 (+20) 181. Chang CC, Chow CC, Tel-lier LC, et al. Second
 -generation PLINK: ris-ing
  []
 
 
-Underfull \hbox (badness 2837) in paragraph at lines 3346--3348
+Underfull \hbox (badness 2837) in paragraph at lines 3350--3352
  \T1/ptm/m/n/10.95 (+20) to the chal-lenge of larger and richer datasets. \T1/p
 tm/m/it/10.95 (+20) Gi-ga-Science \T1/ptm/m/n/10.95 (+20) [elec-tronic ar-ti-cl
 e].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3346--3348
+Underfull \hbox (badness 10000) in paragraph at lines 3350--3352
  \T1/ptm/m/n/10.95 (+20) 2015;4(1):7. ([]$\T1/pcr/m/n/10.95 h t t p s : / / a c
  a d e m i c . o u p . c o m / g i g a s c i e n c e / a r t i c le -[]
  []
 
-[202]
-Underfull \hbox (badness 10000) in paragraph at lines 3361--3363
+[203]
+Underfull \hbox (badness 10000) in paragraph at lines 3365--3367
  \T1/pcr/m/n/10.95 2 7 7 8 % 2 0 h t t p : / / w w w . p u b m e d c e n t r a 
 l . n i h . g o v / a r t i c l e r e n d e r . f c gi? a
  []
 
-[203] [204] [205]
-Underfull \hbox (badness 10000) in paragraph at lines 3460--3462
+[204] [205] [206]
+Underfull \hbox (badness 10000) in paragraph at lines 3464--3466
  \T1/ptm/m/n/10.95 (+20) ([]$\T1/pcr/m/n/10.95 h t tp : / / b i o r x i v . o r
  g / c o n t e n t / e a r l y / 2 0 2 0 / 0 8 / 0 4 / 2 0 2 0 . 0 8 . 0 1 . 2 
 3 0 1 9 3
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3475--3477
+Underfull \hbox (badness 10000) in paragraph at lines 3479--3481
  \T1/pcr/m/n/10.95 u b m e d / 1 6 1 3 6 6 5 2 % 7 B / % % 7 D 5 C n h t t p : 
 / / w w w . n c b i . n l m . n i h . g o v / p u b m e d /
  []
 
-[206] [207]
-Underfull \hbox (badness 10000) in paragraph at lines 3514--3516
+[207] [208]
+Underfull \hbox (badness 10000) in paragraph at lines 3518--3520
  \T1/pcr/m/n/10.95 2 3 7 1 5 3 2 3 % 7 B / % % 7 D 5 C n h t t p : / / w w w . 
 p u b m e d c e n t r a l . n i h . g o v / a r t i c l e r
  []
 
-[208] [209] [210] (./thesis.aux)
+[209] [210] [211] (./thesis.aux)
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: E80B6465CB270B238B79530AD2A8511E;11570.
  )
@@ -1620,9 +1623,9 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 ### semi simple group (level 1) entered at line 202 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 16895 strings out of 481441
- 308843 string characters out of 5919745
- 701716 words of memory out of 5000000
+ 16896 strings out of 481441
+ 308851 string characters out of 5919745
+ 701717 words of memory out of 5000000
  32023 multiletter control sequences out of 15000+600000
  620252 words of font info for 282 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1645,10 +1648,10 @@ ist/fonts/type1/urw/times/utmb8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist
 /fonts/type1/urw/times/utmbi8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/font
 s/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (225 pages, 14465037 bytes).
+Output written on thesis.pdf (226 pages, 14465561 bytes).
 PDF statistics:
- 3386 PDF objects out of 3580 (max. 8388607)
- 2954 compressed objects within 30 object streams
- 898 named destinations out of 1000 (max. 500000)
+ 3390 PDF objects out of 3580 (max. 8388607)
+ 2957 compressed objects within 30 object streams
+ 899 named destinations out of 1000 (max. 500000)
  13720 words of extra memory for PDF output out of 14400 (max. 10000000)
 

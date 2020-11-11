@@ -347,7 +347,9 @@ Finally, __Chapter \@ref(dnam-lung-cancer-mr)__ will apply MR to explore the cau
 
 (ref:thesis-flowchart-scap) Thesis flowchart
 
-\begin{figure}
+\blandscape
+
+\begin{figure}[htbp]
 
 {\centering \includegraphics[width=1\linewidth]{figure/01-introduction/thesis-flowchart} 
 
@@ -356,6 +358,7 @@ Finally, __Chapter \@ref(dnam-lung-cancer-mr)__ will apply MR to explore the cau
 \caption[(ref:thesis-flowchart-scap)]{(ref:thesis-flowchart-cap)}(\#fig:thesis-flowchart)
 \end{figure}
 
+\elandscape
 
 <!--chapter:end:01-introduction.Rmd-->
 
