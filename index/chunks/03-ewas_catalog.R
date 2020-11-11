@@ -11,6 +11,9 @@ pub_studies <- studies %>%
 pub_results <- results %>%
 	dplyr::filter(StudyID %in% pub_studies$StudyID) 
 
+geo_aries_results <- results %>%
+	dplyr::filter(!StudyID %in% pub_studies$StudyID)
+
 n_pubs <- length(unique(pub_studies$PMID))
 n_aries <- sum(studies$Consortium %in% "ARIES" & studies$Author == "Battram T")
 n_geo <- sum(studies$Consortium %in% "GEO")

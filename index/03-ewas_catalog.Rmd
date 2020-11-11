@@ -11,9 +11,17 @@ read_chunk("chunks/03-ewas_catalog.R")
 ```
 
 ## Chapter summary {#chapter-summary-03}
-Before investigating the properties of DNA methylation-trait associations, I sought to bring together published EWAS results to help identify studies for use in future chapters and to allow joint analysis of currently available EWAS results in __Chapter \@ref(properties-of-ewas)__. To this end, I led a project to produce The EWAS Catalog. This database contains EWAS summary statistics from `r n_pubs` publications and `r n_geo_aries` EWAS performed in ARIES (__Section \@ref(aries-summary)__) and GEO (__Section \@ref(geo-02)__). The database is accompanied by an open access web-based tool and R package that allow these associations to be easily queried. In this chapter I describe the implementation and production of The EWAS Catalog. 
+Before investigating the properties of DNA methylation-trait associations, I sought to bring together published EWAS results to help identify studies for use in future chapters and to allow joint analysis of currently available EWAS results in __Chapter \@ref(properties-of-ewas)__. To this end, I led a project to produce The EWAS Catalog. This database contains manually curated CpG-trait associations (at P<1x10^-4^) from published EWAS, each assaying over 100,000 CpGs in at least 100 individuals. The database currently contains these `r comma(nrow(pub_results))` associations from `r n_pubs` published studies as well as summary statistics for `r comma(nrow(geo_aries_results))` associations from `r n_geo_aries` EWAS using data from ARIES (__Section \@ref(aries-summary)__) and GEO (__Section \@ref(geo-02)__). This database provides a platform for future chapters in this thesis and will give researchers the opportunity to quickly and easily query EWAS associations to gain insight into the molecular underpinnings of disease as well as the impact of traits and exposures on the DNA methylome. 
 
-I developed the website, conducted EWAS in ARIES and GEO, extracted published data, and led the project, however I was not the sole contributor. A full contributions statement can be found at the end of this chapter (__Section \@ref(contributions-statement-03)__).
+### Contributions statement {#contributions-statement-03}
+
+I developed the website (after its original production), conducted all EWAS in ARIES and GEO, extracted the most published data, have led the project for the past 18 months and wrote everything presented in this chapter, however I was not the sole contributor. Contributions by others are listed below:
+
+* James Staley produced the original website and originally led the project
+* Matthew Suderman re-formated and developed the website
+* Paul Yousefi extracted GEO data
+* Matthew Suderman and Paul Yousefi are part of the core development team (along with myself) and continue to provide expert guidance
+* James Staley, Gemma Crawford, Claire Prince, Mahsa Sheikhali Babaei, Charlie Hatcher, Maria Vega Salas, Sahar Khodabakhsh, Oliver Whitehurst, Luke Mahoney all extracted some published data
 
 ## Introduction {#introduction-03}
 In recent years, there has been a dramatic increase in the number of EWAS being performed and published due to technological advancements making it possible to measure DNA methylation at hundreds of thousands of CpG sites cheaply and effectively [@Logue2017; @Rakyan2011; @Illumina2012; @IlluminaEPIC]. Curating these EWAS results and making them freely available would enable researchers to use the data to inform or enhance studies on specific traits of genomic regions of interest. Furthermore, the joint analysis of these data could provide insights into the properties of DNA methylation-trait associations, potentially leading to an understanding of how to improve design of EWAS. The latter is explored in __Chapter \@ref(properties-of-ewas)__.
@@ -95,17 +103,6 @@ In this chapter, a database of previously published EWAS and the full summary st
 The EWAS catalog team will continue to collate and upload newly published EWAS and further increase the number of full summary statistics on the website by performing additional EWAS on available datasets and by inviting EWAS authors to provide full summary statistics. Currently work is ongoing to include additional functionality to allow users to easily and systematically compare their EWAS findings to EWAS in the database. With this full summary data, it is possible to make greater strides into discovering the epigenetic architecture of traits.
 
 In this chapter, a platform has been generated that enables us to examine 1) what information has been gained from EWAS and 2) what could explain EWAS associations, which will be explored in __Chapter \@ref(properties-of-ewas)__. 
-
-## Contributions statement {#contributions-statement-03}
-
-Contributors and their role are listed below:
-
-* James Staley produced the original website (this has since been developed by myself and Matthew Suderman). 
-* Matthew Suderman helped re-format and develop the website
-* Paul Yousefi extracted GEO data
-* Matthew Suderman and Paul Yousefi are part of the core development team (along with myself) and continue to provide expert guidance
-* James Staley, Gemma Crawford, Claire Prince, Mahsa Sheikhali Babaei, Charlie Hatcher, Maria Vega Salas, Sahar Khodabakhsh, Oliver Whitehurst, Luke Mahoney all extracted some published data 
-
 
 
 

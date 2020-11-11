@@ -3,17 +3,15 @@ body {
 text-align: justify}
 </style>
 
-Quantifying underlying DNA methylation signatures of complex traits presents an opportunity to identify biomarkers and modes of disease intervention. Following years of epigenome-wide association studies (EWAS), traits analysed to date tend to yield few associations. This thesis explores potential explanations for this and further examines whether EWAS are likely to increase our understanding of the biology of complex traits. <br>
+Quantifying underlying DNA methylation signatures of complex traits presents an opportunity to identify biomarkers and modes of disease intervention. Years of epigenome-wide association studies (EWAS) have shown signatures vary greatly by trait and the interpretation of signals remains difficult. This thesis explores potential explanations for this and examines the roll of EWAS in understanding complex traits. <br>
 
-To ascertain the necessary data, I led a collection of EWAS results and created a web resource for storing and querying these data. <br>
+To ascertain necessary data, I led a collection of EWAS results and developed a web resource for storing and querying the 975,574 associations across 1244 EWAS. Evidence was found that results for EWAS that accounted for common biases, such as batch effects and cell composition, could partially be explained by variance and heritability of DNA methylation. Further, identified sites were enriched in promoter regions, enhancer regions and transcription factor binding sites. <br>
 
-It was shown that the EWAS results not likely due to unaccounted for biases, such as batch effects and cell composition, could partially be explained by variance and heritability of DNA methylation. Further, identified sites were enriched in promoter regions, enhancer regions and transcription factor binding sites. <br>
+Across the EWAS surveyed, DNA methylation was commonly measured in blood at roughly 450,000 sites genome-wide. I examined the predictive capacity of DNA methylation in this context and found that it captured little variance of 400 independent complex traits. <br> 
 
-Using 400 traits, evidence was provided, that for many complex traits, the variance captured by DNA methylation was small (close to zero), suggesting the sites measured currently in EWAS are unlikely to be pertinent to the variation of many complex traits. <br> 
-
-It was found that the genes and genesets identified by EWAS were substantially different from those identified by GWAS of corresponding traits. Facets of trait aetiology may still be explored through EWAS, but the largely different set of genes and pathways identified suggests the majority of EWAS results here are due to confounding and reverse causation. <br>
+Next, commonalities between the overlap in biology highlighted by EWAS and GWAS of corresponding traits was explored and I found that the genes and genesets identified were substantially different. Trait aetiology may still be explored through EWAS, but the largely differential biology highlighted suggests the majority of EWAS results here are due to confounding and reverse causation. <br>
 
 Mendelian randomization (MR) analyses further suggested residual confounding as being responsible for EWAS results as marked differences were found between an EWAS meta-analysis of lung cancer and the corresponding MR analyses. <br>
 
-The limits of the current EWAS study design have revealed, through the masses of data collected and analysed as part of this thesis, the complexity of the role of DNA methylation in mediating the path from genotype or environment to phenotype.
+Through cataloguing published results and integrating methods and results from other fields, this thesis identifies limitations to the current EWAS study design that reveal the complexity of the role of DNA methylation on mediating the path from genotype or environment to phenotype.
 
