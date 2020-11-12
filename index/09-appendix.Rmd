@@ -9,6 +9,8 @@ If you feel it necessary to include an appendix, it goes here.
 
 # Further assessment of the overlap between genes and genesets identified by EWAS and GWAS
 
+\pagebreak
+
 (ref:sim1-full-plot-cap) __Full results from simulations assessing power to detect overlap between genes and genesets identified by corresponding EWAS and GWAS__. Simulations were set up as illustrated in __Figure \@ref(fig:method-simulations-schematic)__. The ability to distinguish between results generated when EWAS and GWAS were sampling, in part, from the same set of causal genes and results generated when EWAS was sampling random genes from the genome. The header of each set indicates the proportion of genes identified by the simulated EWAS that were set to be causal. or_g = assessing overlap of genes, or_p = assessing overlap of genesets, rho_p = assessing correlation between geneset enrichment scores. go = gene ontology, ppi = protein-protein interaction database from EpiGraphDB. 
 
 (ref:sim1-full-plot-scap) Full results from simulations assessing power to detect overlap between genes and genesets identified by corresponding EWAS and GWAS
@@ -53,6 +55,3 @@ If you feel it necessary to include an appendix, it goes here.
 
 ```{r sim1-go-kegg-gene-comp5, message=FALSE, results="asis", fig.cap = "(ref:sim1-go-kegg-gene-comp-cap)", fig.scap = "(ref:sim1-go-kegg-gene-comp-scap)"}
 ```
-
-
-# The Second Appendix, for Fun
