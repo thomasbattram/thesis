@@ -53,7 +53,9 @@ acknowledgements: |
   text-align: justify}
   </style>
   
-  I'd like to thank myself for being the GOAT. Everyone else can get in the bin.
+  I would like to thank all of the lovely people who have helped me throughout my PhD. There are so many people to thank and if I detailed my gratitude towards each of them (my friends, family, supervisors, and colleagues) for all their support then I would have no time to write my thesis... All those who have helped me know who they are and hopefully know I appreciate them and love them dearly. There are just a couple of extremely special mentions I would like to make. 
+  
+  Firstly, I am forever indebted to my parents for everything they have done to support me in every aspect of my life. From taking care of me in hospital to pouring me another glass of wine and taking my mind off of work, they are always there when I need them. Secondly, I thank my beautiful flatmates, Tom Mantle and Kaitlin Wade. During a global pandemic they have kept me sane (as sane as I could be), made me laugh every single day and have brought me countless (yeah I said it Tom) cups of tea. Writing this thesis would have been LITERALLY impossible without them. 
 publications: |
   <style>
   body {
@@ -387,7 +389,7 @@ Finally, __Chapter \@ref(dnam-lung-cancer-mr)__ will apply MR to explore the cau
 
 
 
-I utilize multiple data sources throughout this thesis and in this chapter, each of these sources will be described in relevant detail so that they can be referenced for future results chapters. __Table \@ref(tab:data-overview-tab)__ gives a list of the data sources used, which results chapters they appear in and what type of data I extracted from each source. It should be noted that I also use databases of molecular and genomic annotations, for example the Gene Ontology resource that brings together evidence across fields to annotate genes based on proposed function, pathways they are involved in and where the gene products are active in the cell [@Ashburner2000; @Carbon2019]. These are not described here, but are described in the chatpers they were used.
+I utilize multiple data sources throughout this thesis and in this chapter, each of these sources will be described in relevant detail so that they can be referenced for future results chapters. __Table \@ref(tab:data-overview-tab)__ gives a list of the data sources used, which results chapters they appear in and what type of data I extracted from each source. It should be noted that I also use databases of molecular and genomic annotations, for example the Gene Ontology resource that brings together evidence across fields to annotate genes based on proposed function, pathways they are involved in and where the gene products are active in the cell [@Ashburner2000; @Carbon2019]. These are not described here, but are described in the chatpers they were used. \linebreak
 
 \begin{table}[!h]
 
@@ -428,6 +430,8 @@ CCHS & 7 & individual & DNAm, genotypic, phenotypic\\
 \multicolumn{4}{l}{\textsuperscript{*} Data source created in Chapter 3}\\
 \end{tabular}}
 \end{table}
+
+\pagebreak
 
 ## Accessible Resource for Integrated Epigenomic Studies (ARIES) {#aries-02}
 

@@ -3,4 +3,6 @@ body {
 text-align: justify}
 </style>
 
-I'd like to thank myself for being the GOAT. Everyone else can get in the bin.
+I would like to thank all of the lovely people who have helped me throughout my PhD. There are so many people to thank and if I detailed my gratitude towards each of them (my friends, family, supervisors, and colleagues) for all their support then I would have no time to write my thesis... All those who have helped me know who they are and hopefully know I appreciate them and love them dearly. There are just a couple of extremely special mentions I would like to make. 
+
+Firstly, I am forever indebted to my parents for everything they have done to support me in every aspect of my life. From taking care of me in hospital to pouring me another glass of wine and taking my mind off of work, they are always there when I need them. Secondly, I thank my beautiful flatmates, Tom Mantle and Kaitlin Wade. During a global pandemic they have kept me sane (as sane as I could be), made me laugh every single day and have brought me countless (yeah I said it Tom) cups of tea. Writing this thesis would have been LITERALLY impossible without them. 

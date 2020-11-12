@@ -7,10 +7,12 @@ read_chunk("chunks/02-data_sources.R")
 ``` {r load-data-02, results="hide", message=FALSE}
 ```
 
-I utilize multiple data sources throughout this thesis and in this chapter, each of these sources will be described in relevant detail so that they can be referenced for future results chapters. __Table \@ref(tab:data-overview-tab)__ gives a list of the data sources used, which results chapters they appear in and what type of data I extracted from each source. It should be noted that I also use databases of molecular and genomic annotations, for example the Gene Ontology resource that brings together evidence across fields to annotate genes based on proposed function, pathways they are involved in and where the gene products are active in the cell [@Ashburner2000; @Carbon2019]. These are not described here, but are described in the chatpers they were used.
+I utilize multiple data sources throughout this thesis and in this chapter, each of these sources will be described in relevant detail so that they can be referenced for future results chapters. __Table \@ref(tab:data-overview-tab)__ gives a list of the data sources used, which results chapters they appear in and what type of data I extracted from each source. It should be noted that I also use databases of molecular and genomic annotations, for example the Gene Ontology resource that brings together evidence across fields to annotate genes based on proposed function, pathways they are involved in and where the gene products are active in the cell [@Ashburner2000; @Carbon2019]. These are not described here, but are described in the chatpers they were used. \linebreak
 
 ```{r data-overview-tab, message=FALSE, results="asis"}
 ```
+
+\pagebreak
 
 ## Accessible Resource for Integrated Epigenomic Studies (ARIES) {#aries-02}
 
