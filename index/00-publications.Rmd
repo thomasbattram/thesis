@@ -7,7 +7,18 @@ Below is a list of publications I have been involved with throughout my PhD, som
 
 \textbf{Relevant to this thesis} <br>
 
-Battram,T., Richmond,R.C., Baglietto,L., Haycock,P.C., Perduca,V., Bojesen,S.E., Gaunt,T.R., Hemani,G., Guida,F., Carreras-Torres,R., et al. (2019) Appraising the causal relevance of DNA methylation for risk of lung cancer. Int. J. Epidemiol., 10.1093/ije/dyz190. <br>
+Battram,T., Richmond,R.C., Baglietto,L., Haycock,P.C., Perduca,V., Bojesen,S.E., Gaunt,T.R., Hemani,G., Guida,F., Carreras-Torres,R., et al. (2019) Appraising the causal relevance of DNA methylation for risk of lung cancer. Int. J. Epidemiol. <br>
 
+Battram,T., Gaunt,T.R., Speed,D., Timpson,N.J. and Hemani,G. (2020) Exploring the variance in complex traits captured by DNA methylation assays. bioRxiv  <br>
+
+Battram,T., Yousefi,P., Crawford,C., Prince,C., Babaei,M., Khodabakhsh,S., Whitehurst,O., Mahoney,L., Hemani,G., Gaunt,T.R., et al. The EWAS Catalog: a database of epigenome-wide association studies. Submitted to Bioinformatics November 2020. <br>
 
 \textbf{Not relevant to this thesis} <br>
+
+Battram,T., Hoskins,L., Hughes,D.A., Kettunen,J., Ring,S.M., Smith,G.D. and Timpson,N.J. (2019) Coronary artery disease, genetic risk and the metabolome in young individuals. Wellcome Open Res. <br>
+
+Howe,L.J., Battram,T., Morris,T.T., Hartwig,F.P., Hemani,G., Davies,N.M. and Smith,G.D. (2020) Assortative mating and within-spouse pair comparisons. bioRxiv. <br>
+
+Trejo Banos,D., McCartney,D.L., Patxot,M., Anchieri,L., Battram,T., Christiansen,C., Costeira,R., Walker,R.M., Morris,S.W., Campbell,A., et al. (2020) Bayesian reassessment of the epigenetic architecture of complex traits. Nat. Commun. <br>
+
+Jamieson,E., Korologou-Linden,R., Wootton,R.E., Guyatt,A.L., Battram,T., Burrows,K., Gaunt,T.R., Tobin,M.D., Munafò,M., Davey Smith,G., et al. (2020) Smoking, DNA Methylation, and Lung Function: a Mendelian Randomization Analysis to Investigate Causal Pathways. Am. J. Hum. Genet.

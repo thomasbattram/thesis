@@ -17,11 +17,11 @@ Before investigating the properties of DNA methylation-trait associations, I sou
 
 I developed the website (after its original production), conducted all EWAS in ARIES and GEO, extracted the most published data, have led the project for the past 18 months and wrote everything presented in this chapter, however I was not the sole contributor. Contributions by others are listed below:
 
-* James Staley produced the original website and originally led the project
-* Matthew Suderman re-formated and developed the website. Relative contributions to this development can be found here: https://github.com/ewascatalog/ewascatalog2/graphs/contributors
+* James Staley produced the original website and R package and originally led the project
+* Matthew Suderman re-formatted and developed the website. Relative contributions to this development can be found here: https://github.com/ewascatalog/ewascatalog2/graphs/contributors
 * Paul Yousefi extracted GEO data
 * Matthew Suderman and Paul Yousefi are part of the core development team (along with myself) and continue to provide expert guidance
-* James Staley, Gemma Crawford, Claire Prince, Mahsa Sheikhali Babaei, Charlie Hatcher, Maria Vega Salas, Sahar Khodabakhsh, Oliver Whitehurst, Luke Mahoney all extracted some published data
+* James Staley, Gemma Crawford, Claire Prince, Mahsa Sheikhali Babaei, Charlie Hatcher, Maria Vega-Salas, Sahar Khodabakhsh, Oliver Whitehurst, Luke Mahoney all extracted some published data
 
 ## Introduction {#introduction-03}
 In recent years, there has been a dramatic increase in the number of EWAS being performed and published due to technological advancements making it possible to measure DNA methylation at hundreds of thousands of CpG sites cheaply and effectively [@Logue2017; @Rakyan2011; @Illumina2012; @IlluminaEPIC]. Curating these EWAS results and making them freely available would enable researchers to use the data to inform or enhance studies on specific traits of genomic regions of interest. Furthermore, the joint analysis of these data could provide insights into the properties of DNA methylation-trait associations, potentially leading to an understanding of how to improve design of EWAS. The latter is explored in __Chapter \@ref(properties-of-ewas)__.
@@ -42,7 +42,7 @@ The EWAS Catalog aims to improve upon current databases to 1) allow easy and pro
 ## Methods {#methods-03}
 
 ### Implementation
-The EWAS Catalog web app was built using the Django Python package (https://djangoproject.com). The data is stored in a combination of  MySQL databases and fast random access files [@Li2011] and can be queried via the web app or the R package (www.github.com/ewascatalog/ewascatalog-r/). 
+The EWAS Catalog web-app was built using the Django Python package (https://djangoproject.com). The data is stored in a combination of  MySQL databases and fast random access files [@Li2011] and can be queried via the web app or the R package (www.github.com/ewascatalog/ewascatalog-r/). 
 
 ### Overview of publication data extraction
 To identify publications, periodic literature searches are performed in PubMed using the search terms: "epigenome-wide" OR "epigenome wide" OR "EWAS" OR "genome-wide AND methylation" OR "genome wide AND methylation".
@@ -54,7 +54,7 @@ To try and maximise quality and usefulness of data, and minimize computational b
 3. The analysis must contain over 100,000 CpG sites. Similarly to the previous criterion, this was to avoid studies performing more targeted DNA methylation measurements.
 4. The study must include previously unpublished EWAS summary statistics. This was to prevent duplication of results.
 
-CpG-phenotype associations are extracted from studies at P < 1x10^-4^. A P-value cutoff was imposed to avoid a large computational burden from storing millions of associations. This threshold was chosen to be more lenient than the conventional EWAS P-value threshold as there is potential information from associations reported with P-values above P < 1x10^-7^, for example when trying to replicate associations in a study with a smaller sample size. 
+CpG-phenotype associations are extracted from studies at P<1x10^-4^. A P-value cut-off was imposed to avoid a large computational burden from storing millions of associations. This threshold was chosen to be more lenient than the conventional EWAS P-value threshold as there is potential information from associations reported with P-values above P<1x10^-7^, for example when trying to replicate associations in a study with a smaller sample size. 
 
 All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
@@ -70,7 +70,7 @@ EWAS were conducted for `r n_aries` continuous and binary traits in peripheral b
 
 Ancestry principal components were used as covariates in the EWAS. These were generated within ALSPAC mothers using PLINK (v1.9). Quality control and imputation of the genetic data are described in __Section \@ref(alspac-genetic-data)__. After quality control and imputation, independent SNPs (r^2^ < 0.01) were used to calculate the top 10 ancestry principal components.
 
-As discussed, batch effects and cell type heterogeneity may account for a large proportion of covariation observed between DNA methylation and a phenotype of interest. In an attempt to combat this, surrogate variables were generated from the DNA methylation data using the smartsva R package [@Chen2017]. Surrogate variables capture variation in DNA methylation that are orthagonal to the relationship between the trait of interest and DNA methylation [@Chen2017; @Leek2007]. When used in an EWAS model, they capture the largest portion of DNA methylation variation that is not due to the trait of interest. Thus, if batch effects and cell type heterogeneity are causing substantial variation in the DNA methylation data, this should be captured by the surrogate variables [@Leek2007].
+As discussed, batch effects and cell type heterogeneity may account for a large proportion of covariation observed between DNA methylation and a phenotype of interest. In an attempt to combat this, surrogate variables were generated from the DNA methylation data using the smartsva R package [@Chen2017]. Surrogate variables capture variation in DNA methylation that are orthogonal to the relationship between the trait of interest and DNA methylation [@Chen2017; @Leek2007]. When used in an EWAS model, they capture the largest portion of DNA methylation variation that is not due to the trait of interest. Thus, if batch effects and cell type heterogeneity are causing substantial variation in the DNA methylation data, this should be captured by the surrogate variables [@Leek2007].
 
 Values of continuous phenotypes were defined as outliers if greater than three multiplied by the interquartile range (IQR) or if less than three multiplied by the IQR and set to missing, then all phenotypes with 100 or more non-missing values were kept for further analysis. To ensure all phenotypes were approximately normal, each of their distributions were examined and then transformed. If a variable was deemed right-skewed, it was log-transformed then its distribution was re-assessed by eye. Square-roots and cube-roots were used to try and approximate normality if log-transformation did not work. If a variable was deemed left-skewed, it was squared, and the distribution re-assessed by eye. 
 
@@ -100,7 +100,7 @@ The R package, along with installation instructions and examples are available a
 ## Discussion {#discussion-03}
 In this chapter, a database of previously published EWAS and the full summary statistics of `r n_geo_aries` newly performed EWAS within ALSPAC and GEO has been established. This is freely available for all researchers to use and provides a platform to explore what information has been gained from EWAS as well as a platform that can be used to pool all existing data to gain new insights into both the EWAS study itself and how DNA methylation associates with traits. Despite the fact The EWAS Atlas has similar aims to The EWAS Catalog, the latter provides full summary statistics, extra information, a user-friendly platform to enable more downstream analyses, and a pipeline for users to upload their own data and receive a citable DOI for it.
 
-The EWAS catalog team will continue to collate and upload newly published EWAS and further increase the number of full summary statistics on the website by performing additional EWAS on available datasets and by inviting EWAS authors to provide full summary statistics. Currently work is ongoing to include additional functionality to allow users to easily and systematically compare their EWAS findings to EWAS in the database. With this full summary data, it is possible to make greater strides into discovering the epigenetic architecture of traits.
+The EWAS Catalog team will continue to collate and upload newly published EWAS and further increase the number of full summary statistics on the website by performing additional EWAS on available datasets and by inviting EWAS authors to provide full summary statistics. Currently work is ongoing to include additional functionality to allow users to easily and systematically compare their EWAS findings to EWAS in the database. With this full summary data, it is possible to make greater strides into discovering the epigenetic architecture of traits.
 
 In this chapter, a platform has been generated that enables us to examine 1) what information has been gained from EWAS and 2) what could explain EWAS associations, which will be explored in __Chapter \@ref(properties-of-ewas)__. 
 

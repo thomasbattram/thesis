@@ -4,22 +4,29 @@
 \textbf{BMI} - body mass index \newline
 \textbf{CCHS} - Copenhagen City Heart Study \newline
 \textbf{CI} - confidence interval \newline
+\textbf{DMP} - differentially methylated position \newline
 \textbf{DMR} - differentially methylated region \newline
 \textbf{EFO} - experimental factor ontology \newline
+\textbf{ENCODE} - Encyclopedia of DNA Elements \newline
 \textbf{EPIC} - European Prospective Investigation into Cancer and Nutrition \newline
-\textbf{EWAS} - epigenome-wide assoctation study \newline
+\textbf{EWAS} - epigenome-wide association study \newline
 \textbf{FDR} - false discovery rate \newline
 \textbf{GEO} - Gene Expression Omnibus \newline
+\textbf{GO} - Gene Ontology \newline
+\textbf{GoDMC} - Genetics of DNA Methylation Consortium \newline
 \textbf{GTEx} - Gene-Tissue Expression (consortium) \newline
-\textbf{GWAS} - genome-wide assoctation study \newline
+\textbf{GWAS} - genome-wide association study \newline
 \textbf{h\textsuperscript{2}} - narrow-sense heritability \newline
 \textbf{H\textsuperscript{2}} - broad-sense heritability \newline
 \textbf{h\textsuperscript{2}\textsubscript{EWAS}} - the proportion of trait variation captured by DNA methylation commonly measured in epigenome-wide association studies \newline
 \textbf{h\textsuperscript{2}\textsubscript{SNP}} - SNP-heritability \newline
-\textbf{HM450} - Illumina Infinium HumanMethylation450 BeadChip \newline
-\textbf{HMEPIC} - Illumina Infinium HumanMethylationEPIC BeadChip \newline
-\textbf{HR} - hazard ratio
+\textbf{HM450 array} - Illumina Infinium HumanMethylation450 BeadChip \newline
+\textbf{HMEPIC array} - Illumina Infinium HumanMethylationEPIC BeadChip \newline
+\textbf{HR} - hazard ratio \newline
+\textbf{IQR} - interquartile range \newline
+\textbf{KEGG} - Kyoto Encyclopedia of Genes and Genomes \newline
 \textbf{LD} - linkage disequilibrium \newline
+\textbf{LOLA} - Locus Overlap Analysis \newline
 \textbf{MCCS} - Melbourne Collaborative Cohort Study \newline
 \textbf{MR} - Mendelian randomization \newline
 \textbf{MRM} - methylation relationship matrix \newline
@@ -33,6 +40,7 @@
 \textbf{ROC} - receiver operating characteristic \newline
 \textbf{SNP} - single nucleotide polymorphism \newline
 \textbf{SV} - surrogate variable \newline
+\textbf{SVA} - surrogate variable analysis \newline
 \textbf{TAG} - Tobacco and Genetics (consortium) \newline
 \textbf{TCGA} - The Cancer Genome Atlas \newline
 \textbf{TRICL-ILCCO} - Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium \newline

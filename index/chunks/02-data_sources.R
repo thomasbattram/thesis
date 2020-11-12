@@ -20,6 +20,7 @@ kbl(data_overview_tab, format = "latex", caption = data_overview_cap, booktabs =
     			   "NSHDS = Northern Sweden Health and Disease Study", 
     			   "TRICL-ILCCO = Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium",
                    "CCHS = Copenhagen City Heart Study", 
+                   "GTEx = Genotype-Tissue Expression (project)", 
     			   "DNAm = DNA methylation"), 
                 notation = "none", escape = FALSE) %>%
     add_footnote(c("Data source created in Chapter 3"), notation = "symbol")
