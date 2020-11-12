@@ -437,9 +437,9 @@ The GEO database is an online repository that allows deposition of functional ge
 
 ## UK Biobank {#uk-biobank-02}
 
-The UK Biobank is a prospective cohort study that recruited over 500,000 people aged 37-73 years were recruited for the study between 2006 and 2010. Phenotype and genotype data were collected from assessment centres all over the United Kingdom. The quality control and the participants have been described in detail elsewhere (REF). 
+The UK Biobank is a prospective cohort study that recruited over 500,000 people aged 37-73 years were recruited for the study between 2006 and 2010. Phenotype and genotype data were collected from assessment centres all over the United Kingdom. The quality control and the participants have been described in detail elsewhere [@Collins2012; @Allen2014; @Bycroft2018]. 
 
-Importantly, this data was made easily accessible to researchers, which has lead to multiple efforts to perform hundreds of GWAS in parallel and make the summary data from these openly available. This can be found on platforms such as the IEU OpenGWAS Project (__Section \@ref(ieu-opengwas-project-02)__). The GWAS summary statistics from these efforts were utilized in __Chapters \@ref(h2ewas-chapter) and \@ref(ewas-gwas-comp-chapter)__. Further, the Neale Lab (http://www.nealelab.is/uk-biobank/) calculated h^2^~SNP~ for the traits for which they performed GWAS. __ADD IN HOW THEY CALCULATED HERITABILITY???__ This was used in __Chapter \@ref(h2ewas-chapter)__. More details can be found in those chapters.
+Importantly, this data was made easily accessible to researchers, which has lead to multiple efforts to perform hundreds of GWAS in parallel and make the summary data from these openly available. This can be found on platforms such as the IEU OpenGWAS Project (__Section \@ref(ieu-opengwas-project-02)__). The GWAS summary statistics from these efforts were utilized in __Chapters \@ref(h2ewas-chapter) and \@ref(ewas-gwas-comp-chapter)__. Further, the Neale Lab (http://www.nealelab.is/uk-biobank/) calculated h^2^~SNP~ using LD-score regression for the traits for which they performed GWAS and made this data publically available. This was used in __Chapter \@ref(h2ewas-chapter)__. More details can be found in those chapters.
 
 ## IEU OpenGWAS Project {#ieu-opengwas-project-02}
 
@@ -548,7 +548,7 @@ CpG-phenotype associations are extracted from studies at P < 1x10^-4^. A P-value
 
 All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-11-11, The EWAS Catalog contained 582,801 associations from 218 published studies. 
+Based on these criteria, from 2020-11-12, The EWAS Catalog contained 582,801 associations from 218 published studies. 
 
 ### New EWAS performed {#new-ewas-03}
 
