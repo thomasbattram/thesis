@@ -18,7 +18,7 @@ Before investigating the properties of DNA methylation-trait associations, I sou
 I developed the website (after its original production), conducted all EWAS in ARIES and GEO, extracted the most published data, have led the project for the past 18 months and wrote everything presented in this chapter, however I was not the sole contributor. Contributions by others are listed below:
 
 * James Staley produced the original website and originally led the project
-* Matthew Suderman re-formated and developed the website
+* Matthew Suderman re-formated and developed the website. Relative contributions to this development can be found here: https://github.com/ewascatalog/ewascatalog2/graphs/contributors
 * Paul Yousefi extracted GEO data
 * Matthew Suderman and Paul Yousefi are part of the core development team (along with myself) and continue to provide expert guidance
 * James Staley, Gemma Crawford, Claire Prince, Mahsa Sheikhali Babaei, Charlie Hatcher, Maria Vega Salas, Sahar Khodabakhsh, Oliver Whitehurst, Luke Mahoney all extracted some published data

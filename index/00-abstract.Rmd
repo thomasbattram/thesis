@@ -3,7 +3,7 @@ body {
 text-align: justify}
 </style>
 
-Quantifying underlying DNA methylation signatures of complex traits presents an opportunity to identify biomarkers and modes of disease intervention. Years of epigenome-wide association studies (EWAS) have shown signatures vary greatly by trait and the interpretation of signals remains difficult. This thesis explores potential explanations for this and examines the roll of EWAS in understanding complex traits. <br>
+Quantifying underlying DNA methylation signatures of complex traits presents an opportunity to identify biomarkers and modes of disease intervention. Years of epigenome-wide association studies (EWAS) have shown signatures vary greatly by trait and the interpretation of signals remains difficult. This thesis explores potential explanations for this and examines the role of EWAS in understanding complex traits. <br>
 
 To ascertain necessary data, I led a collection of EWAS results and developed a web resource for storing and querying the 975,574 associations across 1244 EWAS. Evidence was found that results for EWAS that accounted for common biases, such as batch effects and cell composition, could partially be explained by variance and heritability of DNA methylation. Further, identified sites were enriched in promoter regions, enhancer regions and transcription factor binding sites. <br>
 
