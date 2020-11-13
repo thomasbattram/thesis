@@ -47,7 +47,8 @@ study_dat <- study_dat %>%
 kable(study_dat, format = "latex", caption = study_caption, booktabs = TRUE) %>%
     kable_styling(latex_options = c("striped", "hold_position", "scale_down")) %>%
     add_footnote(c("Identified associations were defined as those P < 1x10\\textsuperscript{-7}", 
-                   "Results for Sex, Ethnicities, Age, and Most common tissues were calculated per EWAS. So if one EWAS (or meta-analysis) contained just Afican indviduals then that would be counted as one"), 
+                   "Results for Sex, Ethnicities, Age, and Most common tissues were calculated per EWAS.",
+                   "For example, if one EWAS (or meta-analysis) contained just Afican indviduals then that would be counted as one."), 
                 notation = "none", escape = FALSE)
 
 
@@ -192,7 +193,7 @@ kable(rep_tab_bmi, format = "latex", caption = rep_caption_bmi, booktabs = TRUE)
 
 ## ---- geo-reanalysis-tab --------------------------------
 kable(geo_rean_tab, format = "latex", caption = geo_rean_caption, booktabs = TRUE) %>%
-    kable_styling(latex_options = c("striped", "hold_position", "scale_down")) %>%
+    kable_styling(latex_options = c("striped", "HOLD_position", "scale_down")) %>%
     add_footnote(c("N-DMPs = number of differentially methylated positions identified at P < 1x10\\textsuperscript{-7}", 
                    "N-replicated = number of DMPs replicated in the GEO re-analysis at P < P < 1x10\\textsuperscript{-4}"), 
                 notation = "none", escape = FALSE)

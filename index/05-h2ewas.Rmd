@@ -63,7 +63,7 @@ Continuous and binary phenotypes measured in mothers were extracted from the coh
 
 (ref:h2ewas-pheno-qc-scap) A summary of the data cleaning steps
 
-```{r h2ewas-pheno-qc, message=FALSE, results="asis", fig.cap='(ref:h2ewas-pheno-qc-cap)', out.width="67.5%", out.height="75%", fig.scap='(ref:h2ewas-pheno-qc-scap)'}
+```{r h2ewas-pheno-qc, message=FALSE, results="asis", fig.cap='(ref:h2ewas-pheno-qc-cap)', out.width="67.5%", out.height="75%", fig.pos="!hp", fig.scap='(ref:h2ewas-pheno-qc-scap)'}
 ```
 
 All continuous traits were rank-normalised for further analyses. A Shapiro-Wilk test of normality was performed on these rank-normalised traits and for those with some evidence of non-normality (P < 0.05), the distribution of those traits was re-examined by eye to ensure it was approximately normal. It was found that any non-normality of phenotype distributions corresponded to an inflation of zero values. These traits were removed and overall there were 2408 traits left for analyses. These traits do not necessarily represent independent phenotypes and as such I wanted to prevent correlated traits skewing results. The absolute Pearson’s correlation coefficient between each trait was subtracted from one (1 –[r]). Then traits were greedily selected where 1 –[r] < 0.4 with any other trait. This left 400 traits, which consisted of ~30% clinically measured variables (including roughly 50 metabolites and some anthropometric traits), ~25% health related questions (for example “have you ever had asthma?”), ~40% behavioural and social traits (for example educational attainment variables, use of pesticide, and having pets), and ~5% of traits were related to the partner or child of the participant (for example the employment status of the partner).
@@ -144,7 +144,7 @@ The weight of predictors used to produce the MRMs was also examined. As more wei
 
 (ref:h2ewas-sens-scap) Boxplots summarising of sensitivity analyses
 
-```{r h2ewas-sens, message=FALSE, results="asis", fig.cap='(ref:h2ewas-sens-cap)', fig.scap='(ref:h2ewas-sens-scap)'}
+```{r h2ewas-sens, message=FALSE, results="asis", fig.cap='(ref:h2ewas-sens-cap)', fig.pos="!htp", fig.scap='(ref:h2ewas-sens-scap)'}
 ```
 
 ### EWAS analyses {#results-ewas-analyses-05}
@@ -170,14 +170,18 @@ As the distributions of hit count data was heavily right skewed with an inflatio
 ```{r model-testing-tab, message=FALSE, results="asis"}
 ```
 
-The ability of h^2^~EWAS~ estimated by both models to predict whether the number of DMPs identified was greater than expected was assessed at varying P value thresholds. ROC curves were produced and the area under the curve (AUC) ranged from 0.65 and 0.67 at P<1x10^-6^ to 0.79 and 0.71 at P<1x10^-3^ for the blanket and grouping models respectively and the predictive ability remained fairly stable as the threshold increased (__Figure \@ref(fig:h2ewas-dmp-roc-curve)__).
+\pagebreak
+
+The ability of h^2^~EWAS~ estimated by both models to predict whether the number of DMPs identified was greater than expected was assessed at varying P value thresholds. ROC curves were produced and the area under the curve (AUC) ranged from 0.65 and 0.67 at P<1x10^-6^ to 0.79 and 0.71 at P<1x10^-3^ for the blanket and grouping models respectively and the predictive ability remained fairly stable as the threshold increased (__Figure \@ref(fig:h2ewas-dmp-roc-curve)__). 
 
 (ref:h2ewas-dmp-roc-curve-cap) __The ability of h^2^~EWAS~ values to predict whether the number of differentially methylated positions identified in an EWAS is higher than expected by chance__. ROC curves for h^2^~EWAS~ values predicting number of DMPs at differing P value thresholds. AUC = area under the curve.
 
 (ref:h2ewas-dmp-roc-curve-scap) The ability of h^2^~EWAS~ values to predict whether the number of differentially methylated positions identified in an EWAS is higher than expected by chance
 
-```{r h2ewas-dmp-roc-curve, message=FALSE, results="asis", fig.cap='(ref:h2ewas-dmp-roc-curve-cap)', fig.scap='(ref:h2ewas-dmp-roc-curve-scap)'}
+```{r h2ewas-dmp-roc-curve, message=FALSE, results="asis", fig.cap='(ref:h2ewas-dmp-roc-curve-cap)', fig.pos="!hb", fig.scap='(ref:h2ewas-dmp-roc-curve-scap)'}
 ```
+
+\pagebreak
 
 ## Discussion {#discussion-05}
 

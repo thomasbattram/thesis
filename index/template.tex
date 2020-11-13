@@ -54,6 +54,14 @@
 \newcommand{\blandscape}{\begin{landscape}}
 \newcommand{\elandscape}{\end{landscape}}
 
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
 % Syntax highlighting #22
 $if(highlighting-macros)$
   $highlighting-macros$
@@ -141,6 +149,10 @@ $endif$
 
 \frontmatter % this stuff will be roman-numbered
 \pagestyle{empty} % this removes page numbers from the frontmatter
+\begingroup
+\makeatletter
+\setboolean{@twoside}{false} 
+\makeatother
 $if(abstract)$
   \begin{abstract}
     $abstract$
@@ -184,6 +196,8 @@ $if(abbreviations)$
 $endif$
 
 \spacing{1.5}
+\endgroup
+\setboolean{@twoside}{true} % Move back to two-sided mode
 \mainmatter % here the regular arabic numbering starts
 \pagestyle{plain}
 $body$

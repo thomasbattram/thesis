@@ -7,12 +7,7 @@ read_chunk("chunks/02-data_sources.R")
 ``` {r load-data-02, results="hide", message=FALSE}
 ```
 
-I utilize multiple data sources throughout this thesis and in this chapter, each of these sources will be described in relevant detail so that they can be referenced for future results chapters. __Table \@ref(tab:data-overview-tab)__ gives a list of the data sources used, which results chapters they appear in and what type of data I extracted from each source. It should be noted that I also use databases of molecular and genomic annotations, for example the Gene Ontology resource that brings together evidence across fields to annotate genes based on proposed function, pathways they are involved in and where the gene products are active in the cell [@Ashburner2000; @Carbon2019]. These are not described here, but are described in the chatpers they were used. \linebreak
-
-```{r data-overview-tab, message=FALSE, results="asis"}
-```
-
-\pagebreak
+I utilize multiple data sources throughout this thesis and in this chapter, each of these sources will be described in relevant detail so that they can be referenced for future results chapters. __Table \@ref(tab:data-overview-tab)__ gives a list of the data sources used, which results chapters they appear in and what type of data I extracted from each source. It should be noted that I also use databases of molecular and genomic annotations, for example the Gene Ontology resource that brings together evidence across fields to annotate genes based on proposed function, pathways they are involved in and where the gene products are active in the cell [@Ashburner2000; @Carbon2019]. These are not described here, but are described in the chatpers they were used. 
 
 ## Accessible Resource for Integrated Epigenomic Studies (ARIES) {#aries-02}
 
@@ -97,6 +92,9 @@ At the physical examination, blood samples were drawn for DNA from which _AHRR_ 
 ### Genotype data {#cchs-genotype-data}
 Genotypes from the iCOGs array [@Bojesen2013] and prospective data on lung cancer incidence were also available for these participants. Of the 9234 individuals, genotype data from iCOGS on 8778 were available. In short, DNA isolated from leukocytes was genotyped with a custom Illumina iSelect genotyping array, designed to test genetic variants related to breast, ovary and prostate cancer, comprising roughly 211,000 SNPs after rigorous quality control [@Bojesen2013].
 
+
+```{r data-overview-tab, message=FALSE, results="asis"}
+```
 
 
 

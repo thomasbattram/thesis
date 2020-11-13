@@ -291,7 +291,7 @@ kbl(clean_supp_tables[["S6"]], booktabs = T, caption = captions[["S6"]]) %>%
 				   "Lung cancer (never) = lung cancer in never smokers",  
 				   "Where P < 0.05, there is good evidence of heterogeneity across individual SNPs"), 
 				 notation = "none") %>%
-	kable_styling(latex_options = c("striped", "hold_position"))
+	kable_styling(latex_options = c("striped", "scale_down", "hold_position"))
 
 ## ---- sup-tab7-07 --------------------------------
 kbl(clean_supp_tables[["S7"]], booktabs = T, caption = captions[["S7"]]) %>%

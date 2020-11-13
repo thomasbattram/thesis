@@ -60,8 +60,6 @@ The instrument strength of the mQTLs were assessed by the variance explained in 
 ```{r, sup-tab1-07, message=FALSE, results="asis"}
 ```
 
-\linebreak
-
 #### Sample 2: Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium
 In the second, independent, sample, summary data was extracted from a GWAS meta-analysis of lung cancer risk conducted by the TRICL-ILCCO consortium (29,863 cases, 55,586 controls). A brief description of the data can be found in __Section \@ref(tricl-ilcco-02)__. This summary data was used to obtain mQTL-lung cancer estimates ($\beta_{GD}$).
 
@@ -177,19 +175,19 @@ There was little evidence of different effect estimates between ever and never s
 ```{r sup-fig3-07, message=FALSE, results="asis", fig.cap='(ref:sup-fig3-07-cap)', fig.scap='(ref:sup-fig3-07-scap)'}
 ```
 
+Single mQTLs for cg05575921-_AHRR_, cg27241845-_ALPPL2_, and cg26963277-_KCNQ1_ showed some evidence of association with smoking cessation (former vs. current smokers), although these associations were not below the FDR<0.05 threshold (__Figure \@ref(fig:sup-fig4-07)__). \pagebreak
+
 ```{r sup-tab6-07, message=FALSE, results="asis"}
 ```
-
-\pagebreak
-
-Single mQTLs for cg05575921-_AHRR_, cg27241845-_ALPPL2_, and cg26963277-_KCNQ1_ showed some evidence of association with smoking cessation (former vs. current smokers), although these associations were not below the FDR<0.05 threshold (__Figure \@ref(fig:sup-fig4-07)__).
 
 (ref:sup-fig4-07-cap) __Associations of mQTLs and smoking behaviours__. Some SNPs that were genotyped in the TRICL consortium were not within the TAG consortium, thus were not available for analysis here. Units for the traits: AoI (age of smoking initiation) = log years, EvN (ever vs. never smoked) = log odds, FvS (former vs current smoker) = log odds. CpD = cigarettes smoked per day.
 
 (ref:sup-fig4-07-scap) Associations of mQTLs and smoking behaviours
 
-```{r sup-fig4-07, message=FALSE, results="asis", fig.cap='(ref:sup-fig4-07-cap)', fig.scap='(ref:sup-fig4-07-scap)'}
+```{r sup-fig4-07, message=FALSE, results="asis", fig.cap='(ref:sup-fig4-07-cap)', fig.pos="!hp", fig.scap='(ref:sup-fig4-07-scap)'}
 ```
+
+\pagebreak
 
 #### Potential causal effect of _AHRR_ methylation on lung cancer risk: one sample MR {#ahrr-one-sample-mr}
 In the CCHS, a per (average methylation-increasing) allele change in a four-mQTL allele score was associated with a 0.73% [95% CI=0.56,0.90] increase in methylation (P<1x10^-10^) and explained 0.8% of the variance in cg05575921-_AHRR_ methylation (F-statistic=74.2). Confounding factors were not strongly associated with the genotypes in this cohort (P>=0.11) (__Table \@ref(tab:sup-tab7-07)__).  Results provided some evidence for an effect of cg05575921 methylation on total lung cancer risk (HR=0.30 [95% CI=0.10,1.00] per SD (9.2%) increase) (__Table \@ref(tab:sup-tab8-07)__). The effect estimate did not change substantively when stratified by smoking status (__Table \@ref(tab:sup-tab8-07)__). \linebreak
@@ -221,24 +219,32 @@ Given contrasting findings with the main MR analysis, where cg05575921-_AHRR_ me
 ### Tumour and adjacent normal lung tissue methylation patterns {#lc-heathly-v-normal}
 For cg05575921-_AHRR_, there was no strong evidence for differential methylation between adenocarcinoma tissue and adjacent healthy tissue (P=0.963), and weak evidence for hypermethylation in squamous cell carcinoma tissue (P=0.035) (__Figure \@ref(fig:fig4-07)__, __Table \@ref(tab:sup-tab10-07)__). For the other CpG sites there was evidence for a difference in DNA methylation between tumour and healthy adjacent tissue at several sites in both adenocarcinoma and squamous cell carcinoma, with consistent differences for CpG sites in _ALPPL2_ (cg2156642, cg05951221 and cg01940273), as well as cg23771366-_PRSS23_, cg26963277-_KCNQ1_, cg09935388-_GFI1_, cg0101332-_ARRB1_, cg08709672-_AVPR1B_ and cg25305703-_CASC21_. However, hypermethylation in tumour tissue was found for the majority of these sites, which is the opposite to what was observed in the EWAS analysis.
 
+\pagebreak
+
 (ref:fig4-07-cap) __Differential DNA methylation in lung cancer tissue__. A comparison of methylation at each of the 16 CpG sites identified in the meta-analysis was made between lung cancer tissue and adjacent healthy lung tissue for patients with lung adenocarcinoma (__A__) and squamous cell lung cancer (__B__). Data from The Cancer Genome Atlas was used for this analysis.
 
 (ref:fig4-07-scap) Differential DNA methylation in lung cancer tissue
 
-```{r fig4a-07, message=FALSE, results="asis"}
+```{r fig4a-07, message=FALSE, results="asis", fig.pos="!ht", out.height="40%", out.width="100%"}
 ```
 
-```{r fig4-07, message=FALSE, results="asis", fig.cap='(ref:fig4-07-cap)', fig.scap='(ref:fig4-07-scap)'}
+```{r fig4-07, message=FALSE, results="asis", fig.cap='(ref:fig4-07-cap)', fig.scap='(ref:fig4-07-scap)', fig.pos="!hp", out.height="40%", out.width="100%"}
 ```
+
+\pagebreak
 
 ```{r sup-tab10-07, message=FALSE, results="asis"}
 ```
+
+\pagebreak
 
 ### Gene expression associated with mQTLs in blood and lung tissue
 Of the 10 genes annotated to the 14 CpG sites, eight genes were expressed sufficiently to be detected in lung (_AVPR1B_ and _CASC21_ were not) and seven in blood (_AVPR1B_, _CASC21_ and _ALPPL2_ were not). Of these, gene expression of _ARRB1_ could not be investigated as the mQTLs in that region were not present in the GTEx data. rs3748971 and rs878481, mQTLs for cg21566642 and cg05951221 respectively, were associated with increased expression of _ALPPL2_ in lung tissue (P=0.002 and P=0.0001). No other mQTLs were associated with expression of the annotated gene at a Bonferroni corrected P value threshold (P<0.05/19=0.0026) (__Table \@ref(tab:sup-tab11-07)__).
 
 ```{r sup-tab11-07, message=FALSE, results="asis"}
 ```
+
+\pagebreak
 
 ## Discussion {#discussion-07}
 In this study, 16 CpG sites associated, at P<1x10^-7^, with lung cancer in a meta-analysis of EWAS, of which 14 have been previously identified in relation to smoke exposure [@Joehanes2016] and six were highlighted in a previous study as being associated with lung cancer [@Baglietto2017]. This previous study used the same data from the four cohorts investigated here, but in a discovery and replication, rather than meta-analysis framework. Overall, under the MR framework there was limited evidence supporting a potential causal effect of methylation at the CpG sites identified in peripheral blood on lung cancer. This aligns with the results presented in __Chapter \@ref(ewas-gwas-comp-chapter)__, where evidence was found that EWAS results were unlikely to be aetiologically relevant. These findings are in contrast to previous analyses suggesting that methylation at two CpG sites investigated (in _AHRR_ and _F2RL3_) mediated > 30% of the effect of smoking on lung cancer risk [@Fasanelli2015]. This previous study used methods which are sensitive to residual confounding and measurement error that may have biased results [@Richmond2016; @Hemani2017]. These limitations are largely overcome using MR [@Richmond2016].  While there was some evidence for an effect of methylation at some of the other CpG sites on risk of subtypes of lung cancer, these effects were not robust to multiple testing correction and were not validated in the analysis of tumour and adjacent normal lung tissue methylation nor in gene expression analysis.

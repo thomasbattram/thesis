@@ -46,7 +46,7 @@ mod_tests_cap <- "Summary of how well models fit to test the association between
 
 ## ---- model-testing-tab --------------------------------
 kable(mod_tests_out, format = "latex", caption = mod_tests_cap, booktabs = TRUE, escape = FALSE) %>%
-    kable_styling(latex_options = c("striped", "hold_position", "scale_down")) %>%
+    kable_styling(latex_options = c("striped", "HOLD_position", "scale_down")) %>%
     add_footnote(c("DF = degrees of freedom."), 
     			 notation = "none")
 

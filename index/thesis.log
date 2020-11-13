@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.2)  12 NOV 2020 23:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.2)  13 NOV 2020 13:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -521,6 +521,11 @@ Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 Package caption Info: rotating package is loaded.
 ) (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+) (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/tools/afterpage.sty
+Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
+\AP@output=\toks35
+\AP@partial=\box67
+\AP@footins=\box68
 ) (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2020-06-15 v2.0f non-zero parskip adjustments
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
@@ -542,12 +547,12 @@ Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \wrapoverhang=\dimen195
 \WF@size=\dimen196
 \c@WF@wrappedlines=\count310
-\WF@box=\box67
-\WF@everypar=\toks35
+\WF@box=\box69
+\WF@everypar=\toks36
 Package: wrapfig 2003/01/31  v 3.6
 ) (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
-\everycr=\toks36
+\everycr=\toks37
 \minrowclearance=\skip81
 ) (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
@@ -556,7 +561,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box68
+\@vwid@box=\box70
 \sift@deathcycles=\count311
 \@vwid@loff=\dimen197
 \@vwid@roff=\dimen198
@@ -576,18 +581,18 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \abovetabulinesep=\dimen261
 \belowtabulinesep=\dimen262
 \tabustrutrule=\dimen263
-\tabu@thebody=\toks37
-\tabu@footnotes=\toks38
-\tabu@box=\box69
-\tabu@arstrutbox=\box70
-\tabu@hleads=\box71
-\tabu@vleads=\box72
+\tabu@thebody=\toks38
+\tabu@footnotes=\toks39
+\tabu@box=\box71
+\tabu@arstrutbox=\box72
+\tabu@hleads=\box73
+\tabu@vleads=\box74
 \tabu@cellskip=\skip82
 )
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/threeparttable/threepartta
 ble.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box73
+\@tempboxb=\box75
 )
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/threeparttablex/threepartt
 ablex.sty
@@ -599,50 +604,50 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
 \TPTL@width=\skip83
 ) (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box74
-\UL@hyphenbox=\box75
+\UL@box=\box76
+\UL@hyphenbox=\box77
 \UL@skip=\skip84
-\UL@hook=\toks39
+\UL@hook=\toks40
 \UL@height=\dimen264
 \UL@pe=\count318
 \UL@pixel=\dimen265
-\ULC@box=\box76
+\ULC@box=\box78
 Package: ulem 2019/11/18
 \ULdepth=\dimen266
 ) (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen267
 \c@nlinenum=\count319
-\TeXr@lab=\toks40
+\TeXr@lab=\toks41
 )
 \cslhangindent=\skip85
 (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 213.
-LaTeX Font Info:    ... okay on input line 213.
-LaTeX Info: Redefining \microtypecontext on input line 213.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 221.
+LaTeX Font Info:    ... okay on input line 221.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 221.
+LaTeX Font Info:    ... okay on input line 221.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 221.
+LaTeX Font Info:    ... okay on input line 221.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 221.
+LaTeX Font Info:    ... okay on input line 221.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 221.
+LaTeX Font Info:    ... okay on input line 221.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 221.
+LaTeX Font Info:    ... okay on input line 221.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 221.
+LaTeX Font Info:    ... okay on input line 221.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 221.
+LaTeX Font Info:    ... okay on input line 221.
+LaTeX Info: Redefining \microtypecontext on input line 221.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 213.
+LaTeX Info: Redefining \showhyphens on input line 221.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -653,15 +658,15 @@ i
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count320
 \scratchdimen=\dimen268
-\scratchbox=\box77
+\scratchbox=\box79
 \nofMPsegments=\count321
 \nofMParguments=\count322
-\everyMPshowfont=\toks41
+\everyMPshowfont=\toks42
 \MPscratchCnt=\count323
 \MPscratchDim=\dimen269
 \MPnumerator=\count324
 \makeMPintoPDFobject=\count325
-\everyMPtoPDFconversion=\toks42
+\everyMPtoPDFconversion=\toks43
 )
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base
 .sty
@@ -678,7 +683,7 @@ e
 ons.cfg
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
-Package hyperref Info: Link coloring OFF on input line 213.
+Package hyperref Info: Link coloring OFF on input line 221.
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -690,9 +695,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count326
 )
-LaTeX Info: Redefining \ref on input line 213.
-LaTeX Info: Redefining \pageref on input line 213.
-LaTeX Info: Redefining \nameref on input line 213.
+LaTeX Info: Redefining \ref on input line 221.
+LaTeX Info: Redefining \pageref on input line 221.
+LaTeX Info: Redefining \nameref on input line 221.
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write4
 \openout4 = `thesis.out'.
@@ -702,7 +707,7 @@ Package caption Info: threeparttable package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-13.
+21.
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg
@@ -710,39 +715,39 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-13.
+21.
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-213.
+221.
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-213.
+221.
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 213.
+(Font)              <10.95> on input line 221.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 213.
+(Font)              <8> on input line 221.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 213.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 21
-3.
+(Font)              <6> on input line 221.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 22
+1.
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 213
+LaTeX Font Info:    Trying to load font information for U+msa on input line 221
 .
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 213
+LaTeX Font Info:    Trying to load font information for U+msb on input line 221
 .
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -750,22 +755,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-213.
+221.
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-213.
+221.
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 <figure/index/UoBcrest.pdf, id=602, 114.4275pt x 137.51375pt>
 File: figure/index/UoBcrest.pdf Graphic file (type pdf)
 <use figure/index/UoBcrest.pdf>
-Package pdftex.def Info: figure/index/UoBcrest.pdf  used on input line 215.
+Package pdftex.def Info: figure/index/UoBcrest.pdf  used on input line 223.
 (pdftex.def)             Requested size: 68.65701pt x 82.50888pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 215.
+(Font)              <12> on input line 223.
 [1
 
 
@@ -777,960 +782,819 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ] [2
 
 
-] [3] [4
-
-
 ]
-Underfull \hbox (badness 1748) in paragraph at lines 251--252
+Underfull \hbox (badness 1748) in paragraph at lines 263--264
 []\T1/ptm/m/n/12 (+20) Howe,L.J., Bat-tram,T., Mor-ris,T.T., Hartwig,F.P., He-m
 ani,G., Davies,N.M. and
  []
 
 
-Underfull \hbox (badness 7326) in paragraph at lines 251--252
+Underfull \hbox (badness 7326) in paragraph at lines 263--264
 \T1/ptm/m/n/12 (+20) Smith,G.D. (2020) As-sor-ta-tive mat-ing and within-spouse
  pair com-par-isons.
  []
 
-[5] [6
+[3
 
 
-] [7] [8
+] [4
 
 
-] (./thesis.toc [9] [10] [11] [12])
+] (./thesis.toc [5
+
+
+] [6] [7] [8])
 \tf@toc=\write5
 \openout5 = `thesis.toc'.
 
-[13] [14
-
-] (./thesis.lot)
+[9] (./thesis.lot)
 \tf@lot=\write6
 \openout6 = `thesis.lot'.
 
-[15] [16
+[10
 
-] (./thesis.lof [17])
+] (./thesis.lof [11
+
+])
 \tf@lof=\write7
 \openout7 = `thesis.lof'.
 
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 287--333
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 299--345
 
  []
 
-[19
+[13
 
-] [20]
+] [14]
 Chapter 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.343 
+l.362 
        [1
 
 
 
 ]
-<figure/01-introduction/central-dogma.pdf, id=1019, 406.3983pt x 132.495pt>
+<figure/01-introduction/central-dogma.pdf, id=995, 406.3983pt x 132.495pt>
 File: figure/01-introduction/central-dogma.pdf Graphic file (type pdf)
 <use figure/01-introduction/central-dogma.pdf>
 Package pdftex.def Info: figure/01-introduction/central-dogma.pdf  used on inpu
-t line 354.
+t line 368.
 (pdftex.def)             Requested size: 420.0pt x 136.93634pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2237) has occurred while \output is active []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.360 T
-       he importance of these molecular alterations to phenotypic change is ...
-[2]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[3 <./figure/01-introduction/central-dogma.pdf
+l.382 
+       [2 <./figure/01-introduction/central-dogma.pdf
 
 pdfTeX warning: pdflatex (file ./figure/01-introduction/central-dogma.pdf): PDF
  inclusion: invalid other resource which is no dict (key 'ProcSets', type <arra
 y>); ignored.
->] [4] [5] [6]
-<figure/01-introduction/dnam-gene-expression.pdf, id=1065, 263.06279pt x 102.38
+>] [3] [4]
+<figure/01-introduction/dnam-gene-expression.pdf, id=1032, 263.06279pt x 102.38
 25pt>
 File: figure/01-introduction/dnam-gene-expression.pdf Graphic file (type pdf)
 <use figure/01-introduction/dnam-gene-expression.pdf>
 Package pdftex.def Info: figure/01-introduction/dnam-gene-expression.pdf  used 
-on input line 395.
+on input line 409.
 (pdftex.def)             Requested size: 420.0pt x 163.47946pt.
-[7 <./figure/01-introduction/dnam-gene-expression.pdf
+[5 <./figure/01-introduction/dnam-gene-expression.pdf
 
 pdfTeX warning: pdflatex (file ./figure/01-introduction/dnam-gene-expression.pd
 f): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', typ
 e <array>); ignored.
->] [8] [9] [10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[12] [13]
-Underfull \vbox (badness 1565) has occurred while \output is active []
-
-[14] [15] [16]
-Underfull \vbox (badness 3343) has occurred while \output is active []
-
-[17]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[18] [19] [20] [21]
-<figure/01-introduction/mr-diagram.pdf, id=1181, 291.00719pt x 159.71669pt>
+>] [6] [7] [8] [9] [10] [11] [12] [13] [14]
+<figure/01-introduction/mr-diagram.pdf, id=1122, 291.00719pt x 159.71669pt>
 File: figure/01-introduction/mr-diagram.pdf Graphic file (type pdf)
 <use figure/01-introduction/mr-diagram.pdf>
 Package pdftex.def Info: figure/01-introduction/mr-diagram.pdf  used on input l
-ine 542.
+ine 556.
 (pdftex.def)             Requested size: 420.0pt x 230.51825pt.
-[22 <./figure/01-introduction/mr-diagram.pdf
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[15] [16 <./figure/01-introduction/mr-diagram.pdf
 
 pdfTeX warning: pdflatex (file ./figure/01-introduction/mr-diagram.pdf): PDF in
 clusion: invalid other resource which is no dict (key 'ProcSets', type <array>)
 ; ignored.
->] [23] [24] [25]
-<figure/01-introduction/thesis-flowchart.pdf, id=1225, 551.1792pt x 232.9503pt>
+>] [17] [18]
+<figure/01-introduction/thesis-flowchart.pdf, id=1170, 551.1792pt x 232.9503pt>
 
 File: figure/01-introduction/thesis-flowchart.pdf Graphic file (type pdf)
 <use figure/01-introduction/thesis-flowchart.pdf>
 Package pdftex.def Info: figure/01-introduction/thesis-flowchart.pdf  used on i
-nput line 583.
+nput line 597.
 (pdftex.def)             Requested size: 600.0pt x 253.60509pt.
-[26
+[19
 
  <./figure/01-introduction/thesis-flowchart.pdf
 
 pdfTeX warning: pdflatex (file ./figure/01-introduction/thesis-flowchart.pdf): 
 PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <a
 rray>); ignored.
->]
-Chapter 2.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[27
+>] [20
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 637--637
+Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 611--611
 []\T1/ptm/b/n/14.4 Accessible Re-source for In-te-grated Epige-nomic Stud-ies
  []
 
-[28]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 64
-7.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 62
+1.
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [29]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[30] [31]
+) [21] [22] [23]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 6
-98.
+72.
 (/Users/tb13101/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [32] [33]
-Underfull \vbox (badness 1377) has occurred while \output is active []
-
-[34]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[35] [36] [37] [38
+) [24] [25] [26] [27] [28
 
 ]
 Chapter 3.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[39] [40]
-<figure/03-ewas_catalog/project_flowchart.pdf, id=1351, 963.6pt x 542.025pt>
+[29]
+<figure/03-ewas_catalog/project_flowchart.pdf, id=1279, 963.6pt x 542.025pt>
 File: figure/03-ewas_catalog/project_flowchart.pdf Graphic file (type pdf)
 <use figure/03-ewas_catalog/project_flowchart.pdf>
 Package pdftex.def Info: figure/03-ewas_catalog/project_flowchart.pdf  used on 
-input line 785.
+input line 797.
 (pdftex.def)             Requested size: 420.0pt x 236.2504pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[41]
-Underfull \hbox (badness 2073) in paragraph at lines 797--798
+[30]
+Underfull \hbox (badness 2073) in paragraph at lines 809--810
 \T1/ptm/m/n/10.95 (+20) The EWAS Cat-a-log web-app was built us-ing the Django 
 Python pack-age ([]$\T1/pcr/m/n/10.95 h t t p s :
  []
 
-[42 <./figure/03-ewas_catalog/project_flowchart.pdf>]
-Underfull \hbox (badness 1874) in paragraph at lines 819--820
+[31 <./figure/03-ewas_catalog/project_flowchart.pdf>]
+Underfull \hbox (badness 1874) in paragraph at lines 831--832
 []\T1/ptm/m/n/10.95 (+20) All these cri-te-ria along with the vari-ables ex-tra
 cted are doc-u-mented on the web-site
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[43] [44]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[45] [46]
-<figure/03-ewas_catalog/using_the_catalog.pdf, id=1428, 1043.9pt x 640.3925pt>
+[32] [33] [34]
+<figure/03-ewas_catalog/using_the_catalog.pdf, id=1353, 1043.9pt x 640.3925pt>
 File: figure/03-ewas_catalog/using_the_catalog.pdf Graphic file (type pdf)
 <use figure/03-ewas_catalog/using_the_catalog.pdf>
 Package pdftex.def Info: figure/03-ewas_catalog/using_the_catalog.pdf  used on 
-input line 864.
+input line 876.
 (pdftex.def)             Requested size: 600.0pt x 368.07625pt.
 
-LaTeX Warning: Float too large for page by 39.67627pt on input line 869.
+LaTeX Warning: Float too large for page by 39.67627pt on input line 881.
 
-[47 <./figure/03-ewas_catalog/using_the_catalog.pdf>] [48
+[35 <./figure/03-ewas_catalog/using_the_catalog.pdf>] [36
 
 
 ]
 Chapter 4.
-[49
+[37
 
-] [50]
-Underfull \vbox (badness 2608) has occurred while \output is active []
-
-[51] [52]
-Underfull \vbox (badness 5091) has occurred while \output is active []
-
-[53]
+] [38] [39] [40] [41] [42] [43]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[54] [55] [56] [57]
-Underfull \hbox (badness 10000) in paragraph at lines 1008--1039
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1008--1039
-
- []
-
-<figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png, id=1555, 867.24pt x 
+[44]
+<figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png, id=1482, 867.24pt x 
 505.89pt>
 File: figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png Graphic file (ty
 pe png)
 <use figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png>
 Package pdftex.def Info: figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.p
-ng  used on input line 1047.
+ng  used on input line 1069.
 (pdftex.def)             Requested size: 420.0pt x 245.00125pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[58]
-<thesis_files/figure-latex/rsq-distribution-1.pdf, id=1566, 469.755pt x 325.215
+<thesis_files/figure-latex/rsq-distribution-1.pdf, id=1483, 469.755pt x 325.215
 pt>
 File: thesis_files/figure-latex/rsq-distribution-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/rsq-distribution-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/rsq-distribution-1.pdf  used
- on input line 1062.
+ on input line 1078.
 (pdftex.def)             Requested size: 420.0pt x 290.77036pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[59 <./figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png (PNG copy)>]
-<thesis_files/figure-latex/rsq-sum-distribution-1.pdf, id=1573, 469.755pt x 325
+<thesis_files/figure-latex/rsq-sum-distribution-1.pdf, id=1486, 469.755pt x 325
 .215pt>
 File: thesis_files/figure-latex/rsq-sum-distribution-1.pdf Graphic file (type p
 df)
 <use thesis_files/figure-latex/rsq-sum-distribution-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/rsq-sum-distribution-1.pdf  
-used on input line 1073.
+used on input line 1089.
 (pdftex.def)             Requested size: 420.0pt x 290.77036pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[60 <./thesis_files/figure-latex/rsq-distribution-1.pdf>] [61 <./thesis_files/f
-igure-latex/rsq-sum-distribution-1.pdf>]
-<thesis_files/figure-latex/faulty-probes-plot-1.pdf, id=1601, 469.755pt x 325.2
+[45 <./figure/04-properties_of_ewas/traits_per_dmp_at_1e-07.png (PNG copy)>] [4
+6 <./thesis_files/figure-latex/rsq-distribution-1.pdf>] [47 <./thesis_files/fig
+ure-latex/rsq-sum-distribution-1.pdf>]
+<thesis_files/figure-latex/faulty-probes-plot-1.pdf, id=1517, 469.755pt x 325.2
 15pt>
 File: thesis_files/figure-latex/faulty-probes-plot-1.pdf Graphic file (type pdf
 )
 <use thesis_files/figure-latex/faulty-probes-plot-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/faulty-probes-plot-1.pdf  us
-ed on input line 1093.
+ed on input line 1109.
 (pdftex.def)             Requested size: 420.0pt x 290.77036pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1101--1129
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1101--1129
-
- []
-
-[62 <./thesis_files/figure-latex/faulty-probes-plot-1.pdf>] [63]
+[48 <./thesis_files/figure-latex/faulty-probes-plot-1.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[64] [65] [66] [67] [68]
+[49] [50] [51] [52]
 <figure/04-properties_of_ewas/chromatin_states_enrichment_boxplots_onepage.pdf,
- id=1645, 505.89pt x 505.89pt>
+ id=1554, 505.89pt x 505.89pt>
 File: figure/04-properties_of_ewas/chromatin_states_enrichment_boxplots_onepage
 .pdf Graphic file (type pdf)
 <use figure/04-properties_of_ewas/chromatin_states_enrichment_boxplots_onepage.
 pdf>
 Package pdftex.def Info: figure/04-properties_of_ewas/chromatin_states_enrichme
-nt_boxplots_onepage.pdf  used on input line 1300.
+nt_boxplots_onepage.pdf  used on input line 1314.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Float too large for page by 6.80443pt on input line 1319.
 
-[69]
-Overfull \vbox (6.80443pt too high) has occurred while \output is active []
-
-[70 <./figure/04-properties_of_ewas/chromatin_states_enrichment_boxplots_onepag
-e.pdf>]
-<figure/04-properties_of_ewas/tfbs_enrichment_plot.pdf, id=1665, 505.89pt x 505
+<figure/04-properties_of_ewas/tfbs_enrichment_plot.pdf, id=1559, 505.89pt x 505
 .89pt>
 File: figure/04-properties_of_ewas/tfbs_enrichment_plot.pdf Graphic file (type 
 pdf)
 <use figure/04-properties_of_ewas/tfbs_enrichment_plot.pdf>
 Package pdftex.def Info: figure/04-properties_of_ewas/tfbs_enrichment_plot.pdf 
- used on input line 1313.
+ used on input line 1327.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[71] [72 <./figure/04-properties_of_ewas/tfbs_enrichment_plot.pdf>] [73] [74] [
-75] [76]
+[53] [54 <./figure/04-properties_of_ewas/chromatin_states_enrichment_boxplots_o
+nepage.pdf>] [55 <./figure/04-properties_of_ewas/tfbs_enrichment_plot.pdf>] [56
+] [57] [58]
 Chapter 5.
-[77
+[59
 
-] [78] [79] [80]
-<figure/05-h2ewas/m2_model_comparison.pdf, id=1732, 601.28638pt x 406.3983pt>
+] [60] [61]
+<figure/05-h2ewas/m2_model_comparison.pdf, id=1628, 601.28638pt x 406.3983pt>
 File: figure/05-h2ewas/m2_model_comparison.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/m2_model_comparison.pdf>
 Package pdftex.def Info: figure/05-h2ewas/m2_model_comparison.pdf  used on inpu
-t line 1411.
+t line 1425.
 (pdftex.def)             Requested size: 420.0pt x 283.86916pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[81]
-Underfull \vbox (badness 6016) has occurred while \output is active []
-
-[82 <./figure/05-h2ewas/m2_model_comparison.pdf
+[62 <./figure/05-h2ewas/m2_model_comparison.pdf
 
 pdfTeX warning: pdflatex (file ./figure/05-h2ewas/m2_model_comparison.pdf): PDF
  inclusion: invalid other resource which is no dict (key 'ProcSets', type <arra
 y>); ignored.
 >]
-<figure/05-h2ewas/m2_data_cleaning.pdf, id=1765, 287.15279pt x 478.66827pt>
+<figure/05-h2ewas/m2_data_cleaning.pdf, id=1656, 287.15279pt x 478.66827pt>
 File: figure/05-h2ewas/m2_data_cleaning.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/m2_data_cleaning.pdf>
 Package pdftex.def Info: figure/05-h2ewas/m2_data_cleaning.pdf  used on input l
-ine 1432.
+ine 1446.
 (pdftex.def)             Requested size: 283.52411pt x 450.00667pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4479) has occurred while \output is active []
 
-[83] [84 <./figure/05-h2ewas/m2_data_cleaning.pdf
+[63] [64 <./figure/05-h2ewas/m2_data_cleaning.pdf
 
 pdfTeX warning: pdflatex (file ./figure/05-h2ewas/m2_data_cleaning.pdf): PDF in
 clusion: invalid other resource which is no dict (key 'ProcSets', type <array>)
 ; ignored.
->] [85] [86]
-Underfull \hbox (badness 4254) in paragraph at lines 1478--1478
+>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[65]
+Underfull \hbox (badness 4254) in paragraph at lines 1492--1492
 []\T1/ptm/b/n/12 Association be-tween h$[]$$[]$ and epigenome-wide as-so-ci-a-t
 ion stud-ies
  []
 
-[87]
-<figure/05-h2ewas/m2_workflow.pdf, id=1811, 522.03032pt x 341.35529pt>
+<figure/05-h2ewas/m2_workflow.pdf, id=1692, 522.03032pt x 341.35529pt>
 File: figure/05-h2ewas/m2_workflow.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/m2_workflow.pdf>
 Package pdftex.def Info: figure/05-h2ewas/m2_workflow.pdf  used on input line 1
-498.
+512.
 (pdftex.def)             Requested size: 420.0pt x 274.65239pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[88] [89 <./figure/05-h2ewas/m2_workflow.pdf
+[66] [67 <./figure/05-h2ewas/m2_workflow.pdf
 
 pdfTeX warning: pdflatex (file ./figure/05-h2ewas/m2_workflow.pdf): PDF inclusi
 on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
 ored.
 >]
-<figure/05-h2ewas/model_m2_comparison.pdf, id=1863, 505.89pt x 505.89pt>
+<figure/05-h2ewas/model_m2_comparison.pdf, id=1746, 505.89pt x 505.89pt>
 File: figure/05-h2ewas/model_m2_comparison.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/model_m2_comparison.pdf>
 Package pdftex.def Info: figure/05-h2ewas/model_m2_comparison.pdf  used on inpu
-t line 1516.
-(pdftex.def)             Requested size: 420.0pt x 420.00436pt.
-[90 <./figure/05-h2ewas/model_m2_comparison.pdf>]
-<figure/05-h2ewas/sens_boxplots.pdf, id=1880, 505.89pt x 505.89pt>
-File: figure/05-h2ewas/sens_boxplots.pdf Graphic file (type pdf)
-<use figure/05-h2ewas/sens_boxplots.pdf>
-Package pdftex.def Info: figure/05-h2ewas/sens_boxplots.pdf  used on input line
- 1534.
+t line 1530.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[91] [92 <./figure/05-h2ewas/sens_boxplots.pdf>]
-<figure/05-h2ewas/FOM_hit_count_distribution.pdf, id=1903, 504.88625pt x 504.88
+[68 <./figure/05-h2ewas/model_m2_comparison.pdf>]
+<figure/05-h2ewas/sens_boxplots.pdf, id=1764, 505.89pt x 505.89pt>
+File: figure/05-h2ewas/sens_boxplots.pdf Graphic file (type pdf)
+<use figure/05-h2ewas/sens_boxplots.pdf>
+Package pdftex.def Info: figure/05-h2ewas/sens_boxplots.pdf  used on input line
+ 1548.
+(pdftex.def)             Requested size: 420.0pt x 420.00436pt.
+<figure/05-h2ewas/FOM_hit_count_distribution.pdf, id=1770, 504.88625pt x 504.88
 625pt>
 File: figure/05-h2ewas/FOM_hit_count_distribution.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/FOM_hit_count_distribution.pdf>
 Package pdftex.def Info: figure/05-h2ewas/FOM_hit_count_distribution.pdf  used 
-on input line 1552.
+on input line 1566.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[93]
-<figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf, id=1909, 505.89pt x 505.89p
+[69] [70 <./figure/05-h2ewas/sens_boxplots.pdf>]
+<figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf, id=1788, 505.89pt x 505.89p
 t>
 File: figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf Graphic file (type pdf)
 
 <use figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf>
 Package pdftex.def Info: figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf  use
-d on input line 1563.
+d on input line 1577.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[94 <./figure/05-h2ewas/FOM_hit_count_distribution.pdf>]
+[71 <./figure/05-h2ewas/FOM_hit_count_distribution.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+[72 <./figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \vbox (badness 5475) has occurred while \output is active []
-
-[95 <./figure/05-h2ewas/m2_hit_count_scatter_p5_test.pdf>]
-<figure/05-h2ewas/roc_plot.pdf, id=1930, 504.88625pt x 504.88625pt>
+[73]
+<figure/05-h2ewas/roc_plot.pdf, id=1813, 504.88625pt x 504.88625pt>
 File: figure/05-h2ewas/roc_plot.pdf Graphic file (type pdf)
 <use figure/05-h2ewas/roc_plot.pdf>
-Package pdftex.def Info: figure/05-h2ewas/roc_plot.pdf  used on input line 1596
+Package pdftex.def Info: figure/05-h2ewas/roc_plot.pdf  used on input line 1612
 .
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[96]
-Underfull \vbox (badness 4441) has occurred while \output is active []
+[74 <./figure/05-h2ewas/roc_plot.pdf>]
+Underfull \vbox (badness 3930) has occurred while \output is active []
 
-[97 <./figure/05-h2ewas/roc_plot.pdf>] [98] [99] [100] [101] [102]
+[75] [76] [77] [78]
 Chapter 6.
-[103
+[79
 
-] [104] [105] [106]
-<figure/06-ewas_gwas_comparison/all_traits_overlap_bar.pdf, id=2008, 505.89pt x
+] [80]
+<figure/06-ewas_gwas_comparison/all_traits_overlap_bar.pdf, id=1871, 505.89pt x
  505.89pt>
 File: figure/06-ewas_gwas_comparison/all_traits_overlap_bar.pdf Graphic file (t
 ype pdf)
 <use figure/06-ewas_gwas_comparison/all_traits_overlap_bar.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/all_traits_overlap_bar.
-pdf  used on input line 1717.
+pdf  used on input line 1735.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[107]
-<thesis_files/figure-latex/auc-plot-1.pdf, id=2013, 469.755pt x 325.215pt>
+[81]
+<thesis_files/figure-latex/auc-plot-1.pdf, id=1880, 469.755pt x 325.215pt>
 File: thesis_files/figure-latex/auc-plot-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/auc-plot-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/auc-plot-1.pdf  used on inpu
-t line 1728.
+t line 1746.
 (pdftex.def)             Requested size: 420.0pt x 290.77036pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[108 <./figure/06-ewas_gwas_comparison/all_traits_overlap_bar.pdf>]
-Underfull \hbox (badness 3646) in paragraph at lines 1735--1735
+[82 <./figure/06-ewas_gwas_comparison/all_traits_overlap_bar.pdf>]
+Underfull \hbox (badness 3646) in paragraph at lines 1753--1753
 []\T1/ptm/b/n/12 Assessing power to de-tect shared an-no-ta-tions be-tween GWAS
  and
  []
 
-[109 <./thesis_files/figure-latex/auc-plot-1.pdf>]
-<figure/06-ewas_gwas_comparison/simulations-gene-up-flowchart.pdf, id=2035, 449
+[83 <./thesis_files/figure-latex/auc-plot-1.pdf>]
+<figure/06-ewas_gwas_comparison/simulations-gene-up-flowchart.pdf, id=1902, 449
 .76028pt x 566.115pt>
 File: figure/06-ewas_gwas_comparison/simulations-gene-up-flowchart.pdf Graphic 
 file (type pdf)
 <use figure/06-ewas_gwas_comparison/simulations-gene-up-flowchart.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/simulations-gene-up-flo
-wchart.pdf  used on input line 1748.
+wchart.pdf  used on input line 1766.
 (pdftex.def)             Requested size: 420.0pt x 528.65834pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Float too large for page by 6.65836pt on input line 1771.
 
-[110]
-Overfull \vbox (6.65836pt too high) has occurred while \output is active []
-
-[111 <./figure/06-ewas_gwas_comparison/simulations-gene-up-flowchart.pdf
-
-pdfTeX warning: pdflatex (file ./figure/06-ewas_gwas_comparison/simulations-gen
-e-up-flowchart.pdf): PDF inclusion: invalid other resource which is no dict (ke
-y 'ProcSets', type <array>); ignored.
->]
 <figure/06-ewas_gwas_comparison/methods_test_gene_up_auc_plot_all_databases_sum
-mary.pdf, id=2068, 505.89pt x 505.89pt>
+mary.pdf, id=1908, 505.89pt x 505.89pt>
 File: figure/06-ewas_gwas_comparison/methods_test_gene_up_auc_plot_all_database
 s_summary.pdf Graphic file (type pdf)
 <use figure/06-ewas_gwas_comparison/methods_test_gene_up_auc_plot_all_databases
 _summary.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/methods_test_gene_up_au
-c_plot_all_databases_summary.pdf  used on input line 1761.
+c_plot_all_databases_summary.pdf  used on input line 1779.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[112]
+[84] [85 <./figure/06-ewas_gwas_comparison/simulations-gene-up-flowchart.pdf
+
+pdfTeX warning: pdflatex (file ./figure/06-ewas_gwas_comparison/simulations-gen
+e-up-flowchart.pdf): PDF inclusion: invalid other resource which is no dict (ke
+y 'ProcSets', type <array>); ignored.
+>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[113 <./figure/06-ewas_gwas_comparison/methods_test_gene_up_auc_plot_all_databa
-ses_summary.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1772--1828
+[86 <./figure/06-ewas_gwas_comparison/methods_test_gene_up_auc_plot_all_databas
+es_summary.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 1790--1846
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1772--1828
+Underfull \hbox (badness 10000) in paragraph at lines 1790--1846
 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[114] [115]
-<figure/06-ewas_gwas_comparison/architecture-simulations-schematic.pdf, id=2106
+[87]
+<figure/06-ewas_gwas_comparison/architecture-simulations-schematic.pdf, id=1965
 , 478.66827pt x 427.5975pt>
 File: figure/06-ewas_gwas_comparison/architecture-simulations-schematic.pdf Gra
 phic file (type pdf)
 <use figure/06-ewas_gwas_comparison/architecture-simulations-schematic.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/architecture-simulation
-s-schematic.pdf  used on input line 1845.
+s-schematic.pdf  used on input line 1863.
 (pdftex.def)             Requested size: 420.0pt x 375.19083pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[116]
+[88]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[117 <./figure/06-ewas_gwas_comparison/architecture-simulations-schematic.pdf
+[89 <./figure/06-ewas_gwas_comparison/architecture-simulations-schematic.pdf
 
 pdfTeX warning: pdflatex (file ./figure/06-ewas_gwas_comparison/architecture-si
 mulations-schematic.pdf): PDF inclusion: invalid other resource which is no dic
 t (key 'ProcSets', type <array>); ignored.
 >]
 <figure/06-ewas_gwas_comparison/architecture_sims_crp_fvns_only_correlation_of_
-pathway_enrichment_scores.png, id=2139, 505.89pt x 505.89pt>
+pathway_enrichment_scores.png, id=1997, 505.89pt x 505.89pt>
 File: figure/06-ewas_gwas_comparison/architecture_sims_crp_fvns_only_correlatio
 n_of_pathway_enrichment_scores.png Graphic file (type png)
 <use figure/06-ewas_gwas_comparison/architecture_sims_crp_fvns_only_correlation
 _of_pathway_enrichment_scores.png>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/architecture_sims_crp_f
-vns_only_correlation_of_pathway_enrichment_scores.png  used on input line 1858.
+vns_only_correlation_of_pathway_enrichment_scores.png  used on input line 1876.
 
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[118]
+[90]
 Overfull \vbox (20.40443pt too high) has occurred while \output is active []
 
-[119 <./figure/06-ewas_gwas_comparison/architecture_sims_crp_fvns_only_correlat
-ion_of_pathway_enrichment_scores.png (PNG copy)>] [120]
-Underfull \vbox (badness 1377) has occurred while \output is active []
+[91 <./figure/06-ewas_gwas_comparison/architecture_sims_crp_fvns_only_correlati
+on_of_pathway_enrichment_scores.png (PNG copy)>] [92]
+Underfull \vbox (badness 1097) has occurred while \output is active []
 
-[121]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[93] [94] [95] [96]
+Underfull \vbox (badness 1184) has occurred while \output is active []
 
-[122] [123] [124] [125] [126]
-Underfull \vbox (badness 2418) has occurred while \output is active []
-
-[127] [128] [129] [130] [131] [132
-
-]
+[97] [98] [99] [100]
 Chapter 7.
-[133]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[101
 
-[134]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+] [102]
+Underfull \vbox (badness 1024) has occurred while \output is active []
 
-[135] [136]
-Underfull \hbox (badness 10000) in paragraph at lines 2082--2117
+[103]
+Underfull \hbox (badness 10000) in paragraph at lines 2100--2135
 \T1/ptm/m/n/10.95 (+20) each mQTL (r$[]$) as well as the F-statistic in ARIES \
 T1/ptm/b/n/10.95 Ta-ble []7.1[]\T1/ptm/m/n/10.95 (+20) .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2082--2117
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2082--2117
-
- []
-
-[137] [138] [139] [140] [141]
-<figure/07-dnam_lungcancer_mr/Figure_1.jpg, id=2340, 963.6pt x 542.025pt>
+[104] [105] [106] [107]
+<figure/07-dnam_lungcancer_mr/Figure_1.jpg, id=2172, 963.6pt x 542.025pt>
 File: figure/07-dnam_lungcancer_mr/Figure_1.jpg Graphic file (type jpg)
 <use figure/07-dnam_lungcancer_mr/Figure_1.jpg>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/Figure_1.jpg  used on inp
-ut line 2179.
+ut line 2195.
 (pdftex.def)             Requested size: 600.0pt x 337.50764pt.
-[142 <./figure/07-dnam_lungcancer_mr/Figure_1.jpg>]
-<figure/07-dnam_lungcancer_mr/Figure_2a.jpg, id=2345, 722.7pt x 578.16pt>
+[108 <./figure/07-dnam_lungcancer_mr/Figure_1.jpg>]
+<figure/07-dnam_lungcancer_mr/Figure_2a.jpg, id=2178, 722.7pt x 578.16pt>
 File: figure/07-dnam_lungcancer_mr/Figure_2a.jpg Graphic file (type jpg)
 <use figure/07-dnam_lungcancer_mr/Figure_2a.jpg>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/Figure_2a.jpg  used on in
-put line 2193.
+put line 2209.
 (pdftex.def)             Requested size: 300.0pt x 240.0025pt.
-<figure/07-dnam_lungcancer_mr/Figure_2b.jpg, id=2346, 722.7pt x 578.16pt>
+<figure/07-dnam_lungcancer_mr/Figure_2b.jpg, id=2179, 722.7pt x 578.16pt>
 File: figure/07-dnam_lungcancer_mr/Figure_2b.jpg Graphic file (type jpg)
 <use figure/07-dnam_lungcancer_mr/Figure_2b.jpg>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/Figure_2b.jpg  used on in
-put line 2193.
+put line 2209.
 (pdftex.def)             Requested size: 300.0pt x 240.0025pt.
 
-Overfull \hbox (2.0805pt too wide) in paragraph at lines 2193--2193
+Overfull \hbox (2.0805pt too wide) in paragraph at lines 2209--2209
 [][] [] 
  []
 
-[143 <./figure/07-dnam_lungcancer_mr/Figure_2a.jpg> <./figure/07-dnam_lungcance
-r_mr/Figure_2b.jpg>] [144
+[109 <./figure/07-dnam_lungcancer_mr/Figure_2a.jpg> <./figure/07-dnam_lungcance
+r_mr/Figure_2b.jpg>] [110
 
 
 
 
 
-] [145
+] [111
 
 
-] [146
+] [112
 
-] [147
+] [113
 
 ]
-<figure/07-dnam_lungcancer_mr/Figure_3.jpg, id=2374, 722.7pt x 578.16pt>
+<figure/07-dnam_lungcancer_mr/Figure_3.jpg, id=2207, 722.7pt x 578.16pt>
 File: figure/07-dnam_lungcancer_mr/Figure_3.jpg Graphic file (type jpg)
 <use figure/07-dnam_lungcancer_mr/Figure_3.jpg>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/Figure_3.jpg  used on inp
-ut line 2364.
+ut line 2380.
 (pdftex.def)             Requested size: 420.0pt x 336.00351pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[148
+[114
 
-] [149 <./figure/07-dnam_lungcancer_mr/Figure_3.jpg>] [150
+] [115 <./figure/07-dnam_lungcancer_mr/Figure_3.jpg>] [116
 
 ]
-<figure/07-dnam_lungcancer_mr/sup_fig1.pdf, id=2387, 722.7pt x 578.16pt>
+<figure/07-dnam_lungcancer_mr/sup_fig1.pdf, id=2220, 722.7pt x 578.16pt>
 File: figure/07-dnam_lungcancer_mr/sup_fig1.pdf Graphic file (type pdf)
 <use figure/07-dnam_lungcancer_mr/sup_fig1.pdf>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/sup_fig1.pdf  used on inp
-ut line 2410.
+ut line 2426.
 (pdftex.def)             Requested size: 420.0pt x 336.00351pt.
-
-Underfull \vbox (badness 1960) has occurred while \output is active []
-
-[151
-
- <./figure/07-dnam_lungcancer_mr/sup_fig1.pdf>]
-<figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smokers.pdf, id=2401, 722.7
+<figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smokers.pdf, id=2224, 722.7
 pt x 578.16pt>
 File: figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smokers.pdf Graphic fi
 le (type pdf)
 <use figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smokers.pdf>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smo
-kers.pdf  used on input line 2423.
+kers.pdf  used on input line 2439.
 (pdftex.def)             Requested size: 420.0pt x 336.00351pt.
-<figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf, id=2402, 722.7pt x 57
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[117
+
+ <./figure/07-dnam_lungcancer_mr/sup_fig1.pdf>]
+<figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf, id=2236, 722.7pt x 57
 8.16pt>
 File: figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf Graphic file (typ
 e pdf)
 <use figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pd
-f  used on input line 2434.
+f  used on input line 2450.
 (pdftex.def)             Requested size: 420.0pt x 336.00351pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[152 <./figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smokers.pdf>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
+[118 <./figure/07-dnam_lungcancer_mr/sup_fig2-never_v_ever_smokers.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[153 <./figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf>]
-<figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf, id=2425, 722.7pt x 
+[119 <./figure/07-dnam_lungcancer_mr/sup_fig3-lc_subtype_mr.pdf>]
+<figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf, id=2258, 722.7pt x 
 578.16pt>
 File: figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf Graphic file (t
 ype pdf)
 <use figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.
-pdf  used on input line 2481.
+pdf  used on input line 2495.
 (pdftex.def)             Requested size: 420.0pt x 336.00351pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[154]
-Underfull \hbox (badness 10000) in paragraph at lines 2490--2534
+[120] [121 <./figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 2506--2550
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2490--2534
+Underfull \hbox (badness 10000) in paragraph at lines 2506--2550
 
  []
 
-[155 <./figure/07-dnam_lungcancer_mr/sup_fig4-mqtl_smoking_mr.pdf>] [156] [157]
-<figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf, id=2458, 774.895pt x 544
+[122] [123]
+<figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf, id=2292, 774.895pt x 544
 .0325pt>
 File: figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf Graphic file (type p
 df)
 <use figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf  
-used on input line 2544.
+used on input line 2560.
 (pdftex.def)             Requested size: 600.0pt x 421.24727pt.
 
-LaTeX Warning: Float too large for page by 65.64728pt on input line 2549.
+LaTeX Warning: Float too large for page by 65.64728pt on input line 2565.
 
-[158 <./figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf>]
-<figure/07-dnam_lungcancer_mr/Figure_4a.jpg, id=2491, 4818.0pt x 3613.5pt>
+[124 <./figure/07-dnam_lungcancer_mr/sup_fig5-ahrr_2samp.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[125
+
+
+]
+<figure/07-dnam_lungcancer_mr/Figure_4a.jpg, id=2330, 4818.0pt x 3613.5pt>
 File: figure/07-dnam_lungcancer_mr/Figure_4a.jpg Graphic file (type jpg)
 <use figure/07-dnam_lungcancer_mr/Figure_4a.jpg>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/Figure_4a.jpg  used on in
-put line 2585.
-(pdftex.def)             Requested size: 420.0pt x 315.00053pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[159
-
-
-]
-<figure/07-dnam_lungcancer_mr/Figure_4b.jpg, id=2498, 4818.0pt x 3613.5pt>
+put line 2603.
+(pdftex.def)             Requested size: 420.00072pt x 239.95839pt.
+<figure/07-dnam_lungcancer_mr/Figure_4b.jpg, id=2331, 4818.0pt x 3613.5pt>
 File: figure/07-dnam_lungcancer_mr/Figure_4b.jpg Graphic file (type jpg)
 <use figure/07-dnam_lungcancer_mr/Figure_4b.jpg>
 Package pdftex.def Info: figure/07-dnam_lungcancer_mr/Figure_4b.jpg  used on in
-put line 2588.
-(pdftex.def)             Requested size: 420.0pt x 315.00053pt.
+put line 2606.
+(pdftex.def)             Requested size: 420.00072pt x 239.95839pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[160 <./figure/07-dnam_lungcancer_mr/Figure_4a.jpg>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \vbox (badness 1968) has occurred while \output is active []
-
-[161 <./figure/07-dnam_lungcancer_mr/Figure_4b.jpg>]
+[126 <./figure/07-dnam_lungcancer_mr/Figure_4a.jpg> <./figure/07-dnam_lungcance
+r_mr/Figure_4b.jpg>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[162]
-Underfull \vbox (badness 1881) has occurred while \output is active []
-
-[163]
-Underfull \vbox (badness 2608) has occurred while \output is active []
-
-[164]
+[127]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[165] [166]
+[128] [129] [130] [131] [132
+
+]
 Chapter 8.
-[167
-
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[168]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[169]
-Underfull \vbox (badness 4108) has occurred while \output is active []
-
-[170] [171]
-Underfull \vbox (badness 2608) has occurred while \output is active []
-
-[172] [173] [174] [175] [176
-
-]
+[133] [134] [135] [136] [137] [138]
 Appendix A.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[177]
-<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.05.pdf, id=2598, 
+[139
+
+]
+<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.05.pdf, id=2414, 
 504.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.05.pdf Graph
 ic file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.05.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_up_all
-/PEC_0.05.pdf  used on input line 2772.
+/PEC_0.05.pdf  used on input line 2795.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
-<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.1.pdf, id=2599, 5
+<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.1.pdf, id=2415, 5
 04.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.1.pdf Graphi
 c file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.1.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_up_all
-/PEC_0.1.pdf  used on input line 2773.
+/PEC_0.1.pdf  used on input line 2796.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[178 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.05.pdf>]
-<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.2.pdf, id=2612, 5
+[140 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.05.pdf>]
+<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.2.pdf, id=2428, 5
 04.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.2.pdf Graphi
 c file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.2.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_up_all
-/PEC_0.2.pdf  used on input line 2774.
+/PEC_0.2.pdf  used on input line 2797.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[179 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.1.pdf>]
-<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.5.pdf, id=2625, 5
+[141 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.1.pdf>]
+<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.5.pdf, id=2442, 5
 04.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.5.pdf Graphi
 c file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.5.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_up_all
-/PEC_0.5.pdf  used on input line 2775.
+/PEC_0.5.pdf  used on input line 2798.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[180 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.2.pdf>]
-<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_1.pdf, id=2638, 504
+[142 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.2.pdf>]
+<figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_1.pdf, id=2455, 504
 .88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_1.pdf Graphic 
 file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_1.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_up_all
-/PEC_1.pdf  used on input line 2778.
+/PEC_1.pdf  used on input line 2801.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[181 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.5.pdf>]
-<figure/06-ewas_gwas_comparison/architecture_sims_other_traits_corr.png, id=265
-3, 505.89pt x 505.89pt>
+[143 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_0.5.pdf>]
+<figure/06-ewas_gwas_comparison/architecture_sims_other_traits_corr.png, id=247
+0, 505.89pt x 505.89pt>
 File: figure/06-ewas_gwas_comparison/architecture_sims_other_traits_corr.png Gr
 aphic file (type png)
 <use figure/06-ewas_gwas_comparison/architecture_sims_other_traits_corr.png>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/architecture_sims_other
-_traits_corr.png  used on input line 2789.
+_traits_corr.png  used on input line 2812.
 (pdftex.def)             Requested size: 420.0pt x 420.00436pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[182 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_1.pdf>]
-<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.05.pdf, id=267
-0, 504.88625pt x 504.88625pt>
+[144 <./figure/06-ewas_gwas_comparison/method_test_gene_up_all/PEC_1.pdf>]
+<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.05.pdf, id=248
+7, 504.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.05.pdf Gr
 aphic file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.05.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_v_prot
-ein/PEC_0.05.pdf  used on input line 2798.
+ein/PEC_0.05.pdf  used on input line 2821.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[183 <./figure/06-ewas_gwas_comparison/architecture_sims_other_traits_corr.png 
+[145 <./figure/06-ewas_gwas_comparison/architecture_sims_other_traits_corr.png 
 (PNG copy)>]
-<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.1.pdf, id=2676
+<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.1.pdf, id=2492
 , 504.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.1.pdf Gra
 phic file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.1.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_v_prot
-ein/PEC_0.1.pdf  used on input line 2799.
+ein/PEC_0.1.pdf  used on input line 2822.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[184 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.05.pdf>
+[146 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.05.pdf>
 ]
-<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.2.pdf, id=2690
+<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.2.pdf, id=2505
 , 504.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.2.pdf Gra
 phic file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.2.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_v_prot
-ein/PEC_0.2.pdf  used on input line 2800.
+ein/PEC_0.2.pdf  used on input line 2823.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[185 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.1.pdf>]
-<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.5.pdf, id=2703
+[147 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.1.pdf>]
+<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.5.pdf, id=2519
 , 504.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.5.pdf Gra
 phic file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.5.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_v_prot
-ein/PEC_0.5.pdf  used on input line 2801.
+ein/PEC_0.5.pdf  used on input line 2824.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[186 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.2.pdf>]
-<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_1.pdf, id=2716, 
+[148 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.2.pdf>]
+<figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_1.pdf, id=2532, 
 504.88625pt x 504.88625pt>
 File: figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_1.pdf Graph
 ic file (type pdf)
 <use figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_1.pdf>
 Package pdftex.def Info: figure/06-ewas_gwas_comparison/method_test_gene_v_prot
-ein/PEC_1.pdf  used on input line 2804.
+ein/PEC_1.pdf  used on input line 2827.
 (pdftex.def)             Requested size: 420.0pt x 420.00305pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[187 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.5.pdf>]
-[188 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_1.pdf>]
-Underfull \vbox (badness 6380) has occurred while \output is active []
+[149 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_0.5.pdf>]
+[150 <./figure/06-ewas_gwas_comparison/method_test_gene_v_protein/PEC_1.pdf>]
+Underfull \vbox (badness 1215) has occurred while \output is active []
 
-[189
+[151
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[190]
+[152]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[191]
+[153]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[192]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[193]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[194]
-Underfull \hbox (badness 10000) in paragraph at lines 3055--3057
+[154]
+Underfull \hbox (badness 10000) in paragraph at lines 3078--3080
  \T1/pcr/m/n/10.95 / / e m e a . i l l u m i n a . c o m / c o n t e n t / d a 
 m / i l l u m i na -[] m a r k e t i n g / d o c u m e n t s /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3055--3057
+Underfull \hbox (badness 10000) in paragraph at lines 3078--3080
  \T1/pcr/m/n/10.95 p r o d u c t s / d a t a s h e e t s / d a t a s h e e t % 
 7 B /[] % 7 D h u m a n m e t h y l a t i o n 4 5 0 . p d f$[]\T1/ptm/m/n/10.95
  (+20) ).
@@ -1739,20 +1603,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 3055--3057
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[195]
+[155]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[196]
+[156]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[197]
+[157]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[198]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[199]
-Underfull \hbox (badness 10000) in paragraph at lines 3211--3213
+[158]
+Underfull \hbox (badness 10000) in paragraph at lines 3234--3236
  \T1/ptm/m/n/10.95 (+20) ([]$\T1/pcr/m/n/10.95 h t tp : / / g e n o m e b i o l
  o g y . b i o m e d c e n t r a l . c o m / a r t i c l e s / 1 0 . 1 1 8 6 / 
 s 1 3 0 5
@@ -1761,31 +1622,28 @@ s 1 3 0 5
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[200]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[201]
-Underfull \hbox (badness 1509) in paragraph at lines 3274--3276
+[159]
+Underfull \hbox (badness 1509) in paragraph at lines 3297--3299
  \T1/ptm/m/n/10.95 (+20) his-to-log-i-cal sub-types. \T1/ptm/m/it/10.95 (+20) N
 a-ture ge-net-ics \T1/ptm/m/n/10.95 (+20) [elec-tronic ar-ti-cle]. 2017;49(7):1
 126--1132.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3274--3276
+Underfull \hbox (badness 10000) in paragraph at lines 3297--3299
  \T1/ptm/m/n/10.95 (+20) ([]$\T1/pcr/m/n/10.95 h t tp : / / w w w . n a t u r e
  . c o m / d o i f i n d e r / 1 0 . 1 0 3 8 / n g . 3 8 9 2 % 7 B / % % 7 D 5 
 C n h t t
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3286--3288
+Underfull \hbox (badness 10000) in paragraph at lines 3309--3311
  \T1/pcr/m/n/10.95 . i l l u m i n a . c o m / d o c u m e n t s / M i c r o a 
 r r a y / i n f i n i u m -[] m e t h y l a t i o n -[] e p ic -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3286--3288
+Underfull \hbox (badness 10000) in paragraph at lines 3309--3311
  \T1/pcr/m/n/10.95 d a ta -[] s h e e t -[] 1 0 70 -[] 2 0 15 -[] 0 0 8 / C o n
  t e n t / S o u r c e / M i c r o a r r a y / I n f i n i u m / M
  []
@@ -1793,11 +1651,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 3286--3288
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[202]
+[160]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[203]
-Underfull \hbox (badness 10000) in paragraph at lines 3334--3336
+[161]
+Underfull \hbox (badness 10000) in paragraph at lines 3357--3359
  \T1/ptm/m/n/10.95 (+20) ([]$\T1/pcr/m/n/10.95 h t tp : / / m e d r x i v . o r
  g / c o n t e n t / e a r l y / 2 0 2 0 / 0 9 / 0 3 / 2 0 2 0 . 0 9 . 0 1 . 2 
 0 1 8 0 4
@@ -1806,29 +1664,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 3334--3336
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[204]
-Underfull \hbox (badness 10000) in paragraph at lines 3373--3375
+[162]
+Underfull \hbox (badness 10000) in paragraph at lines 3396--3398
  \T1/pcr/m/n/10.95 c e n t r a l . n i h . g o v / a r t i c l e r e n d e r . 
 f c gi? a r t id = 2 8 4 8 1 2 4 % 7 B /& % 7 D t o ol =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3373--3375
+Underfull \hbox (badness 10000) in paragraph at lines 3396--3398
  \T1/pcr/m/n/10.95 p m c e n t r e z % 7 B /& % 7 D r e n d e r t y pe = a b s 
 t r a c t % 7 B / % % 7 D 5 C n h t t p : / / w w w . n c
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3373--3375
+Underfull \hbox (badness 10000) in paragraph at lines 3396--3398
  \T1/pcr/m/n/10.95 b i . n l m . n i h . g o v / e n t r e z / q u e r y . f c 
 gi? c md = R e t r i e v e % 7 B / & % 7 D db = P u b M
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[205]
-Underfull \hbox (badness 10000) in paragraph at lines 3391--3393
+Underfull \hbox (badness 10000) in paragraph at lines 3414--3416
  \T1/pcr/m/n/10.95 / i n w a r d / r e c o r d . u rl? e id = 2 -[] s 2 .0 -[] 
 8 4 9 3 1 3 6 0 0 2 2 % 7 B /& % 7 D p a r t n e r I D =
  []
@@ -1836,27 +1691,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 3391--3393
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[206]
-Underfull \hbox (badness 2088) in paragraph at lines 3403--3405
+[163]
+Underfull \hbox (badness 2088) in paragraph at lines 3426--3428
  [][]\T1/ptm/m/n/10.95 (+20) 193. Chang CC, Chow CC, Tel-lier LC, et al. Second
 -generation PLINK: ris-ing
  []
 
 
-Underfull \hbox (badness 2837) in paragraph at lines 3403--3405
+Underfull \hbox (badness 2837) in paragraph at lines 3426--3428
  \T1/ptm/m/n/10.95 (+20) to the chal-lenge of larger and richer datasets. \T1/p
 tm/m/it/10.95 (+20) Gi-ga-Science \T1/ptm/m/n/10.95 (+20) [elec-tronic ar-ti-cl
 e].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3403--3405
+Underfull \hbox (badness 10000) in paragraph at lines 3426--3428
  \T1/ptm/m/n/10.95 (+20) 2015;4(1):7. ([]$\T1/pcr/m/n/10.95 h t t p s : / / a c
  a d e m i c . o u p . c o m / g i g a s c i e n c e / a r t i c le -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3418--3420
+Underfull \hbox (badness 10000) in paragraph at lines 3441--3443
  \T1/pcr/m/n/10.95 2 7 7 8 % 2 0 h t t p : / / w w w . p u b m e d c e n t r a 
 l . n i h . g o v / a r t i c l e r e n d e r . f c gi? a
  []
@@ -1864,24 +1719,18 @@ l . n i h . g o v / a r t i c l e r e n d e r . f c gi? a
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[207]
+[164]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[208]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[209]
-Underfull \hbox (badness 10000) in paragraph at lines 3511--3513
+[165]
+Underfull \hbox (badness 10000) in paragraph at lines 3534--3536
  \T1/ptm/m/n/10.95 (+20) ([]$\T1/pcr/m/n/10.95 h t tp : / / b i o r x i v . o r
  g / c o n t e n t / e a r l y / 2 0 2 0 / 0 8 / 0 4 / 2 0 2 0 . 0 8 . 0 1 . 2 
 3 0 1 9 3
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[210]
-Underfull \hbox (badness 10000) in paragraph at lines 3526--3528
+Underfull \hbox (badness 10000) in paragraph at lines 3549--3551
  \T1/pcr/m/n/10.95 u b m e d / 1 6 1 3 6 6 5 2 % 7 B / % % 7 D 5 C n h t t p : 
 / / w w w . n c b i . n l m . n i h . g o v / p u b m e d /
  []
@@ -1889,8 +1738,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 3526--3528
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[211]
-Underfull \hbox (badness 10000) in paragraph at lines 3559--3561
+[166]
+Underfull \hbox (badness 10000) in paragraph at lines 3582--3584
  \T1/pcr/m/n/10.95 2 3 7 1 5 3 2 3 % 7 B / % % 7 D 5 C n h t t p : / / w w w . 
 p u b m e d c e n t r a l . n i h . g o v / a r t i c l e r
  []
@@ -1898,29 +1747,26 @@ p u b m e d c e n t r a l . n i h . g o v / a r t i c l e r
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[212]
+[167]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[213]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[214] [215] (./thesis.aux)
+[168] [169] (./thesis.aux)
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: E3441EF18C2D3AE4D738D90A5C393D36;11723.
  )
 (\end occurred inside a group at level 2)
 
-### semi simple group (level 2) entered at line 334 (\begingroup)
-### semi simple group (level 1) entered at line 212 (\begingroup)
+### semi simple group (level 2) entered at line 226 (\begingroup)
+### semi simple group (level 1) entered at line 220 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 16923 strings out of 481441
- 308559 string characters out of 5919745
- 703730 words of memory out of 5000000
- 32010 multiletter control sequences out of 15000+600000
- 621387 words of font info for 298 fonts, out of 8000000 for 9000
+ 16890 strings out of 481441
+ 308486 string characters out of 5919745
+ 704305 words of memory out of 5000000
+ 32030 multiletter control sequences out of 15000+600000
+ 621257 words of font info for 296 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 66i,15n,73p,2836b,2558s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 66i,15n,73p,2836b,2554s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/tb13101/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base
 /8r.enc}{/Users/tb13101/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit
 .enc}{/Users/tb13101/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.en
@@ -1939,10 +1785,10 @@ ist/fonts/type1/urw/times/utmb8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist
 /fonts/type1/urw/times/utmbi8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb></Users/tb13101/Library/TinyTeX/texmf-dist/font
 s/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (237 pages, 8935392 bytes).
+Output written on thesis.pdf (185 pages, 8913277 bytes).
 PDF statistics:
- 3470 PDF objects out of 3580 (max. 8388607)
- 3027 compressed objects within 31 object streams
- 917 named destinations out of 1000 (max. 500000)
+ 3238 PDF objects out of 3580 (max. 8388607)
+ 2849 compressed objects within 29 object streams
+ 865 named destinations out of 1000 (max. 500000)
  13726 words of extra memory for PDF output out of 14400 (max. 10000000)
 

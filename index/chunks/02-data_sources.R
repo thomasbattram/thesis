@@ -10,7 +10,7 @@ data_overview_cap <- "Overview of data used in this thesis"
 
 ## ---- data-overview-tab --------------------------------
 kbl(data_overview_tab, format = "latex", caption = data_overview_cap, booktabs = TRUE) %>%
-    kable_styling(latex_options = c("striped", "hold_position", "scale_down")) %>%
+    kable_styling(latex_options = c("striped", "HOLD_position", "scale_down")) %>%
     add_footnote(c("ARIES = Accessible Resource for Integrated Epigenomic Studies", 
     			   "GEO = Gene Expression Omnibus", 
     			   "IEU = Integrative Epidemiology Unit", 

@@ -29,7 +29,9 @@ read_chunk("chunks/04-properties_of_ewas.R")
 ```
 
 ## Chapter summary {#chapter-summary-04}
-The EWAS Catalog database developed in __Chapter \@ref(ewas-catalog)__ contains thousands of associations from hundreds of studies. By far the most common method of measuring DNA methylation amongst these EWAS is in blood using the Illumina Infinium HumanMethylation450 BeadChip (HM450 array). This platform assays fewer than 2% of CpG sites in the human genome, and those selected are ascertained for regions hypothesised to be relevant to gene regulation. Understanding what drives the associations found by measuring DNA methylation in this way could help prioritise CpG sites or regions of the genome to target for future technologies used in EWAS and further, it could guide current EWAS study design (for example by discovering sites which could be removed before analysis). In this chapter I use the data collected for The EWAS Catalog to evaluate the characteristics of known DNA methylation associations. Of the data in the EWAS Catalog, `r comma(percent_faulty_probes + percent_sex_probes)`% of reported associations are from CpGs measured by probes recently reported as unreliable and `r comma(100 - (sum(batch_tab$batch_included & batch_tab$cell_comp_included) / nrow(batch_tab) * 100))`% of studies did not account for both batch effects and cellular composition, suggesting some associations may be false positives. However, after removal of these potentially false positive results, characteristics of DNA methylation still associated with EWAS results. An increase in heritability by 10% associated with a decrease in the modulus of the standardised effect size by `r comma((1 - get_cc_res("effect", "h2")[["Beta"]]) * 100)`% [95% CI: `r comma((1 - get_cc_res("effect", "h2")[["2.5 %"]]) * 100)`% decrease, `r comma((1 - get_cc_res("effect", "h2")[["97.5 %"]]) * 100)`% decrease]. It was also observed that an increase in the variance of DNA methylation by one standard deviation was associated with a decrease in the modulus of the standardised effect size by `r comma((1 - get_cc_res("effect", "varcpg_per_sd")[["Beta"]]) * 100)`% [95% CI: `r comma((1 - get_cc_res("effect", "varcpg_per_sd")[["2.5 %"]]) * 100)`% decrease, `r comma((1 - get_cc_res("effect", "varcpg_per_sd")[["97.5 %"]]) * 100)`% decrease]. Differentially methylated positions (DMPs) were found to be present in actively transcribed promoter regions, enhancer regions and in over 100 transcription factor binding sites more than expected by chance. DMPs were also found to be depleted for heterochromatic regions, poised and bivalent promoters, regions repressed by polycomb proteins and quiescent regions. Targeting genomic regions for measurement of DNA methylation that are enriched for EWAS results, and avoiding regions that are depleted for EWAS results, may increase probability of identifying DMPs in future EWAS. These enrichment and depletion analyses were conducted across 25 distinct tissues and the strongest associations were found in blood, suggesting conducting EWAS in different tissues will likely yield tissue-specific results.
+The EWAS Catalog database developed in __Chapter \@ref(ewas-catalog)__ contains thousands of associations from hundreds of studies. By far the most common method of measuring DNA methylation amongst these EWAS is in blood using the Illumina Infinium HumanMethylation450 BeadChip (HM450 array). This platform assays fewer than 2% of CpG sites in the human genome, and those selected are ascertained for regions hypothesised to be relevant to gene regulation. Understanding what drives the associations found by measuring DNA methylation in this way could help prioritise CpG sites or regions of the genome to target for future technologies used in EWAS and further, it could guide current EWAS study design (for example by discovering sites which could be removed before analysis). 
+
+In this chapter I use the data collected for The EWAS Catalog to evaluate the characteristics of known DNA methylation associations. Of the data in the EWAS Catalog, `r comma(percent_faulty_probes + percent_sex_probes)`% of reported associations are from CpGs measured by probes recently reported as unreliable and `r comma(100 - (sum(batch_tab$batch_included & batch_tab$cell_comp_included) / nrow(batch_tab) * 100))`% of studies did not account for both batch effects and cellular composition, suggesting some associations may be false positives. However, after removal of these potentially false positive results, characteristics of DNA methylation still associated with EWAS results. An increase in heritability by 10% associated with a decrease in the modulus of the standardised effect size by `r comma((1 - get_cc_res("effect", "h2")[["Beta"]]) * 100)`% [95% CI: `r comma((1 - get_cc_res("effect", "h2")[["2.5 %"]]) * 100)`% decrease, `r comma((1 - get_cc_res("effect", "h2")[["97.5 %"]]) * 100)`% decrease]. It was also observed that the modulus of the standardised effect size decreased by `r comma((1 - get_cc_res("effect", "varcpg_per_sd")[["Beta"]]) * 100)`% [95% CI: `r comma((1 - get_cc_res("effect", "varcpg_per_sd")[["2.5 %"]]) * 100)`% decrease, `r comma((1 - get_cc_res("effect", "varcpg_per_sd")[["97.5 %"]]) * 100)`% decrease] per one standard deviation increase in the variance of DNA methylation. Differentially methylated positions (DMPs) were found to be present in actively transcribed promoter regions, enhancer regions and in over 100 transcription factor binding sites more than expected by chance. DMPs were also found to be depleted for heterochromatic regions, poised and bivalent promoters, regions repressed by polycomb proteins and quiescent regions. Targeting genomic regions for measurement of DNA methylation that are enriched for EWAS results, and avoiding regions that are depleted for EWAS results, may increase probability of identifying DMPs in future EWAS. These enrichment and depletion analyses were conducted across 25 distinct tissues and the strongest associations were found in blood, suggesting conducting EWAS in different tissues will likely yield tissue-specific results.
 
 The results presented in this chapter (and later chapters) are using data from The EWAS Catalog when published data present in the database was from before 2019-01-01.
 
@@ -126,20 +128,11 @@ All analyses were completed using R (version 3.6.2).
 ## Results {#results-04}
 
 ### Description of the catalog {-#catalog-description}
-Before assessing the factors predicting DMPs, a brief summary of the data in The EWAS Catalog (as used for this study, see __Section \@ref(ewas-data-04)__ for details) is presented (__Table \@ref(tab:study-data-tab)__). \linebreak
-
-```{r study-data-tab, message=FALSE, results="asis"}
-```
-
-\linebreak
+Before assessing the factors predicting DMPs, a brief summary of the data in The EWAS Catalog (as used for this study, see __Section \@ref(ewas-data-04)__ for details) is presented (__Table \@ref(tab:study-data-tab)__).
 
 The percentage of hypermethylated sites in relation to traits was `r comma(dir_of_effect$hyper * 100)`% and there were `r num_to_text(nrow(h_genes))` CpGs that associated with more than ten traits (__Figure \@ref(fig:traits-manhattan)__). Here are those sites with gene names, as mapped using Illumina-provided annotations, in brackets: `r h_cpg_genes`. `r h_cpgs[length(h_cpgs)]` (_`r names(h_cpgs)[length(h_cpgs)]`_) was associated with more traits than any other site - `r max(h_genes$n_traits)` traits. These correspond mostly to metabolites, weight-related traits, and type two diabetes. 
 
-(ref:traits-manhattan-cap) __Number of unique traits associated with DNA methylation at each CpG__. Sites associated with more than 10 unique traits are highlighted in orange and labelled.
-
-(ref:traits-manhattan-scap) Number of unique traits associated with DNA methylation at each CpG
-
-```{r traits-manhattan, message=FALSE, results="asis", fig.cap='(ref:traits-manhattan-cap)', fig.scap='(ref:traits-manhattan-scap)'}
+```{r study-data-tab, message=FALSE, results="asis"}
 ```
 
 Next estimates of the trait variance (see equation \@ref(eq:r-squared)) explained by each association were assessed. This indicates the predictive performance from EWAS, although it should be noted that winner's curse will artificially inflate the performance, even amongst EWAS with true positive results.
@@ -148,19 +141,30 @@ The proportion of trait variance (ranging from 0 to 1) that correlated with DNA 
 
 (ref:rsq-distribution-cap) __Distribution of r^2^ values across all CpG sites in The EWAS Catalog__. Each EWAS can identify multiple differentially methylated positions, each of which will capture some variance of the trait of interest for that EWAS (r^2^). $\sum {r^2}$ is the sum of r^2^ values, the distribution of which is shown in __Figure \@ref(fig:rsq-sum-distribution)__. `r num_to_text(nrow(suspect_studies), start_of_sentence = TRUE)` studies were identified for which there was some evidence that the sum of r^2^ values were greater than the mean across all studies. All of the differentially methylated positions identified by those studies are highlighted in blue on the plot.
 
+These results suggest that some associations within the database are likely to be inflated, yet for most traits, variation at individual DNA methylation sites captures little trait variance. Summing the r^2^ values indicates a substantial proportion of trait variance can be captured by multiple DNA methylation sites for some traits, but this can only be estimated by jointly modelling the contribution of all sites to trait variance. This is explored in __Chapter \@ref(h2ewas-chapter)__. Here, the sum of r^2^ values is used to indicate whether the results of a study are likely inflated and thus may not be reliable. 
+
+\pagebreak
+
+(ref:traits-manhattan-cap) __Number of unique traits associated with DNA methylation at each CpG__. Sites associated with more than 10 unique traits are highlighted in orange and labelled.
+
+(ref:traits-manhattan-scap) Number of unique traits associated with DNA methylation at each CpG
+
+```{r traits-manhattan, message=FALSE, results="asis", fig.cap='(ref:traits-manhattan-cap)', fig.pos="!hp", fig.scap='(ref:traits-manhattan-scap)'}
+```
+
 (ref:rsq-distribution-scap) Distribution of r^2^ values across all CpG sites in The EWAS Catalog
 
-```{r rsq-distribution, message=FALSE, results="asis", fig.cap='(ref:rsq-distribution-cap)', fig.scap='(ref:rsq-distribution-scap)'}
+```{r rsq-distribution, message=FALSE, results="asis", fig.cap='(ref:rsq-distribution-cap)', fig.pos="!hp", fig.scap='(ref:rsq-distribution-scap)'}
 ```
 
 (ref:rsq-sum-distribution-cap) __Distribution of the sum of r^2^ values across each study in The EWAS Catalog__.
 
 (ref:rsq-sum-distribution-scap) Distribution of the sum of r^2^ values across each study in The EWAS Catalog
 
-```{r rsq-sum-distribution, message=FALSE, results="asis", fig.cap='(ref:rsq-sum-distribution-cap)', fig.scap='(ref:rsq-sum-distribution-scap)'}
+```{r rsq-sum-distribution, message=FALSE, results="asis", fig.cap='(ref:rsq-sum-distribution-cap)', fig.pos="!hp", fig.scap='(ref:rsq-sum-distribution-scap)'}
 ```
 
-These results suggest that some associations within the database are likely to be inflated, yet for most traits, variation at individual DNA methylation sites captures little trait variance. Summing the r^2^ values indicates a substantial proportion of trait variance can be captured by multiple DNA methylation sites for some traits, but this can only be estimated by jointly modelling the contribution of all sites to trait variance. This is explored in __Chapter \@ref(h2ewas-chapter)__. Here, the sum of r^2^ values is used to indicate whether the results of a study are likely inflated and thus may not be reliable. 
+\pagebreak
 
 ### Robustness of results {#robustness-of-results}
 As discussed, cellular heterogeneity, batch effects and inclusion of faulty probes can lead to false positives in EWAS. The extent to which this might be the case within EWAS included within The EWAS Catalog was explored.
@@ -171,17 +175,15 @@ Each study may have reported results across multiple EWAS models, adjusting for 
 
 (ref:faulty-probes-scap) The percentage of DMPs that may have been identified by faulty probes and the percentage of EWAS that reported identifying at least one of these probes
 
-```{r faulty-probes-plot, message=FALSE, results="asis", fig.cap='(ref:faulty-probes-cap)', fig.scap='(ref:faulty-probes-scap)'}
+```{r faulty-probes-plot, message=FALSE, results="asis", fig.cap='(ref:faulty-probes-cap)', fig.pos="!h", fig.scap='(ref:faulty-probes-scap)'}
 ```
 
 There were `r rep_study_n[rep_study_n$study == "discovery_and_replication", "n", drop=T]` studies that performed a meta-analysis of discovery and replication samples. A further `r rep_study_n[rep_study_n$study == "replication", "n", drop=T]` studies performed a separate replication analysis. Together, this provides `r nrow(replication_dat$rep_assoc)` associations within the EWAS Catalog that have been replicated at P < 1x10^-4^. 
 
-From the studies that uploaded their data to GEO, the association between DNA methylation and the phenotype of interest from the original study was re-analysed, including 20 surrogate variables as covariates. Both the original study results and the results from the re-analysis of the phenotype of interest are in The EWAS Catalog database for `r nrow(geo_rean)` studies. Across the studies, between `r min(geo_rean$rep_percent)`% and `r max(geo_rean$rep_percent)`% of DMPs were replicated at P < 1x10^-4^ (__Table \@ref(tab:geo-reanalysis-tab)__). Some of these EWAS reported very few DMPs (some only 1) and as they would have used different models, replicating the single reported result was not expected. \linebreak
+From the studies that uploaded their data to GEO, the association between DNA methylation and the phenotype of interest from the original study was re-analysed, including 20 surrogate variables as covariates. Both the original study results and the results from the re-analysis of the phenotype of interest are in The EWAS Catalog database for `r nrow(geo_rean)` studies. Across the studies, between `r min(geo_rean$rep_percent)`% and `r max(geo_rean$rep_percent)`% of DMPs were replicated at P < 1x10^-4^ (__Table \@ref(tab:geo-reanalysis-tab)__). Some of these EWAS reported very few DMPs (some only 1) and as they would have used different models, replicating the single reported result was not expected. 
 
 ```{r geo-reanalysis-tab, message=FALSE, results="asis"}
 ```
-
-\linebreak
 
 Using the catalog data, DMPs were examined to see if they were also associated with that same trait in another study at P<1x10^-4^. There were `r comma(nrow(rep_rates))` studies that shared a common phenotype of interest. Replication rate, judged as the percentage of CpGs also present in any other study of the same trait with P<1x10^-4^, varied from `r comma(min(rep_rates$prop_rep)*100)` to `r comma(max(rep_rates$prop_rep)*100)` between studies (__Table \@ref(tab:replication-tab)__, __Table \@ref(tab:replication-tab-smoking)__, __Table \@ref(tab:replication-tab-bmi)__). For many of the traits, the number of identified DMPs was low (`r sum(rep_rates$N_DMPs == 1)` studies reported one DMP), therefore the low replication rate for these studies is not completely unexpected given potential study heterogeneity in important factors such as study power, age, sex, ancestry and study design. However, there were also three studies that identified over 100 DMPs and none of them replicated, including an EWAS of smoking for which there are many high-powered replication studies. \linebreak
 
@@ -251,7 +253,7 @@ As the position of DNA methylation relative to genes is pertinent to its associa
 
 (ref:chrom-state-scap) Enrichment of DMPs for 25 chromatin states
 
-```{r chrom-state-plot, message=FALSE, results="asis", fig.cap='(ref:chrom-state-cap)', fig.scap='(ref:chrom-state-scap)'}
+```{r chrom-state-plot, message=FALSE, results="asis", fig.cap='(ref:chrom-state-cap)', fig.pos="!htp", fig.scap='(ref:chrom-state-scap)'}
 ```
 
 The DMPs identified by EWAS were also enriched for transcription factor binding sites. Of the 167 transcription factor binding sites tested, there was evidence that identified DMPs  were enriched in `r tfbs_en$n_enrich` of them in at least one tissue type (FDR < 0.05). The strongest enrichments were found for transcription factor binding sites as measured in blood (median OR ranged from `r comma(min(tfbs_en$blood_enrich_or$median_or))` to `r comma(max(tfbs_en$blood_enrich_or$median_or))` based on how DMPs were defined - see __Section \@ref(enrichment-tests-04)__ for details) and varied from tissue to tissue, but overall enrichment was observed more often than not across all tissues (__Figure \@ref(fig:tfbs-plot)__). 
