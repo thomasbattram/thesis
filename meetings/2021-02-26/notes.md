@@ -18,7 +18,10 @@ Some meeting notes
 
 ## updates on other work <a name="item2"></a>
 
-Some pre-meeting notes
+* h2ewas going off today/soon
+	+ wanted to see cover letter?
+	+ need to re-arrange if it's in journals "guidelines"?
+* started going through ewas-gwas. May present at the end of the week
 
 __NOTES:__
 
