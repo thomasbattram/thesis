@@ -12,6 +12,8 @@ Attendees: Tom B, Gib
 
 Teaching opportunities?? 
 
+* Talk to Kaitlin about omics-MR stuff 
+
 __NOTES:__
 
 Some meeting notes
@@ -19,8 +21,8 @@ Some meeting notes
 ## updates on other work <a name="item2"></a>
 
 * h2ewas going off today/soon
-	+ wanted to see cover letter?
-	+ need to re-arrange if it's in journals "guidelines"?
+	+ wanted to see cover letter? - send it to Gib
+	+ need to re-arrange if it's in journals "guidelines"? - no need to reformat
 * started going through ewas-gwas. May present at the end of the week
 
 __NOTES:__
