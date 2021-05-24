@@ -207,13 +207,29 @@ Through cataloguing published results and integrating methods and results from o
  \usepackage{threeparttablex}
  \usepackage[normalem]{ulem}
  \usepackage{makecell}
+ \usepackage{xcolor}
 
 
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
-\newenvironment{cslreferences}%
-  {}%
-  {\par}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 
 %%% Main document
@@ -451,7 +467,7 @@ Ideally, in every sample used in an EWAS, DNA methylation would be measured acro
 
 Without capabilities to measure methylation at every site in the genome, one must decide which sites are worth measuring. Current commonly used array technologies include the Illumina Infinium HumanMethylation450 BeadChip (HM450 array) and the Illumina Infinium HumanMethylationEPIC BeadChip (HMEPIC array), which measure DNA methylation at over 450,000 sites and over 800,000 sites respectively. They cover roughly 1.5-4\% of CpG sites in the genome (76). In order to capture what was thought to be the most relevant DNA methylation sites in relation to complex traits, the probes were chosen to map to 99\% of RefSeq genes and predominantly map to the promoter regions of these genes (77). One reason for this was to potentially help improve interpretation of EWAS findings (77). Identifying methylation changes at a specific gene suggests investigating the relationship of that gene and the complex trait further may yield interesting results, whereas interpreting complex trait associations with DNA methylation at a site in a relatively uncharacterized region of the genome would be more difficult for obvious reasons. The strongest association between DNA methylation and gene expression comes at CpG sites clustered around transcription start sites (23), thus enrichment of probes targeting promoter regions may also help with interpretation of EWAS.
 
-To measure DNA methylation, these array technologies, as well as sequencing techniques, often begin with bisulphite conversion of the DNA (56). This converts any un-methylated cytosine base to uracil and leaves methylated cytosines unchanged (27). The DNA samples can then be distributed amongst the array and the probes on the array will bind cytosines present at the regions for which their sequence corresponds (27). If a probe binds its target cytosine, then it will fluoresce, and this fluorescence can be quantified to give `beta values'. Beta values range between zero and one, with zero corresponding to no methylation across all DNA molecules (in a sample) at the target cytosine and one corresponding to methylation across all DNA samples at the target cytosine. DNA methylation is by nature a binary feature, but mixtures of DNA molecules (i.e.~multiple cells) mean that a continuous variable is generated unless single cell procedures are adopted.
+To measure DNA methylation, these array technologies, as well as sequencing techniques, often begin with bisulphite conversion of the DNA (56). This converts any un-methylated cytosine base to uracil and leaves methylated cytosines unchanged (27). The DNA samples can then be distributed amongst the array and the probes on the array will bind cytosines present at the regions for which their sequence corresponds (27). If a probe binds its target cytosine, then it will fluoresce, and this fluorescence can be quantified to give `beta values.' Beta values range between zero and one, with zero corresponding to no methylation across all DNA molecules (in a sample) at the target cytosine and one corresponding to methylation across all DNA samples at the target cytosine. DNA methylation is by nature a binary feature, but mixtures of DNA molecules (i.e.~multiple cells) mean that a continuous variable is generated unless single cell procedures are adopted.
 
 This study design has been widely adopted over the past ten years and the relationship between a plethora of traits, from smoking to anthropometric measures to childhood adversities, and DNA methylation has now been studied (1--4). There are also large consortia that are pooling samples to gain power for these studies, for example the Pregnancy and Childhood Epigenetics (PACE) consortium (78). A few traits have been identified as being associated with large variations in DNA methylation, one of which is smoking, where strong associations across thousands of sites have been identified and many replicated in EWAS of smoking (1). It has been revealed that the association at some sites is driven by smoking causing changes in DNA methylation and over time these DNA methylation changes may be (mostly) reversible by giving up smoking (79). Also, DNA methylation can be used to predict smoking status, and one study has provided evidence that DNA methylation of a single locus can predict smoking status with high accuracy (80). Another measure shown to relate to large variation in DNA methylation across the genome is age. Similarly to smoking, DNA methylation makes a highly accurate predictor for age and is thought to be able to establish whether rate of `biological' aging is different from chronological aging (81--83). These studies have shown that large perturbations in the DNA methylome can be related to complex traits and highlight the potential for EWAS to identify accurate predictors for these traits.
 
@@ -636,7 +652,7 @@ Imputation of mother's genotype data in ALSPAC was done with ALSPAC children's d
 
 Following DNA extraction samples were bisulfite converted using the Zymo EZ DNA Methylation kit (Zymo, Irvine, CA). Genome-wide methylation was measured using the HM450 array. The arrays were scanned using an Illumina iScan, with initial quality review using GenomeStudio. During the data generation process, a wide range of batch variables were recorded in a purpose-built laboratory information management system (LIMS). The LIMS also reported quality control (QC) metrics from the standard control probes on the HM450 array for each sample. Methylation data were normalised in R with the wateRmelon package (145) using the Touleimat and Tost (146) algorithm to reduce the non-biological differences between probes.
 
-Cell proportions (CD8+ and CD4+ T cells, B cells, monocytes, natural killer cells, and granulocytes) were estimated using an algorithm proposed by Houseman et al.~(86).
+Cell proportions (CD8+ and CD4+ T cells, B cells, monocytes, natural killer cells, and granulocytes) were estimated using an algorithm proposed by Houseman et al. (86).
 
 \hypertarget{geo-02}{%
 \section{Gene expression omnibus (GEO)}\label{geo-02}}
@@ -740,13 +756,11 @@ CCHS & 7 & individual & DNAm, genotypic, phenotypic\\
 \multicolumn{4}{l}{\textsuperscript{} ARIES = Accessible Resource for Integrated Epigenomic Studies}\\
 \multicolumn{4}{l}{\textsuperscript{} GEO = Gene Expression Omnibus}\\
 \multicolumn{4}{l}{\textsuperscript{} IEU = Integrative Epidemiology Unit}\\
-\multicolumn{4}{l}{\textsuperscript{} EPIC-Italy = Italian strand of the European Prospective Investigation into Cancer}\\
-\multicolumn{4}{l}{and Nutrition study}\\
+\multicolumn{4}{l}{\textsuperscript{} EPIC-Italy = Italian strand of the European Prospective Investigation into Cancer and Nutrition study}\\
 \multicolumn{4}{l}{\textsuperscript{} MCCS = Melbourne Collaborative Cohort Study}\\
 \multicolumn{4}{l}{\textsuperscript{} NOWAC = Norwegian Women and Cancer}\\
 \multicolumn{4}{l}{\textsuperscript{} NSHDS = Northern Sweden Health and Disease Study}\\
-\multicolumn{4}{l}{\textsuperscript{} TRICL-ILCCO = Transdisciplinary Research in Cancer of the Lung and The International}\\
-\multicolumn{4}{l}{Lung Cancer Consortium}\\
+\multicolumn{4}{l}{\textsuperscript{} TRICL-ILCCO = Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium}\\
 \multicolumn{4}{l}{\textsuperscript{} CCHS = Copenhagen City Heart Study}\\
 \multicolumn{4}{l}{\textsuperscript{} GTEx = Genotype-Tissue Expression (project)}\\
 \multicolumn{4}{l}{\textsuperscript{} DNAm = DNA methylation}\\
@@ -811,7 +825,7 @@ The EWAS Catalog web-app was built using the Django Python package (\url{https:/
 \hypertarget{overview-of-publication-data-extraction}{%
 \subsection{Overview of publication data extraction}\label{overview-of-publication-data-extraction}}
 
-To identify publications, periodic literature searches are performed in PubMed using the search terms: ``epigenome-wide'' OR ``epigenome wide'' OR ``EWAS'' OR ``genome-wide AND methylation'' OR ``genome wide AND methylation''.
+To identify publications, periodic literature searches are performed in PubMed using the search terms: ``epigenome-wide'' OR ``epigenome wide'' OR ``EWAS'' OR ``genome-wide AND methylation'' OR ``genome wide AND methylation.''
 
 To try and maximise quality and usefulness of data, and minimize computational burden, criteria for inclusion of a study into The EWAS Catalog were developed. These criteria and reasons for them are as follows:
 \begin{enumerate}
@@ -830,7 +844,7 @@ CpG-phenotype associations are extracted from studies at P\textless1x10\textsupe
 
 All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-11-13, The EWAS Catalog contained 582,801 associations from 218 published studies.
+Based on these criteria, from 2021-05-24, The EWAS Catalog contained 582,801 associations from 218 published studies.
 
 \hypertarget{new-ewas-03}{%
 \subsection{New EWAS performed}\label{new-ewas-03}}
@@ -864,7 +878,7 @@ Statistical analyses were conducted in R (Version 3.6.2). The smartsva package (
 \hypertarget{database-interface-and-use}{%
 \subsection{Database interface and use}\label{database-interface-and-use}}
 
-There are two ways to access this large, curated database: through the main website www.ewascatalog.org or by using the R package ``ewascatalog''. The website provides a simple user interface, whereby there is one simple search bar and an advanced search bar to explore the database and links to tabs that contain documentation on the contents and how to cite its use (\textbf{Figure \ref{fig:catalog-use}}). Users may enter a CpG, gene, genome position, trait, EFO term, author name, or PudMed ID into the search bar and it will rapidly return detail for relevant EWAS associations, including CpG, trait, sample size, publication and association (effect size and P value) (\textbf{Figure \ref{fig:catalog-use}}). This information along with additional information such as ancestry, outcome, exposure units, and tissue analysed are available for download as a tab-separated value (tsv) text file. Unlike other EWAS databases, the option is provided to download summary results for both the user's search and for the entire database. Further, users may upload their own data which will be parsed by a pipeline designed to check the data and format it for input into The EWAS Catalog MySQL database.
+There are two ways to access this large, curated database: through the main website www.ewascatalog.org or by using the R package ``ewascatalog.'' The website provides a simple user interface, whereby there is one simple search bar and an advanced search bar to explore the database and links to tabs that contain documentation on the contents and how to cite its use (\textbf{Figure \ref{fig:catalog-use}}). Users may enter a CpG, gene, genome position, trait, EFO term, author name, or PudMed ID into the search bar and it will rapidly return detail for relevant EWAS associations, including CpG, trait, sample size, publication and association (effect size and P value) (\textbf{Figure \ref{fig:catalog-use}}). This information along with additional information such as ancestry, outcome, exposure units, and tissue analysed are available for download as a tab-separated value (tsv) text file. Unlike other EWAS databases, the option is provided to download summary results for both the user's search and for the entire database. Further, users may upload their own data which will be parsed by a pipeline designed to check the data and format it for input into The EWAS Catalog MySQL database.
 
 
 
@@ -877,7 +891,7 @@ There are two ways to access this large, curated database: through the main webs
 
 }
 
-\caption[Using The EWAS Catalog]{\textbf{Using The EWAS Catalog}. On the left hand side is the home page. On the top right hand side are examples of searches possible: 1. CpG sites, 2. genes and 3. traits. Below the searches shows the pages directed to after searching for ``Vitamin B6 intake''. Circled in red is the download button, this button enables the user to download the results of their search as a tab-separated value file. This file will contain the information shown on the website as well as additional analysis information.}\label{fig:catalog-use}
+\caption[Using The EWAS Catalog]{\textbf{Using The EWAS Catalog}. On the left hand side is the home page. On the top right hand side are examples of searches possible: 1. CpG sites, 2. genes and 3. traits. Below the searches shows the pages directed to after searching for ``Vitamin B6 intake.'' Circled in red is the download button, this button enables the user to download the results of their search as a tab-separated value file. This file will contain the information shown on the website as well as additional analysis information.}\label{fig:catalog-use}
 \end{figure}
 \elandscape
 
@@ -916,7 +930,7 @@ Hundreds of EWAS have been conducted in the last 10-15 years, yet no systematic 
 
 Since the inception of EWAS, it has become clear that batch effects and cellular heterogeneity can generate false positives and bias effect sizes (87,90,91). Also, as discussed in \textbf{Section \ref{measuring-dna-methylation}}, characterisation of probes used by common arrays (e.g.~the HM450 array and the HMEPIC array) has shown that unreliable methylation measurements may occur because of cross-hybridisation of probes, non-specific probe mapping and SNPs being present at the binding sites of probes (92,93). Despite this, there are examples of replication amongst EWAS results, (113,157--162). Further functional characterisation of EWAS results, such as new experimental studies or the application of existing gene function knowledge, can also be used to bolster evidence that changes in DNA methylation estimated are unlikely due to bias (56,163). By way of an example, changes in DNA methylation at \emph{AHRR} have been replicated across multiple smoking EWAS (1,113,114,164) and as functional research has implicated this gene in handling toxic substances found in tobacco smoke (165), it seems unlikely these findings are chance occurrences.
 
-The characteristics of the DNA methylome may also explain some EWAS findings. Heritability varies across DNA methylation sites (166,167), and so if genetic effects are driving EWAS associations, either through confounding or with DNA methylation as a mediator, one would expect heritable sites to be commonly identified in EWAS. Variance is also heterogenous across sites (18) and at sites where variation is low, the ratio of noise to signal may be greater. Thus, some studies have advocated removing these sites to prevent generating false positives and to reduce the multiple testing burden (153,168). However, it is unclear how variance in DNA methylation relates to the magnitude of effect estimates.
+The characteristics of the DNA methylome may also explain some EWAS findings. Heritability varies across DNA methylation sites {[}VanDongen2016; (166); (167){]}, and so if genetic effects are driving EWAS associations, either through confounding or with DNA methylation as a mediator, one would expect heritable sites to be commonly identified in EWAS. Variance is also heterogenous across sites (18) and at sites where variation is low, the ratio of noise to signal may be greater. Thus, some studies have advocated removing these sites to prevent generating false positives and to reduce the multiple testing burden (153,168). However, it is unclear how variance in DNA methylation relates to the magnitude of effect estimates.
 
 Experimental studies have shown DNA methylation changes at different locations of the genome correlate with different regulatory functions. For example, an increase in DNA methylation at transcriptional start sites is correlated with a decrease in gene expression (23,41,42), but an increase in DNA methylation within a gene body shows the opposite association (43,44). As discussed in \textbf{Section \ref{ewas}}, the understanding that the genomic contexts in which DNA methylation occurs is related to gene regulation likely contributed to the design of contemporary arrays that measure DNA methylation. Yet, it is not known whether targeting protein-coding regions and enhancers has likely led to an increase in discovery of DNA methylation-trait associations.
 
@@ -952,7 +966,7 @@ To identify which traits for which r\textsuperscript{2} values might be inflated
 \hypertarget{identifying-faulty-probes}{%
 \subsection{Identifying faulty probes}\label{identifying-faulty-probes}}
 
-By far the most common method to measure DNA methylation across the studies in The EWAS Catalog is using the HM450 array. Since its development, the array has been extensively characterised (87,90--92) and it was found not all probes measure DNA methylation reliably. Some probes map to CpG sites that are influenced by SNPs, others are non-specific and some are prone to cross-hybridisation. Probes were assigned to be `potentially faulty' if they were characterised as such by Zhou et al.~(92).
+By far the most common method to measure DNA methylation across the studies in The EWAS Catalog is using the HM450 array. Since its development, the array has been extensively characterised (87,90--92) and it was found not all probes measure DNA methylation reliably. Some probes map to CpG sites that are influenced by SNPs, others are non-specific and some are prone to cross-hybridisation. Probes were assigned to be `potentially faulty' if they were characterised as such by Zhou et al. (92).
 
 \hypertarget{replication-methods-04}{%
 \subsection{Replication}\label{replication-methods-04}}
@@ -1110,7 +1124,7 @@ Each study may have reported results across multiple EWAS models, adjusting for 
 
 }
 
-\caption[The percentage of DMPs that may have been identified by faulty probes and the percentage of EWAS that reported identifying at least one of these probes]{\textbf{The percentage of DMPs that may have been identified by faulty probes and the percentage of EWAS that reported identifying at least one of these probes}. The left-hand bar represents all DMPs reported across all EWAS that fit into the categories shown, the right-hand bar represents the number of EWAS that include CpGs that fit into the categories shown. Some CpGs are both on a sex chromosome and were identified as faulty by Zhou et al.~They were labelled as `potentially faulty'.}\label{fig:faulty-probes-plot}
+\caption[The percentage of DMPs that may have been identified by faulty probes and the percentage of EWAS that reported identifying at least one of these probes]{\textbf{The percentage of DMPs that may have been identified by faulty probes and the percentage of EWAS that reported identifying at least one of these probes}. The left-hand bar represents all DMPs reported across all EWAS that fit into the categories shown, the right-hand bar represents the number of EWAS that include CpGs that fit into the categories shown. Some CpGs are both on a sex chromosome and were identified as faulty by Zhou et al.~They were labelled as `potentially faulty.'}\label{fig:faulty-probes-plot}
 \end{figure}
 There were 30 studies that performed a meta-analysis of discovery and replication samples. A further 48 studies performed a separate replication analysis. Together, this provides 1666 associations within the EWAS Catalog that have been replicated at P \textless{} 1x10\textsuperscript{-4}.
 
@@ -1135,10 +1149,8 @@ Psoriasis & 16 & 0 & 0.00\\
 Smoking & 32 & 31 & 96.88\\
 \cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{30} & \cellcolor{gray!6}{12} & \cellcolor{gray!6}{40.00}\\
 \bottomrule
-\multicolumn{4}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions}\\
-\multicolumn{4}{l}{identified at P < 1x10\textsuperscript{-7}}\\
-\multicolumn{4}{l}{\textsuperscript{} N-replicated = number of DMPs replicated in the GEO}\\
-\multicolumn{4}{l}{re-analysis at P < P < 1x10\textsuperscript{-4}}\\
+\multicolumn{4}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions identified at P < 1x10\textsuperscript{-7}}\\
+\multicolumn{4}{l}{\textsuperscript{} N-replicated = number of DMPs replicated in the GEO re-analysis at P < P < 1x10\textsuperscript{-4}}\\
 \end{tabular}}
 \end{table}
 Using the catalog data, DMPs were examined to see if they were also associated with that same trait in another study at P\textless1x10\textsuperscript{-4}. There were 72 studies that shared a common phenotype of interest. Replication rate, judged as the percentage of CpGs also present in any other study of the same trait with P\textless1x10\textsuperscript{-4}, varied from 0 to 100 between studies (\textbf{Table \ref{tab:replication-tab}}, \textbf{Table \ref{tab:replication-tab-smoking}}, \textbf{Table \ref{tab:replication-tab-bmi}}). For many of the traits, the number of identified DMPs was low (0 studies reported one DMP), therefore the low replication rate for these studies is not completely unexpected given potential study heterogeneity in important factors such as study power, age, sex, ancestry and study design. However, there were also three studies that identified over 100 DMPs and none of them replicated, including an EWAS of smoking for which there are many high-powered replication studies. \linebreak
@@ -1185,7 +1197,7 @@ High-density lipoprotein cholesterol & 63 & 5 & 1 & 0.07937\\
 \cellcolor{gray!6}{Serum high-density lipoprotein cholesterol} & \cellcolor{gray!6}{22} & \cellcolor{gray!6}{17} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.77273}\\
 Serum high-density lipoprotein cholesterol & 213 & 11 & 1 & 0.05164\\
 \cellcolor{gray!6}{Serum low-density lipoprotein cholesterol} & \cellcolor{gray!6}{61} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.00000}\\
-Serum total cholesterol & 1 & 0 & 2 & \vphantom{1}0.00000\\
+Serum total cholesterol & 1 & 0 & 2 & \vphantom{1} 0.00000\\
 \addlinespace
 \cellcolor{gray!6}{Serum total cholesterol} & \cellcolor{gray!6}{111} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.00000}\\
 Serum total cholesterol & 1 & 0 & 2 & 0.00000\\
@@ -1197,10 +1209,8 @@ Rheumatoid arthritis & 6 & 0 & 1 & 0.00000\\
 \cellcolor{gray!6}{Depression} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.00000}\\
 Depression & 2 & 0 & 1 & 0.00000\\
 \bottomrule
-\multicolumn{5}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions identified at}\\
-\multicolumn{5}{l}{P<1x10\textsuperscript{-7}}\\
-\multicolumn{5}{l}{\textsuperscript{} N-replicated = number of DMPs replicated in the GEO re-analysis at}\\
-\multicolumn{5}{l}{P<1x10\textsuperscript{-4}}\\
+\multicolumn{5}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions identified at P<1x10\textsuperscript{-7}}\\
+\multicolumn{5}{l}{\textsuperscript{} N-replicated = number of DMPs replicated in the GEO re-analysis at P<1x10\textsuperscript{-4}}\\
 \multicolumn{5}{l}{\textsuperscript{} N-replication-studies = number of studies for which replication was examined}\\
 \multicolumn{5}{l}{\textsuperscript{} Prop-replicated = proportion of DMPs replicated.}\\
 \end{tabular}}
@@ -1214,8 +1224,8 @@ Depression & 2 & 0 & 1 & 0.00000\\
 \toprule
 Trait & N-DMPs & N-replicated & N-replication-studies & Prop-replicated\\
 \midrule
-\cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{21} & \cellcolor{gray!6}{\vphantom{2}1.00000}\\
-smoking & 1 & 1 & 21 & \vphantom{1}1.00000\\
+\cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{21} & \cellcolor{gray!6}{\vphantom{2} 1.00000}\\
+smoking & 1 & 1 & 21 & \vphantom{1} 1.00000\\
 \cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{21} & \cellcolor{gray!6}{1.00000}\\
 smoking & 1,065 & 862 & 21 & 0.80939\\
 \cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{21} & \cellcolor{gray!6}{1.00000}\\
@@ -1244,10 +1254,8 @@ maternal\_smoking\_in\_pregnancy & 24 & 24 & 4 & 1.00000\\
 maternal\_smoking\_in\_pregnancy & 121 & 121 & 4 & 1.00000\\
 \cellcolor{gray!6}{maternal\_smoking\_in\_pregnancy} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{1.00000}\\
 \bottomrule
-\multicolumn{5}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions identified at}\\
-\multicolumn{5}{l}{P<1x10\textsuperscript{-7}}\\
-\multicolumn{5}{l}{\textsuperscript{} N-replicated = number of DMPs replicated in the GEO re-analysis at}\\
-\multicolumn{5}{l}{P<1x10\textsuperscript{-4}}\\
+\multicolumn{5}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions identified at P<1x10\textsuperscript{-7}}\\
+\multicolumn{5}{l}{\textsuperscript{} N-replicated = number of DMPs replicated in the GEO re-analysis at P<1x10\textsuperscript{-4}}\\
 \multicolumn{5}{l}{\textsuperscript{} N-replication-studies = number of studies for which replication was examined}\\
 \multicolumn{5}{l}{\textsuperscript{} Prop-replicated = proportion of DMPs replicated.}\\
 \end{tabular}}
@@ -1272,10 +1280,8 @@ Body mass index & 5 & 3 & 8 & 0.60000\\
 Body mass index & 182 & 113 & 8 & 0.62088\\
 \cellcolor{gray!6}{Body mass index} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{8} & \cellcolor{gray!6}{1.00000}\\
 \bottomrule
-\multicolumn{5}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions identified at}\\
-\multicolumn{5}{l}{P<1x10\textsuperscript{-7}}\\
-\multicolumn{5}{l}{\textsuperscript{} N-replicated = number of DMPs replicated in the GEO re-analysis at}\\
-\multicolumn{5}{l}{P<1x10\textsuperscript{-4}}\\
+\multicolumn{5}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions identified at P<1x10\textsuperscript{-7}}\\
+\multicolumn{5}{l}{\textsuperscript{} N-replicated = number of DMPs replicated in the GEO re-analysis at P<1x10\textsuperscript{-4}}\\
 \multicolumn{5}{l}{\textsuperscript{} N-replication-studies = number of studies for which replication was examined}\\
 \multicolumn{5}{l}{\textsuperscript{} Prop-replicated = proportion of DMPs replicated.}\\
 \end{tabular}}
@@ -1456,7 +1462,7 @@ All continuous traits were rank-normalised for further analyses. A Shapiro-Wilk 
 
 The DNA methylation data also came from ARIES. Measurement, quality control of this data are found in \textbf{Section \ref{aries-dnam-data}}
 
-Probes were excluded if they were present on either of the sex chromosomes, a SNP/control probe, had a detection p value \textless{} 0.05 across over 10\% of samples or were identified as problematic by Zhou et al.~(92). This left 421,693 CpG sites for analyses.
+Probes were excluded if they were present on either of the sex chromosomes, a SNP/control probe, had a detection p value \textless{} 0.05 across over 10\% of samples or were identified as problematic by Zhou et al. (92). This left 421,693 CpG sites for analyses.
 
 Before analysis a linear regression model was fitted with beta values for methylation (which ranges from 0 (no cytosines methylated) to 1 (all cytosines methylated)) as the outcome against batch variables (plate ID in ALSPAC) modelled as a random effect to help remove the effects of batch in the subsequent analyses.
 
@@ -1470,7 +1476,7 @@ When producing the MRM, probes were scaled by their observed variance and the we
     f_{j}(1-f_{j})^{(\alpha/2)}
     \label{eq:mrm-weights}
 \end{equation}
-where \(f_j(1-f_j)\) is the variance of methylation at CpG \(j\). The higher the alpha value the more weight is given to probes with greater variance; an alpha value of -1 gives equal weight to probes with low and high variance. The alpha value of -0.25 was chosen because previous analysis by Speed et al.~(191) suggested that this value was optimal for measuring h\textsuperscript{2}\textsubscript{SNP}. Furthermore, it was hypothesised that probes with a greater variance would contribute more to trait variance. As the method was applied to DNA methylation data in this chapter, sensitivity analyses were conducted. MRMs were created specifying the alpha value at increasing increments of 0.25 from -2 to 0. The association between h\textsuperscript{2}\textsubscript{EWAS} and number of EWAS hits.
+where \(f_j(1-f_j)\) is the variance of methylation at CpG \(j\). The higher the alpha value the more weight is given to probes with greater variance; an alpha value of -1 gives equal weight to probes with low and high variance. The alpha value of -0.25 was chosen because previous analysis by Speed et al. (191) suggested that this value was optimal for measuring h\textsuperscript{2}\textsubscript{SNP}. Furthermore, it was hypothesised that probes with a greater variance would contribute more to trait variance. As the method was applied to DNA methylation data in this chapter, sensitivity analyses were conducted. MRMs were created specifying the alpha value at increasing increments of 0.25 from -2 to 0. The association between h\textsuperscript{2}\textsubscript{EWAS} and number of EWAS hits.
 
 The mean of the MRM diagonal should be 1 and the variance close to 0, as the diagonal values essentially represent the correlation between an individual's methylome with itself. Although values are expected to vary slightly from 1. For the MRMs it was identified that some diagonal elements were very high (\textgreater{} 2), which caused the diagonal to have a high variance (0.13). To assess whether these values could skew results, sensitivity analyses were conducted, removing individuals with varying diagonal value cut-offs.
 
@@ -1717,9 +1723,7 @@ educational attainment & Karlsson Linner R & 29086770 & 10,767 & Lee JJ & 300383
 \cellcolor{gray!6}{insulin} & \cellcolor{gray!6}{Liu J} & \cellcolor{gray!6}{31197173} & \cellcolor{gray!6}{4,740} & \cellcolor{gray!6}{Manning AK} & \cellcolor{gray!6}{22581228} & \cellcolor{gray!6}{51,750}\\
 glucose & Liu J & 31197173 & 4,808 & Manning AK & 22581228 & 58,074\\
 \bottomrule
-\multicolumn{7}{l}{\textsuperscript{} Where gwas-pmid = NA, the GWAS were conducted as part of a UK Biobank GWAS pipeline within the}\\
-\multicolumn{7}{l}{Univeristy of Bristol's Integrative Epidemiology Unit and can be found on the OpenGWAS Project website}\\
-\multicolumn{7}{l}{(see Methods for more)}\\
+\multicolumn{7}{l}{\textsuperscript{} Where gwas-pmid = NA, the GWAS were conducted as part of a UK Biobank GWAS pipeline within the Univeristy of Bristol's Integrative Epidemiology Unit and can be found on the OpenGWAS Project website (see Methods for more)}\\
 \end{tabular}}
 \end{table}
 \hypertarget{genomic-position-overlap}{%
@@ -1808,10 +1812,8 @@ educational attainment & 25 & 1,594 & 1 & 1.5 & 3 & 3.00 & 0.430\\
 glucose & 15 & 50 & 0 & 0.0 & 0 & 0.00 & 1.000\\
 \bottomrule
 \multicolumn{8}{l}{\textsuperscript{} exp = expected, obs = observed}\\
-\multicolumn{8}{l}{\textsuperscript{} odds ratios (ORs) can be interpreted as the odds of an gene being identified by EWAS and a GWAS over the odds}\\
-\multicolumn{8}{l}{of a gene being identified by an EWAS but not by a GWAS.}\\
-\multicolumn{8}{l}{\textsuperscript{} exp-OR = the mean OR after repeating the analysis 1000 times, randomly sampling EWAS genes equal to the}\\
-\multicolumn{8}{l}{number identified in the empirical analysis.}\\
+\multicolumn{8}{l}{\textsuperscript{} odds ratios (ORs) can be interpreted as the odds of an gene being identified by EWAS and a GWAS over the odds of a gene being identified by an EWAS but not by a GWAS.}\\
+\multicolumn{8}{l}{\textsuperscript{} exp-OR = the mean OR after repeating the analysis 1000 times, randomly sampling EWAS genes equal to the number identified in the empirical analysis.}\\
 \end{tabular}}
 \end{table}
 \begin{table}[!h]
@@ -1833,13 +1835,9 @@ educational attainment & 25 & 1,594 & 215 & 0.105 & 0.13 & 0.173\\
 \cellcolor{gray!6}{insulin} & \cellcolor{gray!6}{36} & \cellcolor{gray!6}{5} & \cellcolor{gray!6}{16} & \cellcolor{gray!6}{0.093} & \cellcolor{gray!6}{0.12} & \cellcolor{gray!6}{0.376}\\
 glucose & 15 & 50 & 49 & 0.153 & 0.16 & 0.809\\
 \bottomrule
-\multicolumn{7}{l}{\textsuperscript{} For each geneset, odds of study genes being in the geneset divided by the odds the study}\\
-\multicolumn{7}{l}{genes not being in the geneset were assessed and correlation between these odds ratios are}\\
-\multicolumn{7}{l}{given here.}\\
-\multicolumn{7}{l}{\textsuperscript{} expected-cor = the mean correlation between odds ratios after repeating the analysis 1000}\\
-\multicolumn{7}{l}{times, randomly sampling EWAS genes equal to the number identified in the empirical analysis}\\
-\multicolumn{7}{l}{\textsuperscript{} geneset-overlap indicates the number of gene ontology terms that map to both genes identified}\\
-\multicolumn{7}{l}{by the EWAS and GWAS.}\\
+\multicolumn{7}{l}{\textsuperscript{} For each geneset, odds of study genes being in the geneset divided by the odds the study genes not being in the geneset were assessed and correlation between these odds ratios are given here.}\\
+\multicolumn{7}{l}{\textsuperscript{} expected-cor = the mean correlation between odds ratios after repeating the analysis 1000 times, randomly sampling EWAS genes equal to the number identified in the empirical analysis}\\
+\multicolumn{7}{l}{\textsuperscript{} geneset-overlap indicates the number of gene ontology terms that map to both genes identified by the EWAS and GWAS.}\\
 \end{tabular}}
 \end{table}
 \linebreak
@@ -1851,7 +1849,7 @@ There were 16 GO term genesets that were commonly enriched (FDR \textless{} 0.1)
 
 The total number of genes and genesets that can be identified by GWAS and EWAS are unknown and the proportion of causal and non-causal genes EWAS will identify is also unknown. Thus it is uncertain how much overlap there will be between genes and genesets of corresponding GWAS and EWAS as sample sizes increase and more genes and genesets are discovered. Using the empirical data from \textbf{Table \ref{tab:empirical-pathway-tab}} to inform simulations, I sought to identify the proportion of overlap between causal and associated genes (genes that may or may not be causal) and how this is related to the number of genes yet to be discovered.
 
-For the simulations, three sets of genes were linked to each trait: genes identified by the GWAS (known GWAS genes), genes identified by the EWAS (known EWAS genes) and a random set of genes sampled from the total set of Ensembl gene IDs (excluding the genes identified by the EWAS and GWAS). Those genes identified by the GWAS and a number of the randomly selected set of genes was assigned as ``causal'' and the genes identified by the EWAS and the rest of the randomly selected set of genes was assigned as ``associated''. The overlap between the causal and associated genes as well as the number of total genes (causal and associated) was pre-determined. From these pools of causal and associated genes, \(X\) genes were sampled randomly to represent GWAS genes and \(Y\) genes were sampled randomly to represent EWAS genes. The number of genes, \(X\) and \(Y\), sampled was equal to the number identified in the empirical GWAS and EWAS, respectively.
+For the simulations, three sets of genes were linked to each trait: genes identified by the GWAS (known GWAS genes), genes identified by the EWAS (known EWAS genes) and a random set of genes sampled from the total set of Ensembl gene IDs (excluding the genes identified by the EWAS and GWAS). Those genes identified by the GWAS and a number of the randomly selected set of genes was assigned as ``causal'' and the genes identified by the EWAS and the rest of the randomly selected set of genes was assigned as ``associated.'' The overlap between the causal and associated genes as well as the number of total genes (causal and associated) was pre-determined. From these pools of causal and associated genes, \(X\) genes were sampled randomly to represent GWAS genes and \(Y\) genes were sampled randomly to represent EWAS genes. The number of genes, \(X\) and \(Y\), sampled was equal to the number identified in the empirical GWAS and EWAS, respectively.
 
 Having generated the GWAS and EWAS genes, enrichment of GO terms was performed and the correlation between enrichment scores across all the terms was estimated. Under a single simulation scenario, the number of total genes and the proportion of causal and associated gene overlap was pre-determined. The known GWAS and EWAS genes was determined by those discovered from the empirical results, thus the random set of genes was varied to alter the total number of genes and proportion of overlap. The proportion of overlap was 0, 0.01, 0.1, 0.5 or 1 and the total number of genes was split evenly into causal and associated genes. The number of associated genes (and causal genes) equalled the total number of EWAS and GWAS genes discovered multiplied by 1, 2, 3, 5, 10 or 20. For each scenario, the analyses were repeated 1000 times for each trait. A schematic of the methods for these simulations can be found in \textbf{Figure \ref{fig:arch-simulations-schematic}} and it is described in full in the \textbf{Section \ref{methods-06}}.
 
@@ -2017,7 +2015,7 @@ Overall, the overlap between genes and genesets identified by EWAS and GWAS did 
 \hypertarget{architecture-sims-method}{%
 \subsection{Understanding architecture from geneset overlap}\label{architecture-sims-method}}
 
-Simulations were setup as illustrated in \textbf{Figure \ref{fig:arch-simulations-schematic}}. Here I describe simulations for a single trait. These were repeated for all traits. Firstly, SNPs identified in GWAS and DMPs identified in EWAS were mapped to genes as described in \textbf{Section \ref{gwas-ewas-overlap}}. Genes were then randomly sampled from Ensembl gene IDs and were assigned as either ``causal'', meaning changes in that gene effect variation in the phenotype across individuals, or ``associated'', meaning changes in the gene are associated with the phenotype across individuals, but the nature of association is not known. The empirically identified (or ``known'') GWAS genes (\(KGG\)) were added to the list of causal genes and the empirically identified (or ``known'') EWAS genes (\(KEG\)) were added to the list of associated genes. These combined set of causal and associated genes can be thought of as all the genes related to the trait of interest. A number of genes, equal to the number of \(KGG\) (\(N_{KGG}\)), was sampled from the causal set of genes and assigned to be the ``GWAS genes'' in the simulations. A number of genes, equal to the number of \(KEG\) (\(N_{KEG}\)), was sampled from the associated set of genes and assigned to be the ``EWAS genes'' in the simulations. Then geneset enrichment analyses for both the EWAS and GWAS genes were performed (equation \eqref{eq:geneset-enrichment}) and correlation between the enrichment scores was assessed as previously. In these simulations, the number of total genes was varied and the number of causal and associated genes was always set to be half of the total number of genes related to a trait. The total number of genes was proportional to the total number of known genes (\(N_{KTG} = N_{KGG} + N_{KEG}\)). The smallest number of total genes for any simulation was double the number of \(N_{KTG}\) and the greatest number of total genes was 40 times \(N_{KTG}\). The other variable set to vary between simulations was the proportion of overlap between causal and associated genes. This varied between zero and one, where zero represented the scenario where only the overlap in \(KGG\) and \(KEG\) would be present in the overlap between causal and associated genes and one represented the scenario where all causal and associated genes were the same. For each simulation scenario, the simulations were repeated 1000 times and box plots show the range of output from those 1000 repeats.
+Simulations were setup as illustrated in \textbf{Figure \ref{fig:arch-simulations-schematic}}. Here I describe simulations for a single trait. These were repeated for all traits. Firstly, SNPs identified in GWAS and DMPs identified in EWAS were mapped to genes as described in \textbf{Section \ref{gwas-ewas-overlap}}. Genes were then randomly sampled from Ensembl gene IDs and were assigned as either ``causal,'' meaning changes in that gene effect variation in the phenotype across individuals, or ``associated,'' meaning changes in the gene are associated with the phenotype across individuals, but the nature of association is not known. The empirically identified (or ``known'') GWAS genes (\(KGG\)) were added to the list of causal genes and the empirically identified (or ``known'') EWAS genes (\(KEG\)) were added to the list of associated genes. These combined set of causal and associated genes can be thought of as all the genes related to the trait of interest. A number of genes, equal to the number of \(KGG\) (\(N_{KGG}\)), was sampled from the causal set of genes and assigned to be the ``GWAS genes'' in the simulations. A number of genes, equal to the number of \(KEG\) (\(N_{KEG}\)), was sampled from the associated set of genes and assigned to be the ``EWAS genes'' in the simulations. Then geneset enrichment analyses for both the EWAS and GWAS genes were performed (equation \eqref{eq:geneset-enrichment}) and correlation between the enrichment scores was assessed as previously. In these simulations, the number of total genes was varied and the number of causal and associated genes was always set to be half of the total number of genes related to a trait. The total number of genes was proportional to the total number of known genes (\(N_{KTG} = N_{KGG} + N_{KEG}\)). The smallest number of total genes for any simulation was double the number of \(N_{KTG}\) and the greatest number of total genes was 40 times \(N_{KTG}\). The other variable set to vary between simulations was the proportion of overlap between causal and associated genes. This varied between zero and one, where zero represented the scenario where only the overlap in \(KGG\) and \(KEG\) would be present in the overlap between causal and associated genes and one represented the scenario where all causal and associated genes were the same. For each simulation scenario, the simulations were repeated 1000 times and box plots show the range of output from those 1000 repeats.
 
 \hypertarget{assessing-the-correlation-between-geneset-enrichment-results}{%
 \subsection{Assessing the correlation between geneset enrichment results}\label{assessing-the-correlation-between-geneset-enrichment-results}}
@@ -2728,7 +2726,7 @@ Overall though, these findings suggest that substantial changes may be required 
 \hypertarget{extensions-to-work}{%
 \section{Extensions to this work}\label{extensions-to-work}}
 
-Indeed the issues pertaining to some design flaws and potential improvements that can aid interpretation of EWAS has already been reviewed (6,56,214,251). Lappalainen \& Greally also suggested moving to conducting ``second generation EWAS'', which focused on improving interpretability of EWAS, especially when conducting them as a means to understand trait biology (251). They argue that there are four key aspects which should be the focus for future EWAS. Firstly, the hypothesised method for which cellular changes will result in phenotypic variation should be clear. Secondly, participants and cell samples collected should be obtained to answer necessary questions regarding causality. Thirdly, cell types present in samples should be measured as precisely as possible. Finally, as many complementary genome-wide assays as possible should be conducted in the same samples and these assays should survey the maximum amount of loci possible. Reflecting on the work presented in this thesis, and following on from these points, here I discuss ideas that could be applied to improve both yield and interpretation of EWAS.
+Indeed the issues pertaining to some design flaws and potential improvements that can aid interpretation of EWAS has already been reviewed (6,56,214,251). Lappalainen \& Greally also suggested moving to conducting ``second generation EWAS,'' which focused on improving interpretability of EWAS, especially when conducting them as a means to understand trait biology (251). They argue that there are four key aspects which should be the focus for future EWAS. Firstly, the hypothesised method for which cellular changes will result in phenotypic variation should be clear. Secondly, participants and cell samples collected should be obtained to answer necessary questions regarding causality. Thirdly, cell types present in samples should be measured as precisely as possible. Finally, as many complementary genome-wide assays as possible should be conducted in the same samples and these assays should survey the maximum amount of loci possible. Reflecting on the work presented in this thesis, and following on from these points, here I discuss ideas that could be applied to improve both yield and interpretation of EWAS.
 
 \hypertarget{beyond-the-hm450}{%
 \subsection{Beyond the HM450 array in blood}\label{beyond-the-hm450}}
@@ -2846,825 +2844,1099 @@ Despite the apparent shortcomings, there is still great potential for EWAS to un
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{refs}{}
-\begin{cslreferences}
+\begin{CSLReferences}{0}{0}
 \leavevmode\hypertarget{ref-Joehanes2016}{}%
-1. Joehanes R, Just AC, Marioni RE, et al. Epigenetic Signatures of Cigarette Smoking. \emph{Circulation: Cardiovascular Genetics}. 2016;
+\CSLLeftMargin{1. }
+\CSLRightInline{Joehanes R, Just AC, Marioni RE, et al. {Epigenetic Signatures of Cigarette Smoking}. \emph{Circulation: Cardiovascular Genetics}. 2016;9(5):436--447. }
 
 \leavevmode\hypertarget{ref-Breitling2011}{}%
-2. Breitling LP, Yang R, Korn B, et al. Tobacco-smoking-related differential DNA methylation: 27K discovery and replication. \emph{American Journal of Human Genetics}. 2011;
+\CSLLeftMargin{2. }
+\CSLRightInline{Breitling LP, Yang R, Korn B, et al. {Tobacco-smoking-related differential DNA methylation: 27K discovery and replication}. \emph{American Journal of Human Genetics}. 2011;}
 
 \leavevmode\hypertarget{ref-Wahl2017}{}%
-3. Wahl S, Drong A, Lehne B, et al. Epigenome-wide association study of body mass index, and the adverse outcomes of adiposity. \emph{Nature} {[}electronic article{]}. 2017;541(7635):81--86. (\url{http://dx.doi.org/10.1038/nature20784})
+\CSLLeftMargin{3. }
+\CSLRightInline{Wahl S, Drong A, Lehne B, et al. {Epigenome-wide association study of body mass index, and the adverse outcomes of adiposity.} \emph{Nature} {[}electronic article{]}. 2017;541(7635):81--86. (\url{http://dx.doi.org/10.1038/nature20784})}
 
 \leavevmode\hypertarget{ref-Yang2013}{}%
-4. Yang BZ, Zhang H, Ge W, et al. Child abuse and epigenetic mechanisms of disease risk. \emph{American Journal of Preventive Medicine}. 2013;
+\CSLLeftMargin{4. }
+\CSLRightInline{Yang BZ, Zhang H, Ge W, et al. {Child abuse and epigenetic mechanisms of disease risk}. \emph{American Journal of Preventive Medicine}. 2013;}
 
 \leavevmode\hypertarget{ref-Reese2019}{}%
-5. Reese SE, Xu CJ, Dekker HT den, et al. Epigenome-wide meta-analysis of DNA methylation and childhood asthma. \emph{Journal of Allergy and Clinical Immunology}. 2019;
+\CSLLeftMargin{5. }
+\CSLRightInline{Reese SE, Xu CJ, Dekker HT den, et al. {Epigenome-wide meta-analysis of DNA methylation and childhood asthma}. \emph{Journal of Allergy and Clinical Immunology}. 2019;}
 
 \leavevmode\hypertarget{ref-Birney2016}{}%
-6. Birney E, Smith GD, Greally JM. Epigenome-wide Association Studies and the Interpretation of Disease -Omics. \emph{PLOS Genetics} {[}electronic article{]}. 2016;12(6):e1006105. (\url{http://dx.plos.org/10.1371/journal.pgen.1006105})
+\CSLLeftMargin{6. }
+\CSLRightInline{Birney E, Smith GD, Greally JM. {Epigenome-wide Association Studies and the Interpretation of Disease -Omics}. \emph{PLOS Genetics} {[}electronic article{]}. 2016;12(6):e1006105. (\url{http://dx.plos.org/10.1371/journal.pgen.1006105})}
 
 \leavevmode\hypertarget{ref-Cobb2017}{}%
-7. Cobb M. 60 years ago, Francis Crick changed the logic of biology. \emph{PLoS Biology}. 2017;
+\CSLLeftMargin{7. }
+\CSLRightInline{Cobb M. {60 years ago, Francis Crick changed the logic of biology}. \emph{PLoS Biology}. 2017;}
 
 \leavevmode\hypertarget{ref-CRICK1958}{}%
-8. CRICK FH. On protein synthesis. \emph{Symposia of the Society for Experimental Biology}. 1958;
+\CSLLeftMargin{8. }
+\CSLRightInline{CRICK FH. {On protein synthesis.} \emph{Symposia of the Society for Experimental Biology}. 1958;}
 
 \leavevmode\hypertarget{ref-Hafner2019}{}%
-9. Hafner A, Bulyk ML, Jambhekar A, et al. The multiple mechanisms that regulate p53 activity and cell fate. \emph{Nature Reviews Molecular Cell Biology}. 2019;
+\CSLLeftMargin{9. }
+\CSLRightInline{Hafner A, Bulyk ML, Jambhekar A, et al. {The multiple mechanisms that regulate p53 activity and cell fate}. \emph{Nature Reviews Molecular Cell Biology}. 2019;}
 
 \leavevmode\hypertarget{ref-Corbett2018}{}%
-10. Corbett AH. Post-transcriptional regulation of gene expression and human disease. \emph{Current Opinion in Cell Biology}. 2018;
+\CSLLeftMargin{10. }
+\CSLRightInline{Corbett AH. {Post-transcriptional regulation of gene expression and human disease}. \emph{Current Opinion in Cell Biology}. 2018;}
 
 \leavevmode\hypertarget{ref-Wang2014}{}%
-11. Wang YC, Peterson SE, Loring JF. Protein post-translational modifications and regulation of pluripotency in human stem cells. \emph{Cell Research}. 2014;
+\CSLLeftMargin{11. }
+\CSLRightInline{Wang YC, Peterson SE, Loring JF. {Protein post-translational modifications and regulation of pluripotency in human stem cells}. \emph{Cell Research}. 2014;}
 
 \leavevmode\hypertarget{ref-Filipowicz2008}{}%
-12. Filipowicz W, Bhattacharyya SN, Sonenberg N. Mechanisms of post-transcriptional regulation by microRNAs: Are the answers in sight? \emph{Nature Reviews Genetics}. 2008;
+\CSLLeftMargin{12. }
+\CSLRightInline{Filipowicz W, Bhattacharyya SN, Sonenberg N. {Mechanisms of post-transcriptional regulation by microRNAs: Are the answers in sight?} \emph{Nature Reviews Genetics}. 2008;}
 
 \leavevmode\hypertarget{ref-Alberts2017}{}%
-13. Alberts B, Johnson A, Lewis J, et al. Molecular Biology of the Cell. 2017.
+\CSLLeftMargin{13. }
+\CSLRightInline{Alberts B, Johnson A, Lewis J, et al. {Molecular Biology of the Cell}. 2017.}
 
 \leavevmode\hypertarget{ref-Colby2011}{}%
-14. Colby DW, Prusiner SB. Prions. \emph{Cold Spring Harbor Perspectives in Biology}. 2011;
+\CSLLeftMargin{14. }
+\CSLRightInline{Colby DW, Prusiner SB. {Prions}. \emph{Cold Spring Harbor Perspectives in Biology}. 2011;}
 
 \leavevmode\hypertarget{ref-Kornberg1999}{}%
-15. Kornberg RD. Eukaryotic transcriptional control. \emph{Trends in Biochemical Sciences}. 1999;
+\CSLLeftMargin{15. }
+\CSLRightInline{Kornberg RD. {Eukaryotic transcriptional control}. \emph{Trends in Biochemical Sciences}. 1999;}
 
 \leavevmode\hypertarget{ref-Gibney2010}{}%
-16. Gibney ER, Nolan CM. Epigenetics and gene expression. \emph{Heredity}. 2010;
+\CSLLeftMargin{16. }
+\CSLRightInline{Gibney ER, Nolan CM. {Epigenetics and gene expression}. \emph{Heredity}. 2010;}
 
 \leavevmode\hypertarget{ref-Milholland2017}{}%
-17. Milholland B, Dong X, Zhang L, et al. Differences between germline and somatic mutation rates in humans and mice. \emph{Nature Communications}. 2017;
+\CSLLeftMargin{17. }
+\CSLRightInline{Milholland B, Dong X, Zhang L, et al. {Differences between germline and somatic mutation rates in humans and mice}. \emph{Nature Communications}. 2017;}
 
 \leavevmode\hypertarget{ref-Garg2018}{}%
-18. Garg P, Joshi RS, Watson C, et al. A survey of inter-individual variation in DNA methylation identifies environmentally responsive co-regulated networks of epigenetic variation in the human genome. \emph{PLoS Genetics}. 2018;
+\CSLLeftMargin{18. }
+\CSLRightInline{Garg P, Joshi RS, Watson C, et al. {A survey of inter-individual variation in DNA methylation identifies environmentally responsive co-regulated networks of epigenetic variation in the human genome}. \emph{PLoS Genetics}. 2018;}
 
 \leavevmode\hypertarget{ref-Hughes2015}{}%
-19. Hughes DA, Kircher M, He Z, et al. Evaluating intra- and inter-individual variation in the human placental transcriptome. \emph{Genome Biology}. 2015;
+\CSLLeftMargin{19. }
+\CSLRightInline{Hughes DA, Kircher M, He Z, et al. {Evaluating intra- and inter-individual variation in the human placental transcriptome}. \emph{Genome Biology}. 2015;}
 
 \leavevmode\hypertarget{ref-Suzuki2008}{}%
-20. Suzuki MM, Bird A. DNA methylation landscapes: Provocative insights from epigenomics. \emph{Nature Reviews Genetics}. 2008;
+\CSLLeftMargin{20. }
+\CSLRightInline{Suzuki MM, Bird A. {DNA methylation landscapes: Provocative insights from epigenomics}. \emph{Nature Reviews Genetics}. 2008;}
 
 \leavevmode\hypertarget{ref-Siegfried1999}{}%
-21. Siegfried Z, Eden S, Mendelsohn M, et al. DNA methylation represses transcription in vivo. \emph{Nature Genetics}. 1999;
+\CSLLeftMargin{21. }
+\CSLRightInline{Siegfried Z, Eden S, Mendelsohn M, et al. {DNA methylation represses transcription in vivo}. \emph{Nature Genetics}. 1999;}
 
 \leavevmode\hypertarget{ref-Bird2002}{}%
-22. Bird A. DNA methylation patterns and epigenetic memory. \emph{Genes and Development}. 2002;
+\CSLLeftMargin{22. }
+\CSLRightInline{Bird A. {DNA methylation patterns and epigenetic memory}. \emph{Genes and Development}. 2002;}
 
 \leavevmode\hypertarget{ref-Jones2012}{}%
-23. Jones PA. Functions of DNA methylation: islands, start sites, gene bodies and beyond. \emph{Nature Reviews Genetics} {[}electronic article{]}. 2012;13(7):484--492. (\url{http://www.nature.com/articles/nrg3230})
+\CSLLeftMargin{23. }
+\CSLRightInline{Jones PA. {Functions of DNA methylation: islands, start sites, gene bodies and beyond}. \emph{Nature Reviews Genetics} {[}electronic article{]}. 2012;13(7):484--492. (\url{http://www.nature.com/articles/nrg3230})}
 
 \leavevmode\hypertarget{ref-Greally2018}{}%
-24. Greally JM. A user's guide to the ambiguous word 'epigenetics'. \emph{Nature Reviews Molecular Cell Biology}. 2018;
+\CSLLeftMargin{24. }
+\CSLRightInline{Greally JM. {A user's guide to the ambiguous word 'epigenetics'}. \emph{Nature Reviews Molecular Cell Biology}. 2018;}
 
 \leavevmode\hypertarget{ref-Stern2000}{}%
-25. Stern CD. Conrad H. Waddington's contributions to avian and mammalian development, 1930-1940. \emph{International Journal of Developmental Biology}. 2000;
+\CSLLeftMargin{25. }
+\CSLRightInline{Stern CD. {Conrad H. Waddington's contributions to avian and mammalian development, 1930-1940}. \emph{International Journal of Developmental Biology}. 2000;}
 
 \leavevmode\hypertarget{ref-Kornberg1974}{}%
-26. Kornberg RD. Chromatin structure: A repeating unit of histones and DNA. \emph{Science}. 1974;
+\CSLLeftMargin{26. }
+\CSLRightInline{Kornberg RD. {Chromatin structure: A repeating unit of histones and DNA}. \emph{Science}. 1974;}
 
 \leavevmode\hypertarget{ref-Li2011}{}%
-27. Li G, Reinberg D. Chromatin higher-order structures and gene regulation. \emph{Current Opinion in Genetics and Development}. 2011;
+\CSLLeftMargin{27. }
+\CSLRightInline{Li H. {Tabix: Fast retrieval of sequence features from generic TAB-delimited files}. \emph{Bioinformatics}. 2011;}
 
 \leavevmode\hypertarget{ref-Olins2003}{}%
-28. Olins DE, Olins AL. Chromatin history: Our view from the bridge. \emph{Nature Reviews Molecular Cell Biology}. 2003;
+\CSLLeftMargin{28. }
+\CSLRightInline{Olins DE, Olins AL. {Chromatin history: Our view from the bridge}. \emph{Nature Reviews Molecular Cell Biology}. 2003;}
 
 \leavevmode\hypertarget{ref-Bannister2011}{}%
-29. Bannister AJ, Kouzarides T. Regulation of chromatin by histone modifications. \emph{Cell Research}. 2011;
+\CSLLeftMargin{29. }
+\CSLRightInline{Bannister AJ, Kouzarides T. {Regulation of chromatin by histone modifications}. \emph{Cell Research}. 2011;}
 
 \leavevmode\hypertarget{ref-Berger2007}{}%
-30. Berger SL. The complex language of chromatin regulation during transcription. \emph{Nature}. 2007;
+\CSLLeftMargin{30. }
+\CSLRightInline{Berger SL. {The complex language of chromatin regulation during transcription}. \emph{Nature}. 2007;}
 
 \leavevmode\hypertarget{ref-Jenuwein2001}{}%
-31. Jenuwein T, Allis CD. Translating the histone code. \emph{Science}. 2001;
+\CSLLeftMargin{31. }
+\CSLRightInline{Jenuwein T, Allis CD. {Translating the histone code}. \emph{Science}. 2001;}
 
 \leavevmode\hypertarget{ref-Kouzarides2007}{}%
-32. Kouzarides T. Chromatin Modifications and Their Function. \emph{Cell}. 2007;
+\CSLLeftMargin{32. }
+\CSLRightInline{Kouzarides T. {Chromatin Modifications and Their Function}. \emph{Cell}. 2007;}
 
 \leavevmode\hypertarget{ref-Holliday1975}{}%
-33. Holliday R, Pugh J. DNA modification mechanisms and gene activity during development. \emph{Science}. 1975;
+\CSLLeftMargin{33. }
+\CSLRightInline{Holliday R, Pugh J. {DNA modification mechanisms and gene activity during development}. \emph{Science}. 1975;}
 
 \leavevmode\hypertarget{ref-Riggs1975}{}%
-34. Riggs AD. X inactivation, differentiation, and DNA methylation. \emph{Cytogenetic and Genome Research}. 1975;
+\CSLLeftMargin{34. }
+\CSLRightInline{Riggs AD. {X inactivation, differentiation, and DNA methylation}. \emph{Cytogenetic and Genome Research}. 1975;}
 
 \leavevmode\hypertarget{ref-Bell2000}{}%
-35. Bell AC, Felsenfeld G. Methylation of a CTCF-dependent boundary controls imprinted expression of the Igf2 gene. \emph{Nature}. 2000;
+\CSLLeftMargin{35. }
+\CSLRightInline{Bell AC, Felsenfeld G. {Methylation of a CTCF-dependent boundary controls imprinted expression of the Igf2 gene}. \emph{Nature}. 2000;}
 
 \leavevmode\hypertarget{ref-Yoder1997}{}%
-36. Yoder JA, Walsh CP, Bestor TH. Cytosine methylation and the ecology of intragenomic parasites. \emph{Trends in Genetics}. 1997;
+\CSLLeftMargin{36. }
+\CSLRightInline{Yoder JA, Walsh CP, Bestor TH. {Cytosine methylation and the ecology of intragenomic parasites}. \emph{Trends in Genetics}. 1997;}
 
 \leavevmode\hypertarget{ref-Casadesus2006}{}%
-37. Casadesús J, Low D. Epigenetic Gene Regulation in the Bacterial World. \emph{Microbiology and Molecular Biology Reviews}. 2006;
+\CSLLeftMargin{37. }
+\CSLRightInline{Casadesús J, Low D. {Epigenetic Gene Regulation in the Bacterial World}. \emph{Microbiology and Molecular Biology Reviews}. 2006;}
 
 \leavevmode\hypertarget{ref-Cokus2008}{}%
-38. Cokus SJ, Feng S, Zhang X, et al. Shotgun bisulphite sequencing of the Arabidopsis genome reveals DNA methylation patterning. \emph{Nature}. 2008;
+\CSLLeftMargin{38. }
+\CSLRightInline{Cokus SJ, Feng S, Zhang X, et al. {Shotgun bisulphite sequencing of the Arabidopsis genome reveals DNA methylation patterning}. \emph{Nature}. 2008;}
 
 \leavevmode\hypertarget{ref-Rountree1997}{}%
-39. Rountree MR, Selker EU. DNA methylation inhibits elongation but not initiation of transcription in Neurospora crassa. \emph{Genes and Development}. 1997;
+\CSLLeftMargin{39. }
+\CSLRightInline{Rountree MR, Selker EU. {DNA methylation inhibits elongation but not initiation of transcription in Neurospora crassa}. \emph{Genes and Development}. 1997;}
 
 \leavevmode\hypertarget{ref-Illingworth2009}{}%
-40. Illingworth RS, Bird AP. CpG islands - 'A rough guide'. \emph{FEBS Letters}. 2009;
+\CSLLeftMargin{40. }
+\CSLRightInline{Illingworth RS, Bird AP. {CpG islands - 'A rough guide'}. \emph{FEBS Letters}. 2009;}
 
 \leavevmode\hypertarget{ref-Ando2019}{}%
-41. Ando M, Saito Y, Xu G, et al. Chromatin dysregulation and DNA methylation at transcription start sites associated with transcriptional repression in cancers. \emph{Nature Communications}. 2019;
+\CSLLeftMargin{41. }
+\CSLRightInline{Ando M, Saito Y, Xu G, et al. {Chromatin dysregulation and DNA methylation at transcription start sites associated with transcriptional repression in cancers}. \emph{Nature Communications}. 2019;}
 
 \leavevmode\hypertarget{ref-Deaton2011}{}%
-42. Deaton AM, Bird A. CpG islands and the regulation of transcription. \emph{Genes and Development}. 2011;
+\CSLLeftMargin{42. }
+\CSLRightInline{Deaton AM, Bird A. {CpG islands and the regulation of transcription}. \emph{Genes and Development}. 2011;}
 
 \leavevmode\hypertarget{ref-Wolf1984}{}%
-43. Wolf SF, Jolly DJ, Lunnen KD, et al. Methylation of the hypoxanthine phosphoribosyltransferase locus on the human X chromosome: Implications for X chromosome inactivation. \emph{Proceedings of the National Academy of Sciences of the United States of America}. 1984;
+\CSLLeftMargin{43. }
+\CSLRightInline{Wolf SF, Jolly DJ, Lunnen KD, et al. {Methylation of the hypoxanthine phosphoribosyltransferase locus on the human X chromosome: Implications for X chromosome inactivation}. \emph{Proceedings of the National Academy of Sciences of the United States of America}. 1984;}
 
 \leavevmode\hypertarget{ref-Hellman2007}{}%
-44. Hellman A, Chess A. Gene body-specific methylation on the active X chromosome. \emph{Science}. 2007;
+\CSLLeftMargin{44. }
+\CSLRightInline{Hellman A, Chess A. {Gene body-specific methylation on the active X chromosome}. \emph{Science}. 2007;}
 
 \leavevmode\hypertarget{ref-Zhu2016}{}%
-45. Zhu H, Wang G, Qian J. Transcription factors as readers and effectors of DNA methylation. \emph{Nature Reviews Genetics}. 2016;
+\CSLLeftMargin{45. }
+\CSLRightInline{Zhu H, Wang G, Qian J. {Transcription factors as readers and effectors of DNA methylation}. \emph{Nature Reviews Genetics}. 2016;}
 
 \leavevmode\hypertarget{ref-Jaffe2012}{}%
-46. Jaffe AE, Murakami P, Lee H, et al. Bump hunting to identify differentially methylated regions in epigenetic epidemiology studies. \emph{International Journal of Epidemiology}. 2012;
+\CSLLeftMargin{46. }
+\CSLRightInline{Jaffe AE, Murakami P, Lee H, et al. {Bump hunting to identify differentially methylated regions in epigenetic epidemiology studies}. \emph{International Journal of Epidemiology}. 2012;}
 
 \leavevmode\hypertarget{ref-Suderman2018}{}%
-47. Suderman M, Staley JR, French R, et al. Dmrff: Identifying differentially methylated regions efficiently with power and control. \emph{bioRxiv}. 2018;
+\CSLLeftMargin{47. }
+\CSLRightInline{Suderman M, Staley JR, French R, et al. Dmrff: Identifying differentially methylated regions efficiently with power and control. \emph{bioRxiv}. 2018;}
 
 \leavevmode\hypertarget{ref-Challen2012}{}%
-48. Challen GA, Sun D, Jeong M, et al. Dnmt3a is essential for hematopoietic stem cell differentiation. \emph{Nature Genetics}. 2012;
+\CSLLeftMargin{48. }
+\CSLRightInline{Challen GA, Sun D, Jeong M, et al. {Dnmt3a is essential for hematopoietic stem cell differentiation}. \emph{Nature Genetics}. 2012;}
 
 \leavevmode\hypertarget{ref-Lock1987}{}%
-49. Lock LF, Takagi N, Martin GR. Methylation of the Hprt gene on the inactive X occurs after chromosome inactivation. \emph{Cell}. 1987;
+\CSLLeftMargin{49. }
+\CSLRightInline{Lock LF, Takagi N, Martin GR. {Methylation of the Hprt gene on the inactive X occurs after chromosome inactivation}. \emph{Cell}. 1987;}
 
 \leavevmode\hypertarget{ref-Ohm2007}{}%
-50. Ohm JE, McGarvey KM, Yu X, et al. A stem cell-like chromatin pattern may predispose tumor suppressor genes to DNA hypermethylation and heritable silencing. \emph{Nature Genetics}. 2007;
+\CSLLeftMargin{50. }
+\CSLRightInline{Ohm JE, McGarvey KM, Yu X, et al. {A stem cell-like chromatin pattern may predispose tumor suppressor genes to DNA hypermethylation and heritable silencing}. \emph{Nature Genetics}. 2007;}
 
 \leavevmode\hypertarget{ref-Prendergast1991}{}%
-51. Prendergast GC, Ziff EB. Methylation-sensitive sequence-specific DNA binding by the c-Myc basic region. \emph{Science}. 1991;
+\CSLLeftMargin{51. }
+\CSLRightInline{Prendergast GC, Ziff EB. {Methylation-sensitive sequence-specific DNA binding by the c-Myc basic region}. \emph{Science}. 1991;}
 
 \leavevmode\hypertarget{ref-Harrington1988}{}%
-52. Harrington MA, Jones PA, Imagawa M, et al. Cytosine methylation does not affect binding of transcription factor Sp1. \emph{Proceedings of the National Academy of Sciences of the United States of America}. 1988;
+\CSLLeftMargin{52. }
+\CSLRightInline{Harrington MA, Jones PA, Imagawa M, et al. {Cytosine methylation does not affect binding of transcription factor Sp1}. \emph{Proceedings of the National Academy of Sciences of the United States of America}. 1988;}
 
 \leavevmode\hypertarget{ref-Hemani2017}{}%
-53. Hemani G, Tilling K, Davey Smith G. Orienting the causal relationship between imprecisely measured traits using GWAS summary data. \emph{PLoS Genetics}. 2017;
+\CSLLeftMargin{53. }
+\CSLRightInline{Hemani G, Tilling K, Davey Smith G. {Orienting the causal relationship between imprecisely measured traits using GWAS summary data}. \emph{PLoS Genetics}. 2017;}
 
 \leavevmode\hypertarget{ref-Wrzeska2004}{}%
-54. Wrzeska M, Rejduch B. Genomic imprinting in mammals. \emph{Journal of Applied Genetics}. 2004;
+\CSLLeftMargin{54. }
+\CSLRightInline{Wrzeska M, Rejduch B. {Genomic imprinting in mammals}. \emph{Journal of Applied Genetics}. 2004;}
 
 \leavevmode\hypertarget{ref-Nicholls2000}{}%
-55. Nicholls RD. The impact of genomic imprinting for neurobehavioral and developmental disorders. \emph{Journal of Clinical Investigation}. 2000;
+\CSLLeftMargin{55. }
+\CSLRightInline{Nicholls RD. {The impact of genomic imprinting for neurobehavioral and developmental disorders}. \emph{Journal of Clinical Investigation}. 2000;}
 
 \leavevmode\hypertarget{ref-Rakyan2011}{}%
-56. Rakyan VK, Down TA, Balding DJ, et al. Epigenome-wide association studies for common human diseases. \emph{Nature Reviews Genetics} {[}electronic article{]}. 2011;12(8):529--541. (\url{http://www.nature.com/articles/nrg3000})
+\CSLLeftMargin{56. }
+\CSLRightInline{Rakyan VK, Down TA, Balding DJ, et al. {Epigenome-wide association studies for common human diseases}. \emph{Nature Reviews Genetics} {[}electronic article{]}. 2011;12(8):529--541. (\url{http://www.nature.com/articles/nrg3000})}
 
 \leavevmode\hypertarget{ref-Relton2010}{}%
-57. Relton CL, Davey Smith G. Epigenetic Epidemiology of Common Complex Disease: Prospects for Prediction, Prevention, and Treatment. \emph{PLoS Medicine} {[}electronic article{]}. 2010;7(10):e1000356. (\url{http://dx.plos.org/10.1371/journal.pmed.1000356})
+\CSLLeftMargin{57. }
+\CSLRightInline{Relton CL, Davey Smith G. {Epigenetic Epidemiology of Common Complex Disease: Prospects for Prediction, Prevention, and Treatment}. \emph{PLoS Medicine} {[}electronic article{]}. 2010;7(10):e1000356. (\url{http://dx.plos.org/10.1371/journal.pmed.1000356})}
 
 \leavevmode\hypertarget{ref-Lynch1998}{}%
-58. Lynch M, Walsh B. Genetics and Analysis of Quantitative Traits. Sinauer; 1998.
+\CSLLeftMargin{58. }
+\CSLRightInline{Lynch M, Walsh B. {Genetics and Analysis of Quantitative Traits}. Sinauer; 1998.}
 
 \leavevmode\hypertarget{ref-Weaver2004}{}%
-59. Weaver ICG, Cervoni N, Champagne FA, et al. Epigenetic programming by maternal behavior. \emph{Nature Neuroscience}. 2004;
+\CSLLeftMargin{59. }
+\CSLRightInline{Weaver ICG, Cervoni N, Champagne FA, et al. {Epigenetic programming by maternal behavior}. \emph{Nature Neuroscience}. 2004;}
 
 \leavevmode\hypertarget{ref-Koch2018}{}%
-60. Koch A, Joosten SC, Feng Z, et al. Analysis of DNA methylation in cancer: Location revisited. \emph{Nature Reviews Clinical Oncology}. 2018;
+\CSLLeftMargin{60. }
+\CSLRightInline{Koch A, Joosten SC, Feng Z, et al. {Analysis of DNA methylation in cancer: Location revisited}. \emph{Nature Reviews Clinical Oncology}. 2018;}
 
 \leavevmode\hypertarget{ref-Hentze2019}{}%
-61. Hentze J, Hødall C, Høgdall E. Methylation and ovarian cancer: Can DNA methylation be of diagnostic use? (Review). \emph{Molecular and Clinical Oncology}. 2019;
+\CSLLeftMargin{61. }
+\CSLRightInline{Hentze J, Hødall C, Høgdall E. {Methylation and ovarian cancer: Can DNA methylation be of diagnostic use? (Review)}. \emph{Molecular and Clinical Oncology}. 2019;}
 
 \leavevmode\hypertarget{ref-Cortellino2011}{}%
-62. Cortellino S, Xu J, Sannai M, et al. Thymine DNA glycosylase is essential for active DNA demethylation by linked deamination-base excision repair. \emph{Cell}. 2011;
+\CSLLeftMargin{62. }
+\CSLRightInline{Cortellino S, Xu J, Sannai M, et al. {Thymine DNA glycosylase is essential for active DNA demethylation by linked deamination-base excision repair}. \emph{Cell}. 2011;}
 
 \leavevmode\hypertarget{ref-Kohli2013}{}%
-63. Kohli RM, Zhang Y. TET enzymes, TDG and the dynamics of DNA demethylation. \emph{Nature}. 2013;
+\CSLLeftMargin{63. }
+\CSLRightInline{Kohli RM, Zhang Y. {TET enzymes, TDG and the dynamics of DNA demethylation}. \emph{Nature}. 2013;}
 
 \leavevmode\hypertarget{ref-Venolia1983}{}%
-64. Venolia L, Gartler SM. Comparison of transformation efficiency of human active and inactive X-chromosomal DNA. \emph{Nature}. 1983;
+\CSLLeftMargin{64. }
+\CSLRightInline{Venolia L, Gartler SM. {Comparison of transformation efficiency of human active and inactive X-chromosomal DNA}. \emph{Nature}. 1983;}
 
 \leavevmode\hypertarget{ref-Bonasio2010}{}%
-65. Bonasio R, Tu S, Reinberg D. Molecular signals of epigenetic states. \emph{Science}. 2010;
+\CSLLeftMargin{65. }
+\CSLRightInline{Bonasio R, Tu S, Reinberg D. {Molecular signals of epigenetic states}. \emph{Science}. 2010;}
 
 \leavevmode\hypertarget{ref-Allis2016}{}%
-66. Allis CD, Jenuwein T. The molecular hallmarks of epigenetic control. \emph{Nat Rev Genet} {[}electronic article{]}. 2016;17(8):487--500. (\url{http://dx.doi.org/10.1038/nrg.2016.59\%20http://10.0.4.14/nrg.2016.59})
+\CSLLeftMargin{66. }
+\CSLRightInline{Allis CD, Jenuwein T. {The molecular hallmarks of epigenetic control}. \emph{Nat Rev Genet} {[}electronic article{]}. 2016;17(8):487--500. (\url{http://dx.doi.org/10.1038/nrg.2016.59\%20http://10.0.4.14/nrg.2016.59})}
 
 \leavevmode\hypertarget{ref-Wade2001}{}%
-67. Wade PA, Wolffe AP. ReCoGnizing methylated DNA. \emph{Nature Structural Biology}. 2001;
+\CSLLeftMargin{67. }
+\CSLRightInline{Wade PA, Wolffe AP. {ReCoGnizing methylated DNA}. \emph{Nature Structural Biology}. 2001;}
 
 \leavevmode\hypertarget{ref-Ernst2015}{}%
-68. Ernst J, Kellis M. Large-scale imputation of epigenomic datasets for systematic annotation of diverse human tissues. \emph{Nature Biotechnology}. 2015;
+\CSLLeftMargin{68. }
+\CSLRightInline{Ernst J, Kellis M. {Large-scale imputation of epigenomic datasets for systematic annotation of diverse human tissues}. \emph{Nature Biotechnology}. 2015;}
 
 \leavevmode\hypertarget{ref-Shah2015}{}%
-69. Shah S, Bonder MJ, Marioni RE, et al. Improving Phenotypic Prediction by Combining Genetic and Epigenetic Associations. \emph{American Journal of Human Genetics}. 2015;
+\CSLLeftMargin{69. }
+\CSLRightInline{Shah S, Bonder MJ, Marioni RE, et al. {Improving Phenotypic Prediction by Combining Genetic and Epigenetic Associations}. \emph{American Journal of Human Genetics}. 2015;}
 
 \leavevmode\hypertarget{ref-Reed2020}{}%
-70. Reed ZE, Suderman MJ, Relton CL, et al. The association of DNA methylation with body mass index: Distinguishing between predictors and biomarkers. \emph{Clinical Epigenetics}. 2020;
+\CSLLeftMargin{70. }
+\CSLRightInline{Reed ZE, Suderman MJ, Relton CL, et al. {The association of DNA methylation with body mass index: Distinguishing between predictors and biomarkers}. \emph{Clinical Epigenetics}. 2020;}
 
 \leavevmode\hypertarget{ref-Bosker2011}{}%
-71. Bosker FJ, Hartman CA, Nolte IM, et al. Poor replication of candidate genes for major depressive disorder using genome-wide association data. \emph{Molecular Psychiatry}. 2011;
+\CSLLeftMargin{71. }
+\CSLRightInline{Bosker FJ, Hartman CA, Nolte IM, et al. {Poor replication of candidate genes for major depressive disorder using genome-wide association data}. \emph{Molecular Psychiatry}. 2011;}
 
 \leavevmode\hypertarget{ref-Hirschhorn2002}{}%
-72. Hirschhorn JN, Lohmueller K, Byrne E, et al. A comprehensive review of genetic association studies. \emph{Genetics in Medicine}. 2002;
+\CSLLeftMargin{72. }
+\CSLRightInline{Hirschhorn JN, Lohmueller K, Byrne E, et al. {A comprehensive review of genetic association studies}. \emph{Genetics in Medicine}. 2002;}
 
 \leavevmode\hypertarget{ref-Munafo2006}{}%
-73. Munafò MR. Candidate gene studies in the 21st century: meta-analysis, mediation, moderation. \emph{Genes, brain, and behavior}. 2006;
+\CSLLeftMargin{73. }
+\CSLRightInline{Munafò MR. {Candidate gene studies in the 21st century: meta-analysis, mediation, moderation.} \emph{Genes, brain, and behavior}. 2006;}
 
 \leavevmode\hypertarget{ref-Yang2004}{}%
-74. Yang AS. A simple method for estimating global DNA methylation using bisulfite PCR of repetitive DNA elements. \emph{Nucleic Acids Research}. 2004;
+\CSLLeftMargin{74. }
+\CSLRightInline{Yang AS. {A simple method for estimating global DNA methylation using bisulfite PCR of repetitive DNA elements}. \emph{Nucleic Acids Research}. 2004;}
 
 \leavevmode\hypertarget{ref-Dedeurwaerder2011}{}%
-75. Dedeurwaerder S, Defrance M, Calonne E, et al. Evaluation of the Infinium Methylation 450K technology. \emph{Epigenomics}. 2011;
+\CSLLeftMargin{75. }
+\CSLRightInline{Dedeurwaerder S, Defrance M, Calonne E, et al. {Evaluation of the Infinium Methylation 450K technology}. \emph{Epigenomics}. 2011;}
 
 \leavevmode\hypertarget{ref-Lovkvist2016}{}%
-76. Lövkvist C, Dodd IB, Sneppen K, et al. DNA methylation in human epigenomes depends on local topology of CpG sites. \emph{Nucleic Acids Research}. 2016;
+\CSLLeftMargin{76. }
+\CSLRightInline{Lövkvist C, Dodd IB, Sneppen K, et al. {DNA methylation in human epigenomes depends on local topology of CpG sites}. \emph{Nucleic Acids Research}. 2016;}
 
 \leavevmode\hypertarget{ref-Illumina2012}{}%
-77. Illumina. Infinium HumanMethylation450 BeadChip The ideal solution for affordable, large sample--size genome-wide DNA methylation studies. 2012;4. (\url{https://emea.illumina.com/content/dam/illumina-marketing/documents/products/datasheets/datasheet\%7B/_\%7Dhumanmethylation450.pdf}). (Accessed August 5, 2020)
+\CSLLeftMargin{77. }
+\CSLRightInline{Illumina. {Infinium{{}} HumanMethylation450 BeadChip The ideal solution for affordable, large sample--size genome-wide DNA methylation studies.} 2012;4. (\url{https://emea.illumina.com/content/dam/illumina-marketing/documents/products/datasheets/datasheet\%7B/_\%7Dhumanmethylation450.pdf}). (Accessed August 5, 2020)}
 
 \leavevmode\hypertarget{ref-Felix2018}{}%
-78. Felix JF, Joubert BR, Baccarelli AA, et al. Cohort profile: Pregnancy and childhood epigenetics (PACE) consortium. \emph{International Journal of Epidemiology}. 2018;
+\CSLLeftMargin{78. }
+\CSLRightInline{Felix JF, Joubert BR, Baccarelli AA, et al. {Cohort profile: Pregnancy and childhood epigenetics (PACE) consortium}. \emph{International Journal of Epidemiology}. 2018;}
 
 \leavevmode\hypertarget{ref-Philibert2016}{}%
-79. Philibert R, Hollenbeck N, Andersen E, et al. Reversion of AHRR demethylation is a quantitative biomarker of smoking cessation. \emph{Frontiers in Psychiatry}. 2016;
+\CSLLeftMargin{79. }
+\CSLRightInline{Philibert R, Hollenbeck N, Andersen E, et al. {Reversion of AHRR demethylation is a quantitative biomarker of smoking cessation}. \emph{Frontiers in Psychiatry}. 2016;}
 
 \leavevmode\hypertarget{ref-Philibert2020}{}%
-80. Philibert R, Dogan M, Beach SRH, et al. AHRR methylation predicts smoking status and smoking intensity in both saliva and blood DNA. \emph{American Journal of Medical Genetics, Part B: Neuropsychiatric Genetics}. 2020;
+\CSLLeftMargin{80. }
+\CSLRightInline{Philibert R, Dogan M, Beach SRH, et al. {AHRR methylation predicts smoking status and smoking intensity in both saliva and blood DNA}. \emph{American Journal of Medical Genetics, Part B: Neuropsychiatric Genetics}. 2020;}
 
 \leavevmode\hypertarget{ref-Horvath2013}{}%
-81. Horvath S. DNA methylation age of human tissues and cell types. \emph{Genome Biology}. 2013;
+\CSLLeftMargin{81. }
+\CSLRightInline{Horvath S. {DNA methylation age of human tissues and cell types}. \emph{Genome Biology} {[}electronic article{]}. 2013;14(10):R115. (\url{http://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-10-r115})}
 
 \leavevmode\hypertarget{ref-Jones2015}{}%
-82. Jones MJ, Goodman SJ, Kobor MS. DNA methylation and healthy human aging. \emph{Aging Cell}. 2015;
+\CSLLeftMargin{82. }
+\CSLRightInline{Jones MJ, Goodman SJ, Kobor MS. {DNA methylation and healthy human aging}. \emph{Aging Cell}. 2015;}
 
 \leavevmode\hypertarget{ref-Horvath2018}{}%
-83. Horvath S, Raj K. DNA methylation-based biomarkers and the epigenetic clock theory of ageing. \emph{Nature Reviews Genetics}. 2018;
+\CSLLeftMargin{83. }
+\CSLRightInline{Horvath S, Raj K. {DNA methylation-based biomarkers and the epigenetic clock theory of ageing}. \emph{Nature Reviews Genetics}. 2018;}
 
 \leavevmode\hypertarget{ref-Lawlor2004}{}%
-84. Lawlor DA, Smith GD, Kundu D, et al. Those confounded vitamins: What can we learn from the differences between observational versus randomised trial evidence? \emph{Lancet}. 2004;
+\CSLLeftMargin{84. }
+\CSLRightInline{Lawlor DA, Smith GD, Kundu D, et al. {Those confounded vitamins: What can we learn from the differences between observational versus randomised trial evidence?} \emph{Lancet}. 2004;}
 
 \leavevmode\hypertarget{ref-Relton2012}{}%
-85. Relton CL, Davey Smith G. Two-step epigenetic mendelian randomization: A strategy for establishing the causal role of epigenetic processes in pathways to disease. \emph{International Journal of Epidemiology}. 2012;
+\CSLLeftMargin{85. }
+\CSLRightInline{Relton CL, Davey Smith G. {Two-step epigenetic mendelian randomization: A strategy for establishing the causal role of epigenetic processes in pathways to disease}. \emph{International Journal of Epidemiology}. 2012;}
 
 \leavevmode\hypertarget{ref-Houseman2012}{}%
-86. Houseman EA, Accomando WP, Koestler DC, et al. DNA methylation arrays as surrogate measures of cell mixture distribution. \emph{BMC Bioinformatics}. 2012;
+\CSLLeftMargin{86. }
+\CSLRightInline{Houseman EA, Accomando WP, Koestler DC, et al. {DNA methylation arrays as surrogate measures of cell mixture distribution}. \emph{BMC Bioinformatics}. 2012;}
 
 \leavevmode\hypertarget{ref-Jaffe2014}{}%
-87. Jaffe AE, Irizarry RA. Accounting for cellular heterogeneity is critical in epigenome-wide association studies. \emph{Genome Biology}. 2014;
+\CSLLeftMargin{87. }
+\CSLRightInline{Jaffe AE, Irizarry RA. {Accounting for cellular heterogeneity is critical in epigenome-wide association studies}. \emph{Genome Biology}. 2014;}
 
 \leavevmode\hypertarget{ref-McGregor2016}{}%
-88. McGregor K, Bernatsky S, Colmegna I, et al. An evaluation of methods correcting for cell-type heterogeneity in DNA methylation studies. \emph{Genome Biology}. 2016;
+\CSLLeftMargin{88. }
+\CSLRightInline{McGregor K, Bernatsky S, Colmegna I, et al. {An evaluation of methods correcting for cell-type heterogeneity in DNA methylation studies}. \emph{Genome Biology}. 2016;}
 
 \leavevmode\hypertarget{ref-Teschendorff2017}{}%
-89. Teschendorff AE, Zheng SC. Cell-type deconvolution in epigenome-wide association studies: A review and recommendations. \emph{Epigenomics}. 2017;
+\CSLLeftMargin{89. }
+\CSLRightInline{Teschendorff AE, Zheng SC. {Cell-type deconvolution in epigenome-wide association studies: A review and recommendations}. \emph{Epigenomics}. 2017;}
 
 \leavevmode\hypertarget{ref-Forest2018}{}%
-90. Forest M, O'Donnell KJ, Voisin G, et al. Agreement in DNA methylation levels from the Illumina 450K array across batches, tissues, and time. \emph{Epigenetics}. 2018;
+\CSLLeftMargin{90. }
+\CSLRightInline{Forest M, O'Donnell KJ, Voisin G, et al. {Agreement in DNA methylation levels from the Illumina 450K array across batches, tissues, and time}. \emph{Epigenetics}. 2018;}
 
 \leavevmode\hypertarget{ref-Price2018}{}%
-91. Price EM, Robinson WP. Adjusting for batch effects in DNA methylation microarray data, a lesson learned. \emph{Frontiers in Genetics}. 2018;
+\CSLLeftMargin{91. }
+\CSLRightInline{Price EM, Robinson WP. {Adjusting for batch effects in DNA methylation microarray data, a lesson learned}. \emph{Frontiers in Genetics}. 2018;}
 
 \leavevmode\hypertarget{ref-Zhou2017}{}%
-92. Zhou W, Laird PW, Shen H. Comprehensive characterization, annotation and innovative use of Infinium DNA methylation BeadChip probes. \emph{Nucleic acids research}. 2017;
+\CSLLeftMargin{92. }
+\CSLRightInline{Zhou W, Laird PW, Shen H. {Comprehensive characterization, annotation and innovative use of Infinium DNA methylation BeadChip probes}. \emph{Nucleic acids research}. 2017;}
 
 \leavevmode\hypertarget{ref-Naeem2014}{}%
-93. Naeem H, Wong NC, Chatterton Z, et al. Reducing the risk of false discovery enabling identification of biologically significant genome-wide methylation status using the HumanMethylation450 array. \emph{BMC Genomics}. 2014;
+\CSLLeftMargin{93. }
+\CSLRightInline{Naeem H, Wong NC, Chatterton Z, et al. {Reducing the risk of false discovery enabling identification of biologically significant genome-wide methylation status using the HumanMethylation450 array}. \emph{BMC Genomics}. 2014;}
 
 \leavevmode\hypertarget{ref-Leek2007}{}%
-94. Leek JT, Storey JD. Capturing heterogeneity in gene expression studies by surrogate variable analysis. \emph{PLoS Genetics}. 2007;
+\CSLLeftMargin{94. }
+\CSLRightInline{Leek JT, Storey JD. {Capturing heterogeneity in gene expression studies by surrogate variable analysis}. \emph{PLoS Genetics}. 2007;}
 
 \leavevmode\hypertarget{ref-Ritchie2015}{}%
-95. Ritchie ME, Phipson B, Wu D, et al. Limma powers differential expression analyses for RNA-sequencing and microarray studies. \emph{Nucleic Acids Research}. 2015;
+\CSLLeftMargin{95. }
+\CSLRightInline{Ritchie ME, Phipson B, Wu D, et al. {Limma powers differential expression analyses for RNA-sequencing and microarray studies}. \emph{Nucleic Acids Research}. 2015;}
 
 \leavevmode\hypertarget{ref-Perrier2018}{}%
-96. Perrier F, Novoloaca A, Ambatipudi S, et al. Identifying and correcting epigenetics measurements for systematic sources of variation. \emph{Clinical Epigenetics}. 2018;
+\CSLLeftMargin{96. }
+\CSLRightInline{Perrier F, Novoloaca A, Ambatipudi S, et al. {Identifying and correcting epigenetics measurements for systematic sources of variation}. \emph{Clinical Epigenetics}. 2018;}
 
 \leavevmode\hypertarget{ref-Piekarz2009}{}%
-97. Piekarz RL, Bates SE. Epigenetic modifiers: Basic understanding and clinical development. \emph{Clinical Cancer Research}. 2009;
+\CSLLeftMargin{97. }
+\CSLRightInline{Piekarz RL, Bates SE. {Epigenetic modifiers: Basic understanding and clinical development}. \emph{Clinical Cancer Research}. 2009;}
 
 \leavevmode\hypertarget{ref-Nebbioso2018}{}%
-98. Nebbioso A, Tambaro FP, Dell'Aversana C, et al. Cancer epigenetics: Moving forward. \emph{PLoS Genetics}. 2018;
+\CSLLeftMargin{98. }
+\CSLRightInline{Nebbioso A, Tambaro FP, Dell'Aversana C, et al. {Cancer epigenetics: Moving forward}. \emph{PLoS Genetics}. 2018;}
 
 \leavevmode\hypertarget{ref-Pickar-Oliver2019}{}%
-99. Pickar-Oliver A, Gersbach CA. The next generation of CRISPR--Cas technologies and applications. \emph{Nature Reviews Molecular Cell Biology}. 2019;
+\CSLLeftMargin{99. }
+\CSLRightInline{Pickar-Oliver A, Gersbach CA. {The next generation of CRISPR--Cas technologies and applications}. \emph{Nature Reviews Molecular Cell Biology}. 2019;}
 
 \leavevmode\hypertarget{ref-Liao2017}{}%
-100. Liao HK, Hatanaka F, Araoka T, et al. In Vivo Target Gene Activation via CRISPR/Cas9-Mediated Trans-epigenetic Modulation. \emph{Cell}. 2017;
+\CSLLeftMargin{100. }
+\CSLRightInline{Liao HK, Hatanaka F, Araoka T, et al. {In Vivo Target Gene Activation via CRISPR/Cas9-Mediated Trans-epigenetic Modulation}. \emph{Cell}. 2017;}
 
 \leavevmode\hypertarget{ref-DaveySmith2003}{}%
-101. Davey Smith G, Ebrahim S. 'Mendelian randomization': Can genetic epidemiology contribute to understanding environmental determinants of disease? \emph{International Journal of Epidemiology}. 2003;
+\CSLLeftMargin{101. }
+\CSLRightInline{Davey Smith G, Ebrahim S. {'Mendelian randomization': Can genetic epidemiology contribute to understanding environmental determinants of disease?} \emph{International Journal of Epidemiology}. 2003;}
 
 \leavevmode\hypertarget{ref-DaveySmith2014}{}%
-102. Davey Smith G, Hemani G. Mendelian randomization: genetic anchors for causal inference in epidemiological studies. \emph{Human molecular genetics} {[}electronic article{]}. 2014;23(R1):R89--98. (\url{http://hmg.oxfordjournals.org/cgi/content/long/23/R1/R89})
+\CSLLeftMargin{102. }
+\CSLRightInline{Davey Smith G, Hemani G. {Mendelian randomization: genetic anchors for causal inference in epidemiological studies.} \emph{Human molecular genetics} {[}electronic article{]}. 2014;23(R1):R89--98. (\url{http://hmg.oxfordjournals.org/cgi/content/long/23/R1/R89})}
 
 \leavevmode\hypertarget{ref-Buniello2019}{}%
-103. Buniello A, Macarthur JAL, Cerezo M, et al. The NHGRI-EBI GWAS Catalog of published genome-wide association studies, targeted arrays and summary statistics 2019. \emph{Nucleic Acids Research}. 2019;
+\CSLLeftMargin{103. }
+\CSLRightInline{Buniello A, Macarthur JAL, Cerezo M, et al. {The NHGRI-EBI GWAS Catalog of published genome-wide association studies, targeted arrays and summary statistics 2019}. \emph{Nucleic Acids Research}. 2019;}
 
 \leavevmode\hypertarget{ref-Elsworth2020}{}%
-104. Elsworth\hspace{0pt} B, Lyon\hspace{0pt} M, Alexander\hspace{0pt} T, et al. The MRC IEU OpenGWAS data infrastructure. \emph{bioRxiv}. 2020;
+\CSLLeftMargin{104. }
+\CSLRightInline{Elsworth\hspace{0pt} B, Lyon\hspace{0pt} M, Alexander\hspace{0pt} T, et al. {The MRC IEU OpenGWAS data infrastructure}. \emph{bioRxiv}. 2020;}
 
 \leavevmode\hypertarget{ref-Hemani2018}{}%
-105. Hemani G, Zheng J, Elsworth B, et al. The MR-base platform supports systematic causal inference across the human phenome. \emph{eLife}. 2018;
+\CSLLeftMargin{105. }
+\CSLRightInline{Hemani G, Zheng J, Elsworth B, et al. {The MR-base platform supports systematic causal inference across the human phenome}. \emph{eLife}. 2018;}
 
 \leavevmode\hypertarget{ref-Liu2019}{}%
-106. Liu D, Zhao L, Wang Z, et al. EWASdb: Epigenome-wide association study database. \emph{Nucleic Acids Research}. 2019;
+\CSLLeftMargin{106. }
+\CSLRightInline{Liu D, Zhao L, Wang Z, et al. {EWASdb: Epigenome-wide association study database}. \emph{Nucleic Acids Research}. 2019;}
 
 \leavevmode\hypertarget{ref-Li2019}{}%
-107. Li M, Zou D, Li Z, et al. EWAS Atlas: A curated knowledgebase of epigenome-wide association studies. \emph{Nucleic Acids Research}. 2019;
+\CSLLeftMargin{107. }
+\CSLRightInline{Li M, Zou D, Li Z, et al. {EWAS Atlas: A curated knowledgebase of epigenome-wide association studies}. \emph{Nucleic Acids Research}. 2019;}
 
 \leavevmode\hypertarget{ref-Yang2010}{}%
-108. Yang J, Benyamin B, McEvoy BP, et al. Common SNPs explain a large proportion of the heritability for human height. \emph{Nature Genetics}. 2010;
+\CSLLeftMargin{108. }
+\CSLRightInline{Yang J, Benyamin B, McEvoy BP, et al. {Common SNPs explain a large proportion of the heritability for human height}. \emph{Nature Genetics}. 2010;}
 
 \leavevmode\hypertarget{ref-Speed2012}{}%
-109. Speed D, Hemani G, Johnson MR, et al. Improved heritability estimation from genome-wide SNPs. \emph{American Journal of Human Genetics}. 2012;
+\CSLLeftMargin{109. }
+\CSLRightInline{Speed D, Hemani G, Johnson MR, et al. {Improved heritability estimation from genome-wide SNPs}. \emph{American Journal of Human Genetics}. 2012;}
 
 \leavevmode\hypertarget{ref-Phipson2016}{}%
-110. Phipson B, Maksimovic J, Oshlack A. MissMethyl: An R package for analyzing data from Illumina's HumanMethylation450 platform. \emph{Bioinformatics}. 2016;
+\CSLLeftMargin{110. }
+\CSLRightInline{Phipson B, Maksimovic J, Oshlack A. {MissMethyl: An R package for analyzing data from Illumina's HumanMethylation450 platform}. \emph{Bioinformatics}. 2016;}
 
 \leavevmode\hypertarget{ref-Philibert2012}{}%
-111. Philibert RA, Beach SRH, Brody GH. Demethylation of the aryl hydrocarbon receptor repressor as a biomarker for nascent smokers. \emph{Epigenetics}. 2012;
+\CSLLeftMargin{111. }
+\CSLRightInline{Philibert RA, Beach SRH, Brody GH. {Demethylation of the aryl hydrocarbon receptor repressor as a biomarker for nascent smokers}. \emph{Epigenetics}. 2012;}
 
 \leavevmode\hypertarget{ref-Shenker2013}{}%
-112. Shenker NS, Polidoro S, Veldhoven K van, et al. Epigenome-wide association study in the European Prospective Investigation Into Cancer And Nutrition (EPIC-Turin) identifies novel genetic loci associated with smoking. \emph{Human Molecular Genetics}. 2013;
+\CSLLeftMargin{112. }
+\CSLRightInline{Shenker NS, Polidoro S, Veldhoven K van, et al. {Epigenome-wide association study in the European Prospective Investigation Into Cancer And Nutrition (EPIC-Turin) identifies novel genetic loci associated with smoking}. \emph{Human Molecular Genetics}. 2013;}
 
 \leavevmode\hypertarget{ref-Zeilinger2013}{}%
-113. Zeilinger S, Kühnel B, Klopp N, et al. Tobacco Smoking Leads to Extensive Genome-Wide Changes in DNA Methylation. \emph{PLoS ONE}. 2013;
+\CSLLeftMargin{113. }
+\CSLRightInline{Zeilinger S, Kühnel B, Klopp N, et al. {Tobacco Smoking Leads to Extensive Genome-Wide Changes in DNA Methylation}. \emph{PLoS ONE}. 2013;}
 
 \leavevmode\hypertarget{ref-Bojesen2017}{}%
-114. Bojesen SE, Timpson N, Relton C, et al. AHRR (cg05575921) hypomethylation marks smoking behaviour, morbidity and mortality. \emph{Thorax}. 2017;
+\CSLLeftMargin{114. }
+\CSLRightInline{Bojesen SE, Timpson N, Relton C, et al. {AHRR (cg05575921) hypomethylation marks smoking behaviour, morbidity and mortality}. \emph{Thorax} {[}electronic article{]}. 2017;no pagination. (\url{http://thorax.bmj.com/\%7B/\%\%7D5Cnhttp://ovidsp.ovid.com/ovidweb.cgi?T=JS\%7B/\&\%7DPAGE=reference\%7B/\&\%7DD=emed18b\%7B/\&\%7DNEWS=N\%7B/\&\%7DAN=614280500})}
 
 \leavevmode\hypertarget{ref-Haarmann-Stemmann2006}{}%
-115. Haarmann-Stemmann T, Abel J. The arylhydrocarbon receptor repressor (AhRR): Structure, expression, and function. \emph{Biological Chemistry}. 2006;
+\CSLLeftMargin{115. }
+\CSLRightInline{Haarmann-Stemmann T, Abel J. {The arylhydrocarbon receptor repressor (AhRR): Structure, expression, and function}. \emph{Biological Chemistry}. 2006;}
 
 \leavevmode\hypertarget{ref-Larigot2018}{}%
-116. Larigot L, Juricek L, Dairou J, et al. AhR signaling pathways and regulatory functions. \emph{Biochimie Open}. 2018;
+\CSLLeftMargin{116. }
+\CSLRightInline{Larigot L, Juricek L, Dairou J, et al. {AhR signaling pathways and regulatory functions}. \emph{Biochimie Open}. 2018;}
 
 \leavevmode\hypertarget{ref-Irwin2019}{}%
-117. Irwin RE, Thursby SJ, Ondičová M, et al. A randomized controlled trial of folic acid intervention in pregnancy highlights a putative methylation-regulated control element at ZFP57. \emph{Clinical Epigenetics}. 2019;
+\CSLLeftMargin{117. }
+\CSLRightInline{Irwin RE, Thursby SJ, Ondičová M, et al. {A randomized controlled trial of folic acid intervention in pregnancy highlights a putative methylation-regulated control element at ZFP57}. \emph{Clinical Epigenetics}. 2019;}
 
 \leavevmode\hypertarget{ref-Perfilyev2017}{}%
-118. Perfilyev A, Dahlman I, Gillberg L, et al. Impact of polyunsaturated and saturated fat overfeeding on the DNA-methylation pattern in human adipose tissue: A randomized controlled trial. \emph{American Journal of Clinical Nutrition}. 2017;
+\CSLLeftMargin{118. }
+\CSLRightInline{Perfilyev A, Dahlman I, Gillberg L, et al. {Impact of polyunsaturated and saturated fat overfeeding on the DNA-methylation pattern in human adipose tissue: A randomized controlled trial}. \emph{American Journal of Clinical Nutrition}. 2017;}
 
 \leavevmode\hypertarget{ref-Geraghty2018}{}%
-119. Geraghty AA, Sexton-Oates A, O'Brien EC, et al. A low glycaemic index diet in pregnancy induces DNA methylation variation in blood of newborns: Results from the ROLO randomised controlled trial. \emph{Nutrients}. 2018;
+\CSLLeftMargin{119. }
+\CSLRightInline{Geraghty AA, Sexton-Oates A, O'Brien EC, et al. {A low glycaemic index diet in pregnancy induces DNA methylation variation in blood of newborns: Results from the ROLO randomised controlled trial}. \emph{Nutrients}. 2018;}
 
 \leavevmode\hypertarget{ref-Richmond2016}{}%
-120. Richmond RC, Hemani G, Tilling K, et al. Challenges and novel approaches for investigating molecular mediation. \emph{Human molecular genetics} {[}electronic article{]}. 2016;ddw197. (\url{http://hmg.oxfordjournals.org/cgi/content/long/ddw197v2})
+\CSLLeftMargin{120. }
+\CSLRightInline{Richmond RC, Hemani G, Tilling K, et al. {Challenges and novel approaches for investigating molecular mediation.} \emph{Human molecular genetics} {[}electronic article{]}. 2016;ddw197--. (\url{http://hmg.oxfordjournals.org/cgi/content/long/ddw197v2})}
 
 \leavevmode\hypertarget{ref-Silventoinen2003}{}%
-121. Silventoinen K, Kaprio J, Lahelma E, et al. Assortative mating by body height and BMI: Finnish twins and their spouses. \emph{American Journal of Human Biology}. 2003;
+\CSLLeftMargin{121. }
+\CSLRightInline{Silventoinen K, Kaprio J, Lahelma E, et al. {Assortative mating by body height and BMI: Finnish twins and their spouses}. \emph{American Journal of Human Biology}. 2003;}
 
 \leavevmode\hypertarget{ref-Maes1997}{}%
-122. Maes HHM, Neale MC, Eaves LJ. Genetic and environmental factors in relative body weight and human adiposity. \emph{Behavior Genetics}. 1997;
+\CSLLeftMargin{122. }
+\CSLRightInline{Maes HHM, Neale MC, Eaves LJ. {Genetic and environmental factors in relative body weight and human adiposity}. \emph{Behavior Genetics}. 1997;}
 
 \leavevmode\hypertarget{ref-Eaves1981}{}%
-123. Eaves LJ, Heath AC. Detection of the effects of asymmetric assortative mating. \emph{Nature}. 1981;
+\CSLLeftMargin{123. }
+\CSLRightInline{Eaves LJ, Heath AC. {Detection of the effects of asymmetric assortative mating}. \emph{Nature}. 1981;}
 
 \leavevmode\hypertarget{ref-Howe2019}{}%
-124. Howe LJ, Lawson DJ, Davies NM, et al. Genetic evidence for assortative mating on alcohol consumption in the UK Biobank. \emph{Nature Communications}. 2019;
+\CSLLeftMargin{124. }
+\CSLRightInline{Howe LJ, Lawson DJ, Davies NM, et al. {Genetic evidence for assortative mating on alcohol consumption in the UK Biobank}. \emph{Nature Communications}. 2019;}
 
 \leavevmode\hypertarget{ref-Dugue2019}{}%
-125. Dugué PA, Wilson R, Lehne B, et al. Alcohol consumption is associated with widespread changes in blood DNA methylation: Analysis of cross-sectional and longitudinal data. \emph{Addiction Biology}. 2019;
+\CSLLeftMargin{125. }
+\CSLRightInline{Dugué PA, Wilson R, Lehne B, et al. {Alcohol consumption is associated with widespread changes in blood DNA methylation: Analysis of cross-sectional and longitudinal data}. \emph{Addiction Biology}. 2019;}
 
 \leavevmode\hypertarget{ref-Inoue2010}{}%
-126. Inoue A, Solon G. Two-Sample Instrumental variables estimators. \emph{The Review of Economics and Statistics}. 2010;92(3):557--561.
+\CSLLeftMargin{126. }
+\CSLRightInline{Inoue A, Solon G. {Two-Sample Instrumental variables estimators}. \emph{The Review of Economics and Statistics}. 2010;92(3):557--561. }
 
 \leavevmode\hypertarget{ref-Pierce2013}{}%
-127. Pierce BL, Burgess S. Efficient design for mendelian randomization studies: Subsample and 2-sample instrumental variable estimators. \emph{American Journal of Epidemiology}. 2013;178(7):1177--1184.
+\CSLLeftMargin{127. }
+\CSLRightInline{Pierce BL, Burgess S. {Efficient design for mendelian randomization studies: Subsample and 2-sample instrumental variable estimators}. \emph{American Journal of Epidemiology}. 2013;178(7):1177--1184. }
 
 \leavevmode\hypertarget{ref-Richardson2018}{}%
-128. Richardson TG, Haycock PC, Zheng J, et al. Systematic Mendelian randomization framework elucidates hundreds of CpG sites which may mediate the influence of genetic variants on disease. \emph{Human Molecular Genetics}. 2018;
+\CSLLeftMargin{128. }
+\CSLRightInline{Richardson TG, Haycock PC, Zheng J, et al. {Systematic Mendelian randomization framework elucidates hundreds of CpG sites which may mediate the influence of genetic variants on disease}. \emph{Human Molecular Genetics}. 2018;}
 
 \leavevmode\hypertarget{ref-Gaunt2016}{}%
-129. Gaunt TR, Shihab HA, Hemani G, et al. Systematic identification of genetic influences on methylation across the human life course. \emph{Genome Biology} {[}electronic article{]}. 2016;17(1):61. (\url{http://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0926-z})
+\CSLLeftMargin{129. }
+\CSLRightInline{Gaunt TR, Shihab HA, Hemani G, et al. {Systematic identification of genetic influences on methylation across the human life course}. \emph{Genome Biology} {[}electronic article{]}. 2016;17(1):61. (\url{http://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0926-z})}
 
 \leavevmode\hypertarget{ref-Neumeyer2020}{}%
-130. Neumeyer S, Hemani G, Zeggini E. Strengthening Causal Inference for Complex Disease Using Molecular Quantitative Trait Loci. \emph{Trends in Molecular Medicine}. 2020;
+\CSLLeftMargin{130. }
+\CSLRightInline{Neumeyer S, Hemani G, Zeggini E. {Strengthening Causal Inference for Complex Disease Using Molecular Quantitative Trait Loci}. \emph{Trends in Molecular Medicine}. 2020;}
 
 \leavevmode\hypertarget{ref-Johnston2019}{}%
-131. Johnston AD, Simões-Pires CA, Thompson TV, et al. Functional genetic variants can mediate their regulatory effects through alteration of transcription factor binding. \emph{Nature Communications}. 2019;
+\CSLLeftMargin{131. }
+\CSLRightInline{Johnston AD, Simões-Pires CA, Thompson TV, et al. {Functional genetic variants can mediate their regulatory effects through alteration of transcription factor binding}. \emph{Nature Communications}. 2019;}
 
 \leavevmode\hypertarget{ref-Bonder2017}{}%
-132. Bonder MJ, Luijk R, Zhernakova DV, et al. Disease variants alter transcription factor levels and methylation of their binding sites. \emph{Nature Genetics}. 2017;
+\CSLLeftMargin{132. }
+\CSLRightInline{Bonder MJ, Luijk R, Zhernakova DV, et al. {Disease variants alter transcription factor levels and methylation of their binding sites}. \emph{Nature Genetics}. 2017;}
 
 \leavevmode\hypertarget{ref-Lawlor2016}{}%
-133. Lawlor DA, Tilling K, Smith GD. Triangulation in aetiological epidemiology. \emph{International Journal of Epidemiology}. 2016;
+\CSLLeftMargin{133. }
+\CSLRightInline{Lawlor DA, Tilling K, Smith GD. {Triangulation in aetiological epidemiology}. \emph{International Journal of Epidemiology}. 2016;}
 
 \leavevmode\hypertarget{ref-Pearl2010}{}%
-134. Pearl J. An introduction to causal inference. \emph{International Journal of Biostatistics}. 2010;
+\CSLLeftMargin{134. }
+\CSLRightInline{Pearl J. {An introduction to causal inference}. \emph{International Journal of Biostatistics}. 2010;}
 
 \leavevmode\hypertarget{ref-Hernan2016}{}%
-135. Hernán MA, Robins JM. Using Big Data to Emulate a Target Trial When a Randomized Trial Is Not Available. \emph{American Journal of Epidemiology}. 2016;
+\CSLLeftMargin{135. }
+\CSLRightInline{Hernán MA, Robins JM. {Using Big Data to Emulate a Target Trial When a Randomized Trial Is Not Available}. \emph{American Journal of Epidemiology}. 2016;}
 
 \leavevmode\hypertarget{ref-Hernan2018}{}%
-136. Hernán MA. How to estimate the effect of treatment duration on survival outcomes using observational data. \emph{BMJ (Clinical research ed.)}. 2018;
+\CSLLeftMargin{136. }
+\CSLRightInline{Hernán MA. {How to estimate the effect of treatment duration on survival outcomes using observational data}. \emph{BMJ (Clinical research ed.)}. 2018;}
 
 \leavevmode\hypertarget{ref-Baglietto2017}{}%
-137. Baglietto L, Ponzi E, Haycock P, et al. DNA methylation changes measured in pre-diagnostic peripheral blood samples are associated with smoking and lung cancer risk. \emph{International Journal of Cancer}. 2017;140(1):50--61.
+\CSLLeftMargin{137. }
+\CSLRightInline{Baglietto L, Ponzi E, Haycock P, et al. {DNA methylation changes measured in pre-diagnostic peripheral blood samples are associated with smoking and lung cancer risk}. \emph{International Journal of Cancer}. 2017;140(1):50--61. }
 
 \leavevmode\hypertarget{ref-Ashburner2000}{}%
-138. Ashburner M, Ball CA, Blake JA, et al. Gene ontology: Tool for the unification of biology. \emph{Nature Genetics}. 2000;
+\CSLLeftMargin{138. }
+\CSLRightInline{Ashburner M, Ball CA, Blake JA, et al. {Gene ontology: Tool for the unification of biology}. \emph{Nature Genetics}. 2000;}
 
 \leavevmode\hypertarget{ref-Carbon2019}{}%
-139. Carbon S, Douglass E, Dunn N, et al. The Gene Ontology Resource: 20 years and still GOing strong. \emph{Nucleic Acids Research}. 2019;
+\CSLLeftMargin{139. }
+\CSLRightInline{Carbon S, Douglass E, Dunn N, et al. {The Gene Ontology Resource: 20 years and still GOing strong}. \emph{Nucleic Acids Research}. 2019;}
 
 \leavevmode\hypertarget{ref-Relton2015-aries}{}%
-140. Relton CL, Gaunt T, McArdle W, et al. Data Resource Profile: Accessible Resource for Integrated Epigenomic Studies (ARIES). \emph{International Journal of Epidemiology} {[}electronic article{]}. 2015;44(4):1181--1190. (\url{http://dx.doi.org/10.1093/ije/dyv072})
+\CSLLeftMargin{140. }
+\CSLRightInline{Relton CL, Gaunt T, McArdle W, et al. {Data Resource Profile: Accessible Resource for Integrated Epigenomic Studies (ARIES)}. \emph{International Journal of Epidemiology} {[}electronic article{]}. 2015;44(4):1181--1190. (\url{http://dx.doi.org/10.1093/ije/dyv072})}
 
 \leavevmode\hypertarget{ref-Fraser2013}{}%
-141. Fraser A, Macdonald-wallis C, Tilling K, et al. Cohort profile: The avon longitudinal study of parents and children: ALSPAC mothers cohort. \emph{International Journal of Epidemiology}. 2013;
+\CSLLeftMargin{141. }
+\CSLRightInline{Fraser A, Macdonald-wallis C, Tilling K, et al. {Cohort profile: The avon longitudinal study of parents and children: ALSPAC mothers cohort}. \emph{International Journal of Epidemiology}. 2013;}
 
 \leavevmode\hypertarget{ref-Boyd2013}{}%
-142. Boyd A, Golding J, Macleod J, et al. Cohort profile: The 'Children of the 90s'-The index offspring of the avon longitudinal study of parents and children. \emph{International Journal of Epidemiology}. 2013;42(1):111--127.
+\CSLLeftMargin{142. }
+\CSLRightInline{Boyd A, Golding J, Macleod J, et al. {Cohort profile: The 'Children of the 90s'-The index offspring of the avon longitudinal study of parents and children}. \emph{International Journal of Epidemiology}. 2013;42(1):111--127. }
 
 \leavevmode\hypertarget{ref-Harris2009}{}%
-143. Harris PA, Taylor R, Thielke R, et al. Research electronic data capture (REDCap)-A metadata-driven methodology and workflow process for providing translational research informatics support. \emph{Journal of Biomedical Informatics}. 2009;
+\CSLLeftMargin{143. }
+\CSLRightInline{Harris PA, Taylor R, Thielke R, et al. {Research electronic data capture (REDCap)-A metadata-driven methodology and workflow process for providing translational research informatics support}. \emph{Journal of Biomedical Informatics}. 2009;}
 
 \leavevmode\hypertarget{ref-Harris2019}{}%
-144. Harris PA, Taylor R, Minor BL, et al. The REDCap consortium: Building an international community of software platform partners. \emph{Journal of Biomedical Informatics}. 2019;
+\CSLLeftMargin{144. }
+\CSLRightInline{Harris PA, Taylor R, Minor BL, et al. {The REDCap consortium: Building an international community of software platform partners}. \emph{Journal of Biomedical Informatics}. 2019;}
 
 \leavevmode\hypertarget{ref-Pidsley2013}{}%
-145. Pidsley R, Y Wong CC, Volta M, et al. A data-driven approach to preprocessing Illumina 450K methylation array data. \emph{BMC Genomics}. 2013;
+\CSLLeftMargin{145. }
+\CSLRightInline{Pidsley R, Y Wong CC, Volta M, et al. {A data-driven approach to preprocessing Illumina 450K methylation array data}. \emph{BMC Genomics}. 2013;}
 
 \leavevmode\hypertarget{ref-Touleimat2012}{}%
-146. Touleimat N, Tost J. Complete pipeline for Infinium Human Methylation 450K BeadChip data processing using subset quantile normalization for accurate DNA methylation estimation. \emph{Epigenomics}. 2012;
+\CSLLeftMargin{146. }
+\CSLRightInline{Touleimat N, Tost J. {Complete pipeline for Infinium{{}} Human Methylation 450K BeadChip data processing using subset quantile normalization for accurate DNA methylation estimation}. \emph{Epigenomics}. 2012;}
 
 \leavevmode\hypertarget{ref-Collins2012}{}%
-147. Collins R. What makes UK Biobank special? \emph{The Lancet}. 2012;
+\CSLLeftMargin{147. }
+\CSLRightInline{Collins R. {What makes UK Biobank special?} \emph{The Lancet}. 2012;}
 
 \leavevmode\hypertarget{ref-Allen2014}{}%
-148. Allen NE, Sudlow C, Peakman T, et al. UK biobank data: Come and get it. \emph{Science Translational Medicine}. 2014;
+\CSLLeftMargin{148. }
+\CSLRightInline{Allen NE, Sudlow C, Peakman T, et al. {UK biobank data: Come and get it}. \emph{Science Translational Medicine}. 2014;}
 
 \leavevmode\hypertarget{ref-Bycroft2018}{}%
-149. Bycroft C, Freeman C, Petkova D, et al. The UK Biobank resource with deep phenotyping and genomic data. \emph{Nature}. 2018;
+\CSLLeftMargin{149. }
+\CSLRightInline{Bycroft C, Freeman C, Petkova D, et al. {The UK Biobank resource with deep phenotyping and genomic data}. \emph{Nature}. 2018;}
 
 \leavevmode\hypertarget{ref-McKay2017}{}%
-150. McKay JD, Hung RJ, Han Y, et al. Large-scale association analysis identifies new lung cancer susceptibility loci and heterogeneity in genetic susceptibility across histological subtypes. \emph{Nature genetics} {[}electronic article{]}. 2017;49(7):1126--1132. (\url{http://www.nature.com/doifinder/10.1038/ng.3892\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/pubmed/28604730})
+\CSLLeftMargin{150. }
+\CSLRightInline{McKay JD, Hung RJ, Han Y, et al. {Large-scale association analysis identifies new lung cancer susceptibility loci and heterogeneity in genetic susceptibility across histological subtypes.} \emph{Nature genetics} {[}electronic article{]}. 2017;49(7):1126--1132. (\url{http://www.nature.com/doifinder/10.1038/ng.3892\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/pubmed/28604730})}
 
 \leavevmode\hypertarget{ref-Kaur-Knudsen2011}{}%
-151. Kaur-Knudsen D, Bojesen SE, Tybjærg-Hansen A, et al. Nicotinic acetylcholine receptor polymorphism, smoking behavior, and tobacco-related cancer and lung and cardiovascular diseases: A cohort study. \emph{Journal of Clinical Oncology}. 2011;
+\CSLLeftMargin{151. }
+\CSLRightInline{Kaur-Knudsen D, Bojesen SE, Tybjærg-Hansen A, et al. {Nicotinic acetylcholine receptor polymorphism, smoking behavior, and tobacco-related cancer and lung and cardiovascular diseases: A cohort study}. \emph{Journal of Clinical Oncology}. 2011;}
 
 \leavevmode\hypertarget{ref-Bojesen2013}{}%
-152. Bojesen SE, Pooley KA, Johnatty SE, et al. Multiple independent variants at the TERT locus are associated with telomere length and risks of breast and ovarian cancer. \emph{Nature Genetics}. 2013;
+\CSLLeftMargin{152. }
+\CSLRightInline{Bojesen SE, Pooley KA, Johnatty SE, et al. {Multiple independent variants at the TERT locus are associated with telomere length and risks of breast and ovarian cancer}. \emph{Nature Genetics}. 2013;}
 
 \leavevmode\hypertarget{ref-Logue2017}{}%
-153. Logue MW, Smith AK, Wolf EJ, et al. The correlation of methylation levels measured using Illumina 450K and EPIC BeadChips in blood samples. \emph{Epigenomics}. 2017;
+\CSLLeftMargin{153. }
+\CSLRightInline{Logue MW, Smith AK, Wolf EJ, et al. {The correlation of methylation levels measured using Illumina 450K and EPIC BeadChips in blood samples}. \emph{Epigenomics}. 2017;}
 
 \leavevmode\hypertarget{ref-IlluminaEPIC}{}%
-154. Illumina. Infinium MethylationEPIC BeadChip - Datasheet. (\url{https://science-docs.illumina.com/documents/Microarray/infinium-methylation-epic-data-sheet-1070-2015-008/Content/Source/Microarray/Infinium/MethylationEPIC/infinium-methylation-epic-data-sheet.html})
+\CSLLeftMargin{154. }
+\CSLRightInline{Illumina. {Infinium MethylationEPIC BeadChip - Datasheet}. (\url{https://science-docs.illumina.com/documents/Microarray/infinium-methylation-epic-data-sheet-1070-2015-008/Content/Source/Microarray/Infinium/MethylationEPIC/infinium-methylation-epic-data-sheet.html})}
 
 \leavevmode\hypertarget{ref-Huang2015}{}%
-155. Huang WY, Hsu SD, Huang HY, et al. MethHC: A database of DNA methylation and gene expression in human cancer. \emph{Nucleic Acids Research}. 2015;
+\CSLLeftMargin{155. }
+\CSLRightInline{Huang WY, Hsu SD, Huang HY, et al. {MethHC: A database of DNA methylation and gene expression in human cancer}. \emph{Nucleic Acids Research}. 2015;}
 
 \leavevmode\hypertarget{ref-Chen2017}{}%
-156. Chen J, Behnam E, Huang J, et al. Fast and robust adjustment of cell mixtures in epigenome-wide association studies with SmartSVA. \emph{BMC Genomics}. 2017;
+\CSLLeftMargin{156. }
+\CSLRightInline{Chen Y, Widschwendter M, Teschendorff AE. {Systems-epigenomics inference of transcription factor activity implicates aryl-hydrocarbon-receptor inactivation as a key event in lung cancer development}. \emph{Genome Biology}. 2017;}
 
 \leavevmode\hypertarget{ref-Nano2017}{}%
-157. Nano J, Ghanbari M, Wang W, et al. Epigenome-Wide Association Study Identifies Methylation Sites Associated With Liver Enzymes and Hepatic Steatosis. \emph{Gastroenterology}. 2017;
+\CSLLeftMargin{157. }
+\CSLRightInline{Nano J, Ghanbari M, Wang W, et al. {Epigenome-Wide Association Study Identifies Methylation Sites Associated With Liver Enzymes and Hepatic Steatosis}. \emph{Gastroenterology}. 2017;}
 
 \leavevmode\hypertarget{ref-Kaushal2017}{}%
-158. Kaushal A, Zhang H, Karmaus WJJ, et al. Genome-wide DNA methylation at birth in relation to in utero arsenic exposure and the associated health in later life. \emph{Environmental Health: A Global Access Science Source}. 2017;
+\CSLLeftMargin{158. }
+\CSLRightInline{Kaushal A, Zhang H, Karmaus WJJ, et al. {Genome-wide DNA methylation at birth in relation to in utero arsenic exposure and the associated health in later life}. \emph{Environmental Health: A Global Access Science Source}. 2017;}
 
 \leavevmode\hypertarget{ref-Morris2017}{}%
-159. Morris JA, Tsai PC, Joehanes R, et al. Epigenome-wide Association of DNA Methylation in Whole Blood With Bone Mineral Density. \emph{Journal of Bone and Mineral Research}. 2017;
+\CSLLeftMargin{159. }
+\CSLRightInline{Morris JA, Tsai PC, Joehanes R, et al. {Epigenome-wide Association of DNA Methylation in Whole Blood With Bone Mineral Density}. \emph{Journal of Bone and Mineral Research}. 2017;}
 
 \leavevmode\hypertarget{ref-Hedman2017}{}%
-160. Hedman ÅK, Mendelson MM, Marioni RE, et al. Epigenetic Patterns in Blood Associated with Lipid Traits Predict Incident Coronary Heart Disease Events and Are Enriched for Results from Genome-Wide Association Studies. \emph{Circulation: Cardiovascular Genetics}. 2017;
+\CSLLeftMargin{160. }
+\CSLRightInline{Hedman ÅK, Mendelson MM, Marioni RE, et al. {Epigenetic Patterns in Blood Associated with Lipid Traits Predict Incident Coronary Heart Disease Events and Are Enriched for Results from Genome-Wide Association Studies}. \emph{Circulation: Cardiovascular Genetics}. 2017;}
 
 \leavevmode\hypertarget{ref-Braun2017}{}%
-161. Braun KVE, Dhana K, Vries PS de, et al. Epigenome-wide association study (EWAS) on lipids: the Rotterdam Study. \emph{Clinical Epigenetics}. 2017;
+\CSLLeftMargin{161. }
+\CSLRightInline{Braun KVE, Dhana K, Vries PS de, et al. {Epigenome-wide association study (EWAS) on lipids: the Rotterdam Study}. \emph{Clinical Epigenetics}. 2017;}
 
 \leavevmode\hypertarget{ref-Teschendorff2015}{}%
-162. Teschendorff AE, Yang Z, Wong A, et al. Correlation of Smoking-Associated DNA Methylation Changes in Buccal Cells With DNA Methylation Changes in Epithelial Cancer. \emph{JAMA oncology} {[}electronic article{]}. 2015;1(4):476--85. (\url{http://oncology.jamanetwork.com/article.aspx?articleid=2293216})
+\CSLLeftMargin{162. }
+\CSLRightInline{Teschendorff AE, Yang Z, Wong A, et al. {Correlation of Smoking-Associated DNA Methylation Changes in Buccal Cells With DNA Methylation Changes in Epithelial Cancer.} \emph{JAMA oncology} {[}electronic article{]}. 2015;1(4):476--85. (\url{http://oncology.jamanetwork.com/article.aspx?articleid=2293216})}
 
 \leavevmode\hypertarget{ref-Corbin2019}{}%
-163. Corbin LJ, Taylor AE, White SJ, et al. Epigenetic regulation of PAR4-related platelet activation: mechanistic links between environmental exposure and cardiovascular disease. \emph{bioRxiv} {[}electronic article{]}. 2019;473728. (\url{http://biorxiv.org/content/early/2019/01/03/473728.abstract})
+\CSLLeftMargin{163. }
+\CSLRightInline{Corbin LJ, Taylor AE, White SJ, et al. {Epigenetic regulation of PAR4-related platelet activation: mechanistic links between environmental exposure and cardiovascular disease}. \emph{bioRxiv} {[}electronic article{]}. 2019;473728. (\url{http://biorxiv.org/content/early/2019/01/03/473728.abstract})}
 
 \leavevmode\hypertarget{ref-Elliott2014}{}%
-164. Elliott HR, Tillin T, McArdle WL, et al. Differences in smoking associated DNA methylation patterns in South Asians and Europeans. \emph{Clinical Epigenetics}. 2014;
+\CSLLeftMargin{164. }
+\CSLRightInline{Elliott HR, Tillin T, McArdle WL, et al. {Differences in smoking associated DNA methylation patterns in South Asians and Europeans}. \emph{Clinical Epigenetics}. 2014;}
 
 \leavevmode\hypertarget{ref-Zudaire2008}{}%
-165. Zudaire E, Cuesta N, Murty V, et al. The aryl hydrocarbon receptor repressor is a putative tumor suppressor gene in multiple human cancers. \emph{The Journal of clinical investigation}. 2008;
+\CSLLeftMargin{165. }
+\CSLRightInline{Zudaire E, Cuesta N, Murty V, et al. {The aryl hydrocarbon receptor repressor is a putative tumor suppressor gene in multiple human cancers.} \emph{The Journal of clinical investigation}. 2008;}
 
 \leavevmode\hypertarget{ref-McRae2014}{}%
-166. McRae AF, Powell JE, Henders AK, et al. Contribution of genetic variation to transgenerational inheritance of DNA methylation. \emph{Genome biology}. 2014;
+\CSLLeftMargin{166. }
+\CSLRightInline{McRae AF, Powell JE, Henders AK, et al. {Contribution of genetic variation to transgenerational inheritance of DNA methylation}. \emph{Genome biology}. 2014;}
 
 \leavevmode\hypertarget{ref-Hannon2018}{}%
-167. Hannon E, Knox O, Sugden K, et al. Characterizing genetic and environmental influences on variable DNA methylation using monozygotic and dizygotic twins. \emph{PLoS Genetics}. 2018;
+\CSLLeftMargin{167. }
+\CSLRightInline{Hannon E, Knox O, Sugden K, et al. {Characterizing genetic and environmental influences on variable DNA methylation using monozygotic and dizygotic twins}. \emph{PLoS Genetics}. 2018;}
 
 \leavevmode\hypertarget{ref-Meng2010}{}%
-168. Meng H, Joyce AR, Adkins DE, et al. A statistical method for excluding non-variable CpG sites in high-throughput DNA methylation profiling. \emph{BMC Bioinformatics}. 2010;
+\CSLLeftMargin{168. }
+\CSLRightInline{Meng H, Joyce AR, Adkins DE, et al. {A statistical method for excluding non-variable CpG sites in high-throughput DNA methylation profiling}. \emph{BMC Bioinformatics}. 2010;}
 
 \leavevmode\hypertarget{ref-Min2018}{}%
-169. Min JL, Hemani G, Davey Smith G, et al. Meffil: efficient normalization and analysis of very large DNA methylation datasets. \emph{Bioinformatics (Oxford, England)}. 2018;
+\CSLLeftMargin{169. }
+\CSLRightInline{Min JL, Hemani G, Davey Smith G, et al. {Meffil: efficient normalization and analysis of very large DNA methylation datasets}. \emph{Bioinformatics (Oxford, England)}. 2018;}
 
 \leavevmode\hypertarget{ref-Min2020}{}%
-170. Min JL, Hemani G, Hannon E, et al. Genomic and phenomic insights from an atlas of genetic effects on DNA methylation. \emph{medRxiv} {[}electronic article{]}. 2020;2020.09.01.20180406. (\url{http://medrxiv.org/content/early/2020/09/03/2020.09.01.20180406.abstract})
+\CSLLeftMargin{170. }
+\CSLRightInline{Min JL, Hemani G, Hannon E, et al. {Genomic and phenomic insights from an atlas of genetic effects on DNA methylation}. \emph{medRxiv} {[}electronic article{]}. 2020;2020.09.01.20180406. (\url{http://medrxiv.org/content/early/2020/09/03/2020.09.01.20180406.abstract})}
 
 \leavevmode\hypertarget{ref-VanDongen2016}{}%
-171. Dongen J van, Nivard MG, Willemsen G, et al. Genetic and environmental influences interact with age and sex in shaping the human methylome. \emph{Nature Communications} {[}electronic article{]}. 2016;7:11115. (\url{http://www.nature.com/doifinder/10.1038/ncomms11115})
+\CSLLeftMargin{171. }
+\CSLRightInline{Dongen J van, Nivard MG, Willemsen G, et al. {Genetic and environmental influences interact with age and sex in shaping the human methylome}. \emph{Nature Communications} {[}electronic article{]}. 2016;7:11115. (\url{http://www.nature.com/doifinder/10.1038/ncomms11115})}
 
 \leavevmode\hypertarget{ref-Sheffield2016}{}%
-172. Sheffield NC, Bock C. LOLA: Enrichment analysis for genomic region sets and regulatory elements in R and Bioconductor. \emph{Bioinformatics}. 2016;
+\CSLLeftMargin{172. }
+\CSLRightInline{Sheffield NC, Bock C. {LOLA: Enrichment analysis for genomic region sets and regulatory elements in R and Bioconductor}. \emph{Bioinformatics}. 2016;}
 
 \leavevmode\hypertarget{ref-Kundaje2015}{}%
-173. Kundaje A, Meuleman W, Ernst J, et al. Integrative analysis of 111 reference human epigenomes. \emph{Nature} {[}electronic article{]}. 2015;518(7539):317--330. (\url{http://www.nature.com/doifinder/10.1038/nature14248})
+\CSLLeftMargin{173. }
+\CSLRightInline{Kundaje A, Meuleman W, Ernst J, et al. {Integrative analysis of 111 reference human epigenomes}. \emph{Nature} {[}electronic article{]}. 2015;518(7539):317--330. (\url{http://www.nature.com/doifinder/10.1038/nature14248})}
 
 \leavevmode\hypertarget{ref-Dunham2012}{}%
-174. Dunham I, Kundaje A, Aldred SF, et al. An integrated encyclopedia of DNA elements in the human genome. \emph{Nature}. 2012;
+\CSLLeftMargin{174. }
+\CSLRightInline{Dunham I, Kundaje A, Aldred SF, et al. {An integrated encyclopedia of DNA elements in the human genome}. \emph{Nature}. 2012;}
 
 \leavevmode\hypertarget{ref-Mendelson2017}{}%
-175. Mendelson MM, Marioni RE, Joehanes R, et al. Association of Body Mass Index with DNA Methylation and Gene Expression in Blood Cells and Relations to Cardiometabolic Disease: A Mendelian Randomization Approach. \emph{PLoS Medicine}. 2017;
+\CSLLeftMargin{175. }
+\CSLRightInline{Mendelson MM, Marioni RE, Joehanes R, et al. {Association of Body Mass Index with DNA Methylation and Gene Expression in Blood Cells and Relations to Cardiometabolic Disease: A Mendelian Randomization Approach}. \emph{PLoS Medicine}. 2017;}
 
 \leavevmode\hypertarget{ref-Demerath2015}{}%
-176. Demerath EW, Guan W, Grove ML, et al. Epigenome-wide association study (EWAS) of BMI, BMI change and waist circumference in African American adults identifies multiple replicated loci. \emph{Human molecular genetics}. 2015;
+\CSLLeftMargin{176. }
+\CSLRightInline{Demerath EW, Guan W, Grove ML, et al. {Epigenome-wide association study (EWAS) of BMI, BMI change and waist circumference in African American adults identifies multiple replicated loci}. \emph{Human molecular genetics}. 2015;}
 
 \leavevmode\hypertarget{ref-Sayols-Baixeras2016}{}%
-177. Sayols-Baixeras S, Subirana I, Lluis-Ganella C, et al. Identification and validation of seven new loci showing differential DNA methylation related to serum lipid profile: An epigenome-wide approach. The REGICOR study. \emph{Human Molecular Genetics}. 2016;
+\CSLLeftMargin{177. }
+\CSLRightInline{Sayols-Baixeras S, Subirana I, Lluis-Ganella C, et al. {Identification and validation of seven new loci showing differential DNA methylation related to serum lipid profile: An epigenome-wide approach. The REGICOR study}. \emph{Human Molecular Genetics}. 2016;}
 
 \leavevmode\hypertarget{ref-Kriebel2016}{}%
-178. Kriebel J, Herder C, Rathmann W, et al. Association between DNA Methylation in whole blood and measures of glucose metabolism: Kora F4 study. \emph{PLoS ONE}. 2016;
+\CSLLeftMargin{178. }
+\CSLRightInline{Kriebel J, Herder C, Rathmann W, et al. {Association between DNA Methylation in whole blood and measures of glucose metabolism: Kora F4 study}. \emph{PLoS ONE}. 2016;}
 
 \leavevmode\hypertarget{ref-Pfeiffer2015}{}%
-179. Pfeiffer L, Wahl S, Pilling LC, et al. DNA Methylation of Lipid-Related Genes Affects Blood Lipid Levels. \emph{Circulation: Cardiovascular Genetics}. 2015;
+\CSLLeftMargin{179. }
+\CSLRightInline{Pfeiffer L, Wahl S, Pilling LC, et al. {DNA Methylation of Lipid-Related Genes Affects Blood Lipid Levels}. \emph{Circulation: Cardiovascular Genetics}. 2015;}
 
 \leavevmode\hypertarget{ref-Chambers2015}{}%
-180. Chambers JC, Loh M, Lehne B, et al. Epigenome-wide association of DNA methylation markers in peripheral blood from Indian Asians and Europeans with incident type 2 diabetes: A nested case-control study. \emph{The Lancet Diabetes and Endocrinology}. 2015;
+\CSLLeftMargin{180. }
+\CSLRightInline{Chambers JC, Loh M, Lehne B, et al. {Epigenome-wide association of DNA methylation markers in peripheral blood from Indian Asians and Europeans with incident type 2 diabetes: A nested case-control study}. \emph{The Lancet Diabetes and Endocrinology}. 2015;}
 
 \leavevmode\hypertarget{ref-Pidsley2016}{}%
-181. Pidsley R, Zotenko E, Peters TJ, et al. Critical evaluation of the Illumina MethylationEPIC BeadChip microarray for whole-genome DNA methylation profiling. \emph{Genome Biology}. 2016;
+\CSLLeftMargin{181. }
+\CSLRightInline{Pidsley R, Zotenko E, Peters TJ, et al. {Critical evaluation of the Illumina MethylationEPIC BeadChip microarray for whole-genome DNA methylation profiling}. \emph{Genome Biology}. 2016;}
 
 \leavevmode\hypertarget{ref-ToinetCronje2020}{}%
-182. Toinét Cronjé H, Elliott HR, Nienaber-Rousseau C, et al. Replication and expansion of epigenome-wide association literature in a black South African population. \emph{Clinical Epigenetics}. 2020;
+\CSLLeftMargin{182. }
+\CSLRightInline{Toinét Cronjé H, Elliott HR, Nienaber-Rousseau C, et al. {Replication and expansion of epigenome-wide association literature in a black South African population}. \emph{Clinical Epigenetics}. 2020;}
 
 \leavevmode\hypertarget{ref-Jones2009}{}%
-183. Jones P a, Liang G. Rethinking how DNA methylation patterns are maintained. \emph{Nature reviews. Genetics} {[}electronic article{]}. 2009;10(11):805--11. (\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2848124\%7B/\&\%7Dtool=pmcentrez\%7B/\&\%7Drendertype=abstract\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve\%7B/\&\%7Ddb=PubMed\%7B/\&\%7Ddopt=Citation\%7B/\&\%7Dlist\%7B/_\%7Duids=19789556})
+\CSLLeftMargin{183. }
+\CSLRightInline{Jones Pa, Liang G. {Rethinking how DNA methylation patterns are maintained.} \emph{Nature reviews. Genetics} {[}electronic article{]}. 2009;10(11):805--11. (\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2848124\%7B/\&\%7Dtool=pmcentrez\%7B/\&\%7Drendertype=abstract\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve\%7B/\&\%7Ddb=PubMed\%7B/\&\%7Ddopt=Citation\%7B/\&\%7Dlist\%7B/_\%7Duids=19789556})}
 
 \leavevmode\hypertarget{ref-Chen2016}{}%
-184. Chen DP, Lin YC, Fann CSJ. Methods for identifying differentially methylated regions for sequence- and array-based data. \emph{Briefings in Functional Genomics}. 2016;15(6):485--490.
+\CSLLeftMargin{184. }
+\CSLRightInline{Chen DP, Lin YC, Fann CSJ. {Methods for identifying differentially methylated regions for sequence- and array-based data}. \emph{Briefings in Functional Genomics}. 2016;15(6):485--490. }
 
 \leavevmode\hypertarget{ref-Lettre2008}{}%
-185. Lettre G, Jackson AU, Gieger C, et al. Identification of ten loci associated with height highlights new biological pathways in human growth. \emph{Nature Genetics}. 2008;
+\CSLLeftMargin{185. }
+\CSLRightInline{Lettre G, Jackson AU, Gieger C, et al. {Identification of ten loci associated with height highlights new biological pathways in human growth}. \emph{Nature Genetics}. 2008;}
 
 \leavevmode\hypertarget{ref-Frayling2007}{}%
-186. Frayling TM, Timpson NJ, Weedon MN, et al. A common variant in the FTO gene is associated with body mass index and predisposes to childhood and adult obesity. \emph{Science}. 2007;
+\CSLLeftMargin{186. }
+\CSLRightInline{Frayling TM, Timpson NJ, Weedon MN, et al. {A common variant in the FTO gene is associated with body mass index and predisposes to childhood and adult obesity}. \emph{Science}. 2007;}
 
 \leavevmode\hypertarget{ref-Yengo2018}{}%
-187. Yengo L, Sidorenko J, Kemper KE, et al. Meta-analysis of genome-wide association studies for height and body mass index in \textasciitilde700 000 individuals of European ancestry. \emph{Human Molecular Genetics}. 2018;
+\CSLLeftMargin{187. }
+\CSLRightInline{Yengo L, Sidorenko J, Kemper KE, et al. {Meta-analysis of genome-wide association studies for height and body mass index in {\textasciitilde{}}700 000 individuals of European ancestry}. \emph{Human Molecular Genetics}. 2018;}
 
 \leavevmode\hypertarget{ref-Dick2014}{}%
-188. Dick KJ, Nelson CP, Tsaprouni L, et al. DNA methylation and body-mass index: A genome-wide analysis. \emph{The Lancet}. 2014;
+\CSLLeftMargin{188. }
+\CSLRightInline{Dick KJ, Nelson CP, Tsaprouni L, et al. {DNA methylation and body-mass index: A genome-wide analysis}. \emph{The Lancet}. 2014;}
 
 \leavevmode\hypertarget{ref-Tahara2015}{}%
-189. Tahara T, Arisawa T. DNA methylation as a molecular biomarker in gastric cancer. \emph{Epigenomics} {[}electronic article{]}. 2015;7(3):475--486. (\url{http://www.scopus.com/inward/record.url?eid=2-s2.0-84931360022\%7B/\&\%7DpartnerID=40\%7B/\&\%7Dmd5=96d2e2dd124d468e02c3b2da40e66212})
+\CSLLeftMargin{189. }
+\CSLRightInline{Tahara Ta, Arisawa Tb. {DNA methylation as a molecular biomarker in gastric cancer}. \emph{Epigenomics} {[}electronic article{]}. 2015;7(3):475--486. (\url{http://www.scopus.com/inward/record.url?eid=2-s2.0-84931360022\%7B/\&\%7DpartnerID=40\%7B/\&\%7Dmd5=96d2e2dd124d468e02c3b2da40e66212})}
 
 \leavevmode\hypertarget{ref-Kandimalla2013}{}%
-190. Kandimalla R, Tilborg AA van, Zwarthoff EC. DNA methylation-based biomarkers in bladder cancer. \emph{Nature Reviews Urology} {[}electronic article{]}. 2013;10(6):327--335. (\url{http://www.nature.com/articles/nrurol.2013.89})
+\CSLLeftMargin{190. }
+\CSLRightInline{Kandimalla R, Tilborg AA van, Zwarthoff EC. {DNA methylation-based biomarkers in bladder cancer}. \emph{Nature Reviews Urology} {[}electronic article{]}. 2013;10(6):327--335. (\url{http://www.nature.com/articles/nrurol.2013.89})}
 
 \leavevmode\hypertarget{ref-Speed2017}{}%
-191. Speed D, Cai N, Johnson MR, et al. Reevaluation of SNP heritability in complex human traits. \emph{Nature Genetics} {[}electronic article{]}. 2017;49(7):986--992. (\url{http://www.nature.com/doifinder/10.1038/ng.3865})
+\CSLLeftMargin{191. }
+\CSLRightInline{Speed D, Cai N, Johnson MR, et al. {Reevaluation of SNP heritability in complex human traits}. \emph{Nature Genetics} {[}electronic article{]}. 2017;49(7):986--992. (\url{http://www.nature.com/doifinder/10.1038/ng.3865})}
 
 \leavevmode\hypertarget{ref-Yang2011}{}%
-192. Yang J, Lee SH, Goddard ME, et al. GCTA: A tool for genome-wide complex trait analysis. \emph{American Journal of Human Genetics} {[}electronic article{]}. 2011;88(1):76--82. (\url{http://arxiv.org/abs/NIHMS150003})
+\CSLLeftMargin{192. }
+\CSLRightInline{Yang J, Lee SH, Goddard ME, et al. {GCTA: A tool for genome-wide complex trait analysis}. \emph{American Journal of Human Genetics} {[}electronic article{]}. 2011;88(1):76--82. (\url{http://arxiv.org/abs/NIHMS150003})}
 
 \leavevmode\hypertarget{ref-Chang2015}{}%
-193. Chang CC, Chow CC, Tellier LC, et al. Second-generation PLINK: rising to the challenge of larger and richer datasets. \emph{GigaScience} {[}electronic article{]}. 2015;4(1):7. (\url{https://academic.oup.com/gigascience/article-lookup/doi/10.1186/s13742-015-0047-8})
+\CSLLeftMargin{193. }
+\CSLRightInline{Chang CC, Chow CC, Tellier LC, et al. {Second-generation PLINK: rising to the challenge of larger and richer datasets}. \emph{GigaScience} {[}electronic article{]}. 2015;4(1):7. (\url{https://academic.oup.com/gigascience/article-lookup/doi/10.1186/s13742-015-0047-8})}
 
 \leavevmode\hypertarget{ref-Gazal2017}{}%
-194. Gazal S, Finucane HK, Furlotte NA, et al. Linkage disequilibrium--dependent architecture of human complex traits shows action of negative selection. \emph{Nature Genetics} {[}electronic article{]}. 2017;49(10):1421--1427. (\url{http://www.nature.com/doifinder/10.1038/ng.3954})
+\CSLLeftMargin{194. }
+\CSLRightInline{Gazal S, Finucane HK, Furlotte NA, et al. {Linkage disequilibrium--dependent architecture of human complex traits shows action of negative selection}. \emph{Nature Genetics} {[}electronic article{]}. 2017;49(10):1421--1427. (\url{http://www.nature.com/doifinder/10.1038/ng.3954})}
 
 \leavevmode\hypertarget{ref-Speed2018}{}%
-195. Speed D, Balding D. Exposing flaws in S-LDSC; reply to Gazal et al. \emph{bioRxiv} {[}electronic article{]}. 2018;280784. (\url{https://www.biorxiv.org/content/early/2018/03/27/280784})
+\CSLLeftMargin{195. }
+\CSLRightInline{Speed D, Balding D. {Exposing flaws in S-LDSC; reply to Gazal et al.} \emph{bioRxiv} {[}electronic article{]}. 2018;280784. (\url{https://www.biorxiv.org/content/early/2018/03/27/280784})}
 
 \leavevmode\hypertarget{ref-Speed2020}{}%
-196. Speed D, Holmes J, Balding DJ. Evaluating and improving heritability models using summary statistics. \emph{Nature Genetics}. 2020;
+\CSLLeftMargin{196. }
+\CSLRightInline{Speed D, Holmes J, Balding DJ. {Evaluating and improving heritability models using summary statistics}. \emph{Nature Genetics}. 2020;}
 
 \leavevmode\hypertarget{ref-TrejoBanos2020}{}%
-197. Trejo Banos D, McCartney DL, Patxot M, et al. Bayesian reassessment of the epigenetic architecture of complex traits. \emph{Nature Communications}. 2020;
+\CSLLeftMargin{197. }
+\CSLRightInline{Trejo Banos D, McCartney DL, Patxot M, et al. {Bayesian reassessment of the epigenetic architecture of complex traits}. \emph{Nature Communications}. 2020;}
 
 \leavevmode\hypertarget{ref-VanderHarst2018}{}%
-198. Harst P van der, Verweij N. Identification of 64 Novel Genetic Loci Provides an Expanded View on the Genetic Architecture of Coronary Artery Disease. \emph{Circulation research} {[}electronic article{]}. 2018;122(3):433--443. (\url{http://www.ncbi.nlm.nih.gov/pubmed/29212778\%20http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC5805277})
+\CSLLeftMargin{198. }
+\CSLRightInline{Harst P van der, Verweij N. {Identification of 64 Novel Genetic Loci Provides an Expanded View on the Genetic Architecture of Coronary Artery Disease.} \emph{Circulation research} {[}electronic article{]}. 2018;122(3):433--443. (\url{http://www.ncbi.nlm.nih.gov/pubmed/29212778\%20http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC5805277})}
 
 \leavevmode\hypertarget{ref-Visscher2017}{}%
-199. Visscher PM, Wray NR, Zhang Q, et al. 10 Years of GWAS Discovery: Biology, Function, and Translation. \emph{American Journal of Human Genetics}. 2017;
+\CSLLeftMargin{199. }
+\CSLRightInline{Visscher PM, Wray NR, Zhang Q, et al. {10 Years of GWAS Discovery: Biology, Function, and Translation}. \emph{American Journal of Human Genetics}. 2017;}
 
 \leavevmode\hypertarget{ref-Hanahan2011}{}%
-200. Hanahan D, Weinberg RA. Hallmarks of cancer: The next generation. \emph{Cell} {[}electronic article{]}. 2011;144(5):646--674. (\url{http://arxiv.org/abs/0208024})
+\CSLLeftMargin{200. }
+\CSLRightInline{Hanahan D, Weinberg RA. {Hallmarks of cancer: The next generation}. \emph{Cell} {[}electronic article{]}. 2011;144(5):646--674. (\url{http://arxiv.org/abs/0208024})}
 
 \leavevmode\hypertarget{ref-Relton2015}{}%
-201. Relton CL, Davey Smith G. Mendelian randomization: Applications and limitations in epigenetic studies. \emph{Epigenomics}. 2015;
+\CSLLeftMargin{201. }
+\CSLRightInline{Relton CL, Davey Smith G. {Mendelian randomization: Applications and limitations in epigenetic studies}. \emph{Epigenomics}. 2015;}
 
 \leavevmode\hypertarget{ref-Sharp2017}{}%
-202. Sharp GC, Salas LA, Monnereau C, et al. Maternal BMI at the start of pregnancy and offspring epigenome-wide DNA methylation: Findings from the pregnancy and childhood epigenetics (PACE) consortium. \emph{Human Molecular Genetics}. 2017;
+\CSLLeftMargin{202. }
+\CSLRightInline{Sharp GC, Salas LA, Monnereau C, et al. {Maternal BMI at the start of pregnancy and offspring epigenome-wide DNA methylation: Findings from the pregnancy and childhood epigenetics (PACE) consortium}. \emph{Human Molecular Genetics}. 2017;}
 
 \leavevmode\hypertarget{ref-Everson2019}{}%
-203. Everson TM, Marsit CJ, Michael O'Shea T, et al. Epigenome-wide Analysis Identifies Genes and Pathways Linked to Neurobehavioral Variation in Preterm Infants. \emph{Scientific Reports}. 2019;
+\CSLLeftMargin{203. }
+\CSLRightInline{Everson TM, Marsit CJ, Michael O'Shea T, et al. {Epigenome-wide Analysis Identifies Genes and Pathways Linked to Neurobehavioral Variation in Preterm Infants}. \emph{Scientific Reports}. 2019;}
 
 \leavevmode\hypertarget{ref-Chen2020}{}%
-204. Chen J, Zang Z, Braun U, et al. Association of a Reproducible Epigenetic Risk Profile for Schizophrenia with Brain Methylation and Function. \emph{JAMA Psychiatry}. 2020;
+\CSLLeftMargin{204. }
+\CSLRightInline{Chen J, Zang Z, Braun U, et al. {Association of a Reproducible Epigenetic Risk Profile for Schizophrenia with Brain Methylation and Function}. \emph{JAMA Psychiatry}. 2020;}
 
 \leavevmode\hypertarget{ref-Breeze2016}{}%
-205. Breeze CE, Paul DS, Dongen J van, et al. eFORGE: A Tool for Identifying Cell Type-Specific Signal in Epigenomic Data. \emph{Cell Reports}. 2016;
+\CSLLeftMargin{205. }
+\CSLRightInline{Breeze CE, Paul DS, Dongen J van, et al. {eFORGE: A Tool for Identifying Cell Type-Specific Signal in Epigenomic Data}. \emph{Cell Reports}. 2016;}
 
 \leavevmode\hypertarget{ref-Gallagher2018}{}%
-206. Gallagher MD, Chen-Plotkin AS. The Post-GWAS Era: From Association to Function. \emph{American Journal of Human Genetics}. 2018;
+\CSLLeftMargin{206. }
+\CSLRightInline{Gallagher MD, Chen-Plotkin AS. {The Post-GWAS Era: From Association to Function}. \emph{American Journal of Human Genetics}. 2018;}
 
 \leavevmode\hypertarget{ref-Kurushima2019}{}%
-207. Kurushima Y, Tsai PC, Castillo-Fernandez J, et al. Epigenetic findings in periodontitis in UK twins: A cross-sectional study. \emph{Clinical Epigenetics}. 2019;
+\CSLLeftMargin{207. }
+\CSLRightInline{Kurushima Y, Tsai PC, Castillo-Fernandez J, et al. {Epigenetic findings in periodontitis in UK twins: A cross-sectional study}. \emph{Clinical Epigenetics}. 2019;}
 
 \leavevmode\hypertarget{ref-Agha2019}{}%
-208. Agha G, Mendelson MM, Ward-Caviness CK, et al. Blood Leukocyte DNA Methylation Predicts Risk of Future Myocardial Infarction and Coronary Heart Disease. \emph{Circulation}. 2019;
+\CSLLeftMargin{208. }
+\CSLRightInline{Agha G, Mendelson MM, Ward-Caviness CK, et al. {Blood Leukocyte DNA Methylation Predicts Risk of Future Myocardial Infarction and Coronary Heart Disease}. \emph{Circulation}. 2019;}
 
 \leavevmode\hypertarget{ref-Odintsova2019}{}%
-209. Odintsova VV, Hagenbeek FA, Suderman M, et al. DNA methylation signatures of breastfeeding in buccal cells collected in mid-childhood. \emph{Nutrients}. 2019;
+\CSLLeftMargin{209. }
+\CSLRightInline{Odintsova VV, Hagenbeek FA, Suderman M, et al. {DNA methylation signatures of breastfeeding in buccal cells collected in mid-childhood}. \emph{Nutrients}. 2019;}
 
 \leavevmode\hypertarget{ref-Geurtsen2019}{}%
-210. Geurtsen ML, Jaddoe VWV, Salas LA, et al. Newborn and childhood differential DNA methylation and liver fat in school-age children. \emph{Clinical Epigenetics}. 2019;
+\CSLLeftMargin{210. }
+\CSLRightInline{Geurtsen ML, Jaddoe VWV, Salas LA, et al. {Newborn and childhood differential DNA methylation and liver fat in school-age children}. \emph{Clinical Epigenetics}. 2019;}
 
 \leavevmode\hypertarget{ref-Sattar2017}{}%
-211. Sattar N, Preiss D. Reverse Causality in Cardiovascular Epidemiological Research: More Common Than Imagined? \emph{Circulation}. 2017;
+\CSLLeftMargin{211. }
+\CSLRightInline{Sattar N, Preiss D. {Reverse Causality in Cardiovascular Epidemiological Research: More Common Than Imagined?} \emph{Circulation}. 2017;}
 
 \leavevmode\hypertarget{ref-DaveySmith1992}{}%
-212. Davey Smith G, Phillips AN. Confounding in epidemiological studies: Why 'independent' effects may not be all they seem. \emph{British Medical Journal}. 1992;
+\CSLLeftMargin{212. }
+\CSLRightInline{Davey Smith G, Phillips AN. {Confounding in epidemiological studies: Why 'independent' effects may not be all they seem}. \emph{British Medical Journal}. 1992;}
 
 \leavevmode\hypertarget{ref-Fewell2007}{}%
-213. Fewell Z, Davey Smith G, Sterne JAC. The impact of residual and unmeasured confounding in epidemiologic studies: A simulation study. \emph{American Journal of Epidemiology}. 2007;
+\CSLLeftMargin{213. }
+\CSLRightInline{Fewell Z, Davey Smith G, Sterne JAC. {The impact of residual and unmeasured confounding in epidemiologic studies: A simulation study}. \emph{American Journal of Epidemiology}. 2007;}
 
 \leavevmode\hypertarget{ref-Heijmans2012}{}%
-214. Heijmans BT, Mill J. Commentary: The seven plagues of epigenetic epidemiology. \emph{International Journal of Epidemiology} {[}electronic article{]}. 2012;41(1):74--78. (\url{http://dx.doi.org/10.1093/ije/dyr225})
+\CSLLeftMargin{214. }
+\CSLRightInline{Heijmans BT, Mill J. {Commentary: The seven plagues of epigenetic epidemiology}. \emph{International Journal of Epidemiology} {[}electronic article{]}. 2012;41(1):74--78. (\url{http://dx.doi.org/10.1093/ije/dyr225})}
 
 \leavevmode\hypertarget{ref-Wheeler2016}{}%
-215. Wheeler HE, Shah KP, Brenner J, et al. Survey of the Heritability and Sparse Architecture of Gene Expression Traits across Human Tissues. \emph{PLoS Genetics}. 2016;
+\CSLLeftMargin{215. }
+\CSLRightInline{Wheeler HE, Shah KP, Brenner J, et al. {Survey of the Heritability and Sparse Architecture of Gene Expression Traits across Human Tissues}. \emph{PLoS Genetics}. 2016;}
 
 \leavevmode\hypertarget{ref-Mogil2018}{}%
-216. Mogil LS, Andaleon A, Badalamenti A, et al. Genetic architecture of gene expression traits across diverse populations. \emph{PLoS Genetics}. 2018;
+\CSLLeftMargin{216. }
+\CSLRightInline{Mogil LS, Andaleon A, Badalamenti A, et al. {Genetic architecture of gene expression traits across diverse populations}. \emph{PLoS Genetics}. 2018;}
 
 \leavevmode\hypertarget{ref-Fasanelli2015}{}%
-217. Fasanelli F, Baglietto L, Ponzi E, et al. Hypomethylation of smoking-related genes is associated with future lung cancer in four prospective cohorts. \emph{Nature Communications} {[}electronic article{]}. 2015;6:10192. (\url{http://www.nature.com/doifinder/10.1038/ncomms10192})
+\CSLLeftMargin{217. }
+\CSLRightInline{Fasanelli F, Baglietto L, Ponzi E, et al. {Hypomethylation of smoking-related genes is associated with future lung cancer in four prospective cohorts}. \emph{Nature Communications} {[}electronic article{]}. 2015;6:10192. (\url{http://www.nature.com/doifinder/10.1038/ncomms10192})}
 
 \leavevmode\hypertarget{ref-McLaren2016}{}%
-218. McLaren W, Gil L, Hunt SE, et al. The Ensembl Variant Effect Predictor. \emph{Genome Biology}. 2016;
+\CSLLeftMargin{218. }
+\CSLRightInline{McLaren W, Gil L, Hunt SE, et al. {The Ensembl Variant Effect Predictor}. \emph{Genome Biology}. 2016;}
 
 \leavevmode\hypertarget{ref-Aguet2017}{}%
-219. Aguet F, Brown AA, Castel SE, et al. Genetic effects on gene expression across human tissues. \emph{Nature}. 2017;
+\CSLLeftMargin{219. }
+\CSLRightInline{Aguet F, Brown AA, Castel SE, et al. {Genetic effects on gene expression across human tissues}. \emph{Nature}. 2017;}
 
 \leavevmode\hypertarget{ref-Huang2018}{}%
-220. Huang QQ, Ritchie SC, Brozynska M, et al. Power, false discovery rate and Winner's Curse in eQTL studies. \emph{Nucleic Acids Research}. 2018;
+\CSLLeftMargin{220. }
+\CSLRightInline{Huang QQ, Ritchie SC, Brozynska M, et al. {Power, false discovery rate and Winner's Curse in eQTL studies}. \emph{Nucleic Acids Research}. 2018;}
 
 \leavevmode\hypertarget{ref-Kanduri2019}{}%
-221. Kanduri C, Bock C, Gundersen S, et al. Colocalization analyses of genomic elements: Approaches, recommendations and challenges. \emph{Bioinformatics}. 2019;
+\CSLLeftMargin{221. }
+\CSLRightInline{Kanduri C, Bock C, Gundersen S, et al. {Colocalization analyses of genomic elements: Approaches, recommendations and challenges}. \emph{Bioinformatics}. 2019;}
 
 \leavevmode\hypertarget{ref-Ellinghaus2016}{}%
-222. Ellinghaus D, Jostins L, Spain SL, et al. Analysis of five chronic inflammatory diseases identifies 27 new associations and highlights disease-specific patterns at shared loci. \emph{Nature Genetics}. 2016;
+\CSLLeftMargin{222. }
+\CSLRightInline{Ellinghaus D, Jostins L, Spain SL, et al. {Analysis of five chronic inflammatory diseases identifies 27 new associations and highlights disease-specific patterns at shared loci}. \emph{Nature Genetics}. 2016;}
 
 \leavevmode\hypertarget{ref-Durinck2009}{}%
-223. Durinck S, Spellman PT, Birney E, et al. Mapping identifiers for the integration of genomic datasets with the R/ Bioconductor package biomaRt. \emph{Nature Protocols}. 2009;
+\CSLLeftMargin{223. }
+\CSLRightInline{Durinck S, Spellman PT, Birney E, et al. {Mapping identifiers for the integration of genomic datasets with the R/ Bioconductor package biomaRt}. \emph{Nature Protocols}. 2009;}
 
 \leavevmode\hypertarget{ref-Kanehisa2000}{}%
-224. Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. \emph{Nucleic Acids Research}. 2000;
+\CSLLeftMargin{224. }
+\CSLRightInline{Kanehisa M, Goto S. {KEGG: Kyoto Encyclopedia of Genes and Genomes}. \emph{Nucleic Acids Research}. 2000;}
 
 \leavevmode\hypertarget{ref-Kanehisa2019}{}%
-225. Kanehisa M, Sato Y, Furumichi M, et al. New approach for understanding genome variations in KEGG. \emph{Nucleic Acids Research}. 2019;
+\CSLLeftMargin{225. }
+\CSLRightInline{Kanehisa M. {Toward understanding the origin and evolution of cellular organisms}. \emph{Protein Science}. 2019;}
 
 \leavevmode\hypertarget{ref-Szklarczyk2019}{}%
-226. Szklarczyk D, Gable AL, Lyon D, et al. STRING v11: Protein-protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets. \emph{Nucleic Acids Research}. 2019;
+\CSLLeftMargin{226. }
+\CSLRightInline{Szklarczyk D, Gable AL, Lyon D, et al. {STRING v11: Protein-protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets}. \emph{Nucleic Acids Research}. 2019;}
 
 \leavevmode\hypertarget{ref-Orchard2014}{}%
-227. Orchard S, Ammari M, Aranda B, et al. The MIntAct project - IntAct as a common curation platform for 11 molecular interaction databases. \emph{Nucleic Acids Research}. 2014;
+\CSLLeftMargin{227. }
+\CSLRightInline{Orchard S, Ammari M, Aranda B, et al. {The MIntAct project - IntAct as a common curation platform for 11 molecular interaction databases}. \emph{Nucleic Acids Research}. 2014;}
 
 \leavevmode\hypertarget{ref-Jassal2020}{}%
-228. Jassal B, Matthews L, Viteri G, et al. The reactome pathway knowledgebase. \emph{Nucleic Acids Research}. 2020;
+\CSLLeftMargin{228. }
+\CSLRightInline{Jassal B, Matthews L, Viteri G, et al. {The reactome pathway knowledgebase}. \emph{Nucleic Acids Research}. 2020;}
 
 \leavevmode\hypertarget{ref-Liu2020}{}%
-229. Liu Y, Elsworth B, Erola P, et al. EpiGraphDB: A database and data mining platform for health data science. \emph{bioRxiv} {[}electronic article{]}. 2020;2020.08.01.230193. (\url{http://biorxiv.org/content/early/2020/08/04/2020.08.01.230193.abstract})
+\CSLLeftMargin{229. }
+\CSLRightInline{Liu Y, Elsworth B, Erola P, et al. {EpiGraphDB: A database and data mining platform for health data science}. \emph{bioRxiv} {[}electronic article{]}. 2020;2020.08.01.230193. (\url{http://biorxiv.org/content/early/2020/08/04/2020.08.01.230193.abstract})}
 
 \leavevmode\hypertarget{ref-Zhang2015}{}%
-230. Zhang W, Spector TD, Deloukas P, et al. Predicting genome-wide DNA methylation using methylation marks, genomic position, and DNA regulatory elements. \emph{Genome Biology} {[}electronic article{]}. 2015;(\url{http://arxiv.org/abs/1308.2134})
+\CSLLeftMargin{230. }
+\CSLRightInline{Zhang W, Spector TD, Deloukas P, et al. {Predicting genome-wide DNA methylation using methylation marks, genomic position, and DNA regulatory elements}. \emph{Genome Biology} {[}electronic article{]}. 2015;(\url{http://arxiv.org/abs/1308.2134})}
 
 \leavevmode\hypertarget{ref-Benjamini1995}{}%
-231. Benjamini Y, Hochberg Y. Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. \emph{Journal of the Royal Statistical Society: Series B (Methodological)}. 1995;
+\CSLLeftMargin{231. }
+\CSLRightInline{Benjamini Y, Hochberg Y. {Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing}. \emph{Journal of the Royal Statistical Society: Series B (Methodological)}. 1995;}
 
 \leavevmode\hypertarget{ref-Ferlay2013}{}%
-232. Ferlay J, Soerjomataram I, Ervik M, et al. GLOBOCAN 2012 v1.0, Cancer Incidence and Mortality Worldwide: IARC CancerBase. No. 11 {[}Internet{]}. \emph{Lyon, France: International Agency for Research on Cancer.} {[}electronic article{]}. 2013;11:http://globocan.iarc.f. (\url{http://arxiv.org/abs/arXiv:1011.1669v3})
+\CSLLeftMargin{232. }
+\CSLRightInline{Ferlay J, Soerjomataram I, Ervik M, et al. {GLOBOCAN 2012 v1.0, Cancer Incidence and Mortality Worldwide: IARC CancerBase. No. 11 {[}Internet{]}.} \emph{Lyon, France: International Agency for Research on Cancer.} {[}electronic article{]}. 2013;11:http://globocan.iarc.f. (\url{http://arxiv.org/abs/arXiv:1011.1669v3})}
 
 \leavevmode\hypertarget{ref-McCarthy2016}{}%
-233. McCarthy S, Das S, Kretzschmar W, et al. A reference panel of 64,976 haplotypes for genotype imputation. \emph{Nature Genetics}. 2016;
+\CSLLeftMargin{233. }
+\CSLRightInline{McCarthy S, Das S, Kretzschmar W, et al. {A reference panel of 64,976 haplotypes for genotype imputation}. \emph{Nature Genetics}. 2016;}
 
 \leavevmode\hypertarget{ref-Jones2002}{}%
-234. Jones P a, Baylin SB. The fundamental role of epigenetic events in cancer. \emph{Nature reviews. Genetics} {[}electronic article{]}. 2002;3(6):415--28. (\url{http://www.ncbi.nlm.nih.gov/pubmed/16136652\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/pubmed/12042769})
+\CSLLeftMargin{234. }
+\CSLRightInline{Jones Pa, Baylin SB. {The fundamental role of epigenetic events in cancer.} \emph{Nature reviews. Genetics} {[}electronic article{]}. 2002;3(6):415--28. (\url{http://www.ncbi.nlm.nih.gov/pubmed/16136652\%7B/\%\%7D5Cnhttp://www.ncbi.nlm.nih.gov/pubmed/12042769})}
 
 \leavevmode\hypertarget{ref-Borghol2012}{}%
-235. Borghol N, Suderman M, Mcardle W, et al. Associations with early-life socio-economic position in adult DNA methylation. \emph{International Journal of Epidemiology}. 2012;
+\CSLLeftMargin{235. }
+\CSLRightInline{Borghol N, Suderman M, Mcardle W, et al. {Associations with early-life socio-economic position in adult DNA methylation}. \emph{International Journal of Epidemiology}. 2012;}
 
 \leavevmode\hypertarget{ref-Munafo2012}{}%
-236. Munafò MR, Timofeeva MN, Morris RW, et al. Association between genetic variants on chromosome 15q25 locus and objective measures of Tobacco exposure. \emph{Journal of the National Cancer Institute}. 2012;
+\CSLLeftMargin{236. }
+\CSLRightInline{Munafò MR, Timofeeva MN, Morris RW, et al. {Association between genetic variants on chromosome 15q25 locus and objective measures of Tobacco exposure}. \emph{Journal of the National Cancer Institute}. 2012;}
 
 \leavevmode\hypertarget{ref-Richardson2017}{}%
-237. Richardson TG, Zheng J, Davey Smith G, et al. Mendelian Randomization Analysis Identifies CpG Sites as Putative Mediators for Genetic Influences on Cardiovascular Disease Risk. \emph{American Journal of Human Genetics}. 2017;
+\CSLLeftMargin{237. }
+\CSLRightInline{Richardson TG, Zheng J, Davey Smith G, et al. {Mendelian Randomization Analysis Identifies CpG Sites as Putative Mediators for Genetic Influences on Cardiovascular Disease Risk}. \emph{American Journal of Human Genetics}. 2017;}
 
 \leavevmode\hypertarget{ref-Leek2016}{}%
-238. Leek JT, Johnson WE, Parker HS, et al. sva: Surrogate Variable Analysis. \emph{R package version 3.20.0.} 2016;
+\CSLLeftMargin{238. }
+\CSLRightInline{Leek JT, Johnson WE, Parker HS, et al. {sva: Surrogate Variable Analysis}. \emph{R package version 3.20.0.} 2016;}
 
 \leavevmode\hypertarget{ref-Zhan2016}{}%
-239. Zhan X, Hu Y, Li B, et al. RVTESTS: An efficient and comprehensive tool for rare variant association analysis using sequence data. \emph{Bioinformatics}. 2016;32(9):1423--1426.
+\CSLLeftMargin{239. }
+\CSLRightInline{Zhan X, Hu Y, Li B, et al. {RVTESTS: An efficient and comprehensive tool for rare variant association analysis using sequence data}. \emph{Bioinformatics}. 2016;32(9):1423--1426. }
 
 \leavevmode\hypertarget{ref-Das2016}{}%
-240. Das S, Forer L, Schönherr S, et al. Next-generation genotype imputation service and methods. \emph{Nature Genetics}. 2016;
+\CSLLeftMargin{240. }
+\CSLRightInline{Das S, Forer L, Schönherr S, et al. {Next-generation genotype imputation service and methods}. \emph{Nature Genetics}. 2016;}
 
 \leavevmode\hypertarget{ref-Thomas2007}{}%
-241. Thomas DC, Lawlor DA, Thompson JR. Re: Estimation of Bias in Nongenetic Observational Studies Using "Mendelian Triangulation" by Bautista et~al. \emph{Annals of Epidemiology}. 2007;
+\CSLLeftMargin{241. }
+\CSLRightInline{Thomas DC, Lawlor DA, Thompson JR. {Re: Estimation of Bias in Nongenetic Observational Studies Using "Mendelian Triangulation" by Bautista et~al.} \emph{Annals of Epidemiology}. 2007;}
 
 \leavevmode\hypertarget{ref-Bowden2015}{}%
-242. Bowden J, Smith GD, Burgess S. Mendelian randomization with invalid instruments: Effect estimation and bias detection through Egger regression. \emph{International Journal of Epidemiology} {[}electronic article{]}. 2015;44(2):512--525. (\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4469799/})
+\CSLLeftMargin{242. }
+\CSLRightInline{Bowden J, Smith GD, Burgess S. {Mendelian randomization with invalid instruments: Effect estimation and bias detection through Egger regression}. \emph{International Journal of Epidemiology} {[}electronic article{]}. 2015;44(2):512--525. (\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4469799/})}
 
 \leavevmode\hypertarget{ref-Furberg2010}{}%
-243. Furberg H, Kim Y, Dackor J, et al. Genome-wide meta-analyses identify multiple loci associated with smoking behavior. \emph{Nature Genetics}. 2010;
+\CSLLeftMargin{243. }
+\CSLRightInline{Furberg H, Kim Y, Dackor J, et al. {Genome-wide meta-analyses identify multiple loci associated with smoking behavior}. \emph{Nature Genetics}. 2010;}
 
 \leavevmode\hypertarget{ref-Haycock2016}{}%
-244. Haycock PC, Burgess S, Wade KH, et al. Best (but oft-forgotten) practices: The design, analysis, and interpretation of Mendelian randomization studies. \emph{American Journal of Clinical Nutrition}. 2016;
+\CSLLeftMargin{244. }
+\CSLRightInline{Haycock PC, Burgess S, Wade KH, et al. {Best (but oft-forgotten) practices: The design, analysis, and interpretation of Mendelian randomization studies}. \emph{American Journal of Clinical Nutrition}. 2016;}
 
 \leavevmode\hypertarget{ref-GTExConsortium2013}{}%
-245. GTEx Consortium TG. The Genotype-Tissue Expression (GTEx) project. \emph{Nature genetics} {[}electronic article{]}. 2013;45(6):580--5. (\url{http://www.ncbi.nlm.nih.gov/pubmed/23715323\%7B/\%\%7D5Cnhttp://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC4010069})
+\CSLLeftMargin{245. }
+\CSLRightInline{GTEx Consortium TG. {The Genotype-Tissue Expression (GTEx) project.} \emph{Nature genetics} {[}electronic article{]}. 2013;45(6):580--5. (\url{http://www.ncbi.nlm.nih.gov/pubmed/23715323\%7B/\%\%7D5Cnhttp://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC4010069})}
 
 \leavevmode\hypertarget{ref-Hemani2016}{}%
-246. Hemani G, Zheng J, Wade KH, et al. MR-Base: a platform for systematic causal inference across the phenome using billions of genetic associations. \emph{bioRxiv} {[}electronic article{]}. 2016;(\url{http://biorxiv.org/content/early/2016/12/16/078972.abstract})
+\CSLLeftMargin{246. }
+\CSLRightInline{Hemani G, Zheng J, Wade KH, et al. {MR-Base: a platform for systematic causal inference across the phenome using billions of genetic associations}. \emph{bioRxiv} {[}electronic article{]}. 2016;(\url{http://biorxiv.org/content/early/2016/12/16/078972.abstract})}
 
 \leavevmode\hypertarget{ref-Burgess2011}{}%
-247. Burgess S, Thompson SG. Avoiding bias from weak instruments in mendelian randomization studies. \emph{International Journal of Epidemiology}. 2011;
+\CSLLeftMargin{247. }
+\CSLRightInline{Burgess S, Thompson SG. {Avoiding bias from weak instruments in mendelian randomization studies}. \emph{International Journal of Epidemiology}. 2011;}
 
 \leavevmode\hypertarget{ref-Shi2014}{}%
-248. Shi J, Marconett CN, Duan J, et al. Characterizing the genetic basis of methylome diversity in histologically normal human lung tissue. \emph{Nature communications}. 2014;
+\CSLLeftMargin{248. }
+\CSLRightInline{Shi J, Marconett CN, Duan J, et al. {Characterizing the genetic basis of methylome diversity in histologically normal human lung tissue}. \emph{Nature communications}. 2014;}
 
 \leavevmode\hypertarget{ref-Freeman2016}{}%
-249. Freeman JR, Chu S, Hsu T, et al. Epigenome-wide association study of smoking and DNA methylation in non-small cell lung neoplasms. \emph{Oncotarget}. 2016;7(43).
+\CSLLeftMargin{249. }
+\CSLRightInline{Freeman JR, Chu S, Hsu T, et al. {Epigenome-wide association study of smoking and DNA methylation in non-small cell lung neoplasms}. \emph{Oncotarget}. 2016;7(43). }
 
 \leavevmode\hypertarget{ref-Gao2016}{}%
-250. Gao X, Zhang Y, Breitling LP, et al. Tobacco smoking and methylation of genes related to lung cancer development. \emph{Oncotarget}. 2016;
+\CSLLeftMargin{250. }
+\CSLRightInline{Gao X, Zhang Y, Breitling LP, et al. {Tobacco smoking and methylation of genes related to lung cancer development}. \emph{Oncotarget}. 2016;}
 
 \leavevmode\hypertarget{ref-Lappalainen2017}{}%
-251. Lappalainen T, Greally JM. Associating cellular epigenetic models with human phenotypes. \emph{Nat Rev Genet} {[}electronic article{]}. 2017;18(7):441--451. (\url{http://dx.doi.org/10.1038/nrg.2017.32\%20http://10.0.4.14/nrg.2017.32})
+\CSLLeftMargin{251. }
+\CSLRightInline{Lappalainen T, Greally JM. {Associating cellular epigenetic models with human phenotypes}. \emph{Nat Rev Genet} {[}electronic article{]}. 2017;18(7):441--451. (\url{http://dx.doi.org/10.1038/nrg.2017.32\%20http://10.0.4.14/nrg.2017.32})}
 
 \leavevmode\hypertarget{ref-Timpson2017}{}%
-252. Timpson NJ, Greenwood CMT, Soranzo N, et al. Genetic architecture: the shape of the genetic contribution to human traits and disease. \emph{Nature Reviews Genetics} {[}electronic article{]}. 2017;19(2):110--124. (\url{http://www.nature.com/doifinder/10.1038/nrg.2017.101})
+\CSLLeftMargin{252. }
+\CSLRightInline{Timpson NJ, Greenwood CMT, Soranzo N, et al. {Genetic architecture: the shape of the genetic contribution to human traits and disease}. \emph{Nature Reviews Genetics} {[}electronic article{]}. 2017;19(2):110--124. (\url{http://www.nature.com/doifinder/10.1038/nrg.2017.101})}
 
 \leavevmode\hypertarget{ref-Boyle2017}{}%
-253. Boyle EA, Li YI, Pritchard JK. An Expanded View of Complex Traits: From Polygenic to Omnigenic. \emph{Cell}. 2017;
+\CSLLeftMargin{253. }
+\CSLRightInline{Boyle EA, Li YI, Pritchard JK. {An Expanded View of Complex Traits: From Polygenic to Omnigenic}. \emph{Cell}. 2017;}
 
 \leavevmode\hypertarget{ref-Finucane2018}{}%
-254. Finucane HK, Reshef YA, Anttila V, et al. Heritability enrichment of specifically expressed genes identifies disease-relevant tissues and cell types. \emph{Nature Genetics}. 2018;
+\CSLLeftMargin{254. }
+\CSLRightInline{Finucane HK, Reshef YA, Anttila V, et al. {Heritability enrichment of specifically expressed genes identifies disease-relevant tissues and cell types}. \emph{Nature Genetics}. 2018;}
 
 \leavevmode\hypertarget{ref-Wilkins2020}{}%
-255. Wilkins OM, Johnson KC, Houseman EA, et al. Genome-wide characterization of cytosine-specific 5-hydroxymethylation in normal breast tissue. \emph{Epigenetics}. 2020;
+\CSLLeftMargin{255. }
+\CSLRightInline{Wilkins OM, Johnson KC, Houseman EA, et al. {Genome-wide characterization of cytosine-specific 5-hydroxymethylation in normal breast tissue}. \emph{Epigenetics}. 2020;}
 
 \leavevmode\hypertarget{ref-Marshall2020}{}%
-256. Marshall LL, Killinger BA, Ensink E, et al. Epigenomic analysis of Parkinson's disease neurons identifies Tet2 loss as neuroprotective. \emph{Nature Neuroscience}. 2020;
+\CSLLeftMargin{256. }
+\CSLRightInline{Marshall LL, Killinger BA, Ensink E, et al. {Epigenomic analysis of Parkinson's disease neurons identifies Tet2 loss as neuroprotective}. \emph{Nature Neuroscience}. 2020;}
 
 \leavevmode\hypertarget{ref-Greco2016}{}%
-257. Greco CM, Kunderfranco P, Rubino M, et al. DNA hydroxymethylation controls cardiomyocyte gene expression in development and hypertrophy. \emph{Nature Communications}. 2016;
+\CSLLeftMargin{257. }
+\CSLRightInline{Greco CM, Kunderfranco P, Rubino M, et al. {DNA hydroxymethylation controls cardiomyocyte gene expression in development and hypertrophy}. \emph{Nature Communications}. 2016;}
 
 \leavevmode\hypertarget{ref-Shendure2017}{}%
-258. Shendure J, Balasubramanian S, Church GM, et al. DNA sequencing at 40: Past, present and future. \emph{Nature}. 2017;
+\CSLLeftMargin{258. }
+\CSLRightInline{Shendure J, Balasubramanian S, Church GM, et al. {DNA sequencing at 40: Past, present and future}. \emph{Nature}. 2017;}
 
 \leavevmode\hypertarget{ref-Stark2019}{}%
-259. Stark R, Grzelak M, Hadfield J. RNA sequencing: the teenage years. \emph{Nature Reviews Genetics}. 2019;
+\CSLLeftMargin{259. }
+\CSLRightInline{Stark R, Grzelak M, Hadfield J. {RNA sequencing: the teenage years}. \emph{Nature Reviews Genetics}. 2019;}
 
 \leavevmode\hypertarget{ref-Song2012}{}%
-260. Song CX, Clark TA, Lu XY, et al. Sensitive and specific single-molecule sequencing of 5- hydroxymethylcytosine. \emph{Nature Methods}. 2012;
+\CSLLeftMargin{260. }
+\CSLRightInline{Song CX, Clark TA, Lu XY, et al. {Sensitive and specific single-molecule sequencing of 5- hydroxymethylcytosine}. \emph{Nature Methods}. 2012;}
 
 \leavevmode\hypertarget{ref-Weinstein2013}{}%
-261. Weinstein JN, Collisson EA, Mills GB, et al. The cancer genome atlas pan-cancer analysis project. \emph{Nature Genetics}. 2013;
+\CSLLeftMargin{261. }
+\CSLRightInline{Weinstein JN, Collisson EA, Mills GB, et al. {The cancer genome atlas pan-cancer analysis project}. \emph{Nature Genetics}. 2013;}
 
 \leavevmode\hypertarget{ref-Hedlund2018}{}%
-262. Hedlund E, Deng Q. Single-cell RNA sequencing: Technical advancements and biological applications. \emph{Molecular Aspects of Medicine}. 2018;
+\CSLLeftMargin{262. }
+\CSLRightInline{Hedlund E, Deng Q. {Single-cell RNA sequencing: Technical advancements and biological applications}. \emph{Molecular Aspects of Medicine}. 2018;}
 
 \leavevmode\hypertarget{ref-Papalexi2018}{}%
-263. Papalexi E, Satija R. Single-cell RNA sequencing to explore immune cell heterogeneity. \emph{Nature Reviews Immunology}. 2018;
+\CSLLeftMargin{263. }
+\CSLRightInline{Papalexi E, Satija R. {Single-cell RNA sequencing to explore immune cell heterogeneity}. \emph{Nature Reviews Immunology}. 2018;}
 
 \leavevmode\hypertarget{ref-Karemaker2018}{}%
-264. Karemaker ID, Vermeulen M. Single-Cell DNA Methylation Profiling: Technologies and Biological Applications. \emph{Trends in Biotechnology}. 2018;
+\CSLLeftMargin{264. }
+\CSLRightInline{Karemaker ID, Vermeulen M. {Single-Cell DNA Methylation Profiling: Technologies and Biological Applications}. \emph{Trends in Biotechnology}. 2018;}
 
 \leavevmode\hypertarget{ref-Gravina2015}{}%
-265. Gravina S, Ganapathi S, Vijg J. Single-cell, locus-specific bisulfite sequencing (SLBS) for direct detection of epimutations in DNA methylation patterns. \emph{Nucleic Acids Research}. 2015;
+\CSLLeftMargin{265. }
+\CSLRightInline{Gravina S, Ganapathi S, Vijg J. {Single-cell, locus-specific bisulfite sequencing (SLBS) for direct detection of epimutations in DNA methylation patterns}. \emph{Nucleic Acids Research}. 2015;}
 
 \leavevmode\hypertarget{ref-Farlik2015}{}%
-266. Farlik M, Sheffield NC, Nuzzo A, et al. Single-Cell DNA Methylome Sequencing and Bioinformatic Inference of Epigenomic Cell-State Dynamics. \emph{Cell Reports}. 2015;
+\CSLLeftMargin{266. }
+\CSLRightInline{Farlik M, Sheffield NC, Nuzzo A, et al. {Single-Cell DNA Methylome Sequencing and Bioinformatic Inference of Epigenomic Cell-State Dynamics}. \emph{Cell Reports}. 2015;}
 
 \leavevmode\hypertarget{ref-Zhang2019}{}%
-267. Zhang F, Chen W, Zhu Z, et al. OSCA: A tool for omic-data-based complex trait analysis. \emph{Genome Biology}. 2019;
+\CSLLeftMargin{267. }
+\CSLRightInline{Zhang F, Chen W, Zhu Z, et al. {OSCA: A tool for omic-data-based complex trait analysis}. \emph{Genome Biology}. 2019;}
 
 \leavevmode\hypertarget{ref-Smith2013}{}%
-268. Smith BH, Campbell A, Linksted P, et al. Cohort profile: Generation scotland: Scottish family health study (GS: SFHS). The study, its participants and their potential for genetic research on health and illness. \emph{International Journal of Epidemiology}. 2013;
+\CSLLeftMargin{268. }
+\CSLRightInline{Smith BH, Campbell A, Linksted P, et al. {Cohort profile: Generation scotland: Scottish family health study (GS: SFHS). The study, its participants and their potential for genetic research on health and illness}. \emph{International Journal of Epidemiology}. 2013;}
 
 \leavevmode\hypertarget{ref-RoadmapEpigenomicsConsortium2015}{}%
-269. Roadmap Epigenomics Consortium, Kundaje A, Meuleman W, et al. Integrative analysis of 111 reference human epigenomes. \emph{Nature}. 2015;
+\CSLLeftMargin{269. }
+\CSLRightInline{Roadmap Epigenomics Consortium, Kundaje A, Meuleman W, et al. {Integrative analysis of 111 reference human epigenomes}. \emph{Nature}. 2015;}
 
 \leavevmode\hypertarget{ref-Marzi2018}{}%
-270. Marzi SJ, Leung SK, Ribarska T, et al. A histone acetylome-wide association study of Alzheimer's disease identifies disease-associated H3K27ac differences in the entorhinal cortex. \emph{Nature Neuroscience}. 2018;
+\CSLLeftMargin{270. }
+\CSLRightInline{Marzi SJ, Leung SK, Ribarska T, et al. {A histone acetylome-wide association study of Alzheimer's disease identifies disease-associated H3K27ac differences in the entorhinal cortex}. \emph{Nature Neuroscience}. 2018;}
 
 \leavevmode\hypertarget{ref-Uhlen2015}{}%
-271. Uhlén M, Fagerberg L, Hallström BM, et al. Tissue-based map of the human proteome. \emph{Science}. 2015;
+\CSLLeftMargin{271. }
+\CSLRightInline{Uhlén M, Fagerberg L, Hallström BM, et al. {Tissue-based map of the human proteome}. \emph{Science}. 2015;}
 
 \leavevmode\hypertarget{ref-Thul2017}{}%
-272. Thul PJ, Akesson L, Wiking M, et al. A subcellular map of the human proteome. \emph{Science}. 2017;
+\CSLLeftMargin{272. }
+\CSLRightInline{Thul PJ, Akesson L, Wiking M, et al. {A subcellular map of the human proteome}. \emph{Science}. 2017;}
 
 \leavevmode\hypertarget{ref-Lane2010}{}%
-273. Lane D, Levine A. p53 Research: the past thirty years and the next thirty years. \emph{Cold Spring Harbor perspectives in biology}. 2010;
-\end{cslreferences}
+\CSLLeftMargin{273. }
+\CSLRightInline{Lane D, Levine A. {p53 Research: the past thirty years and the next thirty years.} \emph{Cold Spring Harbor perspectives in biology}. 2010;}
+
+\end{CSLReferences}
 \end{document}
 

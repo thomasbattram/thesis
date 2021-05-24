@@ -501,13 +501,11 @@ CCHS & 7 & individual & DNAm, genotypic, phenotypic\\
 \multicolumn{4}{l}{\textsuperscript{} ARIES = Accessible Resource for Integrated Epigenomic Studies}\\
 \multicolumn{4}{l}{\textsuperscript{} GEO = Gene Expression Omnibus}\\
 \multicolumn{4}{l}{\textsuperscript{} IEU = Integrative Epidemiology Unit}\\
-\multicolumn{4}{l}{\textsuperscript{} EPIC-Italy = Italian strand of the European Prospective Investigation into Cancer}\\
-\multicolumn{4}{l}{and Nutrition study}\\
+\multicolumn{4}{l}{\textsuperscript{} EPIC-Italy = Italian strand of the European Prospective Investigation into Cancer and Nutrition study}\\
 \multicolumn{4}{l}{\textsuperscript{} MCCS = Melbourne Collaborative Cohort Study}\\
 \multicolumn{4}{l}{\textsuperscript{} NOWAC = Norwegian Women and Cancer}\\
 \multicolumn{4}{l}{\textsuperscript{} NSHDS = Northern Sweden Health and Disease Study}\\
-\multicolumn{4}{l}{\textsuperscript{} TRICL-ILCCO = Transdisciplinary Research in Cancer of the Lung and The International}\\
-\multicolumn{4}{l}{Lung Cancer Consortium}\\
+\multicolumn{4}{l}{\textsuperscript{} TRICL-ILCCO = Transdisciplinary Research in Cancer of the Lung and The International Lung Cancer Consortium}\\
 \multicolumn{4}{l}{\textsuperscript{} CCHS = Copenhagen City Heart Study}\\
 \multicolumn{4}{l}{\textsuperscript{} GTEx = Genotype-Tissue Expression (project)}\\
 \multicolumn{4}{l}{\textsuperscript{} DNAm = DNA methylation}\\
@@ -584,7 +582,7 @@ CpG-phenotype associations are extracted from studies at P<1x10^-4^. A P-value c
 
 All these criteria along with the variables extracted are documented on the website (www.ewascatalog.org/documentation). Experimental factor ontology (EFO) terms were mapped to traits to unify representation of these traits. These EFO terms were manually entered after looking up the trait in the European Bioinformatics Institute database (www.ebi.ac.uk/efo).
 
-Based on these criteria, from 2020-11-13, The EWAS Catalog contained 582,801 associations from 218 published studies. 
+Based on these criteria, from 2021-05-24, The EWAS Catalog contained 582,801 associations from 218 published studies. 
 
 ### New EWAS performed {#new-ewas-03}
 
@@ -887,10 +885,8 @@ Psoriasis & 16 & 0 & 0.00\\
 Smoking & 32 & 31 & 96.88\\
 \cellcolor{gray!6}{Smoking} & \cellcolor{gray!6}{30} & \cellcolor{gray!6}{12} & \cellcolor{gray!6}{40.00}\\
 \bottomrule
-\multicolumn{4}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions}\\
-\multicolumn{4}{l}{identified at P < 1x10\textsuperscript{-7}}\\
-\multicolumn{4}{l}{\textsuperscript{} N-replicated = number of DMPs replicated in the GEO}\\
-\multicolumn{4}{l}{re-analysis at P < P < 1x10\textsuperscript{-4}}\\
+\multicolumn{4}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions identified at P < 1x10\textsuperscript{-7}}\\
+\multicolumn{4}{l}{\textsuperscript{} N-replicated = number of DMPs replicated in the GEO re-analysis at P < P < 1x10\textsuperscript{-4}}\\
 \end{tabular}}
 \end{table}
 
@@ -939,7 +935,7 @@ High-density lipoprotein cholesterol & 63 & 5 & 1 & 0.07937\\
 \cellcolor{gray!6}{Serum high-density lipoprotein cholesterol} & \cellcolor{gray!6}{22} & \cellcolor{gray!6}{17} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.77273}\\
 Serum high-density lipoprotein cholesterol & 213 & 11 & 1 & 0.05164\\
 \cellcolor{gray!6}{Serum low-density lipoprotein cholesterol} & \cellcolor{gray!6}{61} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.00000}\\
-Serum total cholesterol & 1 & 0 & 2 & \vphantom{1}0.00000\\
+Serum total cholesterol & 1 & 0 & 2 & \vphantom{1} 0.00000\\
 \addlinespace
 \cellcolor{gray!6}{Serum total cholesterol} & \cellcolor{gray!6}{111} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0.00000}\\
 Serum total cholesterol & 1 & 0 & 2 & 0.00000\\
@@ -951,10 +947,8 @@ Rheumatoid arthritis & 6 & 0 & 1 & 0.00000\\
 \cellcolor{gray!6}{Depression} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0.00000}\\
 Depression & 2 & 0 & 1 & 0.00000\\
 \bottomrule
-\multicolumn{5}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions identified at}\\
-\multicolumn{5}{l}{P<1x10\textsuperscript{-7}}\\
-\multicolumn{5}{l}{\textsuperscript{} N-replicated = number of DMPs replicated in the GEO re-analysis at}\\
-\multicolumn{5}{l}{P<1x10\textsuperscript{-4}}\\
+\multicolumn{5}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions identified at P<1x10\textsuperscript{-7}}\\
+\multicolumn{5}{l}{\textsuperscript{} N-replicated = number of DMPs replicated in the GEO re-analysis at P<1x10\textsuperscript{-4}}\\
 \multicolumn{5}{l}{\textsuperscript{} N-replication-studies = number of studies for which replication was examined}\\
 \multicolumn{5}{l}{\textsuperscript{} Prop-replicated = proportion of DMPs replicated.}\\
 \end{tabular}}
@@ -969,8 +963,8 @@ Depression & 2 & 0 & 1 & 0.00000\\
 \toprule
 Trait & N-DMPs & N-replicated & N-replication-studies & Prop-replicated\\
 \midrule
-\cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{21} & \cellcolor{gray!6}{\vphantom{2}1.00000}\\
-smoking & 1 & 1 & 21 & \vphantom{1}1.00000\\
+\cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{21} & \cellcolor{gray!6}{\vphantom{2} 1.00000}\\
+smoking & 1 & 1 & 21 & \vphantom{1} 1.00000\\
 \cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{21} & \cellcolor{gray!6}{1.00000}\\
 smoking & 1,065 & 862 & 21 & 0.80939\\
 \cellcolor{gray!6}{smoking} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{21} & \cellcolor{gray!6}{1.00000}\\
@@ -999,10 +993,8 @@ maternal\_smoking\_in\_pregnancy & 24 & 24 & 4 & 1.00000\\
 maternal\_smoking\_in\_pregnancy & 121 & 121 & 4 & 1.00000\\
 \cellcolor{gray!6}{maternal\_smoking\_in\_pregnancy} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{1.00000}\\
 \bottomrule
-\multicolumn{5}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions identified at}\\
-\multicolumn{5}{l}{P<1x10\textsuperscript{-7}}\\
-\multicolumn{5}{l}{\textsuperscript{} N-replicated = number of DMPs replicated in the GEO re-analysis at}\\
-\multicolumn{5}{l}{P<1x10\textsuperscript{-4}}\\
+\multicolumn{5}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions identified at P<1x10\textsuperscript{-7}}\\
+\multicolumn{5}{l}{\textsuperscript{} N-replicated = number of DMPs replicated in the GEO re-analysis at P<1x10\textsuperscript{-4}}\\
 \multicolumn{5}{l}{\textsuperscript{} N-replication-studies = number of studies for which replication was examined}\\
 \multicolumn{5}{l}{\textsuperscript{} Prop-replicated = proportion of DMPs replicated.}\\
 \end{tabular}}
@@ -1028,10 +1020,8 @@ Body mass index & 5 & 3 & 8 & 0.60000\\
 Body mass index & 182 & 113 & 8 & 0.62088\\
 \cellcolor{gray!6}{Body mass index} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{8} & \cellcolor{gray!6}{1.00000}\\
 \bottomrule
-\multicolumn{5}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions identified at}\\
-\multicolumn{5}{l}{P<1x10\textsuperscript{-7}}\\
-\multicolumn{5}{l}{\textsuperscript{} N-replicated = number of DMPs replicated in the GEO re-analysis at}\\
-\multicolumn{5}{l}{P<1x10\textsuperscript{-4}}\\
+\multicolumn{5}{l}{\textsuperscript{} N-DMPs = number of differentially methylated positions identified at P<1x10\textsuperscript{-7}}\\
+\multicolumn{5}{l}{\textsuperscript{} N-replicated = number of DMPs replicated in the GEO re-analysis at P<1x10\textsuperscript{-4}}\\
 \multicolumn{5}{l}{\textsuperscript{} N-replication-studies = number of studies for which replication was examined}\\
 \multicolumn{5}{l}{\textsuperscript{} Prop-replicated = proportion of DMPs replicated.}\\
 \end{tabular}}
@@ -1532,9 +1522,7 @@ educational attainment & Karlsson Linner R & 29086770 & 10,767 & Lee JJ & 300383
 \cellcolor{gray!6}{insulin} & \cellcolor{gray!6}{Liu J} & \cellcolor{gray!6}{31197173} & \cellcolor{gray!6}{4,740} & \cellcolor{gray!6}{Manning AK} & \cellcolor{gray!6}{22581228} & \cellcolor{gray!6}{51,750}\\
 glucose & Liu J & 31197173 & 4,808 & Manning AK & 22581228 & 58,074\\
 \bottomrule
-\multicolumn{7}{l}{\textsuperscript{} Where gwas-pmid = NA, the GWAS were conducted as part of a UK Biobank GWAS pipeline within the}\\
-\multicolumn{7}{l}{Univeristy of Bristol's Integrative Epidemiology Unit and can be found on the OpenGWAS Project website}\\
-\multicolumn{7}{l}{(see Methods for more)}\\
+\multicolumn{7}{l}{\textsuperscript{} Where gwas-pmid = NA, the GWAS were conducted as part of a UK Biobank GWAS pipeline within the Univeristy of Bristol's Integrative Epidemiology Unit and can be found on the OpenGWAS Project website (see Methods for more)}\\
 \end{tabular}}
 \end{table}
 
@@ -1628,10 +1616,8 @@ educational attainment & 25 & 1,594 & 1 & 1.5 & 3 & 3.00 & 0.430\\
 glucose & 15 & 50 & 0 & 0.0 & 0 & 0.00 & 1.000\\
 \bottomrule
 \multicolumn{8}{l}{\textsuperscript{} exp = expected, obs = observed}\\
-\multicolumn{8}{l}{\textsuperscript{} odds ratios (ORs) can be interpreted as the odds of an gene being identified by EWAS and a GWAS over the odds}\\
-\multicolumn{8}{l}{of a gene being identified by an EWAS but not by a GWAS.}\\
-\multicolumn{8}{l}{\textsuperscript{} exp-OR = the mean OR after repeating the analysis 1000 times, randomly sampling EWAS genes equal to the}\\
-\multicolumn{8}{l}{number identified in the empirical analysis.}\\
+\multicolumn{8}{l}{\textsuperscript{} odds ratios (ORs) can be interpreted as the odds of an gene being identified by EWAS and a GWAS over the odds of a gene being identified by an EWAS but not by a GWAS.}\\
+\multicolumn{8}{l}{\textsuperscript{} exp-OR = the mean OR after repeating the analysis 1000 times, randomly sampling EWAS genes equal to the number identified in the empirical analysis.}\\
 \end{tabular}}
 \end{table}
 
@@ -1654,13 +1640,9 @@ educational attainment & 25 & 1,594 & 215 & 0.105 & 0.13 & 0.173\\
 \cellcolor{gray!6}{insulin} & \cellcolor{gray!6}{36} & \cellcolor{gray!6}{5} & \cellcolor{gray!6}{16} & \cellcolor{gray!6}{0.093} & \cellcolor{gray!6}{0.12} & \cellcolor{gray!6}{0.376}\\
 glucose & 15 & 50 & 49 & 0.153 & 0.16 & 0.809\\
 \bottomrule
-\multicolumn{7}{l}{\textsuperscript{} For each geneset, odds of study genes being in the geneset divided by the odds the study}\\
-\multicolumn{7}{l}{genes not being in the geneset were assessed and correlation between these odds ratios are}\\
-\multicolumn{7}{l}{given here.}\\
-\multicolumn{7}{l}{\textsuperscript{} expected-cor = the mean correlation between odds ratios after repeating the analysis 1000}\\
-\multicolumn{7}{l}{times, randomly sampling EWAS genes equal to the number identified in the empirical analysis}\\
-\multicolumn{7}{l}{\textsuperscript{} geneset-overlap indicates the number of gene ontology terms that map to both genes identified}\\
-\multicolumn{7}{l}{by the EWAS and GWAS.}\\
+\multicolumn{7}{l}{\textsuperscript{} For each geneset, odds of study genes being in the geneset divided by the odds the study genes not being in the geneset were assessed and correlation between these odds ratios are given here.}\\
+\multicolumn{7}{l}{\textsuperscript{} expected-cor = the mean correlation between odds ratios after repeating the analysis 1000 times, randomly sampling EWAS genes equal to the number identified in the empirical analysis}\\
+\multicolumn{7}{l}{\textsuperscript{} geneset-overlap indicates the number of gene ontology terms that map to both genes identified by the EWAS and GWAS.}\\
 \end{tabular}}
 \end{table}
 
