@@ -48,7 +48,8 @@ kable(study_dat, format = "latex", caption = study_caption, booktabs = TRUE) %>%
     kable_styling(latex_options = c("striped", "hold_position", "scale_down")) %>%
     add_footnote(c("Identified associations were defined as those P < 1x10\\textsuperscript{-7}", 
                    "Results for Sex, Ethnicities, Age, and Most common tissues were calculated per EWAS.",
-                   "For example, if one EWAS (or meta-analysis) contained just Afican indviduals then that would be counted as one."), 
+                   "For example, if one EWAS (or meta-analysis) contained just Afican indviduals then that would be counted as one.", 
+                   "EUR = European, AFR = African, ADM = Admixed, EAS = East Asian, SAS = South Asian"), 
                 notation = "none", escape = FALSE)
 
 
@@ -261,6 +262,9 @@ chrom_state_file <- file.path(fp_04, "chromatin_states_enrichment_boxplots_onepa
 tfbs_file <- file.path(fp_04, "tfbs_enrichment_plot.pdf")
 
 strict_p_threshold <- comma(1e-7 / rob_summary$n_ewas)
+power <- gsub(".*e-", "", strict_p_threshold)
+
+strict_p_threshold <- gsub(paste0("e-", power), paste0("x10^-", power, "^"), strict_p_threshold)
 
 ## ---- chrom-state-plot --------------------------------
 include_graphics(chrom_state_file)

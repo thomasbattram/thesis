@@ -231,7 +231,7 @@ There was strong evidence of an association between mean DNA methylation levels 
 
 DNA methylation changes are heritable [@McRae2014; @VanDongen2016], and DNA methylation could mediate the effects of genotype on complex traits or genotype might confound the association between DNA methylation and complex traits.  
 
-It was found that an increase in heritability by 10% was associated with an increased odds of a DMP replicating (OR = `r comma(get_cc_res("rep", "h2")[["OR"]])` [95% CI: `r comma(get_cc_res("rep", "h2")[["2.5 %"]])`, `r comma(get_cc_res("rep", "h2")[["97.5 %"]])`). An increase in heritability by 10% also associated with a decrease in absolute standardised effect size by `r comma((1 - get_cc_res("effect", "h2")[["Beta"]]) * 100)`% [95% CI: `r comma((1 - get_cc_res("effect", "h2")[["2.5 %"]]) * 100)`% decrease, `r comma((1 - get_cc_res("effect", "h2")[["97.5 %"]]) * 100)`% decrease].
+It was found that an increase in heritability by 10% was associated with an increased odds of a DMP replicating (OR = `r comma(get_cc_res("rep", "h2")[["OR"]])` [95% CI: `r comma(get_cc_res("rep", "h2")[["2.5 %"]])`, `r comma(get_cc_res("rep", "h2")[["97.5 %"]])`]). An increase in heritability by 10% also associated with a decrease in absolute standardised effect size by `r comma((1 - get_cc_res("effect", "h2")[["Beta"]]) * 100)`% [95% CI: `r comma((1 - get_cc_res("effect", "h2")[["2.5 %"]]) * 100)`% decrease, `r comma((1 - get_cc_res("effect", "h2")[["97.5 %"]]) * 100)`% decrease].
 
 Heritability also had a capacity to predict whether a site would be identified as a DMP in at least one study (AUC = `r comma(get_cc_res("dmp", "h2")[["auc"]])`), whereas variability only had a modest ability to do so (AUC = `r comma(get_cc_res("dmp", "variance")[["auc"]])`) and further did not add to the predictive capacity of heritability (combined AUC = `r comma(get_cc_res("dmp", "h2_and_variance")[["auc"]])`).
 
@@ -281,7 +281,7 @@ The potential biases in EWAS have been well documented [@Birney2016] and were di
 
 Differences in cell composition, sample ethnicity, covariates used and other differential biases between studies might explain the low replication rate in some cases. However, studies only tend to report associations below the conventional EWAS P-value threshold, P<1x10^-7^, so differences in study power could also be a major factor.
 
-### Understanding CpG charactersitcs {#understanding-cpg-characteristics}
+### Understanding CpG characteristics {#understanding-cpg-characteristics}
 
 Characteristics of DNA methylation discovered in experimental studies, such as its association with gene expression, were used to select sites to measure DNA methylation for array-based technology used in many EWAS [@Illumina2012]. Individual studies may also select CpGs to analyse from those assayed based on statistical characteristics such as high variance [@Meng2010; @Logue2017]. 
 

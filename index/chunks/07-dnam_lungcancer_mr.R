@@ -219,7 +219,7 @@ kable(table1, booktabs = TRUE, caption = table1_cap) %>%
 	add_header_above(table1_aha) %>%
 	kable_styling(latex_options = c("striped", "hold_position", "scale_down", "repeat_header"), 
 				  position = "center") %>%
-	# column_spec(table1_gene_col, italic = TRUE) %>%
+	column_spec(table1_gene_col, italic = TRUE) %>%
 	landscape()
 
 ## ---- sup-tab1-07 --------------------------------
@@ -259,7 +259,7 @@ kbl(clean_supp_tables[["S3"]], booktabs = T, caption = captions[["S3"]]) %>%
 				 notation = "none") %>%
 	add_header_above(add_header[["S3"]]) %>%
 	kable_styling(latex_options = ks_latex_options[["S3"]]) %>%
-	# column_spec(gene_cols[["S3"]], italic = TRUE) %>%	
+	column_spec(gene_cols[["S3"]], italic = TRUE) %>%	
 	landscape()
 
 ## ---- sup-tab4-07 --------------------------------
@@ -270,8 +270,8 @@ kbl(clean_supp_tables[["S4"]], booktabs = T, caption = captions[["S4"]]) %>%
 				   "Where N SNP = 1, the Wald ratio estimate is used", 
 				   "Where N SNP > 1, the Wald ratio estimates were meta-analyzed and the estimates were weighted by the inverse variance of the association with the outcome"), 
 				 notation = "none") %>%
-	kable_styling(latex_options = ks_latex_options[["S4"]]) # %>%
-	# column_spec(gene_cols[["S4"]], italic = TRUE)
+	kable_styling(latex_options = ks_latex_options[["S4"]])  %>%
+	column_spec(gene_cols[["S4"]], italic = TRUE)
 
 ## ---- sup-tab5-07 --------------------------------
 kbl(clean_supp_tables[["S5"]], booktabs = T, caption = captions[["S5"]]) %>%
@@ -279,7 +279,7 @@ kbl(clean_supp_tables[["S5"]], booktabs = T, caption = captions[["S5"]]) %>%
 	add_footnote(c("P = p value"), 
 				 notation = "none") %>% 
 	kable_styling(latex_options = ks_latex_options[["S5"]]) %>%
-	# column_spec(gene_cols[["S5"]], italic = TRUE) %>%
+	column_spec(gene_cols[["S5"]], italic = TRUE) %>%
 	landscape()
 
 ## ---- sup-tab6-07 --------------------------------
@@ -329,8 +329,8 @@ kbl(clean_supp_tables[["S10"]], booktabs = T, caption = captions[["S10"]]) %>%
 				   "hypo = hypomethylation is associated with lung cancer", 
 				   "For tumour/healthy tissue comparison, pos = hypermethylation of the CpG within the tumour tissue (neg is the opposite)"), 
 				 notation = "none") %>%
-	kable_styling(latex_options = ks_latex_options[["S10"]]) # %>%
-	# column_spec(gene_cols[["S10"]], italic = TRUE)
+	kable_styling(latex_options = ks_latex_options[["S10"]])  %>%
+	column_spec(gene_cols[["S10"]], italic = TRUE)
 
 ## ---- sup-tab11-07 --------------------------------
 kbl(clean_supp_tables[["S11"]], booktabs = T, caption = captions[["S11"]]) %>%
@@ -341,5 +341,5 @@ kbl(clean_supp_tables[["S11"]], booktabs = T, caption = captions[["S11"]]) %>%
 				   "A1 = effect allele", 
 				   "P = P value"),
 				 notation = "none") %>%
-	kable_styling(latex_options = ks_latex_options[["S11"]]) # %>%
-	# column_spec(gene_cols[["S11"]], italic = TRUE)
+	kable_styling(latex_options = ks_latex_options[["S11"]])  %>%
+	column_spec(gene_cols[["S11"]], italic = TRUE)
